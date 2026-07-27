@@ -1,0 +1,110 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs and outputs
+logs/
+outputs/
+runs/
+wandb/
+lightning_logs/
+checkpoints/
+*.log
+
+# Model weights
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.bin
+weights/
+
+# Datasets
+datasets/
+dataset/
+data/
+
+# Hugging Face and Torch cache
+.cache/
+huggingface/
+torch_cache/
+
+# Generated media
+*.mp4
+*.avi
+*.gif
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ============================================================
+# CALVIN
+# Rules migrated from CALVIN/calvin_env/tacto upstream repos
+# ============================================================
+
+# Downloaded CALVIN datasets
+# Keep the upstream README and download script in Git.
+/calvin/dataset/*
+!/calvin/dataset/README.md
+!/calvin/dataset/download_data.sh
+
+# CALVIN runtime outputs
+/calvin/**/runs/
+
+# Local CALVIN environment and IDE settings
+/calvin/calvin_venv/
+/calvin/.idea/
+
+# ------------------------------------------------------------
+# calvin_env generated files
+# ------------------------------------------------------------
+
+# Generated NumPy data
+/calvin/calvin_env/**/*.npy
+/calvin/calvin_env/**/*.npz
+
+# Generated serialized data
+/calvin/calvin_env/**/*.pickle
+/calvin/calvin_env/**/*.gzip
+
+# Local playground files
+/calvin/calvin_env/**/playground/
+
+# TensorBoard outputs
+/calvin/calvin_env/**/events.out*
+
+# Generated visualizations and documents
+/calvin/calvin_env/**/*.svg
+/calvin/calvin_env/**/*.pdf
+
+# EGL native build artifact
+/calvin/calvin_env/egl_check/EGL_options.o
+
+# ------------------------------------------------------------
+# TACTO generated files
+# ------------------------------------------------------------
+
+/calvin/calvin_env/tacto/data/
+/calvin/calvin_env/tacto/**/.hydra/
+
+/calvin/calvin_env/tacto/experiments/rolling/logs/
+/calvin/calvin_env/tacto/experiments/rolling/outcmaes/
+
+/calvin/calvin_env/tacto/experiments/grasp_stability/logs/
+/calvin/calvin_env/tacto/experiments/grasp_stability/models/
+/calvin/calvin_env/tacto/experiments/grasp_stability/data/

@@ -1,0 +1,14 @@
+name: robonexus-calvin
+
+channels:
+  - defaults
+
+dependencies:
+  - python=3.8
+  - pip
+  - wheel
+  - pip:
+      - setuptools==57.5.0
+      # CALVIN's installer needs this exact post-release.
+      - cmake==3.18.4.post1
+      - numpy==1.23.5
