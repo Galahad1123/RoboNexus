@@ -2,12 +2,16 @@
 
 CALVIN task-D 中 10 类代表性原子任务的 LeRobotDataset 实验工作区。
 
+转换器中的相对 `--output` 路径始终相对于 RoboNexus 仓库根目录解析，
+与执行命令时所在的工作目录无关；转换完成后也会打印最终绝对输出路径。
+
 ## 数据来源
 
 - 原始数据：`calvin/dataset/task_D_D/`
 - 训练和验证划分：沿用官方 `training` / `validation`
 - 标签来源：`lang_annotations/auto_lang_ann.npy`
-- 图像：原始 `rgb_static`（200×200）和 `rgb_gripper`（84×84）
+- 图像：`rgb_static` 保持 200×200；原始 84×84 的 `rgb_gripper` 双线性上采样到
+  200×200，以满足 MultiTask DiT 在模型预处理前堆叠相机张量的要求
 - 状态：原始 15 维 `robot_obs`
 - 动作：原始 7 维 `rel_actions`
 
@@ -80,7 +84,7 @@ conda run -n robonexus-calvin python \
 | Feature | Shape | Dtype | 用途 |
 |---|---:|---|---|
 | `observation.images.static` | 200×200×3 | image/video | 静态相机 |
-| `observation.images.gripper` | 84×84×3 | image/video | 夹爪相机 |
+| `observation.images.gripper` | 200×200×3 | image/video | 84×84 原图双线性上采样 |
 | `observation.state` | 15 | float32 | CALVIN `robot_obs` |
 | `action` | 7 | float32 | CALVIN `rel_actions` |
 | `action_is_valid` | 1 | bool | 片段最后一帧为 false |

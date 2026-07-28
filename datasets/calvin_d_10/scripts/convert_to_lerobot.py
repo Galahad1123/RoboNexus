@@ -12,6 +12,7 @@ import shutil
 from typing import Any, Dict, Iterable, List
 
 import numpy as np
+from PIL import Image
 from tqdm import tqdm
 
 from lerobot.datasets.lerobot_dataset import LeRobotDataset
@@ -59,7 +60,7 @@ def features(storage: str) -> Dict[str, dict]:
         },
         "observation.images.gripper": {
             "dtype": visual_dtype,
-            "shape": [84, 84, 3],
+            "shape": [200, 200, 3],
             "names": ["height", "width", "channels"],
         },
         "observation.state": {
@@ -127,9 +128,15 @@ def iter_episode_frames(source_split: Path, segment: dict) -> Iterable[dict]:
     for source_index in range(segment["start"], segment["end"] + 1):
         path = source_split / f"episode_{source_index:07d}.npz"
         with np.load(path) as source:
+            # MultiTask DiT stacks camera features before model-side resize/crop,
+            # so every camera must have the same HxW. Preserve the 200x200 static
+            # image and upsample CALVIN's native 84x84 gripper image.
+            gripper = np.asarray(
+                Image.fromarray(source["rgb_gripper"]).resize((200, 200), resample=Image.Resampling.BILINEAR)
+            )
             yield {
                 "observation.images.static": source["rgb_static"],
-                "observation.images.gripper": source["rgb_gripper"],
+                "observation.images.gripper": gripper,
                 "observation.state": source["robot_obs"].astype(np.float32),
                 "action": source["rel_actions"].astype(np.float32),
                 "action_is_valid": np.asarray([source_index < segment["end"]], dtype=np.bool_),
@@ -177,10 +184,16 @@ def main() -> None:
     for segment in segments:
         validate_source_frame(source_split, segment)
 
-    output = (
-        args.output
-        or PROJECT_DIR / "data" / f"calvin_d_10_{args.split}_{args.storage}"
-    ).resolve()
+    if args.output is None:
+        output = PROJECT_DIR / "data" / f"calvin_d_10_{args.split}_{args.storage}"
+    elif args.output.is_absolute():
+        output = args.output
+    else:
+        # Treat CLI-relative outputs as workspace-relative, so invoking this
+        # script from multitask_dit_policy/ or the repository root produces
+        # the same dataset location.
+        output = WORKSPACE / args.output
+    output = output.resolve()
     if output.exists():
         if not args.overwrite:
             raise FileExistsError(f"{output} already exists; pass --overwrite to replace it")
@@ -209,6 +222,7 @@ def main() -> None:
         raise
 
     conversion_info = {
+        "output": str(output),
         "manifest": str(args.manifest.resolve()),
         "source_dataset": str(source_root),
         "split": args.split,
