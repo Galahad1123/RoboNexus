@@ -20,6 +20,7 @@ Handles vision encoding, text encoding, robot state, and environment state.
 """
 
 from abc import ABC, abstractmethod
+from pathlib import Path
 
 import einops
 import timm
@@ -29,6 +30,85 @@ import torchvision
 from lerobot.utils.constants import OBS_ENV_STATE, OBS_IMAGES, OBS_STATE
 from torch import Tensor
 from transformers import CLIPTextModel, CLIPTokenizer
+
+
+def _resolve_local_pretrained_file(path: str | None) -> str | None:
+    """Resolve a local file, snapshot, or Hugging Face cache root to a weight file."""
+    if path is None:
+        return None
+
+    model_path = Path(path).expanduser()
+    if model_path.is_file():
+        return str(model_path)
+    if not model_path.exists():
+        raise FileNotFoundError(f"Local pretrained model path not found: {model_path}")
+
+    snapshots_dir = model_path / "snapshots"
+    if snapshots_dir.exists():
+        main_ref = model_path / "refs" / "main"
+        if main_ref.exists():
+            snapshot = snapshots_dir / main_ref.read_text().strip()
+            if snapshot.exists():
+                model_path = snapshot
+        else:
+            snapshots = sorted(path for path in snapshots_dir.iterdir() if path.is_dir())
+            if not snapshots:
+                raise FileNotFoundError(f"No Hugging Face snapshots found under {snapshots_dir}")
+            model_path = snapshots[-1]
+
+    for name in ("model.safetensors", "pytorch_model.bin", "open_clip_pytorch_model.bin"):
+        candidate = model_path / name
+        if candidate.exists():
+            return str(candidate)
+
+    candidates = sorted(
+        list(model_path.glob("*.safetensors"))
+        + list(model_path.glob("*.bin"))
+        + list(model_path.glob("*.pth"))
+        + list(model_path.glob("*.pt"))
+    )
+    if candidates:
+        return str(candidates[0])
+    raise FileNotFoundError(f"No local pretrained weight file found under {model_path}")
+
+
+def _resolve_hf_snapshot(path: str | None) -> str | None:
+    """Resolve a Hugging Face cache root to a local snapshot directory."""
+    if path is None:
+        return None
+
+    model_path = Path(path).expanduser()
+    if model_path.is_file():
+        return str(model_path)
+    if not model_path.exists():
+        raise FileNotFoundError(f"Local Hugging Face model path not found: {model_path}")
+
+    snapshots_dir = model_path / "snapshots"
+    if not snapshots_dir.exists():
+        return str(model_path)
+
+    main_ref = model_path / "refs" / "main"
+    if main_ref.exists():
+        snapshot = snapshots_dir / main_ref.read_text().strip()
+        if snapshot.exists():
+            return str(snapshot)
+
+    snapshots = sorted(path for path in snapshots_dir.iterdir() if path.is_dir())
+    if not snapshots:
+        raise FileNotFoundError(f"No Hugging Face snapshots found under {snapshots_dir}")
+    return str(snapshots[-1])
+
+
+def _create_timm_model(model_name: str, pretrained_path: str | None):
+    weight_file = _resolve_local_pretrained_file(pretrained_path)
+    if weight_file is None:
+        raise ValueError(f"A local pretrained_path is required for vision backbone '{model_name}'")
+    return timm.create_model(
+        model_name,
+        pretrained=True,
+        num_classes=0,
+        pretrained_cfg_overlay={"file": weight_file},
+    )
 
 
 class BaseVisionEncoder(ABC):
@@ -53,12 +133,7 @@ class DinoV3Encoder(nn.Module, BaseVisionEncoder):
         self.config = config
         self.model_name = config.backbone
 
-        # Create the timm model
-        self.model = timm.create_model(
-            self.model_name,
-            pretrained=True,
-            num_classes=0,
-        )
+        self.model = _create_timm_model(self.model_name, config.pretrained_path)
 
         self.num_non_spatial_tokens = 5  # 1 CLS + 4 register
         self.embed_dim = self.model.embed_dim
@@ -88,12 +163,7 @@ class CLIPEncoder(nn.Module, BaseVisionEncoder):
         self.config = config
         self.model_name = config.backbone
 
-        # Create the timm model
-        self.model = timm.create_model(
-            self.model_name,
-            pretrained=True,
-            num_classes=0,  # Remove classification head, we want features
-        )
+        self.model = _create_timm_model(self.model_name, config.pretrained_path)
 
         # CLIP models have 1 CLS token (no register tokens like DinoV3)
         self.num_non_spatial_tokens = 1
@@ -166,15 +236,23 @@ class CLIPTextEncoder(nn.Module):
     and a learnable projection layer maps the CLIP embeddings to the desired dimension.
     """
 
-    def __init__(self, model_name: str = "openai/clip-vit-base-patch16", projection_dim: int = 512):
+    def __init__(
+        self,
+        model_name: str = "openai/clip-vit-base-patch16",
+        projection_dim: int = 512,
+        pretrained_path: str | None = None,
+    ):
         super().__init__()
 
         self.model_name = model_name
         self.projection_dim = projection_dim
+        model_source = _resolve_hf_snapshot(pretrained_path)
+        if model_source is None:
+            raise ValueError(f"A local pretrained_path is required for text encoder '{model_name}'")
 
         # Load CLIP text encoder and tokenizer
-        self.tokenizer = CLIPTokenizer.from_pretrained(model_name)
-        self.text_encoder = CLIPTextModel.from_pretrained(model_name)
+        self.tokenizer = CLIPTokenizer.from_pretrained(model_source, local_files_only=True)
+        self.text_encoder = CLIPTextModel.from_pretrained(model_source, local_files_only=True)
 
         # Freeze all CLIP text encoder parameters
         for param in self.text_encoder.parameters():
@@ -252,7 +330,11 @@ class ObservationEncoder(nn.Module):
 
         text_config = config.observation_encoder.text
         self.text_dim = config.transformer.hidden_dim
-        self.text_encoder = CLIPTextEncoder(model_name=text_config.model, projection_dim=self.text_dim)
+        self.text_encoder = CLIPTextEncoder(
+            model_name=text_config.model,
+            projection_dim=self.text_dim,
+            pretrained_path=text_config.pretrained_path,
+        )
 
         self._setup_vector_output()
 

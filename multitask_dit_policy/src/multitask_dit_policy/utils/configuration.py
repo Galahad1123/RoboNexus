@@ -265,6 +265,9 @@ class DinoV3EncoderConfig(VisionEncoderConfig):
     """
 
     backbone: str = "vit_base_patch16_dinov3.lvd1689m"
+    pretrained_path: str | None = (
+        "/home/yofo/.cache/huggingface/hub/models--timm--vit_base_patch16_dinov3.lvd1689m"
+    )
 
     def __post_init__(self):
         super().__post_init__()
@@ -289,6 +292,9 @@ class CLIPVisionEncoderConfig(VisionEncoderConfig):
     """
 
     backbone: str = "vit_base_patch16_clip_224.openai"
+    pretrained_path: str | None = (
+        "/home/yofo/.cache/huggingface/hub/models--timm--vit_base_patch16_clip_224.openai"
+    )
 
     def __post_init__(self):
         super().__post_init__()
@@ -327,6 +333,9 @@ class CLIPTextEncoderConfig(TextEncoderConfig):
     """
 
     model: str = "openai/clip-vit-base-patch16"
+    pretrained_path: str | None = (
+        "/home/yofo/.cache/huggingface/hub/models--openai--clip-vit-base-patch16"
+    )
 
     def __post_init__(self):
         super().__post_init__()
