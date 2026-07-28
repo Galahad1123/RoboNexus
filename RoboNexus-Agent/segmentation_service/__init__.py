@@ -1,0 +1,1 @@
+"""Prompted image segmentation service."""

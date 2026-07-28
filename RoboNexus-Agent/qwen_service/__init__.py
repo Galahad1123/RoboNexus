@@ -1,0 +1,1 @@
+"""Qwen visual grounding service."""

@@ -1,0 +1,12 @@
+name: robonexus-agent
+
+channels:
+  - defaults
+
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - numpy==2.2.6
+      - pillow==12.2.0
+      - pyarrow==21.0.0
