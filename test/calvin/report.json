@@ -1,0 +1,220 @@
+{
+  "dataset": "/media/yofo/4a70e160-1ae2-4e77-878e-d65f2cf7d70b/vlas/RoboNexus/calvin/dataset/calvin_debug_dataset",
+  "dataset_check": {
+    "split": "validation",
+    "frames": 1675,
+    "first_frame": "episode_0553567.npz",
+    "episode_ranges": 1,
+    "shapes": {
+      "actions": [
+        7
+      ],
+      "depth_gripper": [
+        84,
+        84
+      ],
+      "depth_static": [
+        200,
+        200
+      ],
+      "rel_actions": [
+        7
+      ],
+      "rgb_gripper": [
+        84,
+        84,
+        3
+      ],
+      "rgb_static": [
+        200,
+        200,
+        3
+      ],
+      "robot_obs": [
+        15
+      ],
+      "scene_obs": [
+        24
+      ]
+    }
+  },
+  "checks": [
+    {
+      "mode": "egl",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "argv[0]=--width=200\nargv[1]=--height=200\nLoaded EGL 1.5 after reload.\nGL_VENDOR=NVIDIA Corporation\nGL_RENDERER=NVIDIA GeForce RTX 3090/PCIe/SSE2\nGL_VERSION=3.3.0 NVIDIA 575.64.03\nGL_SHADING_LANGUAGE_VERSION=3.30 NVIDIA via Cg compiler\nVersion = 3.3.0 NVIDIA 575.64.03\nVendor = NVIDIA Corporation\nRenderer = NVIDIA GeForce RTX 3090/PCIe/SSE2\nven = NVIDIA Corporation\nven = NVIDIA Corporation\ndisconnecting id 0 from server\nDestroy EGL OpenGL window.\ndoes not own physics client id\nCALVIN_RESULT={\"camera_checksums\": [17206427, 17206419, 17206417, 17206409, 17206378, 17206281, 17206456, 17206448, 17206436, 17206442, 17206437, 17206432, 17206425, 17206438, 17206443, 17206722, 17206325, 17206325, 17206319, 17206318, 17206329, 17206771, 17206330, 17206330, 17206292, 17206292, 17206292, 17206283, 17206284, 17206286], \"camera_frames_nonzero\": true, \"dataset_action_executed\": [0.011718310467974162, 9.144031575976375e-05, 0.0005063445005181189, 0.001392290125691087, -0.0026066104750577246, -0.0239206821708966, 1.0], \"elapsed_seconds\": 0.749, \"mode\": \"egl\", \"restore_max_abs_error\": {\"robot_obs\": 0.002162078911175147, \"scene_obs\": 0.004121913443586377}, \"restored_frame\": \"episode_0553567.npz\", \"steps\": 30}",
+      "stderr": "Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.\nPlease upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.\nUsers of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.\nSee the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.\npybullet build time: Jan 29 2025 23:19:57\nEGL device choice: -1 of 4.",
+      "details": {
+        "camera_checksums": [
+          17206427,
+          17206419,
+          17206417,
+          17206409,
+          17206378,
+          17206281,
+          17206456,
+          17206448,
+          17206436,
+          17206442,
+          17206437,
+          17206432,
+          17206425,
+          17206438,
+          17206443,
+          17206722,
+          17206325,
+          17206325,
+          17206319,
+          17206318,
+          17206329,
+          17206771,
+          17206330,
+          17206330,
+          17206292,
+          17206292,
+          17206292,
+          17206283,
+          17206284,
+          17206286
+        ],
+        "camera_frames_nonzero": true,
+        "dataset_action_executed": [
+          0.011718310467974162,
+          9.144031575976375e-05,
+          0.0005063445005181189,
+          0.001392290125691087,
+          -0.0026066104750577246,
+          -0.0239206821708966,
+          1.0
+        ],
+        "elapsed_seconds": 0.749,
+        "mode": "egl",
+        "restore_max_abs_error": {
+          "robot_obs": 0.002162078911175147,
+          "scene_obs": 0.004121913443586377
+        },
+        "restored_frame": "episode_0553567.npz",
+        "steps": 30
+      }
+    },
+    {
+      "mode": "direct",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "argv[0]=\ndisconnecting id 0 from server\ndoes not own physics client id\nCALVIN_RESULT={\"camera_checksums\": [15720780, 15720783, 15720501, 15720501, 15720481, 15720353, 15720350, 15720329, 15720329, 15720329, 15720325, 15720325, 15720300, 15720301, 15720301, 15720283, 15720286, 15720286, 15720286, 15720415, 15720415, 15720415, 15720415, 15720417, 15720417, 15720417, 15720417, 15720417, 15720417, 15720417], \"camera_frames_nonzero\": true, \"dataset_action_executed\": [0.011718310467974162, 9.144031575976375e-05, 0.0005063445005181189, 0.001392290125691087, -0.0026066104750577246, -0.0239206821708966, 1.0], \"elapsed_seconds\": 1.615, \"mode\": \"direct\", \"restore_max_abs_error\": {\"robot_obs\": 0.002162078911175147, \"scene_obs\": 0.004121913443586377}, \"restored_frame\": \"episode_0553567.npz\", \"steps\": 30}",
+      "stderr": "Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.\nPlease upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.\nUsers of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.\nSee the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.\npybullet build time: Jan 29 2025 23:19:57",
+      "details": {
+        "camera_checksums": [
+          15720780,
+          15720783,
+          15720501,
+          15720501,
+          15720481,
+          15720353,
+          15720350,
+          15720329,
+          15720329,
+          15720329,
+          15720325,
+          15720325,
+          15720300,
+          15720301,
+          15720301,
+          15720283,
+          15720286,
+          15720286,
+          15720286,
+          15720415,
+          15720415,
+          15720415,
+          15720415,
+          15720417,
+          15720417,
+          15720417,
+          15720417,
+          15720417,
+          15720417,
+          15720417
+        ],
+        "camera_frames_nonzero": true,
+        "dataset_action_executed": [
+          0.011718310467974162,
+          9.144031575976375e-05,
+          0.0005063445005181189,
+          0.001392290125691087,
+          -0.0026066104750577246,
+          -0.0239206821708966,
+          1.0
+        ],
+        "elapsed_seconds": 1.615,
+        "mode": "direct",
+        "restore_max_abs_error": {
+          "robot_obs": 0.002162078911175147,
+          "scene_obs": 0.004121913443586377
+        },
+        "restored_frame": "episode_0553567.npz",
+        "steps": 30
+      }
+    },
+    {
+      "mode": "gui",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "argv[0]=\nstartThreads creating 1 threads.\nstarting thread 0\nstarted thread 0 \nargc=3\nargv[0] = --unused\nargv[1] = \nargv[2] = --start_demo_name=Physics Server\nExampleBrowserThreadFunc started\nX11 functions dynamically loaded using dlopen/dlsym OK!\nX11 functions dynamically loaded using dlopen/dlsym OK!\nCreating context\nCreated GL 3.3 context\nDirect GLX rendering context obtained\nMaking context current\nGL_VENDOR=NVIDIA Corporation\nGL_RENDERER=NVIDIA GeForce RTX 3090/PCIe/SSE2\nGL_VERSION=3.3.0 NVIDIA 575.64.03\nGL_SHADING_LANGUAGE_VERSION=3.30 NVIDIA via Cg compiler\npthread_getconcurrency()=0\nVersion = 3.3.0 NVIDIA 575.64.03\nVendor = NVIDIA Corporation\nRenderer = NVIDIA GeForce RTX 3090/PCIe/SSE2\nb3Printf: Selected demo: Physics Server\nstartThreads creating 1 threads.\nstarting thread 0\nstarted thread 0 \nMotionThreadFunc thread started\nven = NVIDIA Corporation\nven = NVIDIA Corporation\ndisconnecting id 0 from server\nnumActiveThreads = 0\nstopping threads\nThread with taskId 0 exiting\nThread TERMINATED\ndestroy semaphore\nsemaphore destroyed\ndestroy main semaphore\nmain semaphore destroyed\nfinished\nnumActiveThreads = 0\nbtShutDownExampleBrowser stopping threads\nThread with taskId 0 exiting\nThread TERMINATED\ndestroy semaphore\nsemaphore destroyed\ndestroy main semaphore\nmain semaphore destroyed\ndoes not own physics client id\nCALVIN_RESULT={\"camera_checksums\": [15720780, 15720783, 15720501, 15720501, 15720481, 15720353, 15720350, 15720329, 15720329, 15720329, 15720325, 15720325, 15720300, 15720301, 15720301, 15720283, 15720286, 15720286, 15720286, 15720415, 15720415, 15720415, 15720415, 15720417, 15720417, 15720417, 15720417, 15720417, 15720417, 15720417], \"camera_frames_nonzero\": true, \"dataset_action_executed\": [0.011718310467974162, 9.144031575976375e-05, 0.0005063445005181189, 0.001392290125691087, -0.0026066104750577246, -0.0239206821708966, 1.0], \"elapsed_seconds\": 3.812, \"mode\": \"gui\", \"restore_max_abs_error\": {\"robot_obs\": 0.002162078911175147, \"scene_obs\": 0.004121913443586377}, \"restored_frame\": \"episode_0553567.npz\", \"steps\": 30}",
+      "stderr": "Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.\nPlease upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.\nUsers of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.\nSee the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.\npybullet build time: Jan 29 2025 23:19:57",
+      "details": {
+        "camera_checksums": [
+          15720780,
+          15720783,
+          15720501,
+          15720501,
+          15720481,
+          15720353,
+          15720350,
+          15720329,
+          15720329,
+          15720329,
+          15720325,
+          15720325,
+          15720300,
+          15720301,
+          15720301,
+          15720283,
+          15720286,
+          15720286,
+          15720286,
+          15720415,
+          15720415,
+          15720415,
+          15720415,
+          15720417,
+          15720417,
+          15720417,
+          15720417,
+          15720417,
+          15720417,
+          15720417
+        ],
+        "camera_frames_nonzero": true,
+        "dataset_action_executed": [
+          0.011718310467974162,
+          9.144031575976375e-05,
+          0.0005063445005181189,
+          0.001392290125691087,
+          -0.0026066104750577246,
+          -0.0239206821708966,
+          1.0
+        ],
+        "elapsed_seconds": 3.812,
+        "mode": "gui",
+        "restore_max_abs_error": {
+          "robot_obs": 0.002162078911175147,
+          "scene_obs": 0.004121913443586377
+        },
+        "restored_frame": "episode_0553567.npz",
+        "steps": 30
+      }
+    }
+  ]
+}
