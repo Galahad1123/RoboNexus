@@ -1,0 +1,1859 @@
+{
+  "dataset": "/media/yofo/4a70e160-1ae2-4e77-878e-d65f2cf7d70b/vlas/RoboNexus/calvin/dataset/task_D_D",
+  "splits": {
+    "training": {
+      "annotation_file": "/media/yofo/4a70e160-1ae2-4e77-878e-d65f2cf7d70b/vlas/RoboNexus/calvin/dataset/task_D_D/training/lang_annotations/auto_lang_ann.npy",
+      "frequency_hz": 30.0,
+      "segments": 5124,
+      "tasks": 34,
+      "labeled_frames": 308918,
+      "task_stats": {
+        "close_drawer": {
+          "segments": 151,
+          "frames": 9640,
+          "hours": 0.0893,
+          "length_frames": {
+            "min": 36,
+            "median": 65.0,
+            "mean": 63.84,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 9,
+          "top_utterances": [
+            {
+              "text": "push the drawer",
+              "segments": 22
+            },
+            {
+              "text": "grasp the handle of the drawer, then close it",
+              "segments": 20
+            },
+            {
+              "text": "push the handle of the drawer",
+              "segments": 19
+            }
+          ]
+        },
+        "lift_blue_block_drawer": {
+          "segments": 150,
+          "frames": 9463,
+          "hours": 0.0876,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 63.09,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 11,
+          "top_utterances": [
+            {
+              "text": "grasp the blue block in the drawer",
+              "segments": 18
+            },
+            {
+              "text": "lift the blue block lying in the drawer",
+              "segments": 18
+            },
+            {
+              "text": "go towards the blue block in the drawer and lift it",
+              "segments": 18
+            }
+          ]
+        },
+        "lift_blue_block_slider": {
+          "segments": 154,
+          "frames": 9834,
+          "hours": 0.0911,
+          "length_frames": {
+            "min": 35,
+            "median": 65.0,
+            "mean": 63.86,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 17,
+          "top_utterances": [
+            {
+              "text": "grasp the blue block lying in the cabinet",
+              "segments": 15
+            },
+            {
+              "text": "lift the blue block lying in the slider",
+              "segments": 15
+            },
+            {
+              "text": "lift the blue block on the shelf",
+              "segments": 14
+            }
+          ]
+        },
+        "lift_blue_block_table": {
+          "segments": 152,
+          "frames": 9205,
+          "hours": 0.0852,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 60.56,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 10,
+          "top_utterances": [
+            {
+              "text": "pick up the blue block on the table",
+              "segments": 25
+            },
+            {
+              "text": "grasp the blue block and lift it up",
+              "segments": 18
+            },
+            {
+              "text": "pick up the blue block",
+              "segments": 16
+            }
+          ]
+        },
+        "lift_pink_block_drawer": {
+          "segments": 150,
+          "frames": 9391,
+          "hours": 0.087,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 62.61,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 11,
+          "top_utterances": [
+            {
+              "text": "grasp the pink block lying in the drawer",
+              "segments": 20
+            },
+            {
+              "text": "grasp the pink block in the drawer",
+              "segments": 17
+            },
+            {
+              "text": "pick up the pink block from the drawer",
+              "segments": 16
+            }
+          ]
+        },
+        "lift_pink_block_slider": {
+          "segments": 151,
+          "frames": 9657,
+          "hours": 0.0894,
+          "length_frames": {
+            "min": 37,
+            "median": 65.0,
+            "mean": 63.95,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 17,
+          "top_utterances": [
+            {
+              "text": "in the slider grasp the pink block",
+              "segments": 14
+            },
+            {
+              "text": "grasp the pink block lying on the shelf",
+              "segments": 12
+            },
+            {
+              "text": "lift the pink block on the shelf",
+              "segments": 12
+            }
+          ]
+        },
+        "lift_pink_block_table": {
+          "segments": 151,
+          "frames": 8992,
+          "hours": 0.0833,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 59.55,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 10,
+          "top_utterances": [
+            {
+              "text": "lift the pink block",
+              "segments": 22
+            },
+            {
+              "text": "pick up the pink block",
+              "segments": 20
+            },
+            {
+              "text": "grasp the pink block on the table, then lift it up",
+              "segments": 18
+            }
+          ]
+        },
+        "lift_red_block_drawer": {
+          "segments": 151,
+          "frames": 9273,
+          "hours": 0.0859,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 61.41,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 11,
+          "top_utterances": [
+            {
+              "text": "pick up the red block from the drawer",
+              "segments": 19
+            },
+            {
+              "text": "pick up the red block lying in the drawer",
+              "segments": 17
+            },
+            {
+              "text": "lift the red block lying in the drawer",
+              "segments": 17
+            }
+          ]
+        },
+        "lift_red_block_slider": {
+          "segments": 151,
+          "frames": 9713,
+          "hours": 0.0899,
+          "length_frames": {
+            "min": 37,
+            "median": 65.0,
+            "mean": 64.32,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 17,
+          "top_utterances": [
+            {
+              "text": "grasp the red block lying in the cabinet",
+              "segments": 14
+            },
+            {
+              "text": "pick up the red block from the sliding cabinet",
+              "segments": 12
+            },
+            {
+              "text": "in the cabinet pick up the red block",
+              "segments": 11
+            }
+          ]
+        },
+        "lift_red_block_table": {
+          "segments": 150,
+          "frames": 9227,
+          "hours": 0.0854,
+          "length_frames": {
+            "min": 35,
+            "median": 65.0,
+            "mean": 61.51,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 10,
+          "top_utterances": [
+            {
+              "text": "pick up the red block",
+              "segments": 21
+            },
+            {
+              "text": "pick up the red block from the table",
+              "segments": 17
+            },
+            {
+              "text": "lift the red block from the table",
+              "segments": 16
+            }
+          ]
+        },
+        "move_slider_left": {
+          "segments": 151,
+          "frames": 9666,
+          "hours": 0.0895,
+          "length_frames": {
+            "min": 35,
+            "median": 65.0,
+            "mean": 64.01,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 16,
+          "top_utterances": [
+            {
+              "text": "move the door to the left side",
+              "segments": 15
+            },
+            {
+              "text": "push the door to the left",
+              "segments": 14
+            },
+            {
+              "text": "move the door all the way to the left and let go",
+              "segments": 13
+            }
+          ]
+        },
+        "move_slider_right": {
+          "segments": 152,
+          "frames": 9851,
+          "hours": 0.0912,
+          "length_frames": {
+            "min": 36,
+            "median": 65.0,
+            "mean": 64.81,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 16,
+          "top_utterances": [
+            {
+              "text": "push the sliding door to the right",
+              "segments": 16
+            },
+            {
+              "text": "grasp the door handle, then slide the door to the right",
+              "segments": 15
+            },
+            {
+              "text": "grasp the door handle and slide the door to the right",
+              "segments": 13
+            }
+          ]
+        },
+        "open_drawer": {
+          "segments": 152,
+          "frames": 9880,
+          "hours": 0.0915,
+          "length_frames": {
+            "min": 65,
+            "median": 65.0,
+            "mean": 65.0,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 9,
+          "top_utterances": [
+            {
+              "text": "grasp the handle of the drawer and open it",
+              "segments": 23
+            },
+            {
+              "text": "grasp the handle of the drawer, then open it",
+              "segments": 21
+            },
+            {
+              "text": "pull the drawer",
+              "segments": 21
+            }
+          ]
+        },
+        "place_in_drawer": {
+          "segments": 152,
+          "frames": 6768,
+          "hours": 0.0627,
+          "length_frames": {
+            "min": 34,
+            "median": 42.0,
+            "mean": 44.53,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 15,
+          "top_utterances": [
+            {
+              "text": "place the block in the drawer",
+              "segments": 16
+            },
+            {
+              "text": "move to the drawer, then store the object",
+              "segments": 13
+            },
+            {
+              "text": "place the object in the drawer",
+              "segments": 13
+            }
+          ]
+        },
+        "place_in_slider": {
+          "segments": 151,
+          "frames": 6961,
+          "hours": 0.0645,
+          "length_frames": {
+            "min": 34,
+            "median": 41.0,
+            "mean": 46.1,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 20,
+          "top_utterances": [
+            {
+              "text": "place the object in the cabinet",
+              "segments": 12
+            },
+            {
+              "text": "place the grasped object in the sliding cabinet",
+              "segments": 12
+            },
+            {
+              "text": "place the block in the slider",
+              "segments": 11
+            }
+          ]
+        },
+        "push_blue_block_left": {
+          "segments": 150,
+          "frames": 8932,
+          "hours": 0.0827,
+          "length_frames": {
+            "min": 36,
+            "median": 65.0,
+            "mean": 59.55,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 9,
+          "top_utterances": [
+            {
+              "text": "go slide the blue block to the left",
+              "segments": 28
+            },
+            {
+              "text": "push left the blue block",
+              "segments": 19
+            },
+            {
+              "text": "sweep the blue block to the left",
+              "segments": 17
+            }
+          ]
+        },
+        "push_blue_block_right": {
+          "segments": 150,
+          "frames": 8498,
+          "hours": 0.0787,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 56.65,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 9,
+          "top_utterances": [
+            {
+              "text": "push right the blue block",
+              "segments": 24
+            },
+            {
+              "text": "sweep the blue block to the right",
+              "segments": 20
+            },
+            {
+              "text": "slide right the blue block",
+              "segments": 19
+            }
+          ]
+        },
+        "push_into_drawer": {
+          "segments": 150,
+          "frames": 8849,
+          "hours": 0.0819,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 58.99,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 7,
+          "top_utterances": [
+            {
+              "text": "slide the object into the drawer",
+              "segments": 31
+            },
+            {
+              "text": "push the object into the drawer",
+              "segments": 27
+            },
+            {
+              "text": "push the object that it falls into the drawer",
+              "segments": 22
+            }
+          ]
+        },
+        "push_pink_block_left": {
+          "segments": 150,
+          "frames": 8682,
+          "hours": 0.0804,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 57.88,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 9,
+          "top_utterances": [
+            {
+              "text": "slide left the pink block",
+              "segments": 20
+            },
+            {
+              "text": "push the pink block towards the left",
+              "segments": 19
+            },
+            {
+              "text": "push left the pink block",
+              "segments": 18
+            }
+          ]
+        },
+        "push_pink_block_right": {
+          "segments": 150,
+          "frames": 8504,
+          "hours": 0.0787,
+          "length_frames": {
+            "min": 35,
+            "median": 65.0,
+            "mean": 56.69,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 9,
+          "top_utterances": [
+            {
+              "text": "go slide the pink block to the right",
+              "segments": 23
+            },
+            {
+              "text": "slide the pink block towards the right",
+              "segments": 22
+            },
+            {
+              "text": "slide right the pink block",
+              "segments": 21
+            }
+          ]
+        },
+        "push_red_block_left": {
+          "segments": 150,
+          "frames": 9272,
+          "hours": 0.0859,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 61.81,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 9,
+          "top_utterances": [
+            {
+              "text": "slide the red block to the left",
+              "segments": 23
+            },
+            {
+              "text": "go slide the red block to the left",
+              "segments": 20
+            },
+            {
+              "text": "sweep the red block to the left",
+              "segments": 19
+            }
+          ]
+        },
+        "push_red_block_right": {
+          "segments": 150,
+          "frames": 9084,
+          "hours": 0.0841,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 60.56,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 9,
+          "top_utterances": [
+            {
+              "text": "push right the red block",
+              "segments": 21
+            },
+            {
+              "text": "slide right the red block",
+              "segments": 20
+            },
+            {
+              "text": "slide the red block to the right",
+              "segments": 20
+            }
+          ]
+        },
+        "rotate_blue_block_left": {
+          "segments": 150,
+          "frames": 9484,
+          "hours": 0.0878,
+          "length_frames": {
+            "min": 35,
+            "median": 65.0,
+            "mean": 63.23,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 11,
+          "top_utterances": [
+            {
+              "text": "turn the blue block left",
+              "segments": 20
+            },
+            {
+              "text": "grasp the blue block, then rotate it left",
+              "segments": 17
+            },
+            {
+              "text": "grasp the blue block and rotate it left",
+              "segments": 15
+            }
+          ]
+        },
+        "rotate_blue_block_right": {
+          "segments": 150,
+          "frames": 9346,
+          "hours": 0.0865,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 62.31,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 11,
+          "top_utterances": [
+            {
+              "text": "take the blue block and turn it right",
+              "segments": 17
+            },
+            {
+              "text": "grasp the blue block and turn it right",
+              "segments": 16
+            },
+            {
+              "text": "grasp the blue block, then turn it right",
+              "segments": 16
+            }
+          ]
+        },
+        "rotate_pink_block_left": {
+          "segments": 151,
+          "frames": 9815,
+          "hours": 0.0909,
+          "length_frames": {
+            "min": 65,
+            "median": 65.0,
+            "mean": 65.0,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 11,
+          "top_utterances": [
+            {
+              "text": "take the pink block and turn it left",
+              "segments": 19
+            },
+            {
+              "text": "grasp the pink block and turn it left",
+              "segments": 19
+            },
+            {
+              "text": "grasp the pink block, then rotate it left",
+              "segments": 16
+            }
+          ]
+        },
+        "rotate_pink_block_right": {
+          "segments": 150,
+          "frames": 9602,
+          "hours": 0.0889,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 64.01,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 11,
+          "top_utterances": [
+            {
+              "text": "take the pink block and rotate it right",
+              "segments": 20
+            },
+            {
+              "text": "rotate the pink block 90 degrees to the right",
+              "segments": 17
+            },
+            {
+              "text": "grasp the pink block, then rotate it right",
+              "segments": 17
+            }
+          ]
+        },
+        "rotate_red_block_left": {
+          "segments": 150,
+          "frames": 9583,
+          "hours": 0.0887,
+          "length_frames": {
+            "min": 35,
+            "median": 65.0,
+            "mean": 63.89,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 11,
+          "top_utterances": [
+            {
+              "text": "rotate the red block to the left",
+              "segments": 21
+            },
+            {
+              "text": "grasp the red block, then rotate it left",
+              "segments": 20
+            },
+            {
+              "text": "take the red block and rotate it left",
+              "segments": 18
+            }
+          ]
+        },
+        "rotate_red_block_right": {
+          "segments": 150,
+          "frames": 9460,
+          "hours": 0.0876,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 63.07,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 11,
+          "top_utterances": [
+            {
+              "text": "rotate the red block to the right",
+              "segments": 19
+            },
+            {
+              "text": "rotate right the red block",
+              "segments": 16
+            },
+            {
+              "text": "grasp the red block, then turn it right",
+              "segments": 16
+            }
+          ]
+        },
+        "stack_block": {
+          "segments": 151,
+          "frames": 7953,
+          "hours": 0.0736,
+          "length_frames": {
+            "min": 34,
+            "median": 49.0,
+            "mean": 52.67,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 8,
+          "top_utterances": [
+            {
+              "text": "put the grasped block on top of a block",
+              "segments": 29
+            },
+            {
+              "text": "stack blocks on top of each other",
+              "segments": 20
+            },
+            {
+              "text": "stack the block on top of another block",
+              "segments": 19
+            }
+          ]
+        },
+        "turn_off_led": {
+          "segments": 150,
+          "frames": 8501,
+          "hours": 0.0787,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 56.67,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 14,
+          "top_utterances": [
+            {
+              "text": "toggle the button to turn off the led light",
+              "segments": 17
+            },
+            {
+              "text": "push down the button to turn off the green light",
+              "segments": 15
+            },
+            {
+              "text": "turn off the led light",
+              "segments": 15
+            }
+          ]
+        },
+        "turn_off_lightbulb": {
+          "segments": 152,
+          "frames": 9665,
+          "hours": 0.0895,
+          "length_frames": {
+            "min": 35,
+            "median": 65.0,
+            "mean": 63.59,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 10,
+          "top_utterances": [
+            {
+              "text": "toggle the light switch to turn off the yellow light",
+              "segments": 23
+            },
+            {
+              "text": "turn off the light bulb",
+              "segments": 20
+            },
+            {
+              "text": "turn off the yellow lamp",
+              "segments": 17
+            }
+          ]
+        },
+        "turn_on_led": {
+          "segments": 150,
+          "frames": 8809,
+          "hours": 0.0816,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 58.73,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 14,
+          "top_utterances": [
+            {
+              "text": "turn on the led light",
+              "segments": 18
+            },
+            {
+              "text": "push the button to turn on the led light",
+              "segments": 17
+            },
+            {
+              "text": "turn on the led lamp",
+              "segments": 16
+            }
+          ]
+        },
+        "turn_on_lightbulb": {
+          "segments": 150,
+          "frames": 9331,
+          "hours": 0.0864,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 62.21,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 10,
+          "top_utterances": [
+            {
+              "text": "turn on the yellow lamp",
+              "segments": 23
+            },
+            {
+              "text": "move the light switch to turn on the light bulb",
+              "segments": 18
+            },
+            {
+              "text": "move the light switch to turn on the yellow light",
+              "segments": 17
+            }
+          ]
+        },
+        "unstack_block": {
+          "segments": 151,
+          "frames": 8027,
+          "hours": 0.0743,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 53.16,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 7,
+          "top_utterances": [
+            {
+              "text": "take off the block that is on top of the other one",
+              "segments": 31
+            },
+            {
+              "text": "go to the tower of blocks and take off the top one",
+              "segments": 25
+            },
+            {
+              "text": "unstack the blocks",
+              "segments": 24
+            }
+          ]
+        }
+      }
+    },
+    "validation": {
+      "annotation_file": "/media/yofo/4a70e160-1ae2-4e77-878e-d65f2cf7d70b/vlas/RoboNexus/calvin/dataset/task_D_D/validation/lang_annotations/auto_lang_ann.npy",
+      "frequency_hz": 30.0,
+      "segments": 1011,
+      "tasks": 34,
+      "labeled_frames": 60575,
+      "task_stats": {
+        "close_drawer": {
+          "segments": 29,
+          "frames": 1859,
+          "hours": 0.0172,
+          "length_frames": {
+            "min": 39,
+            "median": 65.0,
+            "mean": 64.1,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 9,
+          "top_utterances": [
+            {
+              "text": "grasp the handle of the drawer, then close it",
+              "segments": 6
+            },
+            {
+              "text": "push the handle of the drawer",
+              "segments": 5
+            },
+            {
+              "text": "close the cabinet drawer",
+              "segments": 4
+            }
+          ]
+        },
+        "lift_blue_block_drawer": {
+          "segments": 30,
+          "frames": 1883,
+          "hours": 0.0174,
+          "length_frames": {
+            "min": 38,
+            "median": 65.0,
+            "mean": 62.77,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 11,
+          "top_utterances": [
+            {
+              "text": "grasp the blue block lying in the drawer",
+              "segments": 5
+            },
+            {
+              "text": "grasp the blue block from the drawer",
+              "segments": 4
+            },
+            {
+              "text": "lift the blue block in the drawer",
+              "segments": 3
+            }
+          ]
+        },
+        "lift_blue_block_slider": {
+          "segments": 29,
+          "frames": 1839,
+          "hours": 0.017,
+          "length_frames": {
+            "min": 40,
+            "median": 65.0,
+            "mean": 63.41,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 14,
+          "top_utterances": [
+            {
+              "text": "pick up the blue block from the shelf",
+              "segments": 6
+            },
+            {
+              "text": "in the slider pick up the blue block",
+              "segments": 3
+            },
+            {
+              "text": "lift the blue block lying in the sliding cabinet",
+              "segments": 3
+            }
+          ]
+        },
+        "lift_blue_block_table": {
+          "segments": 30,
+          "frames": 1809,
+          "hours": 0.0167,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 60.3,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 10,
+          "top_utterances": [
+            {
+              "text": "pick up the blue block",
+              "segments": 5
+            },
+            {
+              "text": "pick up the blue block from the table",
+              "segments": 5
+            },
+            {
+              "text": "grasp the blue block and lift it up",
+              "segments": 4
+            }
+          ]
+        },
+        "lift_pink_block_drawer": {
+          "segments": 30,
+          "frames": 1817,
+          "hours": 0.0168,
+          "length_frames": {
+            "min": 35,
+            "median": 65.0,
+            "mean": 60.57,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 11,
+          "top_utterances": [
+            {
+              "text": "grasp the pink block lying in the drawer",
+              "segments": 4
+            },
+            {
+              "text": "go towards the pink block in the drawer and grasp it",
+              "segments": 4
+            },
+            {
+              "text": "lift the pink block lying in the drawer",
+              "segments": 3
+            }
+          ]
+        },
+        "lift_pink_block_slider": {
+          "segments": 31,
+          "frames": 1968,
+          "hours": 0.0182,
+          "length_frames": {
+            "min": 36,
+            "median": 65.0,
+            "mean": 63.48,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 15,
+          "top_utterances": [
+            {
+              "text": "lift the pink block lying in the slider",
+              "segments": 5
+            },
+            {
+              "text": "lift the pink block on the shelf",
+              "segments": 4
+            },
+            {
+              "text": "pick up the pink block in the sliding cabinet",
+              "segments": 3
+            }
+          ]
+        },
+        "lift_pink_block_table": {
+          "segments": 29,
+          "frames": 1771,
+          "hours": 0.0164,
+          "length_frames": {
+            "min": 36,
+            "median": 65.0,
+            "mean": 61.07,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 8,
+          "top_utterances": [
+            {
+              "text": "pick up the pink block",
+              "segments": 5
+            },
+            {
+              "text": "lift the pink block up",
+              "segments": 5
+            },
+            {
+              "text": "grasp the pink block on the table, then lift it up",
+              "segments": 4
+            }
+          ]
+        },
+        "lift_red_block_drawer": {
+          "segments": 31,
+          "frames": 2015,
+          "hours": 0.0187,
+          "length_frames": {
+            "min": 65,
+            "median": 65.0,
+            "mean": 65.0,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 10,
+          "top_utterances": [
+            {
+              "text": "lift the red block lying in the drawer",
+              "segments": 5
+            },
+            {
+              "text": "grasp the red block from the drawer",
+              "segments": 5
+            },
+            {
+              "text": "go towards the red block in the drawer and pick it up",
+              "segments": 5
+            }
+          ]
+        },
+        "lift_red_block_slider": {
+          "segments": 29,
+          "frames": 1885,
+          "hours": 0.0175,
+          "length_frames": {
+            "min": 65,
+            "median": 65.0,
+            "mean": 65.0,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 12,
+          "top_utterances": [
+            {
+              "text": "grasp the red block lying in the slider",
+              "segments": 7
+            },
+            {
+              "text": "grasp the red block lying in the cabinet",
+              "segments": 5
+            },
+            {
+              "text": "pick up the red block in the sliding cabinet",
+              "segments": 4
+            }
+          ]
+        },
+        "lift_red_block_table": {
+          "segments": 29,
+          "frames": 1694,
+          "hours": 0.0157,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 58.41,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 10,
+          "top_utterances": [
+            {
+              "text": "grasp the red block on the table, then lift it up",
+              "segments": 5
+            },
+            {
+              "text": "grasp the red block, then lift it up",
+              "segments": 5
+            },
+            {
+              "text": "lift the red block from the table",
+              "segments": 4
+            }
+          ]
+        },
+        "move_slider_left": {
+          "segments": 32,
+          "frames": 2013,
+          "hours": 0.0186,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 62.91,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 14,
+          "top_utterances": [
+            {
+              "text": "move the sliding door to the left",
+              "segments": 5
+            },
+            {
+              "text": "grasp the door handle, then move the door to the left",
+              "segments": 4
+            },
+            {
+              "text": "grasp the door handle, then slide the door to the left",
+              "segments": 4
+            }
+          ]
+        },
+        "move_slider_right": {
+          "segments": 29,
+          "frames": 1867,
+          "hours": 0.0173,
+          "length_frames": {
+            "min": 47,
+            "median": 65.0,
+            "mean": 64.38,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 14,
+          "top_utterances": [
+            {
+              "text": "grasp the door handle and slide the door to the right",
+              "segments": 4
+            },
+            {
+              "text": "grasp the door handle, then slide the door to the right",
+              "segments": 4
+            },
+            {
+              "text": "move the door to the right side",
+              "segments": 3
+            }
+          ]
+        },
+        "open_drawer": {
+          "segments": 30,
+          "frames": 1950,
+          "hours": 0.0181,
+          "length_frames": {
+            "min": 65,
+            "median": 65.0,
+            "mean": 65.0,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 9,
+          "top_utterances": [
+            {
+              "text": "grasp the handle of the drawer and open it",
+              "segments": 7
+            },
+            {
+              "text": "grasp the drawer handle and open it",
+              "segments": 5
+            },
+            {
+              "text": "open the cabinet drawer",
+              "segments": 5
+            }
+          ]
+        },
+        "place_in_drawer": {
+          "segments": 29,
+          "frames": 1209,
+          "hours": 0.0112,
+          "length_frames": {
+            "min": 34,
+            "median": 39.0,
+            "mean": 41.69,
+            "p95": 58.599999999999966,
+            "max": 65
+          },
+          "unique_utterances": 14,
+          "top_utterances": [
+            {
+              "text": "go towards the drawer and place the object",
+              "segments": 4
+            },
+            {
+              "text": "move to the drawer, then place the object",
+              "segments": 3
+            },
+            {
+              "text": "put the block in the drawer",
+              "segments": 3
+            }
+          ]
+        },
+        "place_in_slider": {
+          "segments": 30,
+          "frames": 1384,
+          "hours": 0.0128,
+          "length_frames": {
+            "min": 34,
+            "median": 44.0,
+            "mean": 46.13,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 14,
+          "top_utterances": [
+            {
+              "text": "place the block in the sliding cabinet",
+              "segments": 5
+            },
+            {
+              "text": "place the object in the sliding cabinet",
+              "segments": 3
+            },
+            {
+              "text": "place the grasped object in the cabinet",
+              "segments": 3
+            }
+          ]
+        },
+        "push_blue_block_left": {
+          "segments": 29,
+          "frames": 1693,
+          "hours": 0.0157,
+          "length_frames": {
+            "min": 39,
+            "median": 65.0,
+            "mean": 58.38,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 9,
+          "top_utterances": [
+            {
+              "text": "go push the blue block to the left",
+              "segments": 6
+            },
+            {
+              "text": "slide the blue block towards the left",
+              "segments": 5
+            },
+            {
+              "text": "push the blue block towards the left",
+              "segments": 4
+            }
+          ]
+        },
+        "push_blue_block_right": {
+          "segments": 29,
+          "frames": 1584,
+          "hours": 0.0147,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 54.62,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 9,
+          "top_utterances": [
+            {
+              "text": "slide right the blue block",
+              "segments": 6
+            },
+            {
+              "text": "go push the blue block to the right",
+              "segments": 4
+            },
+            {
+              "text": "slide the blue block to the right",
+              "segments": 4
+            }
+          ]
+        },
+        "push_into_drawer": {
+          "segments": 30,
+          "frames": 1808,
+          "hours": 0.0167,
+          "length_frames": {
+            "min": 35,
+            "median": 65.0,
+            "mean": 60.27,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 7,
+          "top_utterances": [
+            {
+              "text": "sweep the object into the drawer",
+              "segments": 9
+            },
+            {
+              "text": "push the block into the drawer",
+              "segments": 7
+            },
+            {
+              "text": "slide the block into the drawer",
+              "segments": 4
+            }
+          ]
+        },
+        "push_pink_block_left": {
+          "segments": 29,
+          "frames": 1736,
+          "hours": 0.0161,
+          "length_frames": {
+            "min": 39,
+            "median": 65.0,
+            "mean": 59.86,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 9,
+          "top_utterances": [
+            {
+              "text": "slide the pink block towards the left",
+              "segments": 7
+            },
+            {
+              "text": "push left the pink block",
+              "segments": 5
+            },
+            {
+              "text": "push the pink block to the left",
+              "segments": 5
+            }
+          ]
+        },
+        "push_pink_block_right": {
+          "segments": 29,
+          "frames": 1549,
+          "hours": 0.0143,
+          "length_frames": {
+            "min": 35,
+            "median": 49.0,
+            "mean": 53.41,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 9,
+          "top_utterances": [
+            {
+              "text": "slide the pink block towards the right",
+              "segments": 6
+            },
+            {
+              "text": "push the pink block to the right",
+              "segments": 5
+            },
+            {
+              "text": "sweep the pink block to the right",
+              "segments": 4
+            }
+          ]
+        },
+        "push_red_block_left": {
+          "segments": 30,
+          "frames": 1815,
+          "hours": 0.0168,
+          "length_frames": {
+            "min": 40,
+            "median": 65.0,
+            "mean": 60.5,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 9,
+          "top_utterances": [
+            {
+              "text": "slide the red block towards the left",
+              "segments": 5
+            },
+            {
+              "text": "push the red block to the left",
+              "segments": 5
+            },
+            {
+              "text": "go push the red block to the left",
+              "segments": 4
+            }
+          ]
+        },
+        "push_red_block_right": {
+          "segments": 29,
+          "frames": 1842,
+          "hours": 0.0171,
+          "length_frames": {
+            "min": 43,
+            "median": 65.0,
+            "mean": 63.52,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 9,
+          "top_utterances": [
+            {
+              "text": "push the red block to the right",
+              "segments": 6
+            },
+            {
+              "text": "push the red block towards the right",
+              "segments": 5
+            },
+            {
+              "text": "slide the red block towards the right",
+              "segments": 4
+            }
+          ]
+        },
+        "rotate_blue_block_left": {
+          "segments": 29,
+          "frames": 1859,
+          "hours": 0.0172,
+          "length_frames": {
+            "min": 39,
+            "median": 65.0,
+            "mean": 64.1,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 10,
+          "top_utterances": [
+            {
+              "text": "take the blue block and rotate it left",
+              "segments": 8
+            },
+            {
+              "text": "rotate the blue block 90 degrees to the left",
+              "segments": 4
+            },
+            {
+              "text": "rotate the blue block to the left",
+              "segments": 3
+            }
+          ]
+        },
+        "rotate_blue_block_right": {
+          "segments": 29,
+          "frames": 1830,
+          "hours": 0.0169,
+          "length_frames": {
+            "min": 37,
+            "median": 65.0,
+            "mean": 63.1,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 11,
+          "top_utterances": [
+            {
+              "text": "turn the blue block right",
+              "segments": 6
+            },
+            {
+              "text": "grasp the blue block, then rotate it right",
+              "segments": 5
+            },
+            {
+              "text": "rotate the blue block to the right",
+              "segments": 4
+            }
+          ]
+        },
+        "rotate_pink_block_left": {
+          "segments": 29,
+          "frames": 1885,
+          "hours": 0.0175,
+          "length_frames": {
+            "min": 65,
+            "median": 65.0,
+            "mean": 65.0,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 11,
+          "top_utterances": [
+            {
+              "text": "grasp the pink block and turn it left",
+              "segments": 6
+            },
+            {
+              "text": "grasp the pink block and rotate it left",
+              "segments": 5
+            },
+            {
+              "text": "rotate the pink block towards the left",
+              "segments": 5
+            }
+          ]
+        },
+        "rotate_pink_block_right": {
+          "segments": 30,
+          "frames": 1848,
+          "hours": 0.0171,
+          "length_frames": {
+            "min": 35,
+            "median": 65.0,
+            "mean": 61.6,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 10,
+          "top_utterances": [
+            {
+              "text": "rotate the pink block towards the right",
+              "segments": 7
+            },
+            {
+              "text": "grasp the pink block, then turn it right",
+              "segments": 5
+            },
+            {
+              "text": "grasp the pink block, then rotate it right",
+              "segments": 3
+            }
+          ]
+        },
+        "rotate_red_block_left": {
+          "segments": 31,
+          "frames": 2015,
+          "hours": 0.0187,
+          "length_frames": {
+            "min": 65,
+            "median": 65.0,
+            "mean": 65.0,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 10,
+          "top_utterances": [
+            {
+              "text": "grasp the red block, then turn it left",
+              "segments": 6
+            },
+            {
+              "text": "grasp the red block, then rotate it left",
+              "segments": 5
+            },
+            {
+              "text": "rotate the red block towards the left",
+              "segments": 4
+            }
+          ]
+        },
+        "rotate_red_block_right": {
+          "segments": 30,
+          "frames": 1919,
+          "hours": 0.0178,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 63.97,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 10,
+          "top_utterances": [
+            {
+              "text": "rotate the red block towards the right",
+              "segments": 5
+            },
+            {
+              "text": "take the red block and turn it right",
+              "segments": 5
+            },
+            {
+              "text": "rotate the red block to the right",
+              "segments": 4
+            }
+          ]
+        },
+        "stack_block": {
+          "segments": 29,
+          "frames": 1517,
+          "hours": 0.014,
+          "length_frames": {
+            "min": 35,
+            "median": 49.0,
+            "mean": 52.31,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 8,
+          "top_utterances": [
+            {
+              "text": "stack blocks on top of each other",
+              "segments": 6
+            },
+            {
+              "text": "put the grasped block on top of a block",
+              "segments": 5
+            },
+            {
+              "text": "put the block on top of another block",
+              "segments": 5
+            }
+          ]
+        },
+        "turn_off_led": {
+          "segments": 32,
+          "frames": 1698,
+          "hours": 0.0157,
+          "length_frames": {
+            "min": 34,
+            "median": 57.0,
+            "mean": 53.06,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 12,
+          "top_utterances": [
+            {
+              "text": "push the button to turn off the green light",
+              "segments": 6
+            },
+            {
+              "text": "toggle the button to turn off the green light",
+              "segments": 4
+            },
+            {
+              "text": "toggle the button to turn off the led light",
+              "segments": 4
+            }
+          ]
+        },
+        "turn_off_lightbulb": {
+          "segments": 29,
+          "frames": 1813,
+          "hours": 0.0168,
+          "length_frames": {
+            "min": 37,
+            "median": 65.0,
+            "mean": 62.52,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 10,
+          "top_utterances": [
+            {
+              "text": "toggle the light switch to turn off the yellow light",
+              "segments": 5
+            },
+            {
+              "text": "slide down the switch",
+              "segments": 4
+            },
+            {
+              "text": "turn off the yellow light",
+              "segments": 3
+            }
+          ]
+        },
+        "turn_on_led": {
+          "segments": 29,
+          "frames": 1636,
+          "hours": 0.0151,
+          "length_frames": {
+            "min": 35,
+            "median": 65.0,
+            "mean": 56.41,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 13,
+          "top_utterances": [
+            {
+              "text": "turn on the green light",
+              "segments": 4
+            },
+            {
+              "text": "turn on the led light",
+              "segments": 4
+            },
+            {
+              "text": "push down the button to turn on the led",
+              "segments": 4
+            }
+          ]
+        },
+        "turn_on_lightbulb": {
+          "segments": 33,
+          "frames": 2066,
+          "hours": 0.0191,
+          "length_frames": {
+            "min": 34,
+            "median": 65.0,
+            "mean": 62.61,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 10,
+          "top_utterances": [
+            {
+              "text": "move the light switch to turn on the yellow light",
+              "segments": 7
+            },
+            {
+              "text": "move the light switch to turn on the light bulb",
+              "segments": 5
+            },
+            {
+              "text": "turn on the yellow lamp",
+              "segments": 5
+            }
+          ]
+        },
+        "unstack_block": {
+          "segments": 29,
+          "frames": 1499,
+          "hours": 0.0139,
+          "length_frames": {
+            "min": 34,
+            "median": 47.0,
+            "mean": 51.69,
+            "p95": 65.0,
+            "max": 65
+          },
+          "unique_utterances": 7,
+          "top_utterances": [
+            {
+              "text": "remove a block from the stack",
+              "segments": 5
+            },
+            {
+              "text": "go to the tower of blocks and take off the top one",
+              "segments": 5
+            },
+            {
+              "text": "collapse the stacked blocks",
+              "segments": 5
+            }
+          ]
+        }
+      }
+    }
+  }
+}

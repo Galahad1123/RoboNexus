@@ -52,3 +52,31 @@ GUI 窗口会在测试运行期间出现，完成后自动关闭。当前终端�
 - `--steps N`：连续 step 次数；
 - `--timeout SECONDS`：每种模拟器模式的子进程超时；
 - `--report PATH`：保存 JSON 报告。
+
+## 浏览 task-D 的任务示范
+
+交互式依次播放全部 34 个任务，每类自动选择一个长度接近该类中位数的官方示范：
+
+```bash
+conda run -n robonexus-calvin python test/calvin/visualize_tasks.py
+```
+
+窗口快捷键：空格暂停，`R` 重播，`N` 下一个，`P` 上一个，`Q`/Esc 退出。
+画面左侧是 static 相机，右侧是 gripper 相机。
+
+只看指定任务：
+
+```bash
+conda run -n robonexus-calvin python test/calvin/visualize_tasks.py \
+  --task lift_red_block_table --task place_in_drawer
+```
+
+无 GUI 时也可以批量导出全部任务的 MP4：
+
+```bash
+conda run -n robonexus-calvin python test/calvin/visualize_tasks.py \
+  --export-dir test/calvin/task_videos
+```
+
+可用 `--selection first|median|random` 控制代表片段的选择方式，`--fps` 调整播放
+速度，`--scale` 调整显示/导出分辨率。
