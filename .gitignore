@@ -35,6 +35,8 @@ weights/
 
 # Datasets
 datasets/
+!/datasets/
+!/datasets/calvin_d_10/
 dataset/
 data/
 

@@ -16,7 +16,7 @@ calvin/dataset/calvin_debug_dataset/
 
 ```bash
 conda run -n robonexus-calvin python test/calvin/acceptance.py \
-  --report test/calvin/report.json
+  --report /tmp/calvin_acceptance_report.json
 ```
 
 这会检查数据结构，并在无头 EGL 模式完成：
@@ -75,7 +75,7 @@ conda run -n robonexus-calvin python test/calvin/visualize_tasks.py \
 
 ```bash
 conda run -n robonexus-calvin python test/calvin/visualize_tasks.py \
-  --export-dir test/calvin/task_videos
+  --export-dir /tmp/calvin_task_videos
 ```
 
 可用 `--selection first|median|random` 控制代表片段的选择方式，`--fps` 调整播放
