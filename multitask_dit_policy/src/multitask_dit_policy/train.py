@@ -54,6 +54,7 @@ import draccus  # noqa: E402
 class TrainConfig:
     # Dataset parameters
     dataset_path: str
+    val_dataset_path: str | None = None
     video_backend: str = "torchcodec"
 
     # Training parameters
@@ -108,6 +109,41 @@ def _split_episode_indices(num_episodes: int, val_ratio: float, seed: int) -> tu
     return train_indices, val_indices
 
 
+def _validate_validation_config(val_dataset_path: str | None, val_ratio: float) -> None:
+    """Reject ambiguous internal/external validation configurations."""
+    if not 0 <= val_ratio < 1:
+        raise ValueError(f"val_ratio must be in [0, 1), got {val_ratio}")
+    if val_dataset_path is not None and val_ratio != 0:
+        raise ValueError("val_ratio must be 0 when val_dataset_path is provided")
+
+
+def _validate_dataset_compatibility(
+    train_metadata: LeRobotDatasetMetadata,
+    val_metadata: LeRobotDatasetMetadata,
+    feature_keys: set[str],
+) -> None:
+    """Ensure an external validation dataset can be sampled like the training dataset."""
+    if train_metadata.fps != val_metadata.fps:
+        raise ValueError(
+            f"Training and validation dataset FPS differ: {train_metadata.fps} != {val_metadata.fps}"
+        )
+
+    errors = []
+    for key in sorted(feature_keys):
+        train_feature = train_metadata.features.get(key)
+        val_feature = val_metadata.features.get(key)
+        if train_feature is None or val_feature is None:
+            errors.append(f"{key}: missing from {'training' if train_feature is None else 'validation'} dataset")
+            continue
+        for field in ("dtype", "shape"):
+            if train_feature[field] != val_feature[field]:
+                errors.append(
+                    f"{key}.{field}: training={train_feature[field]!r}, validation={val_feature[field]!r}"
+                )
+    if errors:
+        raise ValueError("Training and validation dataset features are incompatible:\n" + "\n".join(errors))
+
+
 @torch.no_grad()
 def validate(
     policy: MultiTaskDiTPolicy,
@@ -149,6 +185,8 @@ def validate(
 
 
 def train(cfg: TrainConfig):
+    _validate_validation_config(cfg.val_dataset_path, cfg.val_ratio)
+
     random.seed(cfg.seed)
     np.random.seed(cfg.seed)
     torch.manual_seed(cfg.seed)
@@ -222,9 +260,34 @@ def train(cfg: TrainConfig):
     )
 
     num_episodes = len(dataset.meta.episodes)
-    train_episode_indices, val_episode_indices = _split_episode_indices(num_episodes, cfg.val_ratio, cfg.seed)
+    external_val_dataset = None
+    if cfg.val_dataset_path is not None:
+        val_dataset_path = Path(cfg.val_dataset_path).expanduser()
+        if not val_dataset_path.exists():
+            raise FileNotFoundError(
+                f"Validation dataset path not found: {cfg.val_dataset_path}\n"
+                "Please ensure the validation LeRobotDataset directory exists."
+            )
+        val_repo_id = val_dataset_path.name
+        val_metadata = LeRobotDatasetMetadata(repo_id=val_repo_id, root=val_dataset_path)
+        feature_keys = set(policy_config.input_features) | set(policy_config.output_features)
+        _validate_dataset_compatibility(ds_metadata, val_metadata, feature_keys)
+        external_val_dataset = LeRobotDataset(
+            repo_id=val_repo_id,
+            root=val_dataset_path,
+            delta_timestamps=delta_timestamps,
+            video_backend=cfg.video_backend,
+        )
+        train_episode_indices = list(range(num_episodes))
+        val_episode_indices = list(range(len(external_val_dataset.meta.episodes)))
+        logging.info(
+            f"Using external validation dataset: {len(train_episode_indices)} train episodes, "
+            f"{len(val_episode_indices)} validation episodes"
+        )
+    else:
+        train_episode_indices, val_episode_indices = _split_episode_indices(num_episodes, cfg.val_ratio, cfg.seed)
 
-    if val_episode_indices:
+    if val_episode_indices and external_val_dataset is None:
         logging.info(
             f"Using episode split: {len(train_episode_indices)} train episodes, "
             f"{len(val_episode_indices)} validation episodes"
@@ -253,14 +316,15 @@ def train(cfg: TrainConfig):
 
     val_dataloader = None
     if val_episode_indices and cfg.val_freq > 0 and cfg.val_batches > 0:
+        val_dataset = external_val_dataset if external_val_dataset is not None else dataset
         val_sampler = EpisodeAwareSampler(
-            _to_episode_subset(dataset.meta.episodes["dataset_from_index"], val_episode_indices),
-            _to_episode_subset(dataset.meta.episodes["dataset_to_index"], val_episode_indices),
+            _to_episode_subset(val_dataset.meta.episodes["dataset_from_index"], val_episode_indices),
+            _to_episode_subset(val_dataset.meta.episodes["dataset_to_index"], val_episode_indices),
             drop_n_last_frames=policy_config.drop_n_last_frames,
             shuffle=False,
         )
         val_dataloader = DataLoader(
-            dataset,
+            val_dataset,
             batch_size=cfg.batch_size,
             sampler=val_sampler,
             shuffle=False,

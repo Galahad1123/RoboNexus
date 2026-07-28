@@ -146,6 +146,15 @@ def create_modal_app_and_function(cfg: ModalTrainConfig):
             )
         train_cfg.dataset_path = str(data_volume_dataset_path)
 
+        if train_cfg.val_dataset_path is not None:
+            data_volume_val_dataset_path = Path("/data_volume") / train_cfg.val_dataset_path.lstrip("/")
+            if not data_volume_val_dataset_path.exists():
+                raise FileNotFoundError(
+                    f"Validation dataset directory not found: {data_volume_val_dataset_path}\n"
+                    f"Please upload it to the Modal volume before training."
+                )
+            train_cfg.val_dataset_path = str(data_volume_val_dataset_path)
+
         # Prepend /data_volume to output directory
         data_volume_output = Path("/data_volume") / train_cfg.output_dir.lstrip("/")
         if data_volume_output.exists():

@@ -90,6 +90,22 @@ To see the full list of configuration options, run:
 uv run -m multitask_dit_policy.train --help
 ```
 
+To validate against a separate LeRobotDataset instead of splitting training episodes, set
+`--val_dataset_path` and disable the internal split:
+
+```bash
+uv run -m multitask_dit_policy.train \
+    --dataset_path=/path/to/training_dataset \
+    --val_dataset_path=/path/to/validation_dataset \
+    --val_ratio=0 \
+    --val_freq=1000 \
+    --val_batches=10
+```
+
+The external dataset must have the same FPS and policy input/output feature schema as the
+training dataset. Validation batches are normalized with training-dataset statistics.
+`--val_dataset_path` and a nonzero `--val_ratio` are intentionally mutually exclusive.
+
 ### Resuming Training
 
 To resume training from a checkpoint, use the `--checkpoint_path` parameter to specify the path to a previously saved checkpoint directory:
