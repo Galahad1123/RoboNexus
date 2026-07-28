@@ -20,9 +20,14 @@ CALVIN task-D 中 10 类代表性原子任务的 LeRobotDataset 实验工作区�
 calvin_d_10/
 ├── configs/
 │   └── tasks.json
+├── manifests/
+│   └── segments.json
 ├── reports/
 │   ├── initial_state_audit.json
 │   └── task_D_D_task_stats.json
+├── scripts/
+│   ├── build_manifest.py
+│   └── convert_to_lerobot.py
 └── README.md
 ```
 
@@ -31,13 +36,81 @@ calvin_d_10/
 
 ## 已确定原则
 
-1. 一个 CALVIN 语言片段转换成一个候选 LeRobot episode。
+1. 一个筛选后的 CALVIN 语言片段转换成一个 LeRobot episode。
 2. 使用规范化指令，同时保留原始 `calvin_task` 和自然语言标注供追踪。
 3. 首帧状态用于闭环评测的 `reset(robot_obs, scene_obs)`。
 4. 源区间为闭区间 `[start, end]`；最后一帧保留 observation，但
    `action_is_valid=false`，避免跨片段动作损失。
 5. train/validation 沿用官方 split，禁止按帧随机拆分。
 6. 正式闭环评测使用 EGL；Direct/TinyRenderer 与录制图像存在明显视觉域差异。
+
+## 片段过滤规则
+
+所有需要重新接近物体或机构的任务都要求首帧未持有物体，避免语言窗口包含上一任务
+的持物尾段。两个放置类任务要求首帧恰好持有一个物体。
+
+其他前置条件：
+
+- `lift_blue_block_drawer`、`close_drawer`、`place_in_drawer`：抽屉已打开；
+- `open_drawer`：抽屉已关闭；
+- `move_slider_left`：slider 位于右侧；
+- `turn_on_led`：LED 关闭。
+
+过滤不是根据数组近似猜测接触关系；`build_manifest.py` 会在 CALVIN/Bullet 中恢复每个
+候选首帧，并从机器人—物体 contact 信息判断是否持物。
+
+当前 manifest 统计：
+
+| Split | 候选 episodes | 保留 episodes | 保留帧数 |
+|---|---:|---:|---:|
+| training | 1,507 | 1,324 | 78,910 |
+| validation | 297 | 257 | 15,027 |
+
+重新生成 manifest：
+
+```bash
+conda run -n robonexus-calvin python \
+  datasets/calvin_d_10/scripts/build_manifest.py
+```
+
+## LeRobotDataset feature schema
+
+两种存储模式只有图像 feature 的 dtype 不同，episode 集合、顺序和其他字段一致。
+
+| Feature | Shape | Dtype | 用途 |
+|---|---:|---|---|
+| `observation.images.static` | 200×200×3 | image/video | 静态相机 |
+| `observation.images.gripper` | 84×84×3 | image/video | 夹爪相机 |
+| `observation.state` | 15 | float32 | CALVIN `robot_obs` |
+| `action` | 7 | float32 | CALVIN `rel_actions` |
+| `action_is_valid` | 1 | bool | 片段最后一帧为 false |
+| `calvin.scene_obs` | 24 | float32 | 闭环初始状态恢复 |
+| `calvin.task_id` | 1 | int64 | 固定的 10 类 ID |
+| `calvin.source_frame_index` | 1 | int64 | 回溯原始 NPZ |
+| `task` | string | LeRobot 内建 | 规范化指令 |
+
+转换器要求 LeRobot 0.6，使用 `multitask_dit_policy/.venv`。
+
+正式训练用无视频/逐帧图像格式：
+
+```bash
+multitask_dit_policy/.venv/bin/python \
+  datasets/calvin_d_10/scripts/convert_to_lerobot.py \
+  --split training --storage image
+```
+
+用于可视化检查的 MP4 格式：
+
+```bash
+multitask_dit_policy/.venv/bin/python \
+  datasets/calvin_d_10/scripts/convert_to_lerobot.py \
+  --split validation --storage video
+```
+
+默认输出到 `datasets/calvin_d_10/data/`，该目录不会进入 Git。可通过 `--output`
+指定其他位置，使用 `--max-episodes`、`--max-episodes-per-task` 和可重复的
+`--task TASK` 做小规模转换。
+已有输出不会被静默覆盖，必须显式传入 `--overwrite`。
 
 ## 初始状态审计结论
 
@@ -53,7 +126,21 @@ calvin_d_10/
 
 ## 下一步
 
-1. 固化 LeRobotDataset feature schema。
-2. 实现候选片段筛选和转换。
-3. 校验 episode 数量、帧数、动作边界和视频编码。
-4. 实现基于相同初始状态与 CALVIN task oracle 的闭环评测。
+1. 生成完整 image 训练集与 video 验证集。
+2. 实现基于相同初始状态与 CALVIN task oracle 的闭环评测。
+3. 建立 multitask DiT 首版训练配置。
+
+## multitask DiT 短片段配置
+
+保留片段长度为 34–65 帧，中位数 65。策略默认 `horizon=100` 会使短 episode
+无法采样。首版建议：
+
+```text
+n_obs_steps = 2
+horizon = 32
+n_action_steps = 16
+do_mask_loss_for_padding = true
+```
+
+`action_is_valid` 用于数据审计；DiT 时序 padding 的实际 loss mask 由 LeRobot
+产生的 `action_is_pad` 和 `do_mask_loss_for_padding=true` 负责。

@@ -7,66 +7,72 @@
       "task_id": 0,
       "calvin_task": "lift_red_block_table",
       "instruction": "lift the red block from the table",
-      "initial_state_filter": "none"
+      "initial_state_filters": ["no_held_object"]
     },
     {
       "task_id": 1,
       "calvin_task": "lift_blue_block_drawer",
       "instruction": "lift the blue block from the drawer",
-      "initial_state_filter": "no_held_object"
+      "initial_state_filters": ["no_held_object", "drawer_open"]
     },
     {
       "task_id": 2,
       "calvin_task": "push_red_block_left",
       "instruction": "push the red block to the left",
-      "initial_state_filter": "none"
+      "initial_state_filters": ["no_held_object"]
     },
     {
       "task_id": 3,
       "calvin_task": "rotate_pink_block_right",
       "instruction": "rotate the pink block clockwise",
-      "initial_state_filter": "none"
+      "initial_state_filters": ["no_held_object"]
     },
     {
       "task_id": 4,
       "calvin_task": "open_drawer",
       "instruction": "open the drawer",
-      "initial_state_filter": "none"
+      "initial_state_filters": ["no_held_object", "drawer_closed"]
     },
     {
       "task_id": 5,
       "calvin_task": "close_drawer",
       "instruction": "close the drawer",
-      "initial_state_filter": "none"
+      "initial_state_filters": ["no_held_object", "drawer_open"]
     },
     {
       "task_id": 6,
       "calvin_task": "move_slider_left",
       "instruction": "move the sliding door to the left",
-      "initial_state_filter": "none"
+      "initial_state_filters": ["no_held_object", "slider_right"]
     },
     {
       "task_id": 7,
       "calvin_task": "turn_on_led",
       "instruction": "press the button to turn on the led",
-      "initial_state_filter": "none"
+      "initial_state_filters": ["no_held_object", "led_off"]
     },
     {
       "task_id": 8,
       "calvin_task": "place_in_drawer",
       "instruction": "place the held block in the drawer",
-      "initial_state_filter": "exactly_one_held_object"
+      "initial_state_filters": ["exactly_one_held_object", "drawer_open"]
     },
     {
       "task_id": 9,
       "calvin_task": "stack_block",
       "instruction": "place the held block on top of another block",
-      "initial_state_filter": "exactly_one_held_object"
+      "initial_state_filters": ["exactly_one_held_object"]
     }
   ],
   "episode_boundary": {
     "source_interval": "inclusive",
     "keep_last_observation": true,
     "last_action_is_valid": false
+  },
+  "filter_thresholds": {
+    "drawer_closed_max": 0.05,
+    "drawer_open_min": 0.1,
+    "slider_right_max": 0.1,
+    "led_off_max": 0.5
   }
 }
