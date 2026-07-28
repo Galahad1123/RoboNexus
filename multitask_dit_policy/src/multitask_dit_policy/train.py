@@ -34,7 +34,6 @@ import torch
 import wandb
 from lerobot.datasets.lerobot_dataset import LeRobotDataset, LeRobotDatasetMetadata
 from lerobot.datasets.sampler import EpisodeAwareSampler
-from lerobot.datasets.utils import cycle
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
@@ -55,6 +54,7 @@ import draccus  # noqa: E402
 class TrainConfig:
     # Dataset parameters
     dataset_path: str
+    video_backend: str = "torchcodec"
 
     # Training parameters
     batch_size: int = 16
@@ -62,9 +62,13 @@ class TrainConfig:
     train_steps: int = 10_000
     save_freq: int = 500
     log_freq: int = 25
+    val_ratio: float = 0.05
+    val_freq: int = 500
+    val_batches: int = 10
     output_dir: str = "outputs/train_multi_task_dit"
     device: str = "cuda" if torch.cuda.is_available() else "cpu"
     use_amp: bool = False
+    use_wandb: bool = False
     seed: int = 17
 
     # Checkpoint loading
@@ -72,6 +76,76 @@ class TrainConfig:
 
     # Policy parameters
     policy: MultiTaskDiTConfig = field(default_factory=MultiTaskDiTConfig)
+
+
+def _cycle(iterable):
+    """Yield from a re-iterable forever without caching its batches."""
+    while True:
+        yield from iterable
+
+
+def _to_episode_subset(values, episode_indices: list[int]):
+    """Select episode rows while preserving pandas/Polars/list compatibility."""
+    return values.iloc[episode_indices] if hasattr(values, "iloc") else values[episode_indices]
+
+
+def _split_episode_indices(num_episodes: int, val_ratio: float, seed: int) -> tuple[list[int], list[int]]:
+    """Create a deterministic, leakage-free split at episode granularity."""
+    if not 0 <= val_ratio < 1:
+        raise ValueError(f"val_ratio must be in [0, 1), got {val_ratio}")
+    if val_ratio == 0 or num_episodes < 2:
+        return list(range(num_episodes)), []
+
+    num_val = max(1, int(num_episodes * val_ratio))
+    num_val = min(num_val, num_episodes - 1)
+
+    rng = random.Random(seed)
+    indices = list(range(num_episodes))
+    rng.shuffle(indices)
+
+    val_indices = sorted(indices[:num_val])
+    train_indices = sorted(indices[num_val:])
+    return train_indices, val_indices
+
+
+@torch.no_grad()
+def validate(
+    policy: MultiTaskDiTPolicy,
+    dataloader: DataLoader,
+    policy_config: MultiTaskDiTConfig,
+    stats_tensors: dict,
+    device: str,
+    use_amp: bool,
+    max_batches: int,
+) -> float:
+    """Compute mean validation loss over at most ``max_batches`` batches."""
+    policy.eval()
+    losses = []
+
+    try:
+        for batch_idx, batch in enumerate(dataloader):
+            if batch_idx >= max_batches:
+                break
+
+            batch = move_to_device(batch, device, non_blocking=True)
+            normalized_batch = normalize_batch(
+                batch,
+                policy_config.input_features,
+                policy_config.output_features,
+                policy_config.normalization_mapping,
+                stats_tensors,
+            )
+
+            with torch.amp.autocast(device_type=device, enabled=use_amp):
+                loss, _ = policy(normalized_batch)
+
+            losses.append(loss.item())
+    finally:
+        policy.train()
+
+    if not losses:
+        return float("nan")
+    return float(np.mean(losses))
 
 
 def train(cfg: TrainConfig):
@@ -92,8 +166,9 @@ def train(cfg: TrainConfig):
     output_dir = Path(cfg.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    # Check if wandb logging is enabled
-    use_wandb = "WANDB_API_KEY" in os.environ
+    # An explicit flag also works with credentials cached by `wandb login`.
+    # Keep environment-variable auto-detection for backward compatibility.
+    use_wandb = cfg.use_wandb or "WANDB_API_KEY" in os.environ
     if use_wandb:
         wandb.init(
             project="multitask-dit-policy",
@@ -103,7 +178,7 @@ def train(cfg: TrainConfig):
         )
 
     # Extract repo_id from the final directory name of dataset_path
-    dataset_path = Path(cfg.dataset_path)
+    dataset_path = Path(cfg.dataset_path).expanduser()
     if not dataset_path.exists():
         raise FileNotFoundError(
             f"Dataset path not found: {cfg.dataset_path}\n"
@@ -112,7 +187,7 @@ def train(cfg: TrainConfig):
     repo_id = dataset_path.name
 
     # need metadata to get features and stats
-    ds_metadata = LeRobotDatasetMetadata(repo_id=repo_id, root=cfg.dataset_path)
+    ds_metadata = LeRobotDatasetMetadata(repo_id=repo_id, root=dataset_path)
 
     # Load or create policy
     if cfg.checkpoint_path is not None:
@@ -141,15 +216,26 @@ def train(cfg: TrainConfig):
 
     dataset = LeRobotDataset(
         repo_id=repo_id,
-        root=cfg.dataset_path,
+        root=dataset_path,
         delta_timestamps=delta_timestamps,
-        video_backend="torchcodec",  #  set torchcodec explicitly
+        video_backend=cfg.video_backend,
     )
 
+    num_episodes = len(dataset.meta.episodes)
+    train_episode_indices, val_episode_indices = _split_episode_indices(num_episodes, cfg.val_ratio, cfg.seed)
+
+    if val_episode_indices:
+        logging.info(
+            f"Using episode split: {len(train_episode_indices)} train episodes, "
+            f"{len(val_episode_indices)} validation episodes"
+        )
+    else:
+        logging.info("Validation disabled: using all episodes for training")
+
     sampler = EpisodeAwareSampler(
-        dataset.meta.episodes["dataset_from_index"],
-        dataset.meta.episodes["dataset_to_index"],
-        drop_n_last_frames=cfg.policy.drop_n_last_frames,
+        _to_episode_subset(dataset.meta.episodes["dataset_from_index"], train_episode_indices),
+        _to_episode_subset(dataset.meta.episodes["dataset_to_index"], train_episode_indices),
+        drop_n_last_frames=policy_config.drop_n_last_frames,
         shuffle=True,
     )
 
@@ -164,6 +250,26 @@ def train(cfg: TrainConfig):
         drop_last=False,
         prefetch_factor=2 if cfg.num_workers > 0 else None,
     )
+
+    val_dataloader = None
+    if val_episode_indices and cfg.val_freq > 0 and cfg.val_batches > 0:
+        val_sampler = EpisodeAwareSampler(
+            _to_episode_subset(dataset.meta.episodes["dataset_from_index"], val_episode_indices),
+            _to_episode_subset(dataset.meta.episodes["dataset_to_index"], val_episode_indices),
+            drop_n_last_frames=policy_config.drop_n_last_frames,
+            shuffle=False,
+        )
+        val_dataloader = DataLoader(
+            dataset,
+            batch_size=cfg.batch_size,
+            sampler=val_sampler,
+            shuffle=False,
+            num_workers=cfg.num_workers,
+            pin_memory=cfg.device.startswith("cuda"),
+            persistent_workers=cfg.num_workers > 0,
+            drop_last=False,
+            prefetch_factor=2 if cfg.num_workers > 0 else None,
+        )
 
     optimizer_config = policy_config.get_optimizer_preset()
     optimizer_params = policy.get_optim_params()
@@ -188,7 +294,7 @@ def train(cfg: TrainConfig):
     progress_bar = tqdm(total=cfg.train_steps)
 
     # infinite iterator over dataloader (cycles automatically)
-    dataloader_iter = cycle(dataloader)
+    dataloader_iter = _cycle(dataloader)
 
     while step < cfg.train_steps:
         batch = next(dataloader_iter)
@@ -209,7 +315,8 @@ def train(cfg: TrainConfig):
 
         scaler.scale(loss).backward()
         scaler.unscale_(optimizer)  # unscale for gradient clipping
-        torch.nn.utils.clip_grad_norm_(policy.parameters(), 1.0)
+        grad_norm = torch.nn.utils.clip_grad_norm_(policy.parameters(), 1.0)
+        grad_norm_value = grad_norm.item() if hasattr(grad_norm, "item") else float(grad_norm)
         scaler.step(optimizer)
         scaler.update()
 
@@ -226,14 +333,31 @@ def train(cfg: TrainConfig):
         progress_bar.set_postfix(loss=loss.item())
 
         if step % cfg.log_freq == 0:
-            logging.info(f"Step {step}: Loss = {loss.item():.6f}")
+            logging.info(f"Step {step}: Loss = {loss.item():.6f}, Grad Norm = {grad_norm_value:.6f}")
             if use_wandb:
                 wandb.log(
                     {
                         "loss": loss.item(),
+                        "train/loss": loss.item(),
+                        "train/grad_norm": grad_norm_value,
                         "step": step,
-                    }
+                    },
+                    step=step,
                 )
+
+        if val_dataloader is not None and step % cfg.val_freq == 0:
+            val_loss = validate(
+                policy,
+                val_dataloader,
+                policy_config,
+                stats_tensors,
+                cfg.device,
+                use_amp,
+                cfg.val_batches,
+            )
+            logging.info(f"Step {step}: Validation Loss = {val_loss:.6f}")
+            if use_wandb:
+                wandb.log({"val/loss": val_loss}, step=step)
 
     final_dir = output_dir / "final_model"
     save_policy(policy, final_dir, ds_metadata.stats)
