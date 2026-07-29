@@ -1,0 +1,42 @@
+version: 1
+name: calvin_d_10
+manifest: datasets/calvin_d_10/manifests/segments.json
+source_dataset: calvin/dataset/task_D_D
+split: validation
+oracle_config: calvin/calvin_models/conf/callbacks/rollout/tasks/new_playtable_tasks.yaml
+
+defaults:
+  max_steps: 120
+  settle_steps: 0
+
+tasks:
+  - task: lift_red_block_table
+    instruction: lift the red block from the table
+    oracle_task: lift_red_block_table
+  - task: lift_blue_block_drawer
+    instruction: lift the blue block from the drawer
+    oracle_task: lift_blue_block_drawer
+  - task: push_red_block_left
+    instruction: push the red block to the left
+    oracle_task: push_red_block_left
+  - task: rotate_pink_block_right
+    instruction: rotate the pink block clockwise
+    oracle_task: rotate_pink_block_right
+  - task: open_drawer
+    instruction: open the drawer
+    oracle_task: open_drawer
+  - task: close_drawer
+    instruction: close the drawer
+    oracle_task: close_drawer
+  - task: move_slider_left
+    instruction: move the sliding door to the left
+    oracle_task: move_slider_left
+  - task: turn_on_led
+    instruction: press the button to turn on the led
+    oracle_task: turn_on_led
+  - task: place_in_drawer
+    instruction: place the held block in the drawer
+    oracle_task: place_in_drawer
+  - task: stack_block
+    instruction: place the held block on top of another block
+    oracle_task: stack_block

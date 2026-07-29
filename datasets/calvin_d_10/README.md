@@ -23,7 +23,8 @@ CALVIN task-D 中 10 类代表性原子任务的 LeRobotDataset 实验工作区�
 ```text
 calvin_d_10/
 ├── configs/
-│   └── tasks.json
+│   ├── tasks.json
+│   └── evaluation.yaml
 ├── manifests/
 │   └── segments.json
 ├── reports/
@@ -31,12 +32,17 @@ calvin_d_10/
 │   └── task_D_D_task_stats.json
 ├── scripts/
 │   ├── build_manifest.py
-│   └── convert_to_lerobot.py
+│   ├── convert_to_lerobot.py
+│   └── evaluate.py
 └── README.md
 ```
 
 后续稳定、可重复执行的转换和校验脚本放入 `scripts/`。临时探查脚本与生成的预览
 文件使用 `/tmp`，不放进仓库。
+
+`scripts/evaluate.py` 是本数据集的专用闭环评测入口；WebSocket client、CALVIN
+环境适配、rollout engine 和结果记录等通用实现位于
+`calvin/evaluation/remote_policy/`。
 
 ## 已确定原则
 
