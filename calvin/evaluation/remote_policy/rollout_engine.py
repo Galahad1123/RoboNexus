@@ -1,5 +1,6 @@
 """Generic single-task CALVIN rollout loop."""
 
+import hashlib
 import time
 from pathlib import Path
 
@@ -86,6 +87,14 @@ def restoration_metrics(expected_robot, expected_scene, restored_robot, restored
     }
 
 
+def derive_episode_seed(base_seed, episode_id):
+    """Create a stable PyTorch-compatible seed independent of process hash state."""
+    digest = hashlib.sha256(
+        "{}:{}".format(int(base_seed), str(episode_id)).encode("utf-8")
+    ).digest()
+    return int.from_bytes(digest[:8], byteorder="big") % (2**63 - 1)
+
+
 class RolloutEngine:
     def __init__(
         self,
@@ -93,6 +102,7 @@ class RolloutEngine:
         client,
         task_oracle,
         replan_interval,
+        base_seed=42,
         video_dir=None,
         video_fps=30,
         restore_thresholds=None,
@@ -101,6 +111,7 @@ class RolloutEngine:
         self.client = client
         self.task_oracle = task_oracle
         self.replan_interval = int(replan_interval)
+        self.base_seed = int(base_seed)
         self.video_dir = Path(video_dir) if video_dir else None
         self.video_fps = int(video_fps)
         self.restore_thresholds = dict(
@@ -134,10 +145,12 @@ class RolloutEngine:
             )
 
         start_info = self.adapter.get_info()
+        episode_seed = derive_episode_seed(self.base_seed, episode.episode_id)
         self.client.reset(
             episode_id=episode.episode_id,
             task=episode.instruction,
             replan_interval=self.replan_interval,
+            episode_seed=episode_seed,
         )
 
         zero_action = np.asarray([0, 0, 0, 0, 0, 0, 1], dtype=np.float32)
@@ -213,6 +226,7 @@ class RolloutEngine:
             "max_steps": episode.max_steps,
             "termination_reason": termination_reason,
             "replan_interval": self.replan_interval,
+            "episode_seed": episode_seed,
             "replan_steps": replan_steps,
             "inference_requests": len(replan_steps),
             "mean_request_latency_ms": float(np.mean(latencies)) if latencies else None,

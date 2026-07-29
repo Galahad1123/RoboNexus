@@ -9,14 +9,14 @@ try:
     from .calvin_env_adapter import CalvinEnvAdapter
     from .model_client import ModelClient
     from .result_writer import ResultWriter
-    from .rollout_engine import RolloutEngine
+    from .rollout_engine import RolloutEngine, derive_episode_seed
     from .task_suite import ConfiguredCalvinSuite
 except ImportError:
     # Retain direct-script execution for development inside this directory.
     from calvin_env_adapter import CalvinEnvAdapter
     from model_client import ModelClient
     from result_writer import ResultWriter
-    from rollout_engine import RolloutEngine
+    from rollout_engine import RolloutEngine, derive_episode_seed
     from task_suite import ConfiguredCalvinSuite
 
 
@@ -54,15 +54,19 @@ def run(args):
             client,
             task_oracle,
             replan_interval=args.replan_interval,
+            base_seed=args.seed,
             video_dir=Path(args.output_dir) / "videos" if args.save_video else None,
             video_fps=suite.manifest["frequency_hz"],
         )
 
-        for task_index, task in enumerate(tasks):
+        for task in tasks:
+            selection_seed = derive_episode_seed(
+                args.seed, "episode-selection:{}".format(task)
+            ) % (2**32 - 1)
             episodes = suite.episodes(
                 task,
                 count=args.episodes_per_task,
-                seed=args.seed + task_index,
+                seed=selection_seed,
             )
             for episode in episodes:
                 logging.info("Starting %s (%s)", episode.episode_id, task)
@@ -78,6 +82,9 @@ def run(args):
                         "termination_reason": "exception",
                         "error": "{}: {}".format(type(exc).__name__, exc),
                         "replan_interval": args.replan_interval,
+                        "episode_seed": derive_episode_seed(
+                            args.seed, episode.episode_id
+                        ),
                     }
                     writer.append(record)
                     if args.fail_fast:

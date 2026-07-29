@@ -92,17 +92,20 @@ class PolicyServerWrapper:
         *,
         task: str,
         episode_id: str | None,
+        episode_seed: int | None,
         replan_interval: int | None,
     ) -> dict[str, Any]:
         self.session.reset(
             task=task,
             episode_id=episode_id,
+            episode_seed=episode_seed,
             replan_interval=replan_interval,
         )
         return {
             "type": "reset_ack",
             "ok": True,
             "task": self.session.task,
+            "episode_seed": self.session.episode_seed,
             "replan_interval": self.session.replan_interval,
         }
 
@@ -150,6 +153,7 @@ async def _serve_client(websocket: Any, wrapper: PolicyServerWrapper, lock: asyn
                     response = wrapper.reset(
                         task=request.get("task", ""),
                         episode_id=episode_id,
+                        episode_seed=request.get("episode_seed"),
                         replan_interval=request.get("replan_interval"),
                     )
                 elif request_type == "step":

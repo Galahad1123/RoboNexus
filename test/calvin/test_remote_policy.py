@@ -8,7 +8,7 @@ REMOTE_POLICY = WORKSPACE / "calvin" / "evaluation" / "remote_policy"
 sys.path.insert(0, str(REMOTE_POLICY))
 
 from task_suite import ConfiguredCalvinSuite  # noqa: E402
-from rollout_engine import restoration_metrics  # noqa: E402
+from rollout_engine import derive_episode_seed, restoration_metrics  # noqa: E402
 from calvin_env_adapter import CalvinEnvAdapter  # noqa: E402
 from model_client import _pack, _unpack  # noqa: E402
 
@@ -88,6 +88,12 @@ class ConfiguredCalvinSuiteTest(unittest.TestCase):
         )
         self.assertEqual(close[6], -1.0)
         self.assertEqual(opened[6], 1.0)
+
+    def test_episode_seed_is_stable_and_episode_specific(self):
+        first = derive_episode_seed(42, "validation-000117")
+        self.assertEqual(first, derive_episode_seed(42, "validation-000117"))
+        self.assertNotEqual(first, derive_episode_seed(42, "validation-000118"))
+        self.assertNotEqual(first, derive_episode_seed(43, "validation-000117"))
 
 
 if __name__ == "__main__":

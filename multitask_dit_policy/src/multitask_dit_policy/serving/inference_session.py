@@ -30,6 +30,7 @@ class InferenceSession:
         self.default_replan_interval = default_replan_interval or self.max_action_chunk
         self.task = ""
         self.episode_id: str | None = None
+        self.episode_seed: int | None = None
         self.replan_interval = self.default_replan_interval
         self.actions_since_inference = 0
         self.inference_count = 0
@@ -40,6 +41,7 @@ class InferenceSession:
         *,
         task: str = "",
         episode_id: str | None = None,
+        episode_seed: int | None = None,
         replan_interval: int | None = None,
     ) -> None:
         interval = self.default_replan_interval if replan_interval is None else int(replan_interval)
@@ -50,6 +52,13 @@ class InferenceSession:
         self.policy.reset()
         self.task = str(task)
         self.episode_id = episode_id
+        self.episode_seed = None if episode_seed is None else int(episode_seed)
+        if self.episode_seed is not None:
+            if self.episode_seed < 0:
+                raise ValueError(f"episode_seed must be non-negative, got {self.episode_seed}")
+            torch.manual_seed(self.episode_seed)
+            if torch.cuda.is_available():
+                torch.cuda.manual_seed_all(self.episode_seed)
         self.replan_interval = interval
         self.actions_since_inference = 0
         self.inference_count = 0
@@ -95,6 +104,7 @@ class InferenceSession:
             "inference_count": self.inference_count,
             "action_index_in_plan": self.actions_since_inference - 1,
             "replan_interval": self.replan_interval,
+            "episode_seed": self.episode_seed,
         }
         return action_np, metadata
 

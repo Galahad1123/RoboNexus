@@ -20,16 +20,23 @@ class ModelClient:
         self.request_index = 0
         self.websocket, self.metadata = self._wait_for_server(connect_timeout)
 
-    def reset(self, episode_id, task, replan_interval):
+    def reset(self, episode_id, task, replan_interval, episode_seed):
         response = self._request(
             {
                 "type": "reset",
                 "episode_id": str(episode_id),
                 "task": str(task),
                 "replan_interval": int(replan_interval),
+                "episode_seed": int(episode_seed),
             }
         )
         _raise_for_error(response)
+        if int(response.get("episode_seed", -1)) != int(episode_seed):
+            raise RuntimeError(
+                "Policy server did not acknowledge episode_seed {}: {!r}".format(
+                    episode_seed, response
+                )
+            )
         return response
 
     def step(self, episode_id, observation, step):
@@ -102,7 +109,7 @@ class ModelClient:
                 if handshake.get("type") != "handshake":
                     raise RuntimeError("Expected server handshake, got {!r}".format(handshake))
                 metadata = handshake.get("metadata", {})
-                if metadata.get("protocol_version") != 1:
+                if metadata.get("protocol_version") != 2:
                     raise RuntimeError(
                         "Unsupported policy protocol version: {}".format(
                             metadata.get("protocol_version")

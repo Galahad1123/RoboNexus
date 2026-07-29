@@ -96,6 +96,18 @@ class InferenceSessionTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "resolution"):
             session.step(bad)
 
+    def test_episode_seed_resets_torch_rng(self):
+        session = InferenceSession(
+            policy=FakePolicy(),
+            stats_tensors={},
+            device=torch.device("cpu"),
+        )
+        session.reset(episode_seed=1234)
+        first = torch.rand(4)
+        session.reset(episode_seed=1234)
+        second = torch.rand(4)
+        self.assertTrue(torch.equal(first, second))
+
 
 if __name__ == "__main__":
     unittest.main()

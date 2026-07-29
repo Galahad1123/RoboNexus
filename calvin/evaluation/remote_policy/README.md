@@ -37,7 +37,10 @@ HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 uv run \
 ```
 
 The server loads `dataset_stats.json`, keeps the observation and action queues,
-and returns exactly one unnormalized action for every `step` request.
+and returns exactly one unnormalized action for every `step` request. Protocol
+v2 also resets the CPU/CUDA PyTorch RNG from a deterministic per-episode seed,
+so checkpoint and replan-interval comparisons use the same diffusion noise
+stream for every validation segment.
 
 ## Smoke-test one episode
 
