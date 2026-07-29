@@ -24,11 +24,14 @@ dependencies = [
     "numpy>=2.0.0",
     "pillow>=10.0.0,<13.0.0",
     "pyyaml>=6.0",
-    "lerobot>=0.5.0", 
+    "lerobot[dataset]>=0.5.0",
     "einops>=0.8.0",
     "wandb>=0.16.0",
     "typing_extensions>=4.5.0",
     "matplotlib>=3.8.0",
+    "websockets>=13.0,<16.0",
+    "msgpack>=1.0.8,<2.0.0",
+    "msgpack-numpy>=0.4.8,<1.0.0",
 ]
 
 [project.optional-dependencies]
