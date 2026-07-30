@@ -201,7 +201,9 @@ class RolloutEngine:
             import imageio
 
             suffix = "success" if success else "failure"
-            video_path = self.video_dir / "{}_{}.mp4".format(episode.episode_id, suffix)
+            video_path = self.video_dir / "{}__{}__{}.mp4".format(
+                episode.task, episode.episode_id, suffix
+            )
             imageio.mimwrite(
                 str(video_path),
                 frames,

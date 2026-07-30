@@ -1,5 +1,7 @@
 """Incremental rollout records and aggregate task metrics."""
 
+import argparse
+import csv
 import json
 from collections import defaultdict
 from pathlib import Path
@@ -28,6 +30,7 @@ class ResultWriter:
         with self.records_path.open("a") as file:
             file.write(json.dumps(record, sort_keys=True) + "\n")
         self.write_summary()
+        write_video_index(self.records, self.output_dir / "video_index.csv")
 
     def write_summary(self):
         by_task = defaultdict(list)
@@ -58,3 +61,46 @@ class ResultWriter:
             json.dumps(summary, indent=2, sort_keys=True) + "\n"
         )
         return summary
+
+
+def write_video_index(records, output_path):
+    """Write a human-readable mapping from videos to task semantics."""
+    fields = [
+        "task",
+        "instruction",
+        "episode_id",
+        "success",
+        "success_step",
+        "termination_reason",
+        "video",
+    ]
+    with Path(output_path).open("w", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=fields)
+        writer.writeheader()
+        for record in records:
+            if not record.get("video"):
+                continue
+            writer.writerow({field: record.get(field) for field in fields})
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Rebuild video_index.csv for an existing evaluation run."
+    )
+    parser.add_argument("--output-dir", required=True, type=Path)
+    args = parser.parse_args()
+    records_path = args.output_dir / "episodes.jsonl"
+    if not records_path.is_file():
+        raise FileNotFoundError("Missing evaluation records: {}".format(records_path))
+    records = [
+        json.loads(line)
+        for line in records_path.read_text().splitlines()
+        if line.strip()
+    ]
+    output_path = args.output_dir / "video_index.csv"
+    write_video_index(records, output_path)
+    print("Wrote {} entries to {}".format(len(records), output_path))
+
+
+if __name__ == "__main__":
+    main()
