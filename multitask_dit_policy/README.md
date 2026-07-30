@@ -106,6 +106,15 @@ The external dataset must have the same FPS and policy input/output feature sche
 training dataset. Validation batches are normalized with training-dataset statistics.
 `--val_dataset_path` and a nonzero `--val_ratio` are intentionally mutually exclusive.
 
+For datasets whose episodes carry task metadata, training supports two sampling
+distributions:
+
+- `--task_sampling=proportional` (default) samples every valid frame once per
+  shuffled epoch, so common/long tasks appear more often.
+- `--task_sampling=balanced` samples with replacement and gives every distinct
+  episode-level task equal aggregate probability. Validation is never
+  rebalanced.
+
 ### Resuming Training
 
 To resume training from a checkpoint, use the `--checkpoint_path` parameter to specify the path to a previously saved checkpoint directory:

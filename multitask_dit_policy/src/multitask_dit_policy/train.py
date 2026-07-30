@@ -35,6 +35,7 @@ import wandb
 from lerobot.datasets.lerobot_dataset import LeRobotDataset, LeRobotDatasetMetadata
 from lerobot.datasets.sampler import EpisodeAwareSampler
 from torch.utils.data import DataLoader
+from torch.utils.data import WeightedRandomSampler
 from tqdm import tqdm
 
 from multitask_dit_policy.model.model import MultiTaskDiTPolicy
@@ -71,6 +72,7 @@ class TrainConfig:
     use_amp: bool = False
     use_wandb: bool = False
     seed: int = 17
+    task_sampling: str = "proportional"
 
     # Checkpoint loading
     checkpoint_path: str | None = None
@@ -144,6 +146,66 @@ def _validate_dataset_compatibility(
         raise ValueError("Training and validation dataset features are incompatible:\n" + "\n".join(errors))
 
 
+def _build_task_balanced_sampler(
+    episodes,
+    episode_indices: list[int],
+    drop_n_last_frames: int,
+    seed: int,
+) -> object:
+    """Sample valid frames so each episode-level task has equal probability.
+
+    CALVIN-D-10 episodes contain one task. A tuple key also makes the behavior
+    deterministic and well-defined for datasets that attach multiple tasks to
+    an episode.
+    """
+    rows = [episodes[int(index)] for index in episode_indices]
+    valid_ranges = []
+    frames_per_task: dict[tuple[str, ...], int] = {}
+    for row in rows:
+        task_key = tuple(sorted(row["tasks"]))
+        if not task_key:
+            raise ValueError(
+                "task_sampling=balanced requires at least one task per episode"
+            )
+        start = int(row["dataset_from_index"])
+        stop = int(row["dataset_to_index"]) - int(drop_n_last_frames)
+        if stop <= start:
+            continue
+        valid_ranges.append((start, stop, task_key))
+        frames_per_task[task_key] = frames_per_task.get(task_key, 0) + stop - start
+    if not valid_ranges:
+        raise ValueError("No valid frames remain for task-balanced sampling")
+
+    indices = []
+    weights = []
+    for start, stop, task_key in valid_ranges:
+        indices.extend(range(start, stop))
+        weights.extend([1.0 / frames_per_task[task_key]] * (stop - start))
+
+    # WeightedRandomSampler emits positions into its weights array. Map those
+    # positions back to absolute dataset indices without loading any images.
+    base_sampler = WeightedRandomSampler(
+        weights=torch.as_tensor(weights, dtype=torch.double),
+        num_samples=len(indices),
+        replacement=True,
+        generator=torch.Generator().manual_seed(int(seed)),
+    )
+
+    class _AbsoluteIndexSampler:
+        def __iter__(self):
+            return (indices[position] for position in base_sampler)
+
+        def __len__(self):
+            return len(indices)
+
+    logging.info(
+        "Using task-balanced sampling across %d tasks and %d valid frames",
+        len(frames_per_task),
+        len(indices),
+    )
+    return _AbsoluteIndexSampler()
+
+
 @torch.no_grad()
 def validate(
     policy: MultiTaskDiTPolicy,
@@ -186,6 +248,11 @@ def validate(
 
 def train(cfg: TrainConfig):
     _validate_validation_config(cfg.val_dataset_path, cfg.val_ratio)
+    if cfg.task_sampling not in {"proportional", "balanced"}:
+        raise ValueError(
+            "task_sampling must be 'proportional' or 'balanced', got "
+            f"{cfg.task_sampling!r}"
+        )
 
     random.seed(cfg.seed)
     np.random.seed(cfg.seed)
@@ -295,12 +362,21 @@ def train(cfg: TrainConfig):
     else:
         logging.info("Validation disabled: using all episodes for training")
 
-    sampler = EpisodeAwareSampler(
-        _to_episode_subset(dataset.meta.episodes["dataset_from_index"], train_episode_indices),
-        _to_episode_subset(dataset.meta.episodes["dataset_to_index"], train_episode_indices),
-        drop_n_last_frames=policy_config.drop_n_last_frames,
-        shuffle=True,
-    )
+    if cfg.task_sampling == "balanced":
+        sampler = _build_task_balanced_sampler(
+            dataset.meta.episodes,
+            train_episode_indices,
+            drop_n_last_frames=policy_config.drop_n_last_frames,
+            seed=cfg.seed,
+        )
+    else:
+        sampler = EpisodeAwareSampler(
+            _to_episode_subset(dataset.meta.episodes["dataset_from_index"], train_episode_indices),
+            _to_episode_subset(dataset.meta.episodes["dataset_to_index"], train_episode_indices),
+            drop_n_last_frames=policy_config.drop_n_last_frames,
+            shuffle=True,
+            seed=cfg.seed,
+        )
 
     dataloader = DataLoader(
         dataset,

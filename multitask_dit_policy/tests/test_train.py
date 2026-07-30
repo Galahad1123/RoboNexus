@@ -2,6 +2,7 @@ import unittest
 from types import SimpleNamespace
 
 from multitask_dit_policy.train import (
+    _build_task_balanced_sampler,
     _split_episode_indices,
     _validate_dataset_compatibility,
     _validate_validation_config,
@@ -78,6 +79,38 @@ class DatasetCompatibilityTest(unittest.TestCase):
                 self.metadata(features=val_features),
                 {"observation.state", "action"},
             )
+
+
+class TaskBalancedSamplerTest(unittest.TestCase):
+    def test_balances_tasks_instead_of_frame_counts(self):
+        episodes = [
+            {
+                "tasks": ["frequent"],
+                "dataset_from_index": 0,
+                "dataset_to_index": 900,
+            },
+            {
+                "tasks": ["rare"],
+                "dataset_from_index": 900,
+                "dataset_to_index": 1000,
+            },
+        ]
+        sampler = _build_task_balanced_sampler(
+            episodes, [0, 1], drop_n_last_frames=0, seed=42
+        )
+        sampled = list(sampler)
+        frequent = sum(index < 900 for index in sampled)
+        self.assertEqual(len(sampled), 1000)
+        self.assertLess(abs(frequent / len(sampled) - 0.5), 0.06)
+
+    def test_is_deterministic_for_a_fresh_sampler(self):
+        episodes = [
+            {"tasks": ["a"], "dataset_from_index": 0, "dataset_to_index": 10},
+            {"tasks": ["b"], "dataset_from_index": 10, "dataset_to_index": 20},
+        ]
+        first = _build_task_balanced_sampler(episodes, [0, 1], 0, seed=7)
+        second = _build_task_balanced_sampler(episodes, [0, 1], 0, seed=7)
+        self.assertEqual(list(first), list(second))
 
 
 if __name__ == "__main__":
