@@ -32,6 +32,7 @@ calvin_d_10/
 │   └── task_D_D_task_stats.json
 ├── scripts/
 │   ├── build_manifest.py
+│   ├── build_gt_mask_cache.py
 │   ├── convert_to_lerobot.py
 │   └── evaluate.py
 └── README.md
@@ -154,3 +155,76 @@ do_mask_loss_for_padding = true
 
 `action_is_valid` 用于数据审计；DiT 时序 padding 的实际 loss mask 由 LeRobot
 产生的 `action_is_pad` 和 `do_mask_loss_for_padding=true` 负责。
+
+## GT mask overlay 实验
+
+mask 是可选的图像增强，task label 和 clean 数据均不改动。实现分为两个独立阶段：
+
+1. CALVIN 环境按恢复状态渲染 object/link segmentation，并把 overlay 图像写入独立
+   cache；
+2. LeRobot 转换器仅在显式传入 `--mask-cache` 时读取该 cache，输出路径也必须使用
+   新目录。
+
+角色由 `configs/evaluation.yaml` 声明。`source` 默认红色、
+`destination` 默认蓝色、单目标 `target` 默认黄色；`place_in_drawer` 和
+`stack_block` 的 source 会在首帧根据夹爪接触动态确定。GT 扰动支持平移、膨胀/腐蚀
+和像素 dropout，且由 seed 确定性复现。可选的 `--outline-px` 会保留角色色半透明
+填充，并在 mask 边界绘制不透明黑色描边；默认值 0 保持原先的纯填充行为。
+
+先做每类一个 episode 的验证 cache：
+
+```bash
+conda run -n robonexus-calvin python \
+  datasets/calvin_d_10/scripts/build_gt_mask_cache.py \
+  --split training --max-episodes-per-task 1 \
+  --output datasets/calvin_d_10/mask_cache/training_preview
+```
+
+正式 cache 可加入扰动，例如：
+
+```bash
+conda run -n robonexus-calvin python \
+  datasets/calvin_d_10/scripts/build_gt_mask_cache.py \
+  --split training --alpha 0.45 \
+  --outline-px 3 \
+  --max-shift-px 3 --morphology-px 2 --dropout-probability 0.03 \
+  --output datasets/calvin_d_10/mask_cache/training_gt_aug
+```
+
+随后在 DiT 环境生成全新的 LeRobotDataset：
+
+```bash
+multitask_dit_policy/.venv/bin/python \
+  datasets/calvin_d_10/scripts/convert_to_lerobot.py \
+  --split training --storage image \
+  --mask-cache datasets/calvin_d_10/mask_cache/training_gt_aug \
+  --output datasets/calvin_d_10/data/calvin_d_10_training_gt_mask_image
+```
+
+不传 `--mask-cache` 时转换器行为与原先完全相同。
+
+对应 checkpoint 的闭环评测需要显式开启相同 overlay；默认仍是 clean：
+
+```bash
+conda run -n robonexus-calvin python \
+  datasets/calvin_d_10/scripts/evaluate.py \
+  --mask-provider gt --mask-alpha 0.45 --mask-outline-px 3 \
+  --output-dir outputs/calvin_d10_eval/checkpoint_gt_mask
+```
+
+## Oracle 原地 retry
+
+`--max-attempts 1`（默认）仍使用原始 clean rollout。大于 1 时才启用
+`agent/calvin_oracle_retry.py`：一次尝试超时后不恢复初态，而是从当前仿真状态开启
+新的 policy session；每次 session 使用独立且可复现的 seed。CALVIN oracle 只负责
+判定任务是否已经成功，第一版不含学习式成功检测。
+
+```bash
+conda run -n robonexus-calvin python \
+  datasets/calvin_d_10/scripts/evaluate.py \
+  --max-attempts 3 --replan-interval 16 --save-video \
+  --output-dir outputs/calvin_d10_eval/checkpoint_80000_retry3
+```
+
+结果 JSONL 中会额外记录 `attempt_count` 和逐次 `attempts`。该 agent 也可与
+`--mask-provider gt` 组合，但建议先分别做 clean retry 和 GT-mask 单变量实验。

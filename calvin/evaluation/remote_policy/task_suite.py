@@ -18,6 +18,7 @@ class EpisodeSpec:
     source_frame: Path
     max_steps: int
     settle_steps: int
+    mask_roles: Optional[Dict[str, List[dict]]] = None
 
     def load_initial_state(self):
         with np.load(str(self.source_frame)) as frame:
@@ -78,6 +79,7 @@ class ConfiguredCalvinSuite:
                 settle_steps=int(
                     task_config.get("settle_steps", self.config["defaults"].get("settle_steps", 0))
                 ),
+                mask_roles=task_config.get("mask_roles"),
             )
             for row in rows
         ]

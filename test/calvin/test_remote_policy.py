@@ -6,11 +6,14 @@ import unittest
 WORKSPACE = Path(__file__).resolve().parents[2]
 REMOTE_POLICY = WORKSPACE / "calvin" / "evaluation" / "remote_policy"
 sys.path.insert(0, str(REMOTE_POLICY))
+sys.path.insert(0, str(WORKSPACE))
 
 from task_suite import ConfiguredCalvinSuite  # noqa: E402
 from rollout_engine import derive_episode_seed, restoration_metrics  # noqa: E402
 from calvin_env_adapter import CalvinEnvAdapter  # noqa: E402
 from model_client import _pack, _unpack  # noqa: E402
+from masking import MaskOverlay, MaskPerturbation  # noqa: E402
+from agent.calvin_oracle_retry import CalvinOracleRetryAgent  # noqa: E402
 
 
 class ConfiguredCalvinSuiteTest(unittest.TestCase):
@@ -40,6 +43,46 @@ class ConfiguredCalvinSuiteTest(unittest.TestCase):
         robot_obs, scene_obs = episode.load_initial_state()
         self.assertEqual(robot_obs.shape, (15,))
         self.assertEqual(scene_obs.shape, (24,))
+        self.assertEqual(
+            episode.mask_roles["source"], [{"movable": "block_blue"}]
+        )
+
+    def test_mask_overlay_does_not_mutate_clean_image(self):
+        import numpy as np
+
+        image = np.zeros((8, 8, 3), dtype=np.uint8)
+        mask = np.zeros((8, 8), dtype=bool)
+        mask[2:6, 2:6] = True
+        overlay = MaskOverlay(alpha=1.0, seed=7)
+        augmented = overlay.apply(image, {"source": mask})
+        self.assertFalse(np.shares_memory(image, augmented))
+        self.assertTrue(np.all(image == 0))
+        self.assertTrue(np.all(augmented[mask] == [255, 40, 40]))
+
+    def test_mask_perturbation_is_seed_deterministic(self):
+        import numpy as np
+
+        mask = np.ones((12, 12), dtype=bool)
+        perturbation = MaskPerturbation(
+            max_shift_px=2, morphology_px=-1, dropout_probability=0.2
+        )
+        first = perturbation.apply(mask, np.random.RandomState(123))
+        second = perturbation.apply(mask, np.random.RandomState(123))
+        self.assertTrue(np.array_equal(first, second))
+
+    def test_mask_outline_is_opaque_while_fill_remains_translucent(self):
+        import numpy as np
+
+        image = np.zeros((12, 12, 3), dtype=np.uint8)
+        mask = np.zeros((12, 12), dtype=bool)
+        mask[3:9, 3:9] = True
+        augmented = MaskOverlay(
+            alpha=0.5, outline_width_px=1, seed=7
+        ).apply(image, {"source": mask})
+        self.assertTrue(np.array_equal(augmented[5, 5], [127, 20, 20]))
+        self.assertTrue(np.array_equal(augmented[3, 5], [0, 0, 0]))
+        # The outline straddles the segmentation boundary for visibility.
+        self.assertTrue(np.array_equal(augmented[2, 5], [0, 0, 0]))
 
     def test_restore_metrics_ignore_command_and_handle_angle_wrap(self):
         import numpy as np
@@ -94,6 +137,95 @@ class ConfiguredCalvinSuiteTest(unittest.TestCase):
         self.assertEqual(first, derive_episode_seed(42, "validation-000117"))
         self.assertNotEqual(first, derive_episode_seed(42, "validation-000118"))
         self.assertNotEqual(first, derive_episode_seed(43, "validation-000117"))
+
+    def test_oracle_retry_continues_without_environment_reset(self):
+        import numpy as np
+        from types import SimpleNamespace
+
+        class Episode:
+            episode_id = "validation-test"
+            task = "open_drawer"
+            instruction = "open the drawer"
+            oracle_task = "open_drawer"
+            source_frame = Path("/tmp/source.npz")
+            settle_steps = 0
+            max_steps = 1
+
+            @staticmethod
+            def load_initial_state():
+                return np.zeros(15), np.zeros(24)
+
+        class Adapter:
+            def __init__(self):
+                self.reset_count = 0
+                self.steps = 0
+
+            def reset(self, robot_obs, scene_obs):
+                self.reset_count += 1
+                return {
+                    "robot_obs": robot_obs.copy(),
+                    "scene_obs": scene_obs.copy(),
+                    "rgb_obs": {"rgb_static": np.zeros((2, 2, 3), np.uint8)},
+                }
+
+            def get_info(self):
+                return {"steps": self.steps}
+
+            def observation_for_policy(self, observation, **kwargs):
+                return {}
+
+            def step(self, action):
+                self.steps += 1
+                self.last_executed_action = np.asarray(action)
+                observation = {
+                    "robot_obs": np.zeros(15),
+                    "scene_obs": np.zeros(24),
+                    "rgb_obs": {"rgb_static": np.zeros((2, 2, 3), np.uint8)},
+                }
+                return observation, 0, False, self.get_info()
+
+        class Client:
+            def __init__(self):
+                self.sessions = []
+
+            def reset(self, **kwargs):
+                self.sessions.append(kwargs["episode_id"])
+
+            def step(self, episode_id, observation, step):
+                return np.zeros(7), {"replanned": True}
+
+        class Oracle:
+            @staticmethod
+            def get_task_info_for_set(start, current, tasks):
+                return {"open_drawer"} if current["steps"] >= 2 else set()
+
+        adapter = Adapter()
+        client = Client()
+        engine = SimpleNamespace(
+            adapter=adapter,
+            client=client,
+            task_oracle=Oracle(),
+            replan_interval=1,
+            base_seed=42,
+            restore_thresholds={
+                "tcp_position_m": 1,
+                "tcp_orientation_rad": 1,
+                "gripper_width_m": 1,
+                "joint_position_rad": 1,
+                "fixed_scene": 1,
+                "object_position_m": 1,
+                "object_orientation_rad": 1,
+            },
+            mask_provider=None,
+            mask_overlay=None,
+            video_dir=None,
+            video_fps=30,
+        )
+        result = CalvinOracleRetryAgent(engine, max_attempts=2).run(Episode())
+        self.assertTrue(result["success"])
+        self.assertEqual(result["attempt_count"], 2)
+        self.assertEqual(adapter.reset_count, 1)
+        self.assertEqual(len(client.sessions), 2)
 
 
 if __name__ == "__main__":

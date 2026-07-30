@@ -13,30 +13,52 @@ tasks:
   - task: lift_red_block_table
     instruction: lift the red block from the table
     oracle_task: lift_red_block_table
+    mask_roles:
+      source: [{movable: block_red}]
   - task: lift_blue_block_drawer
     instruction: lift the blue block from the drawer
     oracle_task: lift_blue_block_drawer
+    mask_roles:
+      source: [{movable: block_blue}]
   - task: push_red_block_left
     instruction: push the red block to the left
     oracle_task: push_red_block_left
+    mask_roles:
+      source: [{movable: block_red}]
   - task: rotate_pink_block_right
     instruction: rotate the pink block clockwise
     oracle_task: rotate_pink_block_right
+    mask_roles:
+      source: [{movable: block_pink}]
   - task: open_drawer
     instruction: open the drawer
     oracle_task: open_drawer
+    mask_roles:
+      target: [{fixed: table, links: [drawer_link]}]
   - task: close_drawer
     instruction: close the drawer
     oracle_task: close_drawer
+    mask_roles:
+      target: [{fixed: table, links: [drawer_link]}]
   - task: move_slider_left
     instruction: move the sliding door to the left
     oracle_task: move_slider_left
+    mask_roles:
+      target: [{fixed: table, links: [slide_link]}]
   - task: turn_on_led
     instruction: press the button to turn on the led
     oracle_task: turn_on_led
+    mask_roles:
+      target: [{fixed: table, links: [button_link]}]
   - task: place_in_drawer
     instruction: place the held block in the drawer
     oracle_task: place_in_drawer
+    mask_roles:
+      source: [{held_movable: true}]
+      destination: [{fixed: table, links: [drawer_link]}]
   - task: stack_block
     instruction: place the held block on top of another block
     oracle_task: stack_block
+    mask_roles:
+      source: [{held_movable: true}]
+      destination: [{unheld_movable: true}]

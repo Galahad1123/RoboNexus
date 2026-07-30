@@ -11,6 +11,7 @@ try:
     from .result_writer import ResultWriter
     from .rollout_engine import RolloutEngine, derive_episode_seed
     from .task_suite import ConfiguredCalvinSuite
+    from .masking import CalvinGTMaskProvider, MaskOverlay, MaskPerturbation
 except ImportError:
     # Retain direct-script execution for development inside this directory.
     from calvin_env_adapter import CalvinEnvAdapter
@@ -18,6 +19,7 @@ except ImportError:
     from result_writer import ResultWriter
     from rollout_engine import RolloutEngine, derive_episode_seed
     from task_suite import ConfiguredCalvinSuite
+    from masking import CalvinGTMaskProvider, MaskOverlay, MaskPerturbation
 
 
 def run(args):
@@ -37,6 +39,20 @@ def run(args):
             use_egl=not args.show_gui,
         )
         task_oracle = suite.create_task_oracle()
+        mask_provider = None
+        mask_overlay = None
+        if args.mask_provider == "gt":
+            mask_provider = CalvinGTMaskProvider(adapter.env)
+            mask_overlay = MaskOverlay(
+                alpha=args.mask_alpha,
+                seed=args.seed,
+                outline_width_px=args.mask_outline_px,
+                perturbation=MaskPerturbation(
+                    max_shift_px=args.mask_max_shift_px,
+                    morphology_px=args.mask_morphology_px,
+                    dropout_probability=args.mask_dropout_probability,
+                ),
+            )
         writer = ResultWriter(
             args.output_dir,
             {
@@ -45,7 +61,14 @@ def run(args):
                 "episodes_per_task": args.episodes_per_task,
                 "seed": args.seed,
                 "replan_interval": args.replan_interval,
+                "max_attempts": args.max_attempts,
                 "server_metadata": client.metadata,
+                "mask_provider": args.mask_provider,
+                "mask_alpha": args.mask_alpha,
+                "mask_outline_px": args.mask_outline_px,
+                "mask_max_shift_px": args.mask_max_shift_px,
+                "mask_morphology_px": args.mask_morphology_px,
+                "mask_dropout_probability": args.mask_dropout_probability,
             },
             overwrite=args.overwrite,
         )
@@ -57,7 +80,14 @@ def run(args):
             base_seed=args.seed,
             video_dir=Path(args.output_dir) / "videos" if args.save_video else None,
             video_fps=suite.manifest["frequency_hz"],
+            mask_provider=mask_provider,
+            mask_overlay=mask_overlay,
         )
+        runner = engine
+        if args.max_attempts > 1:
+            from agent.calvin_oracle_retry import CalvinOracleRetryAgent
+
+            runner = CalvinOracleRetryAgent(engine, args.max_attempts)
 
         for task in tasks:
             selection_seed = derive_episode_seed(
@@ -71,7 +101,7 @@ def run(args):
             for episode in episodes:
                 logging.info("Starting %s (%s)", episode.episode_id, task)
                 try:
-                    record = engine.run(episode)
+                    record = runner.run(episode)
                 except Exception as exc:
                     logging.exception("Episode %s failed", episode.episode_id)
                     record = {
@@ -122,8 +152,43 @@ def parse_args():
     parser.add_argument("--save-video", action="store_true")
     parser.add_argument("--show-gui", action="store_true")
     parser.add_argument("--fail-fast", action="store_true")
+    parser.add_argument(
+        "--max-attempts",
+        type=int,
+        default=1,
+        help="1 uses the clean rollout; >1 enables agent-side oracle retry in place",
+    )
+    parser.add_argument(
+        "--mask-provider",
+        choices=("none", "gt"),
+        default="none",
+        help="optional image overlay source; clean evaluation remains the default",
+    )
+    parser.add_argument("--mask-alpha", type=float, default=0.45)
+    parser.add_argument(
+        "--mask-outline-px",
+        type=int,
+        default=0,
+        help="opaque role-color outline width; 0 preserves fill-only behavior",
+    )
+    parser.add_argument("--mask-max-shift-px", type=int, default=0)
+    parser.add_argument(
+        "--mask-morphology-px",
+        type=int,
+        default=0,
+        help="positive dilates and negative erodes the GT mask",
+    )
+    parser.add_argument("--mask-dropout-probability", type=float, default=0.0)
     parser.add_argument("--log-level", default="INFO")
     args = parser.parse_args()
+    if args.max_attempts < 1:
+        parser.error("--max-attempts must be >= 1")
+    if not 0.0 <= args.mask_alpha <= 1.0:
+        parser.error("--mask-alpha must be in [0, 1]")
+    if not 0.0 <= args.mask_dropout_probability <= 1.0:
+        parser.error("--mask-dropout-probability must be in [0, 1]")
+    if args.mask_outline_px < 0:
+        parser.error("--mask-outline-px must be >= 0")
     logging.basicConfig(level=getattr(logging, args.log_level.upper()), force=True)
     return args
 

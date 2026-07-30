@@ -74,15 +74,31 @@ class CalvinEnvAdapter:
         observation["robot_obs"][14] = gripper_command
         return observation
 
-    def observation_for_policy(self, observation):
+    def observation_for_policy(
+        self, observation, role_masks=None, overlay=None, frame_index=0
+    ):
         rgb = observation["rgb_obs"]
+        role_masks = role_masks or {}
+        static = rgb["rgb_static"]
+        gripper = rgb["rgb_gripper"]
+        if overlay is not None:
+            static = overlay.apply(
+                static,
+                role_masks.get("observation.images.static", {}),
+                frame_index=frame_index,
+            )
+            gripper = overlay.apply(
+                gripper,
+                role_masks.get("observation.images.gripper", {}),
+                frame_index=frame_index,
+            )
         result = {
             "observation.state": np.asarray(observation["robot_obs"], dtype=np.float32),
             "observation.images.static": self._prepare_image(
-                rgb["rgb_static"], "observation.images.static"
+                static, "observation.images.static"
             ),
             "observation.images.gripper": self._prepare_image(
-                rgb["rgb_gripper"], "observation.images.gripper"
+                gripper, "observation.images.gripper"
             ),
         }
         return result

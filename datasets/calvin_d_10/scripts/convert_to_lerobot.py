@@ -124,18 +124,33 @@ def selected_segments(
     return segments
 
 
-def iter_episode_frames(source_split: Path, segment: dict) -> Iterable[dict]:
+def iter_episode_frames(
+    source_split: Path, segment: dict, mask_cache: Path | None = None
+) -> Iterable[dict]:
     for source_index in range(segment["start"], segment["end"] + 1):
         path = source_split / f"episode_{source_index:07d}.npz"
         with np.load(path) as source:
+            rgb_static = source["rgb_static"]
+            rgb_gripper = source["rgb_gripper"]
+            if mask_cache is not None:
+                cached_path = (
+                    mask_cache
+                    / segment["segment_id"]
+                    / f"episode_{source_index:07d}.npz"
+                )
+                if not cached_path.is_file():
+                    raise FileNotFoundError(f"missing mask cache frame: {cached_path}")
+                with np.load(cached_path) as cached:
+                    rgb_static = cached["rgb_static"].copy()
+                    rgb_gripper = cached["rgb_gripper"].copy()
             # MultiTask DiT stacks camera features before model-side resize/crop,
             # so every camera must have the same HxW. Preserve the 200x200 static
             # image and upsample CALVIN's native 84x84 gripper image.
             gripper = np.asarray(
-                Image.fromarray(source["rgb_gripper"]).resize((200, 200), resample=Image.Resampling.BILINEAR)
+                Image.fromarray(rgb_gripper).resize((200, 200), resample=Image.Resampling.BILINEAR)
             )
             yield {
-                "observation.images.static": source["rgb_static"],
+                "observation.images.static": rgb_static,
                 "observation.images.gripper": gripper,
                 "observation.state": source["robot_obs"].astype(np.float32),
                 "action": source["rel_actions"].astype(np.float32),
@@ -165,6 +180,11 @@ def main() -> None:
     parser.add_argument("--max-episodes-per-task", type=int, help="retain at most N episodes for every task")
     parser.add_argument("--image-writer-threads", type=int, default=8)
     parser.add_argument("--overwrite", action="store_true")
+    parser.add_argument(
+        "--mask-cache",
+        type=Path,
+        help="separate cache produced by build_gt_mask_cache.py; clean source is the default",
+    )
     args = parser.parse_args()
 
     manifest = json.loads(args.manifest.read_text())
@@ -172,6 +192,7 @@ def main() -> None:
     if not source_root.is_absolute():
         source_root = WORKSPACE / source_root
     source_split = source_root / args.split
+    mask_cache = args.mask_cache.resolve() if args.mask_cache else None
     segments = selected_segments(
         manifest,
         args.split,
@@ -211,7 +232,7 @@ def main() -> None:
     )
     try:
         for segment in tqdm(segments, desc=f"Converting {args.split}/{args.storage}", unit="episode"):
-            for frame in iter_episode_frames(source_split, segment):
+            for frame in iter_episode_frames(source_split, segment, mask_cache):
                 dataset.add_frame(frame)
             dataset.save_episode(parallel_encoding=False)
         dataset.finalize()
@@ -230,6 +251,7 @@ def main() -> None:
         "episodes": len(segments),
         "frames": sum(segment["num_frames"] for segment in segments),
         "tasks": sorted({segment["calvin_task"] for segment in segments}),
+        "mask_cache": str(mask_cache) if mask_cache else None,
     }
     (output / "conversion_info.json").write_text(json.dumps(conversion_info, indent=2) + "\n")
     print(json.dumps(conversion_info, indent=2))

@@ -106,6 +106,8 @@ class RolloutEngine:
         video_dir=None,
         video_fps=30,
         restore_thresholds=None,
+        mask_provider=None,
+        mask_overlay=None,
     ):
         self.adapter = adapter
         self.client = client
@@ -117,12 +119,16 @@ class RolloutEngine:
         self.restore_thresholds = dict(
             restore_thresholds or DEFAULT_RESTORE_THRESHOLDS
         )
+        self.mask_provider = mask_provider
+        self.mask_overlay = mask_overlay
         if self.video_dir:
             self.video_dir.mkdir(parents=True, exist_ok=True)
 
     def run(self, episode):
         robot_obs, scene_obs = episode.load_initial_state()
         observation = self.adapter.reset(robot_obs, scene_obs)
+        if self.mask_provider is not None:
+            self.mask_provider.reset(episode)
         restore_metrics = restoration_metrics(
             robot_obs,
             scene_obs,
@@ -170,9 +176,24 @@ class RolloutEngine:
         success_step = None
 
         for step in range(episode.max_steps):
+            role_masks = (
+                self.mask_provider.masks(observation)
+                if self.mask_provider is not None
+                else None
+            )
+            policy_observation = self.adapter.observation_for_policy(
+                observation,
+                role_masks=role_masks,
+                overlay=self.mask_overlay,
+                frame_index=step,
+            )
             if self.video_dir:
-                frames.append(np.asarray(observation["rgb_obs"]["rgb_static"]).copy())
-            policy_observation = self.adapter.observation_for_policy(observation)
+                video_frame = (
+                    policy_observation["observation.images.static"]
+                    if self.mask_overlay is not None
+                    else observation["rgb_obs"]["rgb_static"]
+                )
+                frames.append(np.asarray(video_frame).copy())
             started = time.perf_counter()
             action, metadata = self.client.step(
                 episode.episode_id, policy_observation, step

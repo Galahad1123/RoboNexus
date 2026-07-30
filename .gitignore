@@ -23,6 +23,7 @@ runs/
 wandb/
 lightning_logs/
 checkpoints/
+mask_cache/
 *.log
 
 # Model weights
