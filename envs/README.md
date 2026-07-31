@@ -26,6 +26,32 @@ export PYTHONNOUSERSITE=1
 
 CALVIN is pinned to Python 3.8 because of its legacy dependency stack.
 
+Restore the simulation assets before installing CALVIN. The RoboNexus
+checkout contains the `calvin_env` source tree as regular files, while the
+upstream `calvin_env/data` directory is ignored and therefore is not included
+in this repository. Fetch the assets from the exact `calvin_env` revision used
+by the pinned CALVIN checkout:
+
+```bash
+asset_checkout="$(mktemp -d)"
+git clone --filter=blob:none \
+  https://github.com/mees/calvin_env.git \
+  "$asset_checkout"
+git -C "$asset_checkout" checkout \
+  1431a46bd36bde5903fb6345e68b5ccc30def666
+
+mkdir -p calvin/calvin_env/data
+cp -a "$asset_checkout/data/." calvin/calvin_env/data/
+rm -rf "$asset_checkout"
+
+test -f calvin/calvin_env/data/franka_panda/panda.urdf
+test -f calvin/calvin_env/data/calvin_table_D/urdf/calvin_table_D.urdf
+test -f calvin/calvin_env/data/blocks/block_red_middle.urdf
+echo "CALVIN assets: OK"
+```
+
+Run the environment installation from the repository root:
+
 ```bash
 conda env create -f envs/calvin.yml
 conda activate robonexus-calvin
