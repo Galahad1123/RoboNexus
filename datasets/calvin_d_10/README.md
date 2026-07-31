@@ -215,7 +215,7 @@ conda run -n robonexus-calvin python \
 ## Oracle 原地 retry
 
 `--max-attempts 1`（默认）仍使用原始 clean rollout。大于 1 时才启用
-`agent/calvin_oracle_retry.py`：一次尝试超时后不恢复初态，而是从当前仿真状态开启
+`backends/calvin/retry_runner.py`：一次尝试超时后不恢复初态，而是从当前仿真状态开启
 新的 policy session；每次 session 使用独立且可复现的 seed。CALVIN oracle 只负责
 判定任务是否已经成功，第一版不含学习式成功检测。
 
@@ -226,5 +226,26 @@ conda run -n robonexus-calvin python \
   --output-dir outputs/calvin_d10_eval/checkpoint_80000_retry3
 ```
 
+增加 `--retry-recovery oracle-approach` 后，每次重试前会用 CALVIN/PyBullet
+真值定位 `evaluation.yaml` 中配置的目标。仅当 TCP 与目标的 XY 距离超过
+`xy_threshold_m` 时，控制器才在保持末端朝向和夹爪命令不变的情况下先抬升到安全
+高度，再水平靠近目标；进入阈值范围后立即停止，不下降或接触目标：
+
+```bash
+conda run -n robonexus-calvin python \
+  datasets/calvin_d_10/scripts/evaluate.py \
+  --max-attempts 3 --retry-recovery oracle-approach \
+  --replan-interval 16 --save-video \
+  --output-dir outputs/calvin_d10_eval/checkpoint_80000_oracle_approach_retry3
+```
+
+`place_in_drawer` 与 `stack_block` 在第一版配置中禁用重试，因为可靠恢复需要额外
+技能。其余任务的目标 selector、接近偏移和安全参数均由 suite 配置承载。
+
 结果 JSONL 中会额外记录 `attempt_count` 和逐次 `attempts`。该 agent 也可与
 `--mask-provider gt` 组合，但建议先分别做 clean retry 和 GT-mask 单变量实验。
+评测目录还会生成 `events.jsonl`，记录 attempt、定位/接近恢复及最终状态；
+`summary.json` 额外汇总 `success@1/2/3`、策略步数和恢复步数。
+
+当前恢复只判断和缩小 XY 距离，不依赖训练数据中的接近位姿统计。每个任务可独立
+配置 `xy_threshold_m` 与 `hover_height_m`。

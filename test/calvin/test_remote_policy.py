@@ -2,6 +2,8 @@ import sys
 from pathlib import Path
 import unittest
 
+import numpy as np
+
 
 WORKSPACE = Path(__file__).resolve().parents[2]
 REMOTE_POLICY = WORKSPACE / "calvin" / "evaluation" / "remote_policy"
@@ -13,7 +15,10 @@ from rollout_engine import derive_episode_seed, restoration_metrics  # noqa: E40
 from calvin_env_adapter import CalvinEnvAdapter  # noqa: E402
 from model_client import _pack, _unpack  # noqa: E402
 from masking import MaskOverlay, MaskPerturbation  # noqa: E402
-from agent.calvin_oracle_retry import CalvinOracleRetryAgent  # noqa: E402
+from backends.calvin.retry_runner import CalvinOracleRetryAgent  # noqa: E402
+from backends.calvin.motion_controller import (  # noqa: E402
+    CalvinCartesianApproachController,
+)
 
 
 class ConfiguredCalvinSuiteTest(unittest.TestCase):
@@ -40,12 +45,91 @@ class ConfiguredCalvinSuiteTest(unittest.TestCase):
         episode = self.suite.episodes("lift_blue_block_drawer", count=1)[0]
         self.assertEqual(episode.instruction, "lift the blue block from the drawer")
         self.assertEqual(episode.oracle_task, "lift_blue_block_drawer")
+        self.assertTrue(episode.retry["enabled"])
+        self.assertEqual(episode.retry["target"], {"movable": "block_blue"})
         robot_obs, scene_obs = episode.load_initial_state()
         self.assertEqual(robot_obs.shape, (15,))
         self.assertEqual(scene_obs.shape, (24,))
         self.assertEqual(
             episode.mask_roles["source"], [{"movable": "block_blue"}]
         )
+
+    def test_multi_skill_recovery_tasks_disable_retry(self):
+        episode = self.suite.episodes("stack_block", count=1)[0]
+        self.assertFalse(episode.retry["enabled"])
+        self.assertEqual(
+            episode.retry["reason"], "requires_multi_skill_recovery"
+        )
+
+    def test_cartesian_approach_preserves_gripper_and_reaches_target(self):
+        class Robot:
+            max_rel_pos = 0.02
+
+        class Env:
+            robot = Robot()
+
+        class Adapter:
+            env = Env()
+
+            def step(self, action):
+                self.commands.append(np.asarray(action).copy())
+                self.observation["robot_obs"][:3] += action[:3] * 0.02
+                self.last_executed_action = np.asarray(action).copy()
+                return self.observation, 0, False, {}
+
+        adapter = Adapter()
+        adapter.commands = []
+        adapter.observation = {
+            "robot_obs": np.asarray(
+                [0.30, 0.00, 0.55] + [0.0] * 11 + [-1.0],
+                dtype=np.float64,
+            )
+        }
+        result = CalvinCartesianApproachController(adapter).execute(
+            adapter.observation,
+            "block_red",
+            np.asarray([0.40, 0.10, 0.50]),
+            {
+                "xy_threshold_m": 0.05,
+                "hover_height_m": 0.10,
+                "z_tolerance_m": 0.01,
+                "max_motion_steps": 40,
+            },
+        )
+        self.assertTrue(result.success)
+        self.assertLessEqual(result.final_xy_distance_m, 0.05)
+        self.assertTrue(adapter.commands)
+        self.assertTrue(all(command[6] == -1.0 for command in adapter.commands))
+
+    def test_cartesian_approach_does_nothing_when_xy_is_already_close(self):
+        class Robot:
+            max_rel_pos = 0.02
+
+        class Env:
+            robot = Robot()
+
+        class Adapter:
+            env = Env()
+
+            @staticmethod
+            def step(action):
+                raise AssertionError("controller must not move inside XY threshold")
+
+        observation = {
+            "robot_obs": np.asarray(
+                [0.30, 0.00, 0.55] + [0.0] * 11 + [1.0],
+                dtype=np.float64,
+            )
+        }
+        result = CalvinCartesianApproachController(Adapter()).execute(
+            observation,
+            "block_red",
+            np.asarray([0.35, 0.02, 0.50]),
+            {"xy_threshold_m": 0.10},
+        )
+        self.assertTrue(result.success)
+        self.assertEqual(result.steps, 0)
+        self.assertEqual(result.reason, "already_within_xy_threshold")
 
     def test_mask_overlay_does_not_mutate_clean_image(self):
         import numpy as np

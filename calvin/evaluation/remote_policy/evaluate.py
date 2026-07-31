@@ -31,6 +31,7 @@ def run(args):
 
     client = ModelClient(host=args.host, port=args.port)
     adapter = None
+    event_logger = None
     try:
         adapter = CalvinEnvAdapter.create(
             suite.dataset_split,
@@ -62,6 +63,7 @@ def run(args):
                 "seed": args.seed,
                 "replan_interval": args.replan_interval,
                 "max_attempts": args.max_attempts,
+                "retry_recovery": args.retry_recovery,
                 "server_metadata": client.metadata,
                 "mask_provider": args.mask_provider,
                 "mask_alpha": args.mask_alpha,
@@ -85,9 +87,26 @@ def run(args):
         )
         runner = engine
         if args.max_attempts > 1:
-            from agent.calvin_oracle_retry import CalvinOracleRetryAgent
+            from backends.calvin.event_logger import JsonlEventLogger
+            from backends.calvin.retry_runner import CalvinOracleRetryAgent
 
-            runner = CalvinOracleRetryAgent(engine, args.max_attempts)
+            event_logger = JsonlEventLogger(
+                Path(args.output_dir) / "events.jsonl",
+                Path(args.output_dir).name,
+            )
+            recovery = None
+            if args.retry_recovery == "oracle-approach":
+                from backends.calvin.approach_recovery import (
+                    CalvinOracleApproachRecovery,
+                )
+
+                recovery = CalvinOracleApproachRecovery(adapter)
+            runner = CalvinOracleRetryAgent(
+                engine,
+                args.max_attempts,
+                recovery=recovery,
+                event_logger=event_logger,
+            )
 
         for task in tasks:
             selection_seed = derive_episode_seed(
@@ -129,6 +148,8 @@ def run(args):
         summary = writer.write_summary()
         print(json.dumps(summary, indent=2, sort_keys=True))
     finally:
+        if event_logger is not None:
+            event_logger.close()
         if adapter is not None:
             adapter.close()
         client.close()
@@ -157,6 +178,12 @@ def parse_args():
         type=int,
         default=1,
         help="1 uses the clean rollout; >1 enables agent-side oracle retry in place",
+    )
+    parser.add_argument(
+        "--retry-recovery",
+        choices=("none", "oracle-approach"),
+        default="none",
+        help="recovery before retry; oracle-approach localizes the configured target and moves above it",
     )
     parser.add_argument(
         "--mask-provider",

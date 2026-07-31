@@ -39,13 +39,58 @@ class ResultWriter:
         task_metrics = {}
         for task, records in sorted(by_task.items()):
             successes = sum(bool(record["success"]) for record in records)
+            first_attempt_failures = sum(
+                bool(record.get("attempts"))
+                and not bool(record["attempts"][0].get("success"))
+                for record in records
+            )
+            recovered_after_failure = sum(
+                bool(record.get("success"))
+                and int(record.get("attempt_count", 1)) > 1
+                for record in records
+            )
+            success_at = {}
+            for attempt_limit in (1, 2, 3):
+                recovered = sum(
+                    bool(record.get("success"))
+                    and int(record.get("attempt_count", 1)) <= attempt_limit
+                    for record in records
+                )
+                success_at[str(attempt_limit)] = recovered / len(records)
             task_metrics[task] = {
                 "episodes": len(records),
                 "successes": successes,
                 "success_rate": successes / len(records),
+                "success_at_attempt": success_at,
+                "mean_attempt_count": sum(
+                    int(record.get("attempt_count", 1)) for record in records
+                )
+                / len(records),
+                "recovery_failures": sum(
+                    record.get("termination_reason") in {
+                        "recovery_failed",
+                        "recovery_exception",
+                    }
+                    for record in records
+                ),
+                "conditional_recovery_rate": (
+                    recovered_after_failure / first_attempt_failures
+                    if first_attempt_failures
+                    else 0.0
+                ),
             }
         total = len(self.records)
         successes = sum(bool(record["success"]) for record in self.records)
+        first_attempt_failures = sum(
+            bool(record.get("attempts"))
+            and not bool(record["attempts"][0].get("success"))
+            for record in self.records
+        )
+        recovered_after_failure = sum(
+            bool(record.get("success"))
+            and int(record.get("attempt_count", 1)) > 1
+            for record in self.records
+        )
         summary = {
             "episodes": total,
             "successes": successes,
@@ -56,6 +101,35 @@ class ResultWriter:
                 else 0.0
             ),
             "by_task": task_metrics,
+            "success_at_attempt": {
+                str(attempt_limit): (
+                    sum(
+                        bool(record.get("success"))
+                        and int(record.get("attempt_count", 1)) <= attempt_limit
+                        for record in self.records
+                    )
+                    / total
+                    if total
+                    else 0.0
+                )
+                for attempt_limit in (1, 2, 3)
+            },
+            "policy_steps": sum(
+                int(record.get("policy_steps", record.get("steps_executed", 0)))
+                for record in self.records
+            ),
+            "recovery_steps": sum(
+                int(record.get("recovery_steps", 0)) for record in self.records
+            ),
+            "conditional_recovery_rate": (
+                recovered_after_failure / first_attempt_failures
+                if first_attempt_failures
+                else 0.0
+            ),
+            "retry_disabled_episodes": sum(
+                not bool(record.get("retry_enabled", True))
+                for record in self.records
+            ),
         }
         (self.output_dir / "summary.json").write_text(
             json.dumps(summary, indent=2, sort_keys=True) + "\n"

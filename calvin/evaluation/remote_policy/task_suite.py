@@ -19,6 +19,7 @@ class EpisodeSpec:
     max_steps: int
     settle_steps: int
     mask_roles: Optional[Dict[str, List[dict]]] = None
+    retry: Optional[dict] = None
 
     def load_initial_state(self):
         with np.load(str(self.source_frame)) as frame:
@@ -80,6 +81,7 @@ class ConfiguredCalvinSuite:
                     task_config.get("settle_steps", self.config["defaults"].get("settle_steps", 0))
                 ),
                 mask_roles=task_config.get("mask_roles"),
+                retry=task_config.get("retry"),
             )
             for row in rows
         ]

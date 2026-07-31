@@ -3,6 +3,21 @@
 第一阶段实现 Qwen3-VL 定位、SAM 首帧分割、Cutie 有状态逐帧跟踪，以及低质量
 mask 的自动纠偏。`core` 不导入任何模型包，三个模型可运行在独立 Conda 环境中。
 
+## Core 分层
+
+`core` 按职责拆分，具体模型或仿真器实现不得反向进入核心包：
+
+- `core/common`：共享图像、对象和流水线数据类型；
+- `core/perception`：grounding、segmentation、tracking 接口与编排；
+- `core/execution`：策略执行、验证、定位和恢复运动契约；
+- `core/verification`、`core/localization`、`core/motion`：面向调用方的窄接口；
+- `core/logging`：JSONL 和内存事件记录器；
+- `core/transport`：独立模型服务的 HTTP client。
+
+旧的 `core.schemas`、`core.orchestrator` 等导入暂由薄兼容模块转发，新代码应使用
+上述分层路径。CALVIN/PyBullet 实现位于仓库级 `backends/calvin/`，不属于通用
+核心；根目录 `agent/` 仅保留旧导入路径的兼容转发。
+
 ## 协议约定
 
 - 图像为 RGB `uint8 H×W×3`。
