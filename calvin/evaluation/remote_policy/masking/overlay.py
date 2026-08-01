@@ -53,12 +53,27 @@ class MaskOverlay:
         seed=42,
         outline_width_px=0,
         outline_color=(0, 0, 0),
+        outline_colors=None,
+        outline_halo_width_px=0,
+        outline_halo_color=(255, 255, 255),
     ):
         self.alpha = float(alpha)
         self.outline_width_px = int(outline_width_px)
         self.outline_color = np.asarray(outline_color, dtype=np.uint8)
+        self.outline_colors = {
+            role: np.asarray(value, dtype=np.uint8)
+            for role, value in (outline_colors or {}).items()
+        }
+        self.outline_halo_width_px = int(outline_halo_width_px)
+        self.outline_halo_color = np.asarray(outline_halo_color, dtype=np.uint8)
         if self.outline_color.shape != (3,):
             raise ValueError("outline_color must contain exactly three RGB values")
+        if any(value.shape != (3,) for value in self.outline_colors.values()):
+            raise ValueError("every role outline color must contain three RGB values")
+        if self.outline_halo_width_px < 0:
+            raise ValueError("outline_halo_width_px must be >= 0")
+        if self.outline_halo_color.shape != (3,):
+            raise ValueError("outline_halo_color must contain exactly three RGB values")
         if self.outline_width_px < 0:
             raise ValueError("outline_width_px must be >= 0")
         self.colors = dict(self.DEFAULT_COLORS)
@@ -89,5 +104,15 @@ class MaskOverlay:
                 dilated = cv2.dilate(mask.astype(np.uint8), kernel).astype(bool)
                 eroded = cv2.erode(mask.astype(np.uint8), kernel).astype(bool)
                 outline = dilated & ~eroded
-                result[outline] = self.outline_color
+                if self.outline_halo_width_px:
+                    halo_radius = radius + self.outline_halo_width_px
+                    halo_kernel = np.ones(
+                        (2 * halo_radius + 1, 2 * halo_radius + 1), np.uint8
+                    )
+                    halo_dilated = cv2.dilate(
+                        mask.astype(np.uint8), halo_kernel
+                    ).astype(bool)
+                    halo = halo_dilated & ~dilated
+                    result[halo] = self.outline_halo_color
+                result[outline] = self.outline_colors.get(role, self.outline_color)
         return result

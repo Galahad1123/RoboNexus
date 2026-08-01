@@ -168,6 +168,23 @@ class ConfiguredCalvinSuiteTest(unittest.TestCase):
         # The outline straddles the segmentation boundary for visibility.
         self.assertTrue(np.array_equal(augmented[2, 5], [0, 0, 0]))
 
+    def test_role_outline_color_and_outer_halo(self):
+        import numpy as np
+
+        image = np.zeros((14, 14, 3), dtype=np.uint8)
+        mask = np.zeros((14, 14), dtype=bool)
+        mask[4:10, 4:10] = True
+        augmented = MaskOverlay(
+            alpha=0,
+            outline_width_px=2,
+            outline_colors={"destination": (0, 255, 255)},
+            outline_halo_width_px=1,
+            outline_halo_color=(255, 255, 255),
+        ).apply(image, {"destination": mask})
+        self.assertTrue(np.array_equal(augmented[4, 6], [0, 255, 255]))
+        self.assertTrue(np.array_equal(augmented[1, 6], [255, 255, 255]))
+        self.assertTrue(np.array_equal(augmented[0, 6], [0, 0, 0]))
+
     def test_restore_metrics_ignore_command_and_handle_angle_wrap(self):
         import numpy as np
 

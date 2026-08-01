@@ -1,0 +1,88 @@
+{
+  "training": {
+    "dataset": "calvin_stack_place_3",
+    "split": "training",
+    "candidates": 454,
+    "clusters": 370,
+    "retained": 325,
+    "frames_retained": 14527,
+    "by_task": {
+      "place_in_drawer": {
+        "candidates": 152,
+        "clusters": 126,
+        "retained": 125
+      },
+      "place_in_slider": {
+        "candidates": 151,
+        "clusters": 132,
+        "retained": 131
+      },
+      "stack_block": {
+        "candidates": 151,
+        "clusters": 112,
+        "retained": 69
+      }
+    },
+    "candidate_rejection_reasons": {
+      "expected_exactly_one_held_object": 59,
+      "oracle_not_satisfied_after_boundary_repair": 2,
+      "stack_contact_not_persistent": 2
+    },
+    "boundary_repairs": {
+      "start_extended": 0,
+      "end_extended": 0
+    },
+    "initial_support_distribution": {},
+    "stack_source_destination": {
+      "block_blue->block_pink": 13,
+      "block_blue->block_red": 15,
+      "block_pink->block_blue": 9,
+      "block_pink->block_red": 9,
+      "block_red->block_blue": 15,
+      "block_red->block_pink": 8
+    }
+  },
+  "validation": {
+    "dataset": "calvin_stack_place_3",
+    "split": "validation",
+    "candidates": 88,
+    "clusters": 65,
+    "retained": 60,
+    "frames_retained": 2626,
+    "by_task": {
+      "place_in_drawer": {
+        "candidates": 29,
+        "clusters": 25,
+        "retained": 25
+      },
+      "place_in_slider": {
+        "candidates": 30,
+        "clusters": 22,
+        "retained": 22
+      },
+      "stack_block": {
+        "candidates": 29,
+        "clusters": 18,
+        "retained": 13
+      }
+    },
+    "candidate_rejection_reasons": {
+      "expected_exactly_one_held_object": 10,
+      "oracle_not_satisfied_after_boundary_repair": 1,
+      "stack_contact_not_persistent": 1
+    },
+    "boundary_repairs": {
+      "start_extended": 0,
+      "end_extended": 0
+    },
+    "initial_support_distribution": {},
+    "stack_source_destination": {
+      "block_blue->block_pink": 1,
+      "block_blue->block_red": 3,
+      "block_pink->block_blue": 2,
+      "block_pink->block_red": 2,
+      "block_red->block_blue": 3,
+      "block_red->block_pink": 2
+    }
+  }
+}

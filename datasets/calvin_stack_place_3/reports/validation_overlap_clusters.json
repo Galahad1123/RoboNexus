@@ -1,0 +1,746 @@
+[
+  {
+    "cluster_id": "place_in_drawer-0000",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      934
+    ],
+    "oracle_consistent_candidates": [
+      934
+    ],
+    "selected_annotation_index": 934
+  },
+  {
+    "cluster_id": "place_in_drawer-0001",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      703
+    ],
+    "oracle_consistent_candidates": [
+      703
+    ],
+    "selected_annotation_index": 703
+  },
+  {
+    "cluster_id": "place_in_drawer-0002",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      701
+    ],
+    "oracle_consistent_candidates": [
+      701
+    ],
+    "selected_annotation_index": 701
+  },
+  {
+    "cluster_id": "place_in_drawer-0003",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      684,
+      909
+    ],
+    "oracle_consistent_candidates": [
+      909
+    ],
+    "selected_annotation_index": 909
+  },
+  {
+    "cluster_id": "place_in_drawer-0004",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      412,
+      779
+    ],
+    "oracle_consistent_candidates": [
+      412,
+      779
+    ],
+    "selected_annotation_index": 779
+  },
+  {
+    "cluster_id": "place_in_drawer-0005",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      48
+    ],
+    "oracle_consistent_candidates": [
+      48
+    ],
+    "selected_annotation_index": 48
+  },
+  {
+    "cluster_id": "place_in_drawer-0006",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      265,
+      655
+    ],
+    "oracle_consistent_candidates": [
+      265,
+      655
+    ],
+    "selected_annotation_index": 265
+  },
+  {
+    "cluster_id": "place_in_drawer-0007",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      419
+    ],
+    "oracle_consistent_candidates": [
+      419
+    ],
+    "selected_annotation_index": 419
+  },
+  {
+    "cluster_id": "place_in_drawer-0008",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      24
+    ],
+    "oracle_consistent_candidates": [
+      24
+    ],
+    "selected_annotation_index": 24
+  },
+  {
+    "cluster_id": "place_in_drawer-0009",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      942
+    ],
+    "oracle_consistent_candidates": [
+      942
+    ],
+    "selected_annotation_index": 942
+  },
+  {
+    "cluster_id": "place_in_drawer-0010",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      816
+    ],
+    "oracle_consistent_candidates": [
+      816
+    ],
+    "selected_annotation_index": 816
+  },
+  {
+    "cluster_id": "place_in_drawer-0011",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      242
+    ],
+    "oracle_consistent_candidates": [
+      242
+    ],
+    "selected_annotation_index": 242
+  },
+  {
+    "cluster_id": "place_in_drawer-0012",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      700
+    ],
+    "oracle_consistent_candidates": [
+      700
+    ],
+    "selected_annotation_index": 700
+  },
+  {
+    "cluster_id": "place_in_drawer-0013",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      919
+    ],
+    "oracle_consistent_candidates": [
+      919
+    ],
+    "selected_annotation_index": 919
+  },
+  {
+    "cluster_id": "place_in_drawer-0014",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      656
+    ],
+    "oracle_consistent_candidates": [
+      656
+    ],
+    "selected_annotation_index": 656
+  },
+  {
+    "cluster_id": "place_in_drawer-0015",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      140
+    ],
+    "oracle_consistent_candidates": [
+      140
+    ],
+    "selected_annotation_index": 140
+  },
+  {
+    "cluster_id": "place_in_drawer-0016",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      517
+    ],
+    "oracle_consistent_candidates": [
+      517
+    ],
+    "selected_annotation_index": 517
+  },
+  {
+    "cluster_id": "place_in_drawer-0017",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      46,
+      529
+    ],
+    "oracle_consistent_candidates": [
+      46,
+      529
+    ],
+    "selected_annotation_index": 46
+  },
+  {
+    "cluster_id": "place_in_drawer-0018",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      554
+    ],
+    "oracle_consistent_candidates": [
+      554
+    ],
+    "selected_annotation_index": 554
+  },
+  {
+    "cluster_id": "place_in_drawer-0019",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      293
+    ],
+    "oracle_consistent_candidates": [
+      293
+    ],
+    "selected_annotation_index": 293
+  },
+  {
+    "cluster_id": "place_in_drawer-0020",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      689
+    ],
+    "oracle_consistent_candidates": [
+      689
+    ],
+    "selected_annotation_index": 689
+  },
+  {
+    "cluster_id": "place_in_drawer-0021",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      239
+    ],
+    "oracle_consistent_candidates": [
+      239
+    ],
+    "selected_annotation_index": 239
+  },
+  {
+    "cluster_id": "place_in_drawer-0022",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      133
+    ],
+    "oracle_consistent_candidates": [
+      133
+    ],
+    "selected_annotation_index": 133
+  },
+  {
+    "cluster_id": "place_in_drawer-0023",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      926
+    ],
+    "oracle_consistent_candidates": [
+      926
+    ],
+    "selected_annotation_index": 926
+  },
+  {
+    "cluster_id": "place_in_drawer-0024",
+    "task": "place_in_drawer",
+    "candidate_annotation_indices": [
+      132
+    ],
+    "oracle_consistent_candidates": [
+      132
+    ],
+    "selected_annotation_index": 132
+  },
+  {
+    "cluster_id": "place_in_slider-0025",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      497
+    ],
+    "oracle_consistent_candidates": [
+      497
+    ],
+    "selected_annotation_index": 497
+  },
+  {
+    "cluster_id": "place_in_slider-0026",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      295
+    ],
+    "oracle_consistent_candidates": [
+      295
+    ],
+    "selected_annotation_index": 295
+  },
+  {
+    "cluster_id": "place_in_slider-0027",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      569,
+      651,
+      936
+    ],
+    "oracle_consistent_candidates": [
+      569,
+      651,
+      936
+    ],
+    "selected_annotation_index": 569
+  },
+  {
+    "cluster_id": "place_in_slider-0028",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      893
+    ],
+    "oracle_consistent_candidates": [
+      893
+    ],
+    "selected_annotation_index": 893
+  },
+  {
+    "cluster_id": "place_in_slider-0029",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      28
+    ],
+    "oracle_consistent_candidates": [
+      28
+    ],
+    "selected_annotation_index": 28
+  },
+  {
+    "cluster_id": "place_in_slider-0030",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      270,
+      665
+    ],
+    "oracle_consistent_candidates": [
+      270,
+      665
+    ],
+    "selected_annotation_index": 270
+  },
+  {
+    "cluster_id": "place_in_slider-0031",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      772
+    ],
+    "oracle_consistent_candidates": [
+      772
+    ],
+    "selected_annotation_index": 772
+  },
+  {
+    "cluster_id": "place_in_slider-0032",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      920
+    ],
+    "oracle_consistent_candidates": [
+      920
+    ],
+    "selected_annotation_index": 920
+  },
+  {
+    "cluster_id": "place_in_slider-0033",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      550,
+      788
+    ],
+    "oracle_consistent_candidates": [
+      550,
+      788
+    ],
+    "selected_annotation_index": 550
+  },
+  {
+    "cluster_id": "place_in_slider-0034",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      281,
+      781
+    ],
+    "oracle_consistent_candidates": [
+      281,
+      781
+    ],
+    "selected_annotation_index": 281
+  },
+  {
+    "cluster_id": "place_in_slider-0035",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      892
+    ],
+    "oracle_consistent_candidates": [
+      892
+    ],
+    "selected_annotation_index": 892
+  },
+  {
+    "cluster_id": "place_in_slider-0036",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      18,
+      795
+    ],
+    "oracle_consistent_candidates": [
+      18,
+      795
+    ],
+    "selected_annotation_index": 795
+  },
+  {
+    "cluster_id": "place_in_slider-0037",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      441
+    ],
+    "oracle_consistent_candidates": [
+      441
+    ],
+    "selected_annotation_index": 441
+  },
+  {
+    "cluster_id": "place_in_slider-0038",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      672
+    ],
+    "oracle_consistent_candidates": [
+      672
+    ],
+    "selected_annotation_index": 672
+  },
+  {
+    "cluster_id": "place_in_slider-0039",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      401
+    ],
+    "oracle_consistent_candidates": [
+      401
+    ],
+    "selected_annotation_index": 401
+  },
+  {
+    "cluster_id": "place_in_slider-0040",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      528
+    ],
+    "oracle_consistent_candidates": [
+      528
+    ],
+    "selected_annotation_index": 528
+  },
+  {
+    "cluster_id": "place_in_slider-0041",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      427
+    ],
+    "oracle_consistent_candidates": [
+      427
+    ],
+    "selected_annotation_index": 427
+  },
+  {
+    "cluster_id": "place_in_slider-0042",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      518,
+      709
+    ],
+    "oracle_consistent_candidates": [
+      518,
+      709
+    ],
+    "selected_annotation_index": 709
+  },
+  {
+    "cluster_id": "place_in_slider-0043",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      248
+    ],
+    "oracle_consistent_candidates": [
+      248
+    ],
+    "selected_annotation_index": 248
+  },
+  {
+    "cluster_id": "place_in_slider-0044",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      403
+    ],
+    "oracle_consistent_candidates": [
+      403
+    ],
+    "selected_annotation_index": 403
+  },
+  {
+    "cluster_id": "place_in_slider-0045",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      668
+    ],
+    "oracle_consistent_candidates": [
+      668
+    ],
+    "selected_annotation_index": 668
+  },
+  {
+    "cluster_id": "place_in_slider-0046",
+    "task": "place_in_slider",
+    "candidate_annotation_indices": [
+      250,
+      666
+    ],
+    "oracle_consistent_candidates": [
+      250,
+      666
+    ],
+    "selected_annotation_index": 666
+  },
+  {
+    "cluster_id": "stack_block-0047",
+    "task": "stack_block",
+    "candidate_annotation_indices": [
+      829
+    ],
+    "oracle_consistent_candidates": [
+      829
+    ],
+    "selected_annotation_index": 829
+  },
+  {
+    "cluster_id": "stack_block-0048",
+    "task": "stack_block",
+    "candidate_annotation_indices": [
+      172
+    ],
+    "oracle_consistent_candidates": [
+      172
+    ],
+    "selected_annotation_index": 172
+  },
+  {
+    "cluster_id": "stack_block-0049",
+    "task": "stack_block",
+    "candidate_annotation_indices": [
+      312,
+      313,
+      796,
+      955
+    ],
+    "oracle_consistent_candidates": [
+      312,
+      313
+    ],
+    "selected_annotation_index": 312
+  },
+  {
+    "cluster_id": "stack_block-0050",
+    "task": "stack_block",
+    "candidate_annotation_indices": [
+      445
+    ],
+    "oracle_consistent_candidates": [
+      445
+    ],
+    "selected_annotation_index": 445
+  },
+  {
+    "cluster_id": "stack_block-0051",
+    "task": "stack_block",
+    "candidate_annotation_indices": [
+      663
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "stack_block-0052",
+    "task": "stack_block",
+    "candidate_annotation_indices": [
+      832
+    ],
+    "oracle_consistent_candidates": [
+      832
+    ],
+    "selected_annotation_index": 832
+  },
+  {
+    "cluster_id": "stack_block-0053",
+    "task": "stack_block",
+    "candidate_annotation_indices": [
+      718
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "stack_block-0054",
+    "task": "stack_block",
+    "candidate_annotation_indices": [
+      821
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "stack_block-0055",
+    "task": "stack_block",
+    "candidate_annotation_indices": [
+      31,
+      66,
+      706
+    ],
+    "oracle_consistent_candidates": [
+      66,
+      706
+    ],
+    "selected_annotation_index": 66
+  },
+  {
+    "cluster_id": "stack_block-0056",
+    "task": "stack_block",
+    "candidate_annotation_indices": [
+      251
+    ],
+    "oracle_consistent_candidates": [
+      251
+    ],
+    "selected_annotation_index": 251
+  },
+  {
+    "cluster_id": "stack_block-0057",
+    "task": "stack_block",
+    "candidate_annotation_indices": [
+      596,
+      680,
+      839
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "stack_block-0058",
+    "task": "stack_block",
+    "candidate_annotation_indices": [
+      61
+    ],
+    "oracle_consistent_candidates": [
+      61
+    ],
+    "selected_annotation_index": 61
+  },
+  {
+    "cluster_id": "stack_block-0059",
+    "task": "stack_block",
+    "candidate_annotation_indices": [
+      243
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "stack_block-0060",
+    "task": "stack_block",
+    "candidate_annotation_indices": [
+      76,
+      804
+    ],
+    "oracle_consistent_candidates": [
+      76,
+      804
+    ],
+    "selected_annotation_index": 804
+  },
+  {
+    "cluster_id": "stack_block-0061",
+    "task": "stack_block",
+    "candidate_annotation_indices": [
+      21,
+      593
+    ],
+    "oracle_consistent_candidates": [
+      21,
+      593
+    ],
+    "selected_annotation_index": 21
+  },
+  {
+    "cluster_id": "stack_block-0062",
+    "task": "stack_block",
+    "candidate_annotation_indices": [
+      947
+    ],
+    "oracle_consistent_candidates": [
+      947
+    ],
+    "selected_annotation_index": 947
+  },
+  {
+    "cluster_id": "stack_block-0063",
+    "task": "stack_block",
+    "candidate_annotation_indices": [
+      180,
+      958
+    ],
+    "oracle_consistent_candidates": [
+      180,
+      958
+    ],
+    "selected_annotation_index": 958
+  },
+  {
+    "cluster_id": "stack_block-0064",
+    "task": "stack_block",
+    "candidate_annotation_indices": [
+      60,
+      914
+    ],
+    "oracle_consistent_candidates": [
+      914
+    ],
+    "selected_annotation_index": 914
+  }
+]

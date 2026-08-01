@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "source_dataset": "calvin/dataset/task_D_D",
+  "frequency_hz": 30,
+  "overlap_threshold": 0.5,
+  "max_boundary_repair_frames": 15,
+  "stack_contact_window_frames": 5,
+  "stack_min_persistent_contact_frames": 3,
+  "oracle_config": "calvin/calvin_models/conf/callbacks/rollout/tasks/new_playtable_tasks.yaml",
+  "datasets": {
+    "calvin_push_rotate_12": {
+      "mask_style": {
+        "alpha": 0.0,
+        "outline_width_px": 2,
+        "outline_color": [0, 0, 0],
+        "outline_halo_width_px": 0,
+        "outline_halo_color": [255, 255, 255]
+      },
+      "tasks": {
+        "push_blue_block_left": "push the blue block to the left",
+        "push_blue_block_right": "push the blue block to the right",
+        "push_pink_block_left": "push the pink block to the left",
+        "push_pink_block_right": "push the pink block to the right",
+        "push_red_block_left": "push the red block to the left",
+        "push_red_block_right": "push the red block to the right",
+        "rotate_blue_block_left": "rotate the blue block counterclockwise",
+        "rotate_blue_block_right": "rotate the blue block clockwise",
+        "rotate_pink_block_left": "rotate the pink block counterclockwise",
+        "rotate_pink_block_right": "rotate the pink block clockwise",
+        "rotate_red_block_left": "rotate the red block counterclockwise",
+        "rotate_red_block_right": "rotate the red block clockwise"
+      }
+    },
+    "calvin_stack_place_3": {
+      "mask_style": {
+        "alpha": 0.0,
+        "outline_width_px": 2,
+        "outline_color": [0, 255, 255],
+        "outline_colors": {"destination": [0, 255, 255]},
+        "outline_halo_width_px": 1,
+        "outline_halo_color": [255, 255, 255]
+      },
+      "tasks": {
+        "stack_block": "place the held block on top of the outlined block",
+        "place_in_drawer": "place the held block in the outlined drawer",
+        "place_in_slider": "place the held block in the outlined sliding cabinet"
+      }
+    }
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "training": {
+    "dataset": "calvin_push_rotate_12",
+    "split": "training",
+    "candidates": 1801,
+    "clusters": 728,
+    "retained": 552,
+    "frames_retained": 35022,
+    "by_task": {
+      "push_blue_block_left": {
+        "candidates": 150,
+        "clusters": 54,
+        "retained": 31
+      },
+      "push_blue_block_right": {
+        "candidates": 150,
+        "clusters": 56,
+        "retained": 29
+      },
+      "push_pink_block_left": {
+        "candidates": 150,
+        "clusters": 68,
+        "retained": 44
+      },
+      "push_pink_block_right": {
+        "candidates": 150,
+        "clusters": 68,
+        "retained": 53
+      },
+      "push_red_block_left": {
+        "candidates": 150,
+        "clusters": 62,
+        "retained": 33
+      },
+      "push_red_block_right": {
+        "candidates": 150,
+        "clusters": 54,
+        "retained": 30
+      },
+      "rotate_blue_block_left": {
+        "candidates": 150,
+        "clusters": 77,
+        "retained": 72
+      },
+      "rotate_blue_block_right": {
+        "candidates": 150,
+        "clusters": 29,
+        "retained": 27
+      },
+      "rotate_pink_block_left": {
+        "candidates": 151,
+        "clusters": 69,
+        "retained": 61
+      },
+      "rotate_pink_block_right": {
+        "candidates": 150,
+        "clusters": 78,
+        "retained": 69
+      },
+      "rotate_red_block_left": {
+        "candidates": 150,
+        "clusters": 70,
+        "retained": 65
+      },
+      "rotate_red_block_right": {
+        "candidates": 150,
+        "clusters": 43,
+        "retained": 38
+      }
+    },
+    "candidate_rejection_reasons": {
+      "initially_held_after_boundary_repair": 106,
+      "oracle_not_satisfied_after_boundary_repair": 411
+    },
+    "boundary_repairs": {
+      "start_extended": 39,
+      "end_extended": 213
+    },
+    "initial_support_distribution": {
+      "push_blue_block_left|table:base_link": 31,
+      "push_blue_block_right|table:base_link": 29,
+      "push_pink_block_left|table:base_link": 44,
+      "push_pink_block_right|table:base_link": 53,
+      "push_red_block_left|table:base_link": 33,
+      "push_red_block_right|table:base_link": 30,
+      "rotate_blue_block_left|no_fixed_support": 1,
+      "rotate_blue_block_left|table:base_link": 69,
+      "rotate_blue_block_left|table:drawer_link": 1,
+      "rotate_blue_block_left|table:plank_link": 1,
+      "rotate_blue_block_right|table:base_link": 26,
+      "rotate_blue_block_right|table:drawer_link": 1,
+      "rotate_pink_block_left|table:base_link": 61,
+      "rotate_pink_block_right|table:base_link": 68,
+      "rotate_pink_block_right|table:base_link+table:slide_link": 1,
+      "rotate_red_block_left|no_fixed_support": 1,
+      "rotate_red_block_left|table:base_link": 62,
+      "rotate_red_block_left|table:drawer_link": 1,
+      "rotate_red_block_left|table:plank_link": 1,
+      "rotate_red_block_right|table:base_link": 38
+    },
+    "stack_source_destination": {}
+  },
+  "validation": {
+    "dataset": "calvin_push_rotate_12",
+    "split": "validation",
+    "candidates": 353,
+    "clusters": 123,
+    "retained": 94,
+    "frames_retained": 5933,
+    "by_task": {
+      "push_blue_block_left": {
+        "candidates": 29,
+        "clusters": 11,
+        "retained": 7
+      },
+      "push_blue_block_right": {
+        "candidates": 29,
+        "clusters": 8,
+        "retained": 6
+      },
+      "push_pink_block_left": {
+        "candidates": 29,
+        "clusters": 7,
+        "retained": 6
+      },
+      "push_pink_block_right": {
+        "candidates": 29,
+        "clusters": 9,
+        "retained": 6
+      },
+      "push_red_block_left": {
+        "candidates": 30,
+        "clusters": 13,
+        "retained": 9
+      },
+      "push_red_block_right": {
+        "candidates": 29,
+        "clusters": 11,
+        "retained": 5
+      },
+      "rotate_blue_block_left": {
+        "candidates": 29,
+        "clusters": 10,
+        "retained": 8
+      },
+      "rotate_blue_block_right": {
+        "candidates": 29,
+        "clusters": 7,
+        "retained": 7
+      },
+      "rotate_pink_block_left": {
+        "candidates": 29,
+        "clusters": 12,
+        "retained": 10
+      },
+      "rotate_pink_block_right": {
+        "candidates": 30,
+        "clusters": 16,
+        "retained": 13
+      },
+      "rotate_red_block_left": {
+        "candidates": 31,
+        "clusters": 12,
+        "retained": 11
+      },
+      "rotate_red_block_right": {
+        "candidates": 30,
+        "clusters": 7,
+        "retained": 6
+      }
+    },
+    "candidate_rejection_reasons": {
+      "initially_held_after_boundary_repair": 18,
+      "oracle_not_satisfied_after_boundary_repair": 55
+    },
+    "boundary_repairs": {
+      "start_extended": 13,
+      "end_extended": 31
+    },
+    "initial_support_distribution": {
+      "push_blue_block_left|table:base_link": 7,
+      "push_blue_block_right|table:base_link": 6,
+      "push_pink_block_left|table:base_link": 6,
+      "push_pink_block_right|table:base_link": 6,
+      "push_red_block_left|table:base_link": 9,
+      "push_red_block_right|table:base_link": 5,
+      "rotate_blue_block_left|table:base_link": 8,
+      "rotate_blue_block_right|table:base_link": 7,
+      "rotate_pink_block_left|table:base_link": 10,
+      "rotate_pink_block_right|table:base_link": 13,
+      "rotate_red_block_left|table:base_link": 11,
+      "rotate_red_block_right|table:base_link": 6
+    },
+    "stack_source_destination": {}
+  }
+}

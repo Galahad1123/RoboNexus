@@ -1,0 +1,1714 @@
+[
+  {
+    "cluster_id": "push_blue_block_left-0000",
+    "task": "push_blue_block_left",
+    "candidate_annotation_indices": [
+      104,
+      223,
+      232,
+      233,
+      480
+    ],
+    "oracle_consistent_candidates": [
+      104,
+      223,
+      232,
+      233,
+      480
+    ],
+    "selected_annotation_index": 233
+  },
+  {
+    "cluster_id": "push_blue_block_left-0001",
+    "task": "push_blue_block_left",
+    "candidate_annotation_indices": [
+      280
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_blue_block_left-0002",
+    "task": "push_blue_block_left",
+    "candidate_annotation_indices": [
+      613
+    ],
+    "oracle_consistent_candidates": [
+      613
+    ],
+    "selected_annotation_index": 613
+  },
+  {
+    "cluster_id": "push_blue_block_left-0003",
+    "task": "push_blue_block_left",
+    "candidate_annotation_indices": [
+      63,
+      225,
+      236,
+      357,
+      627
+    ],
+    "oracle_consistent_candidates": [
+      63,
+      225,
+      236,
+      357,
+      627
+    ],
+    "selected_annotation_index": 627
+  },
+  {
+    "cluster_id": "push_blue_block_left-0004",
+    "task": "push_blue_block_left",
+    "candidate_annotation_indices": [
+      931
+    ],
+    "oracle_consistent_candidates": [
+      931
+    ],
+    "selected_annotation_index": 931
+  },
+  {
+    "cluster_id": "push_blue_block_left-0005",
+    "task": "push_blue_block_left",
+    "candidate_annotation_indices": [
+      985
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_blue_block_left-0006",
+    "task": "push_blue_block_left",
+    "candidate_annotation_indices": [
+      275,
+      488,
+      727,
+      872
+    ],
+    "oracle_consistent_candidates": [
+      275,
+      488,
+      727,
+      872
+    ],
+    "selected_annotation_index": 275
+  },
+  {
+    "cluster_id": "push_blue_block_left-0007",
+    "task": "push_blue_block_left",
+    "candidate_annotation_indices": [
+      103,
+      487,
+      747
+    ],
+    "oracle_consistent_candidates": [
+      103,
+      487,
+      747
+    ],
+    "selected_annotation_index": 747
+  },
+  {
+    "cluster_id": "push_blue_block_left-0008",
+    "task": "push_blue_block_left",
+    "candidate_annotation_indices": [
+      483
+    ],
+    "oracle_consistent_candidates": [
+      483
+    ],
+    "selected_annotation_index": 483
+  },
+  {
+    "cluster_id": "push_blue_block_left-0009",
+    "task": "push_blue_block_left",
+    "candidate_annotation_indices": [
+      350,
+      639,
+      766
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_blue_block_left-0010",
+    "task": "push_blue_block_left",
+    "candidate_annotation_indices": [
+      96,
+      484,
+      765,
+      846
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_blue_block_right-0011",
+    "task": "push_blue_block_right",
+    "candidate_annotation_indices": [
+      217,
+      365,
+      366,
+      491,
+      767,
+      768,
+      878
+    ],
+    "oracle_consistent_candidates": [
+      217,
+      365,
+      366,
+      491,
+      768,
+      878
+    ],
+    "selected_annotation_index": 217
+  },
+  {
+    "cluster_id": "push_blue_block_right-0012",
+    "task": "push_blue_block_right",
+    "candidate_annotation_indices": [
+      108,
+      359,
+      493,
+      877
+    ],
+    "oracle_consistent_candidates": [
+      108,
+      359,
+      493,
+      877
+    ],
+    "selected_annotation_index": 108
+  },
+  {
+    "cluster_id": "push_blue_block_right-0013",
+    "task": "push_blue_block_right",
+    "candidate_annotation_indices": [
+      220,
+      228,
+      238,
+      346,
+      354,
+      644,
+      805,
+      881
+    ],
+    "oracle_consistent_candidates": [
+      220,
+      228,
+      238,
+      346,
+      354,
+      644,
+      805,
+      881
+    ],
+    "selected_annotation_index": 346
+  },
+  {
+    "cluster_id": "push_blue_block_right-0014",
+    "task": "push_blue_block_right",
+    "candidate_annotation_indices": [
+      358,
+      642
+    ],
+    "oracle_consistent_candidates": [
+      358,
+      642
+    ],
+    "selected_annotation_index": 358
+  },
+  {
+    "cluster_id": "push_blue_block_right-0015",
+    "task": "push_blue_block_right",
+    "candidate_annotation_indices": [
+      237
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_blue_block_right-0016",
+    "task": "push_blue_block_right",
+    "candidate_annotation_indices": [
+      110,
+      492
+    ],
+    "oracle_consistent_candidates": [
+      110,
+      492
+    ],
+    "selected_annotation_index": 492
+  },
+  {
+    "cluster_id": "push_blue_block_right-0017",
+    "task": "push_blue_block_right",
+    "candidate_annotation_indices": [
+      229
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_blue_block_right-0018",
+    "task": "push_blue_block_right",
+    "candidate_annotation_indices": [
+      111,
+      344,
+      422,
+      645
+    ],
+    "oracle_consistent_candidates": [
+      111,
+      344,
+      422,
+      645
+    ],
+    "selected_annotation_index": 111
+  },
+  {
+    "cluster_id": "push_pink_block_left-0019",
+    "task": "push_pink_block_left",
+    "candidate_annotation_indices": [
+      102,
+      361,
+      364,
+      762,
+      1004
+    ],
+    "oracle_consistent_candidates": [
+      102,
+      361,
+      364,
+      762,
+      1004
+    ],
+    "selected_annotation_index": 1004
+  },
+  {
+    "cluster_id": "push_pink_block_left-0020",
+    "task": "push_pink_block_left",
+    "candidate_annotation_indices": [
+      234,
+      356,
+      585,
+      640,
+      984,
+      990
+    ],
+    "oracle_consistent_candidates": [
+      234,
+      356,
+      585,
+      640,
+      984,
+      990
+    ],
+    "selected_annotation_index": 234
+  },
+  {
+    "cluster_id": "push_pink_block_left-0021",
+    "task": "push_pink_block_left",
+    "candidate_annotation_indices": [
+      638
+    ],
+    "oracle_consistent_candidates": [
+      638
+    ],
+    "selected_annotation_index": 638
+  },
+  {
+    "cluster_id": "push_pink_block_left-0022",
+    "task": "push_pink_block_left",
+    "candidate_annotation_indices": [
+      83,
+      212,
+      486,
+      489,
+      601,
+      634,
+      635,
+      933
+    ],
+    "oracle_consistent_candidates": [
+      212,
+      486,
+      489,
+      601,
+      634,
+      933
+    ],
+    "selected_annotation_index": 212
+  },
+  {
+    "cluster_id": "push_pink_block_left-0023",
+    "task": "push_pink_block_left",
+    "candidate_annotation_indices": [
+      266,
+      623
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_pink_block_left-0024",
+    "task": "push_pink_block_left",
+    "candidate_annotation_indices": [
+      1007
+    ],
+    "oracle_consistent_candidates": [
+      1007
+    ],
+    "selected_annotation_index": 1007
+  },
+  {
+    "cluster_id": "push_pink_block_left-0025",
+    "task": "push_pink_block_left",
+    "candidate_annotation_indices": [
+      227,
+      360,
+      479,
+      628,
+      753,
+      1003
+    ],
+    "oracle_consistent_candidates": [
+      227,
+      360,
+      479,
+      628,
+      753
+    ],
+    "selected_annotation_index": 753
+  },
+  {
+    "cluster_id": "push_pink_block_right-0026",
+    "task": "push_pink_block_right",
+    "candidate_annotation_indices": [
+      755,
+      1005
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_pink_block_right-0027",
+    "task": "push_pink_block_right",
+    "candidate_annotation_indices": [
+      637
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_pink_block_right-0028",
+    "task": "push_pink_block_right",
+    "candidate_annotation_indices": [
+      323,
+      351,
+      498,
+      643,
+      745,
+      1010
+    ],
+    "oracle_consistent_candidates": [
+      323,
+      351,
+      643,
+      745,
+      1010
+    ],
+    "selected_annotation_index": 643
+  },
+  {
+    "cluster_id": "push_pink_block_right-0029",
+    "task": "push_pink_block_right",
+    "candidate_annotation_indices": [
+      230
+    ],
+    "oracle_consistent_candidates": [
+      230
+    ],
+    "selected_annotation_index": 230
+  },
+  {
+    "cluster_id": "push_pink_block_right-0030",
+    "task": "push_pink_block_right",
+    "candidate_annotation_indices": [
+      466
+    ],
+    "oracle_consistent_candidates": [
+      466
+    ],
+    "selected_annotation_index": 466
+  },
+  {
+    "cluster_id": "push_pink_block_right-0031",
+    "task": "push_pink_block_right",
+    "candidate_annotation_indices": [
+      235,
+      345,
+      363,
+      478,
+      636,
+      968
+    ],
+    "oracle_consistent_candidates": [
+      235,
+      345,
+      363,
+      478,
+      636,
+      968
+    ],
+    "selected_annotation_index": 478
+  },
+  {
+    "cluster_id": "push_pink_block_right-0032",
+    "task": "push_pink_block_right",
+    "candidate_annotation_indices": [
+      106,
+      226,
+      860,
+      861,
+      876,
+      1008
+    ],
+    "oracle_consistent_candidates": [
+      106,
+      226,
+      860,
+      861,
+      876,
+      1008
+    ],
+    "selected_annotation_index": 106
+  },
+  {
+    "cluster_id": "push_pink_block_right-0033",
+    "task": "push_pink_block_right",
+    "candidate_annotation_indices": [
+      109,
+      224,
+      362
+    ],
+    "oracle_consistent_candidates": [
+      109,
+      224,
+      362
+    ],
+    "selected_annotation_index": 224
+  },
+  {
+    "cluster_id": "push_pink_block_right-0034",
+    "task": "push_pink_block_right",
+    "candidate_annotation_indices": [
+      764,
+      875,
+      1009
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_red_block_left-0035",
+    "task": "push_red_block_left",
+    "candidate_annotation_indices": [
+      413,
+      472
+    ],
+    "oracle_consistent_candidates": [
+      413,
+      472
+    ],
+    "selected_annotation_index": 413
+  },
+  {
+    "cluster_id": "push_red_block_left-0036",
+    "task": "push_red_block_left",
+    "candidate_annotation_indices": [
+      65
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_red_block_left-0037",
+    "task": "push_red_block_left",
+    "candidate_annotation_indices": [
+      178,
+      348,
+      607
+    ],
+    "oracle_consistent_candidates": [
+      178,
+      348,
+      607
+    ],
+    "selected_annotation_index": 178
+  },
+  {
+    "cluster_id": "push_red_block_left-0038",
+    "task": "push_red_block_left",
+    "candidate_annotation_indices": [
+      341,
+      470,
+      720,
+      989
+    ],
+    "oracle_consistent_candidates": [
+      341,
+      470,
+      720,
+      989
+    ],
+    "selected_annotation_index": 341
+  },
+  {
+    "cluster_id": "push_red_block_left-0039",
+    "task": "push_red_block_left",
+    "candidate_annotation_indices": [
+      1000
+    ],
+    "oracle_consistent_candidates": [
+      1000
+    ],
+    "selected_annotation_index": 1000
+  },
+  {
+    "cluster_id": "push_red_block_left-0040",
+    "task": "push_red_block_left",
+    "candidate_annotation_indices": [
+      17,
+      189,
+      214,
+      966,
+      983,
+      994
+    ],
+    "oracle_consistent_candidates": [
+      17,
+      189,
+      214,
+      966,
+      983,
+      994
+    ],
+    "selected_annotation_index": 214
+  },
+  {
+    "cluster_id": "push_red_block_left-0041",
+    "task": "push_red_block_left",
+    "candidate_annotation_indices": [
+      73,
+      338
+    ],
+    "oracle_consistent_candidates": [
+      73,
+      338
+    ],
+    "selected_annotation_index": 73
+  },
+  {
+    "cluster_id": "push_red_block_left-0042",
+    "task": "push_red_block_left",
+    "candidate_annotation_indices": [
+      862,
+      995,
+      997
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_red_block_left-0043",
+    "task": "push_red_block_left",
+    "candidate_annotation_indices": [
+      218,
+      761
+    ],
+    "oracle_consistent_candidates": [
+      218,
+      761
+    ],
+    "selected_annotation_index": 218
+  },
+  {
+    "cluster_id": "push_red_block_left-0044",
+    "task": "push_red_block_left",
+    "candidate_annotation_indices": [
+      595,
+      742,
+      760
+    ],
+    "oracle_consistent_candidates": [
+      595,
+      742,
+      760
+    ],
+    "selected_annotation_index": 742
+  },
+  {
+    "cluster_id": "push_red_block_left-0045",
+    "task": "push_red_block_left",
+    "candidate_annotation_indices": [
+      992
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_red_block_left-0046",
+    "task": "push_red_block_left",
+    "candidate_annotation_indices": [
+      763
+    ],
+    "oracle_consistent_candidates": [
+      763
+    ],
+    "selected_annotation_index": 763
+  },
+  {
+    "cluster_id": "push_red_block_left-0047",
+    "task": "push_red_block_left",
+    "candidate_annotation_indices": [
+      630
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_red_block_right-0048",
+    "task": "push_red_block_right",
+    "candidate_annotation_indices": [
+      84,
+      219,
+      297,
+      330,
+      632,
+      981
+    ],
+    "oracle_consistent_candidates": [
+      84,
+      219,
+      297,
+      330,
+      632,
+      981
+    ],
+    "selected_annotation_index": 297
+  },
+  {
+    "cluster_id": "push_red_block_right-0049",
+    "task": "push_red_block_right",
+    "candidate_annotation_indices": [
+      566
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_red_block_right-0050",
+    "task": "push_red_block_right",
+    "candidate_annotation_indices": [
+      477
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_red_block_right-0051",
+    "task": "push_red_block_right",
+    "candidate_annotation_indices": [
+      848
+    ],
+    "oracle_consistent_candidates": [
+      848
+    ],
+    "selected_annotation_index": 848
+  },
+  {
+    "cluster_id": "push_red_block_right-0052",
+    "task": "push_red_block_right",
+    "candidate_annotation_indices": [
+      541,
+      625,
+      993
+    ],
+    "oracle_consistent_candidates": [
+      541,
+      625,
+      993
+    ],
+    "selected_annotation_index": 541
+  },
+  {
+    "cluster_id": "push_red_block_right-0053",
+    "task": "push_red_block_right",
+    "candidate_annotation_indices": [
+      757
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_red_block_right-0054",
+    "task": "push_red_block_right",
+    "candidate_annotation_indices": [
+      758
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_red_block_right-0055",
+    "task": "push_red_block_right",
+    "candidate_annotation_indices": [
+      56,
+      81,
+      207,
+      340,
+      475,
+      858,
+      925
+    ],
+    "oracle_consistent_candidates": [
+      56,
+      81,
+      207,
+      340,
+      475,
+      858,
+      925
+    ],
+    "selected_annotation_index": 925
+  },
+  {
+    "cluster_id": "push_red_block_right-0056",
+    "task": "push_red_block_right",
+    "candidate_annotation_indices": [
+      119
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_red_block_right-0057",
+    "task": "push_red_block_right",
+    "candidate_annotation_indices": [
+      215,
+      1002
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "push_red_block_right-0058",
+    "task": "push_red_block_right",
+    "candidate_annotation_indices": [
+      334,
+      347,
+      633,
+      731,
+      754
+    ],
+    "oracle_consistent_candidates": [
+      334,
+      347,
+      633,
+      731,
+      754
+    ],
+    "selected_annotation_index": 347
+  },
+  {
+    "cluster_id": "rotate_blue_block_left-0059",
+    "task": "rotate_blue_block_left",
+    "candidate_annotation_indices": [
+      843,
+      865
+    ],
+    "oracle_consistent_candidates": [
+      843,
+      865
+    ],
+    "selected_annotation_index": 865
+  },
+  {
+    "cluster_id": "rotate_blue_block_left-0060",
+    "task": "rotate_blue_block_left",
+    "candidate_annotation_indices": [
+      216,
+      532
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "rotate_blue_block_left-0061",
+    "task": "rotate_blue_block_left",
+    "candidate_annotation_indices": [
+      210,
+      473
+    ],
+    "oracle_consistent_candidates": [
+      210,
+      473
+    ],
+    "selected_annotation_index": 210
+  },
+  {
+    "cluster_id": "rotate_blue_block_left-0062",
+    "task": "rotate_blue_block_left",
+    "candidate_annotation_indices": [
+      748,
+      856
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "rotate_blue_block_left-0063",
+    "task": "rotate_blue_block_left",
+    "candidate_annotation_indices": [
+      328
+    ],
+    "oracle_consistent_candidates": [
+      328
+    ],
+    "selected_annotation_index": 328
+  },
+  {
+    "cluster_id": "rotate_blue_block_left-0064",
+    "task": "rotate_blue_block_left",
+    "candidate_annotation_indices": [
+      92,
+      467,
+      979
+    ],
+    "oracle_consistent_candidates": [
+      92,
+      979
+    ],
+    "selected_annotation_index": 92
+  },
+  {
+    "cluster_id": "rotate_blue_block_left-0065",
+    "task": "rotate_blue_block_left",
+    "candidate_annotation_indices": [
+      375,
+      469,
+      620,
+      624
+    ],
+    "oracle_consistent_candidates": [
+      375,
+      620,
+      624
+    ],
+    "selected_annotation_index": 624
+  },
+  {
+    "cluster_id": "rotate_blue_block_left-0066",
+    "task": "rotate_blue_block_left",
+    "candidate_annotation_indices": [
+      482,
+      857
+    ],
+    "oracle_consistent_candidates": [
+      482,
+      857
+    ],
+    "selected_annotation_index": 482
+  },
+  {
+    "cluster_id": "rotate_blue_block_left-0067",
+    "task": "rotate_blue_block_left",
+    "candidate_annotation_indices": [
+      127,
+      208,
+      310,
+      465,
+      842
+    ],
+    "oracle_consistent_candidates": [
+      208,
+      842
+    ],
+    "selected_annotation_index": 842
+  },
+  {
+    "cluster_id": "rotate_blue_block_left-0068",
+    "task": "rotate_blue_block_left",
+    "candidate_annotation_indices": [
+      402,
+      610,
+      859,
+      864,
+      987,
+      991
+    ],
+    "oracle_consistent_candidates": [
+      610,
+      987,
+      991
+    ],
+    "selected_annotation_index": 610
+  },
+  {
+    "cluster_id": "rotate_blue_block_right-0069",
+    "task": "rotate_blue_block_right",
+    "candidate_annotation_indices": [
+      198,
+      221,
+      320,
+      425,
+      850,
+      972
+    ],
+    "oracle_consistent_candidates": [
+      198,
+      221,
+      320,
+      425,
+      850,
+      972
+    ],
+    "selected_annotation_index": 221
+  },
+  {
+    "cluster_id": "rotate_blue_block_right-0070",
+    "task": "rotate_blue_block_right",
+    "candidate_annotation_indices": [
+      621,
+      631
+    ],
+    "oracle_consistent_candidates": [
+      621,
+      631
+    ],
+    "selected_annotation_index": 621
+  },
+  {
+    "cluster_id": "rotate_blue_block_right-0071",
+    "task": "rotate_blue_block_right",
+    "candidate_annotation_indices": [
+      211,
+      222,
+      571,
+      871,
+      971
+    ],
+    "oracle_consistent_candidates": [
+      211,
+      222,
+      571,
+      871
+    ],
+    "selected_annotation_index": 222
+  },
+  {
+    "cluster_id": "rotate_blue_block_right-0072",
+    "task": "rotate_blue_block_right",
+    "candidate_annotation_indices": [
+      101,
+      349,
+      352,
+      867,
+      869,
+      977
+    ],
+    "oracle_consistent_candidates": [
+      349,
+      352,
+      867,
+      869,
+      977
+    ],
+    "selected_annotation_index": 977
+  },
+  {
+    "cluster_id": "rotate_blue_block_right-0073",
+    "task": "rotate_blue_block_right",
+    "candidate_annotation_indices": [
+      485,
+      629,
+      999,
+      1001
+    ],
+    "oracle_consistent_candidates": [
+      485,
+      629,
+      999,
+      1001
+    ],
+    "selected_annotation_index": 629
+  },
+  {
+    "cluster_id": "rotate_blue_block_right-0074",
+    "task": "rotate_blue_block_right",
+    "candidate_annotation_indices": [
+      100,
+      863
+    ],
+    "oracle_consistent_candidates": [
+      100,
+      863
+    ],
+    "selected_annotation_index": 863
+  },
+  {
+    "cluster_id": "rotate_blue_block_right-0075",
+    "task": "rotate_blue_block_right",
+    "candidate_annotation_indices": [
+      105,
+      594,
+      749,
+      752
+    ],
+    "oracle_consistent_candidates": [
+      105,
+      749
+    ],
+    "selected_annotation_index": 105
+  },
+  {
+    "cluster_id": "rotate_pink_block_left-0076",
+    "task": "rotate_pink_block_left",
+    "candidate_annotation_indices": [
+      937
+    ],
+    "oracle_consistent_candidates": [
+      937
+    ],
+    "selected_annotation_index": 937
+  },
+  {
+    "cluster_id": "rotate_pink_block_left-0077",
+    "task": "rotate_pink_block_left",
+    "candidate_annotation_indices": [
+      535,
+      615,
+      841
+    ],
+    "oracle_consistent_candidates": [
+      535,
+      615,
+      841
+    ],
+    "selected_annotation_index": 535
+  },
+  {
+    "cluster_id": "rotate_pink_block_left-0078",
+    "task": "rotate_pink_block_left",
+    "candidate_annotation_indices": [
+      575,
+      597,
+      730,
+      750,
+      831
+    ],
+    "oracle_consistent_candidates": [
+      575,
+      597,
+      730,
+      750,
+      831
+    ],
+    "selected_annotation_index": 597
+  },
+  {
+    "cluster_id": "rotate_pink_block_left-0079",
+    "task": "rotate_pink_block_left",
+    "candidate_annotation_indices": [
+      953
+    ],
+    "oracle_consistent_candidates": [
+      953
+    ],
+    "selected_annotation_index": 953
+  },
+  {
+    "cluster_id": "rotate_pink_block_left-0080",
+    "task": "rotate_pink_block_left",
+    "candidate_annotation_indices": [
+      72,
+      121,
+      336
+    ],
+    "oracle_consistent_candidates": [
+      72,
+      336
+    ],
+    "selected_annotation_index": 336
+  },
+  {
+    "cluster_id": "rotate_pink_block_left-0081",
+    "task": "rotate_pink_block_left",
+    "candidate_annotation_indices": [
+      474
+    ],
+    "oracle_consistent_candidates": [
+      474
+    ],
+    "selected_annotation_index": 474
+  },
+  {
+    "cluster_id": "rotate_pink_block_left-0082",
+    "task": "rotate_pink_block_left",
+    "candidate_annotation_indices": [
+      456,
+      723,
+      976
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "rotate_pink_block_left-0083",
+    "task": "rotate_pink_block_left",
+    "candidate_annotation_indices": [
+      315,
+      446,
+      853
+    ],
+    "oracle_consistent_candidates": [
+      315,
+      446,
+      853
+    ],
+    "selected_annotation_index": 446
+  },
+  {
+    "cluster_id": "rotate_pink_block_left-0084",
+    "task": "rotate_pink_block_left",
+    "candidate_annotation_indices": [
+      206,
+      608,
+      855,
+      935
+    ],
+    "oracle_consistent_candidates": [
+      206,
+      608,
+      855,
+      935
+    ],
+    "selected_annotation_index": 935
+  },
+  {
+    "cluster_id": "rotate_pink_block_left-0085",
+    "task": "rotate_pink_block_left",
+    "candidate_annotation_indices": [
+      543,
+      967
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "rotate_pink_block_left-0086",
+    "task": "rotate_pink_block_left",
+    "candidate_annotation_indices": [
+      577
+    ],
+    "oracle_consistent_candidates": [
+      577
+    ],
+    "selected_annotation_index": 577
+  },
+  {
+    "cluster_id": "rotate_pink_block_left-0087",
+    "task": "rotate_pink_block_left",
+    "candidate_annotation_indices": [
+      847,
+      986
+    ],
+    "oracle_consistent_candidates": [
+      847,
+      986
+    ],
+    "selected_annotation_index": 986
+  },
+  {
+    "cluster_id": "rotate_pink_block_right-0088",
+    "task": "rotate_pink_block_right",
+    "candidate_annotation_indices": [
+      200,
+      495
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "rotate_pink_block_right-0089",
+    "task": "rotate_pink_block_right",
+    "candidate_annotation_indices": [
+      202,
+      463
+    ],
+    "oracle_consistent_candidates": [
+      202,
+      463
+    ],
+    "selected_annotation_index": 202
+  },
+  {
+    "cluster_id": "rotate_pink_block_right-0090",
+    "task": "rotate_pink_block_right",
+    "candidate_annotation_indices": [
+      591
+    ],
+    "oracle_consistent_candidates": [
+      591
+    ],
+    "selected_annotation_index": 591
+  },
+  {
+    "cluster_id": "rotate_pink_block_right-0091",
+    "task": "rotate_pink_block_right",
+    "candidate_annotation_indices": [
+      551,
+      578,
+      603
+    ],
+    "oracle_consistent_candidates": [
+      551,
+      578,
+      603
+    ],
+    "selected_annotation_index": 603
+  },
+  {
+    "cluster_id": "rotate_pink_block_right-0092",
+    "task": "rotate_pink_block_right",
+    "candidate_annotation_indices": [
+      394,
+      432,
+      949
+    ],
+    "oracle_consistent_candidates": [
+      432,
+      949
+    ],
+    "selected_annotation_index": 949
+  },
+  {
+    "cluster_id": "rotate_pink_block_right-0093",
+    "task": "rotate_pink_block_right",
+    "candidate_annotation_indices": [
+      737,
+      982
+    ],
+    "oracle_consistent_candidates": [
+      737,
+      982
+    ],
+    "selected_annotation_index": 737
+  },
+  {
+    "cluster_id": "rotate_pink_block_right-0094",
+    "task": "rotate_pink_block_right",
+    "candidate_annotation_indices": [
+      573,
+      840
+    ],
+    "oracle_consistent_candidates": [
+      573
+    ],
+    "selected_annotation_index": 573
+  },
+  {
+    "cluster_id": "rotate_pink_block_right-0095",
+    "task": "rotate_pink_block_right",
+    "candidate_annotation_indices": [
+      980
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "rotate_pink_block_right-0096",
+    "task": "rotate_pink_block_right",
+    "candidate_annotation_indices": [
+      4
+    ],
+    "oracle_consistent_candidates": [
+      4
+    ],
+    "selected_annotation_index": 4
+  },
+  {
+    "cluster_id": "rotate_pink_block_right-0097",
+    "task": "rotate_pink_block_right",
+    "candidate_annotation_indices": [
+      182,
+      326,
+      504,
+      736,
+      845
+    ],
+    "oracle_consistent_candidates": [
+      326,
+      736,
+      845
+    ],
+    "selected_annotation_index": 326
+  },
+  {
+    "cluster_id": "rotate_pink_block_right-0098",
+    "task": "rotate_pink_block_right",
+    "candidate_annotation_indices": [
+      729,
+      820
+    ],
+    "oracle_consistent_candidates": [
+      729,
+      820
+    ],
+    "selected_annotation_index": 820
+  },
+  {
+    "cluster_id": "rotate_pink_block_right-0099",
+    "task": "rotate_pink_block_right",
+    "candidate_annotation_indices": [
+      204
+    ],
+    "oracle_consistent_candidates": [
+      204
+    ],
+    "selected_annotation_index": 204
+  },
+  {
+    "cluster_id": "rotate_pink_block_right-0100",
+    "task": "rotate_pink_block_right",
+    "candidate_annotation_indices": [
+      93
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "rotate_pink_block_right-0101",
+    "task": "rotate_pink_block_right",
+    "candidate_annotation_indices": [
+      677
+    ],
+    "oracle_consistent_candidates": [
+      677
+    ],
+    "selected_annotation_index": 677
+  },
+  {
+    "cluster_id": "rotate_pink_block_right-0102",
+    "task": "rotate_pink_block_right",
+    "candidate_annotation_indices": [
+      332
+    ],
+    "oracle_consistent_candidates": [
+      332
+    ],
+    "selected_annotation_index": 332
+  },
+  {
+    "cluster_id": "rotate_pink_block_right-0103",
+    "task": "rotate_pink_block_right",
+    "candidate_annotation_indices": [
+      287,
+      851
+    ],
+    "oracle_consistent_candidates": [
+      287,
+      851
+    ],
+    "selected_annotation_index": 851
+  },
+  {
+    "cluster_id": "rotate_red_block_left-0104",
+    "task": "rotate_red_block_left",
+    "candidate_annotation_indices": [
+      319
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "rotate_red_block_left-0105",
+    "task": "rotate_red_block_left",
+    "candidate_annotation_indices": [
+      201,
+      744,
+      756
+    ],
+    "oracle_consistent_candidates": [
+      201,
+      744,
+      756
+    ],
+    "selected_annotation_index": 756
+  },
+  {
+    "cluster_id": "rotate_red_block_left-0106",
+    "task": "rotate_red_block_left",
+    "candidate_annotation_indices": [
+      746,
+      835
+    ],
+    "oracle_consistent_candidates": [
+      746,
+      835
+    ],
+    "selected_annotation_index": 835
+  },
+  {
+    "cluster_id": "rotate_red_block_left-0107",
+    "task": "rotate_red_block_left",
+    "candidate_annotation_indices": [
+      327,
+      616,
+      751
+    ],
+    "oracle_consistent_candidates": [
+      327,
+      616,
+      751
+    ],
+    "selected_annotation_index": 616
+  },
+  {
+    "cluster_id": "rotate_red_block_left-0108",
+    "task": "rotate_red_block_left",
+    "candidate_annotation_indices": [
+      20,
+      343,
+      481,
+      592
+    ],
+    "oracle_consistent_candidates": [
+      20,
+      343,
+      481,
+      592
+    ],
+    "selected_annotation_index": 592
+  },
+  {
+    "cluster_id": "rotate_red_block_left-0109",
+    "task": "rotate_red_block_left",
+    "candidate_annotation_indices": [
+      617,
+      973
+    ],
+    "oracle_consistent_candidates": [
+      617,
+      973
+    ],
+    "selected_annotation_index": 617
+  },
+  {
+    "cluster_id": "rotate_red_block_left-0110",
+    "task": "rotate_red_block_left",
+    "candidate_annotation_indices": [
+      316,
+      342,
+      471,
+      564,
+      866
+    ],
+    "oracle_consistent_candidates": [
+      316,
+      342,
+      471,
+      564,
+      866
+    ],
+    "selected_annotation_index": 564
+  },
+  {
+    "cluster_id": "rotate_red_block_left-0111",
+    "task": "rotate_red_block_left",
+    "candidate_annotation_indices": [
+      333,
+      854
+    ],
+    "oracle_consistent_candidates": [
+      333,
+      854
+    ],
+    "selected_annotation_index": 333
+  },
+  {
+    "cluster_id": "rotate_red_block_left-0112",
+    "task": "rotate_red_block_left",
+    "candidate_annotation_indices": [
+      213,
+      606
+    ],
+    "oracle_consistent_candidates": [
+      213,
+      606
+    ],
+    "selected_annotation_index": 213
+  },
+  {
+    "cluster_id": "rotate_red_block_left-0113",
+    "task": "rotate_red_block_left",
+    "candidate_annotation_indices": [
+      954
+    ],
+    "oracle_consistent_candidates": [
+      954
+    ],
+    "selected_annotation_index": 954
+  },
+  {
+    "cluster_id": "rotate_red_block_left-0114",
+    "task": "rotate_red_block_left",
+    "candidate_annotation_indices": [
+      996
+    ],
+    "oracle_consistent_candidates": [
+      996
+    ],
+    "selected_annotation_index": 996
+  },
+  {
+    "cluster_id": "rotate_red_block_left-0115",
+    "task": "rotate_red_block_left",
+    "candidate_annotation_indices": [
+      42,
+      88,
+      199,
+      337,
+      619
+    ],
+    "oracle_consistent_candidates": [
+      42,
+      88,
+      199,
+      337,
+      619
+    ],
+    "selected_annotation_index": 88
+  },
+  {
+    "cluster_id": "rotate_red_block_right-0116",
+    "task": "rotate_red_block_right",
+    "candidate_annotation_indices": [
+      205,
+      759,
+      826,
+      870
+    ],
+    "oracle_consistent_candidates": [
+      205,
+      759,
+      826,
+      870
+    ],
+    "selected_annotation_index": 205
+  },
+  {
+    "cluster_id": "rotate_red_block_right-0117",
+    "task": "rotate_red_block_right",
+    "candidate_annotation_indices": [
+      231,
+      355,
+      641,
+      1006
+    ],
+    "oracle_consistent_candidates": [
+      231,
+      355,
+      641,
+      1006
+    ],
+    "selected_annotation_index": 231
+  },
+  {
+    "cluster_id": "rotate_red_block_right-0118",
+    "task": "rotate_red_block_right",
+    "candidate_annotation_indices": [
+      306,
+      622,
+      626,
+      868,
+      874
+    ],
+    "oracle_consistent_candidates": [
+      306,
+      622,
+      626,
+      868,
+      874
+    ],
+    "selected_annotation_index": 868
+  },
+  {
+    "cluster_id": "rotate_red_block_right-0119",
+    "task": "rotate_red_block_right",
+    "candidate_annotation_indices": [
+      173,
+      833
+    ],
+    "oracle_consistent_candidates": [
+      173,
+      833
+    ],
+    "selected_annotation_index": 173
+  },
+  {
+    "cluster_id": "rotate_red_block_right-0120",
+    "task": "rotate_red_block_right",
+    "candidate_annotation_indices": [
+      181,
+      194,
+      321,
+      724,
+      965,
+      998
+    ],
+    "oracle_consistent_candidates": [
+      181,
+      321,
+      724,
+      998
+    ],
+    "selected_annotation_index": 998
+  },
+  {
+    "cluster_id": "rotate_red_block_right-0121",
+    "task": "rotate_red_block_right",
+    "candidate_annotation_indices": [
+      490,
+      849
+    ],
+    "oracle_consistent_candidates": [],
+    "selected_annotation_index": null
+  },
+  {
+    "cluster_id": "rotate_red_block_right-0122",
+    "task": "rotate_red_block_right",
+    "candidate_annotation_indices": [
+      107,
+      168,
+      353,
+      602,
+      704,
+      873,
+      939
+    ],
+    "oracle_consistent_candidates": [
+      107,
+      168,
+      353,
+      602,
+      704,
+      873,
+      939
+    ],
+    "selected_annotation_index": 168
+  }
+]
