@@ -55,6 +55,7 @@ class MaskOverlay:
         outline_color=(0, 0, 0),
         outline_colors=None,
         outline_halo_width_px=0,
+        outline_halo_widths=None,
         outline_halo_color=(255, 255, 255),
     ):
         self.alpha = float(alpha)
@@ -65,6 +66,9 @@ class MaskOverlay:
             for role, value in (outline_colors or {}).items()
         }
         self.outline_halo_width_px = int(outline_halo_width_px)
+        self.outline_halo_widths = {
+            role: int(value) for role, value in (outline_halo_widths or {}).items()
+        }
         self.outline_halo_color = np.asarray(outline_halo_color, dtype=np.uint8)
         if self.outline_color.shape != (3,):
             raise ValueError("outline_color must contain exactly three RGB values")
@@ -72,6 +76,8 @@ class MaskOverlay:
             raise ValueError("every role outline color must contain three RGB values")
         if self.outline_halo_width_px < 0:
             raise ValueError("outline_halo_width_px must be >= 0")
+        if any(value < 0 for value in self.outline_halo_widths.values()):
+            raise ValueError("every role outline halo width must be >= 0")
         if self.outline_halo_color.shape != (3,):
             raise ValueError("outline_halo_color must contain exactly three RGB values")
         if self.outline_width_px < 0:
@@ -104,8 +110,11 @@ class MaskOverlay:
                 dilated = cv2.dilate(mask.astype(np.uint8), kernel).astype(bool)
                 eroded = cv2.erode(mask.astype(np.uint8), kernel).astype(bool)
                 outline = dilated & ~eroded
-                if self.outline_halo_width_px:
-                    halo_radius = radius + self.outline_halo_width_px
+                halo_width = self.outline_halo_widths.get(
+                    role, self.outline_halo_width_px
+                )
+                if halo_width:
+                    halo_radius = radius + halo_width
                     halo_kernel = np.ones(
                         (2 * halo_radius + 1, 2 * halo_radius + 1), np.uint8
                     )

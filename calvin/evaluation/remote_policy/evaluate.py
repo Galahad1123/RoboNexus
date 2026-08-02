@@ -77,6 +77,9 @@ def run(args):
                 outline_color=mask_outline_color,
                 outline_colors=configured_mask_style.get("outline_colors"),
                 outline_halo_width_px=mask_outline_halo_px,
+                outline_halo_widths=configured_mask_style.get(
+                    "outline_halo_widths"
+                ),
                 outline_halo_color=mask_outline_halo_color,
                 perturbation=MaskPerturbation(
                     max_shift_px=args.mask_max_shift_px,

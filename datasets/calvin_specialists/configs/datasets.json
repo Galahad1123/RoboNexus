@@ -45,6 +45,59 @@
         "place_in_drawer": "place the held block in the outlined drawer",
         "place_in_slider": "place the held block in the outlined sliding cabinet"
       }
+    },
+    "calvin_rotate_6_release": {
+      "audit_profile": "rotate_release",
+      "max_start_repair_frames": 15,
+      "release_consecutive_frames": 3,
+      "stable_suffix_min_frames": 15,
+      "stable_suffix_max_frames": 30,
+      "stable_position_delta_m": 0.005,
+      "stable_orientation_delta_rad": 0.12,
+      "mask_style": {
+        "alpha": 0.0,
+        "outline_width_px": 2,
+        "outline_color": [0, 0, 0],
+        "outline_halo_width_px": 0,
+        "outline_halo_color": [255, 255, 255]
+      },
+      "tasks": {
+        "rotate_blue_block_left": "rotate the blue block counterclockwise",
+        "rotate_blue_block_right": "rotate the blue block clockwise",
+        "rotate_pink_block_left": "rotate the pink block counterclockwise",
+        "rotate_pink_block_right": "rotate the pink block clockwise",
+        "rotate_red_block_left": "rotate the red block counterclockwise",
+        "rotate_red_block_right": "rotate the red block clockwise"
+      }
+    },
+    "calvin_stack_pick_place": {
+      "audit_profile": "stack_pick_place",
+      "stable_grasp_frames": 3,
+      "training_variant_caps": {
+        "table_pick": 100,
+        "place_in_drawer": 100,
+        "place_in_slider": 100
+      },
+      "mask_style": {
+        "alpha": 0.0,
+        "outline_width_px": 2,
+        "outline_color": [0, 0, 0],
+        "outline_colors": {
+          "source": [0, 0, 0],
+          "destination": [0, 255, 255]
+        },
+        "outline_halo_width_px": 0,
+        "outline_halo_widths": {"destination": 1},
+        "outline_halo_color": [255, 255, 255]
+      },
+      "tasks": {
+        "lift_blue_block_table": "pick up the black-outlined block from the table",
+        "lift_pink_block_table": "pick up the black-outlined block from the table",
+        "lift_red_block_table": "pick up the black-outlined block from the table",
+        "stack_block": "stack the black-outlined source block on top of the cyan-outlined destination block",
+        "place_in_drawer": "place the held block in the cyan-outlined drawer",
+        "place_in_slider": "place the held block in the cyan-outlined sliding cabinet"
+      }
     }
   }
 }

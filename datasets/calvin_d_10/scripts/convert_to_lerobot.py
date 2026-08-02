@@ -48,6 +48,15 @@ ACTION_NAMES = [
     "delta_tcp_yaw",
     "gripper_command",
 ]
+EPISODE_VARIANT_IDS = {
+    None: 0,
+    "rotate_release_complete": 1,
+    "table_pick": 2,
+    "full_pick_and_stack": 3,
+    "held_start_stack": 4,
+    "place_in_drawer": 5,
+    "place_in_slider": 6,
+}
 
 
 def features(storage: str) -> Dict[str, dict]:
@@ -93,6 +102,11 @@ def features(storage: str) -> Dict[str, dict]:
             "shape": [1],
             "names": ["source_frame_index"],
         },
+        "calvin.episode_variant_id": {
+            "dtype": "int64",
+            "shape": [1],
+            "names": ["episode_variant_id"],
+        },
     }
 
 
@@ -100,6 +114,7 @@ def selected_segments(
     manifest: Dict[str, Any],
     split: str,
     requested_tasks: List[str] | None,
+    requested_variants: List[str] | None,
     max_episodes: int | None,
     max_episodes_per_task: int | None,
 ) -> List[dict]:
@@ -109,6 +124,14 @@ def selected_segments(
         if unknown:
             raise ValueError(f"tasks have no retained segments in {split}: {unknown}")
         segments = [row for row in segments if row["calvin_task"] in requested_tasks]
+    if requested_variants:
+        available = {row.get("episode_variant") for row in segments}
+        unknown = sorted(set(requested_variants) - available)
+        if unknown:
+            raise ValueError(f"episode variants have no retained segments in {split}: {unknown}")
+        segments = [
+            row for row in segments if row.get("episode_variant") in requested_variants
+        ]
     if max_episodes_per_task is not None:
         task_counts: Dict[str, int] = {}
         balanced_segments = []
@@ -158,6 +181,10 @@ def iter_episode_frames(
                 "calvin.scene_obs": source["scene_obs"].astype(np.float32),
                 "calvin.task_id": np.asarray([segment["task_id"]], dtype=np.int64),
                 "calvin.source_frame_index": np.asarray([source_index], dtype=np.int64),
+                "calvin.episode_variant_id": np.asarray(
+                    [EPISODE_VARIANT_IDS.get(segment.get("episode_variant"), 0)],
+                    dtype=np.int64,
+                ),
                 "task": segment["instruction"],
             }
 
@@ -176,6 +203,11 @@ def main() -> None:
     parser.add_argument("--storage", choices=("video", "image"), default="image")
     parser.add_argument("--output", type=Path)
     parser.add_argument("--task", action="append", help="repeat to convert only selected canonical tasks")
+    parser.add_argument(
+        "--episode-variant",
+        action="append",
+        help="repeat to convert only selected manifest episode variants",
+    )
     parser.add_argument("--max-episodes", type=int, help="deterministic prefix for smoke tests")
     parser.add_argument("--max-episodes-per-task", type=int, help="retain at most N episodes for every task")
     parser.add_argument("--image-writer-threads", type=int, default=8)
@@ -197,6 +229,7 @@ def main() -> None:
         manifest,
         args.split,
         args.task,
+        args.episode_variant,
         args.max_episodes,
         args.max_episodes_per_task,
     )
@@ -252,6 +285,9 @@ def main() -> None:
         "frames": sum(segment["num_frames"] for segment in segments),
         "tasks": sorted({segment["calvin_task"] for segment in segments}),
         "mask_cache": str(mask_cache) if mask_cache else None,
+        "episode_variant_ids": {
+            str(name): identifier for name, identifier in EPISODE_VARIANT_IDS.items()
+        },
     }
     (output / "conversion_info.json").write_text(json.dumps(conversion_info, indent=2) + "\n")
     print(json.dumps(conversion_info, indent=2))

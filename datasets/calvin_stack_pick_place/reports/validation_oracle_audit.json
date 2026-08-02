@@ -1,0 +1,3897 @@
+[
+  {
+    "annotation_index": 7,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "grasp the blue block, then lift it up",
+    "start": 985,
+    "end": 1049,
+    "num_frames": 65,
+    "original_start": 985,
+    "original_end": 1049,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 725,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "grasp the blue block and lift it up",
+    "start": 987,
+    "end": 1051,
+    "num_frames": 65,
+    "original_start": 987,
+    "original_end": 1051,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 303,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "pick up the blue block",
+    "start": 3651,
+    "end": 3715,
+    "num_frames": 65,
+    "original_start": 3651,
+    "original_end": 3715,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 946,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "pick up the blue block",
+    "start": 3650,
+    "end": 3714,
+    "num_frames": 65,
+    "original_start": 3650,
+    "original_end": 3714,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 139,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "grasp the blue block and lift it up",
+    "start": 6462,
+    "end": 6526,
+    "num_frames": 65,
+    "original_start": 6462,
+    "original_end": 6526,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 952,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "grasp the blue block, then lift it up",
+    "start": 16247,
+    "end": 16289,
+    "num_frames": 43,
+    "original_start": 16247,
+    "original_end": 16289,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 372,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "pick up the blue block from the table",
+    "start": 18722,
+    "end": 18755,
+    "num_frames": 34,
+    "original_start": 18722,
+    "original_end": 18755,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 698,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "pick up the blue block on the table",
+    "start": 18702,
+    "end": 18750,
+    "num_frames": 49,
+    "original_start": 18702,
+    "original_end": 18750,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 452,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "pick up the blue block from the table",
+    "start": 20801,
+    "end": 20865,
+    "num_frames": 65,
+    "original_start": 20801,
+    "original_end": 20865,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 69,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "pick up the blue block",
+    "start": 29673,
+    "end": 29716,
+    "num_frames": 44,
+    "original_start": 29673,
+    "original_end": 29716,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 188,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "lift the blue block up",
+    "start": 34457,
+    "end": 34521,
+    "num_frames": 65,
+    "original_start": 34457,
+    "original_end": 34521,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 702,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "grasp the blue block on the table, then lift it up",
+    "start": 34456,
+    "end": 34520,
+    "num_frames": 65,
+    "original_start": 34456,
+    "original_end": 34520,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 144,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "pick up the blue block from the table",
+    "start": 35082,
+    "end": 35146,
+    "num_frames": 65,
+    "original_start": 35082,
+    "original_end": 35146,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 825,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "pick up the blue block from the table",
+    "start": 222878,
+    "end": 222942,
+    "num_frames": 65,
+    "original_start": 222878,
+    "original_end": 222942,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 561,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "pick up the blue block from the table",
+    "start": 226936,
+    "end": 226976,
+    "num_frames": 41,
+    "original_start": 226936,
+    "original_end": 226976,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 160,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "lift the blue block up",
+    "start": 228340,
+    "end": 228404,
+    "num_frames": 65,
+    "original_start": 228340,
+    "original_end": 228404,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 648,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "lift the blue block up",
+    "start": 228346,
+    "end": 228410,
+    "num_frames": 65,
+    "original_start": 228346,
+    "original_end": 228410,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 801,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "pick up the blue block",
+    "start": 228337,
+    "end": 228401,
+    "num_frames": 65,
+    "original_start": 228337,
+    "original_end": 228401,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 291,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "grasp the blue block on the table and lift it up",
+    "start": 237178,
+    "end": 237242,
+    "num_frames": 65,
+    "original_start": 237178,
+    "original_end": 237242,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 880,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "pick up the blue block",
+    "start": 237180,
+    "end": 237244,
+    "num_frames": 65,
+    "original_start": 237180,
+    "original_end": 237244,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 956,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "lift the blue block up",
+    "start": 237187,
+    "end": 237251,
+    "num_frames": 65,
+    "original_start": 237187,
+    "original_end": 237251,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 32,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "grasp the blue block on the table, then lift it up",
+    "start": 400897,
+    "end": 400961,
+    "num_frames": 65,
+    "original_start": 400897,
+    "original_end": 400961,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 269,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "lift the blue block",
+    "start": 401134,
+    "end": 401171,
+    "num_frames": 38,
+    "original_start": 401134,
+    "original_end": 401171,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 559,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "lift the blue block from the table",
+    "start": 401624,
+    "end": 401688,
+    "num_frames": 65,
+    "original_start": 401624,
+    "original_end": 401688,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 284,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "lift the blue block from the table",
+    "start": 402788,
+    "end": 402852,
+    "num_frames": 65,
+    "original_start": 402788,
+    "original_end": 402852,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 311,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "grasp the blue block and lift it up",
+    "start": 405961,
+    "end": 406025,
+    "num_frames": 65,
+    "original_start": 405961,
+    "original_end": 406025,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 837,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "lift the blue block",
+    "start": 405958,
+    "end": 406022,
+    "num_frames": 65,
+    "original_start": 405958,
+    "original_end": 406022,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 448,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "lift the blue block from the table",
+    "start": 406540,
+    "end": 406604,
+    "num_frames": 65,
+    "original_start": 406540,
+    "original_end": 406604,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 174,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "pick up the blue block on the table",
+    "start": 409215,
+    "end": 409279,
+    "num_frames": 65,
+    "original_start": 409215,
+    "original_end": 409279,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 576,
+    "calvin_task": "lift_blue_block_table",
+    "original_instruction": "grasp the blue block and lift it up",
+    "start": 416715,
+    "end": 416779,
+    "num_frames": 65,
+    "original_start": 416715,
+    "original_end": 416779,
+    "source_object": "block_blue",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 511,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "grasp the pink block and lift it up",
+    "start": 785,
+    "end": 820,
+    "num_frames": 36,
+    "original_start": 785,
+    "original_end": 820,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 775,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "lift the pink block",
+    "start": 3478,
+    "end": 3542,
+    "num_frames": 65,
+    "original_start": 3478,
+    "original_end": 3542,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 652,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "pick up the pink block from the table",
+    "start": 3750,
+    "end": 3814,
+    "num_frames": 65,
+    "original_start": 3750,
+    "original_end": 3814,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 950,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "pick up the pink block from the table",
+    "start": 4458,
+    "end": 4522,
+    "num_frames": 65,
+    "original_start": 4458,
+    "original_end": 4522,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 536,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "grasp the pink block, then lift it up",
+    "start": 7963,
+    "end": 8027,
+    "num_frames": 65,
+    "original_start": 7963,
+    "original_end": 8027,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 409,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "lift the pink block up",
+    "start": 13088,
+    "end": 13152,
+    "num_frames": 65,
+    "original_start": 13088,
+    "original_end": 13152,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 70,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "pick up the pink block",
+    "start": 24290,
+    "end": 24354,
+    "num_frames": 65,
+    "original_start": 24290,
+    "original_end": 24354,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 516,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "lift the pink block from the table",
+    "start": 24298,
+    "end": 24362,
+    "num_frames": 65,
+    "original_start": 24298,
+    "original_end": 24362,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 183,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "pick up the pink block",
+    "start": 25459,
+    "end": 25523,
+    "num_frames": 65,
+    "original_start": 25459,
+    "original_end": 25523,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 769,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "grasp the pink block and lift it up",
+    "start": 34638,
+    "end": 34702,
+    "num_frames": 65,
+    "original_start": 34638,
+    "original_end": 34702,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 404,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "grasp the pink block on the table, then lift it up",
+    "start": 39733,
+    "end": 39774,
+    "num_frames": 42,
+    "original_start": 39733,
+    "original_end": 39774,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 948,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "pick up the pink block",
+    "start": 44009,
+    "end": 44073,
+    "num_frames": 65,
+    "original_start": 44009,
+    "original_end": 44073,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 899,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "lift the pink block up",
+    "start": 53252,
+    "end": 53316,
+    "num_frames": 65,
+    "original_start": 53252,
+    "original_end": 53316,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 771,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "pick up the pink block",
+    "start": 227960,
+    "end": 228024,
+    "num_frames": 65,
+    "original_start": 227960,
+    "original_end": 228024,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 75,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "lift the pink block from the table",
+    "start": 229407,
+    "end": 229471,
+    "num_frames": 65,
+    "original_start": 229407,
+    "original_end": 229471,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 830,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "lift the pink block up",
+    "start": 229413,
+    "end": 229477,
+    "num_frames": 65,
+    "original_start": 229413,
+    "original_end": 229477,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 929,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "grasp the pink block and lift it up",
+    "start": 236875,
+    "end": 236922,
+    "num_frames": 48,
+    "original_start": 236875,
+    "original_end": 236922,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 560,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "lift the pink block",
+    "start": 237896,
+    "end": 237960,
+    "num_frames": 65,
+    "original_start": 237896,
+    "original_end": 237960,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 928,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "grasp the pink block and lift it up",
+    "start": 237886,
+    "end": 237950,
+    "num_frames": 65,
+    "original_start": 237886,
+    "original_end": 237950,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 932,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "grasp the pink block on the table, then lift it up",
+    "start": 239562,
+    "end": 239626,
+    "num_frames": 65,
+    "original_start": 239562,
+    "original_end": 239626,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 289,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "lift the pink block up",
+    "start": 240979,
+    "end": 241043,
+    "num_frames": 65,
+    "original_start": 240979,
+    "original_end": 241043,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 399,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "grasp the pink block on the table, then lift it up",
+    "start": 242350,
+    "end": 242414,
+    "num_frames": 65,
+    "original_start": 242350,
+    "original_end": 242414,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 568,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "pick up the pink block",
+    "start": 242348,
+    "end": 242412,
+    "num_frames": 65,
+    "original_start": 242348,
+    "original_end": 242412,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 581,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "grasp the pink block, then lift it up",
+    "start": 242549,
+    "end": 242613,
+    "num_frames": 65,
+    "original_start": 242549,
+    "original_end": 242613,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 669,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "pick up the pink block from the table",
+    "start": 242651,
+    "end": 242692,
+    "num_frames": 42,
+    "original_start": 242651,
+    "original_end": 242692,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 549,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "lift the pink block",
+    "start": 408559,
+    "end": 408601,
+    "num_frames": 43,
+    "original_start": 408559,
+    "original_end": 408601,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 158,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "lift the pink block from the table",
+    "start": 413034,
+    "end": 413098,
+    "num_frames": 65,
+    "original_start": 413034,
+    "original_end": 413098,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 309,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "lift the pink block up",
+    "start": 414953,
+    "end": 415017,
+    "num_frames": 65,
+    "original_start": 414953,
+    "original_end": 415017,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 712,
+    "calvin_task": "lift_pink_block_table",
+    "original_instruction": "grasp the pink block on the table, then lift it up",
+    "start": 414951,
+    "end": 415015,
+    "num_frames": 65,
+    "original_start": 414951,
+    "original_end": 415015,
+    "source_object": "block_pink",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 283,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "grasp the red block, then lift it up",
+    "start": 2787,
+    "end": 2851,
+    "num_frames": 65,
+    "original_start": 2787,
+    "original_end": 2851,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 164,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "grasp the red block, then lift it up",
+    "start": 3196,
+    "end": 3231,
+    "num_frames": 36,
+    "original_start": 3196,
+    "original_end": 3231,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 957,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "lift the red block from the table",
+    "start": 3192,
+    "end": 3236,
+    "num_frames": 45,
+    "original_start": 3192,
+    "original_end": 3236,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 184,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "grasp the red block and lift it up",
+    "start": 6335,
+    "end": 6399,
+    "num_frames": 65,
+    "original_start": 6335,
+    "original_end": 6399,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 896,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "grasp the red block on the table, then lift it up",
+    "start": 8294,
+    "end": 8358,
+    "num_frames": 65,
+    "original_start": 8294,
+    "original_end": 8358,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 713,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "lift the red block up",
+    "start": 10766,
+    "end": 10830,
+    "num_frames": 65,
+    "original_start": 10766,
+    "original_end": 10830,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 395,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "lift the red block from the table",
+    "start": 13723,
+    "end": 13765,
+    "num_frames": 43,
+    "original_start": 13723,
+    "original_end": 13765,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 587,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "pick up the red block",
+    "start": 16367,
+    "end": 16431,
+    "num_frames": 65,
+    "original_start": 16367,
+    "original_end": 16431,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 115,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "grasp the red block and lift it up",
+    "start": 19196,
+    "end": 19260,
+    "num_frames": 65,
+    "original_start": 19196,
+    "original_end": 19260,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 67,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "grasp the red block on the table, then lift it up",
+    "start": 23621,
+    "end": 23685,
+    "num_frames": 65,
+    "original_start": 23621,
+    "original_end": 23685,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 513,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "grasp the red block on the table, then lift it up",
+    "start": 27788,
+    "end": 27852,
+    "num_frames": 65,
+    "original_start": 27788,
+    "original_end": 27852,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 374,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "pick up the red block",
+    "start": 28749,
+    "end": 28813,
+    "num_frames": 65,
+    "original_start": 28749,
+    "original_end": 28813,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 694,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "grasp the red block on the table and lift it up",
+    "start": 28745,
+    "end": 28809,
+    "num_frames": 65,
+    "original_start": 28745,
+    "original_end": 28809,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 120,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "grasp the red block on the table, then lift it up",
+    "start": 31639,
+    "end": 31703,
+    "num_frames": 65,
+    "original_start": 31639,
+    "original_end": 31703,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 435,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "lift the red block from the table",
+    "start": 31638,
+    "end": 31702,
+    "num_frames": 65,
+    "original_start": 31638,
+    "original_end": 31702,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 924,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "lift the red block from the table",
+    "start": 33319,
+    "end": 33383,
+    "num_frames": 65,
+    "original_start": 33319,
+    "original_end": 33383,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 117,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "lift the red block",
+    "start": 35390,
+    "end": 35454,
+    "num_frames": 65,
+    "original_start": 35390,
+    "original_end": 35454,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 3,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "pick up the red block from the table",
+    "start": 44225,
+    "end": 44289,
+    "num_frames": 65,
+    "original_start": 44225,
+    "original_end": 44289,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 455,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "grasp the red block on the table and lift it up",
+    "start": 44230,
+    "end": 44294,
+    "num_frames": 65,
+    "original_start": 44230,
+    "original_end": 44294,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 813,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "grasp the red block and lift it up",
+    "start": 48710,
+    "end": 48774,
+    "num_frames": 65,
+    "original_start": 48710,
+    "original_end": 48774,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 722,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "pick up the red block from the table",
+    "start": 220613,
+    "end": 220677,
+    "num_frames": 65,
+    "original_start": 220613,
+    "original_end": 220677,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 773,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "grasp the red block, then lift it up",
+    "start": 224195,
+    "end": 224259,
+    "num_frames": 65,
+    "original_start": 224195,
+    "original_end": 224259,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 53,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "grasp the red block on the table, then lift it up",
+    "start": 230573,
+    "end": 230619,
+    "num_frames": 47,
+    "original_start": 230573,
+    "original_end": 230619,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 590,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "grasp the red block, then lift it up",
+    "start": 230566,
+    "end": 230612,
+    "num_frames": 47,
+    "original_start": 230566,
+    "original_end": 230612,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 450,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "lift the red block up",
+    "start": 407341,
+    "end": 407405,
+    "num_frames": 65,
+    "original_start": 407341,
+    "original_end": 407405,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 245,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "pick up the red block from the table",
+    "start": 417838,
+    "end": 417871,
+    "num_frames": 34,
+    "original_start": 417838,
+    "original_end": 417871,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 368,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "grasp the red block, then lift it up",
+    "start": 417839,
+    "end": 417881,
+    "num_frames": 43,
+    "original_start": 417839,
+    "original_end": 417881,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 817,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "grasp the red block on the table and lift it up",
+    "start": 417844,
+    "end": 417877,
+    "num_frames": 34,
+    "original_start": 417844,
+    "original_end": 417877,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 156,
+    "calvin_task": "lift_red_block_table",
+    "original_instruction": "pick up the red block on the table",
+    "start": 418732,
+    "end": 418796,
+    "num_frames": 65,
+    "original_start": 418732,
+    "original_end": 418796,
+    "source_object": "block_red",
+    "episode_variant": "table_pick",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red",
+          "when": "until_held"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 934,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "store the block in the drawer",
+    "start": 4158,
+    "end": 4222,
+    "num_frames": 65,
+    "original_start": 4158,
+    "original_end": 4222,
+    "source_object": "block_blue",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 703,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "place the block in the drawer",
+    "start": 6516,
+    "end": 6561,
+    "num_frames": 46,
+    "original_start": 6516,
+    "original_end": 6561,
+    "source_object": "block_blue",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 701,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "put the block in the drawer",
+    "start": 10168,
+    "end": 10209,
+    "num_frames": 42,
+    "original_start": 10168,
+    "original_end": 10209,
+    "source_object": "block_blue",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 684,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "move to the drawer, then place the object",
+    "start": 14196,
+    "end": 14235,
+    "num_frames": 40,
+    "original_start": 14196,
+    "original_end": 14235,
+    "source_object": "block_red",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 909,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "place the grasped object in the drawer",
+    "start": 14198,
+    "end": 14236,
+    "num_frames": 39,
+    "original_start": 14198,
+    "original_end": 14236,
+    "source_object": "block_red",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 412,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "go towards the drawer and place the object",
+    "start": 22351,
+    "end": 22393,
+    "num_frames": 43,
+    "original_start": 22351,
+    "original_end": 22393,
+    "source_object": "block_blue",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 779,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "move to the drawer and store the object",
+    "start": 22347,
+    "end": 22384,
+    "num_frames": 38,
+    "original_start": 22347,
+    "original_end": 22384,
+    "source_object": "block_blue",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 48,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "store the grasped object in the drawer",
+    "start": 31709,
+    "end": 31742,
+    "num_frames": 34,
+    "original_start": 31709,
+    "original_end": 31742,
+    "source_object": "block_red",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 265,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "put the block in the drawer",
+    "start": 47403,
+    "end": 47439,
+    "num_frames": 37,
+    "original_start": 47403,
+    "original_end": 47439,
+    "source_object": "block_red",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 655,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "move to the drawer, then store the object",
+    "start": 47389,
+    "end": 47426,
+    "num_frames": 38,
+    "original_start": 47389,
+    "original_end": 47426,
+    "source_object": "block_red",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 419,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "store the block in the drawer",
+    "start": 220125,
+    "end": 220158,
+    "num_frames": 34,
+    "original_start": 220125,
+    "original_end": 220158,
+    "source_object": "block_blue",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 24,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "store the object in the drawer",
+    "start": 226886,
+    "end": 226923,
+    "num_frames": 38,
+    "original_start": 226886,
+    "original_end": 226923,
+    "source_object": "block_red",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 942,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "place the block in the drawer",
+    "start": 227859,
+    "end": 227907,
+    "num_frames": 49,
+    "original_start": 227859,
+    "original_end": 227907,
+    "source_object": "block_blue",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 816,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "move to the drawer, then place the object",
+    "start": 230071,
+    "end": 230106,
+    "num_frames": 36,
+    "original_start": 230071,
+    "original_end": 230106,
+    "source_object": "block_pink",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 242,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "move to the drawer and place the object",
+    "start": 232352,
+    "end": 232389,
+    "num_frames": 38,
+    "original_start": 232352,
+    "original_end": 232389,
+    "source_object": "block_pink",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 700,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "place the grasped object in the drawer",
+    "start": 233757,
+    "end": 233790,
+    "num_frames": 34,
+    "original_start": 233757,
+    "original_end": 233790,
+    "source_object": "block_blue",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 919,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "put the grasped object in the drawer",
+    "start": 233931,
+    "end": 233968,
+    "num_frames": 38,
+    "original_start": 233931,
+    "original_end": 233968,
+    "source_object": "block_pink",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 656,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "place the block in the drawer",
+    "start": 234566,
+    "end": 234601,
+    "num_frames": 36,
+    "original_start": 234566,
+    "original_end": 234601,
+    "source_object": "block_blue",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 140,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "put the object in the drawer",
+    "start": 236150,
+    "end": 236198,
+    "num_frames": 49,
+    "original_start": 236150,
+    "original_end": 236198,
+    "source_object": "block_red",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 517,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "place the grasped object in the drawer",
+    "start": 241500,
+    "end": 241538,
+    "num_frames": 39,
+    "original_start": 241500,
+    "original_end": 241538,
+    "source_object": "block_red",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 46,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "move to the drawer, then place the object",
+    "start": 243254,
+    "end": 243292,
+    "num_frames": 39,
+    "original_start": 243254,
+    "original_end": 243292,
+    "source_object": "block_red",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 529,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "move to the drawer, then store the object",
+    "start": 243256,
+    "end": 243302,
+    "num_frames": 47,
+    "original_start": 243256,
+    "original_end": 243302,
+    "source_object": "block_red",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 554,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "go towards the drawer and place the object",
+    "start": 243369,
+    "end": 243406,
+    "num_frames": 38,
+    "original_start": 243369,
+    "original_end": 243406,
+    "source_object": "block_pink",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 293,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "place the object in the drawer",
+    "start": 400134,
+    "end": 400174,
+    "num_frames": 41,
+    "original_start": 400134,
+    "original_end": 400174,
+    "source_object": "block_red",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 689,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "go towards the drawer and place the object",
+    "start": 402390,
+    "end": 402454,
+    "num_frames": 65,
+    "original_start": 402390,
+    "original_end": 402454,
+    "source_object": "block_pink",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 239,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "put the block in the drawer",
+    "start": 408517,
+    "end": 408559,
+    "num_frames": 43,
+    "original_start": 408517,
+    "original_end": 408559,
+    "source_object": "block_blue",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 133,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "store the object in the drawer",
+    "start": 408590,
+    "end": 408631,
+    "num_frames": 42,
+    "original_start": 408590,
+    "original_end": 408631,
+    "source_object": "block_pink",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 926,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "go towards the drawer and place the object",
+    "start": 410377,
+    "end": 410414,
+    "num_frames": 38,
+    "original_start": 410377,
+    "original_end": 410414,
+    "source_object": "block_red",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 132,
+    "calvin_task": "place_in_drawer",
+    "original_instruction": "store the grasped object in the drawer",
+    "start": 411776,
+    "end": 411818,
+    "num_frames": 43,
+    "original_start": 411776,
+    "original_end": 411818,
+    "source_object": "block_red",
+    "episode_variant": "place_in_drawer",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "drawer_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 497,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "put the block in the cabinet",
+    "start": 809,
+    "end": 856,
+    "num_frames": 48,
+    "original_start": 809,
+    "original_end": 856,
+    "source_object": "block_pink",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 295,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place the block in the cabinet",
+    "start": 2202,
+    "end": 2266,
+    "num_frames": 65,
+    "original_start": 2202,
+    "original_end": 2266,
+    "source_object": "block_blue",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 569,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place the block in the sliding cabinet",
+    "start": 9126,
+    "end": 9159,
+    "num_frames": 34,
+    "original_start": 9126,
+    "original_end": 9159,
+    "source_object": "block_red",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 651,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place the block in the sliding cabinet",
+    "start": 9128,
+    "end": 9161,
+    "num_frames": 34,
+    "original_start": 9128,
+    "original_end": 9161,
+    "source_object": "block_red",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 936,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place the object in the sliding cabinet",
+    "start": 9125,
+    "end": 9166,
+    "num_frames": 42,
+    "original_start": 9125,
+    "original_end": 9166,
+    "source_object": "block_red",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 893,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place the grasped object in the cabinet",
+    "start": 9242,
+    "end": 9276,
+    "num_frames": 35,
+    "original_start": 9242,
+    "original_end": 9276,
+    "source_object": "block_blue",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 28,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place the object in the sliding cabinet",
+    "start": 28804,
+    "end": 28849,
+    "num_frames": 46,
+    "original_start": 28804,
+    "original_end": 28849,
+    "source_object": "block_red",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 270,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place the grasped object in the cabinet",
+    "start": 34524,
+    "end": 34559,
+    "num_frames": 36,
+    "original_start": 34524,
+    "original_end": 34559,
+    "source_object": "block_blue",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 665,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "put the object in the cabinet",
+    "start": 34504,
+    "end": 34568,
+    "num_frames": 65,
+    "original_start": 34504,
+    "original_end": 34568,
+    "source_object": "block_blue",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 772,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "put the block in the cabinet",
+    "start": 45705,
+    "end": 45769,
+    "num_frames": 65,
+    "original_start": 45705,
+    "original_end": 45769,
+    "source_object": "block_red",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 920,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "put it in the slider",
+    "start": 48755,
+    "end": 48790,
+    "num_frames": 36,
+    "original_start": 48755,
+    "original_end": 48790,
+    "source_object": "block_red",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 550,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place the grasped object in the cabinet",
+    "start": 49932,
+    "end": 49974,
+    "num_frames": 43,
+    "original_start": 49932,
+    "original_end": 49974,
+    "source_object": "block_red",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 788,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place the block in the slider",
+    "start": 49932,
+    "end": 49976,
+    "num_frames": 45,
+    "original_start": 49932,
+    "original_end": 49976,
+    "source_object": "block_red",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 281,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place the grasped object in the slider",
+    "start": 50880,
+    "end": 50918,
+    "num_frames": 39,
+    "original_start": 50880,
+    "original_end": 50918,
+    "source_object": "block_blue",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 781,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "put the grasped object in the sliding cabinet",
+    "start": 50872,
+    "end": 50919,
+    "num_frames": 48,
+    "original_start": 50872,
+    "original_end": 50919,
+    "source_object": "block_blue",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 892,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "put the object in the cabinet",
+    "start": 222009,
+    "end": 222073,
+    "num_frames": 65,
+    "original_start": 222009,
+    "original_end": 222073,
+    "source_object": "block_red",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 18,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "put the object in the sliding cabinet",
+    "start": 222756,
+    "end": 222796,
+    "num_frames": 41,
+    "original_start": 222756,
+    "original_end": 222796,
+    "source_object": "block_red",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 795,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place in slider",
+    "start": 222759,
+    "end": 222794,
+    "num_frames": 36,
+    "original_start": 222759,
+    "original_end": 222794,
+    "source_object": "block_red",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 441,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place the block in the sliding cabinet",
+    "start": 224600,
+    "end": 224639,
+    "num_frames": 40,
+    "original_start": 224600,
+    "original_end": 224639,
+    "source_object": "block_red",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 672,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place the block in the sliding cabinet",
+    "start": 228004,
+    "end": 228048,
+    "num_frames": 45,
+    "original_start": 228004,
+    "original_end": 228048,
+    "source_object": "block_pink",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 401,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "put the object in the sliding cabinet",
+    "start": 228871,
+    "end": 228908,
+    "num_frames": 38,
+    "original_start": 228871,
+    "original_end": 228908,
+    "source_object": "block_pink",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 528,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place the object in the cabinet",
+    "start": 232111,
+    "end": 232145,
+    "num_frames": 35,
+    "original_start": 232111,
+    "original_end": 232145,
+    "source_object": "block_red",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 427,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place the block in the sliding cabinet",
+    "start": 232931,
+    "end": 232995,
+    "num_frames": 65,
+    "original_start": 232931,
+    "original_end": 232995,
+    "source_object": "block_red",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 518,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "put the grasped object in the sliding cabinet",
+    "start": 400700,
+    "end": 400748,
+    "num_frames": 49,
+    "original_start": 400700,
+    "original_end": 400748,
+    "source_object": "block_pink",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 709,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place in slider",
+    "start": 400703,
+    "end": 400747,
+    "num_frames": 45,
+    "original_start": 400703,
+    "original_end": 400747,
+    "source_object": "block_pink",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 248,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place the object in the sliding cabinet",
+    "start": 405204,
+    "end": 405268,
+    "num_frames": 65,
+    "original_start": 405204,
+    "original_end": 405268,
+    "source_object": "block_red",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 403,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "put the grasped object in the slider",
+    "start": 407410,
+    "end": 407450,
+    "num_frames": 41,
+    "original_start": 407410,
+    "original_end": 407450,
+    "source_object": "block_red",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 668,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place the grasped object in the slider",
+    "start": 409915,
+    "end": 409961,
+    "num_frames": 47,
+    "original_start": 409915,
+    "original_end": 409961,
+    "source_object": "block_blue",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 250,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place the block in the slider",
+    "start": 420250,
+    "end": 420297,
+    "num_frames": 48,
+    "original_start": 420250,
+    "original_end": 420297,
+    "source_object": "block_blue",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 666,
+    "calvin_task": "place_in_slider",
+    "original_instruction": "place the block in the cabinet",
+    "start": 420253,
+    "end": 420295,
+    "num_frames": 43,
+    "original_start": 420253,
+    "original_end": 420295,
+    "source_object": "block_blue",
+    "episode_variant": "place_in_slider",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "destination": [
+        {
+          "fixed": "table",
+          "links": [
+            "plank_link"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 829,
+    "calvin_task": "stack_block",
+    "original_instruction": "put the block on top of another block",
+    "start": 3230,
+    "end": 3273,
+    "num_frames": 44,
+    "original_start": 3230,
+    "original_end": 3273,
+    "source_object": "block_red",
+    "demonstrated_destination": "block_pink",
+    "stable_grasp_start": 3230,
+    "initial_held_objects": [
+      "block_red"
+    ],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 172,
+    "calvin_task": "stack_block",
+    "original_instruction": "stack blocks on top of each other",
+    "start": 3359,
+    "end": 3404,
+    "num_frames": 46,
+    "original_start": 3359,
+    "original_end": 3404,
+    "source_object": "block_blue",
+    "demonstrated_destination": "block_pink",
+    "stable_grasp_start": 3359,
+    "initial_held_objects": [
+      "block_blue"
+    ],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 312,
+    "calvin_task": "stack_block",
+    "original_instruction": "stack the object on top of another object",
+    "start": 8643,
+    "end": 8677,
+    "num_frames": 35,
+    "original_start": 8643,
+    "original_end": 8677,
+    "source_object": "block_blue",
+    "demonstrated_destination": "block_red",
+    "stable_grasp_start": 8643,
+    "initial_held_objects": [
+      "block_blue"
+    ],
+    "destination_contact_frames": 5,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stack_does_not_end_released"
+    ]
+  },
+  {
+    "annotation_index": 313,
+    "calvin_task": "stack_block",
+    "original_instruction": "put the block on top of another block",
+    "start": 8635,
+    "end": 8671,
+    "num_frames": 37,
+    "original_start": 8635,
+    "original_end": 8671,
+    "source_object": "block_blue",
+    "demonstrated_destination": "block_red",
+    "stable_grasp_start": 8635,
+    "initial_held_objects": [
+      "block_blue"
+    ],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 796,
+    "calvin_task": "stack_block",
+    "original_instruction": "stack blocks on top of each other",
+    "start": 8599,
+    "end": 8663,
+    "num_frames": 65,
+    "original_start": 8599,
+    "original_end": 8663,
+    "source_object": "block_blue",
+    "demonstrated_destination": "block_red",
+    "stable_grasp_start": 8625,
+    "initial_held_objects": [],
+    "destination_contact_frames": 2,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stack_contact_not_persistent"
+    ]
+  },
+  {
+    "annotation_index": 955,
+    "calvin_task": "stack_block",
+    "original_instruction": "stack the blocks",
+    "start": 8600,
+    "end": 8664,
+    "num_frames": 65,
+    "original_start": 8600,
+    "original_end": 8664,
+    "source_object": "block_blue",
+    "demonstrated_destination": "block_red",
+    "stable_grasp_start": 8625,
+    "initial_held_objects": [],
+    "destination_contact_frames": 3,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 445,
+    "calvin_task": "stack_block",
+    "original_instruction": "stack the block on top of another block",
+    "start": 13313,
+    "end": 13354,
+    "num_frames": 42,
+    "original_start": 13313,
+    "original_end": 13354,
+    "source_object": "block_blue",
+    "demonstrated_destination": "block_red",
+    "stable_grasp_start": 13313,
+    "initial_held_objects": [
+      "block_blue"
+    ],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 663,
+    "calvin_task": "stack_block",
+    "original_instruction": "put the block on top of another block",
+    "start": 13725,
+    "end": 13789,
+    "num_frames": 65,
+    "original_start": 13725,
+    "original_end": 13789,
+    "source_object": "block_red",
+    "demonstrated_destination": "block_blue",
+    "stable_grasp_start": 13750,
+    "initial_held_objects": [],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 832,
+    "calvin_task": "stack_block",
+    "original_instruction": "put the grasped block on top of a block",
+    "start": 23439,
+    "end": 23473,
+    "num_frames": 35,
+    "original_start": 23439,
+    "original_end": 23473,
+    "source_object": "block_red",
+    "demonstrated_destination": "block_blue",
+    "stable_grasp_start": 23439,
+    "initial_held_objects": [
+      "block_red"
+    ],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 718,
+    "calvin_task": "stack_block",
+    "original_instruction": "stack the blocks",
+    "start": 33332,
+    "end": 33396,
+    "num_frames": 65,
+    "original_start": 33332,
+    "original_end": 33396,
+    "source_object": "block_red",
+    "demonstrated_destination": "block_pink",
+    "stable_grasp_start": 33358,
+    "initial_held_objects": [],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 821,
+    "calvin_task": "stack_block",
+    "original_instruction": "put the block on top of another block",
+    "start": 35398,
+    "end": 35462,
+    "num_frames": 65,
+    "original_start": 35398,
+    "original_end": 35462,
+    "source_object": "block_red",
+    "demonstrated_destination": "block_pink",
+    "stable_grasp_start": 35435,
+    "initial_held_objects": [],
+    "destination_contact_frames": 2,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stack_contact_not_persistent"
+    ]
+  },
+  {
+    "annotation_index": 31,
+    "calvin_task": "stack_block",
+    "original_instruction": "stack the blocks",
+    "start": 36148,
+    "end": 36212,
+    "num_frames": 65,
+    "original_start": 36148,
+    "original_end": 36212,
+    "source_object": "block_red",
+    "demonstrated_destination": "block_pink",
+    "stable_grasp_start": 36175,
+    "initial_held_objects": [],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 66,
+    "calvin_task": "stack_block",
+    "original_instruction": "put the block on top of another block",
+    "start": 36176,
+    "end": 36218,
+    "num_frames": 43,
+    "original_start": 36176,
+    "original_end": 36218,
+    "source_object": "block_red",
+    "demonstrated_destination": "block_pink",
+    "stable_grasp_start": 36176,
+    "initial_held_objects": [
+      "block_red"
+    ],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 706,
+    "calvin_task": "stack_block",
+    "original_instruction": "place the grasped block on top of another block",
+    "start": 36177,
+    "end": 36220,
+    "num_frames": 44,
+    "original_start": 36177,
+    "original_end": 36220,
+    "source_object": "block_red",
+    "demonstrated_destination": "block_pink",
+    "stable_grasp_start": 36177,
+    "initial_held_objects": [
+      "block_red"
+    ],
+    "destination_contact_frames": 5,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stack_does_not_end_released"
+    ]
+  },
+  {
+    "annotation_index": 251,
+    "calvin_task": "stack_block",
+    "original_instruction": "stack blocks on top of each other",
+    "start": 44086,
+    "end": 44150,
+    "num_frames": 65,
+    "original_start": 44086,
+    "original_end": 44150,
+    "source_object": "block_pink",
+    "demonstrated_destination": "block_red",
+    "stable_grasp_start": 44086,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "destination_contact_frames": 3,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 596,
+    "calvin_task": "stack_block",
+    "original_instruction": "place the block on top of another block",
+    "start": 50613,
+    "end": 50677,
+    "num_frames": 65,
+    "original_start": 50613,
+    "original_end": 50677,
+    "source_object": "block_pink",
+    "demonstrated_destination": "block_red",
+    "stable_grasp_start": 50639,
+    "initial_held_objects": [],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 680,
+    "calvin_task": "stack_block",
+    "original_instruction": "put the grasped block on top of a block",
+    "start": 50607,
+    "end": 50671,
+    "num_frames": 65,
+    "original_start": 50607,
+    "original_end": 50671,
+    "source_object": "block_pink",
+    "demonstrated_destination": "block_red",
+    "stable_grasp_start": 50639,
+    "initial_held_objects": [],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 839,
+    "calvin_task": "stack_block",
+    "original_instruction": "stack blocks on top of each other",
+    "start": 50617,
+    "end": 50681,
+    "num_frames": 65,
+    "original_start": 50617,
+    "original_end": 50681,
+    "source_object": "block_pink",
+    "demonstrated_destination": "block_red",
+    "stable_grasp_start": 50639,
+    "initial_held_objects": [],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 61,
+    "calvin_task": "stack_block",
+    "original_instruction": "stack the block on top of another block",
+    "start": 225076,
+    "end": 225124,
+    "num_frames": 49,
+    "original_start": 225076,
+    "original_end": 225124,
+    "source_object": "block_pink",
+    "demonstrated_destination": "block_blue",
+    "stable_grasp_start": 225076,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 243,
+    "calvin_task": "stack_block",
+    "original_instruction": "place the block on top of another block",
+    "start": 228359,
+    "end": 228423,
+    "num_frames": 65,
+    "original_start": 228359,
+    "original_end": 228423,
+    "source_object": "block_blue",
+    "demonstrated_destination": "block_red",
+    "stable_grasp_start": 228388,
+    "initial_held_objects": [],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 76,
+    "calvin_task": "stack_block",
+    "original_instruction": "place the block on top of another block",
+    "start": 230339,
+    "end": 230403,
+    "num_frames": 65,
+    "original_start": 230339,
+    "original_end": 230403,
+    "source_object": "block_red",
+    "demonstrated_destination": "block_blue",
+    "stable_grasp_start": 230339,
+    "initial_held_objects": [
+      "block_red"
+    ],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 804,
+    "calvin_task": "stack_block",
+    "original_instruction": "stack the object on top of another object",
+    "start": 230348,
+    "end": 230396,
+    "num_frames": 49,
+    "original_start": 230348,
+    "original_end": 230396,
+    "source_object": "block_red",
+    "demonstrated_destination": "block_blue",
+    "stable_grasp_start": 230348,
+    "initial_held_objects": [
+      "block_red"
+    ],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 21,
+    "calvin_task": "stack_block",
+    "original_instruction": "stack blocks on top of each other",
+    "start": 239623,
+    "end": 239665,
+    "num_frames": 43,
+    "original_start": 239623,
+    "original_end": 239665,
+    "source_object": "block_pink",
+    "demonstrated_destination": "block_red",
+    "stable_grasp_start": 239623,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 593,
+    "calvin_task": "stack_block",
+    "original_instruction": "place the grasped block on top of another block",
+    "start": 239607,
+    "end": 239671,
+    "num_frames": 65,
+    "original_start": 239607,
+    "original_end": 239671,
+    "source_object": "block_pink",
+    "demonstrated_destination": "block_red",
+    "stable_grasp_start": 239607,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 947,
+    "calvin_task": "stack_block",
+    "original_instruction": "stack blocks on top of each other",
+    "start": 408403,
+    "end": 408440,
+    "num_frames": 38,
+    "original_start": 408403,
+    "original_end": 408440,
+    "source_object": "block_pink",
+    "demonstrated_destination": "block_blue",
+    "stable_grasp_start": 408403,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 180,
+    "calvin_task": "stack_block",
+    "original_instruction": "place the grasped block on top of another block",
+    "start": 416511,
+    "end": 416556,
+    "num_frames": 46,
+    "original_start": 416511,
+    "original_end": 416556,
+    "source_object": "block_red",
+    "demonstrated_destination": "block_blue",
+    "stable_grasp_start": 416511,
+    "initial_held_objects": [
+      "block_red"
+    ],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 958,
+    "calvin_task": "stack_block",
+    "original_instruction": "put the grasped block on top of a block",
+    "start": 416516,
+    "end": 416560,
+    "num_frames": 45,
+    "original_start": 416516,
+    "original_end": 416560,
+    "source_object": "block_red",
+    "demonstrated_destination": "block_blue",
+    "stable_grasp_start": 416516,
+    "initial_held_objects": [
+      "block_red"
+    ],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  },
+  {
+    "annotation_index": 60,
+    "calvin_task": "stack_block",
+    "original_instruction": "put the grasped block on top of a block",
+    "start": 418888,
+    "end": 418924,
+    "num_frames": 37,
+    "original_start": 418888,
+    "original_end": 418924,
+    "source_object": "block_blue",
+    "demonstrated_destination": "block_red",
+    "stable_grasp_start": 418888,
+    "initial_held_objects": [
+      "block_blue"
+    ],
+    "destination_contact_frames": 2,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stack_contact_not_persistent"
+    ]
+  },
+  {
+    "annotation_index": 914,
+    "calvin_task": "stack_block",
+    "original_instruction": "put the grasped block on top of a block",
+    "start": 418894,
+    "end": 418932,
+    "num_frames": 39,
+    "original_start": 418894,
+    "original_end": 418932,
+    "source_object": "block_blue",
+    "demonstrated_destination": "block_red",
+    "stable_grasp_start": 418894,
+    "initial_held_objects": [
+      "block_blue"
+    ],
+    "destination_contact_frames": 5,
+    "oracle_consistent": true,
+    "rejection_reasons": []
+  }
+]

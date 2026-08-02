@@ -1,0 +1,100 @@
+{
+  "training": {
+    "dataset": "calvin_rotate_6_release",
+    "split": "training",
+    "candidates": 901,
+    "clusters": 366,
+    "retained": 275,
+    "frames_retained": 26375,
+    "by_task": {
+      "rotate_blue_block_left": {
+        "candidates": 150,
+        "clusters": 77,
+        "retained": 55
+      },
+      "rotate_blue_block_right": {
+        "candidates": 150,
+        "clusters": 29,
+        "retained": 21
+      },
+      "rotate_pink_block_left": {
+        "candidates": 151,
+        "clusters": 69,
+        "retained": 56
+      },
+      "rotate_pink_block_right": {
+        "candidates": 150,
+        "clusters": 78,
+        "retained": 52
+      },
+      "rotate_red_block_left": {
+        "candidates": 150,
+        "clusters": 70,
+        "retained": 57
+      },
+      "rotate_red_block_right": {
+        "candidates": 150,
+        "clusters": 43,
+        "retained": 34
+      }
+    },
+    "by_episode_variant": {
+      "rotate_release_complete": 275
+    },
+    "candidate_rejection_reasons": {
+      "initially_held": 73,
+      "oracle_not_satisfied": 158,
+      "release_not_completed": 214,
+      "stable_release_suffix_too_short": 110
+    }
+  },
+  "validation": {
+    "dataset": "calvin_rotate_6_release",
+    "split": "validation",
+    "candidates": 178,
+    "clusters": 64,
+    "retained": 45,
+    "frames_retained": 4308,
+    "by_task": {
+      "rotate_blue_block_left": {
+        "candidates": 29,
+        "clusters": 10,
+        "retained": 6
+      },
+      "rotate_blue_block_right": {
+        "candidates": 29,
+        "clusters": 7,
+        "retained": 5
+      },
+      "rotate_pink_block_left": {
+        "candidates": 29,
+        "clusters": 12,
+        "retained": 7
+      },
+      "rotate_pink_block_right": {
+        "candidates": 30,
+        "clusters": 16,
+        "retained": 12
+      },
+      "rotate_red_block_left": {
+        "candidates": 31,
+        "clusters": 12,
+        "retained": 9
+      },
+      "rotate_red_block_right": {
+        "candidates": 30,
+        "clusters": 7,
+        "retained": 6
+      }
+    },
+    "by_episode_variant": {
+      "rotate_release_complete": 45
+    },
+    "candidate_rejection_reasons": {
+      "initially_held": 16,
+      "oracle_not_satisfied": 20,
+      "release_not_completed": 34,
+      "stable_release_suffix_too_short": 21
+    }
+  }
+}

@@ -9,10 +9,12 @@ class CalvinGTMaskProvider(MaskProvider):
     def __init__(self, env):
         self.env = env
         self._resolved_roles = None
+        self._ever_held_uids = set()
 
     def reset(self, episode):
         super().reset(episode)
         self._resolved_roles = None
+        self._ever_held_uids = set()
 
     def masks(self, observation):
         roles = getattr(self.episode, "mask_roles", {}) or {}
@@ -24,12 +26,17 @@ class CalvinGTMaskProvider(MaskProvider):
                 role: self._resolve_selectors(selectors, scene_info)
                 for role, selectors in roles.items()
             }
+        scene_info = self.env.get_info()["scene_info"]
+        held_uids = self._held_movable_uids(scene_info)
+        self._ever_held_uids.update(held_uids)
         result = {}
         for camera in self.env.cameras:
             camera_key = "observation.images.{}".format(camera.name)
             segmentation = self._render_segmentation(camera)
             result[camera_key] = {
-                role: self._select(segmentation, identities)
+                role: self._select(
+                    segmentation, identities, held_uids, self._ever_held_uids
+                )
                 for role, identities in self._resolved_roles.items()
             }
         return result
@@ -43,12 +50,15 @@ class CalvinGTMaskProvider(MaskProvider):
             if "movable" in selector:
                 name = selector["movable"]
                 names = movable.keys() if name == "*" else (name,)
-                identities.update((int(movable[item]["uid"]), None) for item in names)
+                identities.update(
+                    (int(movable[item]["uid"]), None, selector.get("when"))
+                    for item in names
+                )
             elif selector.get("held_movable"):
-                identities.update((uid, None) for uid in held_uids)
+                identities.update((uid, None, selector.get("when")) for uid in held_uids)
             elif selector.get("unheld_movable"):
                 identities.update(
-                    (int(info["uid"]), None)
+                    (int(info["uid"]), None, selector.get("when"))
                     for info in movable.values()
                     if int(info["uid"]) not in held_uids
                 )
@@ -57,10 +67,11 @@ class CalvinGTMaskProvider(MaskProvider):
                 links = selector.get("links")
                 if links:
                     identities.update(
-                        (int(info["uid"]), int(info["links"][link])) for link in links
+                        (int(info["uid"]), int(info["links"][link]), selector.get("when"))
+                        for link in links
                     )
                 else:
-                    identities.add((int(info["uid"]), None))
+                    identities.add((int(info["uid"]), None, selector.get("when")))
             else:
                 raise ValueError("Unsupported mask selector: {}".format(selector))
         return identities
@@ -97,12 +108,21 @@ class CalvinGTMaskProvider(MaskProvider):
         )
 
     @staticmethod
-    def _select(segmentation, identities):
+    def _select(segmentation, identities, held_uids, ever_held_uids=None):
+        ever_held_uids = ever_held_uids or set()
         valid = segmentation >= 0
         body_uid = segmentation & ((1 << 24) - 1)
         link_index = (segmentation >> 24) - 1
         result = np.zeros(segmentation.shape, dtype=bool)
-        for uid, link in identities:
+        for uid, link, condition in identities:
+            if condition == "unheld" and uid in held_uids:
+                continue
+            if condition == "held" and uid not in held_uids:
+                continue
+            if condition == "until_held" and uid in ever_held_uids:
+                continue
+            if condition not in (None, "held", "unheld", "until_held"):
+                raise ValueError("Unsupported mask visibility condition: {}".format(condition))
             selected = valid & (body_uid == uid)
             if link is not None:
                 selected &= link_index == link

@@ -14,7 +14,7 @@ from task_suite import ConfiguredCalvinSuite  # noqa: E402
 from rollout_engine import derive_episode_seed, restoration_metrics  # noqa: E402
 from calvin_env_adapter import CalvinEnvAdapter  # noqa: E402
 from model_client import _pack, _unpack  # noqa: E402
-from masking import MaskOverlay, MaskPerturbation  # noqa: E402
+from masking import CalvinGTMaskProvider, MaskOverlay, MaskPerturbation  # noqa: E402
 from backends.calvin.retry_runner import CalvinOracleRetryAgent  # noqa: E402
 from backends.calvin.motion_controller import (  # noqa: E402
     CalvinCartesianApproachController,
@@ -184,6 +184,29 @@ class ConfiguredCalvinSuiteTest(unittest.TestCase):
         self.assertTrue(np.array_equal(augmented[4, 6], [0, 255, 255]))
         self.assertTrue(np.array_equal(augmented[1, 6], [255, 255, 255]))
         self.assertTrue(np.array_equal(augmented[0, 6], [0, 0, 0]))
+
+    def test_role_specific_halo_and_dynamic_held_visibility(self):
+        image = np.zeros((16, 16, 3), dtype=np.uint8)
+        source = np.zeros((16, 16), dtype=bool)
+        destination = np.zeros((16, 16), dtype=bool)
+        source[5:11, 2:6] = True
+        destination[5:11, 10:14] = True
+        augmented = MaskOverlay(
+            alpha=0,
+            outline_width_px=2,
+            outline_colors={"source": (0, 0, 0), "destination": (0, 255, 255)},
+            outline_halo_width_px=0,
+            outline_halo_widths={"destination": 1},
+        ).apply(image, {"source": source, "destination": destination})
+        self.assertTrue(np.array_equal(augmented[2, 3], [0, 0, 0]))
+        self.assertTrue(np.array_equal(augmented[2, 12], [255, 255, 255]))
+
+        segmentation = np.asarray([[7, 8]], dtype=np.int64)
+        identities = {(7, None, "until_held"), (8, None, "held")}
+        visible = CalvinGTMaskProvider._select(segmentation, identities, {8}, {8})
+        self.assertTrue(np.array_equal(visible, [[True, True]]))
+        hidden = CalvinGTMaskProvider._select(segmentation, identities, set(), {7, 8})
+        self.assertTrue(np.array_equal(hidden, [[False, False]]))
 
     def test_restore_metrics_ignore_command_and_handle_angle_wrap(self):
         import numpy as np

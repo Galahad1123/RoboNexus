@@ -80,6 +80,60 @@ class SpecialistManifestTest(unittest.TestCase):
             )
         )
 
+    def test_refined_rotate_requires_release_and_stable_suffix(self):
+        manifest = self.load("calvin_rotate_6_release")
+        for split in ("training", "validation"):
+            rows = manifest["splits"][split]["segments"]
+            self.assertEqual(len({row["calvin_task"] for row in rows}), 6)
+            self.assertEqual(len(rows), len({row["segment_id"] for row in rows}))
+            for row in rows:
+                self.assertTrue(row["oracle_consistent"])
+                self.assertIsNotNone(row["oracle_success_frame"])
+                self.assertIsNotNone(row["release_frame"])
+                self.assertGreaterEqual(row["stable_suffix_frames"], 15)
+                self.assertLessEqual(row["stable_suffix_frames"], 30)
+                self.assertLessEqual(row["release_frame"], row["original_end"] + 15)
+
+    def test_mixed_stack_has_both_variants_and_dynamic_source_role(self):
+        manifest = self.load("calvin_stack_pick_place")
+        training = manifest["splits"]["training"]["segments"]
+        variants = {row["episode_variant"] for row in training}
+        self.assertEqual(
+            variants,
+            {
+                "table_pick",
+                "full_pick_and_stack",
+                "held_start_stack",
+                "place_in_drawer",
+                "place_in_slider",
+            },
+        )
+        variant_counts = {}
+        for row in training:
+            variant = row["episode_variant"]
+            variant_counts[variant] = variant_counts.get(variant, 0) + 1
+        self.assertEqual(variant_counts["table_pick"], 100)
+        self.assertEqual(variant_counts["place_in_drawer"], 100)
+        self.assertEqual(variant_counts["place_in_slider"], 100)
+        pick_colors = {}
+        for row in training:
+            if row["episode_variant"] != "table_pick":
+                continue
+            task = row["calvin_task"]
+            pick_colors[task] = pick_colors.get(task, 0) + 1
+        self.assertEqual(sorted(pick_colors.values()), [33, 33, 34])
+        pairs = set()
+        for row in training:
+            if row["episode_variant"] == "table_pick":
+                self.assertEqual(set(row["mask_roles"]), {"source"})
+                self.assertEqual(row["mask_roles"]["source"][0]["when"], "until_held")
+            if row["calvin_task"] == "stack_block":
+                self.assertEqual(set(row["mask_roles"]), {"source", "destination"})
+                self.assertEqual(row["mask_roles"]["source"][0]["when"], "until_held")
+                self.assertNotEqual(row["source_object"], row["demonstrated_destination"])
+                pairs.add((row["source_object"], row["demonstrated_destination"]))
+        self.assertEqual(len(pairs), 6)
+
 
 if __name__ == "__main__":
     unittest.main()

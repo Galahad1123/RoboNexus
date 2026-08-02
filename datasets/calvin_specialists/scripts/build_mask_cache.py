@@ -32,6 +32,11 @@ def main():
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--task", action="append")
+    parser.add_argument(
+        "--episode-variant",
+        action="append",
+        help="repeat to render only selected manifest episode variants",
+    )
     parser.add_argument("--max-episodes", type=int)
     parser.add_argument("--max-episodes-per-task", type=int)
     parser.add_argument("--overwrite", action="store_true")
@@ -48,6 +53,12 @@ def main():
     segments = list(manifest["splits"][args.split]["segments"])
     if args.task:
         segments = [row for row in segments if row["calvin_task"] in args.task]
+    if args.episode_variant:
+        segments = [
+            row
+            for row in segments
+            if row.get("episode_variant") in args.episode_variant
+        ]
     if args.max_episodes_per_task is not None:
         counts, selected = {}, []
         for row in segments:
@@ -89,6 +100,7 @@ def main():
         outline_color=style["outline_color"],
         outline_colors=style.get("outline_colors"),
         outline_halo_width_px=style.get("outline_halo_width_px", 0),
+        outline_halo_widths=style.get("outline_halo_widths"),
         outline_halo_color=style.get("outline_halo_color", [255, 255, 255]),
     )
     written = 0
