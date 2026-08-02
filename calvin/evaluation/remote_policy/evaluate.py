@@ -24,6 +24,32 @@ except ImportError:
 
 def run(args):
     suite = ConfiguredCalvinSuite(args.suite)
+    configured_mask_style = suite.config.get("mask_style", {})
+    mask_alpha = (
+        args.mask_alpha
+        if args.mask_alpha is not None
+        else float(configured_mask_style.get("alpha", 0.45))
+    )
+    mask_outline_px = (
+        args.mask_outline_px
+        if args.mask_outline_px is not None
+        else int(configured_mask_style.get("outline_width_px", 0))
+    )
+    mask_outline_color = (
+        args.mask_outline_color
+        if args.mask_outline_color is not None
+        else configured_mask_style.get("outline_color", [0, 0, 0])
+    )
+    mask_outline_halo_px = (
+        args.mask_outline_halo_px
+        if args.mask_outline_halo_px is not None
+        else int(configured_mask_style.get("outline_halo_width_px", 0))
+    )
+    mask_outline_halo_color = (
+        args.mask_outline_halo_color
+        if args.mask_outline_halo_color is not None
+        else configured_mask_style.get("outline_halo_color", [255, 255, 255])
+    )
     tasks = args.task or suite.task_names()
     unknown = sorted(set(tasks) - set(suite.task_names()))
     if unknown:
@@ -45,9 +71,13 @@ def run(args):
         if args.mask_provider == "gt":
             mask_provider = CalvinGTMaskProvider(adapter.env)
             mask_overlay = MaskOverlay(
-                alpha=args.mask_alpha,
+                alpha=mask_alpha,
                 seed=args.seed,
-                outline_width_px=args.mask_outline_px,
+                outline_width_px=mask_outline_px,
+                outline_color=mask_outline_color,
+                outline_colors=configured_mask_style.get("outline_colors"),
+                outline_halo_width_px=mask_outline_halo_px,
+                outline_halo_color=mask_outline_halo_color,
                 perturbation=MaskPerturbation(
                     max_shift_px=args.mask_max_shift_px,
                     morphology_px=args.mask_morphology_px,
@@ -66,8 +96,11 @@ def run(args):
                 "retry_recovery": args.retry_recovery,
                 "server_metadata": client.metadata,
                 "mask_provider": args.mask_provider,
-                "mask_alpha": args.mask_alpha,
-                "mask_outline_px": args.mask_outline_px,
+                "mask_alpha": mask_alpha,
+                "mask_outline_px": mask_outline_px,
+                "mask_outline_color": mask_outline_color,
+                "mask_outline_halo_px": mask_outline_halo_px,
+                "mask_outline_halo_color": mask_outline_halo_color,
                 "mask_max_shift_px": args.mask_max_shift_px,
                 "mask_morphology_px": args.mask_morphology_px,
                 "mask_dropout_probability": args.mask_dropout_probability,
@@ -191,13 +224,15 @@ def parse_args():
         default="none",
         help="optional image overlay source; clean evaluation remains the default",
     )
-    parser.add_argument("--mask-alpha", type=float, default=0.45)
+    parser.add_argument("--mask-alpha", type=float)
     parser.add_argument(
         "--mask-outline-px",
         type=int,
-        default=0,
-        help="opaque role-color outline width; 0 preserves fill-only behavior",
+        help="opaque role-color outline width; defaults to the suite mask style",
     )
+    parser.add_argument("--mask-outline-color", type=int, nargs=3)
+    parser.add_argument("--mask-outline-halo-px", type=int)
+    parser.add_argument("--mask-outline-halo-color", type=int, nargs=3)
     parser.add_argument("--mask-max-shift-px", type=int, default=0)
     parser.add_argument(
         "--mask-morphology-px",
@@ -210,12 +245,14 @@ def parse_args():
     args = parser.parse_args()
     if args.max_attempts < 1:
         parser.error("--max-attempts must be >= 1")
-    if not 0.0 <= args.mask_alpha <= 1.0:
+    if args.mask_alpha is not None and not 0.0 <= args.mask_alpha <= 1.0:
         parser.error("--mask-alpha must be in [0, 1]")
     if not 0.0 <= args.mask_dropout_probability <= 1.0:
         parser.error("--mask-dropout-probability must be in [0, 1]")
-    if args.mask_outline_px < 0:
+    if args.mask_outline_px is not None and args.mask_outline_px < 0:
         parser.error("--mask-outline-px must be >= 0")
+    if args.mask_outline_halo_px is not None and args.mask_outline_halo_px < 0:
+        parser.error("--mask-outline-halo-px must be >= 0")
     logging.basicConfig(level=getattr(logging, args.log_level.upper()), force=True)
     return args
 

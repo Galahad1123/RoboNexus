@@ -80,7 +80,14 @@ class ConfiguredCalvinSuite:
                 settle_steps=int(
                     task_config.get("settle_steps", self.config["defaults"].get("settle_steps", 0))
                 ),
-                mask_roles=task_config.get("mask_roles"),
+                # Specialist manifests may resolve a different destination for
+                # every demonstration (for example the demonstrated stack
+                # target). A suite-level value remains an explicit override.
+                mask_roles=(
+                    task_config["mask_roles"]
+                    if "mask_roles" in task_config
+                    else row.get("mask_roles")
+                ),
                 retry=task_config.get("retry"),
             )
             for row in rows

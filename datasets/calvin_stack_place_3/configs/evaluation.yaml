@@ -1,0 +1,24 @@
+version: 1
+name: calvin_stack_place_3
+manifest: datasets/calvin_stack_place_3/manifests/segments.json
+source_dataset: calvin/dataset/task_D_D
+split: validation
+oracle_config: calvin/calvin_models/conf/callbacks/rollout/tasks/new_playtable_tasks.yaml
+
+defaults:
+  max_steps: 120
+  settle_steps: 0
+
+mask_style:
+  alpha: 0.0
+  outline_width_px: 2
+  outline_color: [0, 255, 255]
+  outline_colors:
+    destination: [0, 255, 255]
+  outline_halo_width_px: 1
+  outline_halo_color: [255, 255, 255]
+
+tasks:
+  - {task: place_in_drawer, oracle_task: place_in_drawer}
+  - {task: place_in_slider, oracle_task: place_in_slider}
+  - {task: stack_block, oracle_task: stack_block}

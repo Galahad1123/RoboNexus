@@ -1,9 +1,14 @@
 import json
 from pathlib import Path
+import sys
 import unittest
 
 
 WORKSPACE = Path(__file__).resolve().parents[2]
+REMOTE_POLICY = WORKSPACE / "calvin" / "evaluation" / "remote_policy"
+sys.path.insert(0, str(REMOTE_POLICY))
+
+from task_suite import ConfiguredCalvinSuite  # noqa: E402
 
 
 class SpecialistManifestTest(unittest.TestCase):
@@ -46,6 +51,34 @@ class SpecialistManifestTest(unittest.TestCase):
                         (row["source_object"], row["demonstrated_destination"])
                     )
         self.assertEqual(len(pairs), 6)
+
+    def test_specialist_evaluation_suites_use_manifest_instructions_and_roles(self):
+        push_suite = ConfiguredCalvinSuite(
+            WORKSPACE / "datasets/calvin_push_rotate_12/configs/evaluation.yaml"
+        )
+        self.assertEqual(len(push_suite.task_names()), 12)
+        push_episode = push_suite.episodes("push_red_block_left", count=1)[0]
+        self.assertEqual(push_episode.instruction, "push the red block to the left")
+        self.assertEqual(
+            push_episode.mask_roles,
+            {"target": [{"movable": "block_red"}]},
+        )
+
+        stack_suite = ConfiguredCalvinSuite(
+            WORKSPACE / "datasets/calvin_stack_place_3/configs/evaluation.yaml"
+        )
+        self.assertEqual(len(stack_suite.task_names()), 3)
+        stack_episodes = stack_suite.episodes("stack_block")
+        self.assertTrue(stack_episodes)
+        self.assertTrue(
+            all(set(episode.mask_roles) == {"destination"} for episode in stack_episodes)
+        )
+        self.assertTrue(
+            all(
+                len(episode.mask_roles["destination"]) == 1
+                for episode in stack_episodes
+            )
+        )
 
 
 if __name__ == "__main__":
