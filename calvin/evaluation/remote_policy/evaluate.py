@@ -54,6 +54,13 @@ def run(args):
     unknown = sorted(set(tasks) - set(suite.task_names()))
     if unknown:
         raise ValueError("Tasks are not in suite: {}".format(unknown))
+    unknown_variants = sorted(
+        set(args.episode_variant or ()) - set(suite.episode_variant_names())
+    )
+    if unknown_variants:
+        raise ValueError(
+            "Episode variants are not in suite: {}".format(unknown_variants)
+        )
 
     client = ModelClient(host=args.host, port=args.port)
     adapter = None
@@ -93,6 +100,7 @@ def run(args):
                 "suite": str(Path(args.suite).resolve()),
                 "tasks": tasks,
                 "episodes_per_task": args.episodes_per_task,
+                "episode_variants": args.episode_variant,
                 "seed": args.seed,
                 "replan_interval": args.replan_interval,
                 "max_attempts": args.max_attempts,
@@ -152,6 +160,7 @@ def run(args):
                 task,
                 count=args.episodes_per_task,
                 seed=selection_seed,
+                episode_variants=args.episode_variant,
             )
             for episode in episodes:
                 logging.info("Starting %s (%s)", episode.episode_id, task)
@@ -162,6 +171,7 @@ def run(args):
                     record = {
                         "episode_id": episode.episode_id,
                         "task": episode.task,
+                        "episode_variant": episode.episode_variant,
                         "instruction": episode.instruction,
                         "success": False,
                         "termination_reason": "exception",
@@ -197,6 +207,11 @@ def parse_args():
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=10093)
     parser.add_argument("--task", action="append")
+    parser.add_argument(
+        "--episode-variant",
+        action="append",
+        help="repeat to evaluate only selected manifest episode variants",
+    )
     parser.add_argument("--episodes-per-task", type=int, default=10)
     parser.add_argument("--replan-interval", type=int, default=4)
     parser.add_argument("--seed", type=int, default=42)

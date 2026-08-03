@@ -18,6 +18,8 @@ class EpisodeSpec:
     source_frame: Path
     max_steps: int
     settle_steps: int
+    episode_variant: Optional[str] = None
+    success_guard: Optional[dict] = None
     mask_roles: Optional[Dict[str, List[dict]]] = None
     retry: Optional[dict] = None
 
@@ -53,7 +55,16 @@ class ConfiguredCalvinSuite:
     def task_names(self):
         return list(self.tasks)
 
-    def episodes(self, task, count=None, seed=0):
+    def episode_variant_names(self):
+        return sorted(
+            {
+                row["episode_variant"]
+                for row in self.manifest["splits"][self.split]["segments"]
+                if row.get("episode_variant")
+            }
+        )
+
+    def episodes(self, task, count=None, seed=0, episode_variants=None):
         if task not in self.tasks:
             raise KeyError("Unknown suite task: {}".format(task))
         task_config = self.tasks[task]
@@ -62,6 +73,10 @@ class ConfiguredCalvinSuite:
             for row in self.manifest["splits"][self.split]["segments"]
             if row["calvin_task"] == task
         ]
+        if episode_variants:
+            rows = [
+                row for row in rows if row.get("episode_variant") in episode_variants
+            ]
         rows.sort(key=lambda row: row["segment_id"])
         if count is not None and count < len(rows):
             rng = np.random.RandomState(seed)
@@ -80,6 +95,8 @@ class ConfiguredCalvinSuite:
                 settle_steps=int(
                     task_config.get("settle_steps", self.config["defaults"].get("settle_steps", 0))
                 ),
+                episode_variant=row.get("episode_variant"),
+                success_guard=task_config.get("success_guard"),
                 # Specialist manifests may resolve a different destination for
                 # every demonstration (for example the demonstrated stack
                 # target). A suite-level value remains an explicit override.

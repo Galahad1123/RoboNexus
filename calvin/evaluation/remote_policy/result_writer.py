@@ -34,8 +34,11 @@ class ResultWriter:
 
     def write_summary(self):
         by_task = defaultdict(list)
+        by_variant = defaultdict(list)
         for record in self.records:
             by_task[record["task"]].append(record)
+            if record.get("episode_variant"):
+                by_variant[record["episode_variant"]].append(record)
         task_metrics = {}
         for task, records in sorted(by_task.items()):
             successes = sum(bool(record["success"]) for record in records)
@@ -101,6 +104,15 @@ class ResultWriter:
                 else 0.0
             ),
             "by_task": task_metrics,
+            "by_episode_variant": {
+                variant: {
+                    "episodes": len(records),
+                    "successes": sum(bool(record["success"]) for record in records),
+                    "success_rate": sum(bool(record["success"]) for record in records)
+                    / len(records),
+                }
+                for variant, records in sorted(by_variant.items())
+            },
             "success_at_attempt": {
                 str(attempt_limit): (
                     sum(
@@ -141,6 +153,7 @@ def write_video_index(records, output_path):
     """Write a human-readable mapping from videos to task semantics."""
     fields = [
         "task",
+        "episode_variant",
         "instruction",
         "episode_id",
         "success",

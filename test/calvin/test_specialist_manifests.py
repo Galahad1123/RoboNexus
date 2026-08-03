@@ -134,6 +134,52 @@ class SpecialistManifestTest(unittest.TestCase):
                 pairs.add((row["source_object"], row["demonstrated_destination"]))
         self.assertEqual(len(pairs), 6)
 
+    def test_refined_evaluation_suites_cover_tasks_and_stack_variants(self):
+        rotate_suite = ConfiguredCalvinSuite(
+            WORKSPACE / "datasets/calvin_rotate_6_release/configs/evaluation.yaml"
+        )
+        self.assertEqual(len(rotate_suite.task_names()), 6)
+        self.assertTrue(
+            all(
+                episode.episode_variant == "rotate_release_complete"
+                for task in rotate_suite.task_names()
+                for episode in rotate_suite.episodes(task)
+            )
+        )
+        self.assertTrue(
+            all(
+                episode.success_guard["gripper"] == "open"
+                and episode.success_guard["consecutive_steps"] == 3
+                for task in rotate_suite.task_names()
+                for episode in rotate_suite.episodes(task)
+            )
+        )
+
+        mixed_suite = ConfiguredCalvinSuite(
+            WORKSPACE / "datasets/calvin_stack_pick_place/configs/evaluation.yaml"
+        )
+        self.assertEqual(len(mixed_suite.task_names()), 6)
+        stack_episodes = mixed_suite.episodes("stack_block")
+        self.assertEqual(
+            {episode.episode_variant for episode in stack_episodes},
+            {"full_pick_and_stack", "held_start_stack"},
+        )
+        self.assertEqual(
+            len(
+                mixed_suite.episodes(
+                    "stack_block",
+                    episode_variants=["full_pick_and_stack"],
+                )
+            ),
+            4,
+        )
+        self.assertTrue(
+            all(
+                episode.mask_roles["source"][0]["when"] == "until_held"
+                for episode in stack_episodes
+            )
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

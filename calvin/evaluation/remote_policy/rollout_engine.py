@@ -95,6 +95,21 @@ def derive_episode_seed(base_seed, episode_id):
     return int.from_bytes(digest[:8], byteorder="big") % (2**63 - 1)
 
 
+def success_guard_satisfied(guard, observation, executed_action):
+    if not guard:
+        return True
+    gripper = guard.get("gripper")
+    if gripper is None:
+        return True
+    width = float(observation["robot_obs"][6])
+    command = float(executed_action[-1])
+    if gripper == "open":
+        return command > 0 and width >= float(guard.get("min_width_m", 0.04))
+    if gripper == "closed":
+        return command < 0 and width <= float(guard.get("max_width_m", 0.04))
+    raise ValueError("Unsupported success-guard gripper state: {}".format(gripper))
+
+
 class RolloutEngine:
     def __init__(
         self,
@@ -174,6 +189,7 @@ class RolloutEngine:
         success = False
         termination_reason = "timeout"
         success_step = None
+        success_guard_streak = 0
 
         for step in range(episode.max_steps):
             role_masks = (
@@ -208,7 +224,17 @@ class RolloutEngine:
             achieved = self.task_oracle.get_task_info_for_set(
                 start_info, current_info, {episode.oracle_task}
             )
-            if episode.oracle_task in achieved:
+            success_guard = getattr(episode, "success_guard", None)
+            guarded_success = episode.oracle_task in achieved and success_guard_satisfied(
+                success_guard,
+                observation,
+                self.adapter.last_executed_action,
+            )
+            success_guard_streak = success_guard_streak + 1 if guarded_success else 0
+            required_success_steps = int(
+                (success_guard or {}).get("consecutive_steps", 1)
+            )
+            if success_guard_streak >= required_success_steps:
                 success = True
                 success_step = step + 1
                 termination_reason = "success"
@@ -240,8 +266,10 @@ class RolloutEngine:
         return {
             "episode_id": episode.episode_id,
             "task": episode.task,
+            "episode_variant": episode.episode_variant,
             "instruction": episode.instruction,
             "oracle_task": episode.oracle_task,
+            "success_guard": getattr(episode, "success_guard", None),
             "source_frame": str(episode.source_frame),
             "success": success,
             "success_step": success_step,

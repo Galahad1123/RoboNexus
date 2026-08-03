@@ -11,7 +11,11 @@ sys.path.insert(0, str(REMOTE_POLICY))
 sys.path.insert(0, str(WORKSPACE))
 
 from task_suite import ConfiguredCalvinSuite  # noqa: E402
-from rollout_engine import derive_episode_seed, restoration_metrics  # noqa: E402
+from rollout_engine import (  # noqa: E402
+    derive_episode_seed,
+    restoration_metrics,
+    success_guard_satisfied,
+)
 from calvin_env_adapter import CalvinEnvAdapter  # noqa: E402
 from model_client import _pack, _unpack  # noqa: E402
 from masking import CalvinGTMaskProvider, MaskOverlay, MaskPerturbation  # noqa: E402
@@ -255,6 +259,16 @@ class ConfiguredCalvinSuiteTest(unittest.TestCase):
         )
         self.assertEqual(close[6], -1.0)
         self.assertEqual(opened[6], 1.0)
+
+    def test_release_success_guard_requires_open_command_and_width(self):
+        observation = {"robot_obs": np.asarray([0, 0, 0, 0, 0, 0, 0.06])}
+        action_open = np.asarray([0, 0, 0, 0, 0, 0, 1])
+        action_close = np.asarray([0, 0, 0, 0, 0, 0, -1])
+        guard = {"gripper": "open", "min_width_m": 0.04}
+        self.assertTrue(success_guard_satisfied(guard, observation, action_open))
+        self.assertFalse(success_guard_satisfied(guard, observation, action_close))
+        observation["robot_obs"][6] = 0.02
+        self.assertFalse(success_guard_satisfied(guard, observation, action_open))
 
     def test_episode_seed_is_stable_and_episode_specific(self):
         first = derive_episode_seed(42, "validation-000117")
