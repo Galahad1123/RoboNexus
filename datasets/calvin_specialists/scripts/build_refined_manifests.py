@@ -30,7 +30,23 @@ from build_audited_manifests import (
 )
 
 
-REFINED_DATASETS = ("calvin_rotate_6_release", "calvin_stack_pick_place")
+REFINED_DATASETS = (
+    "calvin_rotate_6_release",
+    "calvin_stack_pick_place",
+    "calvin_rotate_2_release",
+    "calvin_stack_pick_place_persistent",
+)
+DEFAULT_REFINED_DATASETS = (
+    "calvin_rotate_2_release",
+    "calvin_stack_pick_place_persistent",
+)
+
+
+def source_selector(name, cfg):
+    selector = {"movable": name}
+    if cfg.get("source_visibility", "until_held") == "until_held":
+        selector["when"] = "until_held"
+    return selector
 
 
 def frame_arrays(split_dir, frame_index):
@@ -260,7 +276,7 @@ def audit_stack_candidate(env, oracle, split_dir, row, cfg):
     }
 
 
-def audit_simple_candidate(env, oracle, split_dir, row):
+def audit_simple_candidate(env, oracle, split_dir, row, cfg):
     start_info = load_state(env, split_dir, row["start"])
     end_info = load_state(env, split_dir, row["end"])
     achieved = oracle.get_task_info_for_set(
@@ -274,7 +290,7 @@ def audit_simple_candidate(env, oracle, split_dir, row):
             reasons.append("pick_does_not_end_holding_target")
         variant = "table_pick"
         mask_roles = {
-            "source": [{"movable": source, "when": "until_held"}]
+            "source": [source_selector(source, cfg)]
         }
     else:
         held = held_objects(start_info)
@@ -299,11 +315,11 @@ def audit_simple_candidate(env, oracle, split_dir, row):
     }
 
 
-def stack_segments(representative, split, task_id, instruction, cluster_id):
+def stack_segments(representative, split, task_id, instruction, cluster_id, cfg):
     source = representative["source_object"]
     destination = representative["demonstrated_destination"]
     roles = {
-        "source": [{"movable": source, "when": "until_held"}],
+        "source": [source_selector(source, cfg)],
         "destination": [{"movable": destination}],
     }
     base = {
@@ -421,7 +437,7 @@ def build_split(dataset_name, cfg, split, source_root, oracle, overlap_threshold
                 ]
             else:
                 rows = [
-                    audit_simple_candidate(env, oracle, split_dir, row)
+                    audit_simple_candidate(env, oracle, split_dir, row, cfg)
                     for row in cluster
                 ]
             audited.extend(rows)
@@ -449,7 +465,9 @@ def build_split(dataset_name, cfg, split, source_root, oracle, overlap_threshold
             instruction = cfg["tasks"][task]
             if task == "stack_block":
                 retained.extend(
-                    stack_segments(representative, split, task_id, instruction, cluster_id)
+                    stack_segments(
+                        representative, split, task_id, instruction, cluster_id, cfg
+                    )
                 )
             else:
                 retained.append(
@@ -526,7 +544,7 @@ def main():
     parser.add_argument("--dataset", action="append", choices=REFINED_DATASETS)
     args = parser.parse_args()
     config = json.loads(args.config.read_text())
-    selected = args.dataset or list(REFINED_DATASETS)
+    selected = args.dataset or list(DEFAULT_REFINED_DATASETS)
     source_root = resolve(WORKSPACE, config["source_dataset"]).resolve()
     oracle = make_oracle(resolve(WORKSPACE, config["oracle_config"]))
     summaries = {}

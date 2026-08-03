@@ -180,6 +180,36 @@ class SpecialistManifestTest(unittest.TestCase):
             )
         )
 
+    def test_third_generation_merges_rotate_language_and_keeps_source_visible(self):
+        rotate = self.load("calvin_rotate_2_release")
+        self.assertEqual(
+            {item["instruction"] for item in rotate["tasks"]},
+            {
+                "rotate the black-outlined block counterclockwise",
+                "rotate the black-outlined block clockwise",
+            },
+        )
+        for split in ("training", "validation"):
+            self.assertEqual(
+                len(rotate["splits"][split]["segments"]),
+                len(
+                    self.load("calvin_rotate_6_release")["splits"][split]["segments"]
+                ),
+            )
+
+        persistent = self.load("calvin_stack_pick_place_persistent")
+        for split in ("training", "validation"):
+            for row in persistent["splits"][split]["segments"]:
+                if row["episode_variant"] in {
+                    "table_pick",
+                    "full_pick_and_stack",
+                    "held_start_stack",
+                }:
+                    self.assertEqual(
+                        row["mask_roles"]["source"],
+                        [{"movable": row["source_object"]}],
+                    )
+
 
 if __name__ == "__main__":
     unittest.main()

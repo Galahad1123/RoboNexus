@@ -3,14 +3,16 @@
 本目录基于 CALVIN 官方 task-D 语言标注构造多套专项数据集，整个过程不会修改
 `calvin_d_10` 或源 NPZ 文件。
 
-当前推荐使用的第二版数据集：
+当前推荐使用的第三版数据集：
 
-- `calvin_rotate_6_release`：6 类完成真实释放并带稳定尾段的 Rotate；
-- `calvin_stack_pick_place`：桌面 Pick、完整 Pick-and-Stack、Held-start Stack、
-  Place-in-Drawer 和 Place-in-Slider。
+- `calvin_rotate_2_release`：保留 6 类官方 oracle/评测分组，但训练语言合并为左旋和
+  右旋两个任务；
+- `calvin_stack_pick_place_persistent`：桌面 Pick、完整 Pick-and-Stack、Held-start
+  Stack、Place-in-Drawer 和 Place-in-Slider，source 全程持续标记。
 
-第一版实验数据 `calvin_push_rotate_12` 与 `calvin_stack_place_3` 会继续保留，便于复现
-已有 checkpoint，不会被第二版脚本覆盖。
+先前实验数据 `calvin_push_rotate_12`、`calvin_stack_place_3`、
+`calvin_rotate_6_release` 和 `calvin_stack_pick_place` 会继续保留，便于复现已有
+checkpoint，不会被新脚本覆盖。
 
 ## 1. 通用去重规则
 
@@ -21,9 +23,9 @@
 全部候选、拒绝原因、重叠簇和最终选择均保存在各数据集的 `reports/` 中；最终转换只
 读取 `manifests/segments.json`。
 
-## 2. 第二版审计标准
+## 2. 第三版审计标准
 
-### Rotate-6 Release
+### Rotate-2 Release
 
 Rotate 候选必须满足：
 
@@ -41,7 +43,15 @@ Rotate 候选必须满足：
 | training | 901 | 366 | 275 | 26,375 |
 | validation | 178 | 64 | 45 | 4,308 |
 
-六个 Rotate 类别在 training 和 validation 中均有覆盖。
+六个官方 Rotate 类别在 training 和 validation 中均有覆盖，但写入 LeRobotDataset 的
+规范化语言只有两个：
+
+```text
+rotate the black-outlined block counterclockwise
+rotate the black-outlined block clockwise
+```
+
+因此 outline 指定实例、语言指定方向；CALVIN oracle 与逐颜色评测仍保持六类。
 
 ### Stack+Pick+Place
 
@@ -93,17 +103,19 @@ Stack 覆盖全部 6 种有序 source→destination 颜色组合。
 
 - source：2 px 黑色边框；
 - destination：2 px 青色边框 + 1 px 白色外 halo；
-- source 仅在尚未抓住时显示，抓住后黑色边框动态消失；
+- source 在 Pick、Full Stack 和 Held-start Stack 中全程持续显示；
 - destination 在 Stack 和 Place 过程中始终显示；
-- Held-start Stack 从第一帧开始只显示 destination；
 - Table Pick 只有 source，没有 destination。
+
+持续标记与部署时 SAM/Cutie 对已指定目标的连续跟踪语义一致，不再根据仿真接触状态
+动态撤销 source 提示。
 
 Stack 的 source/destination 来自专家轨迹，这是训练阶段的特权监督。真实部署时仍需由
 agent 侧目标选择器提供对应角色。
 
 ## 4. 重新生成审计 manifest
 
-只生成第二版两套数据：
+无 `--dataset` 参数时，默认只生成当前推荐的第三版两套数据：
 
 ```bash
 conda run -n robonexus-calvin python \
@@ -115,11 +127,11 @@ conda run -n robonexus-calvin python \
 ```bash
 conda run -n robonexus-calvin python \
   datasets/calvin_specialists/scripts/build_refined_manifests.py \
-  --dataset calvin_rotate_6_release
+  --dataset calvin_rotate_2_release
 
 conda run -n robonexus-calvin python \
   datasets/calvin_specialists/scripts/build_refined_manifests.py \
-  --dataset calvin_stack_pick_place
+  --dataset calvin_stack_pick_place_persistent
 ```
 
 第一版 manifest 仍由 `scripts/build_audited_manifests.py` 构造。
@@ -132,20 +144,20 @@ conda run -n robonexus-calvin python \
 # Rotate training / validation
 conda run -n robonexus-calvin python \
   datasets/calvin_specialists/scripts/build_mask_cache.py \
-  --dataset calvin_rotate_6_release --split training
+  --dataset calvin_rotate_2_release --split training
 
 conda run -n robonexus-calvin python \
   datasets/calvin_specialists/scripts/build_mask_cache.py \
-  --dataset calvin_rotate_6_release --split validation
+  --dataset calvin_rotate_2_release --split validation
 
 # Stack+Pick+Place training / validation
 conda run -n robonexus-calvin python \
   datasets/calvin_specialists/scripts/build_mask_cache.py \
-  --dataset calvin_stack_pick_place --split training
+  --dataset calvin_stack_pick_place_persistent --split training
 
 conda run -n robonexus-calvin python \
   datasets/calvin_specialists/scripts/build_mask_cache.py \
-  --dataset calvin_stack_pick_place --split validation
+  --dataset calvin_stack_pick_place_persistent --split validation
 ```
 
 EGL cache 构造器会逐帧恢复仿真状态，完整生成需要较长时间。小规模检查可使用
@@ -157,10 +169,10 @@ EGL cache 构造器会逐帧恢复仿真状态，完整生成需要较长时间�
 ```bash
 conda run -n robonexus-calvin python \
   datasets/calvin_specialists/scripts/build_mask_cache.py \
-  --dataset calvin_stack_pick_place --split validation \
+  --dataset calvin_stack_pick_place_persistent --split validation \
   --episode-variant full_pick_and_stack \
   --max-episodes-per-task 1 \
-  --output datasets/calvin_stack_pick_place/mask_cache/validation_preview
+  --output datasets/calvin_stack_pick_place_persistent/mask_cache/validation_preview
 ```
 
 ## 6. 转换为 LeRobotDataset
@@ -172,28 +184,28 @@ conda run -n robonexus-calvin python \
 # Rotate
 multitask_dit_policy/.venv/bin/python \
   datasets/calvin_specialists/scripts/convert_to_lerobot.py \
-  --dataset calvin_rotate_6_release --split training --storage image \
-  --mask-cache datasets/calvin_rotate_6_release/mask_cache/training \
-  --output datasets/calvin_rotate_6_release/data/training_outline_image
+  --dataset calvin_rotate_2_release --split training --storage image \
+  --mask-cache datasets/calvin_rotate_2_release/mask_cache/training \
+  --output datasets/calvin_rotate_2_release/data/training_outline_image
 
 multitask_dit_policy/.venv/bin/python \
   datasets/calvin_specialists/scripts/convert_to_lerobot.py \
-  --dataset calvin_rotate_6_release --split validation --storage image \
-  --mask-cache datasets/calvin_rotate_6_release/mask_cache/validation \
-  --output datasets/calvin_rotate_6_release/data/validation_outline_image
+  --dataset calvin_rotate_2_release --split validation --storage image \
+  --mask-cache datasets/calvin_rotate_2_release/mask_cache/validation \
+  --output datasets/calvin_rotate_2_release/data/validation_outline_image
 
 # Stack+Pick+Place
 multitask_dit_policy/.venv/bin/python \
   datasets/calvin_specialists/scripts/convert_to_lerobot.py \
-  --dataset calvin_stack_pick_place --split training --storage image \
-  --mask-cache datasets/calvin_stack_pick_place/mask_cache/training \
-  --output datasets/calvin_stack_pick_place/data/training_role_outline_image
+  --dataset calvin_stack_pick_place_persistent --split training --storage image \
+  --mask-cache datasets/calvin_stack_pick_place_persistent/mask_cache/training \
+  --output datasets/calvin_stack_pick_place_persistent/data/training_role_outline_image
 
 multitask_dit_policy/.venv/bin/python \
   datasets/calvin_specialists/scripts/convert_to_lerobot.py \
-  --dataset calvin_stack_pick_place --split validation --storage image \
-  --mask-cache datasets/calvin_stack_pick_place/mask_cache/validation \
-  --output datasets/calvin_stack_pick_place/data/validation_role_outline_image
+  --dataset calvin_stack_pick_place_persistent --split validation --storage image \
+  --mask-cache datasets/calvin_stack_pick_place_persistent/mask_cache/validation \
+  --output datasets/calvin_stack_pick_place_persistent/data/validation_role_outline_image
 ```
 
 视频预览使用 `--storage video` 并指定不同输出目录，例如：
@@ -201,9 +213,9 @@ multitask_dit_policy/.venv/bin/python \
 ```bash
 multitask_dit_policy/.venv/bin/python \
   datasets/calvin_specialists/scripts/convert_to_lerobot.py \
-  --dataset calvin_stack_pick_place --split validation --storage video \
+  --dataset calvin_stack_pick_place_persistent --split validation --storage video \
   --episode-variant full_pick_and_stack \
   --max-episodes-per-task 1 \
-  --mask-cache datasets/calvin_stack_pick_place/mask_cache/validation_preview \
-  --output datasets/calvin_stack_pick_place/data/validation_role_outline_preview_video
+  --mask-cache datasets/calvin_stack_pick_place_persistent/mask_cache/validation_preview \
+  --output datasets/calvin_stack_pick_place_persistent/data/validation_role_outline_preview_video
 ```

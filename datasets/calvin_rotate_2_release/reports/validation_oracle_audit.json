@@ -1,0 +1,4613 @@
+[
+  {
+    "annotation_index": 843,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "take the blue block and rotate it left",
+    "start": 18699,
+    "end": 18803,
+    "num_frames": 105,
+    "original_start": 18699,
+    "original_end": 18763,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 18773,
+    "release_frame": 18773,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 865,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "rotate the blue block to the left",
+    "start": 18709,
+    "end": 18803,
+    "num_frames": 95,
+    "original_start": 18709,
+    "original_end": 18773,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 18773,
+    "release_frame": 18773,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 216,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "take the blue block and turn it left",
+    "start": 21256,
+    "end": 21360,
+    "num_frames": 105,
+    "original_start": 21256,
+    "original_end": 21320,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 21330,
+    "release_frame": 21330,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_held"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 532,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "rotate the blue block 90 degrees to the left",
+    "start": 21250,
+    "end": 21314,
+    "num_frames": 65,
+    "original_start": 21250,
+    "original_end": 21314,
+    "start_extension_frames": 0,
+    "oracle_success_frame": null,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_held",
+      "oracle_not_satisfied",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 210,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "turn the blue block left",
+    "start": 36473,
+    "end": 36549,
+    "num_frames": 77,
+    "original_start": 36473,
+    "original_end": 36537,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 36549,
+    "release_frame": 36549,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 473,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "take the blue block and rotate it left",
+    "start": 36470,
+    "end": 36534,
+    "num_frames": 65,
+    "original_start": 36470,
+    "original_end": 36534,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 36549,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 748,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "rotate the blue block towards the left",
+    "start": 37818,
+    "end": 37882,
+    "num_frames": 65,
+    "original_start": 37818,
+    "original_end": 37882,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 37897,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_held",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 856,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "take the blue block and rotate it left",
+    "start": 37820,
+    "end": 37927,
+    "num_frames": 108,
+    "original_start": 37820,
+    "original_end": 37884,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 37897,
+    "release_frame": 37897,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_held"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 328,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "rotate the blue block 90 degrees to the left",
+    "start": 37940,
+    "end": 38029,
+    "num_frames": 90,
+    "original_start": 37940,
+    "original_end": 38004,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 37999,
+    "release_frame": 37999,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 92,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "turn the blue block left",
+    "start": 403421,
+    "end": 403516,
+    "num_frames": 96,
+    "original_start": 403421,
+    "original_end": 403485,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 403486,
+    "release_frame": 403486,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 467,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "take the blue block and rotate it left",
+    "start": 403416,
+    "end": 403516,
+    "num_frames": 101,
+    "original_start": 403416,
+    "original_end": 403480,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 403486,
+    "release_frame": 403486,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_held"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 979,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "rotate the blue block to the left",
+    "start": 403420,
+    "end": 403516,
+    "num_frames": 97,
+    "original_start": 403420,
+    "original_end": 403484,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 403486,
+    "release_frame": 403486,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 375,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "rotate the blue block 90 degrees to the left",
+    "start": 403499,
+    "end": 403572,
+    "num_frames": 74,
+    "original_start": 403499,
+    "original_end": 403563,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 403572,
+    "release_frame": 403572,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 469,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "take the blue block and rotate it left",
+    "start": 403492,
+    "end": 403556,
+    "num_frames": 65,
+    "original_start": 403492,
+    "original_end": 403556,
+    "start_extension_frames": 0,
+    "oracle_success_frame": null,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 620,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "rotate the blue block towards the left",
+    "start": 403493,
+    "end": 403557,
+    "num_frames": 65,
+    "original_start": 403493,
+    "original_end": 403557,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 403572,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 624,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "rotate left the blue block",
+    "start": 403503,
+    "end": 403572,
+    "num_frames": 70,
+    "original_start": 403503,
+    "original_end": 403567,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 403572,
+    "release_frame": 403572,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 482,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "grasp the blue block and turn it left",
+    "start": 407116,
+    "end": 407204,
+    "num_frames": 89,
+    "original_start": 407116,
+    "original_end": 407180,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 407176,
+    "release_frame": 407176,
+    "stable_suffix_frames": 28,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 857,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "grasp the blue block, then rotate it left",
+    "start": 407106,
+    "end": 407204,
+    "num_frames": 99,
+    "original_start": 407106,
+    "original_end": 407170,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 407176,
+    "release_frame": 407176,
+    "stable_suffix_frames": 28,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 127,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "rotate the blue block to the left",
+    "start": 407519,
+    "end": 407583,
+    "num_frames": 65,
+    "original_start": 407519,
+    "original_end": 407583,
+    "start_extension_frames": 0,
+    "oracle_success_frame": null,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 208,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "grasp the blue block and turn it left",
+    "start": 407528,
+    "end": 407633,
+    "num_frames": 106,
+    "original_start": 407528,
+    "original_end": 407592,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 407603,
+    "release_frame": 407603,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 310,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "take the blue block and rotate it left",
+    "start": 407560,
+    "end": 407633,
+    "num_frames": 74,
+    "original_start": 407560,
+    "original_end": 407598,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 407603,
+    "release_frame": 407603,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_held"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 465,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "rotate the blue block towards the left",
+    "start": 407520,
+    "end": 407584,
+    "num_frames": 65,
+    "original_start": 407520,
+    "original_end": 407584,
+    "start_extension_frames": 0,
+    "oracle_success_frame": null,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 842,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "take the blue block and rotate it left",
+    "start": 407529,
+    "end": 407633,
+    "num_frames": 105,
+    "original_start": 407529,
+    "original_end": 407593,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 407603,
+    "release_frame": 407603,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 402,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "grasp the blue block, then rotate it left",
+    "start": 407630,
+    "end": 407694,
+    "num_frames": 65,
+    "original_start": 407630,
+    "original_end": 407694,
+    "start_extension_frames": 0,
+    "oracle_success_frame": null,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 610,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "grasp the blue block, then turn it left",
+    "start": 407647,
+    "end": 407740,
+    "num_frames": 94,
+    "original_start": 407647,
+    "original_end": 407711,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 407710,
+    "release_frame": 407710,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 859,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "rotate left the blue block",
+    "start": 407626,
+    "end": 407690,
+    "num_frames": 65,
+    "original_start": 407626,
+    "original_end": 407690,
+    "start_extension_frames": 0,
+    "oracle_success_frame": null,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 864,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "rotate the blue block 90 degrees to the left",
+    "start": 407629,
+    "end": 407693,
+    "num_frames": 65,
+    "original_start": 407629,
+    "original_end": 407693,
+    "start_extension_frames": 0,
+    "oracle_success_frame": null,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 987,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "take the blue block and rotate it left",
+    "start": 407632,
+    "end": 407696,
+    "num_frames": 65,
+    "original_start": 407632,
+    "original_end": 407696,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 407710,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 991,
+    "calvin_task": "rotate_blue_block_left",
+    "original_instruction": "grasp the blue block, then rotate it left",
+    "start": 407631,
+    "end": 407695,
+    "num_frames": 65,
+    "original_start": 407631,
+    "original_end": 407695,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 407710,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 198,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "take the blue block and rotate it right",
+    "start": 8412,
+    "end": 8515,
+    "num_frames": 104,
+    "original_start": 8412,
+    "original_end": 8476,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8485,
+    "release_frame": 8485,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 221,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "take the blue block and turn it right",
+    "start": 8421,
+    "end": 8515,
+    "num_frames": 95,
+    "original_start": 8421,
+    "original_end": 8485,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8485,
+    "release_frame": 8485,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 320,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "turn the blue block right",
+    "start": 8418,
+    "end": 8515,
+    "num_frames": 98,
+    "original_start": 8418,
+    "original_end": 8482,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8485,
+    "release_frame": 8485,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 425,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "rotate the blue block to the right",
+    "start": 8411,
+    "end": 8515,
+    "num_frames": 105,
+    "original_start": 8411,
+    "original_end": 8475,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8485,
+    "release_frame": 8485,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 850,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "grasp the blue block, then turn it right",
+    "start": 8415,
+    "end": 8515,
+    "num_frames": 101,
+    "original_start": 8415,
+    "original_end": 8479,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8485,
+    "release_frame": 8485,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 972,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "rotate the blue block towards the right",
+    "start": 8422,
+    "end": 8515,
+    "num_frames": 94,
+    "original_start": 8422,
+    "original_end": 8486,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8485,
+    "release_frame": 8485,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 621,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "rotate right the blue block",
+    "start": 8507,
+    "end": 8575,
+    "num_frames": 69,
+    "original_start": 8507,
+    "original_end": 8571,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8575,
+    "release_frame": 8575,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 631,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "grasp the blue block, then rotate it right",
+    "start": 8506,
+    "end": 8575,
+    "num_frames": 70,
+    "original_start": 8506,
+    "original_end": 8570,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8575,
+    "release_frame": 8575,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 211,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "grasp the blue block, then rotate it right",
+    "start": 18793,
+    "end": 18895,
+    "num_frames": 103,
+    "original_start": 18793,
+    "original_end": 18857,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 18864,
+    "release_frame": 18865,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 222,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "rotate the blue block to the right",
+    "start": 18803,
+    "end": 18895,
+    "num_frames": 93,
+    "original_start": 18803,
+    "original_end": 18867,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 18864,
+    "release_frame": 18865,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 571,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "grasp the blue block, then turn it right",
+    "start": 18799,
+    "end": 18895,
+    "num_frames": 97,
+    "original_start": 18799,
+    "original_end": 18863,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 18864,
+    "release_frame": 18865,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 871,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "grasp the blue block, then rotate it right",
+    "start": 18787,
+    "end": 18851,
+    "num_frames": 65,
+    "original_start": 18787,
+    "original_end": 18851,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 18864,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 971,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "rotate the blue block to the right",
+    "start": 18832,
+    "end": 18895,
+    "num_frames": 64,
+    "original_start": 18832,
+    "original_end": 18869,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 18864,
+    "release_frame": 18865,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_held"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 101,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "rotate the blue block 90 degrees to the right",
+    "start": 21362,
+    "end": 21426,
+    "num_frames": 65,
+    "original_start": 21362,
+    "original_end": 21426,
+    "start_extension_frames": 0,
+    "oracle_success_frame": null,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 349,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "grasp the blue block and turn it right",
+    "start": 21371,
+    "end": 21475,
+    "num_frames": 105,
+    "original_start": 21371,
+    "original_end": 21435,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 21445,
+    "release_frame": 21445,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 352,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "turn the blue block right",
+    "start": 21377,
+    "end": 21475,
+    "num_frames": 99,
+    "original_start": 21377,
+    "original_end": 21441,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 21445,
+    "release_frame": 21445,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 867,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "grasp the blue block and rotate it right",
+    "start": 21379,
+    "end": 21475,
+    "num_frames": 97,
+    "original_start": 21385,
+    "original_end": 21449,
+    "start_extension_frames": 6,
+    "oracle_success_frame": 21445,
+    "release_frame": 21445,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 869,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "rotate right the blue block",
+    "start": 21373,
+    "end": 21475,
+    "num_frames": 103,
+    "original_start": 21373,
+    "original_end": 21437,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 21445,
+    "release_frame": 21445,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 977,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "grasp the blue block, then rotate it right",
+    "start": 21379,
+    "end": 21475,
+    "num_frames": 97,
+    "original_start": 21379,
+    "original_end": 21443,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 21445,
+    "release_frame": 21445,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 485,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "turn the blue block right",
+    "start": 224662,
+    "end": 224731,
+    "num_frames": 70,
+    "original_start": 224662,
+    "original_end": 224726,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 224731,
+    "release_frame": 224731,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 629,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "grasp the blue block, then rotate it right",
+    "start": 224677,
+    "end": 224731,
+    "num_frames": 55,
+    "original_start": 224677,
+    "original_end": 224741,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 224731,
+    "release_frame": 224731,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 999,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "turn the blue block right",
+    "start": 224664,
+    "end": 224731,
+    "num_frames": 68,
+    "original_start": 224664,
+    "original_end": 224728,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 224731,
+    "release_frame": 224731,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 1001,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "turn the blue block right",
+    "start": 224656,
+    "end": 224731,
+    "num_frames": 76,
+    "original_start": 224656,
+    "original_end": 224720,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 224731,
+    "release_frame": 224731,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 100,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "grasp the blue block and turn it right",
+    "start": 238761,
+    "end": 238861,
+    "num_frames": 101,
+    "original_start": 238761,
+    "original_end": 238825,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 238831,
+    "release_frame": 238831,
+    "stable_suffix_frames": 30,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 863,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "rotate right the blue block",
+    "start": 238778,
+    "end": 238816,
+    "num_frames": 39,
+    "original_start": 238780,
+    "original_end": 238816,
+    "start_extension_frames": 2,
+    "oracle_success_frame": 238831,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 105,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "rotate the blue block to the right",
+    "start": 238842,
+    "end": 238927,
+    "num_frames": 86,
+    "original_start": 238842,
+    "original_end": 238906,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 238905,
+    "release_frame": 238905,
+    "stable_suffix_frames": 22,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 594,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "turn the blue block right",
+    "start": 238829,
+    "end": 238927,
+    "num_frames": 99,
+    "original_start": 238829,
+    "original_end": 238893,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 238905,
+    "release_frame": 238905,
+    "stable_suffix_frames": 22,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_held"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 749,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "grasp the blue block and turn it right",
+    "start": 238838,
+    "end": 238927,
+    "num_frames": 90,
+    "original_start": 238838,
+    "original_end": 238902,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 238905,
+    "release_frame": 238905,
+    "stable_suffix_frames": 22,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 752,
+    "calvin_task": "rotate_blue_block_right",
+    "original_instruction": "rotate the blue block towards the right",
+    "start": 238828,
+    "end": 238927,
+    "num_frames": 100,
+    "original_start": 238828,
+    "original_end": 238892,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 238905,
+    "release_frame": 238905,
+    "stable_suffix_frames": 22,
+    "source_object": "block_blue",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_held"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 937,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "grasp the pink block and rotate it left",
+    "start": 3062,
+    "end": 3153,
+    "num_frames": 92,
+    "original_start": 3062,
+    "original_end": 3126,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 3123,
+    "release_frame": 3123,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 535,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "grasp the pink block and turn it left",
+    "start": 33893,
+    "end": 33969,
+    "num_frames": 77,
+    "original_start": 33893,
+    "original_end": 33957,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 33957,
+    "release_frame": 33957,
+    "stable_suffix_frames": 12,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 615,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "turn the pink block left",
+    "start": 33900,
+    "end": 33969,
+    "num_frames": 70,
+    "original_start": 33900,
+    "original_end": 33964,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 33957,
+    "release_frame": 33957,
+    "stable_suffix_frames": 12,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 841,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "grasp the pink block, then turn it left",
+    "start": 33880,
+    "end": 33969,
+    "num_frames": 90,
+    "original_start": 33880,
+    "original_end": 33944,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 33957,
+    "release_frame": 33957,
+    "stable_suffix_frames": 12,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 575,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "grasp the pink block and turn it left",
+    "start": 34653,
+    "end": 34754,
+    "num_frames": 102,
+    "original_start": 34653,
+    "original_end": 34717,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 34724,
+    "release_frame": 34724,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 597,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "take the pink block and rotate it left",
+    "start": 34659,
+    "end": 34754,
+    "num_frames": 96,
+    "original_start": 34659,
+    "original_end": 34723,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 34724,
+    "release_frame": 34724,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 730,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "rotate the pink block towards the left",
+    "start": 34658,
+    "end": 34754,
+    "num_frames": 97,
+    "original_start": 34658,
+    "original_end": 34722,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 34724,
+    "release_frame": 34724,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 750,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "rotate the pink block towards the left",
+    "start": 34652,
+    "end": 34754,
+    "num_frames": 103,
+    "original_start": 34652,
+    "original_end": 34716,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 34724,
+    "release_frame": 34724,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 831,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "rotate the pink block towards the left",
+    "start": 34647,
+    "end": 34754,
+    "num_frames": 108,
+    "original_start": 34647,
+    "original_end": 34711,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 34724,
+    "release_frame": 34724,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 953,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "grasp the pink block and rotate it left",
+    "start": 36260,
+    "end": 36367,
+    "num_frames": 108,
+    "original_start": 36260,
+    "original_end": 36324,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 36337,
+    "release_frame": 36337,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 72,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "grasp the pink block and turn it left",
+    "start": 39034,
+    "end": 39108,
+    "num_frames": 75,
+    "original_start": 39034,
+    "original_end": 39098,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 39108,
+    "release_frame": 39108,
+    "stable_suffix_frames": 0,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 121,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "grasp the pink block and turn it left",
+    "start": 39027,
+    "end": 39091,
+    "num_frames": 65,
+    "original_start": 39027,
+    "original_end": 39091,
+    "start_extension_frames": 0,
+    "oracle_success_frame": null,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 336,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "take the pink block and turn it left",
+    "start": 39036,
+    "end": 39108,
+    "num_frames": 73,
+    "original_start": 39036,
+    "original_end": 39100,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 39108,
+    "release_frame": 39108,
+    "stable_suffix_frames": 0,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 474,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "rotate the pink block towards the left",
+    "start": 39348,
+    "end": 39447,
+    "num_frames": 100,
+    "original_start": 39348,
+    "original_end": 39412,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 39425,
+    "release_frame": 39425,
+    "stable_suffix_frames": 22,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 456,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "rotate left the pink block",
+    "start": 225361,
+    "end": 225425,
+    "num_frames": 65,
+    "original_start": 225361,
+    "original_end": 225425,
+    "start_extension_frames": 0,
+    "oracle_success_frame": null,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 723,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "grasp the pink block and turn it left",
+    "start": 225365,
+    "end": 225429,
+    "num_frames": 65,
+    "original_start": 225365,
+    "original_end": 225429,
+    "start_extension_frames": 0,
+    "oracle_success_frame": null,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 976,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "rotate the pink block to the left",
+    "start": 225367,
+    "end": 225431,
+    "num_frames": 65,
+    "original_start": 225367,
+    "original_end": 225431,
+    "start_extension_frames": 0,
+    "oracle_success_frame": null,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 315,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "turn the pink block left",
+    "start": 229785,
+    "end": 229868,
+    "num_frames": 84,
+    "original_start": 229785,
+    "original_end": 229849,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 229857,
+    "release_frame": 229857,
+    "stable_suffix_frames": 11,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 446,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "rotate the pink block 90 degrees to the left",
+    "start": 229791,
+    "end": 229868,
+    "num_frames": 78,
+    "original_start": 229791,
+    "original_end": 229855,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 229857,
+    "release_frame": 229857,
+    "stable_suffix_frames": 11,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 853,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "grasp the pink block and turn it left",
+    "start": 229787,
+    "end": 229868,
+    "num_frames": 82,
+    "original_start": 229787,
+    "original_end": 229851,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 229857,
+    "release_frame": 229857,
+    "stable_suffix_frames": 11,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 206,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "grasp the pink block and rotate it left",
+    "start": 403774,
+    "end": 403879,
+    "num_frames": 106,
+    "original_start": 403774,
+    "original_end": 403838,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 403849,
+    "release_frame": 403849,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 608,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "turn the pink block left",
+    "start": 403780,
+    "end": 403879,
+    "num_frames": 100,
+    "original_start": 403780,
+    "original_end": 403844,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 403849,
+    "release_frame": 403849,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 855,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "take the pink block and turn it left",
+    "start": 403788,
+    "end": 403879,
+    "num_frames": 92,
+    "original_start": 403791,
+    "original_end": 403855,
+    "start_extension_frames": 3,
+    "oracle_success_frame": 403849,
+    "release_frame": 403849,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 935,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "rotate left the pink block",
+    "start": 403782,
+    "end": 403879,
+    "num_frames": 98,
+    "original_start": 403782,
+    "original_end": 403846,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 403849,
+    "release_frame": 403849,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 543,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "rotate left the pink block",
+    "start": 411662,
+    "end": 411759,
+    "num_frames": 98,
+    "original_start": 411662,
+    "original_end": 411726,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 411729,
+    "release_frame": 411729,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_held"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 967,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "grasp the pink block, then rotate it left",
+    "start": 411652,
+    "end": 411759,
+    "num_frames": 108,
+    "original_start": 411652,
+    "original_end": 411716,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 411729,
+    "release_frame": 411729,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_held"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 577,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "grasp the pink block and rotate it left",
+    "start": 414311,
+    "end": 414406,
+    "num_frames": 96,
+    "original_start": 414311,
+    "original_end": 414375,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 414376,
+    "release_frame": 414376,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 847,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "rotate the pink block towards the left",
+    "start": 414436,
+    "end": 414526,
+    "num_frames": 91,
+    "original_start": 414436,
+    "original_end": 414500,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 414510,
+    "release_frame": 414510,
+    "stable_suffix_frames": 16,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 986,
+    "calvin_task": "rotate_pink_block_left",
+    "original_instruction": "grasp the pink block and rotate it left",
+    "start": 414441,
+    "end": 414526,
+    "num_frames": 86,
+    "original_start": 414441,
+    "original_end": 414505,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 414510,
+    "release_frame": 414510,
+    "stable_suffix_frames": 16,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 200,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "grasp the pink block, then rotate it right",
+    "start": 8028,
+    "end": 8102,
+    "num_frames": 75,
+    "original_start": 8028,
+    "original_end": 8062,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8072,
+    "release_frame": 8072,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_held"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 495,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "grasp the pink block and turn it right",
+    "start": 7986,
+    "end": 8050,
+    "num_frames": 65,
+    "original_start": 7986,
+    "original_end": 8050,
+    "start_extension_frames": 0,
+    "oracle_success_frame": null,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 202,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "rotate the pink block 90 degrees to the right",
+    "start": 8790,
+    "end": 8896,
+    "num_frames": 107,
+    "original_start": 8790,
+    "original_end": 8854,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8866,
+    "release_frame": 8866,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 463,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "turn the pink block right",
+    "start": 8789,
+    "end": 8896,
+    "num_frames": 108,
+    "original_start": 8789,
+    "original_end": 8853,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8866,
+    "release_frame": 8866,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 591,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "grasp the pink block and turn it right",
+    "start": 19771,
+    "end": 19865,
+    "num_frames": 95,
+    "original_start": 19771,
+    "original_end": 19835,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 19835,
+    "release_frame": 19835,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 551,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "take the pink block and turn it right",
+    "start": 19891,
+    "end": 19998,
+    "num_frames": 108,
+    "original_start": 19891,
+    "original_end": 19955,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 19966,
+    "release_frame": 19968,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 578,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "grasp the pink block, then turn it right",
+    "start": 19894,
+    "end": 19998,
+    "num_frames": 105,
+    "original_start": 19894,
+    "original_end": 19958,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 19966,
+    "release_frame": 19968,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 603,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "grasp the pink block, then rotate it right",
+    "start": 19902,
+    "end": 19998,
+    "num_frames": 97,
+    "original_start": 19902,
+    "original_end": 19966,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 19966,
+    "release_frame": 19968,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 394,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "rotate the pink block towards the right",
+    "start": 33223,
+    "end": 33287,
+    "num_frames": 65,
+    "original_start": 33223,
+    "original_end": 33287,
+    "start_extension_frames": 0,
+    "oracle_success_frame": null,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 432,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "grasp the pink block and rotate it right",
+    "start": 33225,
+    "end": 33289,
+    "num_frames": 65,
+    "original_start": 33225,
+    "original_end": 33289,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 33303,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 949,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "rotate the pink block towards the right",
+    "start": 33233,
+    "end": 33333,
+    "num_frames": 101,
+    "original_start": 33233,
+    "original_end": 33297,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 33303,
+    "release_frame": 33303,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 737,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "rotate the pink block towards the right",
+    "start": 42858,
+    "end": 42968,
+    "num_frames": 111,
+    "original_start": 42862,
+    "original_end": 42926,
+    "start_extension_frames": 4,
+    "oracle_success_frame": 42938,
+    "release_frame": 42938,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 982,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "grasp the pink block, then turn it right",
+    "start": 42858,
+    "end": 42968,
+    "num_frames": 111,
+    "original_start": 42873,
+    "original_end": 42937,
+    "start_extension_frames": 15,
+    "oracle_success_frame": 42938,
+    "release_frame": 42938,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 573,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "grasp the pink block, then turn it right",
+    "start": 43759,
+    "end": 43869,
+    "num_frames": 111,
+    "original_start": 43771,
+    "original_end": 43835,
+    "start_extension_frames": 12,
+    "oracle_success_frame": 43839,
+    "release_frame": 43839,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 840,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "rotate right the pink block",
+    "start": 43758,
+    "end": 43822,
+    "num_frames": 65,
+    "original_start": 43758,
+    "original_end": 43822,
+    "start_extension_frames": 0,
+    "oracle_success_frame": null,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 980,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "rotate the pink block 90 degrees to the right",
+    "start": 44485,
+    "end": 44549,
+    "num_frames": 65,
+    "original_start": 44485,
+    "original_end": 44549,
+    "start_extension_frames": 0,
+    "oracle_success_frame": null,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 4,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "take the pink block and turn it right",
+    "start": 220190,
+    "end": 220291,
+    "num_frames": 102,
+    "original_start": 220190,
+    "original_end": 220254,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 220263,
+    "release_frame": 220263,
+    "stable_suffix_frames": 28,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 182,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "rotate the pink block towards the right",
+    "start": 220799,
+    "end": 220875,
+    "num_frames": 77,
+    "original_start": 220799,
+    "original_end": 220844,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 220845,
+    "release_frame": 220845,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_held"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 326,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "grasp the pink block, then turn it right",
+    "start": 220781,
+    "end": 220875,
+    "num_frames": 95,
+    "original_start": 220781,
+    "original_end": 220845,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 220845,
+    "release_frame": 220845,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 504,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "rotate the pink block towards the right",
+    "start": 220765,
+    "end": 220829,
+    "num_frames": 65,
+    "original_start": 220765,
+    "original_end": 220829,
+    "start_extension_frames": 0,
+    "oracle_success_frame": null,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 736,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "take the pink block and rotate it right",
+    "start": 220766,
+    "end": 220830,
+    "num_frames": 65,
+    "original_start": 220766,
+    "original_end": 220830,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 220845,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 845,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "grasp the pink block, then turn it right",
+    "start": 220776,
+    "end": 220875,
+    "num_frames": 100,
+    "original_start": 220776,
+    "original_end": 220840,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 220845,
+    "release_frame": 220845,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 729,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "rotate the pink block towards the right",
+    "start": 229586,
+    "end": 229693,
+    "num_frames": 108,
+    "original_start": 229586,
+    "original_end": 229650,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 229663,
+    "release_frame": 229663,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 820,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "grasp the pink block and turn it right",
+    "start": 229608,
+    "end": 229693,
+    "num_frames": 86,
+    "original_start": 229620,
+    "original_end": 229660,
+    "start_extension_frames": 12,
+    "oracle_success_frame": 229663,
+    "release_frame": 229663,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 204,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "take the pink block and rotate it right",
+    "start": 236484,
+    "end": 236588,
+    "num_frames": 105,
+    "original_start": 236484,
+    "original_end": 236548,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 236558,
+    "release_frame": 236558,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 93,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "grasp the pink block, then rotate it right",
+    "start": 236798,
+    "end": 236893,
+    "num_frames": 96,
+    "original_start": 236798,
+    "original_end": 236862,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 236873,
+    "release_frame": 236873,
+    "stable_suffix_frames": 20,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_held"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 677,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "take the pink block and rotate it right",
+    "start": 242594,
+    "end": 242671,
+    "num_frames": 78,
+    "original_start": 242606,
+    "original_end": 242641,
+    "start_extension_frames": 12,
+    "oracle_success_frame": 242641,
+    "release_frame": 242641,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 332,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "rotate the pink block towards the right",
+    "start": 404197,
+    "end": 404261,
+    "num_frames": 65,
+    "original_start": 404197,
+    "original_end": 404261,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 404276,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 287,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "turn the pink block right",
+    "start": 412736,
+    "end": 412831,
+    "num_frames": 96,
+    "original_start": 412736,
+    "original_end": 412800,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 412801,
+    "release_frame": 412801,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 851,
+    "calvin_task": "rotate_pink_block_right",
+    "original_instruction": "rotate right the pink block",
+    "start": 412741,
+    "end": 412831,
+    "num_frames": 91,
+    "original_start": 412741,
+    "original_end": 412805,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 412801,
+    "release_frame": 412801,
+    "stable_suffix_frames": 30,
+    "source_object": "block_pink",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 319,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "turn the red block left",
+    "start": 5291,
+    "end": 5366,
+    "num_frames": 76,
+    "original_start": 5302,
+    "original_end": 5366,
+    "start_extension_frames": 11,
+    "oracle_success_frame": null,
+    "release_frame": 5379,
+    "stable_suffix_frames": 0,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 201,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "grasp the red block and rotate it left",
+    "start": 8123,
+    "end": 8222,
+    "num_frames": 100,
+    "original_start": 8123,
+    "original_end": 8187,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8191,
+    "release_frame": 8192,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 744,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "grasp the red block, then turn it left",
+    "start": 8124,
+    "end": 8222,
+    "num_frames": 99,
+    "original_start": 8124,
+    "original_end": 8188,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8191,
+    "release_frame": 8192,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 756,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "take the red block and turn it left",
+    "start": 8126,
+    "end": 8222,
+    "num_frames": 97,
+    "original_start": 8126,
+    "original_end": 8190,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8191,
+    "release_frame": 8192,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 746,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "grasp the red block, then rotate it left",
+    "start": 8210,
+    "end": 8314,
+    "num_frames": 105,
+    "original_start": 8210,
+    "original_end": 8274,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8284,
+    "release_frame": 8284,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 835,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "take the red block and rotate it left",
+    "start": 8211,
+    "end": 8314,
+    "num_frames": 104,
+    "original_start": 8211,
+    "original_end": 8275,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8284,
+    "release_frame": 8284,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 327,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "rotate the red block 90 degrees to the left",
+    "start": 30758,
+    "end": 30856,
+    "num_frames": 99,
+    "original_start": 30758,
+    "original_end": 30822,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 30826,
+    "release_frame": 30826,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 616,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "rotate the red block towards the left",
+    "start": 30766,
+    "end": 30856,
+    "num_frames": 91,
+    "original_start": 30766,
+    "original_end": 30830,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 30826,
+    "release_frame": 30826,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 751,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "grasp the red block and turn it left",
+    "start": 30750,
+    "end": 30856,
+    "num_frames": 107,
+    "original_start": 30750,
+    "original_end": 30814,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 30826,
+    "release_frame": 30826,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 20,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "rotate the red block towards the left",
+    "start": 37067,
+    "end": 37156,
+    "num_frames": 90,
+    "original_start": 37067,
+    "original_end": 37131,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 37128,
+    "release_frame": 37128,
+    "stable_suffix_frames": 28,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 343,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "rotate the red block to the left",
+    "start": 37062,
+    "end": 37156,
+    "num_frames": 95,
+    "original_start": 37062,
+    "original_end": 37126,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 37128,
+    "release_frame": 37128,
+    "stable_suffix_frames": 28,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 481,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "grasp the red block, then turn it left",
+    "start": 37063,
+    "end": 37156,
+    "num_frames": 94,
+    "original_start": 37063,
+    "original_end": 37127,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 37128,
+    "release_frame": 37128,
+    "stable_suffix_frames": 28,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 592,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "grasp the red block, then rotate it left",
+    "start": 37064,
+    "end": 37156,
+    "num_frames": 93,
+    "original_start": 37064,
+    "original_end": 37128,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 37128,
+    "release_frame": 37128,
+    "stable_suffix_frames": 28,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 617,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "grasp the red block, then rotate it left",
+    "start": 37519,
+    "end": 37583,
+    "num_frames": 65,
+    "original_start": 37519,
+    "original_end": 37583,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 37583,
+    "release_frame": 37583,
+    "stable_suffix_frames": 0,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 973,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "grasp the red block, then turn it left",
+    "start": 37508,
+    "end": 37583,
+    "num_frames": 76,
+    "original_start": 37508,
+    "original_end": 37572,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 37583,
+    "release_frame": 37583,
+    "stable_suffix_frames": 0,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 316,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "grasp the red block, then rotate it left",
+    "start": 46744,
+    "end": 46839,
+    "num_frames": 96,
+    "original_start": 46744,
+    "original_end": 46808,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 46812,
+    "release_frame": 46812,
+    "stable_suffix_frames": 27,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 342,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "turn the red block left",
+    "start": 46738,
+    "end": 46839,
+    "num_frames": 102,
+    "original_start": 46738,
+    "original_end": 46802,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 46812,
+    "release_frame": 46812,
+    "stable_suffix_frames": 27,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 471,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "grasp the red block, then turn it left",
+    "start": 46740,
+    "end": 46839,
+    "num_frames": 100,
+    "original_start": 46740,
+    "original_end": 46804,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 46812,
+    "release_frame": 46812,
+    "stable_suffix_frames": 27,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 564,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "take the red block and turn it left",
+    "start": 46753,
+    "end": 46839,
+    "num_frames": 87,
+    "original_start": 46753,
+    "original_end": 46817,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 46812,
+    "release_frame": 46812,
+    "stable_suffix_frames": 27,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 866,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "rotate the red block towards the left",
+    "start": 46741,
+    "end": 46839,
+    "num_frames": 99,
+    "original_start": 46741,
+    "original_end": 46805,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 46812,
+    "release_frame": 46812,
+    "stable_suffix_frames": 27,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 333,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "rotate the red block to the left",
+    "start": 231898,
+    "end": 231989,
+    "num_frames": 92,
+    "original_start": 231898,
+    "original_end": 231962,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 231959,
+    "release_frame": 231959,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 854,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "grasp the red block, then rotate it left",
+    "start": 231891,
+    "end": 231989,
+    "num_frames": 99,
+    "original_start": 231891,
+    "original_end": 231955,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 231959,
+    "release_frame": 231959,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 213,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "take the red block and rotate it left",
+    "start": 235875,
+    "end": 235945,
+    "num_frames": 71,
+    "original_start": 235875,
+    "original_end": 235939,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 235945,
+    "release_frame": 235945,
+    "stable_suffix_frames": 0,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 606,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "grasp the red block and turn it left",
+    "start": 235873,
+    "end": 235945,
+    "num_frames": 73,
+    "original_start": 235873,
+    "original_end": 235937,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 235945,
+    "release_frame": 235945,
+    "stable_suffix_frames": 0,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "stable_release_suffix_too_short"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 954,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "grasp the red block, then turn it left",
+    "start": 419169,
+    "end": 419259,
+    "num_frames": 91,
+    "original_start": 419169,
+    "original_end": 419233,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 419230,
+    "release_frame": 419230,
+    "stable_suffix_frames": 29,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 996,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "rotate the red block towards the left",
+    "start": 419445,
+    "end": 419534,
+    "num_frames": 90,
+    "original_start": 419445,
+    "original_end": 419509,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 419504,
+    "release_frame": 419504,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 42,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "take the red block and rotate it left",
+    "start": 419509,
+    "end": 419614,
+    "num_frames": 106,
+    "original_start": 419509,
+    "original_end": 419573,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 419584,
+    "release_frame": 419584,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 88,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "grasp the red block, then turn it left",
+    "start": 419517,
+    "end": 419614,
+    "num_frames": 98,
+    "original_start": 419517,
+    "original_end": 419581,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 419584,
+    "release_frame": 419584,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 199,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "grasp the red block and rotate it left",
+    "start": 419506,
+    "end": 419570,
+    "num_frames": 65,
+    "original_start": 419506,
+    "original_end": 419570,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 419584,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 337,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "rotate the red block 90 degrees to the left",
+    "start": 419507,
+    "end": 419614,
+    "num_frames": 108,
+    "original_start": 419507,
+    "original_end": 419571,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 419584,
+    "release_frame": 419584,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 619,
+    "calvin_task": "rotate_red_block_left",
+    "original_instruction": "grasp the red block and turn it left",
+    "start": 419512,
+    "end": 419614,
+    "num_frames": 103,
+    "original_start": 419512,
+    "original_end": 419576,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 419584,
+    "release_frame": 419584,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 205,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "rotate the red block towards the right",
+    "start": 8310,
+    "end": 8412,
+    "num_frames": 103,
+    "original_start": 8310,
+    "original_end": 8374,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8382,
+    "release_frame": 8382,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 759,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "grasp the red block and rotate it right",
+    "start": 8303,
+    "end": 8367,
+    "num_frames": 65,
+    "original_start": 8303,
+    "original_end": 8367,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8382,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 826,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "grasp the red block, then rotate it right",
+    "start": 8308,
+    "end": 8412,
+    "num_frames": 105,
+    "original_start": 8308,
+    "original_end": 8372,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8382,
+    "release_frame": 8382,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 870,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "take the red block and turn it right",
+    "start": 8309,
+    "end": 8412,
+    "num_frames": 104,
+    "original_start": 8309,
+    "original_end": 8373,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 8382,
+    "release_frame": 8382,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 231,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "take the red block and rotate it right",
+    "start": 12983,
+    "end": 13082,
+    "num_frames": 100,
+    "original_start": 12983,
+    "original_end": 13047,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 13052,
+    "release_frame": 13052,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 355,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "turn the red block right",
+    "start": 12974,
+    "end": 13038,
+    "num_frames": 65,
+    "original_start": 12974,
+    "original_end": 13038,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 13052,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 641,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "take the red block and rotate it right",
+    "start": 12981,
+    "end": 13082,
+    "num_frames": 102,
+    "original_start": 12981,
+    "original_end": 13045,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 13052,
+    "release_frame": 13052,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 1006,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "grasp the red block and turn it right",
+    "start": 12982,
+    "end": 13082,
+    "num_frames": 101,
+    "original_start": 12982,
+    "original_end": 13046,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 13052,
+    "release_frame": 13052,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 306,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "grasp the red block, then turn it right",
+    "start": 16382,
+    "end": 16479,
+    "num_frames": 98,
+    "original_start": 16382,
+    "original_end": 16446,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 16449,
+    "release_frame": 16449,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 622,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "grasp the red block and rotate it right",
+    "start": 16375,
+    "end": 16479,
+    "num_frames": 105,
+    "original_start": 16375,
+    "original_end": 16439,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 16449,
+    "release_frame": 16449,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 626,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "grasp the red block and rotate it right",
+    "start": 16374,
+    "end": 16479,
+    "num_frames": 106,
+    "original_start": 16374,
+    "original_end": 16438,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 16449,
+    "release_frame": 16449,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 868,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "rotate the red block towards the right",
+    "start": 16405,
+    "end": 16479,
+    "num_frames": 75,
+    "original_start": 16417,
+    "original_end": 16450,
+    "start_extension_frames": 12,
+    "oracle_success_frame": 16449,
+    "release_frame": 16449,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 874,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "grasp the red block, then rotate it right",
+    "start": 16384,
+    "end": 16479,
+    "num_frames": 96,
+    "original_start": 16384,
+    "original_end": 16448,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 16449,
+    "release_frame": 16449,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 173,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "grasp the red block and turn it right",
+    "start": 16795,
+    "end": 16899,
+    "num_frames": 105,
+    "original_start": 16795,
+    "original_end": 16859,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 16869,
+    "release_frame": 16869,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 833,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "grasp the red block, then rotate it right",
+    "start": 16794,
+    "end": 16899,
+    "num_frames": 106,
+    "original_start": 16794,
+    "original_end": 16858,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 16869,
+    "release_frame": 16869,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 181,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "grasp the red block, then turn it right",
+    "start": 36345,
+    "end": 36409,
+    "num_frames": 65,
+    "original_start": 36345,
+    "original_end": 36409,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 36423,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 194,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "rotate the red block to the right",
+    "start": 36338,
+    "end": 36402,
+    "num_frames": 65,
+    "original_start": 36338,
+    "original_end": 36402,
+    "start_extension_frames": 0,
+    "oracle_success_frame": null,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 321,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "take the red block and turn it right",
+    "start": 36344,
+    "end": 36408,
+    "num_frames": 65,
+    "original_start": 36344,
+    "original_end": 36408,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 36423,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 724,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "rotate the red block towards the right",
+    "start": 36346,
+    "end": 36453,
+    "num_frames": 108,
+    "original_start": 36346,
+    "original_end": 36410,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 36423,
+    "release_frame": 36423,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 965,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "grasp the red block and rotate it right",
+    "start": 36343,
+    "end": 36407,
+    "num_frames": 65,
+    "original_start": 36343,
+    "original_end": 36407,
+    "start_extension_frames": 0,
+    "oracle_success_frame": null,
+    "release_frame": null,
+    "stable_suffix_frames": 0,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied",
+      "release_not_completed"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 998,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "rotate the red block to the right",
+    "start": 36350,
+    "end": 36453,
+    "num_frames": 104,
+    "original_start": 36350,
+    "original_end": 36414,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 36423,
+    "release_frame": 36423,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 490,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "take the red block and turn it right",
+    "start": 46599,
+    "end": 46698,
+    "num_frames": 100,
+    "original_start": 46599,
+    "original_end": 46663,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 46672,
+    "release_frame": 46672,
+    "stable_suffix_frames": 26,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_held"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 849,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "rotate the red block to the right",
+    "start": 46596,
+    "end": 46698,
+    "num_frames": 103,
+    "original_start": 46596,
+    "original_end": 46660,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 46672,
+    "release_frame": 46672,
+    "stable_suffix_frames": 26,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_held"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 107,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "rotate the red block towards the right",
+    "start": 403887,
+    "end": 403987,
+    "num_frames": 101,
+    "original_start": 403887,
+    "original_end": 403951,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 403957,
+    "release_frame": 403957,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 168,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "take the red block and turn it right",
+    "start": 403896,
+    "end": 403987,
+    "num_frames": 92,
+    "original_start": 403896,
+    "original_end": 403960,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 403957,
+    "release_frame": 403957,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 353,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "rotate the red block towards the right",
+    "start": 403883,
+    "end": 403987,
+    "num_frames": 105,
+    "original_start": 403883,
+    "original_end": 403947,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 403957,
+    "release_frame": 403957,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 602,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "rotate the red block 90 degrees to the right",
+    "start": 403888,
+    "end": 403987,
+    "num_frames": 100,
+    "original_start": 403888,
+    "original_end": 403952,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 403957,
+    "release_frame": 403957,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 704,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "rotate the red block 90 degrees to the right",
+    "start": 403889,
+    "end": 403987,
+    "num_frames": 99,
+    "original_start": 403889,
+    "original_end": 403953,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 403957,
+    "release_frame": 403957,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 873,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "take the red block and turn it right",
+    "start": 403886,
+    "end": 403987,
+    "num_frames": 102,
+    "original_start": 403886,
+    "original_end": 403950,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 403957,
+    "release_frame": 403957,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 939,
+    "calvin_task": "rotate_red_block_right",
+    "original_instruction": "rotate the red block to the right",
+    "start": 403882,
+    "end": 403987,
+    "num_frames": 106,
+    "original_start": 403882,
+    "original_end": 403946,
+    "start_extension_frames": 0,
+    "oracle_success_frame": 403957,
+    "release_frame": 403957,
+    "stable_suffix_frames": 30,
+    "source_object": "block_red",
+    "episode_variant": "rotate_release_complete",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  }
+]
