@@ -210,6 +210,49 @@ class SpecialistManifestTest(unittest.TestCase):
                         [{"movable": row["source_object"]}],
                     )
 
+    def test_third_generation_evaluation_suites(self):
+        rotate_suite = ConfiguredCalvinSuite(
+            WORKSPACE / "datasets/calvin_rotate_2_release/configs/evaluation.yaml"
+        )
+        self.assertEqual(len(rotate_suite.task_names()), 6)
+        rotate_episodes = [
+            episode
+            for task in rotate_suite.task_names()
+            for episode in rotate_suite.episodes(task)
+        ]
+        self.assertEqual(
+            {episode.instruction for episode in rotate_episodes},
+            {
+                "rotate the black-outlined block counterclockwise",
+                "rotate the black-outlined block clockwise",
+            },
+        )
+        self.assertTrue(
+            all(
+                episode.success_guard["gripper"] == "open"
+                and episode.success_guard["consecutive_steps"] == 3
+                for episode in rotate_episodes
+            )
+        )
+
+        persistent_suite = ConfiguredCalvinSuite(
+            WORKSPACE
+            / "datasets/calvin_stack_pick_place_persistent/configs/evaluation.yaml"
+        )
+        self.assertEqual(len(persistent_suite.task_names()), 6)
+        stack_episodes = persistent_suite.episodes("stack_block")
+        self.assertEqual(
+            {episode.episode_variant for episode in stack_episodes},
+            {"full_pick_and_stack", "held_start_stack"},
+        )
+        self.assertTrue(
+            all(
+                episode.mask_roles["source"]
+                and "when" not in episode.mask_roles["source"][0]
+                for episode in stack_episodes
+            )
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

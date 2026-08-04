@@ -1,0 +1,29 @@
+version: 1
+name: calvin_rotate_2_release
+manifest: datasets/calvin_rotate_2_release/manifests/segments.json
+source_dataset: calvin/dataset/task_D_D
+split: validation
+oracle_config: calvin/calvin_models/conf/callbacks/rollout/tasks/new_playtable_tasks.yaml
+
+defaults:
+  max_steps: 150
+  settle_steps: 0
+
+mask_style:
+  alpha: 0.0
+  outline_width_px: 2
+  outline_color: [0, 0, 0]
+  outline_halo_width_px: 0
+  outline_halo_color: [255, 255, 255]
+
+# 训练语言只区分旋转方向；闭环成功判定仍使用 CALVIN 的六类官方 oracle，
+# 从而能够分别报告不同颜色和方向的泛化表现。
+tasks:
+  - task: rotate_blue_block_left
+    oracle_task: rotate_blue_block_left
+    success_guard: &released {gripper: open, min_width_m: 0.04, consecutive_steps: 3}
+  - {task: rotate_blue_block_right, oracle_task: rotate_blue_block_right, success_guard: *released}
+  - {task: rotate_pink_block_left, oracle_task: rotate_pink_block_left, success_guard: *released}
+  - {task: rotate_pink_block_right, oracle_task: rotate_pink_block_right, success_guard: *released}
+  - {task: rotate_red_block_left, oracle_task: rotate_red_block_left, success_guard: *released}
+  - {task: rotate_red_block_right, oracle_task: rotate_red_block_right, success_guard: *released}

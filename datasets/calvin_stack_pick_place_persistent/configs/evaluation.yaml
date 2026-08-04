@@ -1,0 +1,33 @@
+version: 1
+name: calvin_stack_pick_place_persistent
+manifest: datasets/calvin_stack_pick_place_persistent/manifests/segments.json
+source_dataset: calvin/dataset/task_D_D
+split: validation
+oracle_config: calvin/calvin_models/conf/callbacks/rollout/tasks/new_playtable_tasks.yaml
+
+defaults:
+  max_steps: 150
+  settle_steps: 0
+
+mask_style:
+  alpha: 0.0
+  outline_width_px: 2
+  outline_color: [0, 0, 0]
+  outline_colors:
+    source: [0, 0, 0]
+    destination: [0, 255, 255]
+  outline_halo_width_px: 0
+  outline_halo_widths:
+    destination: 1
+  outline_halo_color: [255, 255, 255]
+
+# source 的持续可见性由 manifest 中不带 `when` 的 source selector 保证。
+tasks:
+  - {task: lift_blue_block_table, oracle_task: lift_blue_block_table}
+  - {task: lift_pink_block_table, oracle_task: lift_pink_block_table}
+  - {task: lift_red_block_table, oracle_task: lift_red_block_table}
+  - task: place_in_drawer
+    oracle_task: place_in_drawer
+    success_guard: &released {gripper: open, min_width_m: 0.04, consecutive_steps: 3}
+  - {task: place_in_slider, oracle_task: place_in_slider, success_guard: *released}
+  - {task: stack_block, oracle_task: stack_block, success_guard: *released}
