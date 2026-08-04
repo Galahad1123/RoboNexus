@@ -1,0 +1,6096 @@
+{
+  "version": 1,
+  "name": "calvin_push_6",
+  "source_dataset": "calvin/dataset/task_D_D",
+  "frequency_hz": 30,
+  "overlap_threshold": 0.5,
+  "audit_profile": "d34_push",
+  "oracle_config": "calvin/calvin_models/conf/callbacks/rollout/tasks/new_playtable_tasks.yaml",
+  "tasks": [
+    {
+      "task_id": 0,
+      "calvin_task": "push_blue_block_left",
+      "instruction": "push the blue block to the left"
+    },
+    {
+      "task_id": 1,
+      "calvin_task": "push_blue_block_right",
+      "instruction": "push the blue block to the right"
+    },
+    {
+      "task_id": 2,
+      "calvin_task": "push_pink_block_left",
+      "instruction": "push the pink block to the left"
+    },
+    {
+      "task_id": 3,
+      "calvin_task": "push_pink_block_right",
+      "instruction": "push the pink block to the right"
+    },
+    {
+      "task_id": 4,
+      "calvin_task": "push_red_block_left",
+      "instruction": "push the red block to the left"
+    },
+    {
+      "task_id": 5,
+      "calvin_task": "push_red_block_right",
+      "instruction": "push the red block to the right"
+    }
+  ],
+  "splits": {
+    "training": {
+      "summary": {
+        "dataset": "calvin_push_6",
+        "split": "training",
+        "candidates": 900,
+        "clusters": 362,
+        "retained": 220,
+        "frames_retained": 12389,
+        "by_task": {
+          "push_blue_block_left": {
+            "candidates": 150,
+            "clusters": 54,
+            "retained": 31
+          },
+          "push_blue_block_right": {
+            "candidates": 150,
+            "clusters": 56,
+            "retained": 29
+          },
+          "push_pink_block_left": {
+            "candidates": 150,
+            "clusters": 68,
+            "retained": 44
+          },
+          "push_pink_block_right": {
+            "candidates": 150,
+            "clusters": 68,
+            "retained": 53
+          },
+          "push_red_block_left": {
+            "candidates": 150,
+            "clusters": 62,
+            "retained": 33
+          },
+          "push_red_block_right": {
+            "candidates": 150,
+            "clusters": 54,
+            "retained": 30
+          }
+        },
+        "candidate_rejection_reasons": {
+          "initially_holding_object": 33,
+          "oracle_not_satisfied": 253
+        }
+      },
+      "segments": [
+        {
+          "segment_id": "training-003187",
+          "cluster_id": "push_blue_block_left-0000",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "go slide the blue block to the left",
+          "original_start": 60002,
+          "original_end": 60049,
+          "start": 59999,
+          "end": 60049,
+          "num_frames": 51,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001281",
+          "cluster_id": "push_blue_block_left-0002",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "slide the blue block towards the left",
+          "original_start": 101734,
+          "original_end": 101771,
+          "start": 101734,
+          "end": 101771,
+          "num_frames": 38,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001095",
+          "cluster_id": "push_blue_block_left-0003",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "push the blue block towards the left",
+          "original_start": 101775,
+          "original_end": 101839,
+          "start": 101775,
+          "end": 101839,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004435",
+          "cluster_id": "push_blue_block_left-0004",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "go push the blue block to the left",
+          "original_start": 129434,
+          "original_end": 129482,
+          "start": 129433,
+          "end": 129482,
+          "num_frames": 50,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001278",
+          "cluster_id": "push_blue_block_left-0007",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "go slide the blue block to the left",
+          "original_start": 138525,
+          "original_end": 138572,
+          "start": 138524,
+          "end": 138572,
+          "num_frames": 49,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000656",
+          "cluster_id": "push_blue_block_left-0009",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "push the blue block towards the left",
+          "original_start": 162984,
+          "original_end": 163048,
+          "start": 162984,
+          "end": 163048,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004899",
+          "cluster_id": "push_blue_block_left-0011",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "go push the blue block to the left",
+          "original_start": 167211,
+          "original_end": 167257,
+          "start": 167208,
+          "end": 167257,
+          "num_frames": 50,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003821",
+          "cluster_id": "push_blue_block_left-0013",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "slide the blue block to the left",
+          "original_start": 208388,
+          "original_end": 208434,
+          "start": 208386,
+          "end": 208434,
+          "num_frames": 49,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003828",
+          "cluster_id": "push_blue_block_left-0015",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "go push the blue block to the left",
+          "original_start": 251473,
+          "original_end": 251521,
+          "start": 251473,
+          "end": 251521,
+          "num_frames": 49,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002572",
+          "cluster_id": "push_blue_block_left-0016",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "go slide the blue block to the left",
+          "original_start": 273145,
+          "original_end": 273209,
+          "start": 273145,
+          "end": 273209,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000570",
+          "cluster_id": "push_blue_block_left-0018",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "push the blue block towards the left",
+          "original_start": 286180,
+          "original_end": 286244,
+          "start": 286180,
+          "end": 286244,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000634",
+          "cluster_id": "push_blue_block_left-0021",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "go slide the blue block to the left",
+          "original_start": 332563,
+          "original_end": 332627,
+          "start": 332563,
+          "end": 332627,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001292",
+          "cluster_id": "push_blue_block_left-0024",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "push left the blue block",
+          "original_start": 375663,
+          "original_end": 375727,
+          "start": 375663,
+          "end": 375727,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000533",
+          "cluster_id": "push_blue_block_left-0025",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "go push the blue block to the left",
+          "original_start": 382089,
+          "original_end": 382153,
+          "start": 382089,
+          "end": 382153,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000595",
+          "cluster_id": "push_blue_block_left-0028",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "go slide the blue block to the left",
+          "original_start": 391835,
+          "original_end": 391899,
+          "start": 391835,
+          "end": 391899,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001919",
+          "cluster_id": "push_blue_block_left-0033",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "go push the blue block to the left",
+          "original_start": 460957,
+          "original_end": 461021,
+          "start": 460957,
+          "end": 461021,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001872",
+          "cluster_id": "push_blue_block_left-0036",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "slide left the blue block",
+          "original_start": 475781,
+          "original_end": 475845,
+          "start": 475781,
+          "end": 475845,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003749",
+          "cluster_id": "push_blue_block_left-0037",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "slide the blue block to the left",
+          "original_start": 477160,
+          "original_end": 477196,
+          "start": 477160,
+          "end": 477196,
+          "num_frames": 37,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002422",
+          "cluster_id": "push_blue_block_left-0038",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "push the blue block to the left",
+          "original_start": 481812,
+          "original_end": 481847,
+          "start": 481812,
+          "end": 481847,
+          "num_frames": 36,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000394",
+          "cluster_id": "push_blue_block_left-0039",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "push the blue block to the left",
+          "original_start": 494066,
+          "original_end": 494130,
+          "start": 494066,
+          "end": 494130,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004458",
+          "cluster_id": "push_blue_block_left-0041",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "go push the blue block to the left",
+          "original_start": 528043,
+          "original_end": 528083,
+          "start": 528043,
+          "end": 528083,
+          "num_frames": 41,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000638",
+          "cluster_id": "push_blue_block_left-0042",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "sweep the blue block to the left",
+          "original_start": 533561,
+          "original_end": 533625,
+          "start": 533561,
+          "end": 533625,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000999",
+          "cluster_id": "push_blue_block_left-0043",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "push left the blue block",
+          "original_start": 535791,
+          "original_end": 535855,
+          "start": 535791,
+          "end": 535855,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001065",
+          "cluster_id": "push_blue_block_left-0044",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "push left the blue block",
+          "original_start": 560800,
+          "original_end": 560864,
+          "start": 560800,
+          "end": 560864,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001876",
+          "cluster_id": "push_blue_block_left-0047",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "go push the blue block to the left",
+          "original_start": 592494,
+          "original_end": 592558,
+          "start": 592494,
+          "end": 592558,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000659",
+          "cluster_id": "push_blue_block_left-0048",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "push left the blue block",
+          "original_start": 598768,
+          "original_end": 598832,
+          "start": 598768,
+          "end": 598832,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001258",
+          "cluster_id": "push_blue_block_left-0049",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "go slide the blue block to the left",
+          "original_start": 606021,
+          "original_end": 606060,
+          "start": 606021,
+          "end": 606060,
+          "num_frames": 40,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001742",
+          "cluster_id": "push_blue_block_left-0050",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "push the blue block to the left",
+          "original_start": 606060,
+          "original_end": 606124,
+          "start": 606060,
+          "end": 606124,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001294",
+          "cluster_id": "push_blue_block_left-0051",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "slide the blue block to the left",
+          "original_start": 609622,
+          "original_end": 609686,
+          "start": 609622,
+          "end": 609686,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003188",
+          "cluster_id": "push_blue_block_left-0052",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "slide the blue block towards the left",
+          "original_start": 610017,
+          "original_end": 610061,
+          "start": 610017,
+          "end": 610061,
+          "num_frames": 45,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001283",
+          "cluster_id": "push_blue_block_left-0053",
+          "split": "training",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "go slide the blue block to the left",
+          "original_start": 610651,
+          "original_end": 610715,
+          "start": 610651,
+          "end": 610715,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004471",
+          "cluster_id": "push_blue_block_right-0056",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "go slide the blue block to the right",
+          "original_start": 77789,
+          "original_end": 77853,
+          "start": 77789,
+          "end": 77853,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003079",
+          "cluster_id": "push_blue_block_right-0059",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "push the blue block to the right",
+          "original_start": 101524,
+          "original_end": 101564,
+          "start": 101519,
+          "end": 101564,
+          "num_frames": 46,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000640",
+          "cluster_id": "push_blue_block_right-0060",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "go slide the blue block to the right",
+          "original_start": 101608,
+          "original_end": 101672,
+          "start": 101608,
+          "end": 101672,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002566",
+          "cluster_id": "push_blue_block_right-0061",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "sweep the blue block to the right",
+          "original_start": 103649,
+          "original_end": 103697,
+          "start": 103647,
+          "end": 103697,
+          "num_frames": 51,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002587",
+          "cluster_id": "push_blue_block_right-0063",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "sweep the blue block to the right",
+          "original_start": 148256,
+          "original_end": 148303,
+          "start": 148255,
+          "end": 148303,
+          "num_frames": 49,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001240",
+          "cluster_id": "push_blue_block_right-0064",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "push right the blue block",
+          "original_start": 159013,
+          "original_end": 159077,
+          "start": 159013,
+          "end": 159077,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001521",
+          "cluster_id": "push_blue_block_right-0066",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "slide right the blue block",
+          "original_start": 179531,
+          "original_end": 179595,
+          "start": 179531,
+          "end": 179595,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000258",
+          "cluster_id": "push_blue_block_right-0069",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "go push the blue block to the right",
+          "original_start": 209401,
+          "original_end": 209465,
+          "start": 209401,
+          "end": 209465,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001284",
+          "cluster_id": "push_blue_block_right-0072",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "slide the blue block to the right",
+          "original_start": 261195,
+          "original_end": 261259,
+          "start": 261195,
+          "end": 261259,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-005093",
+          "cluster_id": "push_blue_block_right-0073",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "sweep the blue block to the right",
+          "original_start": 264012,
+          "original_end": 264055,
+          "start": 264011,
+          "end": 264055,
+          "num_frames": 45,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003061",
+          "cluster_id": "push_blue_block_right-0074",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "go push the blue block to the right",
+          "original_start": 264072,
+          "original_end": 264136,
+          "start": 264072,
+          "end": 264136,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004462",
+          "cluster_id": "push_blue_block_right-0075",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "push right the blue block",
+          "original_start": 273265,
+          "original_end": 273329,
+          "start": 273265,
+          "end": 273329,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003855",
+          "cluster_id": "push_blue_block_right-0076",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "push the blue block to the right",
+          "original_start": 286111,
+          "original_end": 286175,
+          "start": 286111,
+          "end": 286175,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002498",
+          "cluster_id": "push_blue_block_right-0077",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "slide right the blue block",
+          "original_start": 308117,
+          "original_end": 308181,
+          "start": 308117,
+          "end": 308181,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001823",
+          "cluster_id": "push_blue_block_right-0079",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "push right the blue block",
+          "original_start": 332018,
+          "original_end": 332054,
+          "start": 332018,
+          "end": 332054,
+          "num_frames": 37,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003817",
+          "cluster_id": "push_blue_block_right-0080",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "push the blue block towards the right",
+          "original_start": 353048,
+          "original_end": 353096,
+          "start": 353047,
+          "end": 353096,
+          "num_frames": 50,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001221",
+          "cluster_id": "push_blue_block_right-0084",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "slide the blue block towards the right",
+          "original_start": 382014,
+          "original_end": 382078,
+          "start": 382014,
+          "end": 382078,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001882",
+          "cluster_id": "push_blue_block_right-0088",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "push the blue block towards the right",
+          "original_start": 461022,
+          "original_end": 461086,
+          "start": 461022,
+          "end": 461086,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004474",
+          "cluster_id": "push_blue_block_right-0089",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "slide the blue block towards the right",
+          "original_start": 468970,
+          "original_end": 469018,
+          "start": 468970,
+          "end": 469018,
+          "num_frames": 49,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002200",
+          "cluster_id": "push_blue_block_right-0090",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "sweep the blue block to the right",
+          "original_start": 476983,
+          "original_end": 477047,
+          "start": 476983,
+          "end": 477047,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-005098",
+          "cluster_id": "push_blue_block_right-0091",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "slide right the blue block",
+          "original_start": 477309,
+          "original_end": 477345,
+          "start": 477309,
+          "end": 477345,
+          "num_frames": 37,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001826",
+          "cluster_id": "push_blue_block_right-0092",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "push the blue block towards the right",
+          "original_start": 481756,
+          "original_end": 481792,
+          "start": 481756,
+          "end": 481792,
+          "num_frames": 37,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001661",
+          "cluster_id": "push_blue_block_right-0094",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "go push the blue block to the right",
+          "original_start": 494125,
+          "original_end": 494162,
+          "start": 494125,
+          "end": 494162,
+          "num_frames": 38,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004469",
+          "cluster_id": "push_blue_block_right-0099",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "push the blue block to the right",
+          "original_start": 521659,
+          "original_end": 521723,
+          "start": 521659,
+          "end": 521723,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004430",
+          "cluster_id": "push_blue_block_right-0100",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "go slide the blue block to the right",
+          "original_start": 527980,
+          "original_end": 528014,
+          "start": 527980,
+          "end": 528014,
+          "num_frames": 35,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000629",
+          "cluster_id": "push_blue_block_right-0103",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "sweep the blue block to the right",
+          "original_start": 542307,
+          "original_end": 542344,
+          "start": 542307,
+          "end": 542344,
+          "num_frames": 38,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004446",
+          "cluster_id": "push_blue_block_right-0104",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "sweep the blue block to the right",
+          "original_start": 555911,
+          "original_end": 555954,
+          "start": 555911,
+          "end": 555954,
+          "num_frames": 44,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000643",
+          "cluster_id": "push_blue_block_right-0107",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "go push the blue block to the right",
+          "original_start": 593018,
+          "original_end": 593082,
+          "start": 593018,
+          "end": 593082,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000658",
+          "cluster_id": "push_blue_block_right-0109",
+          "split": "training",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "push the blue block to the right",
+          "original_start": 605964,
+          "original_end": 605997,
+          "start": 605964,
+          "end": 605997,
+          "num_frames": 34,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000383",
+          "cluster_id": "push_pink_block_left-0110",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push left the pink block",
+          "original_start": 76584,
+          "original_end": 76648,
+          "start": 76584,
+          "end": 76648,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001225",
+          "cluster_id": "push_pink_block_left-0114",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "sweep the pink block to the left",
+          "original_start": 107722,
+          "original_end": 107756,
+          "start": 107722,
+          "end": 107756,
+          "num_frames": 35,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000352",
+          "cluster_id": "push_pink_block_left-0115",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "go slide the pink block to the left",
+          "original_start": 111390,
+          "original_end": 111454,
+          "start": 111390,
+          "end": 111454,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004982",
+          "cluster_id": "push_pink_block_left-0116",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push the pink block to the left",
+          "original_start": 111524,
+          "original_end": 111557,
+          "start": 111524,
+          "end": 111557,
+          "num_frames": 34,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001837",
+          "cluster_id": "push_pink_block_left-0119",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "go slide the pink block to the left",
+          "original_start": 128406,
+          "original_end": 128470,
+          "start": 128406,
+          "end": 128470,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001767",
+          "cluster_id": "push_pink_block_left-0122",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "slide left the pink block",
+          "original_start": 185513,
+          "original_end": 185546,
+          "start": 185513,
+          "end": 185546,
+          "num_frames": 34,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003077",
+          "cluster_id": "push_pink_block_left-0123",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "go slide the pink block to the left",
+          "original_start": 199696,
+          "original_end": 199760,
+          "start": 199696,
+          "end": 199760,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001868",
+          "cluster_id": "push_pink_block_left-0125",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "go push the pink block to the left",
+          "original_start": 207543,
+          "original_end": 207607,
+          "start": 207543,
+          "end": 207607,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001262",
+          "cluster_id": "push_pink_block_left-0126",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "go push the pink block to the left",
+          "original_start": 212640,
+          "original_end": 212677,
+          "start": 212640,
+          "end": 212677,
+          "num_frames": 38,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004978",
+          "cluster_id": "push_pink_block_left-0127",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push left the pink block",
+          "original_start": 212685,
+          "original_end": 212724,
+          "start": 212685,
+          "end": 212724,
+          "num_frames": 40,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003819",
+          "cluster_id": "push_pink_block_left-0128",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "slide left the pink block",
+          "original_start": 245390,
+          "original_end": 245426,
+          "start": 245390,
+          "end": 245426,
+          "num_frames": 37,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002542",
+          "cluster_id": "push_pink_block_left-0129",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "sweep the pink block to the left",
+          "original_start": 250470,
+          "original_end": 250534,
+          "start": 250470,
+          "end": 250534,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000551",
+          "cluster_id": "push_pink_block_left-0131",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "slide the pink block to the left",
+          "original_start": 268781,
+          "original_end": 268845,
+          "start": 268781,
+          "end": 268845,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000291",
+          "cluster_id": "push_pink_block_left-0132",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push left the pink block",
+          "original_start": 275507,
+          "original_end": 275571,
+          "start": 275507,
+          "end": 275571,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001263",
+          "cluster_id": "push_pink_block_left-0133",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "go slide the pink block to the left",
+          "original_start": 284874,
+          "original_end": 284938,
+          "start": 284874,
+          "end": 284938,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000604",
+          "cluster_id": "push_pink_block_left-0135",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "sweep the pink block to the left",
+          "original_start": 290875,
+          "original_end": 290939,
+          "start": 290875,
+          "end": 290939,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002556",
+          "cluster_id": "push_pink_block_left-0137",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "sweep the pink block to the left",
+          "original_start": 300805,
+          "original_end": 300869,
+          "start": 300805,
+          "end": 300869,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000507",
+          "cluster_id": "push_pink_block_left-0139",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push the pink block to the left",
+          "original_start": 380697,
+          "original_end": 380734,
+          "start": 380697,
+          "end": 380734,
+          "num_frames": 38,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000915",
+          "cluster_id": "push_pink_block_left-0141",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "slide left the pink block",
+          "original_start": 394759,
+          "original_end": 394799,
+          "start": 394759,
+          "end": 394799,
+          "num_frames": 41,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000894",
+          "cluster_id": "push_pink_block_left-0142",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "slide the pink block to the left",
+          "original_start": 394782,
+          "original_end": 394846,
+          "start": 394782,
+          "end": 394846,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000307",
+          "cluster_id": "push_pink_block_left-0144",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push the pink block to the left",
+          "original_start": 398518,
+          "original_end": 398582,
+          "start": 398518,
+          "end": 398582,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004998",
+          "cluster_id": "push_pink_block_left-0146",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "go push the pink block to the left",
+          "original_start": 432825,
+          "original_end": 432872,
+          "start": 432824,
+          "end": 432872,
+          "num_frames": 49,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001866",
+          "cluster_id": "push_pink_block_left-0147",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push the pink block towards the left",
+          "original_start": 442917,
+          "original_end": 442981,
+          "start": 442917,
+          "end": 442981,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002456",
+          "cluster_id": "push_pink_block_left-0148",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "slide left the pink block",
+          "original_start": 448735,
+          "original_end": 448799,
+          "start": 448735,
+          "end": 448799,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001736",
+          "cluster_id": "push_pink_block_left-0149",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push left the pink block",
+          "original_start": 452524,
+          "original_end": 452588,
+          "start": 452524,
+          "end": 452588,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000522",
+          "cluster_id": "push_pink_block_left-0152",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push left the pink block",
+          "original_start": 490973,
+          "original_end": 491006,
+          "start": 490973,
+          "end": 491006,
+          "num_frames": 34,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002831",
+          "cluster_id": "push_pink_block_left-0153",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push the pink block towards the left",
+          "original_start": 500293,
+          "original_end": 500333,
+          "start": 500293,
+          "end": 500333,
+          "num_frames": 41,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001864",
+          "cluster_id": "push_pink_block_left-0154",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "go push the pink block to the left",
+          "original_start": 506966,
+          "original_end": 507030,
+          "start": 506966,
+          "end": 507030,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-005088",
+          "cluster_id": "push_pink_block_left-0155",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "slide left the pink block",
+          "original_start": 507425,
+          "original_end": 507489,
+          "start": 507425,
+          "end": 507489,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004414",
+          "cluster_id": "push_pink_block_left-0157",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "go slide the pink block to the left",
+          "original_start": 510020,
+          "original_end": 510065,
+          "start": 510019,
+          "end": 510065,
+          "num_frames": 47,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001878",
+          "cluster_id": "push_pink_block_left-0158",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "go slide the pink block to the left",
+          "original_start": 512805,
+          "original_end": 512869,
+          "start": 512805,
+          "end": 512869,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004505",
+          "cluster_id": "push_pink_block_left-0163",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push the pink block to the left",
+          "original_start": 556481,
+          "original_end": 556545,
+          "start": 556481,
+          "end": 556545,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000377",
+          "cluster_id": "push_pink_block_left-0164",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "sweep the pink block to the left",
+          "original_start": 556947,
+          "original_end": 557011,
+          "start": 556947,
+          "end": 557011,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002840",
+          "cluster_id": "push_pink_block_left-0166",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "slide left the pink block",
+          "original_start": 570189,
+          "original_end": 570224,
+          "start": 570189,
+          "end": 570224,
+          "num_frames": 36,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000615",
+          "cluster_id": "push_pink_block_left-0167",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "go slide the pink block to the left",
+          "original_start": 571589,
+          "original_end": 571653,
+          "start": 571589,
+          "end": 571653,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003671",
+          "cluster_id": "push_pink_block_left-0169",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "slide the pink block towards the left",
+          "original_start": 580956,
+          "original_end": 580996,
+          "start": 580956,
+          "end": 580996,
+          "num_frames": 41,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001648",
+          "cluster_id": "push_pink_block_left-0170",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push the pink block towards the left",
+          "original_start": 585941,
+          "original_end": 585978,
+          "start": 585941,
+          "end": 585978,
+          "num_frames": 38,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001218",
+          "cluster_id": "push_pink_block_left-0171",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "sweep the pink block to the left",
+          "original_start": 586938,
+          "original_end": 587002,
+          "start": 586938,
+          "end": 587002,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-005092",
+          "cluster_id": "push_pink_block_left-0172",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push the pink block towards the left",
+          "original_start": 586995,
+          "original_end": 587030,
+          "start": 586987,
+          "end": 587030,
+          "num_frames": 44,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001272",
+          "cluster_id": "push_pink_block_left-0173",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "slide left the pink block",
+          "original_start": 591257,
+          "original_end": 591321,
+          "start": 591257,
+          "end": 591321,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003266",
+          "cluster_id": "push_pink_block_left-0174",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push the pink block to the left",
+          "original_start": 595071,
+          "original_end": 595135,
+          "start": 595071,
+          "end": 595135,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003871",
+          "cluster_id": "push_pink_block_left-0175",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push the pink block to the left",
+          "original_start": 601477,
+          "original_end": 601541,
+          "start": 601477,
+          "end": 601541,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000620",
+          "cluster_id": "push_pink_block_left-0176",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push the pink block to the left",
+          "original_start": 609064,
+          "original_end": 609128,
+          "start": 609064,
+          "end": 609128,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001885",
+          "cluster_id": "push_pink_block_left-0177",
+          "split": "training",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push left the pink block",
+          "original_start": 609901,
+          "original_end": 609965,
+          "start": 609901,
+          "end": 609965,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000568",
+          "cluster_id": "push_pink_block_right-0178",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide right the pink block",
+          "original_start": 55063,
+          "original_end": 55127,
+          "start": 55063,
+          "end": 55127,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001015",
+          "cluster_id": "push_pink_block_right-0179",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push the pink block towards the right",
+          "original_start": 70466,
+          "original_end": 70530,
+          "start": 70466,
+          "end": 70530,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001103",
+          "cluster_id": "push_pink_block_right-0180",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide the pink block to the right",
+          "original_start": 77052,
+          "original_end": 77116,
+          "start": 77052,
+          "end": 77116,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-005033",
+          "cluster_id": "push_pink_block_right-0181",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push the pink block towards the right",
+          "original_start": 85103,
+          "original_end": 85138,
+          "start": 85103,
+          "end": 85138,
+          "num_frames": 36,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001163",
+          "cluster_id": "push_pink_block_right-0182",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "sweep the pink block to the right",
+          "original_start": 96885,
+          "original_end": 96949,
+          "start": 96885,
+          "end": 96949,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-005068",
+          "cluster_id": "push_pink_block_right-0183",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push the pink block to the right",
+          "original_start": 98088,
+          "original_end": 98133,
+          "start": 98088,
+          "end": 98133,
+          "num_frames": 46,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002509",
+          "cluster_id": "push_pink_block_right-0184",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide right the pink block",
+          "original_start": 107645,
+          "original_end": 107709,
+          "start": 107645,
+          "end": 107709,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004424",
+          "cluster_id": "push_pink_block_right-0185",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push the pink block towards the right",
+          "original_start": 111468,
+          "original_end": 111509,
+          "start": 111468,
+          "end": 111509,
+          "num_frames": 42,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002731",
+          "cluster_id": "push_pink_block_right-0186",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide right the pink block",
+          "original_start": 115173,
+          "original_end": 115211,
+          "start": 115173,
+          "end": 115211,
+          "num_frames": 39,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002407",
+          "cluster_id": "push_pink_block_right-0190",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide the pink block to the right",
+          "original_start": 143831,
+          "original_end": 143873,
+          "start": 143830,
+          "end": 143873,
+          "num_frames": 44,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-005045",
+          "cluster_id": "push_pink_block_right-0192",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide right the pink block",
+          "original_start": 165078,
+          "original_end": 165119,
+          "start": 165076,
+          "end": 165119,
+          "num_frames": 44,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-005080",
+          "cluster_id": "push_pink_block_right-0193",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide the pink block to the right",
+          "original_start": 185570,
+          "original_end": 185607,
+          "start": 185570,
+          "end": 185607,
+          "num_frames": 38,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001255",
+          "cluster_id": "push_pink_block_right-0194",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push the pink block to the right",
+          "original_start": 185624,
+          "original_end": 185688,
+          "start": 185624,
+          "end": 185688,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001247",
+          "cluster_id": "push_pink_block_right-0195",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "go slide the pink block to the right",
+          "original_start": 192215,
+          "original_end": 192279,
+          "start": 192215,
+          "end": 192279,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002337",
+          "cluster_id": "push_pink_block_right-0196",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide the pink block towards the right",
+          "original_start": 199767,
+          "original_end": 199831,
+          "start": 199767,
+          "end": 199831,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001836",
+          "cluster_id": "push_pink_block_right-0199",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push right the pink block",
+          "original_start": 212554,
+          "original_end": 212590,
+          "start": 212554,
+          "end": 212590,
+          "num_frames": 37,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004871",
+          "cluster_id": "push_pink_block_right-0200",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "go slide the pink block to the right",
+          "original_start": 212964,
+          "original_end": 213001,
+          "start": 212964,
+          "end": 213001,
+          "num_frames": 38,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001124",
+          "cluster_id": "push_pink_block_right-0201",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push the pink block to the right",
+          "original_start": 256555,
+          "original_end": 256619,
+          "start": 256555,
+          "end": 256619,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000574",
+          "cluster_id": "push_pink_block_right-0202",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide right the pink block",
+          "original_start": 268633,
+          "original_end": 268697,
+          "start": 268633,
+          "end": 268697,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003045",
+          "cluster_id": "push_pink_block_right-0203",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push right the pink block",
+          "original_start": 278943,
+          "original_end": 279007,
+          "start": 278943,
+          "end": 279007,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000509",
+          "cluster_id": "push_pink_block_right-0204",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push the pink block to the right",
+          "original_start": 282461,
+          "original_end": 282525,
+          "start": 282461,
+          "end": 282525,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000564",
+          "cluster_id": "push_pink_block_right-0206",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide the pink block to the right",
+          "original_start": 290830,
+          "original_end": 290869,
+          "start": 290830,
+          "end": 290869,
+          "num_frames": 40,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002739",
+          "cluster_id": "push_pink_block_right-0207",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "go slide the pink block to the right",
+          "original_start": 340479,
+          "original_end": 340526,
+          "start": 340479,
+          "end": 340526,
+          "num_frames": 48,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001825",
+          "cluster_id": "push_pink_block_right-0209",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "sweep the pink block to the right",
+          "original_start": 349988,
+          "original_end": 350052,
+          "start": 349988,
+          "end": 350052,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002516",
+          "cluster_id": "push_pink_block_right-0211",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "go push the pink block to the right",
+          "original_start": 365384,
+          "original_end": 365448,
+          "start": 365384,
+          "end": 365448,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000267",
+          "cluster_id": "push_pink_block_right-0212",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "go slide the pink block to the right",
+          "original_start": 372678,
+          "original_end": 372742,
+          "start": 372678,
+          "end": 372742,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001230",
+          "cluster_id": "push_pink_block_right-0213",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide the pink block towards the right",
+          "original_start": 380760,
+          "original_end": 380824,
+          "start": 380760,
+          "end": 380824,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002471",
+          "cluster_id": "push_pink_block_right-0214",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push the pink block to the right",
+          "original_start": 394654,
+          "original_end": 394688,
+          "start": 394654,
+          "end": 394688,
+          "num_frames": 35,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003775",
+          "cluster_id": "push_pink_block_right-0216",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push the pink block to the right",
+          "original_start": 442832,
+          "original_end": 442896,
+          "start": 442832,
+          "end": 442896,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003799",
+          "cluster_id": "push_pink_block_right-0217",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push the pink block to the right",
+          "original_start": 452421,
+          "original_end": 452485,
+          "start": 452421,
+          "end": 452485,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004043",
+          "cluster_id": "push_pink_block_right-0218",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push the pink block towards the right",
+          "original_start": 469583,
+          "original_end": 469626,
+          "start": 469583,
+          "end": 469626,
+          "num_frames": 44,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002120",
+          "cluster_id": "push_pink_block_right-0219",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push right the pink block",
+          "original_start": 475285,
+          "original_end": 475319,
+          "start": 475285,
+          "end": 475319,
+          "num_frames": 35,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003733",
+          "cluster_id": "push_pink_block_right-0220",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "go slide the pink block to the right",
+          "original_start": 480162,
+          "original_end": 480197,
+          "start": 480162,
+          "end": 480197,
+          "num_frames": 36,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003394",
+          "cluster_id": "push_pink_block_right-0221",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "sweep the pink block to the right",
+          "original_start": 481125,
+          "original_end": 481159,
+          "start": 481125,
+          "end": 481159,
+          "num_frames": 35,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000598",
+          "cluster_id": "push_pink_block_right-0223",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "go slide the pink block to the right",
+          "original_start": 493065,
+          "original_end": 493129,
+          "start": 493065,
+          "end": 493129,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001241",
+          "cluster_id": "push_pink_block_right-0224",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide right the pink block",
+          "original_start": 500224,
+          "original_end": 500288,
+          "start": 500224,
+          "end": 500288,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001829",
+          "cluster_id": "push_pink_block_right-0225",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "go slide the pink block to the right",
+          "original_start": 507033,
+          "original_end": 507097,
+          "start": 507033,
+          "end": 507097,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003090",
+          "cluster_id": "push_pink_block_right-0226",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push the pink block to the right",
+          "original_start": 513865,
+          "original_end": 513910,
+          "start": 513863,
+          "end": 513910,
+          "num_frames": 48,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003081",
+          "cluster_id": "push_pink_block_right-0230",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide the pink block towards the right",
+          "original_start": 551942,
+          "original_end": 551977,
+          "start": 551942,
+          "end": 551977,
+          "num_frames": 36,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002290",
+          "cluster_id": "push_pink_block_right-0231",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide the pink block to the right",
+          "original_start": 551969,
+          "original_end": 552033,
+          "start": 551964,
+          "end": 552033,
+          "num_frames": 70,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001740",
+          "cluster_id": "push_pink_block_right-0233",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "go slide the pink block to the right",
+          "original_start": 556408,
+          "original_end": 556445,
+          "start": 556408,
+          "end": 556445,
+          "num_frames": 38,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004225",
+          "cluster_id": "push_pink_block_right-0234",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide the pink block to the right",
+          "original_start": 556545,
+          "original_end": 556591,
+          "start": 556545,
+          "end": 556591,
+          "num_frames": 47,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-005011",
+          "cluster_id": "push_pink_block_right-0235",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "go slide the pink block to the right",
+          "original_start": 561870,
+          "original_end": 561934,
+          "start": 561870,
+          "end": 561934,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001850",
+          "cluster_id": "push_pink_block_right-0236",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push the pink block towards the right",
+          "original_start": 570110,
+          "original_end": 570174,
+          "start": 570110,
+          "end": 570174,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004822",
+          "cluster_id": "push_pink_block_right-0237",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push right the pink block",
+          "original_start": 573529,
+          "original_end": 573563,
+          "start": 573529,
+          "end": 573563,
+          "num_frames": 35,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000550",
+          "cluster_id": "push_pink_block_right-0238",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide the pink block towards the right",
+          "original_start": 580904,
+          "original_end": 580940,
+          "start": 580904,
+          "end": 580940,
+          "num_frames": 37,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002622",
+          "cluster_id": "push_pink_block_right-0239",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "go push the pink block to the right",
+          "original_start": 585889,
+          "original_end": 585925,
+          "start": 585889,
+          "end": 585925,
+          "num_frames": 37,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002620",
+          "cluster_id": "push_pink_block_right-0240",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide the pink block towards the right",
+          "original_start": 586884,
+          "original_end": 586919,
+          "start": 586884,
+          "end": 586919,
+          "num_frames": 36,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000601",
+          "cluster_id": "push_pink_block_right-0241",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide the pink block towards the right",
+          "original_start": 591167,
+          "original_end": 591231,
+          "start": 591167,
+          "end": 591231,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000577",
+          "cluster_id": "push_pink_block_right-0242",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "go slide the pink block to the right",
+          "original_start": 591590,
+          "original_end": 591654,
+          "start": 591590,
+          "end": 591654,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003685",
+          "cluster_id": "push_pink_block_right-0243",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide the pink block to the right",
+          "original_start": 594828,
+          "original_end": 594892,
+          "start": 594828,
+          "end": 594892,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001457",
+          "cluster_id": "push_pink_block_right-0244",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide the pink block towards the right",
+          "original_start": 594918,
+          "original_end": 594982,
+          "start": 594918,
+          "end": 594982,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001226",
+          "cluster_id": "push_pink_block_right-0245",
+          "split": "training",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push right the pink block",
+          "original_start": 599900,
+          "original_end": 599937,
+          "start": 599900,
+          "end": 599937,
+          "num_frames": 38,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001869",
+          "cluster_id": "push_red_block_left-0247",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "sweep the red block to the left",
+          "original_start": 73808,
+          "original_end": 73854,
+          "start": 73808,
+          "end": 73854,
+          "num_frames": 47,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000865",
+          "cluster_id": "push_red_block_left-0248",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "go slide the red block to the left",
+          "original_start": 94569,
+          "original_end": 94633,
+          "start": 94569,
+          "end": 94633,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000623",
+          "cluster_id": "push_red_block_left-0254",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "push left the red block",
+          "original_start": 171731,
+          "original_end": 171795,
+          "start": 171731,
+          "end": 171795,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002568",
+          "cluster_id": "push_red_block_left-0256",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "go push the red block to the left",
+          "original_start": 196582,
+          "original_end": 196646,
+          "start": 196582,
+          "end": 196646,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001193",
+          "cluster_id": "push_red_block_left-0257",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "push the red block towards the left",
+          "original_start": 196640,
+          "original_end": 196688,
+          "start": 196635,
+          "end": 196688,
+          "num_frames": 54,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002662",
+          "cluster_id": "push_red_block_left-0260",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide the red block towards the left",
+          "original_start": 247614,
+          "original_end": 247678,
+          "start": 247614,
+          "end": 247678,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002550",
+          "cluster_id": "push_red_block_left-0261",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide the red block towards the left",
+          "original_start": 250551,
+          "original_end": 250615,
+          "start": 250551,
+          "end": 250615,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001197",
+          "cluster_id": "push_red_block_left-0262",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "push the red block to the left",
+          "original_start": 256776,
+          "original_end": 256816,
+          "start": 256776,
+          "end": 256816,
+          "num_frames": 41,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000624",
+          "cluster_id": "push_red_block_left-0263",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide the red block to the left",
+          "original_start": 263384,
+          "original_end": 263448,
+          "start": 263384,
+          "end": 263448,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000475",
+          "cluster_id": "push_red_block_left-0264",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide left the red block",
+          "original_start": 263662,
+          "original_end": 263726,
+          "start": 263662,
+          "end": 263726,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000633",
+          "cluster_id": "push_red_block_left-0265",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "sweep the red block to the left",
+          "original_start": 266349,
+          "original_end": 266413,
+          "start": 266349,
+          "end": 266413,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002481",
+          "cluster_id": "push_red_block_left-0266",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide the red block to the left",
+          "original_start": 270000,
+          "original_end": 270033,
+          "start": 270000,
+          "end": 270033,
+          "num_frames": 34,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000561",
+          "cluster_id": "push_red_block_left-0268",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "sweep the red block to the left",
+          "original_start": 293403,
+          "original_end": 293467,
+          "start": 293403,
+          "end": 293467,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003153",
+          "cluster_id": "push_red_block_left-0269",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide the red block to the left",
+          "original_start": 294798,
+          "original_end": 294862,
+          "start": 294798,
+          "end": 294862,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000165",
+          "cluster_id": "push_red_block_left-0270",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "go slide the red block to the left",
+          "original_start": 296701,
+          "original_end": 296765,
+          "start": 296701,
+          "end": 296765,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001256",
+          "cluster_id": "push_red_block_left-0271",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "sweep the red block to the left",
+          "original_start": 304003,
+          "original_end": 304067,
+          "start": 304003,
+          "end": 304067,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001233",
+          "cluster_id": "push_red_block_left-0273",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide the red block towards the left",
+          "original_start": 309971,
+          "original_end": 310035,
+          "start": 309971,
+          "end": 310035,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000581",
+          "cluster_id": "push_red_block_left-0275",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "go push the red block to the left",
+          "original_start": 355874,
+          "original_end": 355938,
+          "start": 355874,
+          "end": 355938,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000627",
+          "cluster_id": "push_red_block_left-0277",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide the red block to the left",
+          "original_start": 399317,
+          "original_end": 399364,
+          "start": 399317,
+          "end": 399364,
+          "num_frames": 48,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001810",
+          "cluster_id": "push_red_block_left-0279",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide the red block towards the left",
+          "original_start": 424409,
+          "original_end": 424473,
+          "start": 424409,
+          "end": 424473,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001082",
+          "cluster_id": "push_red_block_left-0280",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "go slide the red block to the left",
+          "original_start": 430003,
+          "original_end": 430067,
+          "start": 430003,
+          "end": 430067,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003878",
+          "cluster_id": "push_red_block_left-0282",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide the red block to the left",
+          "original_start": 441668,
+          "original_end": 441709,
+          "start": 441667,
+          "end": 441709,
+          "num_frames": 43,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000378",
+          "cluster_id": "push_red_block_left-0286",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "go slide the red block to the left",
+          "original_start": 465503,
+          "original_end": 465567,
+          "start": 465503,
+          "end": 465567,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004385",
+          "cluster_id": "push_red_block_left-0292",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "go slide the red block to the left",
+          "original_start": 499088,
+          "original_end": 499152,
+          "start": 499088,
+          "end": 499152,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000571",
+          "cluster_id": "push_red_block_left-0295",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "push the red block to the left",
+          "original_start": 515508,
+          "original_end": 515572,
+          "start": 515508,
+          "end": 515572,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001239",
+          "cluster_id": "push_red_block_left-0296",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "push left the red block",
+          "original_start": 519565,
+          "original_end": 519629,
+          "start": 519565,
+          "end": 519629,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004378",
+          "cluster_id": "push_red_block_left-0298",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "push the red block to the left",
+          "original_start": 522429,
+          "original_end": 522493,
+          "start": 522429,
+          "end": 522493,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001265",
+          "cluster_id": "push_red_block_left-0299",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "push the red block to the left",
+          "original_start": 533424,
+          "original_end": 533488,
+          "start": 533424,
+          "end": 533488,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000635",
+          "cluster_id": "push_red_block_left-0301",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide left the red block",
+          "original_start": 557863,
+          "original_end": 557927,
+          "start": 557863,
+          "end": 557927,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003199",
+          "cluster_id": "push_red_block_left-0303",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "push the red block to the left",
+          "original_start": 582790,
+          "original_end": 582854,
+          "start": 582790,
+          "end": 582854,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001879",
+          "cluster_id": "push_red_block_left-0304",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "go slide the red block to the left",
+          "original_start": 584656,
+          "original_end": 584720,
+          "start": 584656,
+          "end": 584720,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000517",
+          "cluster_id": "push_red_block_left-0306",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide left the red block",
+          "original_start": 602993,
+          "original_end": 603057,
+          "start": 602993,
+          "end": 603057,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003035",
+          "cluster_id": "push_red_block_left-0307",
+          "split": "training",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide the red block towards the left",
+          "original_start": 610935,
+          "original_end": 610999,
+          "start": 610935,
+          "end": 610999,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001259",
+          "cluster_id": "push_red_block_right-0308",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "slide the red block towards the right",
+          "original_start": 61651,
+          "original_end": 61715,
+          "start": 61651,
+          "end": 61715,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000639",
+          "cluster_id": "push_red_block_right-0309",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "slide the red block towards the right",
+          "original_start": 94473,
+          "original_end": 94537,
+          "start": 94473,
+          "end": 94537,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003739",
+          "cluster_id": "push_red_block_right-0311",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "go push the red block to the right",
+          "original_start": 127761,
+          "original_end": 127809,
+          "start": 127759,
+          "end": 127809,
+          "num_frames": 51,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001152",
+          "cluster_id": "push_red_block_right-0314",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "push the red block to the right",
+          "original_start": 161695,
+          "original_end": 161759,
+          "start": 161695,
+          "end": 161759,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000546",
+          "cluster_id": "push_red_block_right-0317",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "go push the red block to the right",
+          "original_start": 194470,
+          "original_end": 194534,
+          "start": 194470,
+          "end": 194534,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002059",
+          "cluster_id": "push_red_block_right-0319",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "push the red block to the right",
+          "original_start": 196793,
+          "original_end": 196857,
+          "start": 196793,
+          "end": 196857,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000538",
+          "cluster_id": "push_red_block_right-0321",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "go push the red block to the right",
+          "original_start": 247523,
+          "original_end": 247556,
+          "start": 247523,
+          "end": 247556,
+          "num_frames": 34,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004371",
+          "cluster_id": "push_red_block_right-0322",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "push right the red block",
+          "original_start": 263512,
+          "original_end": 263549,
+          "start": 263512,
+          "end": 263549,
+          "num_frames": 38,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000677",
+          "cluster_id": "push_red_block_right-0323",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "slide right the red block",
+          "original_start": 263559,
+          "original_end": 263623,
+          "start": 263559,
+          "end": 263623,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000647",
+          "cluster_id": "push_red_block_right-0324",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "slide right the red block",
+          "original_start": 269919,
+          "original_end": 269956,
+          "start": 269919,
+          "end": 269956,
+          "num_frames": 38,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003181",
+          "cluster_id": "push_red_block_right-0325",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "go push the red block to the right",
+          "original_start": 293066,
+          "original_end": 293130,
+          "start": 293066,
+          "end": 293130,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001235",
+          "cluster_id": "push_red_block_right-0326",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "push the red block towards the right",
+          "original_start": 294712,
+          "original_end": 294776,
+          "start": 294712,
+          "end": 294776,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001288",
+          "cluster_id": "push_red_block_right-0327",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "slide the red block towards the right",
+          "original_start": 296545,
+          "original_end": 296609,
+          "start": 296545,
+          "end": 296609,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000631",
+          "cluster_id": "push_red_block_right-0329",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "push right the red block",
+          "original_start": 303923,
+          "original_end": 303987,
+          "start": 303923,
+          "end": 303987,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002981",
+          "cluster_id": "push_red_block_right-0330",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "slide the red block to the right",
+          "original_start": 304091,
+          "original_end": 304155,
+          "start": 304091,
+          "end": 304155,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000541",
+          "cluster_id": "push_red_block_right-0331",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "go slide the red block to the right",
+          "original_start": 309835,
+          "original_end": 309899,
+          "start": 309835,
+          "end": 309899,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-004467",
+          "cluster_id": "push_red_block_right-0333",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "push right the red block",
+          "original_start": 355749,
+          "original_end": 355792,
+          "start": 355747,
+          "end": 355792,
+          "num_frames": 46,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001902",
+          "cluster_id": "push_red_block_right-0334",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "push the red block to the right",
+          "original_start": 362868,
+          "original_end": 362932,
+          "start": 362865,
+          "end": 362932,
+          "num_frames": 68,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003111",
+          "cluster_id": "push_red_block_right-0335",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "go slide the red block to the right",
+          "original_start": 387349,
+          "original_end": 387392,
+          "start": 387347,
+          "end": 387392,
+          "num_frames": 46,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000565",
+          "cluster_id": "push_red_block_right-0339",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "sweep the red block to the right",
+          "original_start": 427238,
+          "original_end": 427302,
+          "start": 427238,
+          "end": 427302,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001841",
+          "cluster_id": "push_red_block_right-0340",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "slide right the red block",
+          "original_start": 430065,
+          "original_end": 430129,
+          "start": 430065,
+          "end": 430129,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001867",
+          "cluster_id": "push_red_block_right-0346",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "sweep the red block to the right",
+          "original_start": 494635,
+          "original_end": 494683,
+          "start": 494635,
+          "end": 494683,
+          "num_frames": 49,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000596",
+          "cluster_id": "push_red_block_right-0347",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "slide right the red block",
+          "original_start": 499002,
+          "original_end": 499066,
+          "start": 499002,
+          "end": 499066,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003360",
+          "cluster_id": "push_red_block_right-0350",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "push the red block towards the right",
+          "original_start": 515425,
+          "original_end": 515489,
+          "start": 515425,
+          "end": 515489,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003159",
+          "cluster_id": "push_red_block_right-0351",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "slide right the red block",
+          "original_start": 533378,
+          "original_end": 533413,
+          "start": 533378,
+          "end": 533413,
+          "num_frames": 36,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-002745",
+          "cluster_id": "push_red_block_right-0353",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "push right the red block",
+          "original_start": 552952,
+          "original_end": 553016,
+          "start": 552952,
+          "end": 553016,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001910",
+          "cluster_id": "push_red_block_right-0354",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "push right the red block",
+          "original_start": 583781,
+          "original_end": 583845,
+          "start": 583781,
+          "end": 583845,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-001883",
+          "cluster_id": "push_red_block_right-0356",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "push the red block towards the right",
+          "original_start": 584582,
+          "original_end": 584646,
+          "start": 584582,
+          "end": 584646,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-003841",
+          "cluster_id": "push_red_block_right-0357",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "push the red block to the right",
+          "original_start": 589646,
+          "original_end": 589710,
+          "start": 589646,
+          "end": 589710,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "training-000651",
+          "cluster_id": "push_red_block_right-0360",
+          "split": "training",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "sweep the red block to the right",
+          "original_start": 602939,
+          "original_end": 603003,
+          "start": 602939,
+          "end": 603003,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "validation": {
+      "summary": {
+        "dataset": "calvin_push_6",
+        "split": "validation",
+        "candidates": 175,
+        "clusters": 59,
+        "retained": 39,
+        "frames_retained": 2199,
+        "by_task": {
+          "push_blue_block_left": {
+            "candidates": 29,
+            "clusters": 11,
+            "retained": 7
+          },
+          "push_blue_block_right": {
+            "candidates": 29,
+            "clusters": 8,
+            "retained": 6
+          },
+          "push_pink_block_left": {
+            "candidates": 29,
+            "clusters": 7,
+            "retained": 6
+          },
+          "push_pink_block_right": {
+            "candidates": 29,
+            "clusters": 9,
+            "retained": 6
+          },
+          "push_red_block_left": {
+            "candidates": 30,
+            "clusters": 13,
+            "retained": 9
+          },
+          "push_red_block_right": {
+            "candidates": 29,
+            "clusters": 11,
+            "retained": 5
+          }
+        },
+        "candidate_rejection_reasons": {
+          "initially_holding_object": 2,
+          "oracle_not_satisfied": 35
+        }
+      },
+      "segments": [
+        {
+          "segment_id": "validation-000233",
+          "cluster_id": "push_blue_block_left-0000",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "go slide the blue block to the left",
+          "original_start": 32318,
+          "original_end": 32364,
+          "start": 32318,
+          "end": 32364,
+          "num_frames": 47,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000613",
+          "cluster_id": "push_blue_block_left-0002",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "go push the blue block to the left",
+          "original_start": 48812,
+          "original_end": 48858,
+          "start": 48812,
+          "end": 48858,
+          "num_frames": 47,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000063",
+          "cluster_id": "push_blue_block_left-0003",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "push left the blue block",
+          "original_start": 222101,
+          "original_end": 222165,
+          "start": 222101,
+          "end": 222165,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000931",
+          "cluster_id": "push_blue_block_left-0004",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "push the blue block to the left",
+          "original_start": 230137,
+          "original_end": 230179,
+          "start": 230133,
+          "end": 230179,
+          "num_frames": 47,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000275",
+          "cluster_id": "push_blue_block_left-0006",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "slide left the blue block",
+          "original_start": 238953,
+          "original_end": 238991,
+          "start": 238952,
+          "end": 238991,
+          "num_frames": 40,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000747",
+          "cluster_id": "push_blue_block_left-0007",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "slide left the blue block",
+          "original_start": 401158,
+          "original_end": 401206,
+          "start": 401158,
+          "end": 401206,
+          "num_frames": 49,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000483",
+          "cluster_id": "push_blue_block_left-0008",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "slide the blue block towards the left",
+          "original_start": 402814,
+          "original_end": 402878,
+          "start": 402814,
+          "end": 402878,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000217",
+          "cluster_id": "push_blue_block_right-0011",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "slide right the blue block",
+          "original_start": 21580,
+          "original_end": 21644,
+          "start": 21580,
+          "end": 21644,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000108",
+          "cluster_id": "push_blue_block_right-0012",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "push right the blue block",
+          "original_start": 21674,
+          "original_end": 21721,
+          "start": 21674,
+          "end": 21721,
+          "num_frames": 48,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000346",
+          "cluster_id": "push_blue_block_right-0013",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "push the blue block towards the right",
+          "original_start": 21728,
+          "original_end": 21761,
+          "start": 21728,
+          "end": 21761,
+          "num_frames": 34,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000358",
+          "cluster_id": "push_blue_block_right-0014",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "go slide the blue block to the right",
+          "original_start": 37764,
+          "original_end": 37828,
+          "start": 37764,
+          "end": 37828,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000492",
+          "cluster_id": "push_blue_block_right-0016",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "push the blue block to the right",
+          "original_start": 400942,
+          "original_end": 400989,
+          "start": 400938,
+          "end": 400989,
+          "num_frames": 52,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000111",
+          "cluster_id": "push_blue_block_right-0018",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "slide right the blue block",
+          "original_start": 417599,
+          "original_end": 417646,
+          "start": 417597,
+          "end": 417646,
+          "num_frames": 50,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000102",
+          "cluster_id": "push_pink_block_left-0019",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "slide the pink block towards the left",
+          "original_start": 19975,
+          "original_end": 20039,
+          "start": 19975,
+          "end": 20039,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000234",
+          "cluster_id": "push_pink_block_left-0020",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push left the pink block",
+          "original_start": 34240,
+          "original_end": 34304,
+          "start": 34240,
+          "end": 34304,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000638",
+          "cluster_id": "push_pink_block_left-0021",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "go slide the pink block to the left",
+          "original_start": 34294,
+          "original_end": 34341,
+          "start": 34291,
+          "end": 34341,
+          "num_frames": 51,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000212",
+          "cluster_id": "push_pink_block_left-0022",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "go push the pink block to the left",
+          "original_start": 39525,
+          "original_end": 39563,
+          "start": 39525,
+          "end": 39563,
+          "num_frames": 39,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-001007",
+          "cluster_id": "push_pink_block_left-0024",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push the pink block to the left",
+          "original_start": 241024,
+          "original_end": 241070,
+          "start": 241024,
+          "end": 241070,
+          "num_frames": 47,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000227",
+          "cluster_id": "push_pink_block_left-0025",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "slide left the pink block",
+          "original_start": 414600,
+          "original_end": 414664,
+          "start": 414600,
+          "end": 414664,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000643",
+          "cluster_id": "push_pink_block_right-0028",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push right the pink block",
+          "original_start": 34371,
+          "original_end": 34405,
+          "start": 34371,
+          "end": 34405,
+          "num_frames": 35,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000230",
+          "cluster_id": "push_pink_block_right-0029",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide the pink block towards the right",
+          "original_start": 39644,
+          "original_end": 39708,
+          "start": 39644,
+          "end": 39708,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000466",
+          "cluster_id": "push_pink_block_right-0030",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "sweep the pink block to the right",
+          "original_start": 240731,
+          "original_end": 240777,
+          "start": 240731,
+          "end": 240777,
+          "num_frames": 47,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000478",
+          "cluster_id": "push_pink_block_right-0031",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "go push the pink block to the right",
+          "original_start": 400527,
+          "original_end": 400562,
+          "start": 400527,
+          "end": 400562,
+          "num_frames": 36,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000106",
+          "cluster_id": "push_pink_block_right-0032",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push right the pink block",
+          "original_start": 404279,
+          "original_end": 404343,
+          "start": 404279,
+          "end": 404343,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000224",
+          "cluster_id": "push_pink_block_right-0033",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push the pink block towards the right",
+          "original_start": 414530,
+          "original_end": 414573,
+          "start": 414530,
+          "end": 414573,
+          "num_frames": 44,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000413",
+          "cluster_id": "push_red_block_left-0035",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "push the red block towards the left",
+          "original_start": 2806,
+          "original_end": 2870,
+          "start": 2806,
+          "end": 2870,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000178",
+          "cluster_id": "push_red_block_left-0037",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide the red block towards the left",
+          "original_start": 36995,
+          "original_end": 37059,
+          "start": 36988,
+          "end": 37059,
+          "num_frames": 72,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000341",
+          "cluster_id": "push_red_block_left-0038",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "push left the red block",
+          "original_start": 44984,
+          "original_end": 45048,
+          "start": 44984,
+          "end": 45048,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-001000",
+          "cluster_id": "push_red_block_left-0039",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "go push the red block to the left",
+          "original_start": 45029,
+          "original_end": 45093,
+          "start": 45029,
+          "end": 45093,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000017",
+          "cluster_id": "push_red_block_left-0040",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "go slide the red block to the left",
+          "original_start": 45204,
+          "original_end": 45268,
+          "start": 45204,
+          "end": 45268,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000073",
+          "cluster_id": "push_red_block_left-0041",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide left the red block",
+          "original_start": 45267,
+          "original_end": 45306,
+          "start": 45258,
+          "end": 45306,
+          "num_frames": 49,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000218",
+          "cluster_id": "push_red_block_left-0043",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide left the red block",
+          "original_start": 410160,
+          "original_end": 410224,
+          "start": 410160,
+          "end": 410224,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000595",
+          "cluster_id": "push_red_block_left-0044",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide the red block towards the left",
+          "original_start": 415566,
+          "original_end": 415630,
+          "start": 415566,
+          "end": 415630,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000763",
+          "cluster_id": "push_red_block_left-0046",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide the red block to the left",
+          "original_start": 419315,
+          "original_end": 419379,
+          "start": 419315,
+          "end": 419379,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000084",
+          "cluster_id": "push_red_block_right-0048",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "slide the red block towards the right",
+          "original_start": 2354,
+          "original_end": 2418,
+          "start": 2354,
+          "end": 2418,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000848",
+          "cluster_id": "push_red_block_right-0051",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "push the red block to the right",
+          "original_start": 44758,
+          "original_end": 44822,
+          "start": 44758,
+          "end": 44822,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000541",
+          "cluster_id": "push_red_block_right-0052",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "push the red block towards the right",
+          "original_start": 45116,
+          "original_end": 45180,
+          "start": 45116,
+          "end": 45180,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000056",
+          "cluster_id": "push_red_block_right-0055",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "slide the red block to the right",
+          "original_start": 410080,
+          "original_end": 410144,
+          "start": 410080,
+          "end": 410144,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        },
+        {
+          "segment_id": "validation-000334",
+          "cluster_id": "push_red_block_right-0058",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "slide right the red block",
+          "original_start": 419243,
+          "original_end": 419307,
+          "start": 419243,
+          "end": 419307,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

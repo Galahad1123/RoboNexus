@@ -1,0 +1,786 @@
+{
+  "version": 1,
+  "name": "calvin_full_stack_extended_eval",
+  "source_dataset": "calvin/dataset/task_D_D",
+  "frequency_hz": 30,
+  "oracle_config": "calvin/calvin_models/conf/callbacks/rollout/tasks/new_playtable_tasks.yaml",
+  "evaluation_only": true,
+  "tasks": [
+    {
+      "task_id": 0,
+      "calvin_task": "stack_block",
+      "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block"
+    }
+  ],
+  "splits": {
+    "validation": {
+      "summary": {
+        "source_dataset": "calvin_stack_pick_place_persistent",
+        "lookback_frames": 90,
+        "episodes": 21,
+        "official_full": 4,
+        "extended_backtracked": 17,
+        "rejected": 0,
+        "training_eligible": false
+      },
+      "segments": [
+        {
+          "cluster_id": "stack_block-0114",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "put the block on top of another block",
+          "original_start": 3230,
+          "original_end": 3273,
+          "end": 3273,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "demonstrated_destination": "block_pink",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-003230",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 3140,
+          "num_frames": 134,
+          "evaluation_tier": "extended_backtracked",
+          "extension_origin": "backtracked_from_held",
+          "source_segment_id": "validation-000829-held",
+          "backtrack_frames": 90,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0115",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "stack blocks on top of each other",
+          "original_start": 3359,
+          "original_end": 3404,
+          "end": 3404,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "demonstrated_destination": "block_pink",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-003359",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 3295,
+          "num_frames": 110,
+          "evaluation_tier": "extended_backtracked",
+          "extension_origin": "backtracked_from_held",
+          "source_segment_id": "validation-000172-held",
+          "backtrack_frames": 64,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0116",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "put the block on top of another block",
+          "original_start": 8635,
+          "original_end": 8671,
+          "end": 8671,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "demonstrated_destination": "block_red",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-008635",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 8575,
+          "num_frames": 97,
+          "evaluation_tier": "extended_backtracked",
+          "extension_origin": "backtracked_from_held",
+          "source_segment_id": "validation-000313-held",
+          "backtrack_frames": 60,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0117",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "stack the block on top of another block",
+          "original_start": 13313,
+          "original_end": 13354,
+          "end": 13354,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "demonstrated_destination": "block_red",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-013313",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 13243,
+          "num_frames": 112,
+          "evaluation_tier": "extended_backtracked",
+          "extension_origin": "backtracked_from_held",
+          "source_segment_id": "validation-000445-held",
+          "backtrack_frames": 70,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0118",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "put the block on top of another block",
+          "original_start": 13725,
+          "original_end": 13789,
+          "end": 13789,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "demonstrated_destination": "block_blue",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-013725",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 13712,
+          "num_frames": 78,
+          "evaluation_tier": "extended_backtracked",
+          "extension_origin": "backtracked_from_held",
+          "source_segment_id": "validation-000663-held",
+          "backtrack_frames": 38,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0118",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "put the block on top of another block",
+          "original_start": 13725,
+          "original_end": 13789,
+          "end": 13789,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "demonstrated_destination": "block_blue",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-013725",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 13725,
+          "num_frames": 65,
+          "evaluation_tier": "official",
+          "extension_origin": "official_full",
+          "source_segment_id": "validation-000663-full",
+          "backtrack_frames": 0,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0119",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "put the grasped block on top of a block",
+          "original_start": 23439,
+          "original_end": 23473,
+          "end": 23473,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "demonstrated_destination": "block_blue",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-023439",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 23380,
+          "num_frames": 94,
+          "evaluation_tier": "extended_backtracked",
+          "extension_origin": "backtracked_from_held",
+          "source_segment_id": "validation-000832-held",
+          "backtrack_frames": 59,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0120",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "stack the blocks",
+          "original_start": 33332,
+          "original_end": 33396,
+          "end": 33396,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "demonstrated_destination": "block_pink",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-033332",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 33302,
+          "num_frames": 95,
+          "evaluation_tier": "extended_backtracked",
+          "extension_origin": "backtracked_from_held",
+          "source_segment_id": "validation-000718-held",
+          "backtrack_frames": 56,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0120",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "stack the blocks",
+          "original_start": 33332,
+          "original_end": 33396,
+          "end": 33396,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "demonstrated_destination": "block_pink",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-033332",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 33332,
+          "num_frames": 65,
+          "evaluation_tier": "official",
+          "extension_origin": "official_full",
+          "source_segment_id": "validation-000718-full",
+          "backtrack_frames": 0,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0122",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "put the block on top of another block",
+          "original_start": 36176,
+          "original_end": 36218,
+          "end": 36218,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "demonstrated_destination": "block_pink",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-036176",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 36086,
+          "num_frames": 133,
+          "evaluation_tier": "extended_backtracked",
+          "extension_origin": "backtracked_from_held",
+          "source_segment_id": "validation-000066-held",
+          "backtrack_frames": 90,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0123",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "stack blocks on top of each other",
+          "original_start": 44086,
+          "original_end": 44150,
+          "end": 44150,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "demonstrated_destination": "block_red",
+          "destination_contact_frames": 3,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-044086",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 43996,
+          "num_frames": 155,
+          "evaluation_tier": "extended_backtracked",
+          "extension_origin": "backtracked_from_held",
+          "source_segment_id": "validation-000251-held",
+          "backtrack_frames": 90,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0124",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "place the block on top of another block",
+          "original_start": 50613,
+          "original_end": 50677,
+          "end": 50677,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "demonstrated_destination": "block_red",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-050613",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 50549,
+          "num_frames": 129,
+          "evaluation_tier": "extended_backtracked",
+          "extension_origin": "backtracked_from_held",
+          "source_segment_id": "validation-000596-held",
+          "backtrack_frames": 90,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0124",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "place the block on top of another block",
+          "original_start": 50613,
+          "original_end": 50677,
+          "end": 50677,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "demonstrated_destination": "block_red",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-050613",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 50613,
+          "num_frames": 65,
+          "evaluation_tier": "official",
+          "extension_origin": "official_full",
+          "source_segment_id": "validation-000596-full",
+          "backtrack_frames": 0,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0125",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "stack the block on top of another block",
+          "original_start": 225076,
+          "original_end": 225124,
+          "end": 225124,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "demonstrated_destination": "block_blue",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-225076",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 225030,
+          "num_frames": 95,
+          "evaluation_tier": "extended_backtracked",
+          "extension_origin": "backtracked_from_held",
+          "source_segment_id": "validation-000061-held",
+          "backtrack_frames": 46,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0126",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "place the block on top of another block",
+          "original_start": 228359,
+          "original_end": 228423,
+          "end": 228423,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "demonstrated_destination": "block_red",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-228359",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 228298,
+          "num_frames": 126,
+          "evaluation_tier": "extended_backtracked",
+          "extension_origin": "backtracked_from_held",
+          "source_segment_id": "validation-000243-held",
+          "backtrack_frames": 90,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0126",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "place the block on top of another block",
+          "original_start": 228359,
+          "original_end": 228423,
+          "end": 228423,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "demonstrated_destination": "block_red",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-228359",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 228359,
+          "num_frames": 65,
+          "evaluation_tier": "official",
+          "extension_origin": "official_full",
+          "source_segment_id": "validation-000243-full",
+          "backtrack_frames": 0,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0127",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "stack the object on top of another object",
+          "original_start": 230348,
+          "original_end": 230396,
+          "end": 230396,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "demonstrated_destination": "block_blue",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-230348",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 230258,
+          "num_frames": 139,
+          "evaluation_tier": "extended_backtracked",
+          "extension_origin": "backtracked_from_held",
+          "source_segment_id": "validation-000804-held",
+          "backtrack_frames": 90,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0128",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "stack blocks on top of each other",
+          "original_start": 239623,
+          "original_end": 239665,
+          "end": 239665,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "demonstrated_destination": "block_red",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-239623",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 239533,
+          "num_frames": 133,
+          "evaluation_tier": "extended_backtracked",
+          "extension_origin": "backtracked_from_held",
+          "source_segment_id": "validation-000021-held",
+          "backtrack_frames": 90,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0129",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "stack blocks on top of each other",
+          "original_start": 408403,
+          "original_end": 408440,
+          "end": 408440,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "demonstrated_destination": "block_blue",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-408403",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 408313,
+          "num_frames": 128,
+          "evaluation_tier": "extended_backtracked",
+          "extension_origin": "backtracked_from_held",
+          "source_segment_id": "validation-000947-held",
+          "backtrack_frames": 90,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0130",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "put the grasped block on top of a block",
+          "original_start": 416516,
+          "original_end": 416560,
+          "end": 416560,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "demonstrated_destination": "block_blue",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-416516",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 416476,
+          "num_frames": 85,
+          "evaluation_tier": "extended_backtracked",
+          "extension_origin": "backtracked_from_held",
+          "source_segment_id": "validation-000958-held",
+          "backtrack_frames": 40,
+          "training_eligible": false
+        },
+        {
+          "cluster_id": "stack_block-0131",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "stack_block",
+          "instruction": "stack the black-outlined source block on top of the cyan-outlined destination block",
+          "original_instruction": "put the grasped block on top of a block",
+          "original_start": 418894,
+          "original_end": 418932,
+          "end": 418932,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "demonstrated_destination": "block_red",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "segment_id": "validation-full-ext-418894",
+          "episode_variant": "full_pick_and_stack_extended",
+          "start": 418824,
+          "num_frames": 109,
+          "evaluation_tier": "extended_backtracked",
+          "extension_origin": "backtracked_from_held",
+          "source_segment_id": "validation-000914-held",
+          "backtrack_frames": 70,
+          "training_eligible": false
+        }
+      ]
+    }
+  }
+}

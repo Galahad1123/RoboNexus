@@ -189,6 +189,24 @@ class ConfiguredCalvinSuiteTest(unittest.TestCase):
         self.assertTrue(np.array_equal(augmented[1, 6], [255, 255, 255]))
         self.assertTrue(np.array_equal(augmented[0, 6], [0, 0, 0]))
 
+    def test_inside_outline_does_not_expand_object_mask(self):
+        import numpy as np
+
+        image = np.full((12, 12, 3), 17, dtype=np.uint8)
+        mask = np.zeros((12, 12), dtype=bool)
+        mask[3:9, 3:9] = True
+        augmented = MaskOverlay(
+            alpha=0,
+            outline_width_px=2,
+            outline_colors={"source": (160, 255, 0)},
+            outline_positions={"source": "inside"},
+        ).apply(image, {"source": mask})
+        changed = np.any(augmented != image, axis=-1)
+        self.assertTrue(changed.any())
+        self.assertFalse(changed[~mask].any())
+        self.assertTrue(np.array_equal(augmented[3, 5], [160, 255, 0]))
+        self.assertTrue(np.array_equal(augmented[5, 5], [17, 17, 17]))
+
     def test_role_specific_halo_and_dynamic_held_visibility(self):
         image = np.zeros((16, 16, 3), dtype=np.uint8)
         source = np.zeros((16, 16), dtype=bool)

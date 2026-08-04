@@ -54,6 +54,8 @@ class MaskOverlay:
         outline_width_px=0,
         outline_color=(0, 0, 0),
         outline_colors=None,
+        outline_position="center",
+        outline_positions=None,
         outline_halo_width_px=0,
         outline_halo_widths=None,
         outline_halo_color=(255, 255, 255),
@@ -65,6 +67,10 @@ class MaskOverlay:
             role: np.asarray(value, dtype=np.uint8)
             for role, value in (outline_colors or {}).items()
         }
+        self.outline_position = str(outline_position)
+        self.outline_positions = {
+            role: str(value) for role, value in (outline_positions or {}).items()
+        }
         self.outline_halo_width_px = int(outline_halo_width_px)
         self.outline_halo_widths = {
             role: int(value) for role, value in (outline_halo_widths or {}).items()
@@ -74,6 +80,13 @@ class MaskOverlay:
             raise ValueError("outline_color must contain exactly three RGB values")
         if any(value.shape != (3,) for value in self.outline_colors.values()):
             raise ValueError("every role outline color must contain three RGB values")
+        valid_positions = {"inside", "center", "outside"}
+        if self.outline_position not in valid_positions:
+            raise ValueError("outline_position must be inside, center, or outside")
+        if any(value not in valid_positions for value in self.outline_positions.values()):
+            raise ValueError(
+                "every role outline position must be inside, center, or outside"
+            )
         if self.outline_halo_width_px < 0:
             raise ValueError("outline_halo_width_px must be >= 0")
         if any(value < 0 for value in self.outline_halo_widths.values()):
@@ -109,7 +122,13 @@ class MaskOverlay:
                 kernel = np.ones((2 * radius + 1, 2 * radius + 1), np.uint8)
                 dilated = cv2.dilate(mask.astype(np.uint8), kernel).astype(bool)
                 eroded = cv2.erode(mask.astype(np.uint8), kernel).astype(bool)
-                outline = dilated & ~eroded
+                position = self.outline_positions.get(role, self.outline_position)
+                if position == "inside":
+                    outline = mask & ~eroded
+                elif position == "outside":
+                    outline = dilated & ~mask
+                else:
+                    outline = dilated & ~eroded
                 halo_width = self.outline_halo_widths.get(
                     role, self.outline_halo_width_px
                 )

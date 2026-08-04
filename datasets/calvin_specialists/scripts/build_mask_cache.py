@@ -13,6 +13,7 @@ import numpy as np
 
 WORKSPACE = Path(__file__).resolve().parents[3]
 DEFAULT_CONFIG = WORKSPACE / "datasets/calvin_specialists/configs/datasets.json"
+D34_CONFIG = WORKSPACE / "datasets/calvin_specialists/configs/calvin_d34.json"
 if str(WORKSPACE) not in sys.path:
     sys.path.insert(0, str(WORKSPACE))
 
@@ -39,10 +40,43 @@ def main():
     )
     parser.add_argument("--max-episodes", type=int)
     parser.add_argument("--max-episodes-per-task", type=int)
+    parser.add_argument(
+        "--source-outline-color",
+        type=int,
+        nargs=3,
+        metavar=("R", "G", "B"),
+        help="override only the source role outline color",
+    )
+    parser.add_argument(
+        "--outline-position",
+        choices=("inside", "center", "outside"),
+        help="override the default outline position for every role",
+    )
+    parser.add_argument(
+        "--source-outline-position",
+        choices=("inside", "center", "outside"),
+        help="override only the source role outline position",
+    )
+    parser.add_argument(
+        "--target-outline-color",
+        type=int,
+        nargs=3,
+        metavar=("R", "G", "B"),
+        help="override only the target role outline color",
+    )
+    parser.add_argument(
+        "--target-outline-position",
+        choices=("inside", "center", "outside"),
+        help="override only the target role outline position",
+    )
     parser.add_argument("--overwrite", action="store_true")
     args = parser.parse_args()
 
     config = json.loads(args.config.read_text())
+    if args.dataset not in config["datasets"] and args.config == DEFAULT_CONFIG:
+        d34_config = json.loads(D34_CONFIG.read_text())
+        if args.dataset in d34_config["datasets"]:
+            config = d34_config
     if args.dataset not in config["datasets"]:
         raise ValueError("Unknown specialist dataset: {}".format(args.dataset))
     dataset_config = config["datasets"][args.dataset]
@@ -94,11 +128,23 @@ def main():
     adapter = CalvinEnvAdapter.create(source_split, metadata, show_gui=False, use_egl=True)
     provider = CalvinGTMaskProvider(adapter.env)
     style = dataset_config["mask_style"]
+    outline_colors = dict(style.get("outline_colors") or {})
+    if args.source_outline_color is not None:
+        outline_colors["source"] = args.source_outline_color
+    if args.target_outline_color is not None:
+        outline_colors["target"] = args.target_outline_color
+    outline_positions = dict(style.get("outline_positions") or {})
+    if args.source_outline_position is not None:
+        outline_positions["source"] = args.source_outline_position
+    if args.target_outline_position is not None:
+        outline_positions["target"] = args.target_outline_position
     overlay = MaskOverlay(
         alpha=style["alpha"],
         outline_width_px=style["outline_width_px"],
         outline_color=style["outline_color"],
-        outline_colors=style.get("outline_colors"),
+        outline_colors=outline_colors,
+        outline_position=args.outline_position or style.get("outline_position", "center"),
+        outline_positions=outline_positions,
         outline_halo_width_px=style.get("outline_halo_width_px", 0),
         outline_halo_widths=style.get("outline_halo_widths"),
         outline_halo_color=style.get("outline_halo_color", [255, 255, 255]),
@@ -145,6 +191,13 @@ def main():
         "split": args.split,
         "manifest": str(manifest_path),
         "mask_style": style,
+        "mask_style_overrides": {
+            "source_outline_color": args.source_outline_color,
+            "outline_position": args.outline_position,
+            "source_outline_position": args.source_outline_position,
+            "target_outline_color": args.target_outline_color,
+            "target_outline_position": args.target_outline_position,
+        },
         "episodes": len(segments),
         "frames_written": written,
     }

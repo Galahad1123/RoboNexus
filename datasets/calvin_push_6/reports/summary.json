@@ -1,0 +1,90 @@
+{
+  "training": {
+    "dataset": "calvin_push_6",
+    "split": "training",
+    "candidates": 900,
+    "clusters": 362,
+    "retained": 220,
+    "frames_retained": 12389,
+    "by_task": {
+      "push_blue_block_left": {
+        "candidates": 150,
+        "clusters": 54,
+        "retained": 31
+      },
+      "push_blue_block_right": {
+        "candidates": 150,
+        "clusters": 56,
+        "retained": 29
+      },
+      "push_pink_block_left": {
+        "candidates": 150,
+        "clusters": 68,
+        "retained": 44
+      },
+      "push_pink_block_right": {
+        "candidates": 150,
+        "clusters": 68,
+        "retained": 53
+      },
+      "push_red_block_left": {
+        "candidates": 150,
+        "clusters": 62,
+        "retained": 33
+      },
+      "push_red_block_right": {
+        "candidates": 150,
+        "clusters": 54,
+        "retained": 30
+      }
+    },
+    "candidate_rejection_reasons": {
+      "initially_holding_object": 33,
+      "oracle_not_satisfied": 253
+    }
+  },
+  "validation": {
+    "dataset": "calvin_push_6",
+    "split": "validation",
+    "candidates": 175,
+    "clusters": 59,
+    "retained": 39,
+    "frames_retained": 2199,
+    "by_task": {
+      "push_blue_block_left": {
+        "candidates": 29,
+        "clusters": 11,
+        "retained": 7
+      },
+      "push_blue_block_right": {
+        "candidates": 29,
+        "clusters": 8,
+        "retained": 6
+      },
+      "push_pink_block_left": {
+        "candidates": 29,
+        "clusters": 7,
+        "retained": 6
+      },
+      "push_pink_block_right": {
+        "candidates": 29,
+        "clusters": 9,
+        "retained": 6
+      },
+      "push_red_block_left": {
+        "candidates": 30,
+        "clusters": 13,
+        "retained": 9
+      },
+      "push_red_block_right": {
+        "candidates": 29,
+        "clusters": 11,
+        "retained": 5
+      }
+    },
+    "candidate_rejection_reasons": {
+      "initially_holding_object": 2,
+      "oracle_not_satisfied": 35
+    }
+  }
+}

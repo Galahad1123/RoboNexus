@@ -1,0 +1,9 @@
+{
+  "source_dataset": "calvin_stack_pick_place_persistent",
+  "lookback_frames": 90,
+  "episodes": 21,
+  "official_full": 4,
+  "extended_backtracked": 17,
+  "rejected": 0,
+  "training_eligible": false
+}

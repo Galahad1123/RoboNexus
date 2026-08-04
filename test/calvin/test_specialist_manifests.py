@@ -253,6 +253,73 @@ class SpecialistManifestTest(unittest.TestCase):
             )
         )
 
+    def test_d34_routing_and_new_manifests(self):
+        inventory = json.loads(
+            (WORKSPACE / "datasets/calvin_d34/reports/task_inventory.json").read_text()
+        )
+        self.assertEqual(inventory["num_tasks"], 34)
+        self.assertTrue(inventory["routing_is_disjoint"])
+        routed = [task for tasks in inventory["routing"].values() for task in tasks]
+        self.assertEqual(len(routed), len(set(routed)))
+        self.assertEqual(
+            {group: len(tasks) for group, tasks in inventory["routing"].items()},
+            {"push": 6, "rotate": 6, "stack": 1, "general": 21},
+        )
+
+        push = self.load("calvin_push_6")
+        self.assertEqual(len(push["tasks"]), 6)
+        self.assertEqual(
+            {item["instruction"] for item in push["tasks"]},
+            {
+                "push the blue block to the left",
+                "push the blue block to the right",
+                "push the pink block to the left",
+                "push the pink block to the right",
+                "push the red block to the left",
+                "push the red block to the right",
+            },
+        )
+        general = self.load("calvin_general_21")
+        self.assertEqual(len(general["tasks"]), 21)
+        for manifest in (push, general):
+            for split in ("training", "validation"):
+                rows = manifest["splits"][split]["segments"]
+                self.assertEqual(len(rows), len({row["segment_id"] for row in rows}))
+                self.assertTrue(all(row["oracle_consistent"] for row in rows))
+                self.assertTrue(all(row["mask_roles"] for row in rows))
+
+    def test_d34_evaluation_suites_and_extended_stack(self):
+        push_suite = ConfiguredCalvinSuite(
+            WORKSPACE / "datasets/calvin_push_6/configs/evaluation.yaml"
+        )
+        general_suite = ConfiguredCalvinSuite(
+            WORKSPACE / "datasets/calvin_general_21/configs/evaluation.yaml"
+        )
+        extended_suite = ConfiguredCalvinSuite(
+            WORKSPACE
+            / "datasets/calvin_full_stack_extended_eval/configs/evaluation.yaml"
+        )
+        self.assertEqual(len(push_suite.task_names()), 6)
+        self.assertEqual(len(general_suite.task_names()), 21)
+        extended = extended_suite.episodes("stack_block")
+        self.assertEqual(len(extended), 21)
+        self.assertTrue(
+            all(row.episode_variant == "full_pick_and_stack_extended" for row in extended)
+        )
+        manifest = json.loads(
+            (
+                WORKSPACE
+                / "datasets/calvin_full_stack_extended_eval/manifests/segments.json"
+            ).read_text()
+        )
+        rows = manifest["splits"]["validation"]["segments"]
+        self.assertTrue(manifest["evaluation_only"])
+        self.assertTrue(all(not row["training_eligible"] for row in rows))
+        self.assertEqual(
+            {row["evaluation_tier"] for row in rows},
+            {"official", "extended_backtracked"},
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

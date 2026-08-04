@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "source_dataset": "calvin/dataset/task_D_D",
+  "frequency_hz": 30,
+  "overlap_threshold": 0.5,
+  "max_start_repair_frames": 15,
+  "max_end_repair_frames": 15,
+  "oracle_config": "calvin/calvin_models/conf/callbacks/rollout/tasks/new_playtable_tasks.yaml",
+  "routing": {
+    "push": [
+      "push_blue_block_left", "push_blue_block_right",
+      "push_pink_block_left", "push_pink_block_right",
+      "push_red_block_left", "push_red_block_right"
+    ],
+    "rotate": [
+      "rotate_blue_block_left", "rotate_blue_block_right",
+      "rotate_pink_block_left", "rotate_pink_block_right",
+      "rotate_red_block_left", "rotate_red_block_right"
+    ],
+    "stack": ["stack_block"],
+    "general": [
+      "close_drawer",
+      "lift_blue_block_drawer", "lift_blue_block_slider", "lift_blue_block_table",
+      "lift_pink_block_drawer", "lift_pink_block_slider", "lift_pink_block_table",
+      "lift_red_block_drawer", "lift_red_block_slider", "lift_red_block_table",
+      "move_slider_left", "move_slider_right", "open_drawer",
+      "place_in_drawer", "place_in_slider", "push_into_drawer",
+      "turn_off_led", "turn_off_lightbulb", "turn_on_led", "turn_on_lightbulb",
+      "unstack_block"
+    ]
+  },
+  "datasets": {
+    "calvin_push_6": {
+      "group": "push",
+      "mask_style": {
+        "alpha": 0.0,
+        "outline_width_px": 2,
+        "outline_color": [0, 0, 0],
+        "outline_halo_width_px": 0,
+        "outline_halo_color": [255, 255, 255]
+      },
+      "instructions": {
+        "push_blue_block_left": "push the blue block to the left",
+        "push_blue_block_right": "push the blue block to the right",
+        "push_pink_block_left": "push the pink block to the left",
+        "push_pink_block_right": "push the pink block to the right",
+        "push_red_block_left": "push the red block to the left",
+        "push_red_block_right": "push the red block to the right"
+      }
+    },
+    "calvin_general_21": {
+      "group": "general",
+      "mask_style": {
+        "alpha": 0.0,
+        "outline_width_px": 2,
+        "outline_color": [0, 0, 0],
+        "outline_colors": {"source": [0, 0, 0], "target": [0, 0, 0], "destination": [0, 255, 255]},
+        "outline_halo_width_px": 0,
+        "outline_halo_widths": {"destination": 1},
+        "outline_halo_color": [255, 255, 255]
+      },
+      "instructions": {
+        "close_drawer": "close the black-outlined drawer",
+        "lift_blue_block_drawer": "pick up the black-outlined block from the drawer",
+        "lift_blue_block_slider": "pick up the black-outlined block from the sliding cabinet",
+        "lift_blue_block_table": "pick up the black-outlined block from the table",
+        "lift_pink_block_drawer": "pick up the black-outlined block from the drawer",
+        "lift_pink_block_slider": "pick up the black-outlined block from the sliding cabinet",
+        "lift_pink_block_table": "pick up the black-outlined block from the table",
+        "lift_red_block_drawer": "pick up the black-outlined block from the drawer",
+        "lift_red_block_slider": "pick up the black-outlined block from the sliding cabinet",
+        "lift_red_block_table": "pick up the black-outlined block from the table",
+        "move_slider_left": "move the black-outlined sliding door to the left",
+        "move_slider_right": "move the black-outlined sliding door to the right",
+        "open_drawer": "open the black-outlined drawer",
+        "place_in_drawer": "place the held block in the cyan-outlined drawer",
+        "place_in_slider": "place the held block in the cyan-outlined sliding cabinet",
+        "push_into_drawer": "push the black-outlined block into the cyan-outlined drawer",
+        "turn_off_led": "press the black-outlined button to turn off the led",
+        "turn_off_lightbulb": "move the black-outlined switch to turn off the lightbulb",
+        "turn_on_led": "press the black-outlined button to turn on the led",
+        "turn_on_lightbulb": "move the black-outlined switch to turn on the lightbulb",
+        "unstack_block": "remove the black-outlined block from the stack"
+      }
+    }
+  },
+  "stack_auxiliary_training": {
+    "base_dataset": "calvin_stack_pick_place_persistent",
+    "routing_owner": "stack_block",
+    "recommended_sampling": {
+      "full_pick_and_stack": 0.35,
+      "held_start_stack": 0.25,
+      "table_pick": 0.20,
+      "place_in_drawer": 0.10,
+      "place_in_slider": 0.10
+    }
+  }
+}

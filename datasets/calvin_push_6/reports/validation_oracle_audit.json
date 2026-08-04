@@ -1,0 +1,4105 @@
+[
+  {
+    "annotation_index": 104,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "go push the blue block to the left",
+    "start": 32293,
+    "end": 32357,
+    "num_frames": 65,
+    "original_start": 32293,
+    "original_end": 32357,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 223,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "go push the blue block to the left",
+    "start": 32296,
+    "end": 32360,
+    "num_frames": 65,
+    "original_start": 32296,
+    "original_end": 32360,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 232,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "go slide the blue block to the left",
+    "start": 32320,
+    "end": 32368,
+    "num_frames": 49,
+    "original_start": 32321,
+    "original_end": 32368,
+    "start_extension_frames": 1,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 233,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "go slide the blue block to the left",
+    "start": 32318,
+    "end": 32364,
+    "num_frames": 47,
+    "original_start": 32318,
+    "original_end": 32364,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 480,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "slide the blue block towards the left",
+    "start": 32290,
+    "end": 32354,
+    "num_frames": 65,
+    "original_start": 32290,
+    "original_end": 32354,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 280,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "push the blue block towards the left",
+    "start": 41957,
+    "end": 42021,
+    "num_frames": 65,
+    "original_start": 41957,
+    "original_end": 42021,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 613,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "go push the blue block to the left",
+    "start": 48812,
+    "end": 48858,
+    "num_frames": 47,
+    "original_start": 48812,
+    "original_end": 48858,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 63,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "push left the blue block",
+    "start": 222101,
+    "end": 222165,
+    "num_frames": 65,
+    "original_start": 222101,
+    "original_end": 222165,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 225,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "slide the blue block towards the left",
+    "start": 222092,
+    "end": 222156,
+    "num_frames": 65,
+    "original_start": 222092,
+    "original_end": 222156,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 236,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "slide the blue block to the left",
+    "start": 222094,
+    "end": 222158,
+    "num_frames": 65,
+    "original_start": 222094,
+    "original_end": 222158,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 357,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "slide the blue block towards the left",
+    "start": 222100,
+    "end": 222164,
+    "num_frames": 65,
+    "original_start": 222100,
+    "original_end": 222164,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 627,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "go slide the blue block to the left",
+    "start": 222091,
+    "end": 222155,
+    "num_frames": 65,
+    "original_start": 222091,
+    "original_end": 222155,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 931,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "push the blue block to the left",
+    "start": 230133,
+    "end": 230179,
+    "num_frames": 47,
+    "original_start": 230137,
+    "original_end": 230179,
+    "start_extension_frames": 4,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 985,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "push the blue block to the left",
+    "start": 235970,
+    "end": 236034,
+    "num_frames": 65,
+    "original_start": 235970,
+    "original_end": 236034,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 275,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "slide left the blue block",
+    "start": 238952,
+    "end": 238991,
+    "num_frames": 40,
+    "original_start": 238953,
+    "original_end": 238991,
+    "start_extension_frames": 1,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 488,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "go push the blue block to the left",
+    "start": 238938,
+    "end": 238983,
+    "num_frames": 46,
+    "original_start": 238938,
+    "original_end": 238983,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 727,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "push the blue block to the left",
+    "start": 238940,
+    "end": 238984,
+    "num_frames": 45,
+    "original_start": 238940,
+    "original_end": 238984,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 872,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "push the blue block towards the left",
+    "start": 238941,
+    "end": 238985,
+    "num_frames": 45,
+    "original_start": 238941,
+    "original_end": 238985,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 103,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "push the blue block to the left",
+    "start": 401130,
+    "end": 401194,
+    "num_frames": 65,
+    "original_start": 401130,
+    "original_end": 401194,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 487,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "go push the blue block to the left",
+    "start": 401133,
+    "end": 401197,
+    "num_frames": 65,
+    "original_start": 401133,
+    "original_end": 401197,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 747,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "slide left the blue block",
+    "start": 401158,
+    "end": 401206,
+    "num_frames": 49,
+    "original_start": 401158,
+    "original_end": 401206,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 483,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "slide the blue block towards the left",
+    "start": 402814,
+    "end": 402878,
+    "num_frames": 65,
+    "original_start": 402814,
+    "original_end": 402878,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 350,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "slide the blue block towards the left",
+    "start": 408253,
+    "end": 408317,
+    "num_frames": 65,
+    "original_start": 408253,
+    "original_end": 408317,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 639,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "push left the blue block",
+    "start": 408276,
+    "end": 408324,
+    "num_frames": 49,
+    "original_start": 408276,
+    "original_end": 408324,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 766,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "slide left the blue block",
+    "start": 408250,
+    "end": 408314,
+    "num_frames": 65,
+    "original_start": 408250,
+    "original_end": 408314,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 96,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "push the blue block towards the left",
+    "start": 416420,
+    "end": 416484,
+    "num_frames": 65,
+    "original_start": 416420,
+    "original_end": 416484,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 484,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "go push the blue block to the left",
+    "start": 416417,
+    "end": 416481,
+    "num_frames": 65,
+    "original_start": 416417,
+    "original_end": 416481,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 765,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "sweep the blue block to the left",
+    "start": 416415,
+    "end": 416479,
+    "num_frames": 65,
+    "original_start": 416415,
+    "original_end": 416479,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 846,
+    "calvin_task": "push_blue_block_left",
+    "original_instruction": "push the blue block towards the left",
+    "start": 416419,
+    "end": 416483,
+    "num_frames": 65,
+    "original_start": 416419,
+    "original_end": 416483,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 217,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "slide right the blue block",
+    "start": 21580,
+    "end": 21644,
+    "num_frames": 65,
+    "original_start": 21580,
+    "original_end": 21644,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 365,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "push right the blue block",
+    "start": 21585,
+    "end": 21649,
+    "num_frames": 65,
+    "original_start": 21585,
+    "original_end": 21649,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 366,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "slide right the blue block",
+    "start": 21584,
+    "end": 21648,
+    "num_frames": 65,
+    "original_start": 21584,
+    "original_end": 21648,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 491,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "go push the blue block to the right",
+    "start": 21582,
+    "end": 21646,
+    "num_frames": 65,
+    "original_start": 21582,
+    "original_end": 21646,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 767,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "sweep the blue block to the right",
+    "start": 21577,
+    "end": 21641,
+    "num_frames": 65,
+    "original_start": 21577,
+    "original_end": 21641,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [
+      "block_blue"
+    ],
+    "source_object": "block_blue",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_holding_object"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 768,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "slide the blue block to the right",
+    "start": 21581,
+    "end": 21645,
+    "num_frames": 65,
+    "original_start": 21581,
+    "original_end": 21645,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 878,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "go slide the blue block to the right",
+    "start": 21586,
+    "end": 21650,
+    "num_frames": 65,
+    "original_start": 21586,
+    "original_end": 21650,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 108,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "push right the blue block",
+    "start": 21674,
+    "end": 21721,
+    "num_frames": 48,
+    "original_start": 21674,
+    "original_end": 21721,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 359,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "slide the blue block to the right",
+    "start": 21652,
+    "end": 21716,
+    "num_frames": 65,
+    "original_start": 21652,
+    "original_end": 21716,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 493,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "slide the blue block to the right",
+    "start": 21653,
+    "end": 21717,
+    "num_frames": 65,
+    "original_start": 21653,
+    "original_end": 21717,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 877,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "sweep the blue block to the right",
+    "start": 21654,
+    "end": 21718,
+    "num_frames": 65,
+    "original_start": 21654,
+    "original_end": 21718,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 220,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "go push the blue block to the right",
+    "start": 21722,
+    "end": 21760,
+    "num_frames": 39,
+    "original_start": 21722,
+    "original_end": 21760,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 228,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "sweep the blue block to the right",
+    "start": 21739,
+    "end": 21773,
+    "num_frames": 35,
+    "original_start": 21739,
+    "original_end": 21773,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 238,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "slide right the blue block",
+    "start": 21728,
+    "end": 21764,
+    "num_frames": 37,
+    "original_start": 21728,
+    "original_end": 21764,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 346,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "push the blue block towards the right",
+    "start": 21728,
+    "end": 21761,
+    "num_frames": 34,
+    "original_start": 21728,
+    "original_end": 21761,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 354,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "push the blue block to the right",
+    "start": 21733,
+    "end": 21766,
+    "num_frames": 34,
+    "original_start": 21733,
+    "original_end": 21766,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 644,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "go push the blue block to the right",
+    "start": 21737,
+    "end": 21772,
+    "num_frames": 36,
+    "original_start": 21737,
+    "original_end": 21772,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 805,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "slide the blue block to the right",
+    "start": 21725,
+    "end": 21768,
+    "num_frames": 44,
+    "original_start": 21725,
+    "original_end": 21768,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 881,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "slide the blue block towards the right",
+    "start": 21720,
+    "end": 21763,
+    "num_frames": 44,
+    "original_start": 21720,
+    "original_end": 21763,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 358,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "go slide the blue block to the right",
+    "start": 37764,
+    "end": 37828,
+    "num_frames": 65,
+    "original_start": 37764,
+    "original_end": 37828,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 642,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "go push the blue block to the right",
+    "start": 37771,
+    "end": 37835,
+    "num_frames": 65,
+    "original_start": 37771,
+    "original_end": 37835,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 237,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "slide right the blue block",
+    "start": 227840,
+    "end": 227904,
+    "num_frames": 65,
+    "original_start": 227840,
+    "original_end": 227904,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 110,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "push the blue block towards the right",
+    "start": 400919,
+    "end": 400983,
+    "num_frames": 65,
+    "original_start": 400919,
+    "original_end": 400983,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 492,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "push the blue block to the right",
+    "start": 400938,
+    "end": 400989,
+    "num_frames": 52,
+    "original_start": 400942,
+    "original_end": 400989,
+    "start_extension_frames": 4,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 229,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "push right the blue block",
+    "start": 415874,
+    "end": 415926,
+    "num_frames": 53,
+    "original_start": 415878,
+    "original_end": 415926,
+    "start_extension_frames": 4,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 111,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "slide right the blue block",
+    "start": 417597,
+    "end": 417646,
+    "num_frames": 50,
+    "original_start": 417599,
+    "original_end": 417646,
+    "start_extension_frames": 2,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 344,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "slide the blue block towards the right",
+    "start": 417577,
+    "end": 417641,
+    "num_frames": 65,
+    "original_start": 417577,
+    "original_end": 417641,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 422,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "push the blue block to the right",
+    "start": 417576,
+    "end": 417640,
+    "num_frames": 65,
+    "original_start": 417576,
+    "original_end": 417640,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 645,
+    "calvin_task": "push_blue_block_right",
+    "original_instruction": "slide right the blue block",
+    "start": 417597,
+    "end": 417648,
+    "num_frames": 52,
+    "original_start": 417601,
+    "original_end": 417648,
+    "start_extension_frames": 4,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_blue",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_blue"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 102,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "slide the pink block towards the left",
+    "start": 19975,
+    "end": 20039,
+    "num_frames": 65,
+    "original_start": 19975,
+    "original_end": 20039,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 361,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "push left the pink block",
+    "start": 19978,
+    "end": 20042,
+    "num_frames": 65,
+    "original_start": 19978,
+    "original_end": 20042,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 364,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "slide the pink block to the left",
+    "start": 19979,
+    "end": 20043,
+    "num_frames": 65,
+    "original_start": 19979,
+    "original_end": 20043,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 762,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "push the pink block to the left",
+    "start": 19981,
+    "end": 20045,
+    "num_frames": 65,
+    "original_start": 19981,
+    "original_end": 20045,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 1004,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "go slide the pink block to the left",
+    "start": 19973,
+    "end": 20037,
+    "num_frames": 65,
+    "original_start": 19973,
+    "original_end": 20037,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 234,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "push left the pink block",
+    "start": 34240,
+    "end": 34304,
+    "num_frames": 65,
+    "original_start": 34240,
+    "original_end": 34304,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 356,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "slide the pink block towards the left",
+    "start": 34246,
+    "end": 34310,
+    "num_frames": 65,
+    "original_start": 34246,
+    "original_end": 34310,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 585,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "slide the pink block towards the left",
+    "start": 34244,
+    "end": 34308,
+    "num_frames": 65,
+    "original_start": 34244,
+    "original_end": 34308,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 640,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "sweep the pink block to the left",
+    "start": 34242,
+    "end": 34306,
+    "num_frames": 65,
+    "original_start": 34242,
+    "original_end": 34306,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 984,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "push the pink block towards the left",
+    "start": 34250,
+    "end": 34314,
+    "num_frames": 65,
+    "original_start": 34250,
+    "original_end": 34314,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 990,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "push left the pink block",
+    "start": 34249,
+    "end": 34313,
+    "num_frames": 65,
+    "original_start": 34249,
+    "original_end": 34313,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 638,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "go slide the pink block to the left",
+    "start": 34291,
+    "end": 34341,
+    "num_frames": 51,
+    "original_start": 34294,
+    "original_end": 34341,
+    "start_extension_frames": 3,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 83,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "go push the pink block to the left",
+    "start": 39500,
+    "end": 39568,
+    "num_frames": 69,
+    "original_start": 39504,
+    "original_end": 39568,
+    "start_extension_frames": 4,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 212,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "go push the pink block to the left",
+    "start": 39525,
+    "end": 39563,
+    "num_frames": 39,
+    "original_start": 39525,
+    "original_end": 39563,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 486,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "slide the pink block towards the left",
+    "start": 39523,
+    "end": 39566,
+    "num_frames": 44,
+    "original_start": 39523,
+    "original_end": 39566,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 489,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "slide the pink block towards the left",
+    "start": 39525,
+    "end": 39565,
+    "num_frames": 41,
+    "original_start": 39525,
+    "original_end": 39565,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 601,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "go slide the pink block to the left",
+    "start": 39511,
+    "end": 39575,
+    "num_frames": 65,
+    "original_start": 39511,
+    "original_end": 39575,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 634,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "slide the pink block towards the left",
+    "start": 39510,
+    "end": 39574,
+    "num_frames": 65,
+    "original_start": 39510,
+    "original_end": 39574,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 635,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "go slide the pink block to the left",
+    "start": 39500,
+    "end": 39567,
+    "num_frames": 68,
+    "original_start": 39503,
+    "original_end": 39567,
+    "start_extension_frames": 3,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 933,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "push the pink block towards the left",
+    "start": 39509,
+    "end": 39573,
+    "num_frames": 65,
+    "original_start": 39509,
+    "original_end": 39573,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 266,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "push left the pink block",
+    "start": 228000,
+    "end": 228043,
+    "num_frames": 44,
+    "original_start": 228000,
+    "original_end": 228043,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 623,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "push the pink block to the left",
+    "start": 228000,
+    "end": 228044,
+    "num_frames": 45,
+    "original_start": 228002,
+    "original_end": 228044,
+    "start_extension_frames": 2,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 1007,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "push the pink block to the left",
+    "start": 241024,
+    "end": 241070,
+    "num_frames": 47,
+    "original_start": 241024,
+    "original_end": 241070,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 227,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "slide left the pink block",
+    "start": 414600,
+    "end": 414664,
+    "num_frames": 65,
+    "original_start": 414600,
+    "original_end": 414664,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 360,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "push the pink block to the left",
+    "start": 414588,
+    "end": 414652,
+    "num_frames": 65,
+    "original_start": 414588,
+    "original_end": 414652,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 479,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "slide the pink block towards the left",
+    "start": 414592,
+    "end": 414656,
+    "num_frames": 65,
+    "original_start": 414592,
+    "original_end": 414656,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 628,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "sweep the pink block to the left",
+    "start": 414590,
+    "end": 414654,
+    "num_frames": 65,
+    "original_start": 414590,
+    "original_end": 414654,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 753,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "push the pink block to the left",
+    "start": 414584,
+    "end": 414648,
+    "num_frames": 65,
+    "original_start": 414584,
+    "original_end": 414648,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 1003,
+    "calvin_task": "push_pink_block_left",
+    "original_instruction": "push left the pink block",
+    "start": 414579,
+    "end": 414643,
+    "num_frames": 65,
+    "original_start": 414579,
+    "original_end": 414643,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "source_object": "block_pink",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_holding_object"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 755,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "go slide the pink block to the right",
+    "start": 12833,
+    "end": 12881,
+    "num_frames": 49,
+    "original_start": 12837,
+    "original_end": 12881,
+    "start_extension_frames": 4,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 1005,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "slide the pink block towards the right",
+    "start": 12833,
+    "end": 12878,
+    "num_frames": 46,
+    "original_start": 12835,
+    "original_end": 12878,
+    "start_extension_frames": 2,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 637,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "push the pink block towards the right",
+    "start": 27327,
+    "end": 27372,
+    "num_frames": 46,
+    "original_start": 27327,
+    "original_end": 27372,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 323,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "slide the pink block towards the right",
+    "start": 34360,
+    "end": 34404,
+    "num_frames": 45,
+    "original_start": 34360,
+    "original_end": 34404,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 351,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "sweep the pink block to the right",
+    "start": 34360,
+    "end": 34408,
+    "num_frames": 49,
+    "original_start": 34360,
+    "original_end": 34408,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 498,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "slide right the pink block",
+    "start": 34339,
+    "end": 34414,
+    "num_frames": 76,
+    "original_start": 34350,
+    "original_end": 34414,
+    "start_extension_frames": 11,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 643,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "push right the pink block",
+    "start": 34371,
+    "end": 34405,
+    "num_frames": 35,
+    "original_start": 34371,
+    "original_end": 34405,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 745,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "push the pink block to the right",
+    "start": 34363,
+    "end": 34410,
+    "num_frames": 48,
+    "original_start": 34363,
+    "original_end": 34410,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 1010,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "push the pink block to the right",
+    "start": 34372,
+    "end": 34407,
+    "num_frames": 36,
+    "original_start": 34372,
+    "original_end": 34407,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 230,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "slide the pink block towards the right",
+    "start": 39644,
+    "end": 39708,
+    "num_frames": 65,
+    "original_start": 39644,
+    "original_end": 39708,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 466,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "sweep the pink block to the right",
+    "start": 240731,
+    "end": 240777,
+    "num_frames": 47,
+    "original_start": 240731,
+    "original_end": 240777,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 235,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "go push the pink block to the right",
+    "start": 400519,
+    "end": 400557,
+    "num_frames": 39,
+    "original_start": 400519,
+    "original_end": 400557,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 345,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "slide right the pink block",
+    "start": 400514,
+    "end": 400560,
+    "num_frames": 47,
+    "original_start": 400514,
+    "original_end": 400560,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 363,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "push the pink block towards the right",
+    "start": 400499,
+    "end": 400563,
+    "num_frames": 65,
+    "original_start": 400499,
+    "original_end": 400563,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 478,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "go push the pink block to the right",
+    "start": 400527,
+    "end": 400562,
+    "num_frames": 36,
+    "original_start": 400527,
+    "original_end": 400562,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 636,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "slide the pink block to the right",
+    "start": 400504,
+    "end": 400568,
+    "num_frames": 65,
+    "original_start": 400504,
+    "original_end": 400568,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 968,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "slide the pink block towards the right",
+    "start": 400501,
+    "end": 400565,
+    "num_frames": 65,
+    "original_start": 400501,
+    "original_end": 400565,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 106,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "push right the pink block",
+    "start": 404279,
+    "end": 404343,
+    "num_frames": 65,
+    "original_start": 404279,
+    "original_end": 404343,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 226,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "slide the pink block towards the right",
+    "start": 404283,
+    "end": 404347,
+    "num_frames": 65,
+    "original_start": 404283,
+    "original_end": 404347,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 860,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "go slide the pink block to the right",
+    "start": 404291,
+    "end": 404355,
+    "num_frames": 65,
+    "original_start": 404291,
+    "original_end": 404355,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 861,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "push the pink block to the right",
+    "start": 404282,
+    "end": 404346,
+    "num_frames": 65,
+    "original_start": 404282,
+    "original_end": 404346,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 876,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "slide the pink block towards the right",
+    "start": 404281,
+    "end": 404345,
+    "num_frames": 65,
+    "original_start": 404281,
+    "original_end": 404345,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 1008,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "sweep the pink block to the right",
+    "start": 404284,
+    "end": 404348,
+    "num_frames": 65,
+    "original_start": 404284,
+    "original_end": 404348,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 109,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "sweep the pink block to the right",
+    "start": 414511,
+    "end": 414575,
+    "num_frames": 65,
+    "original_start": 414511,
+    "original_end": 414575,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 224,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "push the pink block towards the right",
+    "start": 414530,
+    "end": 414573,
+    "num_frames": 44,
+    "original_start": 414530,
+    "original_end": 414573,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 362,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "push right the pink block",
+    "start": 414525,
+    "end": 414571,
+    "num_frames": 47,
+    "original_start": 414525,
+    "original_end": 414571,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 764,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "push the pink block to the right",
+    "start": 416833,
+    "end": 416879,
+    "num_frames": 47,
+    "original_start": 416833,
+    "original_end": 416879,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 875,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "push the pink block to the right",
+    "start": 416833,
+    "end": 416881,
+    "num_frames": 49,
+    "original_start": 416833,
+    "original_end": 416881,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 1009,
+    "calvin_task": "push_pink_block_right",
+    "original_instruction": "slide right the pink block",
+    "start": 416808,
+    "end": 416872,
+    "num_frames": 65,
+    "original_start": 416808,
+    "original_end": 416872,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_pink",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_pink"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 413,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "push the red block towards the left",
+    "start": 2806,
+    "end": 2870,
+    "num_frames": 65,
+    "original_start": 2806,
+    "original_end": 2870,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 472,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "push the red block to the left",
+    "start": 2807,
+    "end": 2871,
+    "num_frames": 65,
+    "original_start": 2807,
+    "original_end": 2871,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 65,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "sweep the red block to the left",
+    "start": 22033,
+    "end": 22082,
+    "num_frames": 50,
+    "original_start": 22034,
+    "original_end": 22082,
+    "start_extension_frames": 1,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 178,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "slide the red block towards the left",
+    "start": 36988,
+    "end": 37059,
+    "num_frames": 72,
+    "original_start": 36995,
+    "original_end": 37059,
+    "start_extension_frames": 7,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 348,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "slide the red block towards the left",
+    "start": 36988,
+    "end": 37066,
+    "num_frames": 79,
+    "original_start": 37002,
+    "original_end": 37066,
+    "start_extension_frames": 14,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 607,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "push left the red block",
+    "start": 36988,
+    "end": 37067,
+    "num_frames": 80,
+    "original_start": 37003,
+    "original_end": 37067,
+    "start_extension_frames": 15,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 341,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "push left the red block",
+    "start": 44984,
+    "end": 45048,
+    "num_frames": 65,
+    "original_start": 44984,
+    "original_end": 45048,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 470,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "push the red block to the left",
+    "start": 44992,
+    "end": 45056,
+    "num_frames": 65,
+    "original_start": 44992,
+    "original_end": 45056,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 720,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "slide the red block towards the left",
+    "start": 44985,
+    "end": 45049,
+    "num_frames": 65,
+    "original_start": 44985,
+    "original_end": 45049,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 989,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "push the red block towards the left",
+    "start": 44991,
+    "end": 45055,
+    "num_frames": 65,
+    "original_start": 44991,
+    "original_end": 45055,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 1000,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "go push the red block to the left",
+    "start": 45029,
+    "end": 45093,
+    "num_frames": 65,
+    "original_start": 45029,
+    "original_end": 45093,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 17,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "go slide the red block to the left",
+    "start": 45204,
+    "end": 45268,
+    "num_frames": 65,
+    "original_start": 45204,
+    "original_end": 45268,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 189,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "go push the red block to the left",
+    "start": 45206,
+    "end": 45270,
+    "num_frames": 65,
+    "original_start": 45206,
+    "original_end": 45270,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 214,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "go slide the red block to the left",
+    "start": 45202,
+    "end": 45266,
+    "num_frames": 65,
+    "original_start": 45202,
+    "original_end": 45266,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 966,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "sweep the red block to the left",
+    "start": 45221,
+    "end": 45285,
+    "num_frames": 65,
+    "original_start": 45221,
+    "original_end": 45285,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 983,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "slide the red block to the left",
+    "start": 45207,
+    "end": 45271,
+    "num_frames": 65,
+    "original_start": 45207,
+    "original_end": 45271,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 994,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "go push the red block to the left",
+    "start": 45209,
+    "end": 45273,
+    "num_frames": 65,
+    "original_start": 45209,
+    "original_end": 45273,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 73,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "slide left the red block",
+    "start": 45258,
+    "end": 45306,
+    "num_frames": 49,
+    "original_start": 45267,
+    "original_end": 45306,
+    "start_extension_frames": 9,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 338,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "push left the red block",
+    "start": 45258,
+    "end": 45314,
+    "num_frames": 57,
+    "original_start": 45271,
+    "original_end": 45314,
+    "start_extension_frames": 13,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 862,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "slide the red block to the left",
+    "start": 406052,
+    "end": 406116,
+    "num_frames": 65,
+    "original_start": 406052,
+    "original_end": 406116,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 995,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "go push the red block to the left",
+    "start": 406072,
+    "end": 406118,
+    "num_frames": 47,
+    "original_start": 406072,
+    "original_end": 406118,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 997,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "push the red block to the left",
+    "start": 406074,
+    "end": 406123,
+    "num_frames": 50,
+    "original_start": 406076,
+    "original_end": 406123,
+    "start_extension_frames": 2,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 218,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "slide left the red block",
+    "start": 410160,
+    "end": 410224,
+    "num_frames": 65,
+    "original_start": 410160,
+    "original_end": 410224,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 761,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "slide the red block towards the left",
+    "start": 410161,
+    "end": 410225,
+    "num_frames": 65,
+    "original_start": 410161,
+    "original_end": 410225,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 595,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "slide the red block towards the left",
+    "start": 415566,
+    "end": 415630,
+    "num_frames": 65,
+    "original_start": 415566,
+    "original_end": 415630,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 742,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "push the red block to the left",
+    "start": 415564,
+    "end": 415628,
+    "num_frames": 65,
+    "original_start": 415564,
+    "original_end": 415628,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 760,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "push the red block to the left",
+    "start": 415565,
+    "end": 415629,
+    "num_frames": 65,
+    "original_start": 415565,
+    "original_end": 415629,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 992,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "sweep the red block to the left",
+    "start": 417856,
+    "end": 417900,
+    "num_frames": 45,
+    "original_start": 417858,
+    "original_end": 417900,
+    "start_extension_frames": 2,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 763,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "slide the red block to the left",
+    "start": 419315,
+    "end": 419379,
+    "num_frames": 65,
+    "original_start": 419315,
+    "original_end": 419379,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 630,
+    "calvin_task": "push_red_block_left",
+    "original_instruction": "go slide the red block to the left",
+    "start": 420336,
+    "end": 420384,
+    "num_frames": 49,
+    "original_start": 420336,
+    "original_end": 420384,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 84,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "slide the red block towards the right",
+    "start": 2354,
+    "end": 2418,
+    "num_frames": 65,
+    "original_start": 2354,
+    "original_end": 2418,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 219,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "go push the red block to the right",
+    "start": 2356,
+    "end": 2420,
+    "num_frames": 65,
+    "original_start": 2356,
+    "original_end": 2420,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 297,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "push the red block to the right",
+    "start": 2351,
+    "end": 2415,
+    "num_frames": 65,
+    "original_start": 2351,
+    "original_end": 2415,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 330,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "go push the red block to the right",
+    "start": 2359,
+    "end": 2423,
+    "num_frames": 65,
+    "original_start": 2359,
+    "original_end": 2423,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 632,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "sweep the red block to the right",
+    "start": 2357,
+    "end": 2421,
+    "num_frames": 65,
+    "original_start": 2357,
+    "original_end": 2421,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 981,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "push right the red block",
+    "start": 2358,
+    "end": 2422,
+    "num_frames": 65,
+    "original_start": 2358,
+    "original_end": 2422,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 566,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "push the red block to the right",
+    "start": 15864,
+    "end": 15910,
+    "num_frames": 47,
+    "original_start": 15867,
+    "original_end": 15910,
+    "start_extension_frames": 3,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 477,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "push the red block towards the right",
+    "start": 25590,
+    "end": 25654,
+    "num_frames": 65,
+    "original_start": 25590,
+    "original_end": 25654,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 848,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "push the red block to the right",
+    "start": 44758,
+    "end": 44822,
+    "num_frames": 65,
+    "original_start": 44758,
+    "original_end": 44822,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 541,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "push the red block towards the right",
+    "start": 45116,
+    "end": 45180,
+    "num_frames": 65,
+    "original_start": 45116,
+    "original_end": 45180,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 625,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "push right the red block",
+    "start": 45132,
+    "end": 45196,
+    "num_frames": 65,
+    "original_start": 45132,
+    "original_end": 45196,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 993,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "push the red block to the right",
+    "start": 45136,
+    "end": 45202,
+    "num_frames": 67,
+    "original_start": 45138,
+    "original_end": 45202,
+    "start_extension_frames": 2,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 757,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "push the red block towards the right",
+    "start": 236126,
+    "end": 236190,
+    "num_frames": 65,
+    "original_start": 236126,
+    "original_end": 236190,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 758,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "slide the red block towards the right",
+    "start": 402668,
+    "end": 402712,
+    "num_frames": 45,
+    "original_start": 402670,
+    "original_end": 402712,
+    "start_extension_frames": 2,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 56,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "slide the red block to the right",
+    "start": 410080,
+    "end": 410144,
+    "num_frames": 65,
+    "original_start": 410080,
+    "original_end": 410144,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 81,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "go slide the red block to the right",
+    "start": 410086,
+    "end": 410150,
+    "num_frames": 65,
+    "original_start": 410086,
+    "original_end": 410150,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 207,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "go slide the red block to the right",
+    "start": 410078,
+    "end": 410142,
+    "num_frames": 65,
+    "original_start": 410078,
+    "original_end": 410142,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 340,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "push the red block towards the right",
+    "start": 410087,
+    "end": 410151,
+    "num_frames": 65,
+    "original_start": 410087,
+    "original_end": 410151,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 475,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "push the red block towards the right",
+    "start": 410091,
+    "end": 410155,
+    "num_frames": 65,
+    "original_start": 410091,
+    "original_end": 410155,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 858,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "slide the red block towards the right",
+    "start": 410082,
+    "end": 410146,
+    "num_frames": 65,
+    "original_start": 410082,
+    "original_end": 410146,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 925,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "go push the red block to the right",
+    "start": 410077,
+    "end": 410141,
+    "num_frames": 65,
+    "original_start": 410077,
+    "original_end": 410141,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 119,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "push the red block to the right",
+    "start": 410351,
+    "end": 410415,
+    "num_frames": 65,
+    "original_start": 410351,
+    "original_end": 410415,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 215,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "slide right the red block",
+    "start": 415776,
+    "end": 415840,
+    "num_frames": 65,
+    "original_start": 415776,
+    "original_end": 415840,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 1002,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "go slide the red block to the right",
+    "start": 415772,
+    "end": 415836,
+    "num_frames": 65,
+    "original_start": 415772,
+    "original_end": 415836,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "oracle_not_satisfied"
+    ],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 334,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "slide right the red block",
+    "start": 419243,
+    "end": 419307,
+    "num_frames": 65,
+    "original_start": 419243,
+    "original_end": 419307,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 347,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "slide the red block towards the right",
+    "start": 419230,
+    "end": 419294,
+    "num_frames": 65,
+    "original_start": 419230,
+    "original_end": 419294,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 633,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "push right the red block",
+    "start": 419237,
+    "end": 419301,
+    "num_frames": 65,
+    "original_start": 419237,
+    "original_end": 419301,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 731,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "push the red block to the right",
+    "start": 419242,
+    "end": 419306,
+    "num_frames": 65,
+    "original_start": 419242,
+    "original_end": 419306,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  },
+  {
+    "annotation_index": 754,
+    "calvin_task": "push_red_block_right",
+    "original_instruction": "slide the red block to the right",
+    "start": 419240,
+    "end": 419304,
+    "num_frames": 65,
+    "original_start": 419240,
+    "original_end": 419304,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": "block_red",
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "source": [
+        {
+          "movable": "block_red"
+        }
+      ]
+    }
+  }
+]

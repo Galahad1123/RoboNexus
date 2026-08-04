@@ -1,0 +1,27 @@
+version: 1
+name: calvin_full_stack_extended_eval
+manifest: datasets/calvin_full_stack_extended_eval/manifests/segments.json
+source_dataset: calvin/dataset/task_D_D
+split: validation
+oracle_config: calvin/calvin_models/conf/callbacks/rollout/tasks/new_playtable_tasks.yaml
+
+defaults:
+  max_steps: 180
+  settle_steps: 0
+
+mask_style:
+  alpha: 0.0
+  outline_width_px: 2
+  outline_color: [0, 0, 0]
+  outline_colors:
+    source: [0, 0, 0]
+    destination: [0, 255, 255]
+  outline_halo_width_px: 0
+  outline_halo_widths:
+    destination: 1
+  outline_halo_color: [255, 255, 255]
+
+tasks:
+  - task: stack_block
+    oracle_task: stack_block
+    success_guard: {gripper: open, min_width_m: 0.04, consecutive_steps: 3}

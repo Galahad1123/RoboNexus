@@ -1,0 +1,25 @@
+version: 1
+name: calvin_push_6
+manifest: datasets/calvin_push_6/manifests/segments.json
+source_dataset: calvin/dataset/task_D_D
+split: validation
+oracle_config: calvin/calvin_models/conf/callbacks/rollout/tasks/new_playtable_tasks.yaml
+
+defaults:
+  max_steps: 120
+  settle_steps: 0
+
+mask_style:
+  alpha: 0.0
+  outline_width_px: 2
+  outline_color: [0, 0, 0]
+  outline_halo_width_px: 0
+  outline_halo_color: [255, 255, 255]
+
+tasks:
+  - {task: push_blue_block_left, oracle_task: push_blue_block_left}
+  - {task: push_blue_block_right, oracle_task: push_blue_block_right}
+  - {task: push_pink_block_left, oracle_task: push_pink_block_left}
+  - {task: push_pink_block_right, oracle_task: push_pink_block_right}
+  - {task: push_red_block_left, oracle_task: push_red_block_left}
+  - {task: push_red_block_right, oracle_task: push_red_block_right}
