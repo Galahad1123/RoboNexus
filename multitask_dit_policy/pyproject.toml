@@ -12,6 +12,7 @@ authors = [
 ]
 requires-python = ">=3.12"  # Holding to the LeRobot Python version for simplicity
 dependencies = [
+    "accelerate>=1.10.0,<2.0.0",
     "torch>=2.9.0",
     "torchvision>=0.15.0",
     "transformers>=5.4.0,<6.0.0",

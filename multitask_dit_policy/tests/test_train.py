@@ -7,6 +7,7 @@ from multitask_dit_policy.train import (
     _validate_dataset_compatibility,
     _validate_validation_config,
 )
+from multitask_dit_policy.train_accelerate import effective_batch_size
 
 
 class SplitEpisodeIndicesTest(unittest.TestCase):
@@ -95,9 +96,7 @@ class TaskBalancedSamplerTest(unittest.TestCase):
                 "dataset_to_index": 1000,
             },
         ]
-        sampler = _build_task_balanced_sampler(
-            episodes, [0, 1], drop_n_last_frames=0, seed=42
-        )
+        sampler = _build_task_balanced_sampler(episodes, [0, 1], drop_n_last_frames=0, seed=42)
         sampled = list(sampler)
         frequent = sum(index < 900 for index in sampled)
         self.assertEqual(len(sampled), 1000)
@@ -111,6 +110,17 @@ class TaskBalancedSamplerTest(unittest.TestCase):
         first = _build_task_balanced_sampler(episodes, [0, 1], 0, seed=7)
         second = _build_task_balanced_sampler(episodes, [0, 1], 0, seed=7)
         self.assertEqual(list(first), list(second))
+
+
+class EffectiveBatchSizeTest(unittest.TestCase):
+    def test_multiplies_per_device_batch_by_process_count(self):
+        self.assertEqual(effective_batch_size(64, 4), 256)
+
+    def test_rejects_non_positive_inputs(self):
+        for batch_size, processes in ((0, 1), (1, 0), (-1, 2)):
+            with self.subTest(batch_size=batch_size, processes=processes):
+                with self.assertRaisesRegex(ValueError, "must both be positive"):
+                    effective_batch_size(batch_size, processes)
 
 
 if __name__ == "__main__":

@@ -141,6 +141,39 @@ NOTE: If you are using the toy `pusht` dataset, the images will be below the def
 --policy.observation_encoder.vision.resize_shape='[224,224]' 
 ```
 
+## Multi-GPU Training with Accelerate
+
+The multi-GPU entry point is separate from the established single-GPU trainer.
+In this command, `batch_size` is the batch size **per GPU**, so the effective
+global batch size is `batch_size * num_processes`:
+
+```bash
+uv run accelerate launch \
+    --multi_gpu \
+    --num_processes=4 \
+    --mixed_precision=fp16 \
+    -m multitask_dit_policy.train_accelerate \
+    --dataset_path=/path/to/training_dataset \
+    --val_dataset_path=/path/to/validation_dataset \
+    --val_ratio=0 \
+    --batch_size=64 \
+    --train_steps=15000 \
+    --task_sampling=proportional \
+    --use_amp=true \
+    --output_dir=outputs/calvin_general_21_multi_gpu
+```
+
+The example has a global batch size of 256. Accelerate controls distributed
+mixed precision through `--mixed_precision`; keep `--use_amp=true` consistent
+with that setting. Only the main process writes checkpoints, initializes W&B,
+and displays progress. Saved policies are unwrapped from DDP and remain
+loadable by the existing inference code.
+
+For an initial multi-GPU smoke test, use a new output directory and a small
+number of steps. To compare against a single-GPU run without changing the
+optimization problem, keep the global batch size, learning rate, and number of
+steps the same.
+
 ## Cloud Training Using Modal
 
 Modal has a great developer experience (along with some great on-demand pricing compared to clouds like GCP), especially when you're just doing small training experiments up to 8 GPUs. I've added a simple script that will deploy training jobs onto modal with specified GPU resources.
