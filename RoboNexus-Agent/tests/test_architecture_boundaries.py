@@ -4,6 +4,8 @@ from pathlib import Path
 
 
 AGENT_ROOT = Path(__file__).resolve().parents[1]
+REPOSITORY_ROOT = AGENT_ROOT.parent
+CALVIN_BACKEND_ROOT = REPOSITORY_ROOT / "backends" / "calvin"
 CANONICAL_PACKAGES = ("domain", "runtime", "ports", "tools", "policies")
 FORBIDDEN_PREFIXES = (
     "qwen_agent",
@@ -31,6 +33,10 @@ def imported_modules(path):
 
 
 class ArchitectureBoundaryTest(unittest.TestCase):
+    def test_calvin_backend_root_contains_no_flat_implementation_modules(self):
+        root_modules = sorted(path.name for path in CALVIN_BACKEND_ROOT.glob("*.py"))
+        self.assertEqual(root_modules, ["__init__.py"])
+
     def test_removed_old_core_directories_do_not_return(self):
         removed = (
             "common",

@@ -4,9 +4,9 @@ from pathlib import Path
 
 import numpy as np
 
-from backends.calvin.event_logger import NullEventLogger
-from backends.calvin.attempt_runner import CalvinSkillAttemptRunner
-from backends.calvin.task_verifier import CalvinOracleTaskVerifier
+from ..logging.event_logger import NullEventLogger
+from .attempt_runner import CalvinSkillAttemptRunner
+from ..verification.task_verifier import CalvinOracleTaskVerifier
 from calvin.evaluation.remote_policy.rollout_engine import (
     derive_episode_seed,
     restoration_metrics,

@@ -9,6 +9,8 @@ class CalvinEnvAdapter:
     def __init__(self, env, policy_metadata):
         self.env = env
         self.metadata = policy_metadata
+        self.current_observation = None
+        self.environment_steps = 0
         self.image_keys = list(policy_metadata["image_keys"])
         expected = {
             "observation.images.static",
@@ -72,6 +74,8 @@ class CalvinEnvAdapter:
             )
         self.env.robot.gripper_action = gripper_command
         observation["robot_obs"][14] = gripper_command
+        self.current_observation = observation
+        self.environment_steps = 0
         return observation
 
     def observation_for_policy(
@@ -119,7 +123,10 @@ class CalvinEnvAdapter:
     def step(self, action):
         action = self.prepare_action(action)
         self.last_executed_action = action.copy()
-        return self.env.step(action)
+        result = self.env.step(action)
+        self.current_observation = result[0]
+        self.environment_steps = getattr(self, "environment_steps", 0) + 1
+        return result
 
     @staticmethod
     def prepare_action(action):

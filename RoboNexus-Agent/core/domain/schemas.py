@@ -108,6 +108,31 @@ class ObservationRef:
 
 
 @dataclass(frozen=True)
+class SceneCapture:
+    """Raw current scene returned by an EnvironmentPort."""
+
+    static_rgb: Any
+    wrist_rgb: Any
+    environment_steps: int
+    robot_summary: Dict[str, Any] = field(default_factory=dict)
+    facility_summary: Dict[str, Any] = field(default_factory=dict)
+
+    def validate(self):
+        if self.static_rgb is None or self.wrist_rgb is None:
+            raise ValueError("scene capture requires static_rgb and wrist_rgb")
+        if (
+            isinstance(self.environment_steps, bool)
+            or not isinstance(self.environment_steps, int)
+            or self.environment_steps < 0
+        ):
+            raise ValueError("scene capture environment_steps must be non-negative")
+        if not isinstance(self.robot_summary, dict):
+            raise ValueError("robot_summary must be a mapping")
+        if not isinstance(self.facility_summary, dict):
+            raise ValueError("facility_summary must be a mapping")
+
+
+@dataclass(frozen=True)
 class GoalInput:
     goal_id: str
     instruction: str

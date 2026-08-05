@@ -131,8 +131,8 @@ def run(args):
         )
         runner = engine
         if args.max_attempts > 1:
-            from backends.calvin.event_logger import JsonlEventLogger
-            from backends.calvin.retry_runner import CalvinOracleRetryAgent
+            from backends.calvin.logging.event_logger import JsonlEventLogger
+            from backends.calvin.execution.retry_runner import CalvinOracleRetryAgent
 
             event_logger = JsonlEventLogger(
                 Path(args.output_dir) / "events.jsonl",
@@ -140,7 +140,7 @@ def run(args):
             )
             recovery = None
             if args.retry_recovery == "oracle-approach":
-                from backends.calvin.approach_recovery import (
+                from backends.calvin.recovery.approach_recovery import (
                     CalvinOracleApproachRecovery,
                 )
 

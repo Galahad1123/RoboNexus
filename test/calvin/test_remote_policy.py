@@ -19,10 +19,10 @@ from rollout_engine import (  # noqa: E402
 from calvin_env_adapter import CalvinEnvAdapter  # noqa: E402
 from model_client import _pack, _unpack  # noqa: E402
 from masking import CalvinGTMaskProvider, MaskOverlay, MaskPerturbation  # noqa: E402
-from backends.calvin.retry_runner import CalvinOracleRetryAgent  # noqa: E402
-from backends.calvin.attempt_runner import CalvinSkillAttemptRunner  # noqa: E402
-from backends.calvin.task_verifier import CalvinOracleTaskVerifier  # noqa: E402
-from backends.calvin.motion_controller import (  # noqa: E402
+from backends.calvin.execution.retry_runner import CalvinOracleRetryAgent  # noqa: E402
+from backends.calvin.execution.attempt_runner import CalvinSkillAttemptRunner  # noqa: E402
+from backends.calvin.verification.task_verifier import CalvinOracleTaskVerifier  # noqa: E402
+from backends.calvin.recovery.motion_controller import (  # noqa: E402
     CalvinCartesianApproachController,
 )
 
@@ -267,6 +267,8 @@ class ConfiguredCalvinSuiteTest(unittest.TestCase):
         self.assertEqual(adapter.last_executed_action[0], 1.0)
         self.assertEqual(adapter.last_executed_action[1], -1.0)
         self.assertEqual(adapter.last_executed_action[6], 1.0)
+        self.assertEqual(adapter.environment_steps, 1)
+        self.assertEqual(adapter.current_observation, result[0])
 
     def test_gripper_action_is_binarized(self):
         import numpy as np

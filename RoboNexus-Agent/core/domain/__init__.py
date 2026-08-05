@@ -11,6 +11,7 @@ from .schemas import (
     ObservationRef,
     Role,
     RuntimeLimits,
+    SceneCapture,
     ToolError,
     ToolResultEnvelope,
     ToolStatus,
@@ -27,8 +28,8 @@ __all__ = [
     "ObservationRef",
     "Role",
     "RuntimeLimits",
+    "SceneCapture",
     "ToolError",
     "ToolResultEnvelope",
     "ToolStatus",
 ]
-

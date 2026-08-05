@@ -1,7 +1,7 @@
 """Backend ports consumed by tools; implementations live outside core."""
 
 from .artifacts import ArtifactStorePort
-from .environment import EnvironmentPort
+from .environment import EnvironmentPort, EnvironmentPortError
 from .grounding import GrounderPort
 from .motion import ApproachControllerPort
 from .skills import SkillExecutorPort
@@ -11,8 +11,8 @@ __all__ = [
     "ApproachControllerPort",
     "ArtifactStorePort",
     "EnvironmentPort",
+    "EnvironmentPortError",
     "GoalVerifierPort",
     "GrounderPort",
     "SkillExecutorPort",
 ]
-

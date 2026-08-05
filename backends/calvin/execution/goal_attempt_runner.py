@@ -8,7 +8,7 @@ import numpy as np
 from core.legacy.execution.schemas import AttemptResult
 
 from .attempt_runner import CalvinSkillAttemptRunner
-from .task_verifier import CalvinOracleTaskVerifier
+from ..verification.task_verifier import CalvinOracleTaskVerifier
 
 
 class CalvinGoalAttemptRunner:

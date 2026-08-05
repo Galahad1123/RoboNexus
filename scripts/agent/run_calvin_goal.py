@@ -16,8 +16,8 @@ for path in (AGENT_ROOT, WORKSPACE):
     if str(path) not in sys.path:
         sys.path.insert(0, str(path))
 
-from backends.calvin.goal_attempt_runner import CalvinGoalAttemptRunner  # noqa: E402
-from backends.calvin.state_inspector import CalvinStateInspector  # noqa: E402
+from backends.calvin.execution.goal_attempt_runner import CalvinGoalAttemptRunner  # noqa: E402
+from backends.calvin.verification.state_inspector import CalvinStateInspector  # noqa: E402
 from calvin.evaluation.remote_policy.calvin_env_adapter import CalvinEnvAdapter  # noqa: E402
 from calvin.evaluation.remote_policy.masking import (  # noqa: E402
     CalvinGTMaskProvider,

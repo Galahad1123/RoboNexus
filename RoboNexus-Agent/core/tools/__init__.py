@@ -2,3 +2,7 @@
 
 # Concrete tools are added in protocol order. Public schemas live in
 # core.domain so CALVIN backends do not depend on qwen-agent.
+
+from .inspect_scene import InspectSceneTool
+
+__all__ = ["InspectSceneTool"]

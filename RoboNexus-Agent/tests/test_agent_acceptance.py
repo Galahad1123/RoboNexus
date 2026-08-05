@@ -4,8 +4,8 @@ from pathlib import Path
 
 import numpy as np
 
-from backends.calvin.goal_attempt_runner import CalvinGoalAttemptRunner
-from backends.calvin.state_inspector import CalvinStateInspector
+from backends.calvin.execution.goal_attempt_runner import CalvinGoalAttemptRunner
+from backends.calvin.verification.state_inspector import CalvinStateInspector
 from core.logging import InMemoryEventLogger
 from core.legacy.orchestration import GoalExecutionConfig, GoalOrchestrator, GoalStatus
 from core.legacy.planning import GoalSpec, ScriptedPlanner

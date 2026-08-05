@@ -215,7 +215,7 @@ conda run -n robonexus-calvin python \
 ## Oracle 原地 retry
 
 `--max-attempts 1`（默认）仍使用原始 clean rollout。大于 1 时才启用
-`backends/calvin/retry_runner.py`：一次尝试超时后不恢复初态，而是从当前仿真状态开启
+`backends/calvin/execution/retry_runner.py`：一次尝试超时后不恢复初态，而是从当前仿真状态开启
 新的 policy session；每次 session 使用独立且可复现的 seed。CALVIN oracle 只负责
 判定任务是否已经成功，第一版不含学习式成功检测。
 

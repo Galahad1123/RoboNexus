@@ -1,6 +1,6 @@
 """Compatibility imports for CALVIN task verification."""
 
-from backends.calvin.task_verifier import (
+from backends.calvin.verification.task_verifier import (
     CalvinOracleTaskVerifier,
     VerificationResult,
 )

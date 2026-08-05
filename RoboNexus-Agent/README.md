@@ -77,7 +77,7 @@ attempt 可以直接使用失败后的当前场景。完成后必须调用 `end_
 attempt 或切换 skill。
 
 CALVIN 环境侧的逐步 action loop 位于仓库级
-`backends/calvin/attempt_runner.py`。旧的 `CalvinOracleRetryAgent` 和
+`backends/calvin/execution/attempt_runner.py`。旧的 `CalvinOracleRetryAgent` 和
 `evaluate.py --max-attempts` 入口保持不变，但内部已委托给可复用的
 `CalvinSkillAttemptRunner`。Oracle verifier 在整个连续 retry episode 中共用首次
 attempt 前的 baseline，并与 clean rollout 使用相同的 success guard 规则。
@@ -96,7 +96,7 @@ replan、skill 和 goal 终止均写入统一的结构化事件接口。
 
 ## CALVIN StateInspector
 
-`backends/calvin/state_inspector.py` 从 CALVIN `scene_obs` 或 `scene_info` 读取固定
+`backends/calvin/verification/state_inspector.py` 从 CALVIN `scene_obs` 或 `scene_info` 读取固定
 设施的绝对状态。第一版覆盖 drawer、slider、lightbulb 和 LED。对于
 open/close、left/right、on/off 任务，如果目标状态已经满足，Orchestrator 会记录
 `skill_skipped` 并直接请求下一步，不调用 DiT。

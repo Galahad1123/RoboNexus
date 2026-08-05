@@ -2,7 +2,7 @@ import unittest
 
 import numpy as np
 
-from backends.calvin.state_inspector import CalvinStateInspector
+from backends.calvin.verification.state_inspector import CalvinStateInspector
 from core.legacy.inspection import InspectionStatus
 
 

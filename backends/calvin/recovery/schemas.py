@@ -1,4 +1,4 @@
-"""Internal result types for the Python-3.8 CALVIN backend."""
+"""Internal recovery result types for the Python-3.8 CALVIN backend."""
 
 from dataclasses import dataclass
 

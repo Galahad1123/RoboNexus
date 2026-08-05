@@ -51,10 +51,10 @@ were removed entirely; their replacements are the interfaces in `core/ports`.
 
 - `core/skills`: 34-skill config, loader, validator;
 - `core/policies`: router, client pool, handshake validation;
-- `backends/calvin/attempt_runner.py`: low-level continuous-scene action loop;
-- `backends/calvin/task_verifier.py`: Oracle atomic verifier;
-- `backends/calvin/state_inspector.py`: facility state and preconditions;
-- `backends/calvin/approach_recovery.py`: candidate implementation for the approach port;
+- `backends/calvin/execution/attempt_runner.py`: low-level continuous-scene action loop;
+- `backends/calvin/verification/task_verifier.py`: Oracle atomic verifier;
+- `backends/calvin/verification/state_inspector.py`: facility state and preconditions;
+- `backends/calvin/recovery/approach_recovery.py`: candidate implementation for the approach port;
 - `calvin/evaluation/remote_policy/calvin_env_adapter.py`: simulator adapter;
 - `calvin/evaluation/remote_policy/masking/`: GT masks and outline renderer;
 - `core/logging`: event sinks;
