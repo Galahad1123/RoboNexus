@@ -1,3 +1,3 @@
-"""Compatibility imports; new code should use :mod:`core.transport.clients`."""
+"""Legacy perception-service client compatibility imports."""
 
-from .transport.clients import *
+from .legacy.transport.clients import *  # noqa: F401,F403

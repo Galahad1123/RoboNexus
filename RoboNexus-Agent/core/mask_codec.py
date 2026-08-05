@@ -1,3 +1,3 @@
-"""Compatibility imports; new code should use :mod:`core.perception.mask_codec`."""
+"""Legacy perception compatibility imports."""
 
-from .perception.mask_codec import *
+from .legacy.perception.mask_codec import *  # noqa: F401,F403

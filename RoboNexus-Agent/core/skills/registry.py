@@ -1,0 +1,190 @@
+"""Strict loader and immutable lookup registry for atomic skills."""
+
+from types import MappingProxyType
+
+from core.config import ConfigValidationError, load_yaml_mapping
+
+from .calvin_d34 import CALVIN_D34_ROUTING, CALVIN_D34_SKILL_IDS
+from .schemas import SkillDefaults, SkillSpec
+
+
+POSITIVE_INTEGER_FIELDS = ("max_steps", "max_attempts", "replan_interval")
+
+
+class SkillRegistry:
+    def __init__(self, name, version, defaults, skills, source):
+        self.name = name
+        self.version = version
+        self.defaults = defaults
+        self.source = source
+        self._skills = MappingProxyType(dict(skills))
+
+    def get(self, skill_id):
+        try:
+            return self._skills[skill_id]
+        except KeyError as exc:
+            raise KeyError("Unknown skill_id {!r}".format(skill_id)) from exc
+
+    def __contains__(self, skill_id):
+        return skill_id in self._skills
+
+    def __len__(self):
+        return len(self._skills)
+
+    def skill_ids(self):
+        return tuple(sorted(self._skills))
+
+    def policy_groups(self):
+        return tuple(sorted({skill.policy_group for skill in self._skills.values()}))
+
+    def by_policy_group(self, policy_group):
+        return tuple(
+            self._skills[skill_id]
+            for skill_id in sorted(self._skills)
+            if self._skills[skill_id].policy_group == policy_group
+        )
+
+
+def _positive_integer(value, path, errors):
+    if isinstance(value, bool) or not isinstance(value, int) or value < 1:
+        errors.append("{} must be a positive integer".format(path))
+        return None
+    return value
+
+
+def _success_guard(value, path, errors):
+    if value is None:
+        return None
+    if not isinstance(value, dict):
+        errors.append("{} must be a mapping".format(path))
+        return None
+    allowed = {"gripper", "min_width_m", "consecutive_steps"}
+    unknown = sorted(set(value) - allowed)
+    if unknown:
+        errors.append("{} has unknown fields: {}".format(path, unknown))
+    if value.get("gripper") not in {"open", "closed"}:
+        errors.append("{}.gripper must be 'open' or 'closed'".format(path))
+    width = value.get("min_width_m")
+    if isinstance(width, bool) or not isinstance(width, (int, float)) or width < 0:
+        errors.append("{}.min_width_m must be a non-negative number".format(path))
+    _positive_integer(value.get("consecutive_steps"), "{}.consecutive_steps".format(path), errors)
+    return dict(value)
+
+
+def load_skill_registry(
+    path,
+    expected_skill_ids=CALVIN_D34_SKILL_IDS,
+    expected_routing=CALVIN_D34_ROUTING,
+):
+    source, data = load_yaml_mapping(path)
+    errors = []
+    unknown_top_level = sorted(set(data) - {"version", "name", "defaults", "skills"})
+    if unknown_top_level:
+        errors.append("unknown top-level fields: {}".format(unknown_top_level))
+    if data.get("version") != 1:
+        errors.append("version must be 1")
+    name = data.get("name")
+    if not isinstance(name, str) or not name.strip():
+        errors.append("name must be a non-empty string")
+
+    raw_defaults = data.get("defaults")
+    if not isinstance(raw_defaults, dict):
+        errors.append("defaults must be a mapping")
+        raw_defaults = {}
+    unknown_defaults = sorted(set(raw_defaults) - set(POSITIVE_INTEGER_FIELDS))
+    if unknown_defaults:
+        errors.append("defaults has unknown fields: {}".format(unknown_defaults))
+    default_values = {
+        field: _positive_integer(raw_defaults.get(field), "defaults.{}".format(field), errors)
+        for field in POSITIVE_INTEGER_FIELDS
+    }
+
+    raw_skills = data.get("skills")
+    if not isinstance(raw_skills, dict):
+        errors.append("skills must be a mapping")
+        raw_skills = {}
+    actual_ids = set(raw_skills)
+    if expected_skill_ids is not None:
+        expected_ids = set(expected_skill_ids)
+        missing = sorted(expected_ids - actual_ids)
+        extra = sorted(actual_ids - expected_ids)
+        if missing:
+            errors.append("skills is missing canonical IDs: {}".format(missing))
+        if extra:
+            errors.append("skills has unknown IDs: {}".format(extra))
+
+    skills = {}
+    allowed_fields = {
+        "instruction",
+        "oracle_task",
+        "policy_group",
+        "max_steps",
+        "max_attempts",
+        "replan_interval",
+        "success_guard",
+    }
+    for skill_id in sorted(raw_skills):
+        raw = raw_skills[skill_id]
+        prefix = "skills.{}".format(skill_id)
+        if not isinstance(skill_id, str) or not skill_id:
+            errors.append("skill IDs must be non-empty strings")
+            continue
+        if not isinstance(raw, dict):
+            errors.append("{} must be a mapping".format(prefix))
+            continue
+        unknown = sorted(set(raw) - allowed_fields)
+        if unknown:
+            errors.append("{} has unknown fields: {}".format(prefix, unknown))
+        instruction = raw.get("instruction")
+        oracle_task = raw.get("oracle_task")
+        policy_group = raw.get("policy_group")
+        if not isinstance(instruction, str) or not instruction.strip():
+            errors.append("{}.instruction must be a non-empty string".format(prefix))
+        if not isinstance(oracle_task, str) or not oracle_task.strip():
+            errors.append("{}.oracle_task must be a non-empty string".format(prefix))
+        elif oracle_task != skill_id:
+            errors.append("{}.oracle_task must equal its canonical skill ID".format(prefix))
+        if not isinstance(policy_group, str) or not policy_group.strip():
+            errors.append("{}.policy_group must be a non-empty string".format(prefix))
+        elif expected_routing is not None:
+            expected_group = next(
+                (
+                    group
+                    for group, group_skill_ids in expected_routing.items()
+                    if skill_id in group_skill_ids
+                ),
+                None,
+            )
+            if expected_group is not None and policy_group != expected_group:
+                errors.append(
+                    "{}.policy_group must be {!r}, got {!r}".format(
+                        prefix, expected_group, policy_group
+                    )
+                )
+        values = {}
+        for field in POSITIVE_INTEGER_FIELDS:
+            value = raw.get(field, default_values.get(field))
+            values[field] = _positive_integer(value, "{}.{}".format(prefix, field), errors)
+        guard = _success_guard(raw.get("success_guard"), "{}.success_guard".format(prefix), errors)
+        if all(
+            [
+                isinstance(instruction, str) and bool(instruction.strip()),
+                isinstance(oracle_task, str) and bool(oracle_task.strip()),
+                isinstance(policy_group, str) and bool(policy_group.strip()),
+            ]
+        ) and all(value is not None for value in values.values()):
+            skills[skill_id] = SkillSpec(
+                skill_id=skill_id,
+                instruction=instruction,
+                oracle_task=oracle_task,
+                policy_group=policy_group,
+                max_steps=values["max_steps"],
+                max_attempts=values["max_attempts"],
+                replan_interval=values["replan_interval"],
+                success_guard=guard,
+            )
+
+    if errors:
+        raise ConfigValidationError(source, errors)
+    defaults = SkillDefaults(**default_values)
+    return SkillRegistry(name, 1, defaults, skills, source)

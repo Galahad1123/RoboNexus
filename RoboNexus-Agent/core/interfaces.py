@@ -1,3 +1,3 @@
-"""Compatibility imports; new code should use :mod:`core.perception.interfaces`."""
+"""Legacy perception compatibility imports."""
 
-from .perception.interfaces import *
+from .legacy.perception.interfaces import *  # noqa: F401,F403

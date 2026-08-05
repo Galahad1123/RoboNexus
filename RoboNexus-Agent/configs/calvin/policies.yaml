@@ -1,0 +1,26 @@
+version: 1
+name: calvin_d34_policies
+checkpoint_base: multitask_dit_policy
+
+# Selected CALVIN-D34 policy checkpoints. Paths are relative to checkpoint_base.
+policies:
+  general:
+    enabled: true
+    checkpoint: outputs/calvin_general_21_dino/checkpoint_80000
+    host: 127.0.0.1
+    port: 10093
+  push:
+    enabled: true
+    checkpoint: outputs/calvin_push_rotate_12_dino_outline/checkpoint_80000
+    host: 127.0.0.1
+    port: 10094
+  rotate:
+    enabled: true
+    checkpoint: outputs/calvin_rotate_2_release_dino_outline/checkpoint_80000
+    host: 127.0.0.1
+    port: 10095
+  stack:
+    enabled: true
+    checkpoint: outputs/calvin_stack_pick_place_persistent_outline/checkpoint_80000
+    host: 127.0.0.1
+    port: 10096

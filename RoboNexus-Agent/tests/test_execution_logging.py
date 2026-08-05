@@ -3,8 +3,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from core.execution.retry_controller import RetryPolicy, TaskRetryController
-from core.execution.schemas import (
+from core.legacy.execution.retry_controller import RetryPolicy, TaskRetryController
+from core.legacy.execution.schemas import (
     AttemptResult,
     MotionResult,
     MotionStatus,

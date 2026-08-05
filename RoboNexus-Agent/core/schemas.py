@@ -1,3 +1,3 @@
-"""Compatibility imports; new code should use :mod:`core.common.schemas`."""
+"""Legacy perception compatibility imports."""
 
-from .common.schemas import *
+from .legacy.perception.schemas import *  # noqa: F401,F403

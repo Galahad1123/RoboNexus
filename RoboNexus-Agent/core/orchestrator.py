@@ -1,3 +1,3 @@
-"""Compatibility imports; new code should use :mod:`core.perception.orchestrator`."""
+"""Legacy perception compatibility imports."""
 
-from .perception.orchestrator import *
+from .legacy.perception.orchestrator import *  # noqa: F401,F403

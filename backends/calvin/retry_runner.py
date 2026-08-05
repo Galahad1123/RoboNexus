@@ -1,11 +1,11 @@
 """CALVIN retry runner that continues from the current simulator state."""
 
-import time
 from pathlib import Path
 
 import numpy as np
 
 from backends.calvin.event_logger import NullEventLogger
+from backends.calvin.attempt_runner import CalvinSkillAttemptRunner
 from backends.calvin.task_verifier import CalvinOracleTaskVerifier
 from calvin.evaluation.remote_policy.rollout_engine import (
     derive_episode_seed,
@@ -23,12 +23,16 @@ class CalvinOracleRetryAgent:
         recovery=None,
         event_logger=None,
         verifier=None,
+        attempt_runner=None,
     ):
         self.engine = engine
         self.max_attempts = int(max_attempts)
         self.recovery = recovery
         self.events = event_logger or NullEventLogger()
         self.verifier = verifier or CalvinOracleTaskVerifier(engine.task_oracle)
+        self.attempt_runner = attempt_runner or CalvinSkillAttemptRunner(
+            engine, self.verifier, self.events
+        )
         if self.max_attempts < 2:
             raise ValueError("Retry agent requires max_attempts >= 2")
 
@@ -140,15 +144,7 @@ class CalvinOracleRetryAgent:
                 engine.base_seed,
                 "{}:attempt:{}".format(episode.episode_id, attempt_index),
             )
-            engine.client.reset(
-                episode_id=session_id,
-                task=episode.instruction,
-                replan_interval=engine.replan_interval,
-                episode_seed=seed,
-            )
             attempt_start_step = total_steps
-            attempt_replans = []
-            attempt_reason = "timeout"
             self.events.emit(
                 "attempt_started",
                 episode_id=episode.episode_id,
@@ -157,59 +153,29 @@ class CalvinOracleRetryAgent:
                 session_id=session_id,
                 episode_seed=seed,
             )
-            for local_step in range(episode.max_steps):
-                role_masks = (
-                    engine.mask_provider.masks(observation)
-                    if engine.mask_provider is not None
-                    else None
-                )
-                policy_observation = engine.adapter.observation_for_policy(
-                    observation,
-                    role_masks=role_masks,
-                    overlay=engine.mask_overlay,
-                    frame_index=total_steps,
-                )
-                if engine.video_dir:
-                    video_frame = (
-                        policy_observation["observation.images.static"]
-                        if engine.mask_overlay is not None
-                        else observation["rgb_obs"]["rgb_static"]
-                    )
-                    frames.append(np.asarray(video_frame).copy())
-                started = time.perf_counter()
-                action, metadata = engine.client.step(
-                    session_id, policy_observation, local_step
-                )
-                all_latencies.append((time.perf_counter() - started) * 1000.0)
-                all_raw_actions.append(action.tolist())
-                if metadata.get("replanned"):
-                    attempt_replans.append(local_step)
-                    all_replan_steps.append(total_steps)
-
-                observation, _, done, current_info = engine.adapter.step(action)
-                all_actions.append(engine.adapter.last_executed_action.tolist())
-                total_steps += 1
-                verification = self.verifier.evaluate(current_info)
-                if verification.success:
-                    success = True
-                    success_step = total_steps
-                    attempt_reason = "success"
-                    termination_reason = "success"
-                    self.events.emit(
-                        "verification_result",
-                        episode_id=episode.episode_id,
-                        task=episode.task,
-                        attempt=attempt_index + 1,
-                        status=verification.status,
-                        reason=verification.reason,
-                        confidence=verification.confidence,
-                        evidence=verification.evidence,
-                    )
-                    break
-                if done:
-                    attempt_reason = "environment_done"
-                    termination_reason = "environment_done"
-                    break
+            attempt_result = self.attempt_runner.run(
+                episode=episode,
+                observation=observation,
+                attempt=attempt_index + 1,
+                session_id=session_id,
+                episode_seed=seed,
+                global_start_step=total_steps,
+            )
+            observation = attempt_result.observation
+            attempt_reason = attempt_result.termination_reason
+            attempt_replans = attempt_result.replan_steps
+            total_steps += attempt_result.steps_executed
+            all_latencies.extend(attempt_result.latencies_ms)
+            all_raw_actions.extend(attempt_result.raw_actions)
+            all_actions.extend(attempt_result.actions)
+            all_replan_steps.extend(attempt_result.global_replan_steps)
+            frames.extend(attempt_result.frames)
+            if attempt_result.success:
+                success = True
+                success_step = attempt_result.success_step
+                termination_reason = "success"
+            elif attempt_result.environment_done:
+                termination_reason = "environment_done"
 
             attempts.append(
                 {
@@ -232,7 +198,7 @@ class CalvinOracleRetryAgent:
                 steps_executed=total_steps - attempt_start_step,
                 reason=attempt_reason,
             )
-            if success or attempt_reason == "environment_done":
+            if success or attempt_result.environment_done:
                 break
 
         if (

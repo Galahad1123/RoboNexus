@@ -1,3 +1,3 @@
-"""Compatibility imports; new code should use :mod:`core.transport.http`."""
+"""Legacy perception-service HTTP compatibility imports."""
 
-from .transport.http import *
+from .legacy.transport.http import *  # noqa: F401,F403

@@ -20,6 +20,8 @@ from calvin_env_adapter import CalvinEnvAdapter  # noqa: E402
 from model_client import _pack, _unpack  # noqa: E402
 from masking import CalvinGTMaskProvider, MaskOverlay, MaskPerturbation  # noqa: E402
 from backends.calvin.retry_runner import CalvinOracleRetryAgent  # noqa: E402
+from backends.calvin.attempt_runner import CalvinSkillAttemptRunner  # noqa: E402
+from backends.calvin.task_verifier import CalvinOracleTaskVerifier  # noqa: E402
 from backends.calvin.motion_controller import (  # noqa: E402
     CalvinCartesianApproachController,
 )
@@ -382,6 +384,129 @@ class ConfiguredCalvinSuiteTest(unittest.TestCase):
         self.assertEqual(result["attempt_count"], 2)
         self.assertEqual(adapter.reset_count, 1)
         self.assertEqual(len(client.sessions), 2)
+        self.assertEqual(
+            set(
+                [
+                    "attempts",
+                    "actions",
+                    "raw_actions",
+                    "success",
+                    "termination_reason",
+                    "steps_executed",
+                ]
+            ).difference(result),
+            set(),
+        )
+
+    def test_attempt_runner_is_reusable_with_current_scene_and_legacy_verifier(self):
+        from types import SimpleNamespace
+
+        class Episode:
+            episode_id = "attempt-runner-test"
+            task = "open_drawer"
+            instruction = "open the drawer"
+            max_steps = 1
+
+        class Adapter:
+            def __init__(self):
+                self.last_executed_action = None
+
+            @staticmethod
+            def observation_for_policy(observation, **kwargs):
+                return {"state": observation["state"]}
+
+            def step(self, action):
+                self.last_executed_action = np.asarray(action).copy()
+                observation = {"state": int(action[0])}
+                return observation, 0, False, {"state": observation["state"]}
+
+        class Client:
+            def __init__(self):
+                self.next_state = 1
+                self.resets = []
+
+            def reset(self, **kwargs):
+                self.resets.append(kwargs)
+
+            def step(self, episode_id, observation, step):
+                action = np.zeros(7, dtype=np.float32)
+                action[0] = self.next_state
+                self.next_state += 1
+                return action, {"replanned": True}
+
+        class LegacyVerifier:
+            @staticmethod
+            def evaluate(current_info):
+                return SimpleNamespace(
+                    success=current_info["state"] >= 2,
+                    status="success" if current_info["state"] >= 2 else "unknown",
+                    reason="legacy",
+                    confidence=1.0,
+                    evidence={},
+                )
+
+        adapter = Adapter()
+        client = Client()
+        engine = SimpleNamespace(
+            adapter=adapter,
+            client=client,
+            replan_interval=4,
+            mask_provider=None,
+            mask_overlay=None,
+            video_dir=None,
+        )
+        runner = CalvinSkillAttemptRunner(engine, LegacyVerifier())
+        first = runner.run(Episode(), {"state": 0}, 1, "attempt-1", 10, 0)
+        second = runner.run(
+            Episode(), first.observation, 2, "attempt-2", 11, first.steps_executed
+        )
+        self.assertFalse(first.success)
+        self.assertTrue(second.success)
+        self.assertEqual(first.observation["state"], 1)
+        self.assertEqual(second.success_step, 2)
+        self.assertEqual(len(client.resets), 2)
+
+    def test_oracle_verifier_keeps_baseline_and_matches_success_guard(self):
+        from types import SimpleNamespace
+
+        baseline = {"drawer": 0}
+
+        class Oracle:
+            def __init__(self):
+                self.starts = []
+
+            def get_task_info_for_set(self, start, current, tasks):
+                self.starts.append(start)
+                return {"rotate_red_block_right"}
+
+        oracle = Oracle()
+        verifier = CalvinOracleTaskVerifier(oracle)
+        verifier.begin(
+            SimpleNamespace(
+                oracle_task="rotate_red_block_right",
+                success_guard={
+                    "gripper": "open",
+                    "min_width_m": 0.04,
+                    "consecutive_steps": 2,
+                },
+            ),
+            baseline,
+        )
+        observation = {
+            "robot_obs": np.asarray([0, 0, 0, 0, 0, 0, 0.05])
+        }
+        open_action = np.asarray([0, 0, 0, 0, 0, 0, 1])
+        first = verifier.evaluate(
+            {"drawer": 1}, observation=observation, executed_action=open_action
+        )
+        second = verifier.evaluate(
+            {"drawer": 2}, observation=observation, executed_action=open_action
+        )
+        self.assertFalse(first.success)
+        self.assertEqual(first.reason, "success_guard_not_satisfied")
+        self.assertTrue(second.success)
+        self.assertEqual(second.evidence["success_guard_streak"], 2)
+        self.assertTrue(all(start is baseline for start in oracle.starts))
 
 
 if __name__ == "__main__":

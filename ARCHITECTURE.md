@@ -1,5 +1,7 @@
 # RoboNexus 系统架构设计
 
+> **方向更新（2026-08）**：正式 Agent 主干确定为 Qwen-Agent + Qwen3-VL，本文下方内容是项目早期设计背景，其中“确定性 Orchestrator 是 Agent 控制中心”的描述不再作为后续实现依据。当前权威设计见 [Qwen-Agent 架构](docs/agent/QWEN_AGENT_ARCHITECTURE.md) 和 [Qwen-Agent 工具协议](docs/agent/QWEN_AGENT_TOOL_PROTOCOL.md)。现有 ScriptedPlanner/GoalOrchestrator 仅保留为底层 Runtime 的确定性测试与兼容入口。
+
 > **RoboNexus** is a modular agent framework for orchestrating perception, planning, and interchangeable robot executors.
 
 RoboNexus 将机器人任务拆分为“规划—目标定位—技能执行—完成判定”的闭环流程。Agent 负责高层决策与状态管理，底层策略作为可替换的 Executor 接入，仿真环境或真实机器人仅负责提供观测并执行动作。
