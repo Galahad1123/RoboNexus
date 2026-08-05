@@ -10,13 +10,23 @@ calvin/
   execution/     policy attempts, routed goal attempts, and retry loops
   recovery/      Oracle localization and conservative recovery motion
   verification/  CALVIN Oracle verification and facility-state inspection
+  grounding/     CALVIN Oracle semantic grounding and masks
   logging/       CALVIN evaluation event logging
 ```
 
-Future target-selection implementations belong in `grounding/`. Environment-
-independent contracts and orchestration must remain in `RoboNexus-Agent/core`.
+Environment-independent contracts and orchestration must remain in
+`RoboNexus-Agent/core`.
 
 The package root intentionally contains no implementation modules. Add new
 CALVIN integrations to the matching capability package and expose only stable,
 dependency-safe public names from `__init__.py` when a package-level import is
 actually needed.
+
+## Grounding vocabulary
+
+The default Oracle semantic vocabulary is configured in
+`grounding/semantic_vocabulary.json`. It is versioned and declares the CALVIN
+splits it supports. Extend or replace this file for ABCD experiments instead of
+adding semantic IDs to Python code. `CalvinOracleGrounder` also accepts a
+`vocabulary_path` or an already loaded `vocabulary` object, which allows each
+experiment to select its vocabulary explicitly.

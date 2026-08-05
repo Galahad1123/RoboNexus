@@ -31,6 +31,20 @@ class LocalArtifactStore(ArtifactStorePort):
         imageio.imwrite(str(destination), array)
         return ArtifactRef(kind, "artifact://{}".format(relative.as_posix()), "image/png")
 
+    def save_mask(self, session_id, kind, mask):
+        array = np.asarray(mask)
+        if array.ndim != 2:
+            raise ValueError("mask must have shape HxW")
+        relative = self._next_path(session_id, kind, ".npy")
+        destination = self.root / relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        np.save(str(destination), array.astype(bool), allow_pickle=False)
+        return ArtifactRef(
+            kind,
+            "mask://{}".format(relative.as_posix()),
+            "application/x-numpy-bool-mask",
+        )
+
     def save_video(self, session_id, kind, frames, fps):
         import imageio
 
@@ -49,9 +63,13 @@ class LocalArtifactStore(ArtifactStorePort):
         return ArtifactRef(kind, "artifact://{}".format(relative.as_posix()), "video/mp4")
 
     def resolve(self, uri):
-        prefix = "artifact://"
-        if not isinstance(uri, str) or not uri.startswith(prefix):
-            raise ValueError("not an artifact URI: {!r}".format(uri))
+        prefixes = ("artifact://", "mask://")
+        prefix = next(
+            (candidate for candidate in prefixes if isinstance(uri, str) and uri.startswith(candidate)),
+            None,
+        )
+        if prefix is None:
+            raise ValueError("not a stored artifact URI: {!r}".format(uri))
         candidate = (self.root / Path(uri[len(prefix) :])).resolve()
         try:
             candidate.relative_to(self.root)
@@ -71,4 +89,3 @@ def _safe(value):
     if not isinstance(value, str) or not value.strip():
         raise ValueError("artifact path component must be a non-empty string")
     return re.sub(r"[^A-Za-z0-9_.-]+", "_", value.strip())
-

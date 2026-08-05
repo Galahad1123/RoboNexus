@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "name": "calvin_abcd_default",
+  "calvin_splits": ["A", "B", "C", "D"],
+  "semantics": {
+    "block_red": {"movable": "block_red"},
+    "block_blue": {"movable": "block_blue"},
+    "block_pink": {"movable": "block_pink"},
+    "drawer": {"fixed": "table", "link": "drawer_link"},
+    "drawer_interior": {"fixed": "table", "link": "drawer_link"},
+    "slider_left_door": {"fixed": "table", "link": "slide_link"},
+    "slider_right_door": {"fixed": "table", "link": "slide_link"},
+    "slider_interior": {"fixed": "table", "link": "slide_link"},
+    "light_switch": {"fixed": "table", "link": "switch_link"},
+    "led_button": {"fixed": "table", "link": "button_link"}
+  }
+}

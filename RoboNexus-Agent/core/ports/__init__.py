@@ -2,7 +2,13 @@
 
 from .artifacts import ArtifactStorePort
 from .environment import EnvironmentPort, EnvironmentPortError
-from .grounding import GrounderPort
+from .grounding import (
+    GrounderPort,
+    GrounderPortError,
+    GroundingBatch,
+    GroundingNotFoundError,
+    UnsupportedGroundingError,
+)
 from .motion import ApproachControllerPort
 from .skills import SkillExecutorPort
 from .verification import GoalVerifierPort
@@ -14,5 +20,9 @@ __all__ = [
     "EnvironmentPortError",
     "GoalVerifierPort",
     "GrounderPort",
+    "GrounderPortError",
+    "GroundingBatch",
+    "GroundingNotFoundError",
     "SkillExecutorPort",
+    "UnsupportedGroundingError",
 ]
