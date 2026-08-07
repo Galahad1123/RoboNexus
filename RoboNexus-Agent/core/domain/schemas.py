@@ -6,6 +6,7 @@ It is compatible with the Python 3.8 CALVIN environment.
 
 from dataclasses import asdict, dataclass, field
 from enum import Enum
+import math
 from typing import Any, Dict, List, Optional, Tuple
 
 
@@ -161,6 +162,42 @@ class SkillExecutionResult:
             raise ValueError("execution.state_delta must be a mapping")
         if isinstance(self.video_fps, bool) or not isinstance(self.video_fps, int) or self.video_fps < 1:
             raise ValueError("execution.video_fps must be positive")
+        self.scene_capture.validate()
+
+
+@dataclass(frozen=True)
+class ApproachExecutionResult:
+    """Backend-neutral result of moving near one grounded target."""
+
+    success: bool
+    reason: str
+    steps: int
+    initial_xy_distance_m: float
+    final_xy_distance_m: float
+    threshold_m: float
+    scene_capture: SceneCapture
+    metadata: Dict[str, Any] = field(default_factory=dict)
+
+    def validate(self):
+        _nonempty(self.reason, "approach.reason")
+        if not isinstance(self.success, bool):
+            raise ValueError("approach.success must be boolean")
+        if isinstance(self.steps, bool) or not isinstance(self.steps, int) or self.steps < 0:
+            raise ValueError("approach.steps must be non-negative")
+        for name, value in (
+            ("initial_xy_distance_m", self.initial_xy_distance_m),
+            ("final_xy_distance_m", self.final_xy_distance_m),
+            ("threshold_m", self.threshold_m),
+        ):
+            if (
+                isinstance(value, bool)
+                or not isinstance(value, (int, float))
+                or not math.isfinite(value)
+                or value < 0
+            ):
+                raise ValueError("approach.{} must be non-negative".format(name))
+        if self.threshold_m <= 0:
+            raise ValueError("approach.threshold_m must be positive")
         self.scene_capture.validate()
 
 

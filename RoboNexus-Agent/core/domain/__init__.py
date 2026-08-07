@@ -1,6 +1,7 @@
 """Canonical backend-neutral domain contracts for the Qwen-Agent runtime."""
 
 from .schemas import (
+    ApproachExecutionResult,
     AgentSessionStatus,
     ArtifactRef,
     BudgetSnapshot,
@@ -19,6 +20,7 @@ from .schemas import (
 )
 
 __all__ = [
+    "ApproachExecutionResult",
     "AgentSessionStatus",
     "ArtifactRef",
     "BudgetSnapshot",

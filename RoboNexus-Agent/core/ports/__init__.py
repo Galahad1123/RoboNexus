@@ -9,7 +9,12 @@ from .grounding import (
     GroundingNotFoundError,
     UnsupportedGroundingError,
 )
-from .motion import ApproachControllerPort
+from .motion import (
+    ApproachControllerPort,
+    ApproachControllerPortError,
+    ApproachRejected,
+    ApproachUnavailable,
+)
 from .skills import (
     SkillExecutorPort,
     SkillExecutorPortError,
@@ -20,6 +25,9 @@ from .verification import GoalVerifierPort
 
 __all__ = [
     "ApproachControllerPort",
+    "ApproachControllerPortError",
+    "ApproachRejected",
+    "ApproachUnavailable",
     "ArtifactStorePort",
     "EnvironmentPort",
     "EnvironmentPortError",

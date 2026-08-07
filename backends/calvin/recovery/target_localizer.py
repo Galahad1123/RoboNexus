@@ -21,6 +21,35 @@ class CalvinOracleTargetLocalizer:
                 "No retry target selector configured for {}".format(episode.task)
             )
 
+        return self.locate_selector(selector)
+
+    def locate_grounding(self, grounding, vocabulary):
+        if grounding.world_position is not None:
+            return (
+                grounding.metadata.get("instance_id") or grounding.grounding_id,
+                np.asarray(grounding.world_position, dtype=float),
+                None,
+            )
+        semantic_id = grounding.semantic_id
+        if not semantic_id:
+            raise ValueError(
+                "grounding {!r} has no world position or semantic_id".format(
+                    grounding.grounding_id
+                )
+            )
+        try:
+            selector = dict(vocabulary.selectors[semantic_id])
+        except KeyError:
+            raise ValueError(
+                "semantic_id {!r} is absent from CALVIN vocabulary".format(
+                    semantic_id
+                )
+            )
+        if "link" in selector:
+            selector["links"] = [selector.pop("link")]
+        return self.locate_selector(selector)
+
+    def locate_selector(self, selector):
         scene_info = self.env.get_info()["scene_info"]
         if "movable" in selector:
             name = selector["movable"]

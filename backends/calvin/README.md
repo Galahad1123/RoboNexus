@@ -35,3 +35,8 @@ Policy-specific outline rendering is configured in
 `execution/outline_styles.json`. These styles mirror the specialist training
 pipelines and must be updated alongside any checkpoint trained with a different
 outline convention.
+
+`recovery/approach_controller.py` implements the optional Agent recovery tool.
+It resolves the current grounded instance, lifts to a conservative safe height,
+and approaches only until the configured XY threshold is reached. It does not
+perform grasping, placement, or task-specific recovery.
