@@ -133,6 +133,38 @@ class SceneCapture:
 
 
 @dataclass(frozen=True)
+class SkillExecutionResult:
+    """Backend-neutral result of one bounded atomic skill attempt."""
+
+    policy_id: str
+    success: bool
+    termination_reason: str
+    steps: int
+    verification: Dict[str, Any]
+    scene_capture: SceneCapture
+    state_delta: Dict[str, Any] = field(default_factory=dict)
+    recommended_actions: Tuple[str, ...] = ()
+    frames: Tuple[Any, ...] = ()
+    video_fps: int = 30
+    metadata: Dict[str, Any] = field(default_factory=dict)
+
+    def validate(self):
+        _nonempty(self.policy_id, "execution.policy_id")
+        _nonempty(self.termination_reason, "execution.termination_reason")
+        if not isinstance(self.success, bool):
+            raise ValueError("execution.success must be boolean")
+        if isinstance(self.steps, bool) or not isinstance(self.steps, int) or self.steps < 0:
+            raise ValueError("execution.steps must be non-negative")
+        if not isinstance(self.verification, dict):
+            raise ValueError("execution.verification must be a mapping")
+        if not isinstance(self.state_delta, dict):
+            raise ValueError("execution.state_delta must be a mapping")
+        if isinstance(self.video_fps, bool) or not isinstance(self.video_fps, int) or self.video_fps < 1:
+            raise ValueError("execution.video_fps must be positive")
+        self.scene_capture.validate()
+
+
+@dataclass(frozen=True)
 class GoalInput:
     goal_id: str
     instruction: str

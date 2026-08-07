@@ -118,6 +118,7 @@ def load_skill_registry(
         "instruction",
         "oracle_task",
         "policy_group",
+        "grounding_roles",
         "max_steps",
         "max_attempts",
         "replan_interval",
@@ -138,6 +139,7 @@ def load_skill_registry(
         instruction = raw.get("instruction")
         oracle_task = raw.get("oracle_task")
         policy_group = raw.get("policy_group")
+        grounding_roles = raw.get("grounding_roles")
         if not isinstance(instruction, str) or not instruction.strip():
             errors.append("{}.instruction must be a non-empty string".format(prefix))
         if not isinstance(oracle_task, str) or not oracle_task.strip():
@@ -161,6 +163,18 @@ def load_skill_registry(
                         prefix, expected_group, policy_group
                     )
                 )
+        allowed_roles = {"source", "destination", "target"}
+        if (
+            not isinstance(grounding_roles, list)
+            or not 1 <= len(grounding_roles) <= 2
+            or any(role not in allowed_roles for role in grounding_roles)
+            or len(set(grounding_roles)) != len(grounding_roles)
+            or ("target" in grounding_roles and len(grounding_roles) != 1)
+        ):
+            errors.append(
+                "{}.grounding_roles must contain one or two unique source/destination "
+                "roles, or target alone".format(prefix)
+            )
         values = {}
         for field in POSITIVE_INTEGER_FIELDS:
             value = raw.get(field, default_values.get(field))
@@ -178,6 +192,7 @@ def load_skill_registry(
                 instruction=instruction,
                 oracle_task=oracle_task,
                 policy_group=policy_group,
+                grounding_roles=tuple(grounding_roles or ()),
                 max_steps=values["max_steps"],
                 max_attempts=values["max_attempts"],
                 replan_interval=values["replan_interval"],

@@ -30,3 +30,8 @@ splits it supports. Extend or replace this file for ABCD experiments instead of
 adding semantic IDs to Python code. `CalvinOracleGrounder` also accepts a
 `vocabulary_path` or an already loaded `vocabulary` object, which allows each
 experiment to select its vocabulary explicitly.
+
+Policy-specific outline rendering is configured in
+`execution/outline_styles.json`. These styles mirror the specialist training
+pipelines and must be updated alongside any checkpoint trained with a different
+outline convention.

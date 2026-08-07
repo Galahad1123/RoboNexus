@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "policies": {
+    "general": {
+      "alpha": 0.0,
+      "outline_width_px": 2,
+      "outline_color": [0, 0, 0],
+      "outline_colors": {
+        "source": [0, 0, 0],
+        "target": [0, 0, 0],
+        "destination": [0, 255, 255]
+      },
+      "outline_halo_width_px": 0,
+      "outline_halo_widths": {"destination": 1},
+      "outline_halo_color": [255, 255, 255]
+    },
+    "push": {
+      "alpha": 0.0,
+      "outline_width_px": 2,
+      "outline_color": [0, 0, 0]
+    },
+    "rotate": {
+      "alpha": 0.0,
+      "outline_width_px": 2,
+      "outline_color": [0, 0, 0]
+    },
+    "stack": {
+      "alpha": 0.0,
+      "outline_width_px": 2,
+      "outline_color": [0, 0, 0],
+      "outline_colors": {
+        "source": [0, 0, 0],
+        "destination": [0, 255, 255]
+      },
+      "outline_halo_width_px": 0,
+      "outline_halo_widths": {"destination": 1},
+      "outline_halo_color": [255, 255, 255]
+    }
+  }
+}

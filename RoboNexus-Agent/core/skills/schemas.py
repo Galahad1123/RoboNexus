@@ -17,6 +17,7 @@ class SkillSpec:
     instruction: str
     oracle_task: str
     policy_group: str
+    grounding_roles: tuple
     max_steps: int
     max_attempts: int
     replan_interval: int

@@ -47,6 +47,8 @@ class CalvinD34ConfigTest(unittest.TestCase):
         self.assertIsNone(general.success_guard)
         self.assertEqual(rotate.success_guard["gripper"], "open")
         self.assertEqual(rotate.success_guard["consecutive_steps"], 3)
+        self.assertEqual(general.grounding_roles, ("target",))
+        self.assertEqual(registry.get("stack_block").grounding_roles, ("source", "destination"))
         self.assertEqual(
             registry.get("lift_blue_block_drawer").instruction,
             "pick up the black-outlined block from the drawer",

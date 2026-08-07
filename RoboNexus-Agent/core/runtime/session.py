@@ -35,6 +35,8 @@ class AgentSession:
         self.tool_calls_used = 0
         self.replans_used = 0
         self._attempts = {}
+        self._logical_subtasks = {}
+        self._logical_subtask_counter = 0
         self._observations = {
             goal.initial_observation.observation_id: goal.initial_observation
         }
@@ -186,6 +188,32 @@ class AgentSession:
 
     def attempts_used(self, logical_subtask_id):
         return self._attempts.get(logical_subtask_id, 0)
+
+    def resolve_logical_subtask(self, skill_id, groundings):
+        """Return a stable ID across re-grounding of the same selected instances."""
+        fingerprint = (
+            str(skill_id),
+            tuple(
+                sorted(
+                    (
+                        grounding.role.value,
+                        grounding.metadata.get("instance_id")
+                        or grounding.semantic_id
+                        or grounding.grounding_id,
+                    )
+                    for grounding in groundings
+                )
+            ),
+        )
+        with self._lock:
+            logical_subtask_id = self._logical_subtasks.get(fingerprint)
+            if logical_subtask_id is None:
+                self._logical_subtask_counter += 1
+                logical_subtask_id = "subtask_{:03d}".format(
+                    self._logical_subtask_counter
+                )
+                self._logical_subtasks[fingerprint] = logical_subtask_id
+            return logical_subtask_id
 
     def consume_replan(self):
         with self._lock:

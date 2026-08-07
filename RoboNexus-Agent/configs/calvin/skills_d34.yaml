@@ -11,61 +11,75 @@ skills:
     instruction: close the black-outlined drawer
     oracle_task: close_drawer
     policy_group: general
+    grounding_roles: &target [target]
 
   lift_blue_block_drawer:
     instruction: pick up the black-outlined block from the drawer
     oracle_task: lift_blue_block_drawer
     policy_group: general
+    grounding_roles: &source [source]
   lift_blue_block_slider:
     instruction: pick up the black-outlined block from the sliding cabinet
     oracle_task: lift_blue_block_slider
     policy_group: general
+    grounding_roles: *source
   lift_blue_block_table:
     instruction: pick up the black-outlined block from the table
     oracle_task: lift_blue_block_table
     policy_group: general
+    grounding_roles: *source
   lift_pink_block_drawer:
     instruction: pick up the black-outlined block from the drawer
     oracle_task: lift_pink_block_drawer
     policy_group: general
+    grounding_roles: *source
   lift_pink_block_slider:
     instruction: pick up the black-outlined block from the sliding cabinet
     oracle_task: lift_pink_block_slider
     policy_group: general
+    grounding_roles: *source
   lift_pink_block_table:
     instruction: pick up the black-outlined block from the table
     oracle_task: lift_pink_block_table
     policy_group: general
+    grounding_roles: *source
   lift_red_block_drawer:
     instruction: pick up the black-outlined block from the drawer
     oracle_task: lift_red_block_drawer
     policy_group: general
+    grounding_roles: *source
   lift_red_block_slider:
     instruction: pick up the black-outlined block from the sliding cabinet
     oracle_task: lift_red_block_slider
     policy_group: general
+    grounding_roles: *source
   lift_red_block_table:
     instruction: pick up the black-outlined block from the table
     oracle_task: lift_red_block_table
     policy_group: general
+    grounding_roles: *source
 
   move_slider_left:
     instruction: move the black-outlined sliding door to the left
     oracle_task: move_slider_left
     policy_group: general
+    grounding_roles: *target
   move_slider_right:
     instruction: move the black-outlined sliding door to the right
     oracle_task: move_slider_right
     policy_group: general
+    grounding_roles: *target
   open_drawer:
     instruction: open the black-outlined drawer
     oracle_task: open_drawer
     policy_group: general
+    grounding_roles: *target
 
   place_in_drawer:
     instruction: place the held block in the cyan-outlined drawer
     oracle_task: place_in_drawer
     policy_group: general
+    grounding_roles: &destination [destination]
     success_guard: &released
       gripper: open
       min_width_m: 0.04
@@ -74,97 +88,117 @@ skills:
     instruction: place the held block in the cyan-outlined sliding cabinet
     oracle_task: place_in_slider
     policy_group: general
+    grounding_roles: *destination
     success_guard: *released
   push_into_drawer:
     instruction: push the black-outlined block into the cyan-outlined drawer
     oracle_task: push_into_drawer
     policy_group: general
+    grounding_roles: &source_destination [source, destination]
 
   turn_off_led:
     instruction: press the black-outlined button to turn off the led
     oracle_task: turn_off_led
     policy_group: general
+    grounding_roles: *target
   turn_off_lightbulb:
     instruction: move the black-outlined switch to turn off the lightbulb
     oracle_task: turn_off_lightbulb
     policy_group: general
+    grounding_roles: *target
   turn_on_led:
     instruction: press the black-outlined button to turn on the led
     oracle_task: turn_on_led
     policy_group: general
+    grounding_roles: *target
   turn_on_lightbulb:
     instruction: move the black-outlined switch to turn on the lightbulb
     oracle_task: turn_on_lightbulb
     policy_group: general
+    grounding_roles: *target
   unstack_block:
     instruction: remove the black-outlined block from the stack
     oracle_task: unstack_block
     policy_group: general
+    grounding_roles: *source
 
   push_blue_block_left:
     instruction: push the blue block to the left
     oracle_task: push_blue_block_left
     policy_group: push
+    grounding_roles: *source
     max_steps: 120
   push_blue_block_right:
     instruction: push the blue block to the right
     oracle_task: push_blue_block_right
     policy_group: push
+    grounding_roles: *source
     max_steps: 120
   push_pink_block_left:
     instruction: push the pink block to the left
     oracle_task: push_pink_block_left
     policy_group: push
+    grounding_roles: *source
     max_steps: 120
   push_pink_block_right:
     instruction: push the pink block to the right
     oracle_task: push_pink_block_right
     policy_group: push
+    grounding_roles: *source
     max_steps: 120
   push_red_block_left:
     instruction: push the red block to the left
     oracle_task: push_red_block_left
     policy_group: push
+    grounding_roles: *source
     max_steps: 120
   push_red_block_right:
     instruction: push the red block to the right
     oracle_task: push_red_block_right
     policy_group: push
+    grounding_roles: *source
     max_steps: 120
 
   rotate_blue_block_left:
     instruction: rotate the blue block counterclockwise
     oracle_task: rotate_blue_block_left
     policy_group: rotate
+    grounding_roles: *source
     success_guard: *released
   rotate_blue_block_right:
     instruction: rotate the blue block clockwise
     oracle_task: rotate_blue_block_right
     policy_group: rotate
+    grounding_roles: *source
     success_guard: *released
   rotate_pink_block_left:
     instruction: rotate the pink block counterclockwise
     oracle_task: rotate_pink_block_left
     policy_group: rotate
+    grounding_roles: *source
     success_guard: *released
   rotate_pink_block_right:
     instruction: rotate the pink block clockwise
     oracle_task: rotate_pink_block_right
     policy_group: rotate
+    grounding_roles: *source
     success_guard: *released
   rotate_red_block_left:
     instruction: rotate the red block counterclockwise
     oracle_task: rotate_red_block_left
     policy_group: rotate
+    grounding_roles: *source
     success_guard: *released
   rotate_red_block_right:
     instruction: rotate the red block clockwise
     oracle_task: rotate_red_block_right
     policy_group: rotate
+    grounding_roles: *source
     success_guard: *released
 
   stack_block:
     instruction: stack the black-outlined source block on top of the cyan-outlined destination block
     oracle_task: stack_block
     policy_group: stack
+    grounding_roles: *source_destination
     success_guard: *released

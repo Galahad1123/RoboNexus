@@ -111,7 +111,10 @@ class CalvinOracleGrounder(GrounderPort):
                 camera="static",
                 mask_handle=mask_artifact.uri,
                 confidence=1.0,
-                metadata={"description": proposal["description"]},
+                metadata={
+                    "description": proposal["description"],
+                    "instance_id": _instance_id(selector),
+                },
             )
             grounding.validate()
             grounded.append(grounding)
@@ -183,3 +186,9 @@ class CalvinOracleGrounder(GrounderPort):
             link_index = (segmentation >> 24) - 1
             selected &= link_index == link
         return selected
+
+
+def _instance_id(selector):
+    if "movable" in selector:
+        return "movable:{}".format(selector["movable"])
+    return "fixed:{}:{}".format(selector["fixed"], selector["link"])

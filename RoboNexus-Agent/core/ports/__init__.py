@@ -10,7 +10,12 @@ from .grounding import (
     UnsupportedGroundingError,
 )
 from .motion import ApproachControllerPort
-from .skills import SkillExecutorPort
+from .skills import (
+    SkillExecutorPort,
+    SkillExecutorPortError,
+    SkillExecutorUnavailable,
+    SkillPreconditionRejected,
+)
 from .verification import GoalVerifierPort
 
 __all__ = [
@@ -24,5 +29,8 @@ __all__ = [
     "GroundingBatch",
     "GroundingNotFoundError",
     "SkillExecutorPort",
+    "SkillExecutorPortError",
+    "SkillExecutorUnavailable",
+    "SkillPreconditionRejected",
     "UnsupportedGroundingError",
 ]
