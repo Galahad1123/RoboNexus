@@ -185,6 +185,24 @@ confidence、时序 IoU、面积比例、motion score、总质量和是否发生
 
 ## 测试
 
+六个新工具的 CALVIN 真实环境 smoke 测试入口为：
+
+```bash
+# 先启动 general policy endpoint（checkpoint 路径相对仓库根）
+uv run --project multitask_dit_policy python \
+  -m multitask_dit_policy.serving.policy_server \
+  --checkpoint multitask_dit_policy/outputs/calvin_general_21_dino/checkpoint_80000 \
+  --port 10093
+
+# 另一个终端运行真实 CALVIN episode；输出含 report、events、图像、mask 和 MP4
+PYTHONPATH=RoboNexus-Agent:. conda run -n robonexus-calvin python \
+  scripts/agent/smoke_calvin_tools.py \
+  --output-dir outputs/calvin_agent/tool_smoke_full
+```
+
+只验证不依赖 DiT 的 `inspect_scene`、`ground_targets`、`approach_target`、
+`verify_goal` 和 `abort_goal` 时，可增加 `--skip-execute`，无需启动 policy endpoint。
+
 ```bash
 PYTHONPATH=RoboNexus-Agent conda run -n robonexus-agent \
   python -m unittest discover -s RoboNexus-Agent/tests -v
