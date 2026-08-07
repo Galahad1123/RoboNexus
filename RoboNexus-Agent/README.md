@@ -203,6 +203,49 @@ PYTHONPATH=RoboNexus-Agent:. conda run -n robonexus-calvin python \
 只验证不依赖 DiT 的 `inspect_scene`、`ground_targets`、`approach_target`、
 `verify_goal` 和 `abort_goal` 时，可增加 `--skip-execute`，无需启动 policy endpoint。
 
+不接 Qwen 的确定性工具闭环使用同一个 policy endpoint，运行：
+
+```bash
+PYTHONPATH=RoboNexus-Agent:. conda run -n robonexus-calvin python \
+  scripts/agent/run_calvin_deterministic_tools.py \
+  --task lift_red_block_table \
+  --semantic-id block_red \
+  --output-dir outputs/calvin_agent/deterministic_tool_loop
+```
+
+该 harness 严格通过公共工具推进单技能 goal：先检查和定位，再执行一次技能并验证完整
+goal；失败时保持当前场景，重新检查和定位，调用 `approach_target` 后再次定位并重试。
+最多三次 attempt，成功后立即停止，三次仍失败则显式调用 `abort_goal`。它只用于在接入
+Qwen-Agent 前验证 Runtime 和工具状态转换，不承担正式 Agent 的语义规划职责。
+
+## Qwen-Agent 单技能闭环
+
+正式 Qwen-Agent 接入跨两个 Conda 环境运行。先启动对应 DiT endpoint，再在 CALVIN
+环境创建一个连续的 Tool Session Runtime：
+
+```bash
+PYTHONPATH=RoboNexus-Agent:. conda run -n robonexus-calvin python \
+  scripts/agent/serve_calvin_tool_session.py \
+  --task lift_red_block_table \
+  --episode-index 0 \
+  --output-dir outputs/calvin_agent/qwen_single_skill
+```
+
+然后在另一个终端加载本地 Qwen3-VL-4B，并交给 Qwen-Agent 驱动多轮工具调用：
+
+```bash
+PYTHONPATH=RoboNexus-Agent:. conda run -n robonexus-qwen python \
+  scripts/agent/run_qwen_single_skill.py \
+  --runtime-url http://127.0.0.1:8110 \
+  --model-path weights/Qwen3-VL-4B-Instruct
+```
+
+Qwen 进程只持有 `BaseTool` RPC adapter；CALVIN 进程独占环境、Session、Oracle 和六个
+具体工具。Runtime 对本次 Session 的 Registry 裁剪为唯一允许的 skill，并根据 CALVIN
+grounder capability 向 Qwen 发布 semantic-only Schema。模型生成的参数仍会在 Runtime
+用原始严格 Schema 二次校验。运行结果写入 `qwen_agent_result.json`、`events.jsonl`，
+每次 `execute_skill` 另存 outlined MP4。
+
 ```bash
 PYTHONPATH=RoboNexus-Agent conda run -n robonexus-agent \
   python -m unittest discover -s RoboNexus-Agent/tests -v
