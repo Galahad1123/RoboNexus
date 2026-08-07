@@ -21,7 +21,7 @@ from .skills import (
     SkillExecutorUnavailable,
     SkillPreconditionRejected,
 )
-from .verification import GoalVerifierPort
+from .verification import GoalVerifierPort, GoalVerifierPortError, GoalVerifierUnavailable
 
 __all__ = [
     "ApproachControllerPort",
@@ -32,6 +32,8 @@ __all__ = [
     "EnvironmentPort",
     "EnvironmentPortError",
     "GoalVerifierPort",
+    "GoalVerifierPortError",
+    "GoalVerifierUnavailable",
     "GrounderPort",
     "GrounderPortError",
     "GroundingBatch",

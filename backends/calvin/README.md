@@ -40,3 +40,7 @@ outline convention.
 It resolves the current grounded instance, lifts to a conservative safe height,
 and approaches only until the configured XY threshold is reached. It does not
 perform grasping, placement, or task-specific recovery.
+
+`verification/goal_verifier.py` evaluates every predicate in the immutable goal
+success specification against the CALVIN goal-start state. Goal reference
+images remain UI/Qwen evidence and do not affect Oracle conclusions.

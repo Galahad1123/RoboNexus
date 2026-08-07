@@ -56,6 +56,14 @@ class AgentSessionRuntimeTest(unittest.TestCase):
         self.assertIs(replay, result)
         self.assertEqual(session.tool_calls_used, 1)
 
+    def test_completed_terminal_tool_call_can_be_replayed(self):
+        session = make_session()
+        session.start_tool_call("terminal", "verify_goal")
+        result = session.result("terminal", ToolStatus.SUCCEEDED, {"status": "success"})
+        session.mark_succeeded("success", "verified")
+        session.finish_tool_call(result)
+        self.assertIs(session.start_tool_call("terminal", "verify_goal"), result)
+
     def test_duplicate_running_tool_call_is_rejected(self):
         session = make_session()
         session.start_tool_call("tc-x", "execute_skill")

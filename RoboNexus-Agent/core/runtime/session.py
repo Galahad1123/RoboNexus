@@ -30,6 +30,7 @@ class AgentSession:
         self.events = events
         self.status = AgentSessionStatus.ACTIVE
         self.termination_reason = None
+        self.termination_details = {}
         self.environment_revision = goal.initial_observation.environment_revision
         self.environment_steps_used = goal.initial_observation.captured_at_step
         self.tool_calls_used = 0
@@ -74,9 +75,9 @@ class AgentSession:
     def start_tool_call(self, tool_call_id, tool_name):
         """Return a stored result for an idempotent replay, otherwise None."""
         with self._lock:
-            self._require_active()
             if tool_call_id in self._completed_calls:
                 return self._completed_calls[tool_call_id]
+            self._require_active()
             if tool_call_id in self._in_progress_calls:
                 raise SessionRejected(
                     ErrorCode.TOOL_CALL_IN_PROGRESS,
@@ -279,7 +280,17 @@ class AgentSession:
             )
         return grounding
 
-    def mark_succeeded(self, verification_status, reason):
+    def record_verification(self, status, reason, evidence=None):
+        with self._lock:
+            self._require_active()
+            self._emit(
+                "verification_result",
+                status=str(status),
+                reason=str(reason),
+                evidence=dict(evidence or {}),
+            )
+
+    def mark_succeeded(self, verification_status, reason, details=None):
         with self._lock:
             self._require_active()
             if verification_status != "success":
@@ -290,9 +301,12 @@ class AgentSession:
                 )
             self.status = AgentSessionStatus.SUCCEEDED
             self.termination_reason = reason
-            self._emit("goal_succeeded", reason=reason)
+            self.termination_details = dict(details or {})
+            self._emit(
+                "goal_succeeded", reason=reason, details=self.termination_details
+            )
 
-    def abort(self, status, reason):
+    def abort(self, status, reason, details=None):
         with self._lock:
             self._require_active()
             if status not in {
@@ -304,7 +318,13 @@ class AgentSession:
                 raise ValueError("invalid abort status {!r}".format(status))
             self.status = status
             self.termination_reason = reason
-            self._emit("goal_aborted", status=status.value, reason=reason)
+            self.termination_details = dict(details or {})
+            self._emit(
+                "goal_aborted",
+                status=status.value,
+                reason=reason,
+                details=self.termination_details,
+            )
 
     def _exhaust_budget(self, limit_name):
         self.status = AgentSessionStatus.BUDGET_EXHAUSTED

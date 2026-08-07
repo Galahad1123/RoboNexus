@@ -202,6 +202,35 @@ class ApproachExecutionResult:
 
 
 @dataclass(frozen=True)
+class GoalVerificationResult:
+    """Backend-neutral whole-goal verification conclusion."""
+
+    status: str
+    backend: str
+    reason: str
+    confidence: Optional[float] = None
+    evidence: Dict[str, Any] = field(default_factory=dict)
+
+    def validate(self):
+        if self.status not in {"success", "failure", "uncertain"}:
+            raise ValueError("verification.status must be success, failure, or uncertain")
+        _nonempty(self.backend, "verification.backend")
+        _nonempty(self.reason, "verification.reason")
+        if (
+            self.confidence is not None
+            and (
+                isinstance(self.confidence, bool)
+                or not isinstance(self.confidence, (int, float))
+                or not math.isfinite(self.confidence)
+                or not 0.0 <= self.confidence <= 1.0
+            )
+        ):
+            raise ValueError("verification.confidence must be in [0, 1]")
+        if not isinstance(self.evidence, dict):
+            raise ValueError("verification.evidence must be a mapping")
+
+
+@dataclass(frozen=True)
 class GoalInput:
     goal_id: str
     instruction: str
