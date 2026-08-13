@@ -25,6 +25,7 @@ def main():
     )
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--max-new-tokens", type=int, default=768)
+    parser.add_argument("--expect-skill", action="append")
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
 
@@ -34,6 +35,7 @@ def main():
         seed=args.seed,
         max_new_tokens=args.max_new_tokens,
         output=args.output,
+        expected_skill_ids=args.expect_skill,
     )
     print(json.dumps(report, indent=2, ensure_ascii=False, default=str))
     return 0 if report["session_after"]["session_status"] == "succeeded" else 2

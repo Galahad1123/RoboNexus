@@ -1,3 +1,5 @@
+"""Tests for the legacy SAM/Cutie perception prototype."""
+
 from __future__ import annotations
 
 import unittest

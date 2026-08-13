@@ -153,6 +153,11 @@ class CalvinOracleGrounder(GrounderPort):
             viewMatrix=view,
             projectionMatrix=projection,
             flags=flags,
+            # Keep Oracle segmentation independent of CUDA/EGL contexts used
+            # concurrently by Qwen and DiT. RGB observations still use the
+            # environment camera renderer; only the object/link ID buffer is
+            # rendered on CPU.
+            renderer=getattr(self.adapter.env.p, "ER_TINY_RENDERER", 0),
             physicsClientId=camera.cid,
         )
         return np.asarray(image[4], dtype=np.int64).reshape(

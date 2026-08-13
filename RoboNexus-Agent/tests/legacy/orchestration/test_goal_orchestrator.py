@@ -1,6 +1,7 @@
+"""Tests for the legacy scripted GoalOrchestrator."""
+
 import unittest
 from collections import deque
-from pathlib import Path
 
 from core.legacy.execution.schemas import AttemptResult
 from core.legacy.inspection import InspectionStatus, SkillInspection
@@ -13,10 +14,7 @@ from core.legacy.planning import (
     ScriptedPlanner,
 )
 from core.skills import load_skill_registry
-
-
-WORKSPACE = Path(__file__).resolve().parents[2]
-AGENT_ROOT = WORKSPACE / "RoboNexus-Agent"
+from tests.paths import AGENT_ROOT
 
 
 class FakeAttemptRunner:

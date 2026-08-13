@@ -1,3 +1,5 @@
+"""Tests for the approach_target tool contract."""
+
 import unittest
 
 import numpy as np

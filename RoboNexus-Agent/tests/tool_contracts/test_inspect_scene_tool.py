@@ -1,4 +1,6 @@
 import tempfile
+"""Tests for the inspect_scene tool contract."""
+
 import unittest
 from pathlib import Path
 

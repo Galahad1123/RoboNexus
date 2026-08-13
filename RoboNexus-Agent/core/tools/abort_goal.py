@@ -41,8 +41,9 @@ class AbortGoalTool:
         "additionalProperties": False,
     }
 
-    def __init__(self, session):
+    def __init__(self, session, enforce_attempt_exhaustion=False):
         self.session = session
+        self.enforce_attempt_exhaustion = bool(enforce_attempt_exhaustion)
 
     def call(self, params=None, tool_call_id=None):
         tool_call_id = tool_call_id or self.session.next_tool_call_id()
@@ -55,6 +56,21 @@ class AbortGoalTool:
 
         try:
             parsed = _validate_params(params)
+            if (
+                self.enforce_attempt_exhaustion
+                and parsed["reason_code"] == "repeated_execution_failure"
+                and self.session.maximum_attempts_used()
+                < self.session.goal.limits.skill_attempt_limit
+            ):
+                raise SessionRejected(
+                    ErrorCode.INVALID_PRECONDITION,
+                    "repeated_execution_failure requires exhausting the skill attempt budget",
+                    retryable=True,
+                    details={
+                        "attempts_used": self.session.maximum_attempts_used(),
+                        "attempt_limit": self.session.goal.limits.skill_attempt_limit,
+                    },
+                )
             observation_id = (
                 parsed["last_observation_id"]
                 or self.session.latest_observation.observation_id

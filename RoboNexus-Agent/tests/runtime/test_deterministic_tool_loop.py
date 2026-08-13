@@ -1,3 +1,5 @@
+"""Tests for the retained deterministic tool-loop harness."""
+
 import unittest
 
 from core.domain import (

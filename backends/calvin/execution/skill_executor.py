@@ -1,11 +1,11 @@
 """CALVIN implementation of one routed, outlined atomic skill attempt."""
 
-import zlib
 from types import SimpleNamespace
 
 import numpy as np
 
 from calvin.evaluation.remote_policy.masking.gt import CalvinGTMaskProvider
+from calvin.evaluation.remote_policy.rollout_engine import derive_episode_seed
 from core.domain import GroundingRepresentation, SkillExecutionResult
 from core.policies import PolicyConnectionError, PolicyRoutingError
 from core.ports import (
@@ -39,6 +39,8 @@ class CalvinSkillExecutor(SkillExecutorPort):
         event_logger=None,
         state_inspector=None,
         video_fps=30,
+        environment_episode_id=None,
+        base_seed=42,
     ):
         self.adapter = adapter
         self.task_oracle = task_oracle
@@ -51,6 +53,8 @@ class CalvinSkillExecutor(SkillExecutorPort):
         self.events = event_logger
         self.state_inspector = state_inspector or CalvinStateInspector()
         self.video_fps = int(video_fps)
+        self.environment_episode_id = environment_episode_id
+        self.base_seed = int(base_seed)
         self._available = {}
 
     def check_preconditions(self, skill_id):
@@ -124,7 +128,10 @@ class CalvinSkillExecutor(SkillExecutorPort):
             policy_session_id = "{}__attempt_{:02d}".format(
                 logical_subtask_id, attempt
             )
-            seed = zlib.crc32(policy_session_id.encode("utf-8")) & 0x7FFFFFFF
+            seed_key = self.environment_episode_id or logical_subtask_id
+            if attempt > 1:
+                seed_key = "{}:retry:{}".format(seed_key, attempt)
+            seed = derive_episode_seed(self.base_seed, seed_key)
             result = runner.run(
                 episode=episode,
                 observation=self.adapter.current_observation,
@@ -173,6 +180,9 @@ class CalvinSkillExecutor(SkillExecutorPort):
                 video_fps=self.video_fps,
                 metadata={
                     "policy_session_id": policy_session_id,
+                    "environment_episode_id": self.environment_episode_id,
+                    "episode_seed": seed,
+                    "replan_interval": decision.skill.replan_interval,
                     "success_step": result.success_step,
                     "environment_done": result.environment_done,
                     "latencies_ms": result.latencies_ms,

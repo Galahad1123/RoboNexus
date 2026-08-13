@@ -101,6 +101,10 @@ class CalvinGTMaskProvider(MaskProvider):
             viewMatrix=view,
             projectionMatrix=projection,
             flags=flags,
+            # Qwen/DiT may own CUDA contexts while CALVIN is running. Use the
+            # CPU renderer for the object/link ID buffer so outline masks do
+            # not depend on EGL context state.
+            renderer=self.env.p.ER_TINY_RENDERER,
             physicsClientId=camera.cid,
         )
         return np.asarray(image[4], dtype=np.int64).reshape(

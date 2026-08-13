@@ -190,6 +190,9 @@ class AgentSession:
     def attempts_used(self, logical_subtask_id):
         return self._attempts.get(logical_subtask_id, 0)
 
+    def maximum_attempts_used(self):
+        return max(self._attempts.values()) if self._attempts else 0
+
     def resolve_logical_subtask(self, skill_id, groundings):
         """Return a stable ID across re-grounding of the same selected instances."""
         fingerprint = (

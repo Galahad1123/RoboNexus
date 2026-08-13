@@ -4,7 +4,9 @@ name: calvin_d34
 defaults:
   max_steps: 150
   max_attempts: 3
-  replan_interval: 4
+  # The deployed DiT checkpoints predict 16-action chunks and were evaluated
+  # with all 16 actions consumed before replanning.
+  replan_interval: 16
 
 skills:
   close_drawer:

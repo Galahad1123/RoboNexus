@@ -1,3 +1,5 @@
+"""Tests for verify_goal and abort_goal."""
+
 import unittest
 
 from backends.calvin.verification.goal_verifier import CalvinOracleGoalVerifier
@@ -191,6 +193,30 @@ class AbortGoalToolTest(unittest.TestCase):
             "second",
         )
         self.assertEqual(second.error.code, ErrorCode.SESSION_TERMINAL)
+
+    def test_runtime_can_require_attempt_exhaustion_for_execution_failure(self):
+        session = make_session()
+        tool = AbortGoalTool(session, enforce_attempt_exhaustion=True)
+        rejected = tool.call(
+            {
+                "reason_code": "repeated_execution_failure",
+                "summary": "one attempt is not enough evidence",
+            }
+        )
+        self.assertEqual(rejected.error.code, ErrorCode.INVALID_PRECONDITION)
+        self.assertEqual(session.status, AgentSessionStatus.ACTIVE)
+
+        subtask_id = session.resolve_logical_subtask("place_in_drawer", ())
+        for _ in range(session.goal.limits.skill_attempt_limit):
+            session.consume_attempt(subtask_id)
+        accepted = tool.call(
+            {
+                "reason_code": "repeated_execution_failure",
+                "summary": "the complete attempt budget was exhausted",
+            }
+        )
+        self.assertEqual(accepted.status, ToolStatus.SUCCEEDED)
+        self.assertEqual(session.status, AgentSessionStatus.ABORTED_BY_AGENT)
 
 
 class FakeTaskOracle:

@@ -1,7 +1,6 @@
-import json
-import tempfile
+"""Tests for legacy retry contracts and TaskRetryController."""
+
 import unittest
-from pathlib import Path
 
 from core.legacy.execution.retry_controller import RetryPolicy, TaskRetryController
 from core.legacy.execution.schemas import (
@@ -12,7 +11,7 @@ from core.legacy.execution.schemas import (
     TaskSpec,
     VerificationStatus,
 )
-from core.logging import InMemoryEventLogger, JsonlEventLogger
+from core.logging import InMemoryEventLogger
 from core.schemas import ObjectRole
 
 
@@ -21,28 +20,6 @@ class ExecutionContractsTest(unittest.TestCase):
         self.assertEqual(ObjectRole.INTERACTION.value, "interaction")
         self.assertEqual(TargetRole.INTERACTION.value, "interaction")
         self.assertEqual(VerificationStatus.UNKNOWN.value, "unknown")
-
-    def test_jsonl_logger_writes_structured_events(self):
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "events.jsonl"
-            logger = JsonlEventLogger(path, "test-run")
-            logger.emit(
-                "attempt_failed",
-                episode_id="validation-1",
-                attempt=1,
-                reason="timeout",
-            )
-            logger.close()
-            event = json.loads(path.read_text().strip())
-            self.assertEqual(event["run_id"], "test-run")
-            self.assertEqual(event["event"], "attempt_failed")
-            self.assertEqual(event["attempt"], 1)
-            self.assertIn("timestamp", event)
-
-    def test_memory_logger_is_suitable_for_orchestrator_tests(self):
-        logger = InMemoryEventLogger()
-        logger.emit("recovery_started", attempt=2)
-        self.assertEqual(logger.events[0]["event"], "recovery_started")
 
     def test_retry_controller_recovers_without_resetting_backend_state(self):
         logger = InMemoryEventLogger()

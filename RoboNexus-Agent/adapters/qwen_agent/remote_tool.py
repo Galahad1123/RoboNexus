@@ -3,6 +3,7 @@
 import json
 from urllib.request import ProxyHandler, Request, build_opener
 
+from qwen_agent.llm.schema import ContentItem
 from qwen_agent.tools.base import BaseTool
 
 
@@ -30,7 +31,7 @@ class RemoteRobotTool(BaseTool):
         )
         with _DIRECT_OPENER.open(request, timeout=self.timeout) as response:
             result = json.loads(response.read().decode("utf-8"))
-        return json.dumps(result, ensure_ascii=False, sort_keys=True)
+        return _result_content(self.name, result)
 
 
 def fetch_session(runtime_url, timeout=30.0):
@@ -54,3 +55,28 @@ def _qwen_compatible_schema(schema):
         "properties": dict(schema.get("properties", {})),
         "required": list(schema.get("required", [])),
     }
+
+
+def _result_content(tool_name, result):
+    """Return JSON plus fresh visual observations for multimodal tool turns."""
+    serialized = json.dumps(result, ensure_ascii=False, sort_keys=True)
+    if tool_name != "inspect_scene" or result.get("status") != "succeeded":
+        return serialized
+
+    paths_by_kind = {
+        artifact.get("kind"): path
+        for artifact, path in zip(
+            result.get("artifacts", ()), result.get("artifact_paths", ())
+        )
+    }
+    static_path = paths_by_kind.get("current_static")
+    wrist_path = paths_by_kind.get("current_wrist")
+    if not static_path or not wrist_path:
+        return serialized
+    return [
+        ContentItem(text=serialized),
+        ContentItem(text="CURRENT_STATIC_VIEW (fresh inspect_scene observation)"),
+        ContentItem(image=static_path),
+        ContentItem(text="CURRENT_WRIST_VIEW (fresh inspect_scene observation)"),
+        ContentItem(image=wrist_path),
+    ]

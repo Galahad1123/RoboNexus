@@ -1,5 +1,6 @@
+"""Policy registry, routing, client-pool, and handshake tests."""
+
 import unittest
-from pathlib import Path
 
 from core.policies import (
     HandshakeValidationError,
@@ -9,10 +10,7 @@ from core.policies import (
     load_policy_catalog,
 )
 from core.skills import CALVIN_D34_ROUTING, load_skill_registry
-
-
-WORKSPACE = Path(__file__).resolve().parents[2]
-AGENT_ROOT = WORKSPACE / "RoboNexus-Agent"
+from tests.paths import AGENT_ROOT
 
 
 def policy_metadata(**overrides):

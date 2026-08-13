@@ -56,6 +56,15 @@ def main():
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=8110)
     parser.add_argument("--task", default="lift_red_block_table")
+    parser.add_argument(
+        "--skill",
+        action="append",
+        default=[],
+        help="allowed goal skill; repeat for a multi-subtask goal (defaults to --task)",
+    )
+    parser.add_argument("--goal", help="goal instruction; defaults to the initial task instruction")
+    parser.add_argument("--disable-approach", action="store_true")
+    parser.add_argument("--environment-step-limit", type=int, default=1000)
     parser.add_argument("--episode-index", type=int, default=0)
     parser.add_argument(
         "--suite",
@@ -84,12 +93,17 @@ def main():
     artifacts = LocalArtifactStore(args.output_dir / "artifacts")
     events = JsonlEventLogger(args.output_dir / "events.jsonl", "qwen-single-skill")
     full_registry = load_skill_registry(args.skills_config)
-    selected_skill = full_registry.get(args.task)
+    allowed_skill_ids = args.skill or [args.task]
+    if len(set(allowed_skill_ids)) != len(allowed_skill_ids):
+        parser.error("--skill values must be unique")
+    selected_skills = {
+        skill_id: full_registry.get(skill_id) for skill_id in allowed_skill_ids
+    }
     registry = SkillRegistry(
         full_registry.name + "_single_skill",
         full_registry.version,
         full_registry.defaults,
-        {args.task: selected_skill},
+        selected_skills,
         full_registry.source,
     )
     catalog = load_policy_catalog(
@@ -114,7 +128,8 @@ def main():
             observation, _, _, _ = adapter.step(zero_action)
         observer = CalvinSceneObserver(adapter)
         capture = observer.capture_scene()
-        session_id = "qwen-{}-{:03d}".format(args.task, args.episode_index)
+        goal_slug = "__".join(allowed_skill_ids)
+        session_id = "qwen-{}-{:03d}".format(goal_slug, args.episode_index)
         static = artifacts.save_image(session_id, "initial_static", capture.static_rgb)
         wrist = artifacts.save_image(session_id, "initial_wrist", capture.wrist_rgb)
         initial = ObservationRef(
@@ -122,12 +137,20 @@ def main():
         )
         session = AgentSession(
             GoalInput(
-                "goal-{}-{:03d}".format(args.task, args.episode_index),
-                episode.instruction,
-                {"predicates": [{"name": episode.oracle_task}]},
+                "goal-{}-{:03d}".format(goal_slug, args.episode_index),
+                args.goal or episode.instruction,
+                {
+                    "predicates": [
+                        {"name": selected_skills[skill_id].oracle_task}
+                        for skill_id in allowed_skill_ids
+                    ]
+                },
                 initial,
-                limits=RuntimeLimits(environment_step_limit=500),
-                metadata={"allowed_skill_ids": [args.task]},
+                limits=RuntimeLimits(
+                    tool_call_limit=max(32, 20 * len(allowed_skill_ids)),
+                    environment_step_limit=args.environment_step_limit
+                ),
+                metadata={"allowed_skill_ids": allowed_skill_ids},
             ),
             session_id=session_id,
             events=events,
@@ -141,15 +164,22 @@ def main():
             pool,
             event_logger=events,
             video_fps=suite.manifest.get("frequency_hz", 30),
+            environment_episode_id=episode.episode_id,
         )
         tools = [
             InspectSceneTool(session, observer, artifacts),
             GroundTargetsTool(session, registry, grounder),
             ExecuteSkillTool(session, registry, executor, artifacts),
-            ApproachTargetTool(session, CalvinApproachController(adapter), artifacts),
             VerifyGoalTool(session, CalvinOracleGoalVerifier(adapter, task_oracle)),
-            AbortGoalTool(session),
+            AbortGoalTool(session, enforce_attempt_exhaustion=True),
         ]
+        if not args.disable_approach:
+            tools.insert(
+                3,
+                ApproachTargetTool(
+                    session, CalvinApproachController(adapter), artifacts
+                ),
+            )
         server = CalvinToolSessionServer(
             args.host,
             args.port,
@@ -160,8 +190,12 @@ def main():
                 "goal_id": session.goal.goal_id,
                 "goal_instruction": session.goal.instruction,
                 "success_spec": session.goal.success_spec,
-                "allowed_skill_ids": [args.task],
-                "required_grounding_roles": list(selected_skill.grounding_roles),
+                "allowed_skill_ids": allowed_skill_ids,
+                "required_grounding_roles": {
+                    skill_id: list(selected_skills[skill_id].grounding_roles)
+                    for skill_id in allowed_skill_ids
+                },
+                "approach_enabled": not args.disable_approach,
                 "initial_observation": {
                     "observation_id": initial.observation_id,
                     "static_image": str(artifacts.resolve(static.uri)),
@@ -177,7 +211,7 @@ def main():
                 {
                     "runtime_url": "http://{}:{}".format(args.host, args.port),
                     "session_id": session_id,
-                    "goal": episode.instruction,
+                    "goal": session.goal.instruction,
                 },
                 sort_keys=True,
             ),

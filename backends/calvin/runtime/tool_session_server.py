@@ -2,7 +2,7 @@
 
 import json
 import copy
-from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from http.server import BaseHTTPRequestHandler, HTTPServer
 from threading import RLock
 from urllib.parse import urlparse
 
@@ -54,7 +54,11 @@ class CalvinToolSessionServer:
                 self.end_headers()
                 self.wfile.write(body)
 
-        self.httpd = ThreadingHTTPServer((host, int(port)), Handler)
+        # CALVIN/PyBullet rendering is thread-affine: the environment and its
+        # EGL context must be used on the thread that created them. A robot
+        # Session is serialized already, so serving requests on this owner
+        # thread is both correct and sufficient.
+        self.httpd = HTTPServer((host, int(port)), Handler)
 
     def describe_session(self):
         document = dict(self.session_document)

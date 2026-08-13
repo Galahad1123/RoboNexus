@@ -1,6 +1,7 @@
+"""Legacy deterministic stage-6 acceptance coverage."""
+
 import unittest
 from collections import defaultdict, deque
-from pathlib import Path
 
 import numpy as np
 
@@ -11,10 +12,7 @@ from core.legacy.orchestration import GoalExecutionConfig, GoalOrchestrator, Goa
 from core.legacy.planning import GoalSpec, ScriptedPlanner
 from core.policies import PolicyClientPool, PolicyRouter, load_policy_catalog
 from core.skills import load_skill_registry
-
-
-WORKSPACE = Path(__file__).resolve().parents[2]
-AGENT_ROOT = WORKSPACE / "RoboNexus-Agent"
+from tests.paths import AGENT_ROOT
 
 
 def metadata():

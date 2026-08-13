@@ -1,3 +1,5 @@
+"""Tests for the active Agent session runtime."""
+
 import unittest
 
 from core.domain import (

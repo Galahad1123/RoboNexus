@@ -1,3 +1,5 @@
+"""Tests for the legacy perception transport codec."""
+
 import unittest
 
 import numpy as np

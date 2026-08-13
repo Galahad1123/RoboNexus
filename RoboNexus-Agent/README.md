@@ -136,7 +136,7 @@ suite 的 `mask_style` 读取颜色、透明度和轮廓宽度，并从所选初
 当前 skill 没有角色定义，执行会明确失败，而不会静默退化为原始 RGB。多技能 goal
 后续需要由 Planner/grounding 模块为每个新 skill 提供对应的 `mask_roles`。
 
-阶段 6 的自动验收位于 `tests/test_agent_acceptance.py`，覆盖单/双技能、同/跨 policy、
+旧阶段 6 的兼容验收位于 `tests/legacy/orchestration/test_agent_acceptance.py`，覆盖单/双技能、同/跨 policy、
 attempt retry、两级 replan、abort、已满足 skip 和终止后不再调用 Planner。
 
 ## 协议约定
@@ -218,7 +218,7 @@ goal；失败时保持当前场景，重新检查和定位，调用 `approach_ta
 最多三次 attempt，成功后立即停止，三次仍失败则显式调用 `abort_goal`。它只用于在接入
 Qwen-Agent 前验证 Runtime 和工具状态转换，不承担正式 Agent 的语义规划职责。
 
-## Qwen-Agent 单技能闭环
+## Qwen-Agent 工具闭环
 
 正式 Qwen-Agent 接入跨两个 Conda 环境运行。先启动对应 DiT endpoint，再在 CALVIN
 环境创建一个连续的 Tool Session Runtime：
@@ -227,6 +227,7 @@ Qwen-Agent 前验证 Runtime 和工具状态转换，不承担正式 Agent 的�
 PYTHONPATH=RoboNexus-Agent:. conda run -n robonexus-calvin python \
   scripts/agent/serve_calvin_tool_session.py \
   --task lift_red_block_table \
+  --disable-approach \
   --episode-index 0 \
   --output-dir outputs/calvin_agent/qwen_single_skill
 ```
@@ -237,14 +238,53 @@ PYTHONPATH=RoboNexus-Agent:. conda run -n robonexus-calvin python \
 PYTHONPATH=RoboNexus-Agent:. conda run -n robonexus-qwen python \
   scripts/agent/run_qwen_single_skill.py \
   --runtime-url http://127.0.0.1:8110 \
+  --expect-skill lift_red_block_table \
   --model-path weights/Qwen3-VL-4B-Instruct
 ```
 
 Qwen 进程只持有 `BaseTool` RPC adapter；CALVIN 进程独占环境、Session、Oracle 和六个
-具体工具。Runtime 对本次 Session 的 Registry 裁剪为唯一允许的 skill，并根据 CALVIN
+具体工具。`--disable-approach` 会从该 Session 的 capability 和 Qwen 工具列表中彻底移除
+`approach_target`，不是只在提示词中建议模型不要调用。省略该参数则重新启用工具。
+
+双子任务可在同一个连续环境中显式发布两个 skill：
+
+```bash
+PYTHONPATH=RoboNexus-Agent:. conda run -n robonexus-calvin python \
+  scripts/agent/serve_calvin_tool_session.py \
+  --task lift_red_block_table \
+  --skill open_drawer \
+  --skill move_slider_left \
+  --goal "open the drawer and move the sliding door to the left" \
+  --disable-approach \
+  --environment-step-limit 1200 \
+  --output-dir outputs/calvin_agent/qwen_two_skills
+
+PYTHONPATH=RoboNexus-Agent:. conda run -n robonexus-qwen python \
+  scripts/agent/run_qwen_single_skill.py \
+  --runtime-url http://127.0.0.1:8110 \
+  --expect-skill open_drawer \
+  --expect-skill move_slider_left \
+  --model-path weights/Qwen3-VL-4B-Instruct
+```
+
+这里 `--task` 选择 CALVIN 初始 episode；重复的 `--skill` 定义本次 Agent 可路由的技能和
+Oracle 成功条件。Qwen 客户端会检查 Runtime 发布的 skill 集合与 `--expect-skill` 完全
+一致，避免误连到残留 Session。Runtime 根据 CALVIN
 grounder capability 向 Qwen 发布 semantic-only Schema。模型生成的参数仍会在 Runtime
 用原始严格 Schema 二次校验。运行结果写入 `qwen_agent_result.json`、`events.jsonl`，
 每次 `execute_skill` 另存 outlined MP4。
+
+`inspect_scene` 的远程工具结果同时返回结构化 JSON 和带明确
+`CURRENT_STATIC_VIEW`/`CURRENT_WRIST_VIEW` 标签的两个 `ContentItem(image=...)`。因此
+Qwen 在技能执行、整体校验或失败之后重新检查场景时，看到的是连续环境中的最新图像，
+而不是只有 artifact 路径或重复使用初始帧。其他工具保持紧凑 JSON，控制多轮上下文大小。
+
+Qwen 环境中的多模态适配测试运行：
+
+```bash
+PYTHONPATH=RoboNexus-Agent:. conda run -n robonexus-qwen python \
+  -m unittest discover -s RoboNexus-Agent/tests_qwen -v
+```
 
 ```bash
 PYTHONPATH=RoboNexus-Agent conda run -n robonexus-agent \

@@ -1,5 +1,6 @@
+"""Tests for the execute_skill tool contract and CALVIN adapter."""
+
 import unittest
-from pathlib import Path
 
 import numpy as np
 
@@ -27,9 +28,9 @@ from core.ports import (
 from core.runtime import AgentSession
 from core.skills import load_skill_registry
 from core.tools import ExecuteSkillTool
+from tests.paths import WORKSPACE
 
 
-WORKSPACE = Path(__file__).resolve().parents[2]
 SKILLS_CONFIG = WORKSPACE / "RoboNexus-Agent/configs/calvin/skills_d34.yaml"
 
 

@@ -1,3 +1,5 @@
+"""Tests for the CALVIN state-inspection backend adapter."""
+
 import unittest
 
 import numpy as np

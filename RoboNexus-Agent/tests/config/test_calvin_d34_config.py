@@ -1,3 +1,5 @@
+"""Completeness and validation tests for CALVIN-D34 configuration."""
+
 import json
 import tempfile
 import unittest
@@ -6,10 +8,9 @@ from pathlib import Path
 from core.config import ConfigValidationError
 from core.policies import load_policy_catalog
 from core.skills import CALVIN_D34_ROUTING, CALVIN_D34_SKILL_IDS, load_skill_registry
+from tests.paths import AGENT_ROOT, WORKSPACE
 
 
-WORKSPACE = Path(__file__).resolve().parents[2]
-AGENT_ROOT = WORKSPACE / "RoboNexus-Agent"
 SKILLS_CONFIG = AGENT_ROOT / "configs/calvin/skills_d34.yaml"
 POLICIES_CONFIG = AGENT_ROOT / "configs/calvin/policies.yaml"
 INVENTORY = WORKSPACE / "datasets/calvin_d34/reports/task_inventory.json"
@@ -43,7 +44,7 @@ class CalvinD34ConfigTest(unittest.TestCase):
         self.assertEqual(general.max_steps, 150)
         self.assertEqual(push.max_steps, 120)
         self.assertEqual(general.max_attempts, 3)
-        self.assertEqual(general.replan_interval, 4)
+        self.assertEqual(general.replan_interval, 16)
         self.assertIsNone(general.success_guard)
         self.assertEqual(rotate.success_guard["gripper"], "open")
         self.assertEqual(rotate.success_guard["consecutive_steps"], 3)

@@ -1,5 +1,6 @@
+"""Tests for the legacy atomic-skill executor."""
+
 import unittest
-from pathlib import Path
 
 import numpy as np
 
@@ -7,10 +8,7 @@ from core.legacy.execution import AtomicSkillExecutionError, AtomicSkillExecutor
 from core.logging import InMemoryEventLogger
 from core.policies import PolicyClientPool, PolicyRouter, load_policy_catalog
 from core.skills import load_skill_registry
-
-
-WORKSPACE = Path(__file__).resolve().parents[2]
-AGENT_ROOT = WORKSPACE / "RoboNexus-Agent"
+from tests.paths import AGENT_ROOT
 
 
 def metadata():
@@ -106,7 +104,7 @@ class AtomicSkillExecutorTest(unittest.TestCase):
         self.assertEqual(
             client.reset_calls[0]["task"], "push the red block to the left"
         )
-        self.assertEqual(client.reset_calls[0]["replan_interval"], 4)
+        self.assertEqual(client.reset_calls[0]["replan_interval"], 16)
         event = self.events.events[0]
         self.assertEqual(event["event"], "atomic_attempt_started")
         self.assertTrue(event["scene_continuation"])

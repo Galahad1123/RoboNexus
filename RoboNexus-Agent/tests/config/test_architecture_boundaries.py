@@ -1,10 +1,11 @@
+"""Dependency-boundary tests for the active architecture."""
+
 import ast
 import unittest
-from pathlib import Path
+from tests.paths import AGENT_ROOT, WORKSPACE
 
 
-AGENT_ROOT = Path(__file__).resolve().parents[1]
-REPOSITORY_ROOT = AGENT_ROOT.parent
+REPOSITORY_ROOT = WORKSPACE
 CALVIN_BACKEND_ROOT = REPOSITORY_ROOT / "backends" / "calvin"
 CANONICAL_PACKAGES = ("domain", "runtime", "ports", "tools", "policies")
 FORBIDDEN_PREFIXES = (
