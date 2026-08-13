@@ -23,6 +23,11 @@ from .attempt_runner import CalvinSkillAttemptRunner
 from .outline_styles import load_outline_styles
 
 
+STATEFUL_RETRY_SKILLS = frozenset(
+    {"place_in_drawer", "place_in_slider", "stack_block"}
+)
+
+
 class CalvinSkillExecutor(SkillExecutorPort):
     """Route to a DiT and execute once without resetting the CALVIN scene."""
 
@@ -104,7 +109,7 @@ class CalvinSkillExecutor(SkillExecutorPort):
             available = self._available.pop(skill_id)
         decision, client = available
         try:
-            recovery = self._restore_robot_for_retry(attempt)
+            recovery = self._restore_robot_for_retry(skill_id, attempt)
             mask_roles = self._mask_roles(groundings)
             mask_provider = CalvinGTMaskProvider(self.adapter.env)
             episode = SimpleNamespace(
@@ -213,9 +218,14 @@ class CalvinSkillExecutor(SkillExecutorPort):
                 )
             )
 
-    def _restore_robot_for_retry(self, attempt):
+    def _restore_robot_for_retry(self, skill_id, attempt):
         if int(attempt) <= 1:
             return {"performed": False, "reason": "first_attempt"}
+        if skill_id in STATEFUL_RETRY_SKILLS:
+            return {
+                "performed": False,
+                "reason": "preserve_stateful_skill_robot_state",
+            }
         if self.initial_robot_observation is None:
             return {"performed": False, "reason": "initial_state_unavailable"}
 

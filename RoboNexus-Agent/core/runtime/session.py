@@ -36,6 +36,8 @@ class AgentSession:
         self.tool_calls_used = 0
         self.replans_used = 0
         self._attempts = {}
+        self._achieved_skills = set()
+        self._achievement_sequence = []
         self._logical_subtasks = {}
         self._logical_subtask_counter = 0
         self._observations = {
@@ -192,6 +194,29 @@ class AgentSession:
 
     def maximum_attempts_used(self):
         return max(self._attempts.values()) if self._attempts else 0
+
+    @property
+    def achieved_skill_ids(self):
+        return tuple(sorted(self._achieved_skills))
+
+    @property
+    def achievement_sequence(self):
+        return tuple(self._achievement_sequence)
+
+    def record_skill_achievement(self, skill_id, logical_subtask_id):
+        with self._lock:
+            self._require_active()
+            skill_id = str(skill_id).strip()
+            if not skill_id:
+                raise ValueError("skill_id must be non-empty")
+            if skill_id not in self._achieved_skills:
+                self._achieved_skills.add(skill_id)
+                self._achievement_sequence.append(skill_id)
+            self._emit(
+                "skill_achieved",
+                skill_id=skill_id,
+                logical_subtask_id=str(logical_subtask_id),
+            )
 
     def resolve_logical_subtask(self, skill_id, groundings):
         """Return a stable ID across re-grounding of the same selected instances."""

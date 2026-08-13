@@ -119,6 +119,10 @@ class ExecuteSkillTool:
             after = self.session.add_observation(
                 static_artifact.uri, wrist_artifact.uri
             )
+            if execution.success:
+                self.session.record_skill_achievement(
+                    skill.skill_id, logical_subtask_id
+                )
             data = {
                 "skill_id": skill.skill_id,
                 "logical_subtask_id": logical_subtask_id,

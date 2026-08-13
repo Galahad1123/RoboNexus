@@ -82,15 +82,33 @@ class RetryRobotRestoreTest(unittest.TestCase):
         executor.adapter = adapter
         executor.initial_robot_observation = initial
 
-        first = executor._restore_robot_for_retry(1)
+        first = executor._restore_robot_for_retry("open_drawer", 1)
         self.assertFalse(first["performed"])
         self.assertIsNone(env.robot.restored)
 
-        retry = executor._restore_robot_for_retry(2)
+        retry = executor._restore_robot_for_retry("open_drawer", 2)
         self.assertTrue(retry["performed"])
         self.assertFalse(retry["scene_reset"])
         self.assertAlmostEqual(retry["max_joint_error_after_rad"], 0.0)
         np.testing.assert_array_equal(env.robot.restored, initial)
+
+    def test_stateful_place_retry_preserves_current_held_state(self):
+        initial = np.zeros(15, dtype=np.float64)
+        initial[14] = 1
+        env = _FakeEnv(initial)
+        adapter = CalvinEnvAdapter(env, _metadata())
+        adapter.current_observation = {"robot_obs": initial.copy()}
+        executor = object.__new__(CalvinSkillExecutor)
+        executor.adapter = adapter
+        executor.initial_robot_observation = initial
+
+        recovery = executor._restore_robot_for_retry("place_in_drawer", 2)
+
+        self.assertFalse(recovery["performed"])
+        self.assertEqual(
+            recovery["reason"], "preserve_stateful_skill_robot_state"
+        )
+        self.assertIsNone(env.robot.restored)
 
 
 if __name__ == "__main__":

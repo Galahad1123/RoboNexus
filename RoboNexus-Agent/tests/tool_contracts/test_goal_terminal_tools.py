@@ -16,14 +16,17 @@ from core.runtime import AgentSession
 from core.tools import AbortGoalTool, VerifyGoalTool
 
 
-def make_session(with_reference=True, predicates=None):
+def make_session(with_reference=True, predicates=None, mode=None):
     observation = ObservationRef(
         "obs_000001", 0, 0, "artifact://initial/static.png", "artifact://initial/wrist.png"
     )
+    success_spec = {"predicates": predicates or ["place_in_drawer"]}
+    if mode is not None:
+        success_spec["mode"] = mode
     goal = GoalInput(
         "goal-terminal",
         "put the red block in the drawer",
-        {"predicates": predicates or ["place_in_drawer"]},
+        success_spec,
         observation,
         target_reference_image=(
             "artifact://goal/reference.png" if with_reference else None
@@ -52,6 +55,38 @@ class FakeVerifier(GoalVerifierPort):
 
 
 class VerifyGoalToolTest(unittest.TestCase):
+    def test_skill_sequence_latches_oracle_confirmed_intermediate_skills(self):
+        session = make_session(
+            predicates=["lift_red_block_table", "place_in_drawer"],
+            mode="skill_sequence",
+        )
+        session.record_skill_achievement("lift_red_block_table", "subtask_001")
+        session.record_skill_achievement("place_in_drawer", "subtask_002")
+        result = VerifyGoalTool(session, FakeVerifier("failure")).call(
+            {"claim": "sequence complete", "observation_id": "obs_000001"}
+        )
+        self.assertEqual(result.data["status"], "success")
+        self.assertEqual(session.status, AgentSessionStatus.SUCCEEDED)
+        self.assertEqual(
+            result.data["evidence"]["achieved_skill_ids"],
+            ["lift_red_block_table", "place_in_drawer"],
+        )
+        self.assertTrue(result.data["evidence"]["sequence_order_satisfied"])
+
+    def test_skill_sequence_rejects_reverse_achievement_order(self):
+        session = make_session(
+            predicates=["open_drawer", "close_drawer"],
+            mode="skill_sequence",
+        )
+        session.record_skill_achievement("close_drawer", "subtask_001")
+        session.record_skill_achievement("open_drawer", "subtask_002")
+        result = VerifyGoalTool(session, FakeVerifier("success")).call(
+            {"claim": "sequence complete", "observation_id": "obs_000001"}
+        )
+        self.assertEqual(result.data["status"], "failure")
+        self.assertFalse(result.data["evidence"]["sequence_order_satisfied"])
+        self.assertEqual(session.status, AgentSessionStatus.ACTIVE)
+
     def test_success_is_the_only_verifier_result_that_terminates_successfully(self):
         session = make_session()
         tool = VerifyGoalTool(session, FakeVerifier("success"))

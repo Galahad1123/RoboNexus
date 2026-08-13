@@ -1,6 +1,12 @@
 """Backend-neutral implementation of the ``verify_goal`` Agent tool."""
 
-from core.domain import ErrorCode, ToolError, ToolResultEnvelope, ToolStatus
+from core.domain import (
+    ErrorCode,
+    GoalVerificationResult,
+    ToolError,
+    ToolResultEnvelope,
+    ToolStatus,
+)
 from core.ports import GoalVerifierPortError, GoalVerifierUnavailable
 from core.runtime import SessionRejected
 
@@ -46,6 +52,9 @@ class VerifyGoalTool:
                 self.session.goal,
                 observation,
                 use_goal_reference=parsed["use_goal_reference"],
+            )
+            verification = _apply_sequence_achievements(
+                self.session, verification
             )
             verification.validate()
             reference_used = bool(
@@ -172,3 +181,54 @@ def _nonempty(value, path):
     if not isinstance(value, str) or not value.strip():
         raise ValueError("{} must be a non-empty string".format(path))
     return value.strip()
+
+
+def _apply_sequence_achievements(session, verification):
+    """Latch Oracle-confirmed atomic skills for ordered CALVIN goals.
+
+    Transient intermediate predicates such as ``lift_*`` need not remain true
+    after a later placement. This mode is explicit so ordinary final-state
+    goals continue to use only the live verifier result.
+    """
+    if session.goal.success_spec.get("mode") != "skill_sequence":
+        return verification
+    predicates = session.goal.success_spec.get("predicates", ())
+    names = [
+        item.get("name") if isinstance(item, dict) else item
+        for item in predicates
+    ]
+    achieved = set(session.achieved_skill_ids)
+    achievement_sequence = list(session.achievement_sequence)
+    live = {
+        item.get("name"): bool(item.get("satisfied"))
+        for item in verification.evidence.get("predicates", ())
+        if isinstance(item, dict)
+    }
+    evidence = {
+        "predicates": [
+            {
+                "name": name,
+                "satisfied": bool(live.get(name, False) or name in achieved),
+                "latched_skill_achievement": name in achieved,
+            }
+            for name in names
+        ],
+        "achieved_skill_ids": sorted(achieved),
+        "achievement_sequence": achievement_sequence,
+        "live_backend_evidence": dict(verification.evidence),
+    }
+    sequence_complete = achievement_sequence[: len(names)] == names
+    evidence["required_sequence"] = names
+    evidence["sequence_order_satisfied"] = sequence_complete
+    success = bool(names) and sequence_complete
+    return GoalVerificationResult(
+        status="success" if success else "failure",
+        backend="{}+skill_sequence".format(verification.backend),
+        reason=(
+            "all_sequence_skills_achieved"
+            if success
+            else "sequence_skills_not_yet_achieved"
+        ),
+        confidence=verification.confidence,
+        evidence=evidence,
+    )

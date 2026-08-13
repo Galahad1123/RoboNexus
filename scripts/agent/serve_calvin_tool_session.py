@@ -140,6 +140,7 @@ def main():
                 "goal-{}-{:03d}".format(goal_slug, args.episode_index),
                 args.goal or episode.instruction,
                 {
+                    "mode": "skill_sequence",
                     "predicates": [
                         {"name": selected_skills[skill_id].oracle_task}
                         for skill_id in allowed_skill_ids
