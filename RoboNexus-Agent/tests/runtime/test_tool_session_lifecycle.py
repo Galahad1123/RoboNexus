@@ -10,6 +10,11 @@ class _Session:
 
 
 class ToolSessionLifecycleTest(unittest.TestCase):
+    def test_default_terminal_read_window_covers_long_agent_finalization(self):
+        self.assertEqual(
+            CalvinToolSessionServer.__init__.__defaults__[-1], 30.0
+        )
+
     def test_terminal_callback_runs_exactly_once(self):
         calls = []
         server = object.__new__(CalvinToolSessionServer)

@@ -18,7 +18,7 @@ class CalvinToolSessionServer:
         artifacts,
         session_document,
         on_terminal=None,
-        terminal_grace_seconds=5.0,
+        terminal_grace_seconds=30.0,
     ):
         self.session = session
         self.tools = {tool.name: tool for tool in tools}
