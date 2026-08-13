@@ -14,6 +14,7 @@ if str(AGENT_ROOT) not in sys.path:
     sys.path.insert(0, str(AGENT_ROOT))
 
 from adapters.qwen_agent import run_single_skill_agent  # noqa: E402
+from core.logging import recover_agent_result  # noqa: E402
 
 
 def main():
@@ -27,7 +28,17 @@ def main():
     parser.add_argument("--max-new-tokens", type=int, default=768)
     parser.add_argument("--expect-skill", action="append")
     parser.add_argument("--output", type=Path)
+    parser.add_argument(
+        "--recover-output-dir",
+        type=Path,
+        help="rebuild qwen_agent_result.json from checkpoint/runtime artifacts without loading Qwen",
+    )
     args = parser.parse_args()
+
+    if args.recover_output_dir is not None:
+        report = recover_agent_result(args.recover_output_dir)
+        print(json.dumps(report, indent=2, ensure_ascii=False, default=str))
+        return 0 if report["effective_status"] == "succeeded" else 2
 
     report = run_single_skill_agent(
         args.runtime_url,
@@ -38,7 +49,7 @@ def main():
         expected_skill_ids=args.expect_skill,
     )
     print(json.dumps(report, indent=2, ensure_ascii=False, default=str))
-    return 0 if report["session_after"]["session_status"] == "succeeded" else 2
+    return 0 if report["effective_status"] == "succeeded" else 2
 
 
 if __name__ == "__main__":

@@ -26,7 +26,7 @@ from backends.local_artifact_store import LocalArtifactStore  # noqa: E402
 from calvin.evaluation.remote_policy.calvin_env_adapter import CalvinEnvAdapter  # noqa: E402
 from calvin.evaluation.remote_policy.task_suite import ConfiguredCalvinSuite  # noqa: E402
 from core.domain import GoalInput, ObservationRef, RuntimeLimits  # noqa: E402
-from core.logging import JsonlEventLogger  # noqa: E402
+from core.logging import JsonlEventLogger, atomic_write_json  # noqa: E402
 from core.policies import PolicyClientPool, PolicyRouter, load_policy_catalog  # noqa: E402
 from core.runtime import AgentSession  # noqa: E402
 from core.skills import SkillRegistry, load_skill_registry  # noqa: E402
@@ -244,9 +244,7 @@ def main():
             "termination_reason": session.termination_reason if "session" in locals() else None,
             "environment_steps": adapter.environment_steps,
         }
-        (args.output_dir / "runtime_result.json").write_text(
-            json.dumps(report, indent=2, sort_keys=True, default=str) + "\n"
-        )
+        atomic_write_json(args.output_dir / "runtime_result.json", report)
         if server is not None:
             server.close()
         pool.close_all()

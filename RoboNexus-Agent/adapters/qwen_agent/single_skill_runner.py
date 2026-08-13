@@ -6,6 +6,8 @@ from pathlib import Path
 from qwen_agent.agents import Assistant
 from qwen_agent.llm.schema import ContentItem, Message
 
+from core.logging import atomic_write_json, read_json
+
 from .remote_tool import build_remote_tools, fetch_session
 
 
@@ -35,6 +37,8 @@ def run_single_skill_agent(
     expected_skill_ids=None,
 ):
     session = fetch_session(runtime_url)
+    destination = Path(output) if output else Path(session["output_dir"]) / "qwen_agent_result.json"
+    checkpoint = destination.with_name("qwen_agent_checkpoint.json")
     if expected_skill_ids is not None and list(expected_skill_ids) != session["allowed_skill_ids"]:
         raise RuntimeError(
             "connected Runtime exposes skills {}, expected {}".format(
@@ -87,22 +91,54 @@ def run_single_skill_agent(
     ]
     final_messages = []
     snapshots = 0
-    for response in assistant.run(messages=messages, lang="en", seed=int(seed)):
-        final_messages = response
-        snapshots += 1
-    final_session = fetch_session(runtime_url)
-    report = {
+    caught = None
+    try:
+        for response in assistant.run(messages=messages, lang="en", seed=int(seed)):
+            final_messages = response
+            snapshots += 1
+            atomic_write_json(
+                checkpoint,
+                _report(session, None, final_messages, snapshots, "running"),
+            )
+    except BaseException as error:
+        caught = error
+    try:
+        final_session = fetch_session(runtime_url)
+    except Exception as error:
+        final_session = None
+        if caught is None:
+            caught = error
+    runtime_result = read_json(destination.parent / "runtime_result.json")
+    report = _report(
+        session,
+        final_session,
+        final_messages,
+        snapshots,
+        "completed" if caught is None else "interrupted",
+    )
+    report["runtime_result"] = runtime_result
+    if caught is not None:
+        report["error"] = {"type": type(caught).__name__, "message": str(caught)}
+    effective_status = (runtime_result or {}).get("session_status") or (
+        (final_session or {}).get("session_status")
+    )
+    report["effective_status"] = effective_status or "unknown"
+    if effective_status in {"succeeded", "aborted"}:
+        report["run_state"] = "completed"
+    atomic_write_json(destination, report)
+    if caught is not None and effective_status not in {"succeeded", "aborted"}:
+        raise caught
+    return report
+
+
+def _report(session, final_session, messages, snapshots, run_state):
+    return {
+        "run_state": run_state,
         "session_before": session,
         "session_after": final_session,
-        "final_messages": [_message_dict(item) for item in final_messages],
+        "final_messages": [_message_dict(item) for item in messages],
         "num_agent_updates": snapshots,
     }
-    destination = Path(output) if output else Path(session["output_dir"]) / "qwen_agent_result.json"
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_text(
-        json.dumps(report, indent=2, ensure_ascii=False, default=str) + "\n"
-    )
-    return report
 
 
 def _message_dict(message):

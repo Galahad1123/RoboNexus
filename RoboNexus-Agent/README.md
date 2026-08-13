@@ -271,8 +271,23 @@ PYTHONPATH=RoboNexus-Agent:. conda run -n robonexus-qwen python \
 Oracle 成功条件。Qwen 客户端会检查 Runtime 发布的 skill 集合与 `--expect-skill` 完全
 一致，避免误连到残留 Session。Runtime 根据 CALVIN
 grounder capability 向 Qwen 发布 semantic-only Schema。模型生成的参数仍会在 Runtime
-用原始严格 Schema 二次校验。运行结果写入 `qwen_agent_result.json`、`events.jsonl`，
-每次 `execute_skill` 另存 outlined MP4。
+用原始严格 Schema 二次校验。每次 Qwen 更新都会原子写入
+`qwen_agent_checkpoint.json`；正常结束或捕获到异常时，最终报告原子写入
+`qwen_agent_result.json`。CALVIN Runtime 独立原子写入 `runtime_result.json`，工具事件
+继续逐行刷新到 `events.jsonl`，每次 `execute_skill` 另存 outlined MP4。
+
+如果外层 Qwen 进程被终止，可不加载模型，直接用 Runtime 结果、终态事件和最近一次
+Agent 检查点重建最终报告：
+
+```bash
+PYTHONPATH=RoboNexus-Agent:. conda run -n robonexus-qwen python \
+  scripts/agent/run_qwen_single_skill.py \
+  --recover-output-dir outputs/calvin_agent/<run-directory>
+```
+
+恢复时优先采用 `runtime_result.json` 的终态；若它尚未来得及产生，则从
+`events.jsonl` 的 `goal_succeeded`/`goal_aborted` 终态事件判定。这样批量评测不会把
+“机器人已完成但 Qwen 启动器未正常退出”误报为结果缺失。
 
 `inspect_scene` 的远程工具结果同时返回结构化 JSON 和带明确
 `CURRENT_STATIC_VIEW`/`CURRENT_WRIST_VIEW` 标签的两个 `ContentItem(image=...)`。因此
