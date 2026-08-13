@@ -41,6 +41,7 @@ class CalvinSkillExecutor(SkillExecutorPort):
         video_fps=30,
         environment_episode_id=None,
         base_seed=42,
+        initial_robot_observation=None,
     ):
         self.adapter = adapter
         self.task_oracle = task_oracle
@@ -55,6 +56,16 @@ class CalvinSkillExecutor(SkillExecutorPort):
         self.video_fps = int(video_fps)
         self.environment_episode_id = environment_episode_id
         self.base_seed = int(base_seed)
+        self.initial_robot_observation = (
+            None
+            if initial_robot_observation is None
+            else np.asarray(initial_robot_observation, dtype=np.float64).copy()
+        )
+        if (
+            self.initial_robot_observation is not None
+            and self.initial_robot_observation.shape != (15,)
+        ):
+            raise ValueError("initial_robot_observation must be a 15-D vector")
         self._available = {}
 
     def check_preconditions(self, skill_id):
@@ -93,6 +104,7 @@ class CalvinSkillExecutor(SkillExecutorPort):
             available = self._available.pop(skill_id)
         decision, client = available
         try:
+            recovery = self._restore_robot_for_retry(attempt)
             mask_roles = self._mask_roles(groundings)
             mask_provider = CalvinGTMaskProvider(self.adapter.env)
             episode = SimpleNamespace(
@@ -187,6 +199,7 @@ class CalvinSkillExecutor(SkillExecutorPort):
                     "environment_done": result.environment_done,
                     "latencies_ms": result.latencies_ms,
                     "replan_steps": result.replan_steps,
+                    "robot_recovery": recovery,
                 },
             )
         except SkillExecutorPortError:
@@ -199,6 +212,43 @@ class CalvinSkillExecutor(SkillExecutorPort):
                     type(exc).__name__, exc
                 )
             )
+
+    def _restore_robot_for_retry(self, attempt):
+        if int(attempt) <= 1:
+            return {"performed": False, "reason": "first_attempt"}
+        if self.initial_robot_observation is None:
+            return {"performed": False, "reason": "initial_state_unavailable"}
+
+        before = np.asarray(
+            self.adapter.current_observation["robot_obs"], dtype=np.float64
+        )
+        self.adapter.restore_robot(self.initial_robot_observation)
+        after = np.asarray(
+            self.adapter.current_observation["robot_obs"], dtype=np.float64
+        )
+        joint_slice = slice(7, 14)
+        return {
+            "performed": True,
+            "reason": "retry_initial_joint_restore",
+            "max_joint_delta_before_rad": float(
+                np.max(
+                    np.abs(
+                        before[joint_slice]
+                        - self.initial_robot_observation[joint_slice]
+                    )
+                )
+            ),
+            "max_joint_error_after_rad": float(
+                np.max(
+                    np.abs(
+                        after[joint_slice]
+                        - self.initial_robot_observation[joint_slice]
+                    )
+                )
+            ),
+            "gripper_command": int(np.sign(self.initial_robot_observation[14])),
+            "scene_reset": False,
+        }
 
     def _mask_roles(self, groundings):
         result = {}

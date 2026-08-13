@@ -78,6 +78,37 @@ class CalvinEnvAdapter:
         self.environment_steps = 0
         return observation
 
+    def restore_robot(self, robot_obs):
+        """Restore only the robot pose while preserving the current scene.
+
+        This is deliberately different from :meth:`reset`: retry recovery must
+        not rewind movable objects or fixed-scene state produced by an earlier
+        attempt.
+        """
+        robot_obs = np.asarray(robot_obs, dtype=np.float64).reshape(-1)
+        if robot_obs.shape != (15,) or not np.isfinite(robot_obs).all():
+            raise ValueError(
+                "Expected a finite 15-D robot observation, got {}".format(
+                    robot_obs.shape
+                )
+            )
+        gripper_command = int(np.sign(robot_obs[14]))
+        if gripper_command not in (-1, 1):
+            raise ValueError(
+                "Expected restored gripper command to be -1 or 1, got {}".format(
+                    robot_obs[14]
+                )
+            )
+
+        # Robot.reset uses resetJointState for the seven arm joints and both
+        # gripper fingers. Crucially, env.reset is not called here.
+        self.env.robot.reset(robot_obs)
+        self.env.robot.gripper_action = gripper_command
+        observation = self.env.get_obs()
+        observation["robot_obs"][14] = gripper_command
+        self.current_observation = observation
+        return observation
+
     def observation_for_policy(
         self, observation, role_masks=None, overlay=None, frame_index=0
     ):

@@ -140,6 +140,7 @@ def main():
             event_logger=events,
             video_fps=suite.manifest.get("frequency_hz", 30),
             environment_episode_id=episode.episode_id,
+            initial_robot_observation=robot_obs,
         )
         loop = DeterministicToolLoop(
             session,

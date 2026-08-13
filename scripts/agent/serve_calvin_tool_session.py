@@ -165,6 +165,7 @@ def main():
             event_logger=events,
             video_fps=suite.manifest.get("frequency_hz", 30),
             environment_episode_id=episode.episode_id,
+            initial_robot_observation=robot_obs,
         )
         tools = [
             InspectSceneTool(session, observer, artifacts),
@@ -205,6 +206,7 @@ def main():
                 "semantic_vocabulary": list(grounder.capabilities()["semantic_vocabulary"]),
                 "output_dir": str(args.output_dir.resolve()),
             },
+            on_terminal=pool.close_all,
         )
         print(
             json.dumps(

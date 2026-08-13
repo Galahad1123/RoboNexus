@@ -1,9 +1,54 @@
 import unittest
 
-from adapters.qwen_agent.remote_tool import _result_content
+from adapters.qwen_agent.remote_tool import (
+    _normalize_tool_params,
+    _qwen_compatible_schema,
+    _result_content,
+)
 
 
 class RemoteToolMultimodalResultTest(unittest.TestCase):
+    def test_grounding_description_is_optional_for_qwen_and_normalized(self):
+        schema = {
+            "type": "object",
+            "properties": {
+                "proposals": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "role",
+                            "representation",
+                            "semantic_id",
+                            "description",
+                        ],
+                    },
+                }
+            },
+            "required": ["proposals"],
+        }
+        adapted = _qwen_compatible_schema(schema)
+        self.assertNotIn(
+            "description",
+            adapted["properties"]["proposals"]["items"]["required"],
+        )
+        normalized = _normalize_tool_params(
+            "ground_targets",
+            {
+                "proposals": [
+                    {
+                        "role": "target",
+                        "representation": "semantic",
+                        "semantic_id": "led_button",
+                    }
+                ]
+            },
+        )
+        self.assertEqual(
+            normalized["proposals"][0]["description"],
+            "Agent-selected target led_button",
+        )
+
     def test_inspect_scene_injects_fresh_static_and_wrist_images(self):
         result = {
             "status": "succeeded",

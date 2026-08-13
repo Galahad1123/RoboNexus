@@ -4,16 +4,30 @@ import json
 import copy
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from threading import RLock
+from time import monotonic
 from urllib.parse import urlparse
 
 
 class CalvinToolSessionServer:
-    def __init__(self, host, port, session, tools, artifacts, session_document):
+    def __init__(
+        self,
+        host,
+        port,
+        session,
+        tools,
+        artifacts,
+        session_document,
+        on_terminal=None,
+        terminal_grace_seconds=5.0,
+    ):
         self.session = session
         self.tools = {tool.name: tool for tool in tools}
         self.artifacts = artifacts
         self.session_document = dict(session_document)
         self.lock = RLock()
+        self.on_terminal = on_terminal
+        self.terminal_grace_seconds = float(terminal_grace_seconds)
+        self._terminal_notified = False
         owner = self
 
         class Handler(BaseHTTPRequestHandler):
@@ -123,10 +137,29 @@ class CalvinToolSessionServer:
                 if item.uri.startswith(("artifact://", "mask://"))
             ]
             payload["session_status"] = self.session.status.value
+            self._notify_terminal()
             return payload
 
     def serve_forever(self):
-        self.httpd.serve_forever(poll_interval=0.2)
+        # Keep a short read-only window after terminal status so the Qwen
+        # runner can fetch /session, then let the process enter its finally
+        # block and release simulator resources automatically.
+        self.httpd.timeout = 0.2
+        terminal_since = None
+        while True:
+            self.httpd.handle_request()
+            if self.session.status.terminal:
+                self._notify_terminal()
+                terminal_since = terminal_since or monotonic()
+                if monotonic() - terminal_since >= self.terminal_grace_seconds:
+                    return
+
+    def _notify_terminal(self):
+        if not self.session.status.terminal or self._terminal_notified:
+            return
+        self._terminal_notified = True
+        if self.on_terminal is not None:
+            self.on_terminal()
 
     def close(self):
         self.httpd.server_close()

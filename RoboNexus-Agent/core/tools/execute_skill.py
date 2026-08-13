@@ -135,6 +135,7 @@ class ExecuteSkillTool:
                 "state_delta": dict(execution.state_delta),
                 "recommended_actions": list(execution.recommended_actions),
                 "intent": parsed["intent"],
+                "metadata": dict(execution.metadata),
             }
             result = self.session.result(
                 tool_call_id,

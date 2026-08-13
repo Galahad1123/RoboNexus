@@ -22,6 +22,7 @@ class RemoteRobotTool(BaseTool):
     def call(self, params, **kwargs):
         del kwargs
         parsed = self._verify_json_format_args(params)
+        parsed = _normalize_tool_params(self.name, parsed)
         payload = json.dumps({"params": parsed}).encode("utf-8")
         request = Request(
             "{}/tools/{}".format(self.runtime_url, self.name),
@@ -50,11 +51,46 @@ def build_remote_tools(runtime_url, session_document):
 
 def _qwen_compatible_schema(schema):
     """Adapt the strict protocol schema to qwen-agent 0.0.34's top-level subset."""
-    return {
+    result = {
         "type": schema["type"],
         "properties": dict(schema.get("properties", {})),
         "required": list(schema.get("required", [])),
     }
+    # Qwen3-VL reliably identifies role/representation/semantic_id but can
+    # omit this purely explanatory field. Keep the backend protocol strict and
+    # synthesize the description at the adapter boundary instead of spending
+    # an Agent turn repairing semantically complete grounding arguments.
+    proposals = result["properties"].get("proposals")
+    if isinstance(proposals, dict):
+        item = proposals.get("items")
+        if isinstance(item, dict) and "required" in item:
+            item = dict(item)
+            item["required"] = [
+                field for field in item["required"] if field != "description"
+            ]
+            proposals = dict(proposals)
+            proposals["items"] = item
+            result["properties"]["proposals"] = proposals
+    return result
+
+
+def _normalize_tool_params(tool_name, params):
+    if tool_name != "ground_targets" or not isinstance(params, dict):
+        return params
+    normalized = dict(params)
+    proposals = []
+    for proposal in normalized.get("proposals", ()):
+        proposal = dict(proposal)
+        proposal.setdefault(
+            "description",
+            "Agent-selected {} {}".format(
+                proposal.get("role", "object"),
+                proposal.get("semantic_id", "target"),
+            ),
+        )
+        proposals.append(proposal)
+    normalized["proposals"] = proposals
+    return normalized
 
 
 def _result_content(tool_name, result):
