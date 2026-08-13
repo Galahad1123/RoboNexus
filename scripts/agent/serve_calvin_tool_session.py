@@ -67,6 +67,14 @@ def main():
     parser.add_argument("--environment-step-limit", type=int, default=1000)
     parser.add_argument("--episode-index", type=int, default=0)
     parser.add_argument(
+        "--official-initial-condition",
+        type=json.loads,
+        help=(
+            "JSON object in the official CALVIN long-horizon initial-state "
+            "format; overrides the selected episode's robot/scene state"
+        ),
+    )
+    parser.add_argument(
         "--suite",
         type=Path,
         default=WORKSPACE / "datasets/calvin_d_10/configs/evaluation.yaml",
@@ -121,7 +129,16 @@ def main():
     pool = PolicyClientPool(catalog, connect_timeout=300.0)
     server = None
     try:
-        robot_obs, scene_obs = episode.load_initial_state()
+        if args.official_initial_condition is None:
+            robot_obs, scene_obs = episode.load_initial_state()
+            environment_episode_id = episode.episode_id
+        else:
+            robot_obs, scene_obs = _official_initial_state(
+                args.official_initial_condition
+            )
+            environment_episode_id = "official-calvin-{}".format(
+                abs(hash(json.dumps(args.official_initial_condition, sort_keys=True)))
+            )
         observation = adapter.reset(robot_obs, scene_obs)
         zero_action = np.asarray([0, 0, 0, 0, 0, 0, 1], dtype=np.float32)
         for _ in range(episode.settle_steps):
@@ -165,7 +182,7 @@ def main():
             pool,
             event_logger=events,
             video_fps=suite.manifest.get("frequency_hz", 30),
-            environment_episode_id=episode.episode_id,
+            environment_episode_id=environment_episode_id,
             initial_robot_observation=robot_obs,
         )
         tools = [
@@ -235,6 +252,35 @@ def main():
         pool.close_all()
         adapter.close()
         events.close()
+
+
+def _official_initial_state(initial_condition):
+    required = {
+        "led",
+        "lightbulb",
+        "slider",
+        "drawer",
+        "red_block",
+        "blue_block",
+        "pink_block",
+        "grasped",
+    }
+    if not isinstance(initial_condition, dict):
+        raise TypeError("official initial condition must be a JSON object")
+    missing = sorted(required - set(initial_condition))
+    unknown = sorted(set(initial_condition) - required)
+    if missing or unknown:
+        raise ValueError(
+            "invalid official initial condition: missing={}, unknown={}".format(
+                missing, unknown
+            )
+        )
+    calvin_models = WORKSPACE / "calvin/calvin_models"
+    if str(calvin_models) not in sys.path:
+        sys.path.insert(0, str(calvin_models))
+    from calvin_agent.evaluation.utils import get_env_state_for_initial_condition
+
+    return get_env_state_for_initial_condition(dict(initial_condition))
 
 
 if __name__ == "__main__":
