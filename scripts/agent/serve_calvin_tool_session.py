@@ -65,6 +65,7 @@ def main():
     parser.add_argument("--goal", help="goal instruction; defaults to the initial task instruction")
     parser.add_argument("--disable-approach", action="store_true")
     parser.add_argument("--environment-step-limit", type=int, default=1000)
+    parser.add_argument("--terminal-grace-seconds", type=float, default=30.0)
     parser.add_argument("--episode-index", type=int, default=0)
     parser.add_argument(
         "--official-initial-condition",
@@ -225,6 +226,7 @@ def main():
                 "output_dir": str(args.output_dir.resolve()),
             },
             on_terminal=pool.close_all,
+            terminal_grace_seconds=args.terminal_grace_seconds,
         )
         print(
             json.dumps(

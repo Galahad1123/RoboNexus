@@ -75,6 +75,19 @@ class OfflineEvalReportTest(unittest.TestCase):
         )
         self.assertEqual(result["status"], "succeeded")
 
+    def test_failed_execution_is_not_rendered_unknown(self):
+        self.assertEqual(
+            REPORT._execution_state(
+                {"success": False, "verification": {"status": "failure"}}, None
+            ),
+            "failed",
+        )
+
+    def test_stage_uses_actual_skill_not_logical_subtask_number(self):
+        skills = ["open_drawer", "turn_on_led", "move_slider_right"]
+        self.assertEqual(REPORT._skill_stage("turn_on_led", skills), "stage 2/3")
+        self.assertEqual(REPORT._skill_stage("lift_red_block_table", skills), "recovery skill")
+
 
 if __name__ == "__main__":
     unittest.main()

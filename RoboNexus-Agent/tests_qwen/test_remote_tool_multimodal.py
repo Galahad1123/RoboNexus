@@ -5,9 +5,37 @@ from adapters.qwen_agent.remote_tool import (
     _qwen_compatible_schema,
     _result_content,
 )
+from adapters.qwen_agent.single_skill_runner import _continuation_content
 
 
 class RemoteToolMultimodalResultTest(unittest.TestCase):
+    def test_continuation_compacts_history_and_keeps_latest_images(self):
+        transcript = [
+            {
+                "role": "function",
+                "name": "inspect_scene",
+                "content": [
+                    {"text": '{"status":"succeeded","data":{"observation":{"observation_id":"obs_9"}}}'},
+                    {"text": "CURRENT_STATIC_VIEW"},
+                    {"image": "/tmp/static.png"},
+                    {"text": "CURRENT_WRIST_VIEW"},
+                    {"image": "/tmp/wrist.png"},
+                ],
+            },
+            {
+                "role": "function",
+                "name": "execute_skill",
+                "content": '{"status":"failed","data":{"skill_id":"open_drawer","attempt":3,"termination_reason":"timeout"}}',
+            },
+        ]
+        content = _continuation_content(
+            {"goal_id": "g"},
+            {"session_status": "active", "latest_observation_id": "obs_9", "budget": {}},
+            transcript,
+        )
+        dumped = [item.model_dump() for item in content]
+        self.assertEqual([item.get("image") for item in dumped if item.get("image")], ["/tmp/static.png", "/tmp/wrist.png"])
+        self.assertIn('"attempt": 3', dumped[0]["text"])
     def test_grounding_description_is_optional_for_qwen_and_normalized(self):
         schema = {
             "type": "object",

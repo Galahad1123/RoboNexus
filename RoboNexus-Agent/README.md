@@ -328,6 +328,10 @@ python scripts/agent/generate_eval_report.py \
 批次入口是 `<eval-run>/index.html`，详细入口是每个 sequence 下的 `report.html`。详细页
 包含 goal 状态、技能进度、重试统计、DiT policy/步数/视频、grounding preview、前后相机
 图像、Qwen 工具参数、Runtime 返回以及 Oracle 验证。页面内容均经过 HTML escaping。
+视频状态优先取 `execute_skill` 的真实 `success/verification`，因此超时和 Oracle 未满足会
+显示为 `failed`，而不是因为缺少独立成功事件显示为 `unknown`。视频和工具时间线同时
+显示原计划 `stage N/M`、真实 `skill_id`、内部 logical subtask ID 与 attempt；重规划产生
+新的 `subtask_00N` 时，不会再按该数字错误映射原计划技能。
 
 测试覆盖编码、初始化、持续跟踪、错 episode 防护，以及连续低质量触发 SAM
 纠偏，不需要 GPU。

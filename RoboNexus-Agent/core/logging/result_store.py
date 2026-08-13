@@ -77,10 +77,13 @@ def recover_agent_result(output_dir: str | Path) -> dict[str, Any]:
     runtime_status = (runtime or {}).get("session_status")
     event_status = terminal_status_from_events(events_path)
     agent_status = (report.get("session_after") or {}).get("session_status")
-    effective_status = runtime_status or event_status or agent_status or "unknown"
+    runtime_terminal = runtime_status == "succeeded" or str(runtime_status).startswith("aborted")
+    effective_status = (
+        runtime_status if runtime_terminal else event_status or runtime_status or agent_status or "unknown"
+    )
     report.update(
         {
-            "run_state": "completed" if effective_status in {"succeeded", "aborted"} else "interrupted",
+            "run_state": "completed" if effective_status == "succeeded" or str(effective_status).startswith("aborted") else "interrupted",
             "effective_status": effective_status,
             "runtime_result": runtime,
             "recovered": True,

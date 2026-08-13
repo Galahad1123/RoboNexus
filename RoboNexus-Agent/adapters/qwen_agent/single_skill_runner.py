@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from qwen_agent.agents import Assistant
+from qwen_agent.llm import get_chat_model
 from qwen_agent.llm.schema import ContentItem, Message
 
 from core.logging import atomic_write_json, read_json
@@ -35,6 +36,8 @@ def run_single_skill_agent(
     max_new_tokens=768,
     output=None,
     expected_skill_ids=None,
+    llm=None,
+    max_agent_rounds=4,
 ):
     session = fetch_session(runtime_url)
     destination = Path(output) if output else Path(session["output_dir"]) / "qwen_agent_result.json"
@@ -47,16 +50,7 @@ def run_single_skill_agent(
         )
     assistant = Assistant(
         function_list=build_remote_tools(runtime_url, session),
-        llm={
-            "model": str(model_path),
-            "model_type": "transformers",
-            "device": "cuda",
-            "generate_cfg": {
-                "max_new_tokens": int(max_new_tokens),
-                "do_sample": False,
-                "fncall_prompt_type": "nous",
-            },
-        },
+        llm=llm or build_qwen_llm(model_path, max_new_tokens),
         system_message=SYSTEM_PROMPT,
         name="RoboNexusAgent",
         description="Plans one robot skill at a time through bounded tools.",
@@ -90,16 +84,42 @@ def run_single_skill_agent(
         )
     ]
     final_messages = []
+    transcript = []
     snapshots = 0
     caught = None
     try:
-        for response in assistant.run(messages=messages, lang="en", seed=int(seed)):
-            final_messages = response
-            snapshots += 1
-            atomic_write_json(
-                checkpoint,
-                _report(session, None, final_messages, snapshots, "running"),
-            )
+        for agent_round in range(1, int(max_agent_rounds) + 1):
+            final_messages = []
+            for response in assistant.run(messages=messages, lang="en", seed=int(seed)):
+                final_messages = response
+                snapshots += 1
+                atomic_write_json(
+                    checkpoint,
+                    _report(
+                        session,
+                        None,
+                        transcript + list(final_messages),
+                        snapshots,
+                        "running",
+                        agent_round,
+                    ),
+                )
+            transcript.extend(final_messages)
+            current_session = fetch_session(runtime_url)
+            if _terminal(current_session.get("session_status")):
+                break
+            if agent_round >= int(max_agent_rounds):
+                raise RuntimeError(
+                    "Qwen stopped while robot Session remained {} after {} Agent rounds".format(
+                        current_session.get("session_status"), agent_round
+                    )
+                )
+            messages = [
+                Message(
+                    role="user",
+                    content=_continuation_content(context, current_session, transcript),
+                )
+            ]
     except BaseException as error:
         caught = error
     try:
@@ -112,9 +132,10 @@ def run_single_skill_agent(
     report = _report(
         session,
         final_session,
-        final_messages,
+        transcript + ([] if transcript[-len(final_messages):] == final_messages else list(final_messages)) if final_messages else transcript,
         snapshots,
         "completed" if caught is None else "interrupted",
+        agent_round if "agent_round" in locals() else 0,
     )
     report["runtime_result"] = runtime_result
     if caught is not None:
@@ -123,21 +144,102 @@ def run_single_skill_agent(
         (final_session or {}).get("session_status")
     )
     report["effective_status"] = effective_status or "unknown"
-    if effective_status in {"succeeded", "aborted"}:
+    if _terminal(effective_status):
         report["run_state"] = "completed"
     atomic_write_json(destination, report)
-    if caught is not None and effective_status not in {"succeeded", "aborted"}:
+    if caught is not None and not _terminal(effective_status):
         raise caught
     return report
 
 
-def _report(session, final_session, messages, snapshots, run_state):
+def build_qwen_llm(model_path, max_new_tokens=768):
+    """Load one reusable Qwen model for single or batched robot sessions."""
+
+    return get_chat_model(
+        {
+            "model": str(model_path),
+            "model_type": "transformers",
+            "device": "cuda",
+            "generate_cfg": {
+                "max_new_tokens": int(max_new_tokens),
+                "do_sample": False,
+                "fncall_prompt_type": "nous",
+            },
+        }
+    )
+
+
+def _terminal(status):
+    return status == "succeeded" or str(status).startswith("aborted")
+
+
+def _continuation_content(context, current_session, transcript):
+    """Compact a completed Agent round while retaining the newest visual state."""
+
+    summary = []
+    latest_visual = []
+    for message in transcript:
+        if message.get("role") != "function":
+            continue
+        content = message.get("content")
+        items = content if isinstance(content, list) else []
+        serialized = content
+        if items:
+            serialized = next(
+                (item.get("text") for item in items if isinstance(item, dict) and item.get("text", "").startswith("{")),
+                None,
+            )
+        try:
+            result = json.loads(serialized) if isinstance(serialized, str) else serialized
+        except json.JSONDecodeError:
+            continue
+        if not isinstance(result, dict):
+            continue
+        data = result.get("data") or {}
+        summary.append(
+            {
+                "tool": message.get("name"),
+                "status": result.get("status"),
+                "skill_id": data.get("skill_id"),
+                "logical_subtask_id": data.get("logical_subtask_id"),
+                "attempt": data.get("attempt"),
+                "success": data.get("success"),
+                "termination_reason": data.get("termination_reason") or data.get("reason"),
+                "observation_id": data.get("after_observation_id") or (data.get("observation") or {}).get("observation_id"),
+            }
+        )
+        if message.get("name") == "inspect_scene" and items:
+            latest_visual = [ContentItem(**item) for item in items[1:] if isinstance(item, dict)]
+    payload = {
+        "goal_context": context,
+        "current_session": {
+            "session_status": current_session.get("session_status"),
+            "latest_observation_id": current_session.get("latest_observation_id"),
+            "budget": current_session.get("budget"),
+        },
+        "tool_summary": summary[-16:],
+    }
+    content = [
+        ContentItem(text="CONTINUE_ROBOT_GOAL_COMPACTED:\n" + json.dumps(payload, ensure_ascii=False)),
+        ContentItem(
+            text=(
+                "Continue from the latest state. Do not repeat an exhausted attempt; verify, choose "
+                "the next atomic skill, or abort according to the recovery policy."
+            )
+        ),
+    ]
+    content.extend(latest_visual)
+    return content
+
+
+def _report(session, final_session, messages, snapshots, run_state, agent_round=1):
     return {
         "run_state": run_state,
         "session_before": session,
         "session_after": final_session,
         "final_messages": [_message_dict(item) for item in messages],
         "num_agent_updates": snapshots,
+        "num_agent_rounds": agent_round,
     }
 
 

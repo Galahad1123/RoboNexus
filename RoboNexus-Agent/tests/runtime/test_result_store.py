@@ -58,6 +58,19 @@ class ResultStoreTest(unittest.TestCase):
             self.assertEqual(report["effective_status"], "succeeded")
             self.assertEqual(report["run_state"], "completed")
 
+    def test_terminal_event_overrides_interrupted_active_runtime_snapshot(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            atomic_write_json(
+                output / "runtime_result.json", {"session_status": "active"}
+            )
+            (output / "events.jsonl").write_text('{"event":"goal_aborted"}\n')
+
+            report = recover_agent_result(output)
+
+            self.assertEqual(report["effective_status"], "aborted")
+            self.assertEqual(report["run_state"], "completed")
+
 
 if __name__ == "__main__":
     unittest.main()
