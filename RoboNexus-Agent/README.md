@@ -306,5 +306,28 @@ PYTHONPATH=RoboNexus-Agent conda run -n robonexus-agent \
   python -m unittest discover -s RoboNexus-Agent/tests -v
 ```
 
+## 零依赖离线评测 Dashboard
+
+评测结束后可用 Python 标准库把日志、图片和 MP4 组织为静态 HTML。报告只通过相对路径
+引用 artifacts，不复制或 base64 嵌入大文件，也不需要启动 Web 服务。
+
+生成单个 sequence 报告：
+
+```bash
+python scripts/agent/generate_eval_report.py \
+  outputs/calvin_agent/<eval-run>/<sequence>
+```
+
+生成整个批次的可筛选索引，并同时更新每个 sequence 的详细报告：
+
+```bash
+python scripts/agent/generate_eval_report.py \
+  outputs/calvin_agent/<eval-run> --recursive
+```
+
+批次入口是 `<eval-run>/index.html`，详细入口是每个 sequence 下的 `report.html`。详细页
+包含 goal 状态、技能进度、重试统计、DiT policy/步数/视频、grounding preview、前后相机
+图像、Qwen 工具参数、Runtime 返回以及 Oracle 验证。页面内容均经过 HTML escaping。
+
 测试覆盖编码、初始化、持续跟踪、错 episode 防护，以及连续低质量触发 SAM
 纠偏，不需要 GPU。

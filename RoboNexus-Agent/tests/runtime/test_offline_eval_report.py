@@ -1,0 +1,80 @@
+"""Tests for the zero-dependency offline evaluation dashboard."""
+
+import importlib.util
+import json
+import tempfile
+import unittest
+from pathlib import Path
+
+from tests.paths import WORKSPACE
+
+
+SPEC = importlib.util.spec_from_file_location(
+    "generate_eval_report", WORKSPACE / "scripts/agent/generate_eval_report.py"
+)
+REPORT = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(REPORT)
+
+
+class OfflineEvalReportTest(unittest.TestCase):
+    def make_sequence(self, root, name="sequence_001"):
+        sequence = root / name
+        artifact = sequence / "artifacts/session"
+        artifact.mkdir(parents=True)
+        (artifact / "000009_subtask_001_attempt_01.mp4").write_bytes(b"")
+        (artifact / "000006_grounding_preview.png").write_bytes(b"")
+        session = {
+            "allowed_skill_ids": ["turn_on_led"],
+            "goal_instruction": "turn on <script>alert(1)</script>",
+            "session_status": "succeeded",
+        }
+        result = {
+            "effective_status": "succeeded",
+            "session_before": session,
+            "session_after": session,
+            "final_messages": [
+                {"role": "assistant", "function_call": {"name": "execute_skill", "arguments": '{"skill_id":"turn_on_led"}'}},
+                {"role": "function", "content": json.dumps({"status": "succeeded", "data": {"logical_subtask_id": "subtask_001", "attempt": 1, "policy_id": "general", "steps": 12}})},
+            ],
+        }
+        (sequence / "qwen_agent_result.json").write_text(json.dumps(result))
+        (sequence / "runtime_result.json").write_text(json.dumps({"session_status": "succeeded", "environment_steps": 12}))
+        events = [
+            {"event": "tool_call_started"},
+            {"event": "verification_result", "episode_id": "subtask_001", "attempt": 1, "status": "success"},
+            {"event": "skill_achieved", "logical_subtask_id": "subtask_001", "skill_id": "turn_on_led"},
+            {"event": "goal_succeeded", "reason": "done"},
+        ]
+        (sequence / "events.jsonl").write_text("".join(json.dumps(item) + "\n" for item in events))
+        return sequence
+
+    def test_sequence_report_links_media_and_escapes_model_text(self):
+        with tempfile.TemporaryDirectory() as directory:
+            sequence = self.make_sequence(Path(directory))
+            models = REPORT.generate(sequence)
+            document = (sequence / "report.html").read_text()
+            self.assertEqual(models[0]["status"], "succeeded")
+            self.assertIn("000009_subtask_001_attempt_01.mp4", document)
+            self.assertIn("policy: <code>general</code>", document)
+            self.assertNotIn("<script>alert(1)</script>", document)
+            self.assertIn("&lt;script&gt;alert(1)&lt;/script&gt;", document)
+
+    def test_recursive_report_builds_filterable_index(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_sequence(root)
+            REPORT.generate(root, recursive=True)
+            document = (root / "index.html").read_text()
+            self.assertIn("Success rate", document)
+            self.assertIn("sequence_001/report.html", document)
+            self.assertIn('id="status"', document)
+
+    def test_multimodal_function_result_extracts_json_text(self):
+        result = REPORT.normalize_tool_result(
+            [{"text": '{"status":"succeeded"}'}, {"image": "/tmp/view.png"}]
+        )
+        self.assertEqual(result["status"], "succeeded")
+
+
+if __name__ == "__main__":
+    unittest.main()
