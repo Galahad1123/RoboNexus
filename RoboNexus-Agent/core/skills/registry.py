@@ -5,7 +5,7 @@ from types import MappingProxyType
 from core.config import ConfigValidationError, load_yaml_mapping
 
 from .calvin_d34 import CALVIN_D34_ROUTING, CALVIN_D34_SKILL_IDS
-from .schemas import SkillDefaults, SkillSpec
+from .schemas import PlannerGuidance, SkillDefaults, SkillSpec
 
 
 POSITIVE_INTEGER_FIELDS = ("max_steps", "max_attempts", "replan_interval")
@@ -71,6 +71,32 @@ def _success_guard(value, path, errors):
     return dict(value)
 
 
+def _planner_guidance(value, path, errors):
+    if value is None:
+        return None
+    if not isinstance(value, dict):
+        errors.append("{} must be a mapping".format(path))
+        return None
+    allowed = {"planning", "grounding", "recovery"}
+    unknown = sorted(set(value) - allowed)
+    if unknown:
+        errors.append("{} has unknown fields: {}".format(path, unknown))
+    parsed = {}
+    for field in sorted(allowed):
+        notes = value.get(field, [])
+        if (
+            not isinstance(notes, list)
+            or any(not isinstance(note, str) or not note.strip() for note in notes)
+        ):
+            errors.append("{}.{} must be a list of non-empty strings".format(path, field))
+            parsed[field] = ()
+        else:
+            parsed[field] = tuple(note.strip() for note in notes)
+    if not any(parsed.values()):
+        errors.append("{} must contain at least one guidance note".format(path))
+    return PlannerGuidance(**parsed)
+
+
 def load_skill_registry(
     path,
     expected_skill_ids=CALVIN_D34_SKILL_IDS,
@@ -123,6 +149,7 @@ def load_skill_registry(
         "max_attempts",
         "replan_interval",
         "success_guard",
+        "planner_guidance",
     }
     for skill_id in sorted(raw_skills):
         raw = raw_skills[skill_id]
@@ -180,6 +207,9 @@ def load_skill_registry(
             value = raw.get(field, default_values.get(field))
             values[field] = _positive_integer(value, "{}.{}".format(prefix, field), errors)
         guard = _success_guard(raw.get("success_guard"), "{}.success_guard".format(prefix), errors)
+        guidance = _planner_guidance(
+            raw.get("planner_guidance"), "{}.planner_guidance".format(prefix), errors
+        )
         if all(
             [
                 isinstance(instruction, str) and bool(instruction.strip()),
@@ -197,6 +227,7 @@ def load_skill_registry(
                 max_attempts=values["max_attempts"],
                 replan_interval=values["replan_interval"],
                 success_guard=guard,
+                planner_guidance=guidance,
             )
 
     if errors:

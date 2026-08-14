@@ -12,6 +12,26 @@ class SkillDefaults:
 
 
 @dataclass(frozen=True)
+class PlannerGuidance:
+    """Declarative, backend-neutral hints exposed to the high-level planner."""
+
+    planning: tuple = ()
+    grounding: tuple = ()
+    recovery: tuple = ()
+
+    def as_dict(self):
+        return {
+            key: list(value)
+            for key, value in (
+                ("planning", self.planning),
+                ("grounding", self.grounding),
+                ("recovery", self.recovery),
+            )
+            if value
+        }
+
+
+@dataclass(frozen=True)
 class SkillSpec:
     skill_id: str
     instruction: str
@@ -22,3 +42,4 @@ class SkillSpec:
     max_attempts: int
     replan_interval: int
     success_guard: Optional[Dict[str, Any]] = None
+    planner_guidance: Optional[PlannerGuidance] = None

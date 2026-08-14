@@ -20,46 +20,61 @@ skills:
     oracle_task: lift_blue_block_drawer
     policy_group: general
     grounding_roles: &source [source]
+    planner_guidance: &lift_from_drawer_guidance
+      planning:
+        - Choose this skill only when the requested block is currently inside the drawer; otherwise choose the lift skill matching its latest observed location.
   lift_blue_block_slider:
     instruction: pick up the black-outlined block from the sliding cabinet
     oracle_task: lift_blue_block_slider
     policy_group: general
     grounding_roles: *source
+    planner_guidance: &lift_from_slider_guidance
+      planning:
+        - Choose this skill only when the requested block is currently inside the sliding cabinet; otherwise choose the lift skill matching its latest observed location.
   lift_blue_block_table:
     instruction: pick up the black-outlined block from the table
     oracle_task: lift_blue_block_table
     policy_group: general
     grounding_roles: *source
+    planner_guidance: &lift_from_table_guidance
+      planning:
+        - Choose this skill only when the requested block is currently on the tabletop; after a failed placement, inspect its new location instead of repeating its original lift skill.
   lift_pink_block_drawer:
     instruction: pick up the black-outlined block from the drawer
     oracle_task: lift_pink_block_drawer
     policy_group: general
     grounding_roles: *source
+    planner_guidance: *lift_from_drawer_guidance
   lift_pink_block_slider:
     instruction: pick up the black-outlined block from the sliding cabinet
     oracle_task: lift_pink_block_slider
     policy_group: general
     grounding_roles: *source
+    planner_guidance: *lift_from_slider_guidance
   lift_pink_block_table:
     instruction: pick up the black-outlined block from the table
     oracle_task: lift_pink_block_table
     policy_group: general
     grounding_roles: *source
+    planner_guidance: *lift_from_table_guidance
   lift_red_block_drawer:
     instruction: pick up the black-outlined block from the drawer
     oracle_task: lift_red_block_drawer
     policy_group: general
     grounding_roles: *source
+    planner_guidance: *lift_from_drawer_guidance
   lift_red_block_slider:
     instruction: pick up the black-outlined block from the sliding cabinet
     oracle_task: lift_red_block_slider
     policy_group: general
     grounding_roles: *source
+    planner_guidance: *lift_from_slider_guidance
   lift_red_block_table:
     instruction: pick up the black-outlined block from the table
     oracle_task: lift_red_block_table
     policy_group: general
     grounding_roles: *source
+    planner_guidance: *lift_from_table_guidance
 
   move_slider_left:
     instruction: move the black-outlined sliding door to the left
@@ -82,6 +97,12 @@ skills:
     oracle_task: place_in_drawer
     policy_group: general
     grounding_roles: &destination [destination]
+    planner_guidance:
+      planning:
+        - Use this placement skill only while the gripper is holding a block. If the block was released or dropped, inspect the scene and first choose the lift skill matching the block's current location.
+      grounding:
+        - This skill requires destination grounding only. Submit exactly one ground_targets proposal with role=destination; do not submit a source proposal for the held block.
+        - Ground destination as drawer_interior, not the drawer front panel or handle.
     success_guard: &released
       gripper: open
       min_width_m: 0.04
@@ -91,33 +112,51 @@ skills:
     oracle_task: place_in_slider
     policy_group: general
     grounding_roles: *destination
+    planner_guidance:
+      planning:
+        - Use this placement skill only while the gripper is holding a block. If the block was released or dropped, inspect the scene and first choose the lift skill matching the block's current location.
+      grounding:
+        - This skill requires destination grounding only. Submit exactly one ground_targets proposal with role=destination; do not submit a source proposal for the held block.
+        - Ground destination as slider_interior. Do not select slider_left_door or slider_right_door as the placement destination.
     success_guard: *released
   push_into_drawer:
     instruction: push the black-outlined block into the cyan-outlined drawer
     oracle_task: push_into_drawer
     policy_group: general
     grounding_roles: &source_destination [source, destination]
+    planner_guidance:
+      grounding:
+        - If several blocks are valid candidates, choose a block already close to and aligned with the open drawer; avoid a distant block that requires a long cross-table push.
+        - Ground destination as drawer_interior, not the drawer front panel or handle.
 
   turn_off_led:
     instruction: press the black-outlined button to turn off the led
     oracle_task: turn_off_led
     policy_group: general
     grounding_roles: *target
+    planner_guidance: &led_guidance
+      grounding:
+        - The LED is controlled by the small push button. Ground target as led_button; never use light_switch.
   turn_off_lightbulb:
     instruction: move the black-outlined switch to turn off the lightbulb
     oracle_task: turn_off_lightbulb
     policy_group: general
     grounding_roles: *target
+    planner_guidance: &lightbulb_guidance
+      grounding:
+        - The lightbulb is controlled by the movable switch/handle. Ground target as light_switch; never use led_button.
   turn_on_led:
     instruction: press the black-outlined button to turn on the led
     oracle_task: turn_on_led
     policy_group: general
     grounding_roles: *target
+    planner_guidance: *led_guidance
   turn_on_lightbulb:
     instruction: move the black-outlined switch to turn on the lightbulb
     oracle_task: turn_on_lightbulb
     policy_group: general
     grounding_roles: *target
+    planner_guidance: *lightbulb_guidance
   unstack_block:
     instruction: remove the black-outlined block from the stack
     oracle_task: unstack_block

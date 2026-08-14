@@ -26,7 +26,28 @@ before retrying. Follow ROBOT_GOAL_CONTEXT.recovery_policy exactly. Do not use
 abort_goal with repeated_execution_failure before the failed skill reports attempt=3.
 Never reuse a stale observation or grounding. A goal is complete only when verify_goal returns
 data.status=success. If it cannot reasonably continue, call abort_goal. Keep
-tool arguments concise and do not merely describe a tool call in prose."""
+tool arguments concise and do not merely describe a tool call in prose. Treat
+ROBOT_GOAL_CONTEXT.skill_guidance as skill-specific planning advice: apply only
+the entry for the skill you are considering, and use the latest images to make
+the final choice rather than blindly assuming the advice's conditions hold."""
+
+
+def _goal_context(session):
+    return {
+        "goal_id": session["goal_id"],
+        "goal_instruction": session["goal_instruction"],
+        "success_spec": session["success_spec"],
+        "allowed_skill_ids": session["allowed_skill_ids"],
+        "semantic_vocabulary": session["semantic_vocabulary"],
+        "required_grounding_roles": session["required_grounding_roles"],
+        "skill_guidance": session.get("skill_guidance", {}),
+        "approach_enabled": session["approach_enabled"],
+        "recovery_policy": (
+            "inspect, ground source/target, approach_target, inspect, reground, retry"
+            if session["approach_enabled"]
+            else "approach_target is deactivated; inspect, semantic reground, retry"
+        ),
+    }
 
 
 def run_single_skill_agent(
@@ -56,20 +77,7 @@ def run_single_skill_agent(
         description="Plans one robot skill at a time through bounded tools.",
     )
     initial = session["initial_observation"]
-    context = {
-        "goal_id": session["goal_id"],
-        "goal_instruction": session["goal_instruction"],
-        "success_spec": session["success_spec"],
-        "allowed_skill_ids": session["allowed_skill_ids"],
-        "semantic_vocabulary": session["semantic_vocabulary"],
-        "required_grounding_roles": session["required_grounding_roles"],
-        "approach_enabled": session["approach_enabled"],
-        "recovery_policy": (
-            "inspect, ground source/target, approach_target, inspect, reground, retry"
-            if session["approach_enabled"]
-            else "approach_target is deactivated; inspect, semantic reground, retry"
-        ),
-    }
+    context = _goal_context(session)
     messages = [
         Message(
             role="user",

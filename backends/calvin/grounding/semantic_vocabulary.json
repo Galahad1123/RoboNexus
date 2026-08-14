@@ -10,7 +10,7 @@
     "drawer_interior": {"fixed": "table", "link": "drawer_link"},
     "slider_left_door": {"fixed": "table", "link": "slide_link"},
     "slider_right_door": {"fixed": "table", "link": "slide_link"},
-    "slider_interior": {"fixed": "table", "link": "slide_link"},
+    "slider_interior": {"fixed": "table", "link": "plank_link"},
     "light_switch": {"fixed": "table", "link": "switch_link"},
     "led_button": {"fixed": "table", "link": "button_link"}
   }

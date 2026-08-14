@@ -36,6 +36,12 @@
 attempt 上限和 success guard。Planner 后续只选择 `skill_id`，不能改写这里的
 instruction。
 
+每个 skill 还可以声明可选的结构化 `planner_guidance`，其字段为 `planning`、
+`grounding` 和 `recovery` 字符串列表。Runtime 只发布当前 goal 允许技能的 guidance，
+Qwen 会在每轮的 `ROBOT_GOAL_CONTEXT.skill_guidance` 中收到它。guidance 仅作为高层
+Planner 的建议，backend 工具不会把它当作语义 validator；新增针对性经验应写入对应
+skill，而不是继续膨胀全局 system prompt。
+
 四组模型部署配置位于 `configs/calvin/policies.yaml`。当前已为 `general`、`push`、
 `rotate`、`stack` 选定 checkpoint；后续替换权重只需修改对应路径，例如：
 

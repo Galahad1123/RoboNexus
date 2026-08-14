@@ -55,6 +55,39 @@ class CalvinD34ConfigTest(unittest.TestCase):
             "pick up the black-outlined block from the drawer",
         )
 
+    def test_registry_preserves_structured_planner_guidance(self):
+        registry = load_skill_registry(SKILLS_CONFIG)
+        slider = registry.get("place_in_slider").planner_guidance
+        self.assertIsNotNone(slider)
+        self.assertIn("destination grounding only", slider.grounding[0])
+        self.assertIn("slider_interior", slider.grounding[1])
+        self.assertIn("holding a block", slider.planning[0])
+        drawer = registry.get("place_in_drawer").planner_guidance
+        self.assertIn("role=destination", drawer.grounding[0])
+        self.assertIn("drawer_interior", drawer.grounding[1])
+        self.assertEqual(
+            registry.get("turn_on_led").planner_guidance,
+            registry.get("turn_off_led").planner_guidance,
+        )
+        self.assertIn(
+            "light_switch",
+            registry.get("turn_on_lightbulb").planner_guidance.grounding[0],
+        )
+
+    def test_malformed_planner_guidance_is_rejected(self):
+        text = SKILLS_CONFIG.read_text().replace(
+            "    planner_guidance: &led_guidance\n",
+            "    planner_guidance: &led_guidance\n      backend_validator: true\n",
+            1,
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "skills.yaml"
+            path.write_text(text)
+            with self.assertRaisesRegex(
+                ConfigValidationError, "planner_guidance has unknown fields"
+            ):
+                load_skill_registry(path)
+
     def test_policy_catalog_covers_every_group_with_unique_endpoints(self):
         registry = load_skill_registry(SKILLS_CONFIG)
         catalog = load_policy_catalog(

@@ -215,6 +215,11 @@ def main():
                     skill_id: list(selected_skills[skill_id].grounding_roles)
                     for skill_id in allowed_skill_ids
                 },
+                "skill_guidance": {
+                    skill_id: selected_skills[skill_id].planner_guidance.as_dict()
+                    for skill_id in allowed_skill_ids
+                    if selected_skills[skill_id].planner_guidance is not None
+                },
                 "approach_enabled": not args.disable_approach,
                 "initial_observation": {
                     "observation_id": initial.observation_id,

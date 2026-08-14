@@ -5,10 +5,28 @@ from adapters.qwen_agent.remote_tool import (
     _qwen_compatible_schema,
     _result_content,
 )
-from adapters.qwen_agent.single_skill_runner import _continuation_content
+from adapters.qwen_agent.single_skill_runner import _continuation_content, _goal_context
 
 
 class RemoteToolMultimodalResultTest(unittest.TestCase):
+    def test_goal_context_exposes_skill_guidance_unchanged(self):
+        session = {
+            "goal_id": "goal-1",
+            "goal_instruction": "put the block in the slider",
+            "success_spec": {},
+            "allowed_skill_ids": ["place_in_slider"],
+            "semantic_vocabulary": ["slider_interior"],
+            "required_grounding_roles": {"place_in_slider": ["destination"]},
+            "skill_guidance": {
+                "place_in_slider": {
+                    "grounding": ["Ground destination as slider_interior."]
+                }
+            },
+            "approach_enabled": False,
+        }
+        context = _goal_context(session)
+        self.assertEqual(context["skill_guidance"], session["skill_guidance"])
+
     def test_continuation_compacts_history_and_keeps_latest_images(self):
         transcript = [
             {

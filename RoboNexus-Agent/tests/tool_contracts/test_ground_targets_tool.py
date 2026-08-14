@@ -314,6 +314,16 @@ class CalvinOracleGrounderTest(unittest.TestCase):
         self.assertIn("light_switch", capabilities["semantic_vocabulary"])
         self.assertEqual(capabilities["calvin_splits"], ("A", "B", "C", "D"))
 
+    def test_slider_interior_matches_general_21_training_mask(self):
+        vocabulary = load_semantic_vocabulary()
+        self.assertEqual(
+            vocabulary.selectors["slider_interior"],
+            {"fixed": "table", "link": "plank_link"},
+        )
+        self.assertEqual(
+            vocabulary.selectors["slider_left_door"]["link"], "slide_link"
+        )
+
     def test_custom_vocabulary_path_extends_without_code_changes(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "vocabulary.json"
