@@ -14,6 +14,7 @@ from urllib.parse import quote
 
 TERMINAL_EVENTS = {"goal_succeeded": "succeeded", "goal_aborted": "aborted"}
 VIDEO_PATTERN = re.compile(r"(?P<subtask>subtask_\d+)_attempt_(?P<attempt>\d+)\.mp4$")
+SEQUENCE_LABEL_PATTERN = re.compile(r"^(sequence_\d+)")
 
 
 def load_json(path):
@@ -193,6 +194,13 @@ def metric(label, value):
     return '<div class="metric"><span>{}</span><strong>{}</strong></div>'.format(esc(label), esc(value if value is not None else "—"))
 
 
+def short_run_name(name):
+    """Return a compact table label while retaining the full name elsewhere."""
+
+    match = SEQUENCE_LABEL_PATTERN.match(str(name))
+    return match.group(1) if match else str(name)
+
+
 def details(title, value, open_=False):
     return '<details{}><summary>{}</summary><pre>{}</pre></details>'.format(
         " open" if open_ else "", esc(title), esc(json_text(value))
@@ -299,6 +307,7 @@ def _execution_state(execution, verification):
 
 CSS = """
 :root{color-scheme:dark;--bg:#0b1020;--panel:#141b2d;--line:#29334d;--text:#edf2ff;--muted:#96a3bf;--accent:#7dd3fc;--ok:#34d399;--bad:#fb7185;--warn:#fbbf24}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#17213b,var(--bg) 42%);color:var(--text);font:15px/1.5 ui-sans-serif,system-ui,sans-serif}main{max-width:1500px;margin:auto;padding:28px}h1,h2,h3{margin:.2rem 0}h1{font-size:clamp(25px,4vw,42px)}h2{margin-top:32px}.muted,small,.empty{color:var(--muted)}.top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:22px 0}.metric,.panel,.attempt,.timeline-body{background:color-mix(in srgb,var(--panel) 94%,transparent);border:1px solid var(--line);border-radius:14px}.metric{padding:13px}.metric span{display:block;color:var(--muted);font-size:12px}.metric strong{font-size:22px}.panel{padding:18px;margin:14px 0}.skills{display:flex;flex-wrap:wrap;gap:8px}.skills code{padding:5px 9px;background:#222c45;border-radius:8px}.badge{display:inline-block;padding:3px 8px;border-radius:999px;font-size:12px;background:#33405f}.status-succeeded,.status-success{color:#06281e;background:var(--ok)}.status-failed,.status-aborted,.status-unavailable,.status-rejected{color:#370810;background:var(--bad)}.status-active,.status-running,.status-incomplete,.status-unknown{color:#332500;background:var(--warn)}.attempts{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:16px}.attempt{overflow:hidden}.attempt header{display:flex;justify-content:space-between;align-items:center;padding:14px 16px}.attempt-meta{margin:0;padding:0 16px 12px;color:var(--muted)}.attempt video{width:100%;max-height:430px;background:#000}.images{display:flex;gap:8px;padding:10px;overflow-x:auto}.images img{height:125px;border-radius:8px;border:1px solid var(--line)}details{border-top:1px solid var(--line);padding:9px 14px}summary{cursor:pointer;color:var(--accent)}pre{white-space:pre-wrap;word-break:break-word;max-height:500px;overflow:auto;background:#080c17;padding:12px;border-radius:8px}.timeline-item{display:grid;grid-template-columns:42px 1fr;margin:10px 0}.rail{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#253252;color:var(--accent);margin-top:11px}.timeline-body header{display:flex;justify-content:space-between;gap:12px;padding:12px 14px}.tool-status{display:flex;align-items:center;justify-content:flex-end;gap:9px;flex-wrap:wrap}.tool-context{color:var(--accent);font-size:12px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}input,select{background:#0d1426;color:var(--text);border:1px solid var(--line);padding:9px 12px;border-radius:8px}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line)}a{color:var(--accent)}@media(max-width:650px){main{padding:15px}.attempts{grid-template-columns:1fr}.top{display:block}.timeline-body header{align-items:flex-start;flex-direction:column}.tool-status{justify-content:flex-start}table{font-size:12px}.hide-mobile{display:none}}
+.panel table{table-layout:fixed}.panel th,.panel td{overflow-wrap:anywhere}.run-column{width:150px}.status-column{width:175px}.status-column .badge{white-space:nowrap}.number-column{width:82px}.steps-column{width:92px}.run-link{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}@media(max-width:650px){.run-column{width:100px}.status-column{width:145px}.number-column{width:58px}.steps-column{width:65px}}
 """
 
 
@@ -347,8 +356,8 @@ def render_index(models, root, destination):
         report = model["directory"] / "report.html"
         relative = file_uri(report, destination.parent)
         search = " ".join([model["name"], model["status"], model["reason"] or "", *model["skills"]]).lower()
-        rows.append('<tr data-status="{}" data-search="{}"><td><a href="{}">{}</a></td><td>{}</td><td>{}/{}</td><td>{}</td><td>{}</td><td class="hide-mobile">{}</td></tr>'.format(
-            esc(model["status"]), esc(search), relative, esc(model["name"]), badge(model["status"]),
+        rows.append('<tr data-status="{}" data-search="{}"><td class="run-column"><a class="run-link" href="{}" title="{}" aria-label="{}">{}</a></td><td class="status-column">{}</td><td class="number-column">{}/{}</td><td class="number-column">{}</td><td class="steps-column">{}</td><td class="hide-mobile">{}</td></tr>'.format(
+            esc(model["status"]), esc(search), relative, esc(model["name"]), esc(model["name"]), esc(short_run_name(model["name"])), badge(model["status"]),
             len(model["achieved"]), len(model["skills"]), model["retries"], esc(model["environment_steps"] if model["environment_steps"] is not None else "—"), esc(model["reason"] or "—")
         ))
     body = '<p class="muted">RoboNexus offline evaluation dashboard</p><h1>{}</h1>'.format(esc(root.name))
@@ -360,7 +369,7 @@ def render_index(models, root, destination):
     body += '<div class="toolbar"><input id="search" placeholder="Search goal, skill, reason…"><select id="status"><option value="">All statuses</option>{}</select></div>'.format(
         "".join('<option value="{}">{} ({})</option>'.format(esc(key), esc(key), value) for key,value in sorted(counts.items()))
     )
-    body += '<section class="panel"><table><thead><tr><th>Sequence</th><th>Status</th><th>Skills</th><th>Retries</th><th>Steps</th><th class="hide-mobile">Reason</th></tr></thead><tbody id="runs">{}</tbody></table></section>'.format("".join(rows))
+    body += '<section class="panel"><table><thead><tr><th class="run-column">Sequence</th><th class="status-column">Status</th><th class="number-column">Skills</th><th class="number-column">Retries</th><th class="steps-column">Steps</th><th class="hide-mobile">Reason</th></tr></thead><tbody id="runs">{}</tbody></table></section>'.format("".join(rows))
     script = """const q=document.querySelector('#search'),s=document.querySelector('#status');function f(){for(const r of document.querySelectorAll('#runs tr')){r.hidden=!!s.value&&r.dataset.status!==s.value||!r.dataset.search.includes(q.value.toLowerCase())}}q.addEventListener('input',f);s.addEventListener('change',f);"""
     destination.write_text(page(root.name, body, script), encoding="utf-8")
 

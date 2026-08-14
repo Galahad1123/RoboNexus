@@ -68,6 +68,18 @@ class OfflineEvalReportTest(unittest.TestCase):
             self.assertIn("Success rate", document)
             self.assertIn("sequence_001/report.html", document)
             self.assertIn('id="status"', document)
+            self.assertIn('class="run-link"', document)
+
+    def test_index_compacts_long_run_name_but_preserves_it_in_tooltip(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            full_name = "sequence_0012_lift_blue_block_slider__place_in_slider__turn_on_lightbulb"
+            self.make_sequence(root, full_name)
+            REPORT.generate(root, recursive=True)
+            document = (root / "index.html").read_text()
+            self.assertIn(">sequence_0012</a>", document)
+            self.assertIn('title="{}"'.format(full_name), document)
+            self.assertIn("table-layout:fixed", document)
 
     def test_multimodal_function_result_extracts_json_text(self):
         result = REPORT.normalize_tool_result(
