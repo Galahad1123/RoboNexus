@@ -42,6 +42,20 @@ def fetch_session(runtime_url, timeout=30.0):
         return json.loads(response.read().decode("utf-8"))
 
 
+def call_remote_tool(runtime_url, tool_name, params, timeout=600.0):
+    """Call a Runtime tool directly without consuming a Qwen-Agent round."""
+
+    payload = json.dumps({"params": params}).encode("utf-8")
+    request = Request(
+        "{}/tools/{}".format(runtime_url.rstrip("/"), tool_name),
+        data=payload,
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+    with _DIRECT_OPENER.open(request, timeout=float(timeout)) as response:
+        return json.loads(response.read().decode("utf-8"))
+
+
 def build_remote_tools(runtime_url, session_document):
     return [
         RemoteRobotTool(runtime_url, spec)

@@ -215,7 +215,7 @@ def main():
                     category: [
                         {
                             "skill_id": skill.skill_id,
-                            "instruction": skill.instruction,
+                            "planner_instruction": skill.planner_instruction,
                             "grounding_roles": list(skill.grounding_roles),
                         }
                         for skill in full_registry.by_category(category)

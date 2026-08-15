@@ -207,6 +207,7 @@ def load_skill_registry(
     skills = {}
     allowed_fields = {
         "instruction",
+        "planner_instruction",
         "oracle_task",
         "policy_group",
         "category",
@@ -231,12 +232,15 @@ def load_skill_registry(
         if unknown:
             errors.append("{} has unknown fields: {}".format(prefix, unknown))
         instruction = raw.get("instruction")
+        planner_instruction = raw.get("planner_instruction", instruction)
         oracle_task = raw.get("oracle_task")
         policy_group = raw.get("policy_group")
         category = raw.get("category")
         grounding_roles = raw.get("grounding_roles")
         if not isinstance(instruction, str) or not instruction.strip():
             errors.append("{}.instruction must be a non-empty string".format(prefix))
+        if not isinstance(planner_instruction, str) or not planner_instruction.strip():
+            errors.append("{}.planner_instruction must be a non-empty string".format(prefix))
         if not isinstance(oracle_task, str) or not oracle_task.strip():
             errors.append("{}.oracle_task must be a non-empty string".format(prefix))
         elif oracle_task != skill_id:
@@ -291,6 +295,7 @@ def load_skill_registry(
             skills[skill_id] = SkillSpec(
                 skill_id=skill_id,
                 instruction=instruction,
+                planner_instruction=planner_instruction,
                 oracle_task=oracle_task,
                 policy_group=policy_group,
                 category=category,

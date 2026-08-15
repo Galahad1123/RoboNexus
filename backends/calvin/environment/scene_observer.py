@@ -6,12 +6,14 @@ from core.domain import SceneCapture
 from core.ports import EnvironmentPort, EnvironmentPortError
 
 from ..verification.state_inspector import CalvinStateInspector
+from .object_locator import CalvinOracleObjectLocator
 
 
 class CalvinSceneObserver(EnvironmentPort):
-    def __init__(self, adapter, state_inspector=None):
+    def __init__(self, adapter, state_inspector=None, object_locator=None):
         self.adapter = adapter
         self.state_inspector = state_inspector or CalvinStateInspector()
+        self.object_locator = object_locator or CalvinOracleObjectLocator(adapter)
 
     @property
     def environment_steps(self):
@@ -37,6 +39,7 @@ class CalvinSceneObserver(EnvironmentPort):
             environment_steps=self.environment_steps,
             robot_summary=self._robot_summary(observation),
             facility_summary=self._facility_summary(observation),
+            object_locations=self._object_locations(),
         )
         result.validate()
         return result
@@ -44,7 +47,7 @@ class CalvinSceneObserver(EnvironmentPort):
     def _facility_summary(self, observation):
         try:
             snapshot = self.state_inspector.snapshot(observation)
-        except (KeyError, TypeError, ValueError, IndexError):
+        except (AttributeError, KeyError, TypeError, ValueError, IndexError):
             return {name: "unknown" for name in ("drawer", "slider", "lightbulb", "led")}
         return {
             "drawer": snapshot["drawer"],
@@ -52,6 +55,15 @@ class CalvinSceneObserver(EnvironmentPort):
             "lightbulb": snapshot["lightbulb"],
             "led": snapshot["led"],
         }
+
+    def _object_locations(self):
+        try:
+            return dict(self.object_locator.locate_objects())
+        except (AttributeError, KeyError, TypeError, ValueError, IndexError):
+            return {
+                name: "unknown"
+                for name in ("red_block", "blue_block", "pink_block")
+            }
 
     @staticmethod
     def _robot_summary(observation):

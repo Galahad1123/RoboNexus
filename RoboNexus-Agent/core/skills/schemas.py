@@ -58,6 +58,7 @@ class RecoveryRule:
 class SkillSpec:
     skill_id: str
     instruction: str
+    planner_instruction: str
     oracle_task: str
     policy_group: str
     category: str

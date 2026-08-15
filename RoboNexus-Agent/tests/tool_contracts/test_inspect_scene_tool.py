@@ -61,6 +61,7 @@ class FakeEnvironment(EnvironmentPort):
             self.steps,
             {"gripper": "open", "holding_object": "unknown"},
             {"drawer": "closed", "slider": "left"},
+            {"red_block": "table", "blue_block": "slider", "pink_block": "drawer"},
         )
 
 
@@ -88,6 +89,7 @@ class InspectSceneToolTest(unittest.TestCase):
         self.assertEqual(result.data["reason"], "choose the first skill")
         self.assertEqual(result.data["robot_summary"]["gripper"], "open")
         self.assertEqual(result.data["facility_summary"]["drawer"], "closed")
+        self.assertEqual(result.data["object_locations"]["pink_block"], "drawer")
         self.assertEqual(len(result.artifacts), 2)
         self.assertEqual(len(artifacts.images), 2)
         self.assertEqual(session.latest_observation.observation_id, "obs_000002")
@@ -100,10 +102,12 @@ class InspectSceneToolTest(unittest.TestCase):
             {
                 "include_robot_summary": False,
                 "include_facility_summary": False,
+                "include_object_locations": False,
             }
         )
         self.assertNotIn("robot_summary", result.data)
         self.assertNotIn("facility_summary", result.data)
+        self.assertNotIn("object_locations", result.data)
 
     def test_read_only_replay_does_not_capture_or_save_twice(self):
         session = make_session()

@@ -192,6 +192,48 @@ class AgentSession:
     def attempts_used(self, logical_subtask_id):
         return self._attempts.get(logical_subtask_id, 0)
 
+    def attempt_scope(self, skill_id, logical_subtask_id):
+        """Return a stage-stable budget key for current goal progress."""
+
+        expected = self.expected_goal_skill_id()
+        if expected is not None and skill_id == expected:
+            return "goal_stage_{:02d}:{}".format(
+                len(self._achievement_sequence) + 1, skill_id
+            )
+        return "recovery:{}".format(logical_subtask_id)
+
+    def expected_goal_skill_id(self):
+        if self.goal.success_spec.get("mode") != "skill_sequence":
+            return None
+        predicates = self.goal.success_spec.get("predicates", ())
+        position = len(self._achievement_sequence)
+        if position >= len(predicates):
+            return None
+        item = predicates[position]
+        return item.get("name") if isinstance(item, dict) else item
+
+    def exhaust_skill_attempts(
+        self, skill_id, logical_subtask_id, attempt_scope, attempts_used
+    ):
+        """Terminate immediately after the third failed current goal attempt."""
+
+        with self._lock:
+            self._require_active()
+            self.status = AgentSessionStatus.BUDGET_EXHAUSTED
+            self.termination_reason = "skill_attempt_limit"
+            self.termination_details = {
+                "skill_id": str(skill_id),
+                "logical_subtask_id": str(logical_subtask_id),
+                "attempt_scope": str(attempt_scope),
+                "attempts_used": int(attempts_used),
+            }
+            self._emit(
+                "goal_aborted",
+                status=self.status.value,
+                reason=self.termination_reason,
+                details=self.termination_details,
+            )
+
     def maximum_attempts_used(self):
         return max(self._attempts.values()) if self._attempts else 0
 
@@ -225,13 +267,7 @@ class AgentSession:
 
         if self.goal.success_spec.get("mode") != "skill_sequence":
             return "goal_progress"
-        predicates = self.goal.success_spec.get("predicates", ())
-        expected = [
-            item.get("name") if isinstance(item, dict) else item
-            for item in predicates
-        ]
-        position = len(self._achievement_sequence)
-        if position < len(expected) and skill_id == expected[position]:
+        if skill_id == self.expected_goal_skill_id():
             return "goal_progress"
         return "recovery"
 

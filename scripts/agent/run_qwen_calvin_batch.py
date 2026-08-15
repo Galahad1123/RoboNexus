@@ -73,7 +73,7 @@ def sequence_name(item):
 
 
 def is_terminal(status):
-    return status == "succeeded" or str(status).startswith("aborted")
+    return status not in {None, "pending", "active", "waiting_for_user"}
 
 
 def sequence_status(directory):
@@ -160,7 +160,7 @@ def main():
         output.mkdir(parents=True, exist_ok=True)
         first = registry.get(item["skills"][0])
         goal = "Complete these robot goal steps in the exact numbered order:\n" + "\n".join(
-            "{}. {}".format(number, registry.get(skill_id).instruction)
+            "{}. {}".format(number, registry.get(skill_id).planner_instruction)
             for number, skill_id in enumerate(item["skills"], 1)
         )
         command = [

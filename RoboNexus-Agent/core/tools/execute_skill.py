@@ -67,13 +67,19 @@ class ExecuteSkillTool:
             logical_subtask_id = self.session.resolve_logical_subtask(
                 skill.skill_id, groundings
             )
+            attempt_scope = self.session.attempt_scope(
+                skill.skill_id, logical_subtask_id
+            )
             self.executor.check_preconditions(skill.skill_id)
             self.executor.check_available(skill.skill_id)
-            if self.session.attempts_used(logical_subtask_id) >= skill.max_attempts:
+            attempt_limit = min(
+                skill.max_attempts, self.session.goal.limits.skill_attempt_limit
+            )
+            if self.session.attempts_used(attempt_scope) >= attempt_limit:
                 raise SessionRejected(
                     ErrorCode.ATTEMPT_BUDGET_EXHAUSTED,
                     "skill attempt budget exhausted for {!r}".format(
-                        logical_subtask_id
+                        attempt_scope
                     ),
                     retryable=False,
                 )
@@ -87,7 +93,7 @@ class ExecuteSkillTool:
                     retryable=False,
                 )
             step_limit = min(skill.max_steps, environment_steps_remaining)
-            attempt = self.session.consume_attempt(logical_subtask_id)
+            attempt = self.session.consume_attempt(attempt_scope)
             execution = self.executor.execute(
                 skill.skill_id,
                 groundings,
@@ -139,6 +145,7 @@ class ExecuteSkillTool:
             data = {
                 "skill_id": skill.skill_id,
                 "logical_subtask_id": logical_subtask_id,
+                "attempt_scope": attempt_scope,
                 "attempt": attempt,
                 "policy_id": execution.policy_id,
                 "skill_category": skill.category,
@@ -163,6 +170,17 @@ class ExecuteSkillTool:
                 data=data,
                 artifacts=tuple(artifacts),
             )
+            if (
+                not execution.success
+                and attempt_scope.startswith("goal_stage_")
+                and attempt >= attempt_limit
+            ):
+                self.session.exhaust_skill_attempts(
+                    skill.skill_id,
+                    logical_subtask_id,
+                    attempt_scope,
+                    attempt,
+                )
         except (TypeError, ValueError) as exc:
             result = self._error_result(
                 tool_call_id, ToolStatus.REJECTED, ErrorCode.INVALID_ARGUMENT, exc, True

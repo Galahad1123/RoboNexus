@@ -21,6 +21,7 @@ from ..verification.task_verifier import CalvinOracleTaskVerifier
 from ..verification.state_inspector import CalvinStateInspector
 from .attempt_runner import CalvinSkillAttemptRunner
 from .outline_styles import load_outline_styles
+from ..patches import TableCubePenetrationDetector
 
 
 STATEFUL_RETRY_SKILLS = frozenset(
@@ -137,6 +138,12 @@ class CalvinSkillExecutor(SkillExecutorPort):
             # incremental progress is not discarded.
             verification_start_info = self._verification_baseline(logical_subtask_id)
             verifier.begin(episode, verification_start_info)
+            penetration_detector = TableCubePenetrationDetector.for_attempt(
+                self.adapter,
+                skill_id,
+                groundings,
+                self.adapter.get_info(),
+            )
             engine = SimpleNamespace(
                 adapter=self.adapter,
                 client=_PolicyResponseAdapter(client),
@@ -145,6 +152,7 @@ class CalvinSkillExecutor(SkillExecutorPort):
                 mask_overlay=overlay,
                 video_dir=True,
                 video_fps=self.video_fps,
+                step_guard=penetration_detector,
             )
             runner = CalvinSkillAttemptRunner(engine, verifier, self.events)
             policy_session_id = "{}__attempt_{:02d}".format(
@@ -161,6 +169,9 @@ class CalvinSkillExecutor(SkillExecutorPort):
                 session_id=policy_session_id,
                 episode_seed=seed,
                 global_start_step=self.adapter.environment_steps,
+            )
+            physics_recovery = self._recover_physics_anomaly(
+                penetration_detector, result.physics_anomaly
             )
             capture = CalvinSceneObserver(self.adapter).capture_scene()
             success = bool(result.success)
@@ -210,6 +221,7 @@ class CalvinSkillExecutor(SkillExecutorPort):
                     "latencies_ms": result.latencies_ms,
                     "replan_steps": result.replan_steps,
                     "robot_recovery": recovery,
+                    "physics_recovery": physics_recovery,
                 },
             )
         except SkillExecutorPortError:
@@ -264,6 +276,17 @@ class CalvinSkillExecutor(SkillExecutorPort):
             "gripper_command": int(np.sign(self.initial_robot_observation[14])),
             "scene_reset": False,
         }
+
+    def _recover_physics_anomaly(self, detector, anomaly):
+        if detector is None or anomaly is None:
+            return {"performed": False, "reason": "no_physics_anomaly"}
+        if self.initial_robot_observation is None:
+            return {"performed": False, "reason": "initial_robot_state_unavailable"}
+        self.adapter.restore_robot(self.initial_robot_observation)
+        recovery = detector.recover()
+        if self.events is not None:
+            self.events.emit("physics_anomaly_recovered", **recovery)
+        return recovery
 
     def _verification_baseline(self, logical_subtask_id):
         if logical_subtask_id not in self._verification_start_info:

@@ -9,6 +9,7 @@ from backends.calvin.execution.skill_executor import CalvinSkillExecutor
 from backends.calvin.grounding.semantic_vocabulary import load_semantic_vocabulary
 from core.domain import (
     ArtifactRef,
+    AgentSessionStatus,
     ErrorCode,
     GoalInput,
     GroundedObject,
@@ -42,7 +43,10 @@ def make_session(attempt_limit=3, environment_step_limit=2000):
         GoalInput(
             "goal-execute",
             "lift the red block",
-            {"predicates": ["lift_red_block_table"]},
+            {
+                "mode": "skill_sequence",
+                "predicates": [{"name": "lift_red_block_table"}],
+            },
             initial,
             limits=RuntimeLimits(
                 skill_attempt_limit=attempt_limit,
@@ -237,11 +241,11 @@ class ExecuteSkillToolTest(unittest.TestCase):
         result1 = tool.call(params("lift_red_block_table", [first]), "attempt-1")
         second = add_grounding(session)
         result2 = tool.call(params("lift_red_block_table", [second]), "attempt-2")
-        third = add_grounding(session)
-        result3 = tool.call(params("lift_red_block_table", [third]), "attempt-3")
-        self.assertEqual(result1.data["logical_subtask_id"], result2.data["logical_subtask_id"])
+        self.assertEqual(result1.data["attempt_scope"], result2.data["attempt_scope"])
         self.assertEqual((result1.data["attempt"], result2.data["attempt"]), (1, 2))
-        self.assertEqual(result3.error.code, ErrorCode.ATTEMPT_BUDGET_EXHAUSTED)
+        self.assertEqual(session.status, AgentSessionStatus.BUDGET_EXHAUSTED)
+        self.assertEqual(session.termination_reason, "skill_attempt_limit")
+        self.assertEqual(session.termination_details["attempts_used"], 2)
         self.assertEqual(len(executor.calls), 2)
 
     def test_idempotent_replay_does_not_execute_twice(self):

@@ -18,6 +18,7 @@ skills:
 
   lift_blue_block_drawer:
     category: lift
+    planner_instruction: pick up the blue block from the drawer
     instruction: pick up the black-outlined block from the drawer
     oracle_task: lift_blue_block_drawer
     policy_group: general
@@ -25,8 +26,11 @@ skills:
     planner_guidance: &lift_from_drawer_guidance
       planning:
         - Choose this skill only when the requested block is currently inside the drawer; otherwise choose the lift skill matching its latest observed location.
+      grounding:
+        - Ground the colored block named by the selected skill as role=source. Never ground drawer_interior, drawer panels, handles, or another facility as the lift source.
   lift_blue_block_slider:
     category: lift
+    planner_instruction: pick up the blue block from the sliding cabinet
     instruction: pick up the black-outlined block from the sliding cabinet
     oracle_task: lift_blue_block_slider
     policy_group: general
@@ -34,8 +38,11 @@ skills:
     planner_guidance: &lift_from_slider_guidance
       planning:
         - Choose this skill only when the requested block is currently inside the sliding cabinet; otherwise choose the lift skill matching its latest observed location.
+      grounding:
+        - Ground the colored block named by the selected skill as role=source. Never ground slider_interior, slider doors, or another facility as the lift source.
   lift_blue_block_table:
     category: lift
+    planner_instruction: pick up the blue block from the table
     instruction: pick up the black-outlined block from the table
     oracle_task: lift_blue_block_table
     policy_group: general
@@ -43,8 +50,11 @@ skills:
     planner_guidance: &lift_from_table_guidance
       planning:
         - Choose this skill only when the requested block is currently on the tabletop; after a failed placement, inspect its new location instead of repeating its original lift skill.
+      grounding:
+        - Ground the colored block named by the selected skill as role=source. Never ground the table, drawer, slider interior, or another facility as the lift source.
   lift_pink_block_drawer:
     category: lift
+    planner_instruction: pick up the pink block from the drawer
     instruction: pick up the black-outlined block from the drawer
     oracle_task: lift_pink_block_drawer
     policy_group: general
@@ -52,6 +62,7 @@ skills:
     planner_guidance: *lift_from_drawer_guidance
   lift_pink_block_slider:
     category: lift
+    planner_instruction: pick up the pink block from the sliding cabinet
     instruction: pick up the black-outlined block from the sliding cabinet
     oracle_task: lift_pink_block_slider
     policy_group: general
@@ -59,6 +70,7 @@ skills:
     planner_guidance: *lift_from_slider_guidance
   lift_pink_block_table:
     category: lift
+    planner_instruction: pick up the pink block from the table
     instruction: pick up the black-outlined block from the table
     oracle_task: lift_pink_block_table
     policy_group: general
@@ -66,6 +78,7 @@ skills:
     planner_guidance: *lift_from_table_guidance
   lift_red_block_drawer:
     category: lift
+    planner_instruction: pick up the red block from the drawer
     instruction: pick up the black-outlined block from the drawer
     oracle_task: lift_red_block_drawer
     policy_group: general
@@ -73,6 +86,7 @@ skills:
     planner_guidance: *lift_from_drawer_guidance
   lift_red_block_slider:
     category: lift
+    planner_instruction: pick up the red block from the sliding cabinet
     instruction: pick up the black-outlined block from the sliding cabinet
     oracle_task: lift_red_block_slider
     policy_group: general
@@ -80,6 +94,7 @@ skills:
     planner_guidance: *lift_from_slider_guidance
   lift_red_block_table:
     category: lift
+    planner_instruction: pick up the red block from the table
     instruction: pick up the black-outlined block from the table
     oracle_task: lift_red_block_table
     policy_group: general

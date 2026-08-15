@@ -571,7 +571,11 @@ tool_call_limit = 32
 environment_step_limit = 2000
 ```
 
-预算由 Runtime 维护并随每次工具结果返回。Qwen 不能通过新 grounding handle、改变自然语言 intent 或重建 policy session 绕过 attempt 限制。
+预算由 Runtime 维护并随每次工具结果返回。官方序列中每个当前 goal stage 独立拥有
+`skill_attempt_limit` 次机会：换 grounding 不刷新，成功进入下一 stage 后刷新。恢复
+skill 的额度与未来正式 stage 隔离。当前 stage 的第 3 次 attempt 仍失败会立即进入
+`BUDGET_EXHAUSTED`，而不是只拒绝第 4 次调用或允许跳到后续 stage。Qwen 不能通过新
+grounding handle、改变自然语言 intent 或重建 policy session 绕过该限制。
 
 终态：
 

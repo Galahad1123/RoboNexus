@@ -36,6 +36,10 @@
 attempt 上限和 success guard。Planner 后续只选择 `skill_id`，不能改写这里的
 instruction。
 
+`planner_instruction` 与 DiT `instruction` 明确分离：前者保留颜色、位置等 goal
+语义并只提供给 Qwen；后者保持 checkpoint 训练时的 outline 指令，仍是唯一发送给
+DiT policy server 的文本。未显式配置 `planner_instruction` 时默认沿用 `instruction`。
+
 每个 skill 必须声明 `category`，并可声明结构化 `planner_guidance` 与条件
 `recovery`。Runtime 将完整 34-skill catalog 按 category 发布给 Qwen；官方评测的
 `goal_skill_ids`/Oracle predicates 仅保存在 Runtime 内部，不进入模型上下文。Qwen

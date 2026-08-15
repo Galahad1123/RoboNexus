@@ -239,13 +239,29 @@ skill；它不接收官方 CALVIN 序列的 `goal_skill_ids` 或 Oracle predicat
 标记 `goal_progress/direct_retry/recovery`。Runtime 独立判定实际进度，恢复技能成功不会
 推进官方序列。Dashboard 只展示该结构化决策、简短依据与结果，不记录隐藏思维链。
 
+Skill Registry 分别保存面向 Planner 的 `planner_instruction` 和与训练分布对齐的 DiT
+`instruction`，Qwen 不再从缺失颜色信息的 outline policy prompt 推断用户目标。
+`inspect_scene.object_locations` 是 backend-neutral 的当前物体位置契约；CALVIN 初版由
+Oracle contact metadata 实现，后续可替换为 VLM/检测跟踪或真机感知。Planner 选择
+table/drawer/slider lift 变体时必须采用最新 object_locations，而不是原始 goal 中的旧位置。
+
 Runtime 维护硬上限：
 
 - 同一逻辑子任务默认最多 3 次 `execute_skill`；
 - 失败耗尽后默认最多允许 2 个新的 replan epoch；
 - 另有 goal 级工具调用数、环境步数和时间限制。
 
-重新 grounding 不自动清零 attempt 计数，避免通过改变 grounding ID 绕过预算。是否进入新的逻辑子任务由 Runtime 根据 Qwen 的结构化意图和已完成技能记录确定。
+Qwen-Agent round 上限耗尽而 Session 仍为 active 时，runner 使用最新 observation
+自动执行一次终局 `verify_goal`。该调用不占用 Qwen round，但仍计入 Runtime tool-call
+budget，并完整写入事件与 Dashboard。只有 verifier 返回 success 才结束 goal；验证失败
+仍按 round exhaustion 处理，不能将兜底验证等同于兜底成功。
+
+官方序列的 attempt 预算按 evaluator-private 的当前 goal stage 计数，而不是按 grounding
+handle 或 Qwen 的自然语言 intent 计数。重新 grounding 不清零当前 stage 的计数；当前
+stage 验证成功后进入下一 stage，并获得独立的三次机会。恢复技能使用单独的 recovery
+scope，因此提前执行某个未来 goal skill 不会消耗它日后作为正式 stage 的额度。当前
+stage 第三次执行仍失败时，Runtime 立即以 `BUDGET_EXHAUSTED / skill_attempt_limit`
+终止整个 goal，不允许 Qwen 跳过该 stage 继续后续计划。
 
 ## 7. Memory 与上下文控制
 

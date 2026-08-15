@@ -58,6 +58,14 @@ class CalvinD34ConfigTest(unittest.TestCase):
             registry.get("lift_blue_block_drawer").instruction,
             "pick up the black-outlined block from the drawer",
         )
+        self.assertEqual(
+            registry.get("lift_blue_block_drawer").planner_instruction,
+            "pick up the blue block from the drawer",
+        )
+        self.assertEqual(
+            registry.get("open_drawer").planner_instruction,
+            registry.get("open_drawer").instruction,
+        )
 
     def test_registry_preserves_structured_planner_guidance(self):
         registry = load_skill_registry(SKILLS_CONFIG)
@@ -77,6 +85,9 @@ class CalvinD34ConfigTest(unittest.TestCase):
             "light_switch",
             registry.get("turn_on_lightbulb").planner_guidance.grounding[0],
         )
+        slider_lift = registry.get("lift_red_block_slider").planner_guidance
+        self.assertIn("colored block", slider_lift.grounding[0])
+        self.assertIn("Never ground slider_interior", slider_lift.grounding[0])
 
     def test_registry_preserves_conditional_recovery_catalog(self):
         registry = load_skill_registry(SKILLS_CONFIG)

@@ -117,6 +117,7 @@ class SceneCapture:
     environment_steps: int
     robot_summary: Dict[str, Any] = field(default_factory=dict)
     facility_summary: Dict[str, Any] = field(default_factory=dict)
+    object_locations: Dict[str, Any] = field(default_factory=dict)
 
     def validate(self):
         if self.static_rgb is None or self.wrist_rgb is None:
@@ -131,6 +132,8 @@ class SceneCapture:
             raise ValueError("robot_summary must be a mapping")
         if not isinstance(self.facility_summary, dict):
             raise ValueError("facility_summary must be a mapping")
+        if not isinstance(self.object_locations, dict):
+            raise ValueError("object_locations must be a mapping")
 
 
 @dataclass(frozen=True)

@@ -9,7 +9,7 @@ from qwen_agent.llm.schema import ContentItem, Message
 
 from core.logging import atomic_write_json, read_json
 
-from .remote_tool import build_remote_tools, fetch_session
+from .remote_tool import build_remote_tools, call_remote_tool, fetch_session
 
 
 SYSTEM_PROMPT = """You are the high-level planner for one robot goal.
@@ -40,7 +40,9 @@ execute a completed goal skill again merely because verify_goal says the whole
 sequence is incomplete. Preserve the numbered goal order. After a placement
 failure, direct retry is allowed only if the latest images clearly show the
 object remains held; otherwise use the configured lift recovery for its visible
-color and current location."""
+color and current location. Treat the latest inspect_scene.object_locations as
+the authoritative location selector for table/drawer/slider lift variants; it
+describes current state and may differ from the original goal wording."""
 
 
 def _goal_context(session):
@@ -131,9 +133,20 @@ def run_single_skill_agent(
             if _terminal(current_session.get("session_status")):
                 break
             if agent_round >= int(max_agent_rounds):
+                verification = _terminal_verification(
+                    runtime_url, current_session
+                )
+                transcript.extend(_terminal_verification_messages(verification))
+                current_session = fetch_session(runtime_url)
+                if _terminal(current_session.get("session_status")):
+                    break
+                reason = (verification.get("data") or {}).get("reason") or (
+                    verification.get("error") or {}
+                ).get("message")
                 raise RuntimeError(
-                    "Qwen stopped while robot Session remained {} after {} Agent rounds".format(
-                        current_session.get("session_status"), agent_round
+                    "Qwen stopped while robot Session remained {} after {} Agent rounds; "
+                    "terminal verify_goal did not succeed: {}".format(
+                        current_session.get("session_status"), agent_round, reason or "unknown"
                     )
                 )
             messages = [
@@ -192,7 +205,47 @@ def build_qwen_llm(model_path, max_new_tokens=768):
 
 
 def _terminal(status):
-    return status == "succeeded" or str(status).startswith("aborted")
+    return status not in {None, "active", "waiting_for_user"}
+
+
+def _terminal_verification(runtime_url, current_session):
+    observation_id = current_session.get("latest_observation_id")
+    if not observation_id:
+        return {
+            "status": "rejected",
+            "error": {"message": "latest_observation_id is unavailable"},
+        }
+    return call_remote_tool(
+        runtime_url,
+        "verify_goal",
+        {
+            "claim": "automatic terminal verification outside Qwen-Agent rounds",
+            "observation_id": observation_id,
+            "use_goal_reference": True,
+        },
+    )
+
+
+def _terminal_verification_messages(result):
+    arguments = {
+        "claim": "automatic terminal verification outside Qwen-Agent rounds",
+        "observation_id": (result.get("data") or {}).get("observation_id"),
+        "use_goal_reference": True,
+    }
+    return [
+        {
+            "role": "assistant",
+            "function_call": {
+                "name": "verify_goal",
+                "arguments": json.dumps(arguments, ensure_ascii=False),
+            },
+        },
+        {
+            "role": "function",
+            "name": "verify_goal",
+            "content": json.dumps(result, ensure_ascii=False),
+        },
+    ]
 
 
 def _continuation_content(context, current_session, transcript):
@@ -230,6 +283,8 @@ def _continuation_content(context, current_session, transcript):
                 "decision_type": data.get("decision_type"),
                 "progress_type": data.get("progress_type"),
                 "intent": data.get("intent"),
+                "object_locations": data.get("object_locations"),
+                "facility_summary": data.get("facility_summary"),
                 "observation_id": data.get("after_observation_id") or (data.get("observation") or {}).get("observation_id"),
             }
         )

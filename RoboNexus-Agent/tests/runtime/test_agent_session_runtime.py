@@ -130,6 +130,51 @@ class AgentSessionRuntimeTest(unittest.TestCase):
         self.assertEqual(caught.exception.error.code, ErrorCode.ATTEMPT_BUDGET_EXHAUSTED)
         self.assertEqual(session.consume_attempt("subtask-b"), 1)
 
+    def test_goal_stage_budget_refreshes_after_verified_progress(self):
+        session = make_session()
+        session.goal.success_spec.update(
+            {
+                "mode": "skill_sequence",
+                "predicates": [
+                    {"name": "open_drawer"},
+                    {"name": "close_drawer"},
+                ],
+            }
+        )
+        first_scope = session.attempt_scope("open_drawer", "logical-a")
+        self.assertEqual(first_scope, "goal_stage_01:open_drawer")
+        self.assertEqual(session.consume_attempt(first_scope), 1)
+        session.record_skill_achievement("open_drawer", "logical-a")
+        second_scope = session.attempt_scope("close_drawer", "logical-b")
+        self.assertEqual(second_scope, "goal_stage_02:close_drawer")
+        self.assertEqual(session.attempts_used(second_scope), 0)
+
+    def test_recovery_does_not_consume_future_goal_stage_budget(self):
+        session = make_session()
+        session.goal.success_spec.update(
+            {
+                "mode": "skill_sequence",
+                "predicates": [
+                    {"name": "open_drawer"},
+                    {"name": "lift_red_block_table"},
+                ],
+            }
+        )
+        recovery_scope = session.attempt_scope(
+            "lift_red_block_table", "logical-recovery"
+        )
+        self.assertTrue(recovery_scope.startswith("recovery:"))
+        session.consume_attempt(recovery_scope)
+        session.record_recovery_achievement(
+            "lift_red_block_table", "logical-recovery"
+        )
+        session.record_skill_achievement("open_drawer", "logical-goal")
+        goal_scope = session.attempt_scope(
+            "lift_red_block_table", "logical-recovery"
+        )
+        self.assertEqual(goal_scope, "goal_stage_02:lift_red_block_table")
+        self.assertEqual(session.attempts_used(goal_scope), 0)
+
     def test_replan_budget(self):
         session = make_session(replan_limit=1)
         self.assertEqual(session.consume_replan(), 1)

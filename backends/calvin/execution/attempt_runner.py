@@ -21,6 +21,7 @@ class CalvinAttemptResult:
     replan_steps: list = field(default_factory=list)
     global_replan_steps: list = field(default_factory=list)
     frames: list = field(default_factory=list)
+    physics_anomaly: object = None
 
 
 class CalvinSkillAttemptRunner:
@@ -59,6 +60,7 @@ class CalvinSkillAttemptRunner:
         environment_done = False
         termination_reason = "timeout"
         success_step = None
+        physics_anomaly = None
 
         for local_step in range(episode.max_steps):
             global_step = global_start_step + local_step
@@ -93,6 +95,19 @@ class CalvinSkillAttemptRunner:
 
             observation, _, done, current_info = engine.adapter.step(action)
             actions.append(engine.adapter.last_executed_action.tolist())
+            step_guard = getattr(engine, "step_guard", None)
+            if step_guard is not None:
+                physics_anomaly = step_guard.observe(current_info)
+                if physics_anomaly is not None:
+                    termination_reason = "physics_anomaly_detected"
+                    if self.events is not None:
+                        self.events.emit(
+                            "physics_anomaly_detected",
+                            episode_id=episode.episode_id,
+                            attempt=attempt,
+                            **physics_anomaly,
+                        )
+                    break
             verification = self._evaluate(
                 current_info,
                 observation,
@@ -132,6 +147,7 @@ class CalvinSkillAttemptRunner:
             replan_steps=replan_steps,
             global_replan_steps=global_replan_steps,
             frames=frames,
+            physics_anomaly=physics_anomaly,
         )
 
     def _evaluate(self, current_info, observation, executed_action):

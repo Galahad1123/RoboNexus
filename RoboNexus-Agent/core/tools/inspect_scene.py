@@ -25,6 +25,7 @@ class InspectSceneTool:
             },
             "include_robot_summary": {"type": "boolean", "default": True},
             "include_facility_summary": {"type": "boolean", "default": True},
+            "include_object_locations": {"type": "boolean", "default": True},
         },
         "additionalProperties": False,
     }
@@ -83,6 +84,8 @@ class InspectSceneTool:
                 data["robot_summary"] = dict(capture.robot_summary)
             if parsed["include_facility_summary"]:
                 data["facility_summary"] = dict(capture.facility_summary)
+            if parsed["include_object_locations"]:
+                data["object_locations"] = dict(capture.object_locations)
             result = self.session.result(
                 tool_call_id,
                 ToolStatus.SUCCEEDED,
@@ -144,7 +147,10 @@ class InspectSceneTool:
 def _validate_params(params):
     if not isinstance(params, dict):
         raise TypeError("inspect_scene parameters must be a mapping")
-    allowed = {"reason", "include_robot_summary", "include_facility_summary"}
+    allowed = {
+        "reason", "include_robot_summary", "include_facility_summary",
+        "include_object_locations",
+    }
     unknown = sorted(set(params) - allowed)
     if unknown:
         raise ValueError("unknown inspect_scene parameters: {}".format(unknown))
@@ -153,14 +159,18 @@ def _validate_params(params):
         raise TypeError("reason must be a string")
     include_robot = params.get("include_robot_summary", True)
     include_facility = params.get("include_facility_summary", True)
+    include_objects = params.get("include_object_locations", True)
     if not isinstance(include_robot, bool):
         raise TypeError("include_robot_summary must be a boolean")
     if not isinstance(include_facility, bool):
         raise TypeError("include_facility_summary must be a boolean")
+    if not isinstance(include_objects, bool):
+        raise TypeError("include_object_locations must be a boolean")
     return {
         "reason": reason,
         "include_robot_summary": include_robot,
         "include_facility_summary": include_facility,
+        "include_object_locations": include_objects,
     }
 
 
