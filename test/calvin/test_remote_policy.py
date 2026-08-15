@@ -137,55 +137,6 @@ class ConfiguredCalvinSuiteTest(unittest.TestCase):
         self.assertEqual(result.steps, 0)
         self.assertEqual(result.reason, "already_within_xy_threshold")
 
-    def test_cartesian_approach_restores_fixed_orientation_and_opens_gripper(self):
-        class Robot:
-            max_rel_pos = 0.02
-            max_rel_orn = 0.05
-
-        class Env:
-            robot = Robot()
-
-        class Adapter:
-            env = Env()
-
-            def __init__(self):
-                self.observation = {
-                    "robot_obs": np.asarray(
-                        [0.30, 0.00, 0.55, 1.50, 0.40, -0.20]
-                        + [0.0] * 8
-                        + [-1.0],
-                        dtype=np.float64,
-                    )
-                }
-                self.commands = []
-
-            def step(self, action):
-                action = np.asarray(action)
-                self.commands.append(action.copy())
-                self.observation["robot_obs"][:3] += action[:3] * 0.02
-                self.observation["robot_obs"][3:6] += action[3:6] * 0.05
-                self.last_executed_action = action.copy()
-                return self.observation, 0, False, {}
-
-        adapter = Adapter()
-        target_orientation = np.asarray([3.06, 0.0, 1.46])
-        result = CalvinCartesianApproachController(adapter).execute(
-            adapter.observation,
-            "block_red",
-            np.asarray([0.34, 0.01, 0.46]),
-            {
-                "xy_threshold_m": 0.08,
-                "target_orientation_euler": target_orientation,
-                "orientation_tolerance_rad": 0.08,
-                "gripper_command": 1.0,
-                "max_motion_steps": 80,
-            },
-        )
-        self.assertTrue(result.success)
-        self.assertLessEqual(result.final_orientation_error_rad, 0.08)
-        self.assertTrue(adapter.commands)
-        self.assertTrue(all(command[6] == 1.0 for command in adapter.commands))
-
     def test_mask_overlay_does_not_mutate_clean_image(self):
         import numpy as np
 

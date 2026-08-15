@@ -7,7 +7,6 @@ import numpy as np
 from backends.calvin.execution.outline_styles import load_outline_styles
 from backends.calvin.execution.skill_executor import CalvinSkillExecutor
 from backends.calvin.grounding.semantic_vocabulary import load_semantic_vocabulary
-from backends.calvin.recovery.approach_state import RotateApproachState
 from core.domain import (
     ArtifactRef,
     AgentSessionStatus,
@@ -271,17 +270,6 @@ class ExecuteSkillToolTest(unittest.TestCase):
 
 
 class CalvinSkillExecutorConfigTest(unittest.TestCase):
-    def test_rotate_approach_pose_is_preserved_for_exactly_one_retry(self):
-        state = RotateApproachState()
-        state.arm("rotate_red_block_left")
-        executor = object.__new__(CalvinSkillExecutor)
-        executor.approach_recovery_state = state
-        executor.initial_robot_observation = None
-        first = executor._restore_robot_for_retry("rotate_red_block_left", 2)
-        second = executor._restore_robot_for_retry("rotate_red_block_left", 3)
-        self.assertEqual(first["reason"], "preserve_rotate_approach_pose")
-        self.assertEqual(second["reason"], "initial_state_unavailable")
-
     def test_outline_styles_cover_all_policy_groups(self):
         styles = load_outline_styles()
         self.assertEqual(set(styles), {"general", "push", "rotate", "stack"})

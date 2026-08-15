@@ -15,7 +15,6 @@ class RecoveryResult:
     target_position: object = None
     final_xy_distance_m: float = None
     actions: object = None
-    final_orientation_error_rad: float = None
 
     def as_dict(self):
         return {

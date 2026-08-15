@@ -88,7 +88,6 @@ class FakeController(ApproachControllerPort):
         self.steps = steps
         self.error = error
         self.calls = []
-        self.notifications = []
 
     def approach(self, grounding, xy_threshold_m, step_limit):
         self.calls.append((grounding, xy_threshold_m, step_limit))
@@ -110,21 +109,8 @@ class FakeController(ApproachControllerPort):
             ),
         )
 
-    def notify_recovery(self, failed_skill_id, result):
-        self.notifications.append((failed_skill_id, result.success))
-
 
 class ApproachTargetToolTest(unittest.TestCase):
-    def rotate_session(self):
-        session = make_session()
-        session.goal.success_spec.update(
-            {
-                "mode": "skill_sequence",
-                "predicates": [{"name": "rotate_red_block_left"}],
-            }
-        )
-        return session
-
     def test_success_updates_observation_and_invalidates_old_grounding(self):
         session = make_session()
         grounding = add_grounding(session)
@@ -219,53 +205,6 @@ class ApproachTargetToolTest(unittest.TestCase):
         second = tool.call(params(grounding, 0.15), "same-call")
         self.assertIs(first, second)
         self.assertEqual(len(controller.calls), 1)
-
-    def test_rotate_recovery_is_forbidden_before_first_failed_attempt(self):
-        session = self.rotate_session()
-        grounding = add_grounding(session)
-        controller = FakeController()
-        tool = ApproachTargetTool(
-            session, controller, FakeArtifacts(), rotate_recovery_only=True
-        )
-        arguments = params(grounding)
-        arguments["failed_skill_id"] = "rotate_red_block_left"
-        result = tool.call(arguments)
-        self.assertEqual(result.error.code, ErrorCode.INVALID_PRECONDITION)
-        self.assertEqual(controller.calls, [])
-
-    def test_rotate_recovery_accepts_matching_source_after_failure(self):
-        session = self.rotate_session()
-        scope = session.attempt_scope("rotate_red_block_left", "subtask")
-        session.consume_attempt(scope)
-        grounding = add_grounding(session)
-        controller = FakeController(steps=0)
-        tool = ApproachTargetTool(
-            session, controller, FakeArtifacts(), rotate_recovery_only=True
-        )
-        arguments = params(grounding)
-        arguments["failed_skill_id"] = "rotate_red_block_left"
-        result = tool.call(arguments)
-        self.assertEqual(result.status, ToolStatus.SUCCEEDED)
-        self.assertEqual(result.data["failed_attempts"], 1)
-        self.assertEqual(len(controller.calls), 1)
-        self.assertEqual(
-            controller.notifications, [("rotate_red_block_left", True)]
-        )
-
-    def test_rotate_recovery_rejects_wrong_color(self):
-        session = self.rotate_session()
-        scope = session.attempt_scope("rotate_red_block_left", "subtask")
-        session.consume_attempt(scope)
-        grounding = add_grounding(session, semantic_id="block_blue")
-        controller = FakeController()
-        tool = ApproachTargetTool(
-            session, controller, FakeArtifacts(), rotate_recovery_only=True
-        )
-        arguments = params(grounding)
-        arguments["failed_skill_id"] = "rotate_red_block_left"
-        result = tool.call(arguments)
-        self.assertEqual(result.error.code, ErrorCode.INVALID_PRECONDITION)
-        self.assertEqual(controller.calls, [])
 
 
 class FakePhysics:
