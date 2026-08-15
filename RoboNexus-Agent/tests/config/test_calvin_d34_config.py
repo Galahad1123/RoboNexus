@@ -88,6 +88,19 @@ class CalvinD34ConfigTest(unittest.TestCase):
         slider_lift = registry.get("lift_red_block_slider").planner_guidance
         self.assertIn("colored block", slider_lift.grounding[0])
         self.assertIn("Never ground slider_interior", slider_lift.grounding[0])
+        push = registry.get("push_pink_block_left").planner_guidance
+        self.assertIn("Never use a lift skill", push.planning[0])
+        self.assertIn("Do not advance", push.planning[1])
+        self.assertEqual(
+            push, registry.get("push_blue_block_right").planner_guidance
+        )
+        rotate = registry.get("rotate_red_block_left").planner_guidance
+        self.assertIn("directly retry", rotate.planning[0])
+        self.assertIn("Never reuse", rotate.planning[1])
+        self.assertNotIn("approach_target", " ".join(rotate.planning))
+        self.assertEqual(
+            rotate, registry.get("rotate_pink_block_right").planner_guidance
+        )
 
     def test_registry_preserves_conditional_recovery_catalog(self):
         registry = load_skill_registry(SKILLS_CONFIG)

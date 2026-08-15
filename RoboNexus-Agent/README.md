@@ -243,7 +243,6 @@ Qwen-Agent 前验证 Runtime 和工具状态转换，不承担正式 Agent 的�
 PYTHONPATH=RoboNexus-Agent:. conda run -n robonexus-calvin python \
   scripts/agent/serve_calvin_tool_session.py \
   --task lift_red_block_table \
-  --disable-approach \
   --episode-index 0 \
   --output-dir outputs/calvin_agent/qwen_single_skill
 ```
@@ -258,9 +257,22 @@ PYTHONPATH=RoboNexus-Agent:. conda run -n robonexus-qwen python \
   --model-path weights/Qwen3-VL-4B-Instruct
 ```
 
-Qwen 进程只持有 `BaseTool` RPC adapter；CALVIN 进程独占环境、Session、Oracle 和六个
-具体工具。`--disable-approach` 会从该 Session 的 capability 和 Qwen 工具列表中彻底移除
-`approach_target`，不是只在提示词中建议模型不要调用。省略该参数则重新启用工具。
+Qwen 进程只持有 `BaseTool` RPC adapter；CALVIN 进程独占环境、Session、Oracle 和具体
+工具。`approach_target` 默认关闭，不会出现在 Session capability 或 Qwen 工具列表中。
+只有显式传入 `--enable-approach` 才会注册；旧的 `--disable-approach` 仅为已有命令保留兼容。
+启用后的工具仅用于 rotate 失败恢复：至少一次 rotate
+attempt 失败、同色 cube 仍在桌面且 grounding 为 source 时才允许调用。CALVIN backend
+使用 episode 初始的 top-down 抓取姿态和打开的夹爪接近 cube；完成后必须重新观察和定位。
+
+可从官方 sequence manifest 提取单 rotate 任务并生成离线 HTML 报告：
+
+```bash
+conda run -n robonexus-qwen env PYTHONPATH=RoboNexus-Agent:. python \
+  scripts/agent/run_qwen_calvin_rotate_eval.py \
+  --manifest outputs/calvin_agent/calvin_d_official_50/run/sequence_manifest.json \
+  --limit 12 \
+  --output-dir outputs/calvin_agent/rotate_recovery_v1
+```
 
 双子任务可在同一个连续环境中显式发布两个 skill：
 
@@ -271,7 +283,6 @@ PYTHONPATH=RoboNexus-Agent:. conda run -n robonexus-calvin python \
   --skill open_drawer \
   --skill move_slider_left \
   --goal "open the drawer and move the sliding door to the left" \
-  --disable-approach \
   --environment-step-limit 1200 \
   --output-dir outputs/calvin_agent/qwen_two_skills
 

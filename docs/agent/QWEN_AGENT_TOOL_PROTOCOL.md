@@ -416,9 +416,13 @@ Qwen 不能传 checkpoint、endpoint、attempt number、seed 或任意 `max_step
 ```json
 {
   "type": "object",
-  "required": ["grounding_id", "intent"],
+  "required": ["grounding_id", "intent", "failed_skill_id"],
   "properties": {
     "grounding_id": {"type": "string"},
+    "failed_skill_id": {
+      "type": "string",
+      "description": "Current rotate skill with at least one failed attempt."
+    },
     "intent": {"type": "string"},
     "xy_threshold_m": {
       "type": "number",
@@ -433,16 +437,29 @@ Qwen 不能传 checkpoint、endpoint、attempt number、seed 或任意 `max_step
 
 Runtime 对阈值设上下限，并可使用 Registry 默认值覆盖不合理请求。
 
+该实验工具默认关闭，只有 CALVIN Session 显式传入 `--enable-approach`（批测入口为
+`--approach`）才会注册。启用后，当前 CALVIN Qwen Session 将其作为可插拔的 rotate recovery：第一次 rotate
+attempt 前禁止调用；grounding 必须是当前 rotate 对应的同色 source cube，且 cube
+仍由桌面支撑。控制器使用 episode 初始、与训练分布一致的 top-down 末端姿态，保持
+安全悬停高度并打开夹爪。距离已经足够近时仍会校正姿态，但不会做无意义的 XY 移动。
+approach 后旧 grounding 失效，必须重新 inspect 和 ground 才能重试 DiT。
+
 ### 结果
 
 ```json
 {
   "grounding_id": "ground_000031",
+  "failed_skill_id": "rotate_red_block_left",
+  "failed_attempts": 1,
   "success": true,
   "steps": 23,
   "initial_xy_distance_m": 0.31,
   "final_xy_distance_m": 0.06,
   "threshold_m": 0.08,
+  "motion_metadata": {
+    "reference_orientation_euler": [3.06, 0.0, 1.46],
+    "final_orientation_error_rad": 0.04
+  },
   "after_observation_id": "obs_000290",
   "scene_continuation": true
 }

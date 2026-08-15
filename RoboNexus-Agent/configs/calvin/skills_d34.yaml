@@ -235,6 +235,13 @@ skills:
     policy_group: push
     grounding_roles: *source
     max_steps: 120
+    planner_guidance: &lateral_push_guidance
+      planning:
+        - A failed lateral push does not justify lifting the block. Never use a lift skill as recovery for push failure, because the push policy expects a block resting on the table.
+        - After failure, inspect and reground the same colored block, then directly retry the same push skill. Do not advance to a later goal skill until the current push is verified successful.
+        - If the block is no longer recoverably on the tabletop, abort instead of inventing a lift-place-push recovery sequence.
+      grounding:
+        - Ground the exact colored block named by the push skill as role=source.
   push_blue_block_right:
     category: push
     instruction: push the blue block to the right
@@ -242,6 +249,7 @@ skills:
     policy_group: push
     grounding_roles: *source
     max_steps: 120
+    planner_guidance: *lateral_push_guidance
   push_pink_block_left:
     category: push
     instruction: push the pink block to the left
@@ -249,6 +257,7 @@ skills:
     policy_group: push
     grounding_roles: *source
     max_steps: 120
+    planner_guidance: *lateral_push_guidance
   push_pink_block_right:
     category: push
     instruction: push the pink block to the right
@@ -256,6 +265,7 @@ skills:
     policy_group: push
     grounding_roles: *source
     max_steps: 120
+    planner_guidance: *lateral_push_guidance
   push_red_block_left:
     category: push
     instruction: push the red block to the left
@@ -263,6 +273,7 @@ skills:
     policy_group: push
     grounding_roles: *source
     max_steps: 120
+    planner_guidance: *lateral_push_guidance
   push_red_block_right:
     category: push
     instruction: push the red block to the right
@@ -270,6 +281,7 @@ skills:
     policy_group: push
     grounding_roles: *source
     max_steps: 120
+    planner_guidance: *lateral_push_guidance
 
   rotate_blue_block_left:
     category: rotate
@@ -278,6 +290,14 @@ skills:
     policy_group: rotate
     grounding_roles: *source
     success_guard: *released
+    planner_guidance: &rotate_recovery_guidance
+      planning:
+        - >-
+          After a failed rotate, inspect the latest scene, freshly ground the exact same colored block, and directly retry the same rotate skill.
+        - >-
+          Never reuse a grounding from before the latest inspect_scene. Never use lift, push, another rotate direction, or a later goal skill as rotate recovery.
+      grounding:
+        - Ground the exact colored block named by the rotate skill as role=source.
   rotate_blue_block_right:
     category: rotate
     instruction: rotate the blue block clockwise
@@ -285,6 +305,7 @@ skills:
     policy_group: rotate
     grounding_roles: *source
     success_guard: *released
+    planner_guidance: *rotate_recovery_guidance
   rotate_pink_block_left:
     category: rotate
     instruction: rotate the pink block counterclockwise
@@ -292,6 +313,7 @@ skills:
     policy_group: rotate
     grounding_roles: *source
     success_guard: *released
+    planner_guidance: *rotate_recovery_guidance
   rotate_pink_block_right:
     category: rotate
     instruction: rotate the pink block clockwise
@@ -299,6 +321,7 @@ skills:
     policy_group: rotate
     grounding_roles: *source
     success_guard: *released
+    planner_guidance: *rotate_recovery_guidance
   rotate_red_block_left:
     category: rotate
     instruction: rotate the red block counterclockwise
@@ -306,6 +329,7 @@ skills:
     policy_group: rotate
     grounding_roles: *source
     success_guard: *released
+    planner_guidance: *rotate_recovery_guidance
   rotate_red_block_right:
     category: rotate
     instruction: rotate the red block clockwise
@@ -313,6 +337,7 @@ skills:
     policy_group: rotate
     grounding_roles: *source
     success_guard: *released
+    planner_guidance: *rotate_recovery_guidance
 
   stack_block:
     category: stack

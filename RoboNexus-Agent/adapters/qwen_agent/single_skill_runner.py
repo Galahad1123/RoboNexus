@@ -42,7 +42,10 @@ failure, direct retry is allowed only if the latest images clearly show the
 object remains held; otherwise use the configured lift recovery for its visible
 color and current location. Treat the latest inspect_scene.object_locations as
 the authoritative location selector for table/drawer/slider lift variants; it
-describes current state and may differ from the original goal wording."""
+describes current state and may differ from the original goal wording. After a
+failed rotate, inspect, freshly ground the same colored block, and directly
+retry the same rotate. Never pass a grounding created before the latest inspect
+or invent another manipulation skill as rotate recovery."""
 
 
 def _goal_context(session):

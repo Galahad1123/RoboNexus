@@ -53,14 +53,21 @@ class TableCubePenetrationDetector:
         initial_state = (
             _cube_state(initial_info, object_name) if object_name else None
         )
-        self.enabled = bool(
+        eligible = bool(
             ELIGIBLE_SKILL.match(skill_id)
-            and _is_supported_by_table(initial_info, object_name)
             and initial_state is not None
             and _inside_xy(initial_state.position, self.table_xy_bounds)
         )
+        supported = _is_supported_by_table(initial_info, object_name)
+        held = _is_held_by_robot(initial_info, object_name)
+        # A push may legitimately start with the source still held after a
+        # recovery lift. Keep monitoring, but arm only after the cube first
+        # establishes a valid tabletop contact. Objects starting on another
+        # facility remain outside this CALVIN patch's scope.
+        self.enabled = bool(eligible and (supported or held))
+        self._armed = bool(self.enabled and supported)
         self._consecutive = 0
-        self._last_valid = initial_state if self.enabled else None
+        self._last_valid = initial_state if self._armed else None
         self._reference_z = (
             float(self._last_valid.position[2]) if self._last_valid is not None else None
         )
@@ -85,6 +92,14 @@ class TableCubePenetrationDetector:
             # Falling beyond the tabletop edge is a real scene outcome, not
             # penetration through the tabletop. Never rewind it as a patch.
             self.enabled = False
+            self._consecutive = 0
+            return None
+        if not self._armed:
+            if not _is_supported_by_table(current_info, self.object_name):
+                return None
+            self._armed = True
+            self._last_valid = state
+            self._reference_z = float(state.position[2])
             self._consecutive = 0
             return None
         penetration = self._reference_z - float(state.position[2])
@@ -182,6 +197,17 @@ def _is_supported_by_table(info, object_name):
         if link_name == "base_link":
             return True
     return False
+
+
+def _is_held_by_robot(info, object_name):
+    if not object_name:
+        return False
+    scene = info["scene_info"]
+    obj = scene["movable_objects"].get(object_name)
+    if not isinstance(obj, dict):
+        return False
+    robot_uid = int(info["robot_info"]["uid"])
+    return any(int(contact[2]) == robot_uid for contact in obj.get("contacts", ()))
 
 
 def _table_xy_bounds(adapter, margin):

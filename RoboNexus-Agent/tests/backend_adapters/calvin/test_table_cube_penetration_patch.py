@@ -4,7 +4,7 @@ from types import SimpleNamespace
 from backends.calvin.patches import TableCubePenetrationDetector
 
 
-def info(z=0.46, support_link=-1, x=0.1, y=-0.1):
+def info(z=0.46, support_link=-1, x=0.1, y=-0.1, support_uid=10):
     return {
         "robot_info": {"uid": 99},
         "scene_info": {
@@ -21,7 +21,7 @@ def info(z=0.46, support_link=-1, x=0.1, y=-0.1):
                     "current_orn": (0.0, 0.0, 0.0, 1.0),
                     "current_lin_vel": (0.0, 0.0, 0.0),
                     "current_ang_vel": (0.0, 0.0, 0.0),
-                    "contacts": [(0, 0, 10, 0, support_link)],
+                    "contacts": [(0, 0, support_uid, 0, support_link)],
                 }
             },
         },
@@ -106,6 +106,25 @@ class TableCubePenetrationPatchTest(unittest.TestCase):
         self.assertFalse(detector.enabled)
         self.assertEqual(detector.recover()["reason"], "no_penetration_detected")
         self.assertIsNone(adapter.env.p.pose)
+
+    def test_held_cube_arms_after_first_valid_table_contact(self):
+        adapter = FakeAdapter()
+        initial = info(z=0.52, support_uid=99)
+        adapter.current_info = initial
+        grounding = SimpleNamespace(
+            role=SimpleNamespace(value="source"), semantic_id="block_red"
+        )
+        detector = TableCubePenetrationDetector.for_attempt(
+            adapter, "push_red_block_left", (grounding,), initial
+        )
+        self.assertTrue(detector.enabled)
+        self.assertFalse(detector._armed)
+        self.assertIsNone(detector.observe(info(z=0.49, support_uid=99)))
+        self.assertIsNone(detector.observe(info(z=0.46)))
+        self.assertTrue(detector._armed)
+        self.assertIsNone(detector.observe(info(z=0.450)))
+        anomaly = detector.observe(info(z=0.449))
+        self.assertEqual(anomaly["type"], "table_cube_penetration")
 
 
 if __name__ == "__main__":

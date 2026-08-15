@@ -20,6 +20,7 @@ from backends.calvin.environment.scene_observer import CalvinSceneObserver  # no
 from backends.calvin.execution.skill_executor import CalvinSkillExecutor  # noqa: E402
 from backends.calvin.grounding.oracle_grounder import CalvinOracleGrounder  # noqa: E402
 from backends.calvin.recovery.approach_controller import CalvinApproachController  # noqa: E402
+from backends.calvin.recovery.approach_state import RotateApproachState  # noqa: E402
 from backends.calvin.runtime import CalvinToolSessionServer  # noqa: E402
 from backends.calvin.verification.goal_verifier import CalvinOracleGoalVerifier  # noqa: E402
 from backends.local_artifact_store import LocalArtifactStore  # noqa: E402
@@ -66,7 +67,17 @@ def main():
         ),
     )
     parser.add_argument("--goal", help="goal instruction; defaults to the initial task instruction")
-    parser.add_argument("--disable-approach", action="store_true")
+    approach_group = parser.add_mutually_exclusive_group()
+    approach_group.add_argument(
+        "--enable-approach",
+        action="store_true",
+        help="opt in to the experimental rotate approach recovery tool",
+    )
+    approach_group.add_argument(
+        "--disable-approach",
+        action="store_true",
+        help="deprecated compatibility flag; approach is disabled by default",
+    )
     parser.add_argument("--environment-step-limit", type=int, default=1000)
     parser.add_argument("--terminal-grace-seconds", type=float, default=30.0)
     parser.add_argument("--episode-index", type=int, default=0)
@@ -172,6 +183,7 @@ def main():
             events=events,
         )
         task_oracle = suite.create_task_oracle()
+        approach_recovery_state = RotateApproachState()
         grounder = CalvinOracleGrounder(adapter, artifacts, session_id)
         executor = CalvinSkillExecutor(
             adapter,
@@ -182,6 +194,7 @@ def main():
             video_fps=suite.manifest.get("frequency_hz", 30),
             environment_episode_id=environment_episode_id,
             initial_robot_observation=robot_obs,
+            approach_recovery_state=approach_recovery_state,
         )
         tools = [
             InspectSceneTool(session, observer, artifacts),
@@ -190,11 +203,19 @@ def main():
             VerifyGoalTool(session, CalvinOracleGoalVerifier(adapter, task_oracle)),
             AbortGoalTool(session, enforce_attempt_exhaustion=True),
         ]
-        if not args.disable_approach:
+        approach_enabled = bool(args.enable_approach)
+        if approach_enabled:
             tools.insert(
                 3,
                 ApproachTargetTool(
-                    session, CalvinApproachController(adapter), artifacts
+                    session,
+                    CalvinApproachController(
+                        adapter,
+                        reference_robot_observation=robot_obs,
+                        recovery_state=approach_recovery_state,
+                    ),
+                    artifacts,
+                    rotate_recovery_only=True,
                 ),
             )
         server = CalvinToolSessionServer(
@@ -236,7 +257,7 @@ def main():
                     for skill_id in full_registry.skill_ids()
                     if full_registry.get(skill_id).recovery
                 },
-                "approach_enabled": not args.disable_approach,
+                "approach_enabled": approach_enabled,
                 "initial_observation": {
                     "observation_id": initial.observation_id,
                     "static_image": str(artifacts.resolve(static.uri)),

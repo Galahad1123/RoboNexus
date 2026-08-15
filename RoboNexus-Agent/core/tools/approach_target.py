@@ -1,6 +1,7 @@
 """Backend-neutral implementation of the ``approach_target`` Agent tool."""
 
 import math
+import re
 
 from core.domain import ErrorCode, ToolError, ToolResultEnvelope, ToolStatus
 from core.ports import (
@@ -23,6 +24,10 @@ class ApproachTargetTool:
         "required": ["grounding_id", "intent"],
         "properties": {
             "grounding_id": {"type": "string"},
+            "failed_skill_id": {
+                "type": "string",
+                "description": "The failed rotate skill this recovery will retry.",
+            },
             "intent": {"type": "string"},
             "xy_threshold_m": {
                 "type": "number",
@@ -34,10 +39,21 @@ class ApproachTargetTool:
         "additionalProperties": False,
     }
 
-    def __init__(self, session, controller, artifacts):
+    def __init__(
+        self, session, controller, artifacts, rotate_recovery_only=False
+    ):
         self.session = session
         self.controller = controller
         self.artifacts = artifacts
+        self.rotate_recovery_only = bool(rotate_recovery_only)
+        self.parameters = dict(type(self).parameters)
+        self.parameters["properties"] = dict(
+            type(self).parameters["properties"]
+        )
+        if self.rotate_recovery_only:
+            self.parameters["required"] = [
+                "grounding_id", "intent", "failed_skill_id"
+            ]
 
     def call(self, params=None, tool_call_id=None):
         tool_call_id = tool_call_id or self.session.next_tool_call_id()
@@ -49,9 +65,18 @@ class ApproachTargetTool:
             return replay
 
         try:
-            parsed = _validate_params(params)
+            parsed = _validate_params(
+                params, require_failed_skill=self.rotate_recovery_only
+            )
             grounding = self.session.get_grounding(
                 parsed["grounding_id"], require_current=True
+            )
+            recovery_context = (
+                _validate_rotate_recovery(
+                    self.session, grounding, parsed["failed_skill_id"]
+                )
+                if self.rotate_recovery_only
+                else {"failed_attempts": None}
             )
             before = self.session.latest_observation
             remaining = self.session.budget_snapshot().environment_steps_remaining
@@ -83,8 +108,14 @@ class ApproachTargetTool:
             after = self.session.add_observation(
                 static_artifact.uri, wrist_artifact.uri
             )
+            if approach.success and parsed["failed_skill_id"] is not None:
+                self.controller.notify_recovery(
+                    parsed["failed_skill_id"], approach
+                )
             data = {
                 "grounding_id": grounding.grounding_id,
+                "failed_skill_id": parsed["failed_skill_id"],
+                "failed_attempts": recovery_context["failed_attempts"],
                 "success": approach.success,
                 "reason": approach.reason,
                 "steps": approach.steps,
@@ -96,6 +127,7 @@ class ApproachTargetTool:
                 "after_observation": _observation_dict(after),
                 "scene_continuation": True,
                 "intent": parsed["intent"],
+                "motion_metadata": dict(approach.metadata),
             }
             result = self.session.result(
                 tool_call_id,
@@ -189,11 +221,13 @@ class ApproachTargetTool:
         )
 
 
-def _validate_params(params):
+def _validate_params(params, require_failed_skill=False):
     if not isinstance(params, dict):
         raise TypeError("approach_target parameters must be a mapping")
     required = {"grounding_id", "intent"}
-    allowed = required | {"xy_threshold_m"}
+    if require_failed_skill:
+        required.add("failed_skill_id")
+    allowed = required | {"xy_threshold_m", "failed_skill_id"}
     missing = sorted(required - set(params))
     unknown = sorted(set(params) - allowed)
     if missing:
@@ -212,9 +246,63 @@ def _validate_params(params):
         raise ValueError("xy_threshold_m must be a finite number in [0.02, 0.20]")
     return {
         "grounding_id": grounding_id,
+        "failed_skill_id": (
+            _nonempty(params["failed_skill_id"], "failed_skill_id")
+            if "failed_skill_id" in params
+            else None
+        ),
         "intent": intent,
         "xy_threshold_m": float(threshold),
     }
+
+
+_ROTATE_SKILL = re.compile(
+    r"^rotate_(red|blue|pink)_block_(left|right)$"
+)
+
+
+def _validate_rotate_recovery(session, grounding, failed_skill_id):
+    match = _ROTATE_SKILL.match(failed_skill_id)
+    if match is None:
+        raise SessionRejected(
+            ErrorCode.INVALID_PRECONDITION,
+            "approach_target is enabled only after a failed rotate skill",
+            retryable=True,
+        )
+    expected = session.expected_goal_skill_id()
+    if expected != failed_skill_id:
+        raise SessionRejected(
+            ErrorCode.INVALID_PRECONDITION,
+            "failed_skill_id {!r} is not the current goal stage {!r}".format(
+                failed_skill_id, expected
+            ),
+            retryable=True,
+        )
+    scope = session.attempt_scope(failed_skill_id, "rotate_recovery")
+    failed_attempts = session.attempts_used(scope)
+    if failed_attempts < 1:
+        raise SessionRejected(
+            ErrorCode.INVALID_PRECONDITION,
+            "approach_target is forbidden before the first rotate attempt fails",
+            retryable=True,
+        )
+    if grounding.role.value != "source":
+        raise SessionRejected(
+            ErrorCode.INVALID_PRECONDITION,
+            "rotate recovery requires role=source grounding",
+            retryable=True,
+        )
+    expected_semantic = "block_{}".format(match.group(1))
+    aliases = {expected_semantic, "{}_block".format(match.group(1))}
+    if grounding.semantic_id not in aliases:
+        raise SessionRejected(
+            ErrorCode.INVALID_PRECONDITION,
+            "rotate recovery for {!r} requires {!r}, got {!r}".format(
+                failed_skill_id, expected_semantic, grounding.semantic_id
+            ),
+            retryable=True,
+        )
+    return {"attempt_scope": scope, "failed_attempts": failed_attempts}
 
 
 def _nonempty(value, path):

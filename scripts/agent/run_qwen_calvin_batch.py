@@ -174,8 +174,8 @@ def main():
         ]
         for skill in item["skills"]:
             command.extend(["--skill", skill])
-        if not args.approach:
-            command.append("--disable-approach")
+        if args.approach:
+            command.append("--enable-approach")
         with (output / "runtime.log").open("a", encoding="utf-8") as runtime_log:
             process = subprocess.Popen(
                 command,

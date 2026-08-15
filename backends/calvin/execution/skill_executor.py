@@ -48,6 +48,7 @@ class CalvinSkillExecutor(SkillExecutorPort):
         environment_episode_id=None,
         base_seed=42,
         initial_robot_observation=None,
+        approach_recovery_state=None,
     ):
         self.adapter = adapter
         self.task_oracle = task_oracle
@@ -67,6 +68,7 @@ class CalvinSkillExecutor(SkillExecutorPort):
             if initial_robot_observation is None
             else np.asarray(initial_robot_observation, dtype=np.float64).copy()
         )
+        self.approach_recovery_state = approach_recovery_state
         if (
             self.initial_robot_observation is not None
             and self.initial_robot_observation.shape != (15,)
@@ -238,6 +240,14 @@ class CalvinSkillExecutor(SkillExecutorPort):
     def _restore_robot_for_retry(self, skill_id, attempt):
         if int(attempt) <= 1:
             return {"performed": False, "reason": "first_attempt"}
+        if (
+            getattr(self, "approach_recovery_state", None) is not None
+            and self.approach_recovery_state.consume(skill_id)
+        ):
+            return {
+                "performed": False,
+                "reason": "preserve_rotate_approach_pose",
+            }
         if skill_id in STATEFUL_RETRY_SKILLS:
             return {
                 "performed": False,
