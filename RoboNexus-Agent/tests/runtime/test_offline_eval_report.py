@@ -33,8 +33,8 @@ class OfflineEvalReportTest(unittest.TestCase):
             "session_before": session,
             "session_after": session,
             "final_messages": [
-                {"role": "assistant", "function_call": {"name": "execute_skill", "arguments": '{"skill_id":"turn_on_led"}'}},
-                {"role": "function", "content": json.dumps({"status": "succeeded", "data": {"logical_subtask_id": "subtask_001", "attempt": 1, "policy_id": "general", "steps": 12}})},
+                {"role": "assistant", "function_call": {"name": "execute_skill", "arguments": '{"skill_id":"turn_on_led","decision_type":"goal_progress","intent":"LED is still off"}'}},
+                {"role": "function", "content": json.dumps({"status": "succeeded", "data": {"logical_subtask_id": "subtask_001", "attempt": 1, "policy_id": "general", "steps": 12, "skill_category":"switch", "progress_type":"goal_progress"}})},
             ],
         }
         (sequence / "qwen_agent_result.json").write_text(json.dumps(result))
@@ -56,6 +56,9 @@ class OfflineEvalReportTest(unittest.TestCase):
             self.assertEqual(models[0]["status"], "succeeded")
             self.assertIn("000009_subtask_001_attempt_01.mp4", document)
             self.assertIn("policy: <code>general</code>", document)
+            self.assertIn("Agent decision", document)
+            self.assertIn("&quot;decision_type&quot;: &quot;goal_progress&quot;", document)
+            self.assertIn("LED is still off", document)
             self.assertNotIn("<script>alert(1)</script>", document)
             self.assertIn("&lt;script&gt;alert(1)&lt;/script&gt;", document)
 
@@ -69,6 +72,28 @@ class OfflineEvalReportTest(unittest.TestCase):
             self.assertIn("sequence_001/report.html", document)
             self.assertIn('id="status"', document)
             self.assertIn('class="run-link"', document)
+
+    def test_manifest_goal_skills_are_distinct_from_full_callable_catalog(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            sequence = self.make_sequence(
+                root, "sequence_0007_first__second__third__fourth__fifth"
+            )
+            session_path = sequence / "qwen_agent_result.json"
+            result = json.loads(session_path.read_text())
+            full_catalog = ["skill_{:02d}".format(index) for index in range(34)]
+            result["session_before"]["allowed_skill_ids"] = full_catalog
+            result["session_after"]["allowed_skill_ids"] = full_catalog
+            session_path.write_text(json.dumps(result))
+            (root / "sequence_manifest.json").write_text(
+                json.dumps({"sequences": [{"index": 7, "skills": ["first", "second", "third", "fourth", "fifth"]}]})
+            )
+            model = REPORT.generate(root, recursive=True)[0]
+            self.assertEqual(model["skills"], ["first", "second", "third", "fourth", "fifth"])
+            self.assertEqual(len(model["callable_skills"]), 34)
+            document = (sequence / "report.html").read_text()
+            self.assertIn("Completed skills</span><strong>1/5", document)
+            self.assertNotIn("skill_33</code>", document)
 
     def test_index_compacts_long_run_name_but_preserves_it_in_tooltip(self):
         with tempfile.TemporaryDirectory() as directory:

@@ -82,6 +82,7 @@ class CalvinToolSessionServer:
                 "session_status": self.session.status.value,
                 "termination_reason": self.session.termination_reason,
                 "latest_observation_id": self.session.latest_observation.observation_id,
+                "completed_goal_skills": list(self.session.achievement_sequence),
                 "budget": _budget_dict(self.session.budget_snapshot()),
                 "tools": [
                     self._published_tool_spec(tool)
@@ -93,7 +94,10 @@ class CalvinToolSessionServer:
 
     def _published_tool_spec(self, tool):
         parameters = copy.deepcopy(tool.parameters)
-        allowed = list(self.session_document.get("allowed_skill_ids", ()))
+        allowed = list(
+            self.session_document.get("callable_skill_ids")
+            or self.session_document.get("allowed_skill_ids", ())
+        )
         vocabulary = list(self.session_document.get("semantic_vocabulary", ()))
         if tool.name in {"ground_targets", "execute_skill"} and allowed:
             parameters["properties"]["skill_id"]["enum"] = allowed

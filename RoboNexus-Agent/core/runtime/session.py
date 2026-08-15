@@ -209,12 +209,38 @@ class AgentSession:
             skill_id = str(skill_id).strip()
             if not skill_id:
                 raise ValueError("skill_id must be non-empty")
-            if skill_id not in self._achieved_skills:
-                self._achieved_skills.add(skill_id)
-                self._achievement_sequence.append(skill_id)
+            self._achieved_skills.add(skill_id)
+            # The evaluator sequence may legitimately contain the same atomic
+            # skill more than once. Preserve occurrences while keeping the
+            # achieved_skill_ids compatibility set unique.
+            self._achievement_sequence.append(skill_id)
             self._emit(
                 "skill_achieved",
                 skill_id=skill_id,
+                logical_subtask_id=str(logical_subtask_id),
+            )
+
+    def classify_successful_skill(self, skill_id):
+        """Classify success using evaluator-private sequence state."""
+
+        if self.goal.success_spec.get("mode") != "skill_sequence":
+            return "goal_progress"
+        predicates = self.goal.success_spec.get("predicates", ())
+        expected = [
+            item.get("name") if isinstance(item, dict) else item
+            for item in predicates
+        ]
+        position = len(self._achievement_sequence)
+        if position < len(expected) and skill_id == expected[position]:
+            return "goal_progress"
+        return "recovery"
+
+    def record_recovery_achievement(self, skill_id, logical_subtask_id):
+        with self._lock:
+            self._require_active()
+            self._emit(
+                "recovery_skill_achieved",
+                skill_id=str(skill_id),
                 logical_subtask_id=str(logical_subtask_id),
             )
 

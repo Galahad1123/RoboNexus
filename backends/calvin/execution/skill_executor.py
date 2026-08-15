@@ -72,6 +72,7 @@ class CalvinSkillExecutor(SkillExecutorPort):
         ):
             raise ValueError("initial_robot_observation must be a 15-D vector")
         self._available = {}
+        self._verification_start_info = {}
 
     def check_preconditions(self, skill_id):
         inspection = self.state_inspector.inspect(
@@ -131,7 +132,11 @@ class CalvinSkillExecutor(SkillExecutorPort):
                     )
                 )
             verifier = CalvinOracleTaskVerifier(self.task_oracle)
-            verifier.begin(episode, self.adapter.get_info())
+            # Retries continue from the current scene, but displacement-based
+            # Oracle predicates must retain the first-attempt baseline so that
+            # incremental progress is not discarded.
+            verification_start_info = self._verification_baseline(logical_subtask_id)
+            verifier.begin(episode, verification_start_info)
             engine = SimpleNamespace(
                 adapter=self.adapter,
                 client=_PolicyResponseAdapter(client),
@@ -259,6 +264,11 @@ class CalvinSkillExecutor(SkillExecutorPort):
             "gripper_command": int(np.sign(self.initial_robot_observation[14])),
             "scene_reset": False,
         }
+
+    def _verification_baseline(self, logical_subtask_id):
+        if logical_subtask_id not in self._verification_start_info:
+            self._verification_start_info[logical_subtask_id] = self.adapter.get_info()
+        return self._verification_start_info[logical_subtask_id]
 
     def _mask_roles(self, groundings):
         result = {}

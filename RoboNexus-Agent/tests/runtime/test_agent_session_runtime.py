@@ -37,6 +37,20 @@ def make_session(**limit_overrides):
 
 
 class AgentSessionRuntimeTest(unittest.TestCase):
+    def test_recovery_success_does_not_advance_private_goal_sequence(self):
+        session = make_session()
+        session.goal.success_spec["mode"] = "skill_sequence"
+        session.goal.success_spec["predicates"] = [
+            {"name": "lift_red_block_table"},
+            {"name": "place_in_drawer"},
+        ]
+        self.assertEqual(session.classify_successful_skill("open_drawer"), "recovery")
+        session.record_recovery_achievement("open_drawer", "subtask-r")
+        self.assertEqual(session.achievement_sequence, ())
+        self.assertEqual(session.classify_successful_skill("lift_red_block_table"), "goal_progress")
+        session.record_skill_achievement("lift_red_block_table", "subtask-1")
+        self.assertEqual(session.achievement_sequence, ("lift_red_block_table",))
+
     def test_goal_requires_success_spec(self):
         observation = ObservationRef("o", 0, 0, "static", "wrist")
         with self.assertRaisesRegex(ValueError, "success_spec"):

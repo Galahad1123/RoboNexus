@@ -29,6 +29,10 @@ class CalvinD34ConfigTest(unittest.TestCase):
         self.assertEqual(set(registry.skill_ids()), CALVIN_D34_SKILL_IDS)
         self.assertEqual(set(registry.skill_ids()), inventory_ids)
         self.assertEqual(registry.policy_groups(), ("general", "push", "rotate", "stack"))
+        self.assertEqual(
+            set(registry.categories()),
+            {"articulation", "lift", "place", "push", "rotate", "stack", "switch"},
+        )
         for policy_group, skill_ids in CALVIN_D34_ROUTING.items():
             self.assertEqual(
                 {skill.skill_id for skill in registry.by_policy_group(policy_group)},
@@ -73,6 +77,14 @@ class CalvinD34ConfigTest(unittest.TestCase):
             "light_switch",
             registry.get("turn_on_lightbulb").planner_guidance.grounding[0],
         )
+
+    def test_registry_preserves_conditional_recovery_catalog(self):
+        registry = load_skill_registry(SKILLS_CONFIG)
+        rule = registry.get("place_in_drawer").recovery[0]
+        self.assertEqual(rule.strategy, "reacquire_object")
+        self.assertEqual(rule.candidate_categories, ("lift",))
+        self.assertEqual(rule.return_to_skill, "place_in_drawer")
+        self.assertIn("open_drawer", registry.get("place_in_drawer").recovery[1].candidate_skills)
 
     def test_malformed_planner_guidance_is_rejected(self):
         text = SKILLS_CONFIG.read_text().replace(
@@ -157,10 +169,12 @@ class CalvinD34ConfigTest(unittest.TestCase):
     def test_canonical_skill_cannot_be_silently_routed_to_wrong_model(self):
         text = SKILLS_CONFIG.read_text().replace(
             "  push_red_block_left:\n"
+            "    category: push\n"
             "    instruction: push the red block to the left\n"
             "    oracle_task: push_red_block_left\n"
             "    policy_group: push",
             "  push_red_block_left:\n"
+            "    category: push\n"
             "    instruction: push the red block to the left\n"
             "    oracle_task: push_red_block_left\n"
             "    policy_group: general",

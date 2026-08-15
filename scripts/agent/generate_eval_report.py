@@ -55,6 +55,21 @@ def session_document(agent):
     return (agent or {}).get("session_after") or (agent or {}).get("session_before") or {}
 
 
+def evaluator_skills(directory):
+    """Resolve evaluator-private sequence skills from the nearest batch manifest."""
+
+    match = re.match(r"^sequence_(\d+)", directory.name)
+    if match is None:
+        return []
+    sequence_index = int(match.group(1))
+    for parent in (directory.parent, *directory.parents):
+        manifest = load_json(parent / "sequence_manifest.json") or {}
+        for item in manifest.get("sequences", []):
+            if item.get("index") == sequence_index:
+                return list(item.get("skills") or [])
+    return []
+
+
 def infer_status(runtime, agent, events):
     runtime_status = (runtime or {}).get("session_status")
     if runtime_status == "succeeded" or str(runtime_status).startswith("aborted"):
@@ -117,8 +132,15 @@ def build_model(directory):
     if agent is None:
         agent = load_json(directory / "qwen_agent_checkpoint.json") or {}
     session = session_document(agent)
-    skills = list(session.get("allowed_skill_ids") or [])
+    callable_skills = list(
+        session.get("callable_skill_ids") or session.get("allowed_skill_ids") or []
+    )
+    skills = evaluator_skills(directory)
     achieved = [e for e in events if e.get("event") == "skill_achieved"]
+    if not skills:
+        skills = list(session.get("goal_skill_ids") or [])
+    if not skills and len(callable_skills) < 34:
+        skills = callable_skills
     if not skills:
         skills = [e.get("skill_id") for e in achieved if e.get("skill_id")]
     verifications = [
@@ -171,6 +193,7 @@ def build_model(directory):
         "timeline": timeline,
         "executions": executions,
         "skills": skills,
+        "callable_skills": callable_skills,
         "achieved": achieved,
         "verifications": verifications,
         "by_subtask": by_subtask,
@@ -264,10 +287,25 @@ def render_timeline(model):
             label_html = '<span class="tool-context">{}</span>'.format(
                 " · ".join(esc(label) for label in labels)
             ) if labels else '<span class="tool-context">goal-level</span>'
+            decision_html = ""
+            if item.get("tool") == "execute_skill":
+                decision_type = arguments.get("decision_type", "goal_progress")
+                intent = arguments.get("intent", "")
+                category = data.get("skill_category")
+                progress = data.get("progress_type")
+                decision = {"decision_type": decision_type}
+                if category:
+                    decision["skill_category"] = category
+                if progress:
+                    decision["runtime_progress"] = progress
+                if intent:
+                    decision["rationale"] = intent
+                decision_html = details("Agent decision", decision)
             rows.append(
                 '<article class="timeline-item"><div class="rail">{}</div><div class="timeline-body">'
-                '<header><code>{}</code><div class="tool-status">{}{}</div></header>{}{}</div></article>'.format(
+                '<header><code>{}</code><div class="tool-status">{}{}</div></header>{}{}{}</div></article>'.format(
                     number, esc(item["tool"]), label_html, badge(state),
+                    decision_html,
                     details("Agent arguments", arguments),
                     details("Runtime result", result) if result is not None else '<p class="empty">No result captured.</p>',
                 )

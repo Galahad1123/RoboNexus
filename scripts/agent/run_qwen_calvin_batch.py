@@ -45,7 +45,8 @@ def wait_for_runtime(url, process, timeout, expected_skills):
             raise RuntimeError("CALVIN Runtime exited with code {} before readiness".format(process.returncode))
         try:
             session = fetch_session(url, timeout=2.0)
-            if session.get("allowed_skill_ids") == list(expected_skills):
+            callable_ids = session.get("callable_skill_ids", session.get("allowed_skill_ids"))
+            if callable_ids == list(expected_skills):
                 return session
         except (URLError, ConnectionError, TimeoutError):
             time.sleep(0.5)
@@ -158,7 +159,10 @@ def main():
             continue
         output.mkdir(parents=True, exist_ok=True)
         first = registry.get(item["skills"][0])
-        goal = "Complete this ordered CALVIN sequence: " + ", then ".join(item["skills"])
+        goal = "Complete these robot goal steps in the exact numbered order:\n" + "\n".join(
+            "{}. {}".format(number, registry.get(skill_id).instruction)
+            for number, skill_id in enumerate(item["skills"], 1)
+        )
         command = [
             "conda", "run", "-n", args.runtime_env, "env", "PYTHONPATH=RoboNexus-Agent:.",
             "python", "scripts/agent/serve_calvin_tool_session.py",
@@ -182,12 +186,12 @@ def main():
             )
             try:
                 wait_for_runtime(
-                    runtime_url, process, args.runtime_ready_timeout, item["skills"]
+                    runtime_url, process, args.runtime_ready_timeout, registry.skill_ids()
                 )
                 run_single_skill_agent(
                     runtime_url, args.model_path, seed=args.seed + item["index"],
                     max_new_tokens=args.max_new_tokens, output=output / "qwen_agent_result.json",
-                    expected_skill_ids=item["skills"], llm=llm,
+                    expected_skill_ids=registry.skill_ids(), llm=llm,
                     max_agent_rounds=args.max_agent_rounds,
                 )
                 process.wait(timeout=20)

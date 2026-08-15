@@ -36,11 +36,17 @@
 attempt 上限和 success guard。Planner 后续只选择 `skill_id`，不能改写这里的
 instruction。
 
-每个 skill 还可以声明可选的结构化 `planner_guidance`，其字段为 `planning`、
-`grounding` 和 `recovery` 字符串列表。Runtime 只发布当前 goal 允许技能的 guidance，
-Qwen 会在每轮的 `ROBOT_GOAL_CONTEXT.skill_guidance` 中收到它。guidance 仅作为高层
+每个 skill 必须声明 `category`，并可声明结构化 `planner_guidance` 与条件
+`recovery`。Runtime 将完整 34-skill catalog 按 category 发布给 Qwen；官方评测的
+`goal_skill_ids`/Oracle predicates 仅保存在 Runtime 内部，不进入模型上下文。Qwen
+先选类别、再选一个原子技能，并在每轮的 `ROBOT_GOAL_CONTEXT` 中收到 guidance。
+guidance 仅作为高层
 Planner 的建议，backend 工具不会把它当作语义 validator；新增针对性经验应写入对应
 skill，而不是继续膨胀全局 system prompt。
+
+`recovery` 为失败率较高的技能列出条件、候选技能/候选类别和返回技能。失败后 Qwen
+必须先查看最新双相机图像，再决定直接重试或调用配置允许的恢复技能。恢复技能执行成功
+只记录 `recovery_skill_achieved`，不会推进 evaluator-private 的官方序列。
 
 四组模型部署配置位于 `configs/calvin/policies.yaml`。当前已为 `general`、`push`、
 `rotate`、`stack` 选定 checkpoint；后续替换权重只需修改对应路径，例如：

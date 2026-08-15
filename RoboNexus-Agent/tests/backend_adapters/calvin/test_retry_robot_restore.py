@@ -55,6 +55,28 @@ def _metadata():
 
 
 class RetryRobotRestoreTest(unittest.TestCase):
+    def test_oracle_baseline_is_shared_across_attempts_of_logical_subtask(self):
+        class Adapter:
+            def __init__(self):
+                self.calls = 0
+
+            def get_info(self):
+                self.calls += 1
+                return {"baseline": self.calls}
+
+        executor = object.__new__(CalvinSkillExecutor)
+        executor.adapter = Adapter()
+        executor._verification_start_info = {}
+
+        first = executor._verification_baseline("subtask-1")
+        retry = executor._verification_baseline("subtask-1")
+        other = executor._verification_baseline("subtask-2")
+
+        self.assertIs(first, retry)
+        self.assertEqual(first, {"baseline": 1})
+        self.assertEqual(other, {"baseline": 2})
+        self.assertEqual(executor.adapter.calls, 2)
+
     def test_adapter_restores_robot_without_resetting_scene_or_step_counter(self):
         initial = np.arange(15, dtype=np.float64)
         initial[14] = -1

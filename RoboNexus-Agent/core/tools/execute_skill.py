@@ -30,6 +30,11 @@ class ExecuteSkillTool:
                 "type": "string",
                 "description": "Why this atomic skill advances the user goal.",
             },
+            "decision_type": {
+                "type": "string",
+                "enum": ["goal_progress", "direct_retry", "recovery"],
+                "description": "Planner's concise classification of this action.",
+            },
         },
         "additionalProperties": False,
     }
@@ -120,14 +125,23 @@ class ExecuteSkillTool:
                 static_artifact.uri, wrist_artifact.uri
             )
             if execution.success:
-                self.session.record_skill_achievement(
-                    skill.skill_id, logical_subtask_id
-                )
+                progress_type = self.session.classify_successful_skill(skill.skill_id)
+                if progress_type == "goal_progress":
+                    self.session.record_skill_achievement(
+                        skill.skill_id, logical_subtask_id
+                    )
+                else:
+                    self.session.record_recovery_achievement(
+                        skill.skill_id, logical_subtask_id
+                    )
+            else:
+                progress_type = "none"
             data = {
                 "skill_id": skill.skill_id,
                 "logical_subtask_id": logical_subtask_id,
                 "attempt": attempt,
                 "policy_id": execution.policy_id,
+                "skill_category": skill.category,
                 "success": execution.success,
                 "termination_reason": execution.termination_reason,
                 "steps": execution.steps,
@@ -139,6 +153,8 @@ class ExecuteSkillTool:
                 "state_delta": dict(execution.state_delta),
                 "recommended_actions": list(execution.recommended_actions),
                 "intent": parsed["intent"],
+                "decision_type": parsed["decision_type"],
+                "progress_type": progress_type,
                 "metadata": dict(execution.metadata),
             }
             result = self.session.result(
@@ -227,14 +243,18 @@ def _validate_params(params):
     if not isinstance(params, dict):
         raise TypeError("execute_skill parameters must be a mapping")
     required = {"skill_id", "grounding_ids", "intent"}
+    allowed = required | {"decision_type"}
     missing = sorted(required - set(params))
-    unknown = sorted(set(params) - required)
+    unknown = sorted(set(params) - allowed)
     if missing:
         raise ValueError("missing execute_skill parameters: {}".format(missing))
     if unknown:
         raise ValueError("unknown execute_skill parameters: {}".format(unknown))
     skill_id = _nonempty(params["skill_id"], "skill_id")
     intent = _nonempty(params["intent"], "intent")
+    decision_type = params.get("decision_type", "goal_progress")
+    if decision_type not in {"goal_progress", "direct_retry", "recovery"}:
+        raise ValueError("decision_type is unsupported")
     grounding_ids = params["grounding_ids"]
     if not isinstance(grounding_ids, list):
         raise TypeError("grounding_ids must be an array")
@@ -247,6 +267,7 @@ def _validate_params(params):
         "skill_id": skill_id,
         "grounding_ids": grounding_ids,
         "intent": intent,
+        "decision_type": decision_type,
     }
 
 

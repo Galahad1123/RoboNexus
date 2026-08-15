@@ -227,6 +227,18 @@ Qwen 可以选择：
 - 改变剩余计划；
 - 请求验证或终止。
 
+### 分层 Skill 选择与评测隔离
+
+Runtime 向 Qwen 发布按 `lift/place/push/rotate/articulation/switch/stack` 分组的完整
+34-skill catalog。Planner 先依据自然语言 goal 和最新观测选类别，再选择一个原子
+skill；它不接收官方 CALVIN 序列的 `goal_skill_ids` 或 Oracle predicate 列表。
+
+官方序列只属于 evaluator-private success spec，用于 Oracle 判断 goal 是否按顺序推进。
+为高失败技能配置的 recovery candidates 是建议集合，不是 backend validator。Qwen 在
+失败后的 `inspect_scene` 图像上决定直接重试或恢复；`execute_skill.decision_type` 明确
+标记 `goal_progress/direct_retry/recovery`。Runtime 独立判定实际进度，恢复技能成功不会
+推进官方序列。Dashboard 只展示该结构化决策、简短依据与结果，不记录隐藏思维链。
+
 Runtime 维护硬上限：
 
 - 同一逻辑子任务默认最多 3 次 `execute_skill`；

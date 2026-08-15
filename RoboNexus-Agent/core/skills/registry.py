@@ -5,10 +5,13 @@ from types import MappingProxyType
 from core.config import ConfigValidationError, load_yaml_mapping
 
 from .calvin_d34 import CALVIN_D34_ROUTING, CALVIN_D34_SKILL_IDS
-from .schemas import PlannerGuidance, SkillDefaults, SkillSpec
+from .schemas import PlannerGuidance, RecoveryRule, SkillDefaults, SkillSpec
 
 
 POSITIVE_INTEGER_FIELDS = ("max_steps", "max_attempts", "replan_interval")
+SKILL_CATEGORIES = {
+    "lift", "place", "push", "rotate", "articulation", "switch", "stack"
+}
 
 
 class SkillRegistry:
@@ -42,6 +45,16 @@ class SkillRegistry:
             self._skills[skill_id]
             for skill_id in sorted(self._skills)
             if self._skills[skill_id].policy_group == policy_group
+        )
+
+    def categories(self):
+        return tuple(sorted({skill.category for skill in self._skills.values()}))
+
+    def by_category(self, category):
+        return tuple(
+            self._skills[skill_id]
+            for skill_id in sorted(self._skills)
+            if self._skills[skill_id].category == category
         )
 
 
@@ -97,6 +110,58 @@ def _planner_guidance(value, path, errors):
     return PlannerGuidance(**parsed)
 
 
+def _string_list(value, path, errors):
+    if value is None:
+        return ()
+    if not isinstance(value, list) or any(
+        not isinstance(item, str) or not item.strip() for item in value
+    ):
+        errors.append("{} must be a list of non-empty strings".format(path))
+        return ()
+    return tuple(item.strip() for item in value)
+
+
+def _recovery_rules(value, path, errors):
+    if value is None:
+        return ()
+    if not isinstance(value, list):
+        errors.append("{} must be a list".format(path))
+        return ()
+    result = []
+    allowed = {
+        "condition", "strategy", "candidate_skills", "candidate_categories",
+        "guidance", "return_to_skill",
+    }
+    for index, raw in enumerate(value):
+        item_path = "{}[{}]".format(path, index)
+        if not isinstance(raw, dict):
+            errors.append("{} must be a mapping".format(item_path))
+            continue
+        unknown = sorted(set(raw) - allowed)
+        if unknown:
+            errors.append("{} has unknown fields: {}".format(item_path, unknown))
+        condition = raw.get("condition")
+        strategy = raw.get("strategy")
+        if not isinstance(condition, str) or not condition.strip():
+            errors.append("{}.condition must be a non-empty string".format(item_path))
+            condition = "invalid"
+        if not isinstance(strategy, str) or not strategy.strip():
+            errors.append("{}.strategy must be a non-empty string".format(item_path))
+            strategy = "invalid"
+        skills = _string_list(raw.get("candidate_skills"), "{}.candidate_skills".format(item_path), errors)
+        categories = _string_list(raw.get("candidate_categories"), "{}.candidate_categories".format(item_path), errors)
+        for category in categories:
+            if category not in SKILL_CATEGORIES:
+                errors.append("{}.candidate_categories contains unknown category {!r}".format(item_path, category))
+        guidance = _string_list(raw.get("guidance"), "{}.guidance".format(item_path), errors)
+        return_to = raw.get("return_to_skill")
+        if return_to is not None and (not isinstance(return_to, str) or not return_to.strip()):
+            errors.append("{}.return_to_skill must be a non-empty string".format(item_path))
+            return_to = None
+        result.append(RecoveryRule(condition.strip(), strategy.strip(), skills, categories, guidance, return_to))
+    return tuple(result)
+
+
 def load_skill_registry(
     path,
     expected_skill_ids=CALVIN_D34_SKILL_IDS,
@@ -144,12 +209,14 @@ def load_skill_registry(
         "instruction",
         "oracle_task",
         "policy_group",
+        "category",
         "grounding_roles",
         "max_steps",
         "max_attempts",
         "replan_interval",
         "success_guard",
         "planner_guidance",
+        "recovery",
     }
     for skill_id in sorted(raw_skills):
         raw = raw_skills[skill_id]
@@ -166,6 +233,7 @@ def load_skill_registry(
         instruction = raw.get("instruction")
         oracle_task = raw.get("oracle_task")
         policy_group = raw.get("policy_group")
+        category = raw.get("category")
         grounding_roles = raw.get("grounding_roles")
         if not isinstance(instruction, str) or not instruction.strip():
             errors.append("{}.instruction must be a non-empty string".format(prefix))
@@ -190,6 +258,8 @@ def load_skill_registry(
                         prefix, expected_group, policy_group
                     )
                 )
+        if category not in SKILL_CATEGORIES:
+            errors.append("{}.category must be one of {}".format(prefix, sorted(SKILL_CATEGORIES)))
         allowed_roles = {"source", "destination", "target"}
         if (
             not isinstance(grounding_roles, list)
@@ -210,6 +280,7 @@ def load_skill_registry(
         guidance = _planner_guidance(
             raw.get("planner_guidance"), "{}.planner_guidance".format(prefix), errors
         )
+        recovery = _recovery_rules(raw.get("recovery"), "{}.recovery".format(prefix), errors)
         if all(
             [
                 isinstance(instruction, str) and bool(instruction.strip()),
@@ -222,14 +293,31 @@ def load_skill_registry(
                 instruction=instruction,
                 oracle_task=oracle_task,
                 policy_group=policy_group,
+                category=category,
                 grounding_roles=tuple(grounding_roles or ()),
                 max_steps=values["max_steps"],
                 max_attempts=values["max_attempts"],
                 replan_interval=values["replan_interval"],
                 success_guard=guard,
                 planner_guidance=guidance,
+                recovery=recovery,
             )
 
+    for skill in skills.values():
+        for index, rule in enumerate(skill.recovery):
+            for candidate in rule.candidate_skills:
+                if candidate not in skills:
+                    errors.append(
+                        "skills.{}.recovery[{}].candidate_skills references unknown skill {!r}".format(
+                            skill.skill_id, index, candidate
+                        )
+                    )
+            if rule.return_to_skill is not None and rule.return_to_skill not in skills:
+                errors.append(
+                    "skills.{}.recovery[{}].return_to_skill references unknown skill {!r}".format(
+                        skill.skill_id, index, rule.return_to_skill
+                    )
+                )
     if errors:
         raise ConfigValidationError(source, errors)
     defaults = SkillDefaults(**default_values)

@@ -10,12 +10,14 @@ defaults:
 
 skills:
   close_drawer:
+    category: articulation
     instruction: close the black-outlined drawer
     oracle_task: close_drawer
     policy_group: general
     grounding_roles: &target [target]
 
   lift_blue_block_drawer:
+    category: lift
     instruction: pick up the black-outlined block from the drawer
     oracle_task: lift_blue_block_drawer
     policy_group: general
@@ -24,6 +26,7 @@ skills:
       planning:
         - Choose this skill only when the requested block is currently inside the drawer; otherwise choose the lift skill matching its latest observed location.
   lift_blue_block_slider:
+    category: lift
     instruction: pick up the black-outlined block from the sliding cabinet
     oracle_task: lift_blue_block_slider
     policy_group: general
@@ -32,6 +35,7 @@ skills:
       planning:
         - Choose this skill only when the requested block is currently inside the sliding cabinet; otherwise choose the lift skill matching its latest observed location.
   lift_blue_block_table:
+    category: lift
     instruction: pick up the black-outlined block from the table
     oracle_task: lift_blue_block_table
     policy_group: general
@@ -40,36 +44,42 @@ skills:
       planning:
         - Choose this skill only when the requested block is currently on the tabletop; after a failed placement, inspect its new location instead of repeating its original lift skill.
   lift_pink_block_drawer:
+    category: lift
     instruction: pick up the black-outlined block from the drawer
     oracle_task: lift_pink_block_drawer
     policy_group: general
     grounding_roles: *source
     planner_guidance: *lift_from_drawer_guidance
   lift_pink_block_slider:
+    category: lift
     instruction: pick up the black-outlined block from the sliding cabinet
     oracle_task: lift_pink_block_slider
     policy_group: general
     grounding_roles: *source
     planner_guidance: *lift_from_slider_guidance
   lift_pink_block_table:
+    category: lift
     instruction: pick up the black-outlined block from the table
     oracle_task: lift_pink_block_table
     policy_group: general
     grounding_roles: *source
     planner_guidance: *lift_from_table_guidance
   lift_red_block_drawer:
+    category: lift
     instruction: pick up the black-outlined block from the drawer
     oracle_task: lift_red_block_drawer
     policy_group: general
     grounding_roles: *source
     planner_guidance: *lift_from_drawer_guidance
   lift_red_block_slider:
+    category: lift
     instruction: pick up the black-outlined block from the sliding cabinet
     oracle_task: lift_red_block_slider
     policy_group: general
     grounding_roles: *source
     planner_guidance: *lift_from_slider_guidance
   lift_red_block_table:
+    category: lift
     instruction: pick up the black-outlined block from the table
     oracle_task: lift_red_block_table
     policy_group: general
@@ -77,22 +87,26 @@ skills:
     planner_guidance: *lift_from_table_guidance
 
   move_slider_left:
+    category: articulation
     instruction: move the black-outlined sliding door to the left
     oracle_task: move_slider_left
     policy_group: general
     grounding_roles: *target
   move_slider_right:
+    category: articulation
     instruction: move the black-outlined sliding door to the right
     oracle_task: move_slider_right
     policy_group: general
     grounding_roles: *target
   open_drawer:
+    category: articulation
     instruction: open the black-outlined drawer
     oracle_task: open_drawer
     policy_group: general
     grounding_roles: *target
 
   place_in_drawer:
+    category: place
     instruction: place the held block in the cyan-outlined drawer
     oracle_task: place_in_drawer
     policy_group: general
@@ -107,7 +121,19 @@ skills:
       gripper: open
       min_width_m: 0.04
       consecutive_steps: 3
+    recovery:
+      - condition: The previously held block is no longer in the gripper.
+        strategy: reacquire_object
+        candidate_categories: [lift]
+        guidance:
+          - Inspect the block color and its current table, drawer, or slider location, then select the matching lift skill.
+        return_to_skill: place_in_drawer
+      - condition: The drawer is not open enough for placement.
+        strategy: expose_destination
+        candidate_skills: [open_drawer]
+        return_to_skill: place_in_drawer
   place_in_slider:
+    category: place
     instruction: place the held block in the cyan-outlined sliding cabinet
     oracle_task: place_in_slider
     policy_group: general
@@ -119,7 +145,21 @@ skills:
         - This skill requires destination grounding only. Submit exactly one ground_targets proposal with role=destination; do not submit a source proposal for the held block.
         - Ground destination as slider_interior. Do not select slider_left_door or slider_right_door as the placement destination.
     success_guard: *released
+    recovery:
+      - condition: The previously held block is no longer in the gripper.
+        strategy: reacquire_object
+        candidate_categories: [lift]
+        guidance:
+          - Inspect the block color and its current table, drawer, or slider location, then select the matching lift skill.
+        return_to_skill: place_in_slider
+      - condition: The sliding cabinet opening is too small or obstructed.
+        strategy: expose_destination
+        candidate_skills: [move_slider_left, move_slider_right]
+        guidance:
+          - Choose the direction that exposes the compartment containing the destination interior.
+        return_to_skill: place_in_slider
   push_into_drawer:
+    category: push
     instruction: push the black-outlined block into the cyan-outlined drawer
     oracle_task: push_into_drawer
     policy_group: general
@@ -128,8 +168,14 @@ skills:
       grounding:
         - If several blocks are valid candidates, choose a block already close to and aligned with the open drawer; avoid a distant block that requires a long cross-table push.
         - Ground destination as drawer_interior, not the drawer front panel or handle.
+    recovery:
+      - condition: The drawer is closed or not open enough for the selected block.
+        strategy: expose_destination
+        candidate_skills: [open_drawer]
+        return_to_skill: push_into_drawer
 
   turn_off_led:
+    category: switch
     instruction: press the black-outlined button to turn off the led
     oracle_task: turn_off_led
     policy_group: general
@@ -138,6 +184,7 @@ skills:
       grounding:
         - The LED is controlled by the small push button. Ground target as led_button; never use light_switch.
   turn_off_lightbulb:
+    category: switch
     instruction: move the black-outlined switch to turn off the lightbulb
     oracle_task: turn_off_lightbulb
     policy_group: general
@@ -146,54 +193,63 @@ skills:
       grounding:
         - The lightbulb is controlled by the movable switch/handle. Ground target as light_switch; never use led_button.
   turn_on_led:
+    category: switch
     instruction: press the black-outlined button to turn on the led
     oracle_task: turn_on_led
     policy_group: general
     grounding_roles: *target
     planner_guidance: *led_guidance
   turn_on_lightbulb:
+    category: switch
     instruction: move the black-outlined switch to turn on the lightbulb
     oracle_task: turn_on_lightbulb
     policy_group: general
     grounding_roles: *target
     planner_guidance: *lightbulb_guidance
   unstack_block:
+    category: stack
     instruction: remove the black-outlined block from the stack
     oracle_task: unstack_block
     policy_group: general
     grounding_roles: *source
 
   push_blue_block_left:
+    category: push
     instruction: push the blue block to the left
     oracle_task: push_blue_block_left
     policy_group: push
     grounding_roles: *source
     max_steps: 120
   push_blue_block_right:
+    category: push
     instruction: push the blue block to the right
     oracle_task: push_blue_block_right
     policy_group: push
     grounding_roles: *source
     max_steps: 120
   push_pink_block_left:
+    category: push
     instruction: push the pink block to the left
     oracle_task: push_pink_block_left
     policy_group: push
     grounding_roles: *source
     max_steps: 120
   push_pink_block_right:
+    category: push
     instruction: push the pink block to the right
     oracle_task: push_pink_block_right
     policy_group: push
     grounding_roles: *source
     max_steps: 120
   push_red_block_left:
+    category: push
     instruction: push the red block to the left
     oracle_task: push_red_block_left
     policy_group: push
     grounding_roles: *source
     max_steps: 120
   push_red_block_right:
+    category: push
     instruction: push the red block to the right
     oracle_task: push_red_block_right
     policy_group: push
@@ -201,36 +257,42 @@ skills:
     max_steps: 120
 
   rotate_blue_block_left:
+    category: rotate
     instruction: rotate the blue block counterclockwise
     oracle_task: rotate_blue_block_left
     policy_group: rotate
     grounding_roles: *source
     success_guard: *released
   rotate_blue_block_right:
+    category: rotate
     instruction: rotate the blue block clockwise
     oracle_task: rotate_blue_block_right
     policy_group: rotate
     grounding_roles: *source
     success_guard: *released
   rotate_pink_block_left:
+    category: rotate
     instruction: rotate the pink block counterclockwise
     oracle_task: rotate_pink_block_left
     policy_group: rotate
     grounding_roles: *source
     success_guard: *released
   rotate_pink_block_right:
+    category: rotate
     instruction: rotate the pink block clockwise
     oracle_task: rotate_pink_block_right
     policy_group: rotate
     grounding_roles: *source
     success_guard: *released
   rotate_red_block_left:
+    category: rotate
     instruction: rotate the red block counterclockwise
     oracle_task: rotate_red_block_left
     policy_group: rotate
     grounding_roles: *source
     success_guard: *released
   rotate_red_block_right:
+    category: rotate
     instruction: rotate the red block clockwise
     oracle_task: rotate_red_block_right
     policy_group: rotate
@@ -238,6 +300,7 @@ skills:
     success_guard: *released
 
   stack_block:
+    category: stack
     instruction: stack the black-outlined source block on top of the cyan-outlined destination block
     oracle_task: stack_block
     policy_group: stack

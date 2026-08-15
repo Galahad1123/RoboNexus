@@ -29,7 +29,7 @@ from core.domain import GoalInput, ObservationRef, RuntimeLimits  # noqa: E402
 from core.logging import JsonlEventLogger, atomic_write_json  # noqa: E402
 from core.policies import PolicyClientPool, PolicyRouter, load_policy_catalog  # noqa: E402
 from core.runtime import AgentSession  # noqa: E402
-from core.skills import SkillRegistry, load_skill_registry  # noqa: E402
+from core.skills import load_skill_registry  # noqa: E402
 from core.tools import (  # noqa: E402
     AbortGoalTool,
     ApproachTargetTool,
@@ -60,7 +60,10 @@ def main():
         "--skill",
         action="append",
         default=[],
-        help="allowed goal skill; repeat for a multi-subtask goal (defaults to --task)",
+        help=(
+            "evaluator-private goal predicate; repeat for a multi-subtask goal "
+            "(defaults to --task and is never exposed as Qwen's callable subset)"
+        ),
     )
     parser.add_argument("--goal", help="goal instruction; defaults to the initial task instruction")
     parser.add_argument("--disable-approach", action="store_true")
@@ -102,19 +105,13 @@ def main():
     artifacts = LocalArtifactStore(args.output_dir / "artifacts")
     events = JsonlEventLogger(args.output_dir / "events.jsonl", "qwen-single-skill")
     full_registry = load_skill_registry(args.skills_config)
-    allowed_skill_ids = args.skill or [args.task]
-    if len(set(allowed_skill_ids)) != len(allowed_skill_ids):
+    goal_skill_ids = args.skill or [args.task]
+    if len(set(goal_skill_ids)) != len(goal_skill_ids):
         parser.error("--skill values must be unique")
     selected_skills = {
-        skill_id: full_registry.get(skill_id) for skill_id in allowed_skill_ids
+        skill_id: full_registry.get(skill_id) for skill_id in goal_skill_ids
     }
-    registry = SkillRegistry(
-        full_registry.name + "_single_skill",
-        full_registry.version,
-        full_registry.defaults,
-        selected_skills,
-        full_registry.source,
-    )
+    registry = full_registry
     catalog = load_policy_catalog(
         args.policies_config, required_policy_ids=full_registry.policy_groups()
     )
@@ -146,7 +143,7 @@ def main():
             observation, _, _, _ = adapter.step(zero_action)
         observer = CalvinSceneObserver(adapter)
         capture = observer.capture_scene()
-        goal_slug = "__".join(allowed_skill_ids)
+        goal_slug = "__".join(goal_skill_ids)
         session_id = "qwen-{}-{:03d}".format(goal_slug, args.episode_index)
         static = artifacts.save_image(session_id, "initial_static", capture.static_rgb)
         wrist = artifacts.save_image(session_id, "initial_wrist", capture.wrist_rgb)
@@ -161,15 +158,15 @@ def main():
                     "mode": "skill_sequence",
                     "predicates": [
                         {"name": selected_skills[skill_id].oracle_task}
-                        for skill_id in allowed_skill_ids
+                        for skill_id in goal_skill_ids
                     ]
                 },
                 initial,
                 limits=RuntimeLimits(
-                    tool_call_limit=max(32, 20 * len(allowed_skill_ids)),
+                    tool_call_limit=max(64, 24 * len(goal_skill_ids)),
                     environment_step_limit=args.environment_step_limit
                 ),
-                metadata={"allowed_skill_ids": allowed_skill_ids},
+                metadata={"goal_predicates_private": True},
             ),
             session_id=session_id,
             events=events,
@@ -209,16 +206,35 @@ def main():
             {
                 "goal_id": session.goal.goal_id,
                 "goal_instruction": session.goal.instruction,
-                "success_spec": session.goal.success_spec,
-                "allowed_skill_ids": allowed_skill_ids,
+                "goal_verification": "private_calvin_oracle",
+                "callable_skill_ids": list(full_registry.skill_ids()),
+                # Compatibility alias for older clients; this is intentionally
+                # the full callable catalog, never the evaluator-private sequence.
+                "allowed_skill_ids": list(full_registry.skill_ids()),
+                "skill_catalog": {
+                    category: [
+                        {
+                            "skill_id": skill.skill_id,
+                            "instruction": skill.instruction,
+                            "grounding_roles": list(skill.grounding_roles),
+                        }
+                        for skill in full_registry.by_category(category)
+                    ]
+                    for category in full_registry.categories()
+                },
                 "required_grounding_roles": {
-                    skill_id: list(selected_skills[skill_id].grounding_roles)
-                    for skill_id in allowed_skill_ids
+                    skill_id: list(full_registry.get(skill_id).grounding_roles)
+                    for skill_id in full_registry.skill_ids()
                 },
                 "skill_guidance": {
-                    skill_id: selected_skills[skill_id].planner_guidance.as_dict()
-                    for skill_id in allowed_skill_ids
-                    if selected_skills[skill_id].planner_guidance is not None
+                    skill_id: full_registry.get(skill_id).planner_guidance.as_dict()
+                    for skill_id in full_registry.skill_ids()
+                    if full_registry.get(skill_id).planner_guidance is not None
+                },
+                "recovery_guidance": {
+                    skill_id: [rule.as_dict() for rule in full_registry.get(skill_id).recovery]
+                    for skill_id in full_registry.skill_ids()
+                    if full_registry.get(skill_id).recovery
                 },
                 "approach_enabled": not args.disable_approach,
                 "initial_observation": {

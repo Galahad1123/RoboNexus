@@ -13,34 +13,47 @@ from .remote_tool import build_remote_tools, fetch_session
 
 
 SYSTEM_PROMPT = """You are the high-level planner for one robot goal.
-Use the provided tools; never emit low-level robot actions. Only choose a skill
-from allowed_skill_ids. Inspect the current scene, ground every role required by
+Use the provided tools; never emit low-level robot actions. Select a category,
+then exactly one atomic skill from the grouped full skill_catalog. Inspect the
+current scene and ground every role required by
 the selected skill. This CALVIN session supports semantic grounding only: use
 representation="semantic", an exact semantic_id from semantic_vocabulary, and
 the current observation_id; never send bbox, point, or duplicate roles. Always
 include skill_id in ground_targets. Execute exactly one atomic skill attempt, and call
 verify_goal whenever execute_skill reports atomic success; goal verification can
 still fail when another subtask remains, in which case call inspect_scene before
-planning and grounding the next allowed skill. After a failed execute_skill, always inspect and semantically reground
-before retrying. Follow ROBOT_GOAL_CONTEXT.recovery_policy exactly. Do not use
+planning the next skill. After a failed execute_skill, always inspect the latest
+images and semantically reground. Then explicitly decide between direct_retry
+of that skill and a configured recovery skill. Set execute_skill.decision_type
+to goal_progress, direct_retry, or recovery and briefly state visual evidence in
+intent. Recovery skills never advance goal progress. Only use recovery candidates
+published for the failed skill; otherwise retry or abort. Do not use
 abort_goal with repeated_execution_failure before the failed skill reports attempt=3.
 Never reuse a stale observation or grounding. A goal is complete only when verify_goal returns
 data.status=success. If it cannot reasonably continue, call abort_goal. Keep
 tool arguments concise and do not merely describe a tool call in prose. Treat
 ROBOT_GOAL_CONTEXT.skill_guidance as skill-specific planning advice: apply only
 the entry for the skill you are considering, and use the latest images to make
-the final choice rather than blindly assuming the advice's conditions hold."""
+the final choice rather than blindly assuming the advice's conditions hold.
+Treat current_session.completed_goal_skills as authoritative memory: never
+execute a completed goal skill again merely because verify_goal says the whole
+sequence is incomplete. Preserve the numbered goal order. After a placement
+failure, direct retry is allowed only if the latest images clearly show the
+object remains held; otherwise use the configured lift recovery for its visible
+color and current location."""
 
 
 def _goal_context(session):
     return {
         "goal_id": session["goal_id"],
         "goal_instruction": session["goal_instruction"],
-        "success_spec": session["success_spec"],
-        "allowed_skill_ids": session["allowed_skill_ids"],
+        "goal_verification": session.get("goal_verification", "backend_private"),
+        "callable_skill_ids": session.get("callable_skill_ids", session["allowed_skill_ids"]),
+        "skill_catalog": session.get("skill_catalog", {}),
         "semantic_vocabulary": session["semantic_vocabulary"],
         "required_grounding_roles": session["required_grounding_roles"],
         "skill_guidance": session.get("skill_guidance", {}),
+        "recovery_guidance": session.get("recovery_guidance", {}),
         "approach_enabled": session["approach_enabled"],
         "recovery_policy": (
             "inspect, ground source/target, approach_target, inspect, reground, retry"
@@ -63,10 +76,11 @@ def run_single_skill_agent(
     session = fetch_session(runtime_url)
     destination = Path(output) if output else Path(session["output_dir"]) / "qwen_agent_result.json"
     checkpoint = destination.with_name("qwen_agent_checkpoint.json")
-    if expected_skill_ids is not None and list(expected_skill_ids) != session["allowed_skill_ids"]:
+    callable_ids = session.get("callable_skill_ids", session["allowed_skill_ids"])
+    if expected_skill_ids is not None and list(expected_skill_ids) != callable_ids:
         raise RuntimeError(
             "connected Runtime exposes skills {}, expected {}".format(
-                session["allowed_skill_ids"], list(expected_skill_ids)
+                callable_ids, list(expected_skill_ids)
             )
         )
     assistant = Assistant(
@@ -213,6 +227,9 @@ def _continuation_content(context, current_session, transcript):
                 "attempt": data.get("attempt"),
                 "success": data.get("success"),
                 "termination_reason": data.get("termination_reason") or data.get("reason"),
+                "decision_type": data.get("decision_type"),
+                "progress_type": data.get("progress_type"),
+                "intent": data.get("intent"),
                 "observation_id": data.get("after_observation_id") or (data.get("observation") or {}).get("observation_id"),
             }
         )
@@ -223,6 +240,7 @@ def _continuation_content(context, current_session, transcript):
         "current_session": {
             "session_status": current_session.get("session_status"),
             "latest_observation_id": current_session.get("latest_observation_id"),
+            "completed_goal_skills": current_session.get("completed_goal_skills", []),
             "budget": current_session.get("budget"),
         },
         "tool_summary": summary[-16:],
