@@ -80,3 +80,37 @@ conda run -n robonexus-calvin python test/calvin/visualize_tasks.py \
 
 可用 `--selection first|median|random` 控制代表片段的选择方式，`--fps` 调整播放
 速度，`--scale` 调整显示/导出分辨率。
+
+## 对比 ABC→D 的 34 个任务
+
+`task_ABC_D` 的 training 同时包含 A、B、C，具体帧区间记录在官方
+`scene_info.npy`；validation 是 D。以下查看器会按这些边界为每个任务分别选择
+A/B/C/D 的一条官方示范，并以四宫格同步播放：
+
+```bash
+conda run -n robonexus-calvin python \
+  test/calvin/visualize_abcd_tasks.py
+```
+
+窗口快捷键与单套件查看器相同：空格暂停，`R` 重播，`N`/右方向键进入下一项，
+`P`/左方向键返回上一项，`Q`/Esc 退出。不同环境的示范长度可能不同，查看器按
+归一化任务进度同步四个画面。
+
+只比较指定任务：
+
+```bash
+conda run -n robonexus-calvin python \
+  test/calvin/visualize_abcd_tasks.py \
+  --task stack_block --task push_into_drawer
+```
+
+无 GUI 时可导出全部 34 个四宫格视频和所选片段的 manifest：
+
+```bash
+conda run -n robonexus-calvin python \
+  test/calvin/visualize_abcd_tasks.py \
+  --export-dir outputs/calvin_abcd_task_comparison
+```
+
+`--selection median|first|random` 控制每套环境中代表示范的选择方式；随机选择可配合
+`--seed` 复现。`--fps` 和 `--scale` 分别控制播放帧率与输出缩放。
