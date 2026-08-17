@@ -10,6 +10,69 @@
 - `calvin_stack_pick_place_persistent`：桌面 Pick、完整 Pick-and-Stack、Held-start
   Stack、Place-in-Drawer 和 Place-in-Slider，source 全程持续标记。
 
+## ABC→D Clean RGB 两路基线
+
+无 mask/outline 的 ABC→D 基线使用两个互斥部署组：
+
+- `calvin_abc_general_21_clean`：其余 21 类；
+- `calvin_abc_manipulation_13_clean`：Push-6、Rotate-6 和 Stack-1，Rotate 保留六个
+  颜色与方向类别。
+
+配置位于 `configs/calvin_abc_clean.json`。审计读取 `task_ABC_D/training` 的 A/B/C，
+根据官方 `scene_info.npy` 标记环境，在每个 `task × environment` 层内确定性留出 10%
+作为 `abc_validation`；官方 D validation 独立保存为 `d_validation`。审计继续执行语言
+区间重叠去重、CALVIN Oracle 检查以及 Rotate release/Stack contact 检查，但转换时不
+生成或使用 mask cache。
+
+生成两套审计 manifest：
+
+```bash
+conda run -n robonexus-calvin python \
+  datasets/calvin_specialists/scripts/build_abc_clean_manifests.py
+```
+
+分别转换 training、ABC holdout 和 D probe；不传 `--mask-cache` 即使用原始 RGB：
+
+```bash
+for dataset in calvin_abc_general_21_clean calvin_abc_manipulation_13_clean; do
+  for split in training abc_validation d_validation; do
+    multitask_dit_policy/.venv/bin/python \
+      datasets/calvin_specialists/scripts/convert_to_lerobot.py \
+      --dataset "$dataset" --split "$split" --storage image \
+      --output "datasets/$dataset/data/${split}_image"
+  done
+done
+```
+
+单卡训练可同时记录 ABC holdout 和只读 D probe。以下参数与现有 DINOv3 checkpoint
+保持一致，`probe/loss` 不参与梯度或自动 checkpoint 选择：
+
+```bash
+cd multitask_dit_policy
+
+uv run -m multitask_dit_policy.train \
+  --dataset_path=../datasets/calvin_abc_general_21_clean/data/training_image \
+  --val_dataset_path=../datasets/calvin_abc_general_21_clean/data/abc_validation_image \
+  --probe_dataset_path=../datasets/calvin_abc_general_21_clean/data/d_validation_image \
+  --val_ratio=0 --batch_size=64 --train_steps=80000 \
+  --save_freq=5000 --val_freq=1000 --val_batches=20 \
+  --probe_freq=1000 --probe_batches=20 --task_sampling=balanced \
+  --use_amp=true --device=cuda \
+  --policy.observation_encoder.vision.type=dinov3 \
+  --output_dir=outputs/calvin_abc_general_21_clean_dino
+
+uv run -m multitask_dit_policy.train \
+  --dataset_path=../datasets/calvin_abc_manipulation_13_clean/data/training_image \
+  --val_dataset_path=../datasets/calvin_abc_manipulation_13_clean/data/abc_validation_image \
+  --probe_dataset_path=../datasets/calvin_abc_manipulation_13_clean/data/d_validation_image \
+  --val_ratio=0 --batch_size=64 --train_steps=80000 \
+  --save_freq=5000 --val_freq=1000 --val_batches=20 \
+  --probe_freq=1000 --probe_batches=20 --task_sampling=balanced \
+  --use_amp=true --device=cuda \
+  --policy.observation_encoder.vision.type=dinov3 \
+  --output_dir=outputs/calvin_abc_manipulation_13_clean_dino
+```
+
 先前实验数据 `calvin_push_rotate_12`、`calvin_stack_place_3`、
 `calvin_rotate_6_release` 和 `calvin_stack_pick_place` 会继续保留，便于复现已有
 checkpoint，不会被新脚本覆盖。

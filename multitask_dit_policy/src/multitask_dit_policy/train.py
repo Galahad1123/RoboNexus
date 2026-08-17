@@ -56,6 +56,7 @@ class TrainConfig:
     # Dataset parameters
     dataset_path: str
     val_dataset_path: str | None = None
+    probe_dataset_path: str | None = None
     video_backend: str = "torchcodec"
 
     # Training parameters
@@ -67,6 +68,8 @@ class TrainConfig:
     val_ratio: float = 0.05
     val_freq: int = 500
     val_batches: int = 10
+    probe_freq: int = 500
+    probe_batches: int = 10
     output_dir: str = "outputs/train_multi_task_dit"
     device: str = "cuda" if torch.cuda.is_available() else "cpu"
     use_amp: bool = False
@@ -411,6 +414,48 @@ def train(cfg: TrainConfig):
             prefetch_factor=2 if cfg.num_workers > 0 else None,
         )
 
+    probe_dataloader = None
+    if cfg.probe_dataset_path is not None:
+        probe_dataset_path = Path(cfg.probe_dataset_path).expanduser()
+        if not probe_dataset_path.exists():
+            raise FileNotFoundError(
+                f"Probe dataset path not found: {cfg.probe_dataset_path}\n"
+                "Please ensure the probe LeRobotDataset directory exists."
+            )
+        probe_repo_id = probe_dataset_path.name
+        probe_metadata = LeRobotDatasetMetadata(repo_id=probe_repo_id, root=probe_dataset_path)
+        feature_keys = set(policy_config.input_features) | set(policy_config.output_features)
+        _validate_dataset_compatibility(ds_metadata, probe_metadata, feature_keys)
+        probe_dataset = LeRobotDataset(
+            repo_id=probe_repo_id,
+            root=probe_dataset_path,
+            delta_timestamps=delta_timestamps,
+            video_backend=cfg.video_backend,
+        )
+        probe_indices = list(range(len(probe_dataset.meta.episodes)))
+        probe_sampler = EpisodeAwareSampler(
+            _to_episode_subset(probe_dataset.meta.episodes["dataset_from_index"], probe_indices),
+            _to_episode_subset(probe_dataset.meta.episodes["dataset_to_index"], probe_indices),
+            drop_n_last_frames=policy_config.drop_n_last_frames,
+            shuffle=False,
+        )
+        probe_dataloader = DataLoader(
+            probe_dataset,
+            batch_size=cfg.batch_size,
+            sampler=probe_sampler,
+            shuffle=False,
+            num_workers=cfg.num_workers,
+            pin_memory=cfg.device.startswith("cuda"),
+            persistent_workers=cfg.num_workers > 0,
+            drop_last=False,
+            prefetch_factor=2 if cfg.num_workers > 0 else None,
+        )
+        logging.info(
+            "Using read-only probe dataset: %d episodes from %s",
+            len(probe_indices),
+            probe_dataset_path,
+        )
+
     optimizer_config = policy_config.get_optimizer_preset()
     optimizer_params = policy.get_optim_params()
     optimizer = torch.optim.Adam(
@@ -498,6 +543,25 @@ def train(cfg: TrainConfig):
             logging.info(f"Step {step}: Validation Loss = {val_loss:.6f}")
             if use_wandb:
                 wandb.log({"val/loss": val_loss}, step=step)
+
+        if (
+            probe_dataloader is not None
+            and cfg.probe_freq > 0
+            and cfg.probe_batches > 0
+            and step % cfg.probe_freq == 0
+        ):
+            probe_loss = validate(
+                policy,
+                probe_dataloader,
+                policy_config,
+                stats_tensors,
+                cfg.device,
+                use_amp,
+                cfg.probe_batches,
+            )
+            logging.info(f"Step {step}: Probe Loss = {probe_loss:.6f}")
+            if use_wandb:
+                wandb.log({"probe/loss": probe_loss}, step=step)
 
     final_dir = output_dir / "final_model"
     save_policy(policy, final_dir, ds_metadata.stats)

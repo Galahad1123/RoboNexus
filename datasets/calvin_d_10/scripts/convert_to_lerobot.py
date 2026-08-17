@@ -199,7 +199,11 @@ def validate_source_frame(source_split: Path, segment: dict) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
-    parser.add_argument("--split", choices=("training", "validation"), default="training")
+    parser.add_argument(
+        "--split",
+        default="training",
+        help="manifest split name (for example training, abc_validation, or d_validation)",
+    )
     parser.add_argument("--storage", choices=("video", "image"), default="image")
     parser.add_argument("--output", type=Path)
     parser.add_argument("--task", action="append", help="repeat to convert only selected canonical tasks")
@@ -223,7 +227,12 @@ def main() -> None:
     source_root = Path(manifest["source_dataset"])
     if not source_root.is_absolute():
         source_root = WORKSPACE / source_root
-    source_split = source_root / args.split
+    if args.split not in manifest["splits"]:
+        raise ValueError(
+            f"unknown manifest split {args.split!r}; available: {sorted(manifest['splits'])}"
+        )
+    source_split_name = manifest["splits"][args.split].get("source_split", args.split)
+    source_split = source_root / source_split_name
     mask_cache = args.mask_cache.resolve() if args.mask_cache else None
     segments = selected_segments(
         manifest,
@@ -280,6 +289,7 @@ def main() -> None:
         "manifest": str(args.manifest.resolve()),
         "source_dataset": str(source_root),
         "split": args.split,
+        "source_split": source_split_name,
         "storage": args.storage,
         "episodes": len(segments),
         "frames": sum(segment["num_frames"] for segment in segments),

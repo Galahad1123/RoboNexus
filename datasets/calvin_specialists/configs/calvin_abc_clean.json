@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "source_dataset": "calvin/dataset/task_ABC_D",
+  "frequency_hz": 30,
+  "overlap_threshold": 0.5,
+  "abc_validation_ratio": 0.1,
+  "split_seed": 17,
+  "max_start_repair_frames": 15,
+  "max_end_repair_frames": 15,
+  "oracle_config": "calvin/calvin_models/conf/callbacks/rollout/tasks/new_playtable_tasks.yaml",
+  "rotate_audit": {
+    "max_start_repair_frames": 15,
+    "release_consecutive_frames": 3,
+    "stable_suffix_min_frames": 15,
+    "stable_suffix_max_frames": 30,
+    "stable_position_delta_m": 0.005,
+    "stable_orientation_delta_rad": 0.12
+  },
+  "stack_audit": {
+    "stable_grasp_frames": 3
+  },
+  "datasets": {
+    "calvin_abc_general_21_clean": {
+      "group": "general",
+      "tasks": {
+        "close_drawer": "close the drawer",
+        "lift_blue_block_drawer": "pick up the blue block from the drawer",
+        "lift_blue_block_slider": "pick up the blue block from the sliding cabinet",
+        "lift_blue_block_table": "pick up the blue block from the table",
+        "lift_pink_block_drawer": "pick up the pink block from the drawer",
+        "lift_pink_block_slider": "pick up the pink block from the sliding cabinet",
+        "lift_pink_block_table": "pick up the pink block from the table",
+        "lift_red_block_drawer": "pick up the red block from the drawer",
+        "lift_red_block_slider": "pick up the red block from the sliding cabinet",
+        "lift_red_block_table": "pick up the red block from the table",
+        "move_slider_left": "move the sliding door to the left",
+        "move_slider_right": "move the sliding door to the right",
+        "open_drawer": "open the drawer",
+        "place_in_drawer": "place the held block in the drawer",
+        "place_in_slider": "place the held block in the sliding cabinet",
+        "push_into_drawer": "push the block into the drawer",
+        "turn_off_led": "press the button to turn off the led",
+        "turn_off_lightbulb": "move the switch to turn off the lightbulb",
+        "turn_on_led": "press the button to turn on the led",
+        "turn_on_lightbulb": "move the switch to turn on the lightbulb",
+        "unstack_block": "remove the top block from the stack"
+      }
+    },
+    "calvin_abc_manipulation_13_clean": {
+      "group": "manipulation",
+      "tasks": {
+        "push_blue_block_left": "push the blue block to the left",
+        "push_blue_block_right": "push the blue block to the right",
+        "push_pink_block_left": "push the pink block to the left",
+        "push_pink_block_right": "push the pink block to the right",
+        "push_red_block_left": "push the red block to the left",
+        "push_red_block_right": "push the red block to the right",
+        "rotate_blue_block_left": "rotate the blue block counterclockwise",
+        "rotate_blue_block_right": "rotate the blue block clockwise",
+        "rotate_pink_block_left": "rotate the pink block counterclockwise",
+        "rotate_pink_block_right": "rotate the pink block clockwise",
+        "rotate_red_block_left": "rotate the red block counterclockwise",
+        "rotate_red_block_right": "rotate the red block clockwise",
+        "stack_block": "stack one block on top of another block"
+      }
+    }
+  }
+}

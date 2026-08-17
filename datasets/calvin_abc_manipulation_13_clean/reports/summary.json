@@ -1,0 +1,384 @@
+{
+  "training": {
+    "dataset": "calvin_abc_manipulation_13_clean",
+    "split": "training",
+    "episodes": 1246,
+    "frames": 81483,
+    "by_task": {
+      "push_blue_block_left": 152,
+      "push_blue_block_right": 115,
+      "push_pink_block_left": 91,
+      "push_pink_block_right": 82,
+      "push_red_block_left": 50,
+      "push_red_block_right": 39,
+      "rotate_blue_block_left": 141,
+      "rotate_blue_block_right": 102,
+      "rotate_pink_block_left": 105,
+      "rotate_pink_block_right": 47,
+      "rotate_red_block_left": 47,
+      "rotate_red_block_right": 8,
+      "stack_block": 267
+    },
+    "by_environment": {
+      "A": 343,
+      "B": 656,
+      "C": 247
+    },
+    "by_task_environment": {
+      "push_blue_block_left": {
+        "A": 68,
+        "B": 84
+      },
+      "push_blue_block_right": {
+        "A": 58,
+        "B": 57
+      },
+      "push_pink_block_left": {
+        "B": 55,
+        "C": 36
+      },
+      "push_pink_block_right": {
+        "B": 42,
+        "C": 40
+      },
+      "push_red_block_left": {
+        "B": 50
+      },
+      "push_red_block_right": {
+        "B": 39
+      },
+      "rotate_blue_block_left": {
+        "A": 76,
+        "B": 65
+      },
+      "rotate_blue_block_right": {
+        "A": 49,
+        "B": 53
+      },
+      "rotate_pink_block_left": {
+        "B": 49,
+        "C": 56
+      },
+      "rotate_pink_block_right": {
+        "B": 21,
+        "C": 26
+      },
+      "rotate_red_block_left": {
+        "B": 47
+      },
+      "rotate_red_block_right": {
+        "B": 8
+      },
+      "stack_block": {
+        "A": 92,
+        "B": 86,
+        "C": 89
+      }
+    },
+    "candidate_rejection_reasons": {}
+  },
+  "abc_validation": {
+    "dataset": "calvin_abc_manipulation_13_clean",
+    "split": "abc_validation",
+    "episodes": 136,
+    "frames": 8813,
+    "by_task": {
+      "push_blue_block_left": 17,
+      "push_blue_block_right": 12,
+      "push_pink_block_left": 10,
+      "push_pink_block_right": 9,
+      "push_red_block_left": 6,
+      "push_red_block_right": 4,
+      "rotate_blue_block_left": 15,
+      "rotate_blue_block_right": 11,
+      "rotate_pink_block_left": 11,
+      "rotate_pink_block_right": 5,
+      "rotate_red_block_left": 5,
+      "rotate_red_block_right": 1,
+      "stack_block": 30
+    },
+    "by_environment": {
+      "A": 37,
+      "B": 72,
+      "C": 27
+    },
+    "by_task_environment": {
+      "push_blue_block_left": {
+        "A": 8,
+        "B": 9
+      },
+      "push_blue_block_right": {
+        "A": 6,
+        "B": 6
+      },
+      "push_pink_block_left": {
+        "B": 6,
+        "C": 4
+      },
+      "push_pink_block_right": {
+        "B": 5,
+        "C": 4
+      },
+      "push_red_block_left": {
+        "B": 6
+      },
+      "push_red_block_right": {
+        "B": 4
+      },
+      "rotate_blue_block_left": {
+        "A": 8,
+        "B": 7
+      },
+      "rotate_blue_block_right": {
+        "A": 5,
+        "B": 6
+      },
+      "rotate_pink_block_left": {
+        "B": 5,
+        "C": 6
+      },
+      "rotate_pink_block_right": {
+        "B": 2,
+        "C": 3
+      },
+      "rotate_red_block_left": {
+        "B": 5
+      },
+      "rotate_red_block_right": {
+        "B": 1
+      },
+      "stack_block": {
+        "A": 10,
+        "B": 10,
+        "C": 10
+      }
+    },
+    "candidate_rejection_reasons": {}
+  },
+  "d_validation": {
+    "dataset": "calvin_abc_manipulation_13_clean",
+    "split": "d_validation",
+    "episodes": 44,
+    "frames": 2779,
+    "by_task": {
+      "push_blue_block_left": 4,
+      "push_blue_block_right": 4,
+      "push_pink_block_left": 4,
+      "push_pink_block_right": 8,
+      "push_red_block_left": 3,
+      "push_red_block_right": 4,
+      "rotate_blue_block_left": 2,
+      "rotate_blue_block_right": 2,
+      "rotate_pink_block_left": 2,
+      "rotate_pink_block_right": 3,
+      "rotate_red_block_left": 3,
+      "rotate_red_block_right": 3,
+      "stack_block": 2
+    },
+    "by_environment": {
+      "D": 44
+    },
+    "by_task_environment": {
+      "push_blue_block_left": {
+        "D": 4
+      },
+      "push_blue_block_right": {
+        "D": 4
+      },
+      "push_pink_block_left": {
+        "D": 4
+      },
+      "push_pink_block_right": {
+        "D": 8
+      },
+      "push_red_block_left": {
+        "D": 3
+      },
+      "push_red_block_right": {
+        "D": 4
+      },
+      "rotate_blue_block_left": {
+        "D": 2
+      },
+      "rotate_blue_block_right": {
+        "D": 2
+      },
+      "rotate_pink_block_left": {
+        "D": 2
+      },
+      "rotate_pink_block_right": {
+        "D": 3
+      },
+      "rotate_red_block_left": {
+        "D": 3
+      },
+      "rotate_red_block_right": {
+        "D": 3
+      },
+      "stack_block": {
+        "D": 2
+      }
+    },
+    "candidate_rejection_reasons": {}
+  },
+  "abc_audit": {
+    "dataset": "calvin_abc_manipulation_13_clean",
+    "split": "abc_audit",
+    "episodes": 1382,
+    "frames": 90296,
+    "by_task": {
+      "push_blue_block_left": 169,
+      "push_blue_block_right": 127,
+      "push_pink_block_left": 101,
+      "push_pink_block_right": 91,
+      "push_red_block_left": 56,
+      "push_red_block_right": 43,
+      "rotate_blue_block_left": 156,
+      "rotate_blue_block_right": 113,
+      "rotate_pink_block_left": 116,
+      "rotate_pink_block_right": 52,
+      "rotate_red_block_left": 52,
+      "rotate_red_block_right": 9,
+      "stack_block": 297
+    },
+    "by_environment": {
+      "A": 380,
+      "B": 728,
+      "C": 274
+    },
+    "by_task_environment": {
+      "push_blue_block_left": {
+        "A": 76,
+        "B": 93
+      },
+      "push_blue_block_right": {
+        "A": 64,
+        "B": 63
+      },
+      "push_pink_block_left": {
+        "B": 61,
+        "C": 40
+      },
+      "push_pink_block_right": {
+        "B": 47,
+        "C": 44
+      },
+      "push_red_block_left": {
+        "B": 56
+      },
+      "push_red_block_right": {
+        "B": 43
+      },
+      "rotate_blue_block_left": {
+        "A": 84,
+        "B": 72
+      },
+      "rotate_blue_block_right": {
+        "A": 54,
+        "B": 59
+      },
+      "rotate_pink_block_left": {
+        "B": 54,
+        "C": 62
+      },
+      "rotate_pink_block_right": {
+        "B": 23,
+        "C": 29
+      },
+      "rotate_red_block_left": {
+        "B": 52
+      },
+      "rotate_red_block_right": {
+        "B": 9
+      },
+      "stack_block": {
+        "A": 102,
+        "B": 96,
+        "C": 99
+      }
+    },
+    "candidate_rejection_reasons": {
+      "ambiguous_final_stack_pair": 73,
+      "initially_held": 181,
+      "initially_holding_object": 228,
+      "oracle_not_satisfied": 3119,
+      "release_not_completed": 176,
+      "stable_release_suffix_too_short": 545,
+      "stack_contact_not_persistent": 10,
+      "stack_does_not_end_released": 9
+    }
+  },
+  "d_audit": {
+    "dataset": "calvin_abc_manipulation_13_clean",
+    "split": "d_audit",
+    "episodes": 44,
+    "frames": 2779,
+    "by_task": {
+      "push_blue_block_left": 4,
+      "push_blue_block_right": 4,
+      "push_pink_block_left": 4,
+      "push_pink_block_right": 8,
+      "push_red_block_left": 3,
+      "push_red_block_right": 4,
+      "rotate_blue_block_left": 2,
+      "rotate_blue_block_right": 2,
+      "rotate_pink_block_left": 2,
+      "rotate_pink_block_right": 3,
+      "rotate_red_block_left": 3,
+      "rotate_red_block_right": 3,
+      "stack_block": 2
+    },
+    "by_environment": {
+      "D": 44
+    },
+    "by_task_environment": {
+      "push_blue_block_left": {
+        "D": 4
+      },
+      "push_blue_block_right": {
+        "D": 4
+      },
+      "push_pink_block_left": {
+        "D": 4
+      },
+      "push_pink_block_right": {
+        "D": 8
+      },
+      "push_red_block_left": {
+        "D": 3
+      },
+      "push_red_block_right": {
+        "D": 4
+      },
+      "rotate_blue_block_left": {
+        "D": 2
+      },
+      "rotate_blue_block_right": {
+        "D": 2
+      },
+      "rotate_pink_block_left": {
+        "D": 2
+      },
+      "rotate_pink_block_right": {
+        "D": 3
+      },
+      "rotate_red_block_left": {
+        "D": 3
+      },
+      "rotate_red_block_right": {
+        "D": 3
+      },
+      "stack_block": {
+        "D": 2
+      }
+    },
+    "candidate_rejection_reasons": {
+      "initially_held": 14,
+      "initially_holding_object": 1,
+      "oracle_not_satisfied": 3,
+      "stable_release_suffix_too_short": 39,
+      "stack_contact_not_persistent": 1,
+      "stack_does_not_end_released": 1
+    }
+  }
+}

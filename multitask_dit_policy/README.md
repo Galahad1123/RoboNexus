@@ -106,6 +106,12 @@ The external dataset must have the same FPS and policy input/output feature sche
 training dataset. Validation batches are normalized with training-dataset statistics.
 `--val_dataset_path` and a nonzero `--val_ratio` are intentionally mutually exclusive.
 
+To monitor a second, read-only cross-domain dataset without using it as the primary
+validation split, also pass `--probe_dataset_path`. Its loss is logged separately as
+`probe/loss`; `--probe_freq` and `--probe_batches` control its cost. For example, CALVIN
+ABC training can use an explicit ABC holdout as `val_dataset_path` and D as
+`probe_dataset_path`. Neither validation loader contributes gradients.
+
 For datasets whose episodes carry task metadata, training supports two sampling
 distributions:
 
