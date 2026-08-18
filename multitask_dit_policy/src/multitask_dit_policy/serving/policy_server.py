@@ -61,11 +61,17 @@ class PolicyServerWrapper:
         checkpoint_path: str | Path,
         device: str,
         default_replan_interval: int | None = None,
+        vision_pretrained_path: str | Path | None = None,
+        text_pretrained_path: str | Path | None = None,
     ) -> PolicyServerWrapper:
         from multitask_dit_policy.model.model import MultiTaskDiTPolicy
 
         checkpoint_path = Path(checkpoint_path).expanduser().resolve()
-        policy = MultiTaskDiTPolicy.load(checkpoint_path)
+        policy = MultiTaskDiTPolicy.load(
+            checkpoint_path,
+            vision_pretrained_path=vision_pretrained_path,
+            text_pretrained_path=text_pretrained_path,
+        )
         stats_path = checkpoint_path / "dataset_stats.json"
         if not stats_path.exists():
             raise FileNotFoundError(f"Missing training statistics: {stats_path}")
@@ -209,6 +215,14 @@ def main() -> None:
     parser.add_argument("--port", type=int, default=10093)
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--default-replan-interval", type=int)
+    parser.add_argument(
+        "--vision-pretrained-path",
+        help="override a stale machine-local vision pretrained_path stored in config.json",
+    )
+    parser.add_argument(
+        "--text-pretrained-path",
+        help="override a stale machine-local text pretrained_path stored in config.json",
+    )
     parser.add_argument("--pid-file", type=Path)
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, force=True)
@@ -221,6 +235,8 @@ def main() -> None:
             args.checkpoint,
             args.device,
             args.default_replan_interval,
+            vision_pretrained_path=args.vision_pretrained_path,
+            text_pretrained_path=args.text_pretrained_path,
         )
         asyncio.run(run_server(wrapper, args.host, args.port))
     finally:

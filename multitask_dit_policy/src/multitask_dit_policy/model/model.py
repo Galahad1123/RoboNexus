@@ -218,7 +218,11 @@ class MultiTaskDiTPolicy(nn.Module):
         save_model_as_safetensor(self, str(save_directory / "model.safetensors"))
 
     @staticmethod
-    def load(checkpoint_path: str | Path):
+    def load(
+        checkpoint_path: str | Path,
+        vision_pretrained_path: str | Path | None = None,
+        text_pretrained_path: str | Path | None = None,
+    ):
         path = Path(checkpoint_path)
 
         # Load config from JSON using draccus
@@ -229,6 +233,19 @@ class MultiTaskDiTPolicy(nn.Module):
         with draccus.config_type("json"):
             with open(config_file) as f:
                 config = draccus.load(MultiTaskDiTConfig, f)
+
+        # Checkpoints may move between machines whose local model caches live
+        # at different absolute paths. These overrides affect construction
+        # only; all learned encoder parameters are still restored from the
+        # checkpoint safetensors below.
+        if vision_pretrained_path is not None:
+            config.observation_encoder.vision.pretrained_path = str(
+                Path(vision_pretrained_path).expanduser()
+            )
+        if text_pretrained_path is not None:
+            config.observation_encoder.text.pretrained_path = str(
+                Path(text_pretrained_path).expanduser()
+            )
 
         model = MultiTaskDiTPolicy(config)
 

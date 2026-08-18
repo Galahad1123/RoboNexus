@@ -320,6 +320,26 @@ class SpecialistManifestTest(unittest.TestCase):
             {"official", "extended_backtracked"},
         )
 
+    def test_abc_manipulation_d_suite_uses_physical_validation_split(self):
+        suite = ConfiguredCalvinSuite(
+            WORKSPACE
+            / "datasets/calvin_abc_manipulation_13_clean/configs/evaluation_d.yaml"
+        )
+        self.assertEqual(suite.split, "d_validation")
+        self.assertEqual(suite.source_split, "validation")
+        self.assertEqual(len(suite.task_names()), 13)
+        self.assertEqual(len(suite.episodes("stack_block")), 2)
+        episodes = [
+            episode
+            for task in suite.task_names()
+            for episode in suite.episodes(task)
+        ]
+        self.assertEqual(len(episodes), 44)
+        self.assertTrue(all(episode.source_frame.is_file() for episode in episodes))
+        self.assertTrue(
+            all("task_ABC_D/validation" in str(episode.source_frame) for episode in episodes)
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -42,7 +42,19 @@ class ConfiguredCalvinSuite:
             self.config.get("source_dataset", self.manifest["source_dataset"])
         )
         self.split = self.config.get("split", "validation")
-        self.dataset_split = self.source_dataset / self.split
+        if self.split not in self.manifest["splits"]:
+            raise ValueError(
+                "Suite split {!r} is not present in manifest {}".format(
+                    self.split, self.manifest_path
+                )
+            )
+        split_config = self.manifest["splits"][self.split]
+        # A logical dataset split may be derived from another physical CALVIN
+        # directory. For example, ABC manifests expose ``d_validation`` while
+        # its NPZ files and simulator config live in the official
+        # ``validation`` directory.
+        self.source_split = split_config.get("source_split", self.split)
+        self.dataset_split = self.source_dataset / self.source_split
         self.tasks = {item["task"]: item for item in self.config["tasks"]}
         unknown = set(self.tasks) - {
             row["calvin_task"] for row in self.manifest["splits"][self.split]["segments"]
@@ -73,6 +85,19 @@ class ConfiguredCalvinSuite:
             for row in self.manifest["splits"][self.split]["segments"]
             if row["calvin_task"] == task
         ]
+        incompatible_sources = sorted(
+            {
+                row.get("source_split")
+                for row in rows
+                if row.get("source_split", self.source_split) != self.source_split
+            }
+        )
+        if incompatible_sources:
+            raise ValueError(
+                "Manifest rows for {} reference source splits {}, expected {}".format(
+                    task, incompatible_sources, self.source_split
+                )
+            )
         if episode_variants:
             rows = [
                 row for row in rows if row.get("episode_variant") in episode_variants
