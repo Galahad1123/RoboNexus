@@ -340,6 +340,28 @@ class SpecialistManifestTest(unittest.TestCase):
             all("task_ABC_D/validation" in str(episode.source_frame) for episode in episodes)
         )
 
+    def test_abc_general_d_suite_uses_clean_d_manifest(self):
+        suite = ConfiguredCalvinSuite(
+            WORKSPACE
+            / "datasets/calvin_abc_general_21_clean/configs/evaluation_d.yaml"
+        )
+        self.assertEqual(suite.split, "d_validation")
+        self.assertEqual(suite.source_split, "validation")
+        self.assertEqual(len(suite.task_names()), 21)
+        episodes = [
+            episode
+            for task in suite.task_names()
+            for episode in suite.episodes(task)
+        ]
+        self.assertEqual(len(episodes), 47)
+        self.assertTrue(all(episode.source_frame.is_file() for episode in episodes))
+        self.assertTrue(
+            all("task_ABC_D/validation" in str(episode.source_frame) for episode in episodes)
+        )
+        place = suite.episodes("place_in_drawer", count=1)[0]
+        self.assertEqual(place.instruction, "place the held block in the drawer")
+        self.assertEqual(place.success_guard["consecutive_steps"], 3)
+
 
 if __name__ == "__main__":
     unittest.main()

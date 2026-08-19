@@ -1,0 +1,37 @@
+version: 1
+name: calvin_abc_general_21_clean_d
+manifest: datasets/calvin_abc_general_21_clean/manifests/segments.json
+source_dataset: calvin/dataset/task_ABC_D
+split: d_validation
+oracle_config: calvin/calvin_models/conf/callbacks/rollout/tasks/new_playtable_tasks.yaml
+
+# Clean-RGB policy: evaluate without role-mask overlays.
+defaults:
+  max_steps: 150
+  settle_steps: 0
+
+tasks:
+  - {task: close_drawer, oracle_task: close_drawer, instruction: "close the drawer"}
+  - {task: lift_blue_block_drawer, oracle_task: lift_blue_block_drawer, instruction: "pick up the blue block from the drawer"}
+  - {task: lift_blue_block_slider, oracle_task: lift_blue_block_slider, instruction: "pick up the blue block from the sliding cabinet"}
+  - {task: lift_blue_block_table, oracle_task: lift_blue_block_table, instruction: "pick up the blue block from the table"}
+  - {task: lift_pink_block_drawer, oracle_task: lift_pink_block_drawer, instruction: "pick up the pink block from the drawer"}
+  - {task: lift_pink_block_slider, oracle_task: lift_pink_block_slider, instruction: "pick up the pink block from the sliding cabinet"}
+  - {task: lift_pink_block_table, oracle_task: lift_pink_block_table, instruction: "pick up the pink block from the table"}
+  - {task: lift_red_block_drawer, oracle_task: lift_red_block_drawer, instruction: "pick up the red block from the drawer"}
+  - {task: lift_red_block_slider, oracle_task: lift_red_block_slider, instruction: "pick up the red block from the sliding cabinet"}
+  - {task: lift_red_block_table, oracle_task: lift_red_block_table, instruction: "pick up the red block from the table"}
+  - {task: move_slider_left, oracle_task: move_slider_left, instruction: "move the sliding door to the left"}
+  - {task: move_slider_right, oracle_task: move_slider_right, instruction: "move the sliding door to the right"}
+  - {task: open_drawer, oracle_task: open_drawer, instruction: "open the drawer"}
+  - task: place_in_drawer
+    oracle_task: place_in_drawer
+    instruction: "place the held block in the drawer"
+    success_guard: &released {gripper: open, min_width_m: 0.04, consecutive_steps: 3}
+  - {task: place_in_slider, oracle_task: place_in_slider, instruction: "place the held block in the sliding cabinet", success_guard: *released}
+  - {task: push_into_drawer, oracle_task: push_into_drawer, instruction: "push the block into the drawer"}
+  - {task: turn_off_led, oracle_task: turn_off_led, instruction: "press the button to turn off the led"}
+  - {task: turn_off_lightbulb, oracle_task: turn_off_lightbulb, instruction: "move the switch to turn off the lightbulb"}
+  - {task: turn_on_led, oracle_task: turn_on_led, instruction: "press the button to turn on the led"}
+  - {task: turn_on_lightbulb, oracle_task: turn_on_lightbulb, instruction: "move the switch to turn on the lightbulb"}
+  - {task: unstack_block, oracle_task: unstack_block, instruction: "remove the top block from the stack"}
