@@ -1,0 +1,22 @@
+{
+  "subtask": "Place the red block inside the drawer and release it.",
+  "success_criteria": [
+    {
+      "criterion_id": "inside_drawer",
+      "description": "The red block is visibly inside the drawer rather than on the table or drawer edge.",
+      "required": true,
+      "evidence_source": "static",
+      "temporal_required": false
+    },
+    {
+      "criterion_id": "released",
+      "description": "The red block is visibly separated from and no longer held by the gripper.",
+      "required": true,
+      "evidence_source": "both",
+      "temporal_required": false
+    }
+  ],
+  "failure_conditions": [
+    "The red block has fallen outside the reachable workspace."
+  ]
+}
