@@ -1,0 +1,56 @@
+{
+  "parent_manifest": "datasets/calvin_abc_general_21_clean/manifests/segments.json",
+  "parent_image_mode": "clean_rgb",
+  "tasks_requested": [
+    "move_slider_left",
+    "move_slider_right",
+    "turn_off_led",
+    "turn_off_lightbulb",
+    "turn_on_led",
+    "turn_on_lightbulb"
+  ],
+  "checks": {
+    "training": {
+      "tasks_present": [
+        "move_slider_left",
+        "move_slider_right",
+        "turn_off_led",
+        "turn_off_lightbulb",
+        "turn_on_led",
+        "turn_on_lightbulb"
+      ],
+      "episodes": 2023,
+      "oracle_consistent": true,
+      "unique_segment_ids": true,
+      "source_boundary_frames_exist": true
+    },
+    "abc_validation": {
+      "tasks_present": [
+        "move_slider_left",
+        "move_slider_right",
+        "turn_off_led",
+        "turn_off_lightbulb",
+        "turn_on_led",
+        "turn_on_lightbulb"
+      ],
+      "episodes": 223,
+      "oracle_consistent": true,
+      "unique_segment_ids": true,
+      "source_boundary_frames_exist": true
+    },
+    "d_validation": {
+      "tasks_present": [
+        "move_slider_left",
+        "move_slider_right",
+        "turn_off_led",
+        "turn_off_lightbulb",
+        "turn_on_led",
+        "turn_on_lightbulb"
+      ],
+      "episodes": 12,
+      "oracle_consistent": true,
+      "unique_segment_ids": true,
+      "source_boundary_frames_exist": true
+    }
+  }
+}

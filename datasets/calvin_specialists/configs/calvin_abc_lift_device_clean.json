@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "parent_manifest": "datasets/calvin_abc_general_21_clean/manifests/segments.json",
+  "datasets": {
+    "calvin_abc_lift_9_clean": {
+      "tasks": [
+        "lift_blue_block_drawer",
+        "lift_blue_block_slider",
+        "lift_blue_block_table",
+        "lift_pink_block_drawer",
+        "lift_pink_block_slider",
+        "lift_pink_block_table",
+        "lift_red_block_drawer",
+        "lift_red_block_slider",
+        "lift_red_block_table"
+      ]
+    },
+    "calvin_abc_device_6_clean": {
+      "tasks": [
+        "move_slider_left",
+        "move_slider_right",
+        "turn_off_led",
+        "turn_off_lightbulb",
+        "turn_on_led",
+        "turn_on_lightbulb"
+      ]
+    }
+  }
+}

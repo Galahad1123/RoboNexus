@@ -1,0 +1,5106 @@
+[
+  {
+    "annotation_index": 6,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "grasp the door handle and slide the door to the left",
+    "start": 376,
+    "end": 440,
+    "num_frames": 65,
+    "original_start": 376,
+    "original_end": 440,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 7,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "move the door all the way to the left",
+    "start": 384,
+    "end": 448,
+    "num_frames": 65,
+    "original_start": 384,
+    "original_end": 448,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 135,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "grasp the door handle and slide the door to the left",
+    "start": 377,
+    "end": 441,
+    "num_frames": 65,
+    "original_start": 377,
+    "original_end": 441,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 136,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "move the door all the way to the left",
+    "start": 385,
+    "end": 449,
+    "num_frames": 65,
+    "original_start": 385,
+    "original_end": 449,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 272,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "grasp the door handle and slide the door to the left",
+    "start": 378,
+    "end": 442,
+    "num_frames": 65,
+    "original_start": 378,
+    "original_end": 442,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 273,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "move the door all the way to the left",
+    "start": 386,
+    "end": 450,
+    "num_frames": 65,
+    "original_start": 386,
+    "original_end": 450,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 409,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "grasp the door handle and slide the door to the left",
+    "start": 379,
+    "end": 443,
+    "num_frames": 65,
+    "original_start": 379,
+    "original_end": 443,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 548,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "move the door all the way to the left",
+    "start": 372,
+    "end": 436,
+    "num_frames": 65,
+    "original_start": 372,
+    "original_end": 436,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 549,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "move the door to the left",
+    "start": 380,
+    "end": 444,
+    "num_frames": 65,
+    "original_start": 380,
+    "original_end": 444,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 688,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "grasp the door handle and move the door to the left",
+    "start": 373,
+    "end": 437,
+    "num_frames": 65,
+    "original_start": 373,
+    "original_end": 437,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 689,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "push the door to the left",
+    "start": 381,
+    "end": 445,
+    "num_frames": 65,
+    "original_start": 381,
+    "original_end": 445,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 820,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "grasp the door handle and slide the door to the left",
+    "start": 374,
+    "end": 438,
+    "num_frames": 65,
+    "original_start": 374,
+    "original_end": 438,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 821,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "move the door to the left",
+    "start": 382,
+    "end": 446,
+    "num_frames": 65,
+    "original_start": 382,
+    "original_end": 446,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 963,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "push the sliding door to the left",
+    "start": 375,
+    "end": 439,
+    "num_frames": 65,
+    "original_start": 375,
+    "original_end": 439,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 964,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "grasp the door handle and slide the door to the left",
+    "start": 383,
+    "end": 447,
+    "num_frames": 65,
+    "original_start": 383,
+    "original_end": 447,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 36,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "grasp the door handle, then slide the door to the left",
+    "start": 1872,
+    "end": 1936,
+    "num_frames": 65,
+    "original_start": 1872,
+    "original_end": 1936,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 37,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "grasp the door handle, then move the door to the left",
+    "start": 1880,
+    "end": 1944,
+    "num_frames": 65,
+    "original_start": 1880,
+    "original_end": 1944,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 167,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "move the door to the left",
+    "start": 1873,
+    "end": 1937,
+    "num_frames": 65,
+    "original_start": 1873,
+    "original_end": 1937,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 168,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "push the sliding door to the left",
+    "start": 1881,
+    "end": 1945,
+    "num_frames": 65,
+    "original_start": 1881,
+    "original_end": 1945,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 303,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "slide the door all the way to the left",
+    "start": 1874,
+    "end": 1938,
+    "num_frames": 65,
+    "original_start": 1874,
+    "original_end": 1938,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 304,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "move the door all the way to the left",
+    "start": 1882,
+    "end": 1946,
+    "num_frames": 65,
+    "original_start": 1882,
+    "original_end": 1946,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 439,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "push the sliding door to the left",
+    "start": 1875,
+    "end": 1939,
+    "num_frames": 65,
+    "original_start": 1875,
+    "original_end": 1939,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 440,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "grasp the door handle, then slide the door to the left",
+    "start": 1883,
+    "end": 1947,
+    "num_frames": 65,
+    "original_start": 1883,
+    "original_end": 1947,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 579,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "slide the door all the way to the left",
+    "start": 1876,
+    "end": 1940,
+    "num_frames": 65,
+    "original_start": 1876,
+    "original_end": 1940,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 718,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "grasp the door handle and slide the door to the left",
+    "start": 1869,
+    "end": 1933,
+    "num_frames": 65,
+    "original_start": 1869,
+    "original_end": 1933,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 719,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "move the door all the way to the left",
+    "start": 1877,
+    "end": 1941,
+    "num_frames": 65,
+    "original_start": 1877,
+    "original_end": 1941,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 853,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "grasp the door handle, then slide the door to the left",
+    "start": 1870,
+    "end": 1934,
+    "num_frames": 65,
+    "original_start": 1870,
+    "original_end": 1934,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 854,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "grasp the door handle, then move the door to the left",
+    "start": 1878,
+    "end": 1942,
+    "num_frames": 65,
+    "original_start": 1878,
+    "original_end": 1942,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 994,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "push the door to the left side",
+    "start": 1871,
+    "end": 1935,
+    "num_frames": 65,
+    "original_start": 1871,
+    "original_end": 1935,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 995,
+    "calvin_task": "move_slider_left",
+    "original_instruction": "move the door to the left",
+    "start": 1879,
+    "end": 1943,
+    "num_frames": 65,
+    "original_start": 1879,
+    "original_end": 1943,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 30,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "move the door all the way to the right and let go",
+    "start": 1600,
+    "end": 1664,
+    "num_frames": 65,
+    "original_start": 1600,
+    "original_end": 1664,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 31,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "grasp the door handle and move the door to the right",
+    "start": 1608,
+    "end": 1672,
+    "num_frames": 65,
+    "original_start": 1608,
+    "original_end": 1672,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 161,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "grasp the door handle and slide the door to the right",
+    "start": 1601,
+    "end": 1665,
+    "num_frames": 65,
+    "original_start": 1601,
+    "original_end": 1665,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 162,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "slide the door all the way to the right",
+    "start": 1609,
+    "end": 1673,
+    "num_frames": 65,
+    "original_start": 1609,
+    "original_end": 1673,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 298,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "grasp the door handle and slide the door to the right",
+    "start": 1602,
+    "end": 1666,
+    "num_frames": 65,
+    "original_start": 1602,
+    "original_end": 1666,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 299,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "slide the door all the way to the right",
+    "start": 1610,
+    "end": 1674,
+    "num_frames": 65,
+    "original_start": 1610,
+    "original_end": 1674,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 435,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "move the door all the way to the right and let go",
+    "start": 1603,
+    "end": 1667,
+    "num_frames": 65,
+    "original_start": 1603,
+    "original_end": 1667,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 573,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "push the door to the right",
+    "start": 1596,
+    "end": 1660,
+    "num_frames": 65,
+    "original_start": 1596,
+    "original_end": 1660,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 574,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "move the door to the right",
+    "start": 1604,
+    "end": 1668,
+    "num_frames": 65,
+    "original_start": 1604,
+    "original_end": 1668,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 712,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "move the door to the right",
+    "start": 1597,
+    "end": 1661,
+    "num_frames": 65,
+    "original_start": 1597,
+    "original_end": 1661,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 713,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "grasp the door handle, then slide the door to the right",
+    "start": 1605,
+    "end": 1669,
+    "num_frames": 65,
+    "original_start": 1605,
+    "original_end": 1669,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 847,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "slide the door to the right side",
+    "start": 1598,
+    "end": 1662,
+    "num_frames": 65,
+    "original_start": 1598,
+    "original_end": 1662,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 848,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "push the door to the right",
+    "start": 1606,
+    "end": 1670,
+    "num_frames": 65,
+    "original_start": 1606,
+    "original_end": 1670,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 988,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "push the door to the right",
+    "start": 1599,
+    "end": 1663,
+    "num_frames": 65,
+    "original_start": 1599,
+    "original_end": 1663,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 989,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "move the door to the right",
+    "start": 1607,
+    "end": 1671,
+    "num_frames": 65,
+    "original_start": 1607,
+    "original_end": 1671,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 66,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "grasp the door handle, then slide the door to the right",
+    "start": 3560,
+    "end": 3624,
+    "num_frames": 65,
+    "original_start": 3560,
+    "original_end": 3624,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "source_object": null,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_holding_object"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 67,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "push the sliding door to the right",
+    "start": 3568,
+    "end": 3632,
+    "num_frames": 65,
+    "original_start": 3568,
+    "original_end": 3632,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 199,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "move the door all the way to the right and let go",
+    "start": 3561,
+    "end": 3625,
+    "num_frames": 65,
+    "original_start": 3561,
+    "original_end": 3625,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "source_object": null,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_holding_object"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 200,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "grasp the door handle and slide the door to the right",
+    "start": 3569,
+    "end": 3633,
+    "num_frames": 65,
+    "original_start": 3569,
+    "original_end": 3633,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 335,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "push the door to the right",
+    "start": 3562,
+    "end": 3626,
+    "num_frames": 65,
+    "original_start": 3562,
+    "original_end": 3626,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "source_object": null,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_holding_object"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 336,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "slide the door to the right, then let it go",
+    "start": 3570,
+    "end": 3634,
+    "num_frames": 65,
+    "original_start": 3570,
+    "original_end": 3634,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 472,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "move the door all the way to the right and let go",
+    "start": 3563,
+    "end": 3627,
+    "num_frames": 65,
+    "original_start": 3563,
+    "original_end": 3627,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "source_object": null,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_holding_object"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 473,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "move the door all the way to the right and let go",
+    "start": 3571,
+    "end": 3635,
+    "num_frames": 65,
+    "original_start": 3571,
+    "original_end": 3635,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 613,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "push the sliding door to the right",
+    "start": 3564,
+    "end": 3628,
+    "num_frames": 65,
+    "original_start": 3564,
+    "original_end": 3628,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "source_object": null,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_holding_object"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 614,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "push the sliding door to the right",
+    "start": 3572,
+    "end": 3636,
+    "num_frames": 65,
+    "original_start": 3572,
+    "original_end": 3636,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 747,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "push the sliding door to the right",
+    "start": 3565,
+    "end": 3629,
+    "num_frames": 65,
+    "original_start": 3565,
+    "original_end": 3629,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "source_object": null,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_holding_object"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 748,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "slide the door to the right, then let it go",
+    "start": 3573,
+    "end": 3637,
+    "num_frames": 65,
+    "original_start": 3573,
+    "original_end": 3637,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 883,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "slide the door to the right, then let it go",
+    "start": 3566,
+    "end": 3630,
+    "num_frames": 65,
+    "original_start": 3566,
+    "original_end": 3630,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "source_object": null,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_holding_object"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 884,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "move the door to the right side",
+    "start": 3574,
+    "end": 3638,
+    "num_frames": 65,
+    "original_start": 3574,
+    "original_end": 3638,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 1027,
+    "calvin_task": "move_slider_right",
+    "original_instruction": "grasp the door handle, then slide the door to the right",
+    "start": 3567,
+    "end": 3631,
+    "num_frames": 65,
+    "original_start": 3567,
+    "original_end": 3631,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "slide_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 19,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "turn off the led lamp",
+    "start": 904,
+    "end": 968,
+    "num_frames": 65,
+    "original_start": 904,
+    "original_end": 968,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 20,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "push down the button to turn off the green light",
+    "start": 912,
+    "end": 976,
+    "num_frames": 65,
+    "original_start": 912,
+    "original_end": 976,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 149,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "turn off the led lamp",
+    "start": 905,
+    "end": 969,
+    "num_frames": 65,
+    "original_start": 905,
+    "original_end": 969,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 150,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "turn off the led light",
+    "start": 913,
+    "end": 977,
+    "num_frames": 65,
+    "original_start": 913,
+    "original_end": 977,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 285,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "turn off the led light",
+    "start": 906,
+    "end": 970,
+    "num_frames": 65,
+    "original_start": 906,
+    "original_end": 970,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 286,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "turn off the led lamp",
+    "start": 914,
+    "end": 978,
+    "num_frames": 65,
+    "original_start": 914,
+    "original_end": 978,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 422,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "turn off the led light",
+    "start": 907,
+    "end": 971,
+    "num_frames": 65,
+    "original_start": 907,
+    "original_end": 971,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 423,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "turn off the green lamp",
+    "start": 915,
+    "end": 979,
+    "num_frames": 65,
+    "original_start": 915,
+    "original_end": 979,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 562,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "turn off the led light",
+    "start": 908,
+    "end": 972,
+    "num_frames": 65,
+    "original_start": 908,
+    "original_end": 972,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 700,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "push down the button to turn off the green light",
+    "start": 901,
+    "end": 965,
+    "num_frames": 65,
+    "original_start": 901,
+    "original_end": 965,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 701,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "push the button to turn off the green light",
+    "start": 909,
+    "end": 973,
+    "num_frames": 65,
+    "original_start": 909,
+    "original_end": 973,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 833,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "turn off the led light",
+    "start": 902,
+    "end": 966,
+    "num_frames": 65,
+    "original_start": 902,
+    "original_end": 966,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 834,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "push down the button to turn off the green light",
+    "start": 910,
+    "end": 974,
+    "num_frames": 65,
+    "original_start": 910,
+    "original_end": 974,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 976,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "push the button to turn off the green light",
+    "start": 903,
+    "end": 967,
+    "num_frames": 65,
+    "original_start": 903,
+    "original_end": 967,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 977,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "turn off the led light",
+    "start": 911,
+    "end": 975,
+    "num_frames": 65,
+    "original_start": 911,
+    "original_end": 975,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 52,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "toggle the button to turn off the led light",
+    "start": 3120,
+    "end": 3184,
+    "num_frames": 65,
+    "original_start": 3120,
+    "original_end": 3184,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "source_object": null,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_holding_object"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 185,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "toggle the button to turn off the green light",
+    "start": 3113,
+    "end": 3177,
+    "num_frames": 65,
+    "original_start": 3113,
+    "original_end": 3177,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "source_object": null,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_holding_object"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 186,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "push down the button to turn off the led light",
+    "start": 3121,
+    "end": 3185,
+    "num_frames": 65,
+    "original_start": 3121,
+    "original_end": 3185,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "source_object": null,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_holding_object"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 320,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "turn off the led light",
+    "start": 3114,
+    "end": 3178,
+    "num_frames": 65,
+    "original_start": 3114,
+    "original_end": 3178,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "source_object": null,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_holding_object"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 321,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "turn off the led light",
+    "start": 3122,
+    "end": 3186,
+    "num_frames": 65,
+    "original_start": 3122,
+    "original_end": 3186,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 456,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "toggle the button to turn off the green light",
+    "start": 3115,
+    "end": 3179,
+    "num_frames": 65,
+    "original_start": 3115,
+    "original_end": 3179,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "source_object": null,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_holding_object"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 457,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "toggle the button to turn off the green light",
+    "start": 3123,
+    "end": 3187,
+    "num_frames": 65,
+    "original_start": 3123,
+    "original_end": 3187,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 597,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "toggle the button to turn off the led light",
+    "start": 3116,
+    "end": 3180,
+    "num_frames": 65,
+    "original_start": 3116,
+    "original_end": 3180,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "source_object": null,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_holding_object"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 598,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "toggle the button to turn off the green light",
+    "start": 3124,
+    "end": 3188,
+    "num_frames": 65,
+    "original_start": 3124,
+    "original_end": 3188,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 734,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "turn off the green lamp",
+    "start": 3117,
+    "end": 3181,
+    "num_frames": 65,
+    "original_start": 3117,
+    "original_end": 3181,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "source_object": null,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_holding_object"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 735,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "turn off the led light",
+    "start": 3125,
+    "end": 3189,
+    "num_frames": 65,
+    "original_start": 3125,
+    "original_end": 3189,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 868,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "turn off the led light",
+    "start": 3118,
+    "end": 3182,
+    "num_frames": 65,
+    "original_start": 3118,
+    "original_end": 3182,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "source_object": null,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_holding_object"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 869,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "toggle the button to turn off the led light",
+    "start": 3126,
+    "end": 3190,
+    "num_frames": 65,
+    "original_start": 3126,
+    "original_end": 3190,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 1012,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "toggle the button to turn off the green light",
+    "start": 3119,
+    "end": 3183,
+    "num_frames": 65,
+    "original_start": 3119,
+    "original_end": 3183,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [
+      "block_pink"
+    ],
+    "source_object": null,
+    "oracle_consistent": false,
+    "rejection_reasons": [
+      "initially_holding_object"
+    ],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 1013,
+    "calvin_task": "turn_off_led",
+    "original_instruction": "toggle the button to turn off the green light",
+    "start": 3127,
+    "end": 3191,
+    "num_frames": 65,
+    "original_start": 3127,
+    "original_end": 3191,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 29,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "move down the switch",
+    "start": 1488,
+    "end": 1552,
+    "num_frames": 65,
+    "original_start": 1488,
+    "original_end": 1552,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 159,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "move down the switch",
+    "start": 1481,
+    "end": 1545,
+    "num_frames": 65,
+    "original_start": 1481,
+    "original_end": 1545,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 160,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "toggle the light switch to turn off the yellow light",
+    "start": 1489,
+    "end": 1553,
+    "num_frames": 65,
+    "original_start": 1489,
+    "original_end": 1553,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 296,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "move down the switch",
+    "start": 1482,
+    "end": 1546,
+    "num_frames": 65,
+    "original_start": 1482,
+    "original_end": 1546,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 297,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "toggle the light switch to turn off the yellow light",
+    "start": 1490,
+    "end": 1554,
+    "num_frames": 65,
+    "original_start": 1490,
+    "original_end": 1554,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 433,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "move the light switch to turn off the yellow light",
+    "start": 1483,
+    "end": 1547,
+    "num_frames": 65,
+    "original_start": 1483,
+    "original_end": 1547,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 434,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "turn off the light bulb",
+    "start": 1491,
+    "end": 1555,
+    "num_frames": 65,
+    "original_start": 1491,
+    "original_end": 1555,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 571,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "move down the switch",
+    "start": 1484,
+    "end": 1548,
+    "num_frames": 65,
+    "original_start": 1484,
+    "original_end": 1548,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 572,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "toggle the light switch to turn off the yellow light",
+    "start": 1492,
+    "end": 1556,
+    "num_frames": 65,
+    "original_start": 1492,
+    "original_end": 1556,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 710,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "move the light switch to turn off the yellow light",
+    "start": 1485,
+    "end": 1549,
+    "num_frames": 65,
+    "original_start": 1485,
+    "original_end": 1549,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 711,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "slide down the switch",
+    "start": 1493,
+    "end": 1557,
+    "num_frames": 65,
+    "original_start": 1493,
+    "original_end": 1557,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 845,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "push the switch downwards",
+    "start": 1486,
+    "end": 1550,
+    "num_frames": 65,
+    "original_start": 1486,
+    "original_end": 1550,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 846,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "move down the switch",
+    "start": 1494,
+    "end": 1558,
+    "num_frames": 65,
+    "original_start": 1494,
+    "original_end": 1558,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 986,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "move down the switch",
+    "start": 1487,
+    "end": 1551,
+    "num_frames": 65,
+    "original_start": 1487,
+    "original_end": 1551,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 987,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "toggle the light switch to turn off the yellow light",
+    "start": 1495,
+    "end": 1559,
+    "num_frames": 65,
+    "original_start": 1495,
+    "original_end": 1559,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 70,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "turn off the yellow light",
+    "start": 3976,
+    "end": 4040,
+    "num_frames": 65,
+    "original_start": 3976,
+    "original_end": 4040,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 71,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "toggle the light switch to turn off the yellow light",
+    "start": 3984,
+    "end": 4048,
+    "num_frames": 65,
+    "original_start": 3984,
+    "original_end": 4048,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 203,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "turn off the yellow lamp",
+    "start": 3977,
+    "end": 4041,
+    "num_frames": 65,
+    "original_start": 3977,
+    "original_end": 4041,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 204,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "toggle the light switch to turn off the yellow light",
+    "start": 3985,
+    "end": 4049,
+    "num_frames": 65,
+    "original_start": 3985,
+    "original_end": 4049,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 338,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "toggle the light switch to turn off the light bulb",
+    "start": 3978,
+    "end": 4042,
+    "num_frames": 65,
+    "original_start": 3978,
+    "original_end": 4042,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 339,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "turn off the yellow light",
+    "start": 3986,
+    "end": 4050,
+    "num_frames": 65,
+    "original_start": 3986,
+    "original_end": 4050,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 476,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "turn off the yellow lamp",
+    "start": 3979,
+    "end": 4043,
+    "num_frames": 65,
+    "original_start": 3979,
+    "original_end": 4043,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 617,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "turn off the yellow light",
+    "start": 3972,
+    "end": 4036,
+    "num_frames": 65,
+    "original_start": 3972,
+    "original_end": 4036,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 618,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "toggle the light switch to turn off the yellow light",
+    "start": 3980,
+    "end": 4044,
+    "num_frames": 65,
+    "original_start": 3980,
+    "original_end": 4044,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 751,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "toggle the light switch to turn off the light bulb",
+    "start": 3973,
+    "end": 4037,
+    "num_frames": 65,
+    "original_start": 3973,
+    "original_end": 4037,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 752,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "push the switch downwards",
+    "start": 3981,
+    "end": 4045,
+    "num_frames": 65,
+    "original_start": 3981,
+    "original_end": 4045,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 888,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "toggle the light switch to turn off the light bulb",
+    "start": 3974,
+    "end": 4038,
+    "num_frames": 65,
+    "original_start": 3974,
+    "original_end": 4038,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 889,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "turn off the yellow light",
+    "start": 3982,
+    "end": 4046,
+    "num_frames": 65,
+    "original_start": 3982,
+    "original_end": 4046,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 1030,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "turn off the yellow light",
+    "start": 3975,
+    "end": 4039,
+    "num_frames": 65,
+    "original_start": 3975,
+    "original_end": 4039,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 1031,
+    "calvin_task": "turn_off_lightbulb",
+    "original_instruction": "toggle the light switch to turn off the yellow light",
+    "start": 3983,
+    "end": 4047,
+    "num_frames": 65,
+    "original_start": 3983,
+    "original_end": 4047,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 2,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "toggle the button to turn on the led light",
+    "start": 152,
+    "end": 216,
+    "num_frames": 65,
+    "original_start": 152,
+    "original_end": 216,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 3,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "push down the button to turn on the led light",
+    "start": 160,
+    "end": 224,
+    "num_frames": 65,
+    "original_start": 160,
+    "original_end": 224,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 131,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "toggle the button to turn on the led light",
+    "start": 153,
+    "end": 217,
+    "num_frames": 65,
+    "original_start": 153,
+    "original_end": 217,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 132,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "push down the button to turn on the led light",
+    "start": 161,
+    "end": 225,
+    "num_frames": 65,
+    "original_start": 161,
+    "original_end": 225,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 268,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "toggle the button to turn on the led light",
+    "start": 154,
+    "end": 218,
+    "num_frames": 65,
+    "original_start": 154,
+    "original_end": 218,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 269,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "push down the button to turn on the led light",
+    "start": 162,
+    "end": 226,
+    "num_frames": 65,
+    "original_start": 162,
+    "original_end": 226,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 406,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "toggle the button to turn on the led light",
+    "start": 155,
+    "end": 219,
+    "num_frames": 65,
+    "original_start": 155,
+    "original_end": 219,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 544,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "push down the button to turn on the green light",
+    "start": 148,
+    "end": 212,
+    "num_frames": 65,
+    "original_start": 148,
+    "original_end": 212,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 545,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "toggle the button to turn on the green light",
+    "start": 156,
+    "end": 220,
+    "num_frames": 65,
+    "original_start": 156,
+    "original_end": 220,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 684,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "turn on the green lamp",
+    "start": 149,
+    "end": 213,
+    "num_frames": 65,
+    "original_start": 149,
+    "original_end": 213,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 685,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "push down the button to turn on the green light",
+    "start": 157,
+    "end": 221,
+    "num_frames": 65,
+    "original_start": 157,
+    "original_end": 221,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 817,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "turn on the green lamp",
+    "start": 150,
+    "end": 214,
+    "num_frames": 65,
+    "original_start": 150,
+    "original_end": 214,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 818,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "push down the button to turn on the green light",
+    "start": 158,
+    "end": 222,
+    "num_frames": 65,
+    "original_start": 158,
+    "original_end": 222,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 959,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "turn on the green lamp",
+    "start": 151,
+    "end": 215,
+    "num_frames": 65,
+    "original_start": 151,
+    "original_end": 215,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 960,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "push down the button to turn on the green light",
+    "start": 159,
+    "end": 223,
+    "num_frames": 65,
+    "original_start": 159,
+    "original_end": 223,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 34,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "turn on the led light",
+    "start": 1776,
+    "end": 1840,
+    "num_frames": 65,
+    "original_start": 1776,
+    "original_end": 1840,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 35,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "turn on the green light",
+    "start": 1784,
+    "end": 1848,
+    "num_frames": 65,
+    "original_start": 1784,
+    "original_end": 1848,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 165,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "push down the button to turn on the led",
+    "start": 1777,
+    "end": 1841,
+    "num_frames": 65,
+    "original_start": 1777,
+    "original_end": 1841,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 166,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "turn on the led lamp",
+    "start": 1785,
+    "end": 1849,
+    "num_frames": 65,
+    "original_start": 1785,
+    "original_end": 1849,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 302,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "push down the button to turn on the led",
+    "start": 1778,
+    "end": 1842,
+    "num_frames": 65,
+    "original_start": 1778,
+    "original_end": 1842,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 437,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "turn on the led",
+    "start": 1771,
+    "end": 1835,
+    "num_frames": 65,
+    "original_start": 1771,
+    "original_end": 1835,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 438,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "turn on the led light",
+    "start": 1779,
+    "end": 1843,
+    "num_frames": 65,
+    "original_start": 1779,
+    "original_end": 1843,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 577,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "toggle the button to turn on the led light",
+    "start": 1772,
+    "end": 1836,
+    "num_frames": 65,
+    "original_start": 1772,
+    "original_end": 1836,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 578,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "push down the button to turn on the led",
+    "start": 1780,
+    "end": 1844,
+    "num_frames": 65,
+    "original_start": 1780,
+    "original_end": 1844,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 716,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "push down the button to turn on the led light",
+    "start": 1773,
+    "end": 1837,
+    "num_frames": 65,
+    "original_start": 1773,
+    "original_end": 1837,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 717,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "push down the button to turn on the green light",
+    "start": 1781,
+    "end": 1845,
+    "num_frames": 65,
+    "original_start": 1781,
+    "original_end": 1845,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 851,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "turn on the led light",
+    "start": 1774,
+    "end": 1838,
+    "num_frames": 65,
+    "original_start": 1774,
+    "original_end": 1838,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 852,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "turn on the green light",
+    "start": 1782,
+    "end": 1846,
+    "num_frames": 65,
+    "original_start": 1782,
+    "original_end": 1846,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 992,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "toggle the button to turn on the led light",
+    "start": 1775,
+    "end": 1839,
+    "num_frames": 65,
+    "original_start": 1775,
+    "original_end": 1839,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 993,
+    "calvin_task": "turn_on_led",
+    "original_instruction": "push down the button to turn on the led",
+    "start": 1783,
+    "end": 1847,
+    "num_frames": 65,
+    "original_start": 1783,
+    "original_end": 1847,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "button_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 17,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "turn on the light bulb",
+    "start": 860,
+    "end": 896,
+    "num_frames": 37,
+    "original_start": 860,
+    "original_end": 896,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 18,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "move the light switch to turn on the light bulb",
+    "start": 864,
+    "end": 904,
+    "num_frames": 41,
+    "original_start": 864,
+    "original_end": 904,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 147,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "move the light switch to turn on the yellow light",
+    "start": 855,
+    "end": 897,
+    "num_frames": 43,
+    "original_start": 855,
+    "original_end": 897,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 148,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "turn on the light bulb",
+    "start": 864,
+    "end": 905,
+    "num_frames": 42,
+    "original_start": 864,
+    "original_end": 905,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 283,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "move the light switch to turn on the yellow light",
+    "start": 850,
+    "end": 898,
+    "num_frames": 49,
+    "original_start": 850,
+    "original_end": 898,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 284,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "move the light switch to turn on the yellow light",
+    "start": 864,
+    "end": 906,
+    "num_frames": 43,
+    "original_start": 864,
+    "original_end": 906,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 420,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "toggle the light switch to turn on the light bulb",
+    "start": 859,
+    "end": 899,
+    "num_frames": 41,
+    "original_start": 859,
+    "original_end": 899,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 421,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "toggle the light switch to turn on the light bulb",
+    "start": 859,
+    "end": 907,
+    "num_frames": 49,
+    "original_start": 859,
+    "original_end": 907,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 560,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "toggle the light switch to turn on the light bulb",
+    "start": 860,
+    "end": 900,
+    "num_frames": 41,
+    "original_start": 860,
+    "original_end": 900,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 561,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "toggle the light switch to turn on the light bulb",
+    "start": 860,
+    "end": 908,
+    "num_frames": 49,
+    "original_start": 860,
+    "original_end": 908,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 698,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "move the light switch to turn on the yellow light",
+    "start": 861,
+    "end": 901,
+    "num_frames": 41,
+    "original_start": 861,
+    "original_end": 901,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 699,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "turn on the light bulb",
+    "start": 873,
+    "end": 909,
+    "num_frames": 37,
+    "original_start": 873,
+    "original_end": 909,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 832,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "move the light switch to turn on the yellow light",
+    "start": 862,
+    "end": 902,
+    "num_frames": 41,
+    "original_start": 862,
+    "original_end": 902,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 974,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "move the light switch to turn on the yellow light",
+    "start": 855,
+    "end": 895,
+    "num_frames": 41,
+    "original_start": 855,
+    "original_end": 895,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 975,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "turn on the light bulb",
+    "start": 867,
+    "end": 903,
+    "num_frames": 37,
+    "original_start": 867,
+    "original_end": 903,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 38,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "push the switch upwards",
+    "start": 1960,
+    "end": 2024,
+    "num_frames": 65,
+    "original_start": 1960,
+    "original_end": 2024,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 39,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "toggle the light switch to turn on the yellow light",
+    "start": 1968,
+    "end": 2032,
+    "num_frames": 65,
+    "original_start": 1968,
+    "original_end": 2032,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 169,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "move the light switch to turn on the light bulb",
+    "start": 1961,
+    "end": 2025,
+    "num_frames": 65,
+    "original_start": 1961,
+    "original_end": 2025,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 170,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "move the light switch to turn on the light bulb",
+    "start": 1969,
+    "end": 2033,
+    "num_frames": 65,
+    "original_start": 1969,
+    "original_end": 2033,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 305,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "slide up the switch",
+    "start": 1962,
+    "end": 2026,
+    "num_frames": 65,
+    "original_start": 1962,
+    "original_end": 2026,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 306,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "move the light switch to turn on the light bulb",
+    "start": 1970,
+    "end": 2034,
+    "num_frames": 65,
+    "original_start": 1970,
+    "original_end": 2034,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 441,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "move up the switch",
+    "start": 1963,
+    "end": 2027,
+    "num_frames": 65,
+    "original_start": 1963,
+    "original_end": 2027,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 442,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "toggle the light switch to turn on the light bulb",
+    "start": 1971,
+    "end": 2035,
+    "num_frames": 65,
+    "original_start": 1971,
+    "original_end": 2035,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 580,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "slide up the switch",
+    "start": 1964,
+    "end": 2028,
+    "num_frames": 65,
+    "original_start": 1964,
+    "original_end": 2028,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 581,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "move the light switch to turn on the light bulb",
+    "start": 1972,
+    "end": 2036,
+    "num_frames": 65,
+    "original_start": 1972,
+    "original_end": 2036,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 720,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "turn on the light bulb",
+    "start": 1965,
+    "end": 2029,
+    "num_frames": 65,
+    "original_start": 1965,
+    "original_end": 2029,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 855,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "push the switch upwards",
+    "start": 1958,
+    "end": 2022,
+    "num_frames": 65,
+    "original_start": 1958,
+    "original_end": 2022,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 856,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "toggle the light switch to turn on the yellow light",
+    "start": 1966,
+    "end": 2030,
+    "num_frames": 65,
+    "original_start": 1966,
+    "original_end": 2030,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 996,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "slide up the switch",
+    "start": 1959,
+    "end": 2023,
+    "num_frames": 65,
+    "original_start": 1959,
+    "original_end": 2023,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  },
+  {
+    "annotation_index": 997,
+    "calvin_task": "turn_on_lightbulb",
+    "original_instruction": "move the light switch to turn on the light bulb",
+    "start": 1967,
+    "end": 2031,
+    "num_frames": 65,
+    "original_start": 1967,
+    "original_end": 2031,
+    "start_extension_frames": 0,
+    "end_extension_frames": 0,
+    "initial_held_objects": [],
+    "source_object": null,
+    "oracle_consistent": true,
+    "rejection_reasons": [],
+    "mask_roles": {
+      "target": [
+        {
+          "fixed": "table",
+          "links": [
+            "switch_link"
+          ]
+        }
+      ]
+    },
+    "environment": "D",
+    "source_split": "validation"
+  }
+]

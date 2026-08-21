@@ -1,0 +1,141 @@
+{
+  "training": {
+    "dataset": "calvin_abc_device_6_clean",
+    "split": "training",
+    "episodes": 2023,
+    "frames": 122428,
+    "by_task": {
+      "move_slider_left": 350,
+      "move_slider_right": 361,
+      "turn_off_led": 331,
+      "turn_off_lightbulb": 332,
+      "turn_on_led": 326,
+      "turn_on_lightbulb": 323
+    },
+    "by_environment": {
+      "A": 715,
+      "B": 615,
+      "C": 693
+    },
+    "by_task_environment": {
+      "move_slider_left": {
+        "A": 108,
+        "B": 124,
+        "C": 118
+      },
+      "move_slider_right": {
+        "A": 128,
+        "B": 95,
+        "C": 138
+      },
+      "turn_off_led": {
+        "A": 116,
+        "B": 112,
+        "C": 103
+      },
+      "turn_off_lightbulb": {
+        "A": 135,
+        "B": 82,
+        "C": 115
+      },
+      "turn_on_led": {
+        "A": 108,
+        "B": 117,
+        "C": 101
+      },
+      "turn_on_lightbulb": {
+        "A": 120,
+        "B": 85,
+        "C": 118
+      }
+    }
+  },
+  "abc_validation": {
+    "dataset": "calvin_abc_device_6_clean",
+    "split": "abc_validation",
+    "episodes": 223,
+    "frames": 13552,
+    "by_task": {
+      "move_slider_left": 39,
+      "move_slider_right": 39,
+      "turn_off_led": 36,
+      "turn_off_lightbulb": 37,
+      "turn_on_led": 36,
+      "turn_on_lightbulb": 36
+    },
+    "by_environment": {
+      "A": 79,
+      "B": 68,
+      "C": 76
+    },
+    "by_task_environment": {
+      "move_slider_left": {
+        "A": 12,
+        "B": 14,
+        "C": 13
+      },
+      "move_slider_right": {
+        "A": 14,
+        "B": 10,
+        "C": 15
+      },
+      "turn_off_led": {
+        "A": 13,
+        "B": 12,
+        "C": 11
+      },
+      "turn_off_lightbulb": {
+        "A": 15,
+        "B": 9,
+        "C": 13
+      },
+      "turn_on_led": {
+        "A": 12,
+        "B": 13,
+        "C": 11
+      },
+      "turn_on_lightbulb": {
+        "A": 13,
+        "B": 10,
+        "C": 13
+      }
+    }
+  },
+  "d_validation": {
+    "dataset": "calvin_abc_device_6_clean",
+    "split": "d_validation",
+    "episodes": 12,
+    "frames": 752,
+    "by_task": {
+      "move_slider_left": 2,
+      "move_slider_right": 2,
+      "turn_off_led": 2,
+      "turn_off_lightbulb": 2,
+      "turn_on_led": 2,
+      "turn_on_lightbulb": 2
+    },
+    "by_environment": {
+      "D": 12
+    },
+    "by_task_environment": {
+      "move_slider_left": {
+        "D": 2
+      },
+      "move_slider_right": {
+        "D": 2
+      },
+      "turn_off_led": {
+        "D": 2
+      },
+      "turn_off_lightbulb": {
+        "D": 2
+      },
+      "turn_on_led": {
+        "D": 2
+      },
+      "turn_on_lightbulb": {
+        "D": 2
+      }
+    }
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "training": {
+    "dataset": "calvin_abc_lift_9_clean",
+    "split": "training",
+    "episodes": 1139,
+    "frames": 69620,
+    "by_task": {
+      "lift_blue_block_drawer": 149,
+      "lift_blue_block_slider": 115,
+      "lift_blue_block_table": 153,
+      "lift_pink_block_drawer": 185,
+      "lift_pink_block_slider": 102,
+      "lift_pink_block_table": 182,
+      "lift_red_block_drawer": 91,
+      "lift_red_block_slider": 53,
+      "lift_red_block_table": 109
+    },
+    "by_environment": {
+      "A": 197,
+      "B": 674,
+      "C": 268
+    },
+    "by_task_environment": {
+      "lift_blue_block_drawer": {
+        "A": 79,
+        "B": 70
+      },
+      "lift_blue_block_slider": {
+        "A": 60,
+        "B": 55
+      },
+      "lift_blue_block_table": {
+        "A": 58,
+        "B": 95
+      },
+      "lift_pink_block_drawer": {
+        "B": 73,
+        "C": 112
+      },
+      "lift_pink_block_slider": {
+        "B": 48,
+        "C": 54
+      },
+      "lift_pink_block_table": {
+        "B": 80,
+        "C": 102
+      },
+      "lift_red_block_drawer": {
+        "B": 91
+      },
+      "lift_red_block_slider": {
+        "B": 53
+      },
+      "lift_red_block_table": {
+        "B": 109
+      }
+    }
+  },
+  "abc_validation": {
+    "dataset": "calvin_abc_lift_9_clean",
+    "split": "abc_validation",
+    "episodes": 125,
+    "frames": 7611,
+    "by_task": {
+      "lift_blue_block_drawer": 17,
+      "lift_blue_block_slider": 13,
+      "lift_blue_block_table": 16,
+      "lift_pink_block_drawer": 20,
+      "lift_pink_block_slider": 11,
+      "lift_pink_block_table": 20,
+      "lift_red_block_drawer": 10,
+      "lift_red_block_slider": 6,
+      "lift_red_block_table": 12
+    },
+    "by_environment": {
+      "A": 22,
+      "B": 74,
+      "C": 29
+    },
+    "by_task_environment": {
+      "lift_blue_block_drawer": {
+        "A": 9,
+        "B": 8
+      },
+      "lift_blue_block_slider": {
+        "A": 7,
+        "B": 6
+      },
+      "lift_blue_block_table": {
+        "A": 6,
+        "B": 10
+      },
+      "lift_pink_block_drawer": {
+        "B": 8,
+        "C": 12
+      },
+      "lift_pink_block_slider": {
+        "B": 5,
+        "C": 6
+      },
+      "lift_pink_block_table": {
+        "B": 9,
+        "C": 11
+      },
+      "lift_red_block_drawer": {
+        "B": 10
+      },
+      "lift_red_block_slider": {
+        "B": 6
+      },
+      "lift_red_block_table": {
+        "B": 12
+      }
+    }
+  },
+  "d_validation": {
+    "dataset": "calvin_abc_lift_9_clean",
+    "split": "d_validation",
+    "episodes": 18,
+    "frames": 1117,
+    "by_task": {
+      "lift_blue_block_drawer": 2,
+      "lift_blue_block_slider": 2,
+      "lift_blue_block_table": 2,
+      "lift_pink_block_drawer": 2,
+      "lift_pink_block_slider": 2,
+      "lift_pink_block_table": 2,
+      "lift_red_block_drawer": 2,
+      "lift_red_block_slider": 2,
+      "lift_red_block_table": 2
+    },
+    "by_environment": {
+      "D": 18
+    },
+    "by_task_environment": {
+      "lift_blue_block_drawer": {
+        "D": 2
+      },
+      "lift_blue_block_slider": {
+        "D": 2
+      },
+      "lift_blue_block_table": {
+        "D": 2
+      },
+      "lift_pink_block_drawer": {
+        "D": 2
+      },
+      "lift_pink_block_slider": {
+        "D": 2
+      },
+      "lift_pink_block_table": {
+        "D": 2
+      },
+      "lift_red_block_drawer": {
+        "D": 2
+      },
+      "lift_red_block_slider": {
+        "D": 2
+      },
+      "lift_red_block_table": {
+        "D": 2
+      }
+    }
+  }
+}

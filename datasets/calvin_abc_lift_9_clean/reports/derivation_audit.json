@@ -1,0 +1,68 @@
+{
+  "parent_manifest": "datasets/calvin_abc_general_21_clean/manifests/segments.json",
+  "parent_image_mode": "clean_rgb",
+  "tasks_requested": [
+    "lift_blue_block_drawer",
+    "lift_blue_block_slider",
+    "lift_blue_block_table",
+    "lift_pink_block_drawer",
+    "lift_pink_block_slider",
+    "lift_pink_block_table",
+    "lift_red_block_drawer",
+    "lift_red_block_slider",
+    "lift_red_block_table"
+  ],
+  "checks": {
+    "training": {
+      "tasks_present": [
+        "lift_blue_block_drawer",
+        "lift_blue_block_slider",
+        "lift_blue_block_table",
+        "lift_pink_block_drawer",
+        "lift_pink_block_slider",
+        "lift_pink_block_table",
+        "lift_red_block_drawer",
+        "lift_red_block_slider",
+        "lift_red_block_table"
+      ],
+      "episodes": 1139,
+      "oracle_consistent": true,
+      "unique_segment_ids": true,
+      "source_boundary_frames_exist": true
+    },
+    "abc_validation": {
+      "tasks_present": [
+        "lift_blue_block_drawer",
+        "lift_blue_block_slider",
+        "lift_blue_block_table",
+        "lift_pink_block_drawer",
+        "lift_pink_block_slider",
+        "lift_pink_block_table",
+        "lift_red_block_drawer",
+        "lift_red_block_slider",
+        "lift_red_block_table"
+      ],
+      "episodes": 125,
+      "oracle_consistent": true,
+      "unique_segment_ids": true,
+      "source_boundary_frames_exist": true
+    },
+    "d_validation": {
+      "tasks_present": [
+        "lift_blue_block_drawer",
+        "lift_blue_block_slider",
+        "lift_blue_block_table",
+        "lift_pink_block_drawer",
+        "lift_pink_block_slider",
+        "lift_pink_block_table",
+        "lift_red_block_drawer",
+        "lift_red_block_slider",
+        "lift_red_block_table"
+      ],
+      "episodes": 18,
+      "oracle_consistent": true,
+      "unique_segment_ids": true,
+      "source_boundary_frames_exist": true
+    }
+  }
+}
