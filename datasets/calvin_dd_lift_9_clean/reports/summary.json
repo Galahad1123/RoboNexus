@@ -1,0 +1,42 @@
+{
+  "training": {
+    "dataset": "calvin_dd_lift_9_clean",
+    "split": "training",
+    "episodes": 843,
+    "frames": 52001,
+    "by_task": {
+      "lift_blue_block_drawer": 93,
+      "lift_blue_block_slider": 93,
+      "lift_blue_block_table": 100,
+      "lift_pink_block_drawer": 86,
+      "lift_pink_block_slider": 80,
+      "lift_pink_block_table": 109,
+      "lift_red_block_drawer": 91,
+      "lift_red_block_slider": 93,
+      "lift_red_block_table": 98
+    },
+    "by_episode_variant": {
+      "standard": 843
+    }
+  },
+  "validation": {
+    "dataset": "calvin_dd_lift_9_clean",
+    "split": "validation",
+    "episodes": 162,
+    "frames": 9966,
+    "by_task": {
+      "lift_blue_block_drawer": 20,
+      "lift_blue_block_slider": 13,
+      "lift_blue_block_table": 21,
+      "lift_pink_block_drawer": 17,
+      "lift_pink_block_slider": 11,
+      "lift_pink_block_table": 23,
+      "lift_red_block_drawer": 16,
+      "lift_red_block_slider": 19,
+      "lift_red_block_table": 22
+    },
+    "by_episode_variant": {
+      "standard": 162
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "training": {
+    "dataset": "calvin_dd_residual_6_clean",
+    "split": "training",
+    "episodes": 721,
+    "frames": 39402,
+    "by_task": {
+      "close_drawer": 128,
+      "open_drawer": 125,
+      "place_in_drawer": 125,
+      "place_in_slider": 131,
+      "push_into_drawer": 110,
+      "unstack_block": 102
+    },
+    "by_episode_variant": {
+      "standard": 721
+    }
+  },
+  "validation": {
+    "dataset": "calvin_dd_residual_6_clean",
+    "split": "validation",
+    "episodes": 133,
+    "frames": 7195,
+    "by_task": {
+      "close_drawer": 23,
+      "open_drawer": 25,
+      "place_in_drawer": 25,
+      "place_in_slider": 22,
+      "push_into_drawer": 20,
+      "unstack_block": 18
+    },
+    "by_episode_variant": {
+      "standard": 133
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "dataset": "calvin_dd_manipulation_13_clean",
+  "image_mode": "clean_rgb",
+  "sources": [
+    "datasets/calvin_push_6/manifests/segments.json",
+    "datasets/calvin_rotate_6_release/manifests/segments.json",
+    "datasets/calvin_stack_pick_place_persistent/manifests/segments.json"
+  ],
+  "checks": {
+    "training": {
+      "tasks_present": [
+        "push_blue_block_left",
+        "push_blue_block_right",
+        "push_pink_block_left",
+        "push_pink_block_right",
+        "push_red_block_left",
+        "push_red_block_right",
+        "rotate_blue_block_left",
+        "rotate_blue_block_right",
+        "rotate_pink_block_left",
+        "rotate_pink_block_right",
+        "rotate_red_block_left",
+        "rotate_red_block_right",
+        "stack_block"
+      ],
+      "oracle_consistent": true,
+      "unique_source_segment_keys": true,
+      "source_boundary_frames_exist": true,
+      "clean_instructions": true
+    },
+    "validation": {
+      "tasks_present": [
+        "push_blue_block_left",
+        "push_blue_block_right",
+        "push_pink_block_left",
+        "push_pink_block_right",
+        "push_red_block_left",
+        "push_red_block_right",
+        "rotate_blue_block_left",
+        "rotate_blue_block_right",
+        "rotate_pink_block_left",
+        "rotate_pink_block_right",
+        "rotate_red_block_left",
+        "rotate_red_block_right",
+        "stack_block"
+      ],
+      "oracle_consistent": true,
+      "unique_source_segment_keys": true,
+      "source_boundary_frames_exist": true,
+      "clean_instructions": true
+    }
+  }
+}

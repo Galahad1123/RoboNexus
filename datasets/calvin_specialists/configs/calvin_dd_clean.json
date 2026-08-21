@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "source_dataset": "calvin/dataset/task_D_D",
+  "frequency_hz": 30,
+  "datasets": {
+    "calvin_dd_lift_9_clean": {
+      "sources": ["calvin_general_21"],
+      "tasks": {
+        "lift_blue_block_drawer": "pick up the blue block from the drawer",
+        "lift_blue_block_slider": "pick up the blue block from the sliding cabinet",
+        "lift_blue_block_table": "pick up the blue block from the table",
+        "lift_pink_block_drawer": "pick up the pink block from the drawer",
+        "lift_pink_block_slider": "pick up the pink block from the sliding cabinet",
+        "lift_pink_block_table": "pick up the pink block from the table",
+        "lift_red_block_drawer": "pick up the red block from the drawer",
+        "lift_red_block_slider": "pick up the red block from the sliding cabinet",
+        "lift_red_block_table": "pick up the red block from the table"
+      }
+    },
+    "calvin_dd_device_6_clean": {
+      "sources": ["calvin_general_21"],
+      "tasks": {
+        "move_slider_left": "move the sliding door to the left",
+        "move_slider_right": "move the sliding door to the right",
+        "turn_off_led": "press the button to turn off the led",
+        "turn_off_lightbulb": "move the switch to turn off the lightbulb",
+        "turn_on_led": "press the button to turn on the led",
+        "turn_on_lightbulb": "move the switch to turn on the lightbulb"
+      }
+    },
+    "calvin_dd_manipulation_13_clean": {
+      "sources": [
+        "calvin_push_6",
+        "calvin_rotate_6_release",
+        "calvin_stack_pick_place_persistent"
+      ],
+      "tasks": {
+        "push_blue_block_left": "push the blue block to the left",
+        "push_blue_block_right": "push the blue block to the right",
+        "push_pink_block_left": "push the pink block to the left",
+        "push_pink_block_right": "push the pink block to the right",
+        "push_red_block_left": "push the red block to the left",
+        "push_red_block_right": "push the red block to the right",
+        "rotate_blue_block_left": "rotate the blue block counterclockwise",
+        "rotate_blue_block_right": "rotate the blue block clockwise",
+        "rotate_pink_block_left": "rotate the pink block counterclockwise",
+        "rotate_pink_block_right": "rotate the pink block clockwise",
+        "rotate_red_block_left": "rotate the red block counterclockwise",
+        "rotate_red_block_right": "rotate the red block clockwise",
+        "stack_block": "stack one block on top of another block"
+      }
+    },
+    "calvin_dd_residual_6_clean": {
+      "sources": ["calvin_general_21"],
+      "tasks": {
+        "close_drawer": "close the drawer",
+        "open_drawer": "open the drawer",
+        "place_in_drawer": "place the held block in the drawer",
+        "place_in_slider": "place the held block in the sliding cabinet",
+        "push_into_drawer": "push the block into the drawer",
+        "unstack_block": "remove the top block from the stack"
+      }
+    }
+  }
+}

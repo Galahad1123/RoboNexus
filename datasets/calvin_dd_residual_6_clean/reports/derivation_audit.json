@@ -1,0 +1,37 @@
+{
+  "dataset": "calvin_dd_residual_6_clean",
+  "image_mode": "clean_rgb",
+  "sources": [
+    "datasets/calvin_general_21/manifests/segments.json"
+  ],
+  "checks": {
+    "training": {
+      "tasks_present": [
+        "close_drawer",
+        "open_drawer",
+        "place_in_drawer",
+        "place_in_slider",
+        "push_into_drawer",
+        "unstack_block"
+      ],
+      "oracle_consistent": true,
+      "unique_source_segment_keys": true,
+      "source_boundary_frames_exist": true,
+      "clean_instructions": true
+    },
+    "validation": {
+      "tasks_present": [
+        "close_drawer",
+        "open_drawer",
+        "place_in_drawer",
+        "place_in_slider",
+        "push_into_drawer",
+        "unstack_block"
+      ],
+      "oracle_consistent": true,
+      "unique_source_segment_keys": true,
+      "source_boundary_frames_exist": true,
+      "clean_instructions": true
+    }
+  }
+}
