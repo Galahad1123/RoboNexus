@@ -1,0 +1,19 @@
+{
+  "dataset": "calvin_abc_device_6_clean",
+  "source_dataset": "calvin/dataset/task_D_D",
+  "split": "validation",
+  "episodes": 138,
+  "frames": 8218,
+  "by_task": {
+    "move_slider_left": 26,
+    "move_slider_right": 25,
+    "turn_off_led": 25,
+    "turn_off_lightbulb": 20,
+    "turn_on_led": 20,
+    "turn_on_lightbulb": 22
+  },
+  "oracle_consistent": true,
+  "unique_segment_ids": true,
+  "source_boundary_frames_exist": true,
+  "instruction_mode": "clean_canonical"
+}

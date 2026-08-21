@@ -1,0 +1,3796 @@
+{
+  "version": 1,
+  "name": "calvin_abc_device_6_clean_task_D_D_validation",
+  "source_dataset": "calvin/dataset/task_D_D",
+  "frequency_hz": 30,
+  "image_mode": "clean_rgb",
+  "evaluation_only": true,
+  "derived_from": [
+    "datasets/calvin_general_21/manifests/segments.json"
+  ],
+  "instruction_source": "datasets/calvin_abc_device_6_clean/manifests/segments.json",
+  "tasks": [
+    {
+      "task_id": 0,
+      "calvin_task": "move_slider_left",
+      "instruction": "move the sliding door to the left"
+    },
+    {
+      "task_id": 1,
+      "calvin_task": "move_slider_right",
+      "instruction": "move the sliding door to the right"
+    },
+    {
+      "task_id": 2,
+      "calvin_task": "turn_off_led",
+      "instruction": "press the button to turn off the led"
+    },
+    {
+      "task_id": 3,
+      "calvin_task": "turn_off_lightbulb",
+      "instruction": "move the switch to turn off the lightbulb"
+    },
+    {
+      "task_id": 4,
+      "calvin_task": "turn_on_led",
+      "instruction": "press the button to turn on the led"
+    },
+    {
+      "task_id": 5,
+      "calvin_task": "turn_on_lightbulb",
+      "instruction": "move the switch to turn on the lightbulb"
+    }
+  ],
+  "splits": {
+    "validation": {
+      "source_split": "validation",
+      "summary": {
+        "dataset": "calvin_abc_device_6_clean",
+        "source_dataset": "calvin/dataset/task_D_D",
+        "split": "validation",
+        "episodes": 138,
+        "frames": 8218,
+        "by_task": {
+          "move_slider_left": 26,
+          "move_slider_right": 25,
+          "turn_off_led": 25,
+          "turn_off_lightbulb": 20,
+          "turn_on_led": 20,
+          "turn_on_lightbulb": 22
+        },
+        "oracle_consistent": true,
+        "unique_segment_ids": true,
+        "source_boundary_frames_exist": true,
+        "instruction_mode": "clean_canonical"
+      },
+      "segments": [
+        {
+          "segment_id": "validation-000260",
+          "cluster_id": "move_slider_left-0201",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "move the sliding door to the left",
+          "original_start": 7086,
+          "original_end": 7150,
+          "start": 7086,
+          "end": 7150,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000778",
+          "cluster_id": "move_slider_left-0202",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "move the sliding door to the left",
+          "original_start": 12893,
+          "original_end": 12957,
+          "start": 12893,
+          "end": 12957,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000695",
+          "cluster_id": "move_slider_left-0203",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "push the door to the left",
+          "original_start": 13793,
+          "original_end": 13857,
+          "start": 13793,
+          "end": 13857,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000383",
+          "cluster_id": "move_slider_left-0204",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "move the sliding door to the left",
+          "original_start": 14797,
+          "original_end": 14861,
+          "start": 14797,
+          "end": 14861,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000917",
+          "cluster_id": "move_slider_left-0205",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "grasp the door handle, then slide the door to the left",
+          "original_start": 20433,
+          "original_end": 20479,
+          "start": 20433,
+          "end": 20479,
+          "num_frames": 47,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000806",
+          "cluster_id": "move_slider_left-0206",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "slide the door to the left side",
+          "original_start": 23918,
+          "original_end": 23982,
+          "start": 23918,
+          "end": 23982,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000885",
+          "cluster_id": "move_slider_left-0207",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "grasp the door handle and move the door to the left",
+          "original_start": 28232,
+          "original_end": 28296,
+          "start": 28232,
+          "end": 28296,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000040",
+          "cluster_id": "move_slider_left-0208",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "grasp the door handle, then slide the door to the left",
+          "original_start": 31754,
+          "original_end": 31800,
+          "start": 31754,
+          "end": 31800,
+          "num_frames": 47,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000039",
+          "cluster_id": "move_slider_left-0209",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "slide the door all the way to the left",
+          "original_start": 32510,
+          "original_end": 32574,
+          "start": 32510,
+          "end": 32574,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000420",
+          "cluster_id": "move_slider_left-0210",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "grasp the door handle, then slide the door to the left",
+          "original_start": 35310,
+          "original_end": 35374,
+          "start": 35310,
+          "end": 35374,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000911",
+          "cluster_id": "move_slider_left-0211",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "grasp the door handle, then slide the door to the left",
+          "original_start": 38573,
+          "original_end": 38637,
+          "start": 38573,
+          "end": 38637,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000027",
+          "cluster_id": "move_slider_left-0212",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "push the door to the left side",
+          "original_start": 44668,
+          "original_end": 44732,
+          "start": 44668,
+          "end": 44732,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000800",
+          "cluster_id": "move_slider_left-0213",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "move the door all the way to the left and let go",
+          "original_start": 225466,
+          "original_end": 225530,
+          "start": 225466,
+          "end": 225530,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000296",
+          "cluster_id": "move_slider_left-0214",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "grasp the door handle and slide the door to the left",
+          "original_start": 231033,
+          "original_end": 231097,
+          "start": 231033,
+          "end": 231097,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000154",
+          "cluster_id": "move_slider_left-0215",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "slide the door to the left",
+          "original_start": 232554,
+          "original_end": 232618,
+          "start": 232554,
+          "end": 232618,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000010",
+          "cluster_id": "move_slider_left-0217",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "grasp the door handle, then move the door to the left",
+          "original_start": 237523,
+          "original_end": 237587,
+          "start": 237523,
+          "end": 237587,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000002",
+          "cluster_id": "move_slider_left-0218",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "slide the door to the left",
+          "original_start": 239311,
+          "original_end": 239375,
+          "start": 239311,
+          "end": 239375,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000157",
+          "cluster_id": "move_slider_left-0219",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "slide the door to the left side",
+          "original_start": 242144,
+          "original_end": 242208,
+          "start": 242144,
+          "end": 242208,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000163",
+          "cluster_id": "move_slider_left-0220",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "move the door to the left",
+          "original_start": 242972,
+          "original_end": 243036,
+          "start": 242972,
+          "end": 243036,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000901",
+          "cluster_id": "move_slider_left-0221",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "move the sliding door to the left",
+          "original_start": 401981,
+          "original_end": 402045,
+          "start": 401981,
+          "end": 402045,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000049",
+          "cluster_id": "move_slider_left-0222",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "push the sliding door to the left",
+          "original_start": 403605,
+          "original_end": 403669,
+          "start": 403605,
+          "end": 403669,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000558",
+          "cluster_id": "move_slider_left-0224",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "push the sliding door to the left",
+          "original_start": 411353,
+          "original_end": 411386,
+          "start": 411353,
+          "end": 411386,
+          "num_frames": 34,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000544",
+          "cluster_id": "move_slider_left-0225",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "move the door all the way to the left and let go",
+          "original_start": 412082,
+          "original_end": 412146,
+          "start": 412082,
+          "end": 412146,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000263",
+          "cluster_id": "move_slider_left-0226",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "grasp the door handle and move the door to the left",
+          "original_start": 413580,
+          "original_end": 413644,
+          "start": 413580,
+          "end": 413644,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000697",
+          "cluster_id": "move_slider_left-0227",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "push the door to the left side",
+          "original_start": 415084,
+          "original_end": 415148,
+          "start": 415084,
+          "end": 415148,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000377",
+          "cluster_id": "move_slider_left-0228",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "move_slider_left",
+          "instruction": "move the sliding door to the left",
+          "original_instruction": "grasp the door handle, then move the door to the left",
+          "original_start": 418217,
+          "original_end": 418281,
+          "start": 418217,
+          "end": 418281,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000429",
+          "cluster_id": "move_slider_right-0229",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "grasp the door handle, then slide the door to the right",
+          "original_start": 3569,
+          "original_end": 3633,
+          "start": 3569,
+          "end": 3633,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000916",
+          "cluster_id": "move_slider_right-0230",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "push the door to the right side",
+          "original_start": 9740,
+          "original_end": 9804,
+          "start": 9740,
+          "end": 9804,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000525",
+          "cluster_id": "move_slider_right-0231",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "grasp the door handle, then slide the door to the right",
+          "original_start": 17329,
+          "original_end": 17375,
+          "start": 17329,
+          "end": 17375,
+          "num_frames": 47,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000025",
+          "cluster_id": "move_slider_right-0232",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "move the door all the way to the right",
+          "original_start": 19459,
+          "original_end": 19523,
+          "start": 19459,
+          "end": 19523,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000367",
+          "cluster_id": "move_slider_right-0233",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "move the door all the way to the right",
+          "original_start": 20685,
+          "original_end": 20749,
+          "start": 20685,
+          "end": 20749,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000405",
+          "cluster_id": "move_slider_right-0234",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "grasp the door handle, then slide the door to the right",
+          "original_start": 26085,
+          "original_end": 26149,
+          "start": 26085,
+          "end": 26149,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000298",
+          "cluster_id": "move_slider_right-0235",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "grasp the door handle, then slide the door to the right",
+          "original_start": 27723,
+          "original_end": 27787,
+          "start": 27723,
+          "end": 27787,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000524",
+          "cluster_id": "move_slider_right-0236",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "move the door all the way to the right and let go",
+          "original_start": 29889,
+          "original_end": 29953,
+          "start": 29889,
+          "end": 29953,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000052",
+          "cluster_id": "move_slider_right-0237",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "slide the door to the right, then let it go",
+          "original_start": 41245,
+          "original_end": 41309,
+          "start": 41245,
+          "end": 41309,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000785",
+          "cluster_id": "move_slider_right-0238",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "grasp the door handle and slide the door to the right",
+          "original_start": 43522,
+          "original_end": 43586,
+          "start": 43522,
+          "end": 43586,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000176",
+          "cluster_id": "move_slider_right-0239",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "push the door to the right side",
+          "original_start": 45353,
+          "original_end": 45417,
+          "start": 45353,
+          "end": 45417,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000918",
+          "cluster_id": "move_slider_right-0241",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "slide the door to the right",
+          "original_start": 48394,
+          "original_end": 48458,
+          "start": 48394,
+          "end": 48458,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000264",
+          "cluster_id": "move_slider_right-0242",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "move the door to the right",
+          "original_start": 50048,
+          "original_end": 50112,
+          "start": 50048,
+          "end": 50112,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000169",
+          "cluster_id": "move_slider_right-0243",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "grasp the door handle and move the door to the right",
+          "original_start": 52100,
+          "original_end": 52164,
+          "start": 52100,
+          "end": 52164,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000814",
+          "cluster_id": "move_slider_right-0244",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "grasp the door handle and slide the door to the right",
+          "original_start": 227323,
+          "original_end": 227387,
+          "start": 227323,
+          "end": 227387,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000799",
+          "cluster_id": "move_slider_right-0245",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "push the sliding door to the right",
+          "original_start": 233561,
+          "original_end": 233625,
+          "start": 233561,
+          "end": 233625,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000789",
+          "cluster_id": "move_slider_right-0246",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "move the door to the right side",
+          "original_start": 234807,
+          "original_end": 234871,
+          "start": 234807,
+          "end": 234871,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000141",
+          "cluster_id": "move_slider_right-0247",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "move the door to the right",
+          "original_start": 235559,
+          "original_end": 235623,
+          "start": 235559,
+          "end": 235623,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000798",
+          "cluster_id": "move_slider_right-0248",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "move the door to the right side",
+          "original_start": 236357,
+          "original_end": 236421,
+          "start": 236357,
+          "end": 236421,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000155",
+          "cluster_id": "move_slider_right-0249",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "slide the door all the way to the right",
+          "original_start": 243620,
+          "original_end": 243684,
+          "start": 243620,
+          "end": 243684,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000300",
+          "cluster_id": "move_slider_right-0250",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "slide the door all the way to the right",
+          "original_start": 401064,
+          "original_end": 401128,
+          "start": 401064,
+          "end": 401128,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000379",
+          "cluster_id": "move_slider_right-0251",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "move the door all the way to the right and let go",
+          "original_start": 408733,
+          "original_end": 408797,
+          "start": 408733,
+          "end": 408797,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000699",
+          "cluster_id": "move_slider_right-0252",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "push the sliding door to the right",
+          "original_start": 409787,
+          "original_end": 409851,
+          "start": 409787,
+          "end": 409851,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000167",
+          "cluster_id": "move_slider_right-0253",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "slide the door to the right side",
+          "original_start": 410669,
+          "original_end": 410733,
+          "start": 410669,
+          "end": 410733,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000393",
+          "cluster_id": "move_slider_right-0254",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "move_slider_right",
+          "instruction": "move the sliding door to the right",
+          "original_instruction": "slide the door to the right side",
+          "original_start": 416900,
+          "original_end": 416964,
+          "start": 416900,
+          "end": 416964,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "slide_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000908",
+          "cluster_id": "turn_off_led-0350",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "toggle the button to turn off the led",
+          "original_start": 4989,
+          "original_end": 5034,
+          "start": 4989,
+          "end": 5034,
+          "num_frames": 46,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000369",
+          "cluster_id": "turn_off_led-0351",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "turn off the green lamp",
+          "original_start": 6565,
+          "original_end": 6606,
+          "start": 6565,
+          "end": 6606,
+          "num_frames": 42,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000151",
+          "cluster_id": "turn_off_led-0352",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "push down the button to turn off the green light",
+          "original_start": 10425,
+          "original_end": 10489,
+          "start": 10425,
+          "end": 10489,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000421",
+          "cluster_id": "turn_off_led-0353",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "turn off the led",
+          "original_start": 11780,
+          "original_end": 11820,
+          "start": 11780,
+          "end": 11820,
+          "num_frames": 41,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000246",
+          "cluster_id": "turn_off_led-0354",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "turn off the green lamp",
+          "original_start": 18317,
+          "original_end": 18381,
+          "start": 18317,
+          "end": 18381,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000033",
+          "cluster_id": "turn_off_led-0355",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "toggle the button to turn off the green light",
+          "original_start": 20454,
+          "original_end": 20518,
+          "start": 20454,
+          "end": 20518,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000808",
+          "cluster_id": "turn_off_led-0356",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "turn off the led",
+          "original_start": 22944,
+          "original_end": 23008,
+          "start": 22944,
+          "end": 23008,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000045",
+          "cluster_id": "turn_off_led-0357",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "push the button to turn off the green light",
+          "original_start": 27957,
+          "original_end": 28021,
+          "start": 27957,
+          "end": 28021,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000371",
+          "cluster_id": "turn_off_led-0358",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "toggle the button to turn off the led light",
+          "original_start": 31125,
+          "original_end": 31173,
+          "start": 31125,
+          "end": 31173,
+          "num_frames": 49,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000159",
+          "cluster_id": "turn_off_led-0359",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "push the button to turn off the green light",
+          "original_start": 31798,
+          "original_end": 31841,
+          "start": 31798,
+          "end": 31841,
+          "num_frames": 44,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000923",
+          "cluster_id": "turn_off_led-0360",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "push down the button to turn off the led light",
+          "original_start": 34178,
+          "original_end": 34221,
+          "start": 34178,
+          "end": 34221,
+          "num_frames": 44,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000376",
+          "cluster_id": "turn_off_led-0361",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "toggle the button to turn off the led light",
+          "original_start": 46465,
+          "original_end": 46505,
+          "start": 46465,
+          "end": 46505,
+          "num_frames": 41,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000015",
+          "cluster_id": "turn_off_led-0362",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "push down the button to turn off the green light",
+          "original_start": 51017,
+          "original_end": 51081,
+          "start": 51017,
+          "end": 51081,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000649",
+          "cluster_id": "turn_off_led-0364",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "toggle the button to turn off the green light",
+          "original_start": 226184,
+          "original_end": 226217,
+          "start": 226184,
+          "end": 226217,
+          "num_frames": 34,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000507",
+          "cluster_id": "turn_off_led-0365",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "turn off the led",
+          "original_start": 227008,
+          "original_end": 227053,
+          "start": 227008,
+          "end": 227053,
+          "num_frames": 46,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000540",
+          "cluster_id": "turn_off_led-0366",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "push the button to turn off the green light",
+          "original_start": 231220,
+          "original_end": 231284,
+          "start": 231220,
+          "end": 231284,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000136",
+          "cluster_id": "turn_off_led-0367",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "push down the button to turn off the led",
+          "original_start": 232609,
+          "original_end": 232673,
+          "start": 232609,
+          "end": 232673,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000774",
+          "cluster_id": "turn_off_led-0368",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "toggle the button to turn off the green light",
+          "original_start": 233649,
+          "original_end": 233683,
+          "start": 233649,
+          "end": 233683,
+          "num_frames": 35,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000397",
+          "cluster_id": "turn_off_led-0369",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "push down the button to turn off the led",
+          "original_start": 235266,
+          "original_end": 235302,
+          "start": 235266,
+          "end": 235302,
+          "num_frames": 37,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000499",
+          "cluster_id": "turn_off_led-0370",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "push the button to turn off the green light",
+          "original_start": 238208,
+          "original_end": 238246,
+          "start": 238208,
+          "end": 238246,
+          "num_frames": 39,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000130",
+          "cluster_id": "turn_off_led-0372",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "push the button to turn off the led light",
+          "original_start": 240210,
+          "original_end": 240274,
+          "start": 240210,
+          "end": 240274,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000902",
+          "cluster_id": "turn_off_led-0373",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "turn off the green lamp",
+          "original_start": 404840,
+          "original_end": 404904,
+          "start": 404840,
+          "end": 404904,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000272",
+          "cluster_id": "turn_off_led-0374",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "turn off the green light",
+          "original_start": 413655,
+          "original_end": 413695,
+          "start": 413655,
+          "end": 413695,
+          "num_frames": 41,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000378",
+          "cluster_id": "turn_off_led-0375",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "toggle the button to turn off the led light",
+          "original_start": 417096,
+          "original_end": 417130,
+          "start": 417096,
+          "end": 417130,
+          "num_frames": 35,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000254",
+          "cluster_id": "turn_off_led-0376",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "turn_off_led",
+          "instruction": "press the button to turn off the led",
+          "original_instruction": "push down the button to turn off the green light",
+          "original_start": 418613,
+          "original_end": 418677,
+          "start": 418613,
+          "end": 418677,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000241",
+          "cluster_id": "turn_off_lightbulb-0377",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "move the light switch to turn off the light bulb",
+          "original_start": 10689,
+          "original_end": 10753,
+          "start": 10689,
+          "end": 10753,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000662",
+          "cluster_id": "turn_off_lightbulb-0378",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "toggle the light switch to turn off the light bulb",
+          "original_start": 12260,
+          "original_end": 12324,
+          "start": 12260,
+          "end": 12324,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000258",
+          "cluster_id": "turn_off_lightbulb-0379",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "push the switch downwards",
+          "original_start": 18245,
+          "original_end": 18309,
+          "start": 18245,
+          "end": 18309,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000944",
+          "cluster_id": "turn_off_lightbulb-0380",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "turn off the light bulb",
+          "original_start": 21020,
+          "original_end": 21084,
+          "start": 21020,
+          "end": 21084,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000244",
+          "cluster_id": "turn_off_lightbulb-0382",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "toggle the light switch to turn off the yellow light",
+          "original_start": 27889,
+          "original_end": 27953,
+          "start": 27889,
+          "end": 27953,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000047",
+          "cluster_id": "turn_off_lightbulb-0383",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "toggle the light switch to turn off the yellow light",
+          "original_start": 29074,
+          "original_end": 29138,
+          "start": 29074,
+          "end": 29138,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000565",
+          "cluster_id": "turn_off_lightbulb-0384",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "move down the switch",
+          "original_start": 32977,
+          "original_end": 33041,
+          "start": 32977,
+          "end": 33041,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000146",
+          "cluster_id": "turn_off_lightbulb-0385",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "toggle the light switch to turn off the yellow light",
+          "original_start": 35476,
+          "original_end": 35523,
+          "start": 35476,
+          "end": 35523,
+          "num_frames": 48,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000398",
+          "cluster_id": "turn_off_lightbulb-0386",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "turn off the yellow light",
+          "original_start": 40473,
+          "original_end": 40537,
+          "start": 40473,
+          "end": 40537,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000681",
+          "cluster_id": "turn_off_lightbulb-0387",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "toggle the light switch to turn off the yellow light",
+          "original_start": 52004,
+          "original_end": 52068,
+          "start": 52004,
+          "end": 52068,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000500",
+          "cluster_id": "turn_off_lightbulb-0389",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "turn off the yellow lamp",
+          "original_start": 227050,
+          "original_end": 227114,
+          "start": 227050,
+          "end": 227114,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000005",
+          "cluster_id": "turn_off_lightbulb-0390",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "toggle the light switch to turn off the yellow light",
+          "original_start": 232688,
+          "original_end": 232752,
+          "start": 232688,
+          "end": 232752,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000570",
+          "cluster_id": "turn_off_lightbulb-0391",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "turn off the yellow lamp",
+          "original_start": 235649,
+          "original_end": 235713,
+          "start": 235649,
+          "end": 235713,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000415",
+          "cluster_id": "turn_off_lightbulb-0392",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "slide down the switch",
+          "original_start": 237599,
+          "original_end": 237663,
+          "start": 237599,
+          "end": 237663,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000430",
+          "cluster_id": "turn_off_lightbulb-0394",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "move down the switch",
+          "original_start": 243700,
+          "original_end": 243764,
+          "start": 243700,
+          "end": 243764,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000124",
+          "cluster_id": "turn_off_lightbulb-0395",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "turn off the yellow light",
+          "original_start": 403090,
+          "original_end": 403126,
+          "start": 403090,
+          "end": 403126,
+          "num_frames": 37,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000904",
+          "cluster_id": "turn_off_lightbulb-0396",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "turn off the yellow lamp",
+          "original_start": 405071,
+          "original_end": 405135,
+          "start": 405071,
+          "end": 405135,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000128",
+          "cluster_id": "turn_off_lightbulb-0397",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "turn off the yellow light",
+          "original_start": 406679,
+          "original_end": 406743,
+          "start": 406679,
+          "end": 406743,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000152",
+          "cluster_id": "turn_off_lightbulb-0398",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "turn off the light bulb",
+          "original_start": 408642,
+          "original_end": 408706,
+          "start": 408642,
+          "end": 408706,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000693",
+          "cluster_id": "turn_off_lightbulb-0399",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "turn_off_lightbulb",
+          "instruction": "move the switch to turn off the lightbulb",
+          "original_instruction": "move down the switch",
+          "original_start": 412205,
+          "original_end": 412269,
+          "start": 412205,
+          "end": 412269,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000416",
+          "cluster_id": "turn_on_led-0400",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "turn on the green light",
+          "original_start": 1776,
+          "original_end": 1840,
+          "start": 1776,
+          "end": 1840,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000143",
+          "cluster_id": "turn_on_led-0402",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "push the button to turn on the led",
+          "original_start": 9900,
+          "original_end": 9964,
+          "start": 9900,
+          "end": 9964,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000557",
+          "cluster_id": "turn_on_led-0403",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "push the button to turn on the led light",
+          "original_start": 16950,
+          "original_end": 17014,
+          "start": 16950,
+          "end": 17014,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000019",
+          "cluster_id": "turn_on_led-0404",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "turn on the led light",
+          "original_start": 19129,
+          "original_end": 19193,
+          "start": 19129,
+          "end": 19193,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000685",
+          "cluster_id": "turn_on_led-0405",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "turn on the led light",
+          "original_start": 21082,
+          "original_end": 21146,
+          "start": 21082,
+          "end": 21146,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000373",
+          "cluster_id": "turn_on_led-0409",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "push the button to turn on the led light",
+          "original_start": 30512,
+          "original_end": 30557,
+          "start": 30512,
+          "end": 30557,
+          "num_frames": 46,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000503",
+          "cluster_id": "turn_on_led-0410",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "push down the button to turn on the led",
+          "original_start": 32245,
+          "original_end": 32285,
+          "start": 32245,
+          "end": 32285,
+          "num_frames": 41,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000000",
+          "cluster_id": "turn_on_led-0411",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "turn on the green light",
+          "original_start": 35722,
+          "original_end": 35764,
+          "start": 35722,
+          "end": 35764,
+          "num_frames": 43,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000691",
+          "cluster_id": "turn_on_led-0412",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "turn on the green lamp",
+          "original_start": 38018,
+          "original_end": 38082,
+          "start": 38018,
+          "end": 38082,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000797",
+          "cluster_id": "turn_on_led-0413",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "push the button to turn on the green light",
+          "original_start": 222347,
+          "original_end": 222388,
+          "start": 222347,
+          "end": 222388,
+          "num_frames": 42,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000913",
+          "cluster_id": "turn_on_led-0414",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "push down the button to turn on the green light",
+          "original_start": 223709,
+          "original_end": 223773,
+          "start": 223709,
+          "end": 223773,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000041",
+          "cluster_id": "turn_on_led-0415",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "push down the button to turn on the led",
+          "original_start": 227910,
+          "original_end": 227953,
+          "start": 227910,
+          "end": 227953,
+          "num_frames": 44,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000029",
+          "cluster_id": "turn_on_led-0416",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "push the button to turn on the green light",
+          "original_start": 228911,
+          "original_end": 228945,
+          "start": 228911,
+          "end": 228945,
+          "num_frames": 35,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000030",
+          "cluster_id": "turn_on_led-0417",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "push down the button to turn on the led light",
+          "original_start": 402189,
+          "original_end": 402235,
+          "start": 402189,
+          "end": 402235,
+          "num_frames": 47,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000888",
+          "cluster_id": "turn_on_led-0418",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "turn on the led light",
+          "original_start": 409757,
+          "original_end": 409792,
+          "start": 409757,
+          "end": 409792,
+          "num_frames": 36,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000787",
+          "cluster_id": "turn_on_led-0419",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "push the button to turn on the green light",
+          "original_start": 410728,
+          "original_end": 410771,
+          "start": 410728,
+          "end": 410771,
+          "num_frames": 44,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000494",
+          "cluster_id": "turn_on_led-0420",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "push down the button to turn on the led",
+          "original_start": 413885,
+          "original_end": 413949,
+          "start": 413885,
+          "end": 413949,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000526",
+          "cluster_id": "turn_on_led-0421",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "toggle the button to turn on the green light",
+          "original_start": 414802,
+          "original_end": 414866,
+          "start": 414802,
+          "end": 414866,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000417",
+          "cluster_id": "turn_on_led-0422",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "turn on the led lamp",
+          "original_start": 416022,
+          "original_end": 416086,
+          "start": 416022,
+          "end": 416086,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000400",
+          "cluster_id": "turn_on_led-0423",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "turn_on_led",
+          "instruction": "press the button to turn on the led",
+          "original_instruction": "turn on the green light",
+          "original_start": 418367,
+          "original_end": 418431,
+          "start": 418367,
+          "end": 418431,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "button_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000006",
+          "cluster_id": "turn_on_lightbulb-0424",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "move the light switch to turn on the yellow light",
+          "original_start": 862,
+          "original_end": 899,
+          "start": 862,
+          "end": 899,
+          "num_frames": 38,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000292",
+          "cluster_id": "turn_on_lightbulb-0425",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "move the light switch to turn on the yellow light",
+          "original_start": 1963,
+          "original_end": 2027,
+          "start": 1963,
+          "end": 2027,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000424",
+          "cluster_id": "turn_on_lightbulb-0426",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "move the light switch to turn on the light bulb",
+          "original_start": 6792,
+          "original_end": 6856,
+          "start": 6792,
+          "end": 6856,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000659",
+          "cluster_id": "turn_on_lightbulb-0427",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "slide up the switch",
+          "original_start": 13434,
+          "original_end": 13498,
+          "start": 13434,
+          "end": 13498,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000945",
+          "cluster_id": "turn_on_lightbulb-0428",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "turn on the light bulb",
+          "original_start": 14482,
+          "original_end": 14546,
+          "start": 14482,
+          "end": 14546,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000822",
+          "cluster_id": "turn_on_lightbulb-0431",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "slide up the switch",
+          "original_start": 30653,
+          "original_end": 30696,
+          "start": 30653,
+          "end": 30696,
+          "num_frames": 44,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000273",
+          "cluster_id": "turn_on_lightbulb-0432",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "move the light switch to turn on the yellow light",
+          "original_start": 32439,
+          "original_end": 32503,
+          "start": 32439,
+          "end": 32503,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000294",
+          "cluster_id": "turn_on_lightbulb-0434",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "toggle the light switch to turn on the yellow light",
+          "original_start": 41647,
+          "original_end": 41711,
+          "start": 41647,
+          "end": 41711,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000941",
+          "cluster_id": "turn_on_lightbulb-0435",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "toggle the light switch to turn on the light bulb",
+          "original_start": 227396,
+          "original_end": 227460,
+          "start": 227396,
+          "end": 227460,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000138",
+          "cluster_id": "turn_on_lightbulb-0436",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "move the light switch to turn on the light bulb",
+          "original_start": 228940,
+          "original_end": 229004,
+          "start": 228940,
+          "end": 229004,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000692",
+          "cluster_id": "turn_on_lightbulb-0437",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "turn on the yellow lamp",
+          "original_start": 231188,
+          "original_end": 231221,
+          "start": 231188,
+          "end": 231221,
+          "num_frames": 34,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000054",
+          "cluster_id": "turn_on_lightbulb-0438",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "turn on the light bulb",
+          "original_start": 234048,
+          "original_end": 234112,
+          "start": 234048,
+          "end": 234112,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000153",
+          "cluster_id": "turn_on_lightbulb-0439",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "move the light switch to turn on the light bulb",
+          "original_start": 236271,
+          "original_end": 236335,
+          "start": 236271,
+          "end": 236335,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000123",
+          "cluster_id": "turn_on_lightbulb-0440",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "move the light switch to turn on the light bulb",
+          "original_start": 239082,
+          "original_end": 239146,
+          "start": 239082,
+          "end": 239146,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000252",
+          "cluster_id": "turn_on_lightbulb-0442",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "move the light switch to turn on the yellow light",
+          "original_start": 241775,
+          "original_end": 241839,
+          "start": 241775,
+          "end": 241839,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000135",
+          "cluster_id": "turn_on_lightbulb-0443",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "turn on the light bulb",
+          "original_start": 400574,
+          "original_end": 400638,
+          "start": 400574,
+          "end": 400638,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000675",
+          "cluster_id": "turn_on_lightbulb-0444",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "move the light switch to turn on the light bulb",
+          "original_start": 402529,
+          "original_end": 402593,
+          "start": 402529,
+          "end": 402593,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000170",
+          "cluster_id": "turn_on_lightbulb-0445",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "turn on the yellow lamp",
+          "original_start": 405804,
+          "original_end": 405868,
+          "start": 405804,
+          "end": 405868,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000423",
+          "cluster_id": "turn_on_lightbulb-0447",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "move the light switch to turn on the yellow light",
+          "original_start": 411387,
+          "original_end": 411451,
+          "start": 411387,
+          "end": 411451,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000057",
+          "cluster_id": "turn_on_lightbulb-0449",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "turn on the yellow light",
+          "original_start": 413702,
+          "original_end": 413766,
+          "start": 413702,
+          "end": 413766,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000770",
+          "cluster_id": "turn_on_lightbulb-0450",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "toggle the light switch to turn on the light bulb",
+          "original_start": 417217,
+          "original_end": 417281,
+          "start": 417217,
+          "end": 417281,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000302",
+          "cluster_id": "turn_on_lightbulb-0451",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "turn_on_lightbulb",
+          "instruction": "move the switch to turn on the lightbulb",
+          "original_instruction": "turn on the light bulb",
+          "original_start": 418296,
+          "original_end": 418360,
+          "start": 418296,
+          "end": 418360,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": null,
+          "mask_roles": {
+            "target": [
+              {
+                "fixed": "table",
+                "links": [
+                  "switch_link"
+                ]
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        }
+      ]
+    }
+  }
+}

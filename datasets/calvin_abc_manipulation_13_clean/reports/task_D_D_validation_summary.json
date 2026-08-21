@@ -1,0 +1,26 @@
+{
+  "dataset": "calvin_abc_manipulation_13_clean",
+  "source_dataset": "calvin/dataset/task_D_D",
+  "split": "validation",
+  "episodes": 105,
+  "frames": 7496,
+  "by_task": {
+    "push_blue_block_left": 7,
+    "push_blue_block_right": 6,
+    "push_pink_block_left": 6,
+    "push_pink_block_right": 6,
+    "push_red_block_left": 9,
+    "push_red_block_right": 5,
+    "rotate_blue_block_left": 6,
+    "rotate_blue_block_right": 5,
+    "rotate_pink_block_left": 7,
+    "rotate_pink_block_right": 12,
+    "rotate_red_block_left": 9,
+    "rotate_red_block_right": 6,
+    "stack_block": 21
+  },
+  "oracle_consistent": true,
+  "unique_segment_ids": true,
+  "source_boundary_frames_exist": true,
+  "instruction_mode": "clean_canonical"
+}

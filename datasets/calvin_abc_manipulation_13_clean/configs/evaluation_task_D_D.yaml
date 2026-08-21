@@ -1,0 +1,21 @@
+version: 1
+name: calvin_abc_manipulation_13_clean_task_D_D
+manifest: datasets/calvin_abc_manipulation_13_clean/manifests/task_D_D_validation.json
+source_dataset: calvin/dataset/task_D_D
+split: validation
+oracle_config: calvin/calvin_models/conf/callbacks/rollout/tasks/new_playtable_tasks.yaml
+defaults: {max_steps: 150, settle_steps: 0}
+tasks:
+  - {task: push_blue_block_left, oracle_task: push_blue_block_left, max_steps: 120}
+  - {task: push_blue_block_right, oracle_task: push_blue_block_right, max_steps: 120}
+  - {task: push_pink_block_left, oracle_task: push_pink_block_left, max_steps: 120}
+  - {task: push_pink_block_right, oracle_task: push_pink_block_right, max_steps: 120}
+  - {task: push_red_block_left, oracle_task: push_red_block_left, max_steps: 120}
+  - {task: push_red_block_right, oracle_task: push_red_block_right, max_steps: 120}
+  - {task: rotate_blue_block_left, oracle_task: rotate_blue_block_left, success_guard: &released {gripper: open, min_width_m: 0.04, consecutive_steps: 3}}
+  - {task: rotate_blue_block_right, oracle_task: rotate_blue_block_right, success_guard: *released}
+  - {task: rotate_pink_block_left, oracle_task: rotate_pink_block_left, success_guard: *released}
+  - {task: rotate_pink_block_right, oracle_task: rotate_pink_block_right, success_guard: *released}
+  - {task: rotate_red_block_left, oracle_task: rotate_red_block_left, success_guard: *released}
+  - {task: rotate_red_block_right, oracle_task: rotate_red_block_right, success_guard: *released}
+  - {task: stack_block, oracle_task: stack_block, success_guard: *released}

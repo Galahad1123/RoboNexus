@@ -1,0 +1,22 @@
+{
+  "dataset": "calvin_abc_lift_9_clean",
+  "source_dataset": "calvin/dataset/task_D_D",
+  "split": "validation",
+  "episodes": 162,
+  "frames": 9966,
+  "by_task": {
+    "lift_blue_block_drawer": 20,
+    "lift_blue_block_slider": 13,
+    "lift_blue_block_table": 21,
+    "lift_pink_block_drawer": 17,
+    "lift_pink_block_slider": 11,
+    "lift_pink_block_table": 23,
+    "lift_red_block_drawer": 16,
+    "lift_red_block_slider": 19,
+    "lift_red_block_table": 22
+  },
+  "oracle_consistent": true,
+  "unique_segment_ids": true,
+  "source_boundary_frames_exist": true,
+  "instruction_mode": "clean_canonical"
+}

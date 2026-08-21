@@ -1,0 +1,3976 @@
+{
+  "version": 1,
+  "name": "calvin_abc_lift_9_clean_task_D_D_validation",
+  "source_dataset": "calvin/dataset/task_D_D",
+  "frequency_hz": 30,
+  "image_mode": "clean_rgb",
+  "evaluation_only": true,
+  "derived_from": [
+    "datasets/calvin_general_21/manifests/segments.json"
+  ],
+  "instruction_source": "datasets/calvin_abc_lift_9_clean/manifests/segments.json",
+  "tasks": [
+    {
+      "task_id": 0,
+      "calvin_task": "lift_blue_block_drawer",
+      "instruction": "pick up the blue block from the drawer"
+    },
+    {
+      "task_id": 1,
+      "calvin_task": "lift_blue_block_slider",
+      "instruction": "pick up the blue block from the sliding cabinet"
+    },
+    {
+      "task_id": 2,
+      "calvin_task": "lift_blue_block_table",
+      "instruction": "pick up the blue block from the table"
+    },
+    {
+      "task_id": 3,
+      "calvin_task": "lift_pink_block_drawer",
+      "instruction": "pick up the pink block from the drawer"
+    },
+    {
+      "task_id": 4,
+      "calvin_task": "lift_pink_block_slider",
+      "instruction": "pick up the pink block from the sliding cabinet"
+    },
+    {
+      "task_id": 5,
+      "calvin_task": "lift_pink_block_table",
+      "instruction": "pick up the pink block from the table"
+    },
+    {
+      "task_id": 6,
+      "calvin_task": "lift_red_block_drawer",
+      "instruction": "pick up the red block from the drawer"
+    },
+    {
+      "task_id": 7,
+      "calvin_task": "lift_red_block_slider",
+      "instruction": "pick up the red block from the sliding cabinet"
+    },
+    {
+      "task_id": 8,
+      "calvin_task": "lift_red_block_table",
+      "instruction": "pick up the red block from the table"
+    }
+  ],
+  "splits": {
+    "validation": {
+      "source_split": "validation",
+      "summary": {
+        "dataset": "calvin_abc_lift_9_clean",
+        "source_dataset": "calvin/dataset/task_D_D",
+        "split": "validation",
+        "episodes": 162,
+        "frames": 9966,
+        "by_task": {
+          "lift_blue_block_drawer": 20,
+          "lift_blue_block_slider": 13,
+          "lift_blue_block_table": 21,
+          "lift_pink_block_drawer": 17,
+          "lift_pink_block_slider": 11,
+          "lift_pink_block_table": 23,
+          "lift_red_block_drawer": 16,
+          "lift_red_block_slider": 19,
+          "lift_red_block_table": 22
+        },
+        "oracle_consistent": true,
+        "unique_segment_ids": true,
+        "source_boundary_frames_exist": true,
+        "instruction_mode": "clean_canonical"
+      },
+      "segments": [
+        {
+          "segment_id": "validation-000589",
+          "cluster_id": "lift_blue_block_drawer-0023",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "go towards the blue block in the drawer and pick it up",
+          "original_start": 2136,
+          "original_end": 2200,
+          "start": 2136,
+          "end": 2200,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000462",
+          "cluster_id": "lift_blue_block_drawer-0024",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "pick up the blue block from the drawer",
+          "original_start": 5155,
+          "original_end": 5219,
+          "start": 5155,
+          "end": 5219,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000078",
+          "cluster_id": "lift_blue_block_drawer-0025",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "lift the blue block lying in the drawer",
+          "original_start": 7629,
+          "original_end": 7693,
+          "start": 7629,
+          "end": 7693,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000586",
+          "cluster_id": "lift_blue_block_drawer-0026",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "lift the blue block in the drawer",
+          "original_start": 13249,
+          "original_end": 13313,
+          "start": 13249,
+          "end": 13313,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000385",
+          "cluster_id": "lift_blue_block_drawer-0027",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "go towards the blue block in the drawer and lift it",
+          "original_start": 17891,
+          "original_end": 17928,
+          "start": 17891,
+          "end": 17928,
+          "num_frames": 38,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000810",
+          "cluster_id": "lift_blue_block_drawer-0028",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "lift the blue block lying in the drawer",
+          "original_start": 23288,
+          "original_end": 23352,
+          "start": 23288,
+          "end": 23352,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000279",
+          "cluster_id": "lift_blue_block_drawer-0029",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "grasp the blue block lying in the drawer",
+          "original_start": 24086,
+          "original_end": 24128,
+          "start": 24086,
+          "end": 24128,
+          "num_frames": 43,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000191",
+          "cluster_id": "lift_blue_block_drawer-0030",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "lift the blue block in the drawer",
+          "original_start": 30257,
+          "original_end": 30321,
+          "start": 30257,
+          "end": 30321,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000171",
+          "cluster_id": "lift_blue_block_drawer-0031",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "grasp the blue block lying in the drawer",
+          "original_start": 40896,
+          "original_end": 40960,
+          "start": 40896,
+          "end": 40960,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000085",
+          "cluster_id": "lift_blue_block_drawer-0032",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "go towards the blue block in the drawer and pick it up",
+          "original_start": 46375,
+          "original_end": 46421,
+          "start": 46375,
+          "end": 46421,
+          "num_frames": 47,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000679",
+          "cluster_id": "lift_blue_block_drawer-0033",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "pick up the blue block lying in the drawer",
+          "original_start": 221283,
+          "original_end": 221347,
+          "start": 221283,
+          "end": 221347,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000411",
+          "cluster_id": "lift_blue_block_drawer-0034",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "pick up the blue block in the drawer",
+          "original_start": 224953,
+          "original_end": 225017,
+          "start": 224953,
+          "end": 225017,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000307",
+          "cluster_id": "lift_blue_block_drawer-0036",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "pick up the blue block lying in the drawer",
+          "original_start": 229921,
+          "original_end": 229985,
+          "start": 229921,
+          "end": 229985,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000434",
+          "cluster_id": "lift_blue_block_drawer-0038",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "grasp the blue block from the drawer",
+          "original_start": 239905,
+          "original_end": 239969,
+          "start": 239905,
+          "end": 239969,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000122",
+          "cluster_id": "lift_blue_block_drawer-0039",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "grasp the blue block lying in the drawer",
+          "original_start": 241078,
+          "original_end": 241142,
+          "start": 241078,
+          "end": 241142,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000970",
+          "cluster_id": "lift_blue_block_drawer-0040",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "go towards the blue block in the drawer and lift it",
+          "original_start": 242817,
+          "original_end": 242881,
+          "start": 242817,
+          "end": 242881,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000961",
+          "cluster_id": "lift_blue_block_drawer-0041",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "pick up the blue block from the drawer",
+          "original_start": 408229,
+          "original_end": 408293,
+          "start": 408229,
+          "end": 408293,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000458",
+          "cluster_id": "lift_blue_block_drawer-0042",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "lift the blue block in the drawer",
+          "original_start": 408864,
+          "original_end": 408928,
+          "start": 408864,
+          "end": 408928,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000459",
+          "cluster_id": "lift_blue_block_drawer-0044",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "grasp the blue block in the drawer",
+          "original_start": 416398,
+          "original_end": 416462,
+          "start": 416398,
+          "end": 416462,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000667",
+          "cluster_id": "lift_blue_block_drawer-0045",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "lift_blue_block_drawer",
+          "instruction": "pick up the blue block from the drawer",
+          "original_instruction": "go towards the blue block in the drawer and grasp it",
+          "original_start": 420196,
+          "original_end": 420260,
+          "start": 420196,
+          "end": 420260,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000739",
+          "cluster_id": "lift_blue_block_slider-0046",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "lift_blue_block_slider",
+          "instruction": "pick up the blue block from the sliding cabinet",
+          "original_instruction": "pick up the blue block from the shelf",
+          "original_start": 4100,
+          "original_end": 4164,
+          "start": 4100,
+          "end": 4164,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000314",
+          "cluster_id": "lift_blue_block_slider-0047",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "lift_blue_block_slider",
+          "instruction": "pick up the blue block from the sliding cabinet",
+          "original_instruction": "grasp the blue block lying in the cabinet",
+          "original_start": 6050,
+          "original_end": 6114,
+          "start": 6050,
+          "end": 6114,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000304",
+          "cluster_id": "lift_blue_block_slider-0048",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "lift_blue_block_slider",
+          "instruction": "pick up the blue block from the sliding cabinet",
+          "original_instruction": "pick up the blue block from the shelf",
+          "original_start": 15729,
+          "original_end": 15793,
+          "start": 15729,
+          "end": 15793,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000148",
+          "cluster_id": "lift_blue_block_slider-0049",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "lift_blue_block_slider",
+          "instruction": "pick up the blue block from the sliding cabinet",
+          "original_instruction": "lift the blue block lying in the slider",
+          "original_start": 16673,
+          "original_end": 16737,
+          "start": 16673,
+          "end": 16737,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000255",
+          "cluster_id": "lift_blue_block_slider-0050",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "lift_blue_block_slider",
+          "instruction": "pick up the blue block from the sliding cabinet",
+          "original_instruction": "lift the blue block lying in the cabinet",
+          "original_start": 21178,
+          "original_end": 21242,
+          "start": 21178,
+          "end": 21242,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000186",
+          "cluster_id": "lift_blue_block_slider-0051",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "lift_blue_block_slider",
+          "instruction": "pick up the blue block from the sliding cabinet",
+          "original_instruction": "pick up the blue block from the sliding cabinet",
+          "original_start": 26917,
+          "original_end": 26981,
+          "start": 26917,
+          "end": 26981,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000185",
+          "cluster_id": "lift_blue_block_slider-0052",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "lift_blue_block_slider",
+          "instruction": "pick up the blue block from the sliding cabinet",
+          "original_instruction": "grasp the blue block lying in the cabinet",
+          "original_start": 30992,
+          "original_end": 31056,
+          "start": 30992,
+          "end": 31056,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000580",
+          "cluster_id": "lift_blue_block_slider-0053",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "lift_blue_block_slider",
+          "instruction": "pick up the blue block from the sliding cabinet",
+          "original_instruction": "lift the blue block on the shelf",
+          "original_start": 31555,
+          "original_end": 31594,
+          "start": 31555,
+          "end": 31594,
+          "num_frames": 40,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000598",
+          "cluster_id": "lift_blue_block_slider-0054",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "lift_blue_block_slider",
+          "instruction": "pick up the blue block from the sliding cabinet",
+          "original_instruction": "in the cabinet pick up the blue block",
+          "original_start": 32077,
+          "original_end": 32141,
+          "start": 32077,
+          "end": 32141,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000087",
+          "cluster_id": "lift_blue_block_slider-0056",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "lift_blue_block_slider",
+          "instruction": "pick up the blue block from the sliding cabinet",
+          "original_instruction": "in the slider pick up the blue block",
+          "original_start": 46974,
+          "original_end": 47038,
+          "start": 46974,
+          "end": 47038,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000012",
+          "cluster_id": "lift_blue_block_slider-0057",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "lift_blue_block_slider",
+          "instruction": "pick up the blue block from the sliding cabinet",
+          "original_instruction": "lift the blue block on the shelf",
+          "original_start": 51443,
+          "original_end": 51507,
+          "start": 51443,
+          "end": 51507,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000187",
+          "cluster_id": "lift_blue_block_slider-0059",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "lift_blue_block_slider",
+          "instruction": "pick up the blue block from the sliding cabinet",
+          "original_instruction": "in the sliding cabinet grasp the blue block",
+          "original_start": 403331,
+          "original_end": 403395,
+          "start": 403331,
+          "end": 403395,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000572",
+          "cluster_id": "lift_blue_block_slider-0061",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "lift_blue_block_slider",
+          "instruction": "pick up the blue block from the sliding cabinet",
+          "original_instruction": "in the sliding cabinet grasp the blue block",
+          "original_start": 415832,
+          "original_end": 415896,
+          "start": 415832,
+          "end": 415896,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000007",
+          "cluster_id": "lift_blue_block_table-0062",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "grasp the blue block, then lift it up",
+          "original_start": 985,
+          "original_end": 1049,
+          "start": 985,
+          "end": 1049,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000303",
+          "cluster_id": "lift_blue_block_table-0063",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "pick up the blue block",
+          "original_start": 3651,
+          "original_end": 3715,
+          "start": 3651,
+          "end": 3715,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000139",
+          "cluster_id": "lift_blue_block_table-0064",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "grasp the blue block and lift it up",
+          "original_start": 6462,
+          "original_end": 6526,
+          "start": 6462,
+          "end": 6526,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000952",
+          "cluster_id": "lift_blue_block_table-0065",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "grasp the blue block, then lift it up",
+          "original_start": 16247,
+          "original_end": 16289,
+          "start": 16247,
+          "end": 16289,
+          "num_frames": 43,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000372",
+          "cluster_id": "lift_blue_block_table-0066",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "pick up the blue block from the table",
+          "original_start": 18722,
+          "original_end": 18755,
+          "start": 18722,
+          "end": 18755,
+          "num_frames": 34,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000452",
+          "cluster_id": "lift_blue_block_table-0067",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "pick up the blue block from the table",
+          "original_start": 20801,
+          "original_end": 20865,
+          "start": 20801,
+          "end": 20865,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000069",
+          "cluster_id": "lift_blue_block_table-0068",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "pick up the blue block",
+          "original_start": 29673,
+          "original_end": 29716,
+          "start": 29673,
+          "end": 29716,
+          "num_frames": 44,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000188",
+          "cluster_id": "lift_blue_block_table-0069",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "lift the blue block up",
+          "original_start": 34457,
+          "original_end": 34521,
+          "start": 34457,
+          "end": 34521,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000144",
+          "cluster_id": "lift_blue_block_table-0070",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "pick up the blue block from the table",
+          "original_start": 35082,
+          "original_end": 35146,
+          "start": 35082,
+          "end": 35146,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000825",
+          "cluster_id": "lift_blue_block_table-0071",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "pick up the blue block from the table",
+          "original_start": 222878,
+          "original_end": 222942,
+          "start": 222878,
+          "end": 222942,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000561",
+          "cluster_id": "lift_blue_block_table-0072",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "pick up the blue block from the table",
+          "original_start": 226936,
+          "original_end": 226976,
+          "start": 226936,
+          "end": 226976,
+          "num_frames": 41,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000160",
+          "cluster_id": "lift_blue_block_table-0073",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "lift the blue block up",
+          "original_start": 228340,
+          "original_end": 228404,
+          "start": 228340,
+          "end": 228404,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000291",
+          "cluster_id": "lift_blue_block_table-0074",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "grasp the blue block on the table and lift it up",
+          "original_start": 237178,
+          "original_end": 237242,
+          "start": 237178,
+          "end": 237242,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000032",
+          "cluster_id": "lift_blue_block_table-0075",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "grasp the blue block on the table, then lift it up",
+          "original_start": 400897,
+          "original_end": 400961,
+          "start": 400897,
+          "end": 400961,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000269",
+          "cluster_id": "lift_blue_block_table-0076",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "lift the blue block",
+          "original_start": 401134,
+          "original_end": 401171,
+          "start": 401134,
+          "end": 401171,
+          "num_frames": 38,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000559",
+          "cluster_id": "lift_blue_block_table-0077",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "lift the blue block from the table",
+          "original_start": 401624,
+          "original_end": 401688,
+          "start": 401624,
+          "end": 401688,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000284",
+          "cluster_id": "lift_blue_block_table-0078",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "lift the blue block from the table",
+          "original_start": 402788,
+          "original_end": 402852,
+          "start": 402788,
+          "end": 402852,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000311",
+          "cluster_id": "lift_blue_block_table-0079",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "grasp the blue block and lift it up",
+          "original_start": 405961,
+          "original_end": 406025,
+          "start": 405961,
+          "end": 406025,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000448",
+          "cluster_id": "lift_blue_block_table-0080",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "lift the blue block from the table",
+          "original_start": 406540,
+          "original_end": 406604,
+          "start": 406540,
+          "end": 406604,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000174",
+          "cluster_id": "lift_blue_block_table-0081",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "pick up the blue block on the table",
+          "original_start": 409215,
+          "original_end": 409279,
+          "start": 409215,
+          "end": 409279,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000576",
+          "cluster_id": "lift_blue_block_table-0082",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "lift_blue_block_table",
+          "instruction": "pick up the blue block from the table",
+          "original_instruction": "grasp the blue block and lift it up",
+          "original_start": 416715,
+          "original_end": 416779,
+          "start": 416715,
+          "end": 416779,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000436",
+          "cluster_id": "lift_pink_block_drawer-0083",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "lift_pink_block_drawer",
+          "instruction": "pick up the pink block from the drawer",
+          "original_instruction": "pick up the pink block from the drawer",
+          "original_start": 2626,
+          "original_end": 2690,
+          "start": 2626,
+          "end": 2690,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000329",
+          "cluster_id": "lift_pink_block_drawer-0084",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "lift_pink_block_drawer",
+          "instruction": "pick up the pink block from the drawer",
+          "original_instruction": "grasp the pink block in the drawer",
+          "original_start": 7749,
+          "original_end": 7813,
+          "start": 7749,
+          "end": 7813,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000614",
+          "cluster_id": "lift_pink_block_drawer-0085",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "lift_pink_block_drawer",
+          "instruction": "pick up the pink block from the drawer",
+          "original_instruction": "pick up the pink block lying in the drawer",
+          "original_start": 11230,
+          "original_end": 11294,
+          "start": 11230,
+          "end": 11294,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000035",
+          "cluster_id": "lift_pink_block_drawer-0086",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "lift_pink_block_drawer",
+          "instruction": "pick up the pink block from the drawer",
+          "original_instruction": "grasp the pink block from the drawer",
+          "original_start": 12783,
+          "original_end": 12847,
+          "start": 12783,
+          "end": 12847,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000604",
+          "cluster_id": "lift_pink_block_drawer-0087",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "lift_pink_block_drawer",
+          "instruction": "pick up the pink block from the drawer",
+          "original_instruction": "pick up the pink block from the drawer",
+          "original_start": 19345,
+          "original_end": 19409,
+          "start": 19345,
+          "end": 19409,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000071",
+          "cluster_id": "lift_pink_block_drawer-0088",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "lift_pink_block_drawer",
+          "instruction": "pick up the pink block from the drawer",
+          "original_instruction": "pick up the pink block from the drawer",
+          "original_start": 22071,
+          "original_end": 22135,
+          "start": 22071,
+          "end": 22135,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000074",
+          "cluster_id": "lift_pink_block_drawer-0089",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "lift_pink_block_drawer",
+          "instruction": "pick up the pink block from the drawer",
+          "original_instruction": "lift the pink block in the drawer",
+          "original_start": 23488,
+          "original_end": 23522,
+          "start": 23488,
+          "end": 23522,
+          "num_frames": 35,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000609",
+          "cluster_id": "lift_pink_block_drawer-0090",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "lift_pink_block_drawer",
+          "instruction": "pick up the pink block from the drawer",
+          "original_instruction": "pick up the pink block lying in the drawer",
+          "original_start": 27275,
+          "original_end": 27339,
+          "start": 27275,
+          "end": 27339,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000331",
+          "cluster_id": "lift_pink_block_drawer-0091",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "lift_pink_block_drawer",
+          "instruction": "pick up the pink block from the drawer",
+          "original_instruction": "lift the pink block lying in the drawer",
+          "original_start": 30852,
+          "original_end": 30916,
+          "start": 30852,
+          "end": 30916,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000501",
+          "cluster_id": "lift_pink_block_drawer-0092",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "lift_pink_block_drawer",
+          "instruction": "pick up the pink block from the drawer",
+          "original_instruction": "go towards the pink block in the drawer and pick it up",
+          "original_start": 36646,
+          "original_end": 36683,
+          "start": 36646,
+          "end": 36683,
+          "num_frames": 38,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000733",
+          "cluster_id": "lift_pink_block_drawer-0093",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "lift_pink_block_drawer",
+          "instruction": "pick up the pink block from the drawer",
+          "original_instruction": "pick up the pink block in the drawer",
+          "original_start": 50462,
+          "original_end": 50526,
+          "start": 50462,
+          "end": 50526,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000001",
+          "cluster_id": "lift_pink_block_drawer-0094",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "lift_pink_block_drawer",
+          "instruction": "pick up the pink block from the drawer",
+          "original_instruction": "lift the pink block lying in the drawer",
+          "original_start": 231377,
+          "original_end": 231411,
+          "start": 231377,
+          "end": 231411,
+          "num_frames": 35,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000094",
+          "cluster_id": "lift_pink_block_drawer-0095",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "lift_pink_block_drawer",
+          "instruction": "pick up the pink block from the drawer",
+          "original_instruction": "go towards the pink block in the drawer and lift it",
+          "original_start": 233448,
+          "original_end": 233512,
+          "start": 233448,
+          "end": 233512,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000809",
+          "cluster_id": "lift_pink_block_drawer-0096",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "lift_pink_block_drawer",
+          "instruction": "pick up the pink block from the drawer",
+          "original_instruction": "grasp the pink block from the drawer",
+          "original_start": 234435,
+          "original_end": 234499,
+          "start": 234435,
+          "end": 234499,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000282",
+          "cluster_id": "lift_pink_block_drawer-0097",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "lift_pink_block_drawer",
+          "instruction": "pick up the pink block from the drawer",
+          "original_instruction": "pick up the pink block in the drawer",
+          "original_start": 236036,
+          "original_end": 236083,
+          "start": 236036,
+          "end": 236083,
+          "num_frames": 48,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000388",
+          "cluster_id": "lift_pink_block_drawer-0098",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "lift_pink_block_drawer",
+          "instruction": "pick up the pink block from the drawer",
+          "original_instruction": "go towards the pink block in the drawer and grasp it",
+          "original_start": 238540,
+          "original_end": 238604,
+          "start": 238540,
+          "end": 238604,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000335",
+          "cluster_id": "lift_pink_block_drawer-0099",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "lift_pink_block_drawer",
+          "instruction": "pick up the pink block from the drawer",
+          "original_instruction": "grasp the pink block in the drawer",
+          "original_start": 402983,
+          "original_end": 403047,
+          "start": 402983,
+          "end": 403047,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000091",
+          "cluster_id": "lift_pink_block_slider-0100",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "lift_pink_block_slider",
+          "instruction": "pick up the pink block from the sliding cabinet",
+          "original_instruction": "grasp the pink block lying in the slider",
+          "original_start": 1346,
+          "original_end": 1410,
+          "start": 1346,
+          "end": 1410,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000161",
+          "cluster_id": "lift_pink_block_slider-0101",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "lift_pink_block_slider",
+          "instruction": "pick up the pink block from the sliding cabinet",
+          "original_instruction": "grasp the pink block lying on the shelf",
+          "original_start": 4828,
+          "original_end": 4892,
+          "start": 4828,
+          "end": 4892,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000023",
+          "cluster_id": "lift_pink_block_slider-0102",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "lift_pink_block_slider",
+          "instruction": "pick up the pink block from the sliding cabinet",
+          "original_instruction": "grasp the pink block lying in the cabinet",
+          "original_start": 6603,
+          "original_end": 6667,
+          "start": 6603,
+          "end": 6667,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000339",
+          "cluster_id": "lift_pink_block_slider-0103",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "lift_pink_block_slider",
+          "instruction": "pick up the pink block from the sliding cabinet",
+          "original_instruction": "lift the pink block lying in the slider",
+          "original_start": 23815,
+          "original_end": 23879,
+          "start": 23815,
+          "end": 23879,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000058",
+          "cluster_id": "lift_pink_block_slider-0104",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "lift_pink_block_slider",
+          "instruction": "pick up the pink block from the sliding cabinet",
+          "original_instruction": "in the sliding cabinet grasp the pink block",
+          "original_start": 38650,
+          "original_end": 38714,
+          "start": 38650,
+          "end": 38714,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000089",
+          "cluster_id": "lift_pink_block_slider-0105",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "lift_pink_block_slider",
+          "instruction": "pick up the pink block from the sliding cabinet",
+          "original_instruction": "lift the pink block on the shelf",
+          "original_start": 42376,
+          "original_end": 42440,
+          "start": 42376,
+          "end": 42440,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000095",
+          "cluster_id": "lift_pink_block_slider-0107",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "lift_pink_block_slider",
+          "instruction": "pick up the pink block from the sliding cabinet",
+          "original_instruction": "lift the pink block lying in the slider",
+          "original_start": 237433,
+          "original_end": 237497,
+          "start": 237433,
+          "end": 237497,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000099",
+          "cluster_id": "lift_pink_block_slider-0108",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "lift_pink_block_slider",
+          "instruction": "pick up the pink block from the sliding cabinet",
+          "original_instruction": "lift the pink block lying in the slider",
+          "original_start": 239183,
+          "original_end": 239247,
+          "start": 239183,
+          "end": 239247,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000618",
+          "cluster_id": "lift_pink_block_slider-0109",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "lift_pink_block_slider",
+          "instruction": "pick up the pink block from the sliding cabinet",
+          "original_instruction": "lift the pink block lying on the shelf",
+          "original_start": 243299,
+          "original_end": 243363,
+          "start": 243299,
+          "end": 243363,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000249",
+          "cluster_id": "lift_pink_block_slider-0110",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "lift_pink_block_slider",
+          "instruction": "pick up the pink block from the sliding cabinet",
+          "original_instruction": "in the slider grasp the pink block",
+          "original_start": 400412,
+          "original_end": 400476,
+          "start": 400412,
+          "end": 400476,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000988",
+          "cluster_id": "lift_pink_block_slider-0112",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "lift_pink_block_slider",
+          "instruction": "pick up the pink block from the sliding cabinet",
+          "original_instruction": "lift the pink block lying on the shelf",
+          "original_start": 416810,
+          "original_end": 416845,
+          "start": 416810,
+          "end": 416845,
+          "num_frames": 36,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000511",
+          "cluster_id": "lift_pink_block_table-0113",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "grasp the pink block and lift it up",
+          "original_start": 785,
+          "original_end": 820,
+          "start": 785,
+          "end": 820,
+          "num_frames": 36,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000775",
+          "cluster_id": "lift_pink_block_table-0114",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "lift the pink block",
+          "original_start": 3478,
+          "original_end": 3542,
+          "start": 3478,
+          "end": 3542,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000652",
+          "cluster_id": "lift_pink_block_table-0115",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "pick up the pink block from the table",
+          "original_start": 3750,
+          "original_end": 3814,
+          "start": 3750,
+          "end": 3814,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000950",
+          "cluster_id": "lift_pink_block_table-0116",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "pick up the pink block from the table",
+          "original_start": 4458,
+          "original_end": 4522,
+          "start": 4458,
+          "end": 4522,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000536",
+          "cluster_id": "lift_pink_block_table-0117",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "grasp the pink block, then lift it up",
+          "original_start": 7963,
+          "original_end": 8027,
+          "start": 7963,
+          "end": 8027,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000409",
+          "cluster_id": "lift_pink_block_table-0118",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "lift the pink block up",
+          "original_start": 13088,
+          "original_end": 13152,
+          "start": 13088,
+          "end": 13152,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000070",
+          "cluster_id": "lift_pink_block_table-0119",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "pick up the pink block",
+          "original_start": 24290,
+          "original_end": 24354,
+          "start": 24290,
+          "end": 24354,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000769",
+          "cluster_id": "lift_pink_block_table-0121",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "grasp the pink block and lift it up",
+          "original_start": 34638,
+          "original_end": 34702,
+          "start": 34638,
+          "end": 34702,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000404",
+          "cluster_id": "lift_pink_block_table-0122",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "grasp the pink block on the table, then lift it up",
+          "original_start": 39733,
+          "original_end": 39774,
+          "start": 39733,
+          "end": 39774,
+          "num_frames": 42,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000948",
+          "cluster_id": "lift_pink_block_table-0123",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "pick up the pink block",
+          "original_start": 44009,
+          "original_end": 44073,
+          "start": 44009,
+          "end": 44073,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000899",
+          "cluster_id": "lift_pink_block_table-0124",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "lift the pink block up",
+          "original_start": 53252,
+          "original_end": 53316,
+          "start": 53252,
+          "end": 53316,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000771",
+          "cluster_id": "lift_pink_block_table-0125",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "pick up the pink block",
+          "original_start": 227960,
+          "original_end": 228024,
+          "start": 227960,
+          "end": 228024,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000075",
+          "cluster_id": "lift_pink_block_table-0126",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "lift the pink block from the table",
+          "original_start": 229407,
+          "original_end": 229471,
+          "start": 229407,
+          "end": 229471,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000929",
+          "cluster_id": "lift_pink_block_table-0127",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "grasp the pink block and lift it up",
+          "original_start": 236875,
+          "original_end": 236922,
+          "start": 236875,
+          "end": 236922,
+          "num_frames": 48,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000560",
+          "cluster_id": "lift_pink_block_table-0128",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "lift the pink block",
+          "original_start": 237896,
+          "original_end": 237960,
+          "start": 237896,
+          "end": 237960,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000932",
+          "cluster_id": "lift_pink_block_table-0129",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "grasp the pink block on the table, then lift it up",
+          "original_start": 239562,
+          "original_end": 239626,
+          "start": 239562,
+          "end": 239626,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000289",
+          "cluster_id": "lift_pink_block_table-0130",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "lift the pink block up",
+          "original_start": 240979,
+          "original_end": 241043,
+          "start": 240979,
+          "end": 241043,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000399",
+          "cluster_id": "lift_pink_block_table-0131",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "grasp the pink block on the table, then lift it up",
+          "original_start": 242350,
+          "original_end": 242414,
+          "start": 242350,
+          "end": 242414,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000581",
+          "cluster_id": "lift_pink_block_table-0132",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "grasp the pink block, then lift it up",
+          "original_start": 242549,
+          "original_end": 242613,
+          "start": 242549,
+          "end": 242613,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000669",
+          "cluster_id": "lift_pink_block_table-0133",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "pick up the pink block from the table",
+          "original_start": 242651,
+          "original_end": 242692,
+          "start": 242651,
+          "end": 242692,
+          "num_frames": 42,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000549",
+          "cluster_id": "lift_pink_block_table-0134",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "lift the pink block",
+          "original_start": 408559,
+          "original_end": 408601,
+          "start": 408559,
+          "end": 408601,
+          "num_frames": 43,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000158",
+          "cluster_id": "lift_pink_block_table-0135",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "lift the pink block from the table",
+          "original_start": 413034,
+          "original_end": 413098,
+          "start": 413034,
+          "end": 413098,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000309",
+          "cluster_id": "lift_pink_block_table-0136",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "lift_pink_block_table",
+          "instruction": "pick up the pink block from the table",
+          "original_instruction": "lift the pink block up",
+          "original_start": 414953,
+          "original_end": 415017,
+          "start": 414953,
+          "end": 415017,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000460",
+          "cluster_id": "lift_red_block_drawer-0137",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "lift_red_block_drawer",
+          "instruction": "pick up the red block from the drawer",
+          "original_instruction": "lift the red block lying in the drawer",
+          "original_start": 5243,
+          "original_end": 5307,
+          "start": 5243,
+          "end": 5307,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000588",
+          "cluster_id": "lift_red_block_drawer-0138",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "lift_red_block_drawer",
+          "instruction": "pick up the red block from the drawer",
+          "original_instruction": "pick up the red block lying in the drawer",
+          "original_start": 21985,
+          "original_end": 22049,
+          "start": 21985,
+          "end": 22049,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000969",
+          "cluster_id": "lift_red_block_drawer-0139",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "lift_red_block_drawer",
+          "instruction": "pick up the red block from the drawer",
+          "original_instruction": "go towards the red block in the drawer and pick it up",
+          "original_start": 23381,
+          "original_end": 23445,
+          "start": 23381,
+          "end": 23445,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000197",
+          "cluster_id": "lift_red_block_drawer-0140",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "lift_red_block_drawer",
+          "instruction": "pick up the red block from the drawer",
+          "original_instruction": "go towards the red block in the drawer and lift it",
+          "original_start": 32813,
+          "original_end": 32877,
+          "start": 32813,
+          "end": 32877,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000959",
+          "cluster_id": "lift_red_block_drawer-0141",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "lift_red_block_drawer",
+          "instruction": "pick up the red block from the drawer",
+          "original_instruction": "go towards the red block in the drawer and pick it up",
+          "original_start": 35192,
+          "original_end": 35256,
+          "start": 35192,
+          "end": 35256,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000175",
+          "cluster_id": "lift_red_block_drawer-0142",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "lift_red_block_drawer",
+          "instruction": "pick up the red block from the drawer",
+          "original_instruction": "grasp the red block from the drawer",
+          "original_start": 44879,
+          "original_end": 44943,
+          "start": 44879,
+          "end": 44943,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000274",
+          "cluster_id": "lift_red_block_drawer-0143",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "lift_red_block_drawer",
+          "instruction": "pick up the red block from the drawer",
+          "original_instruction": "lift the red block lying in the drawer",
+          "original_start": 48018,
+          "original_end": 48082,
+          "start": 48018,
+          "end": 48082,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000563",
+          "cluster_id": "lift_red_block_drawer-0144",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "lift_red_block_drawer",
+          "instruction": "pick up the red block from the drawer",
+          "original_instruction": "go towards the red block in the drawer and pick it up",
+          "original_start": 226294,
+          "original_end": 226358,
+          "start": 226294,
+          "end": 226358,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000975",
+          "cluster_id": "lift_red_block_drawer-0145",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "lift_red_block_drawer",
+          "instruction": "pick up the red block from the drawer",
+          "original_instruction": "lift the red block in the drawer",
+          "original_start": 235454,
+          "original_end": 235518,
+          "start": 235454,
+          "end": 235518,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000037",
+          "cluster_id": "lift_red_block_drawer-0148",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "lift_red_block_drawer",
+          "instruction": "pick up the red block from the drawer",
+          "original_instruction": "lift the red block lying in the drawer",
+          "original_start": 244081,
+          "original_end": 244145,
+          "start": 244081,
+          "end": 244145,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000673",
+          "cluster_id": "lift_red_block_drawer-0149",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "lift_red_block_drawer",
+          "instruction": "pick up the red block from the drawer",
+          "original_instruction": "pick up the red block in the drawer",
+          "original_start": 402069,
+          "original_end": 402133,
+          "start": 402069,
+          "end": 402133,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000022",
+          "cluster_id": "lift_red_block_drawer-0150",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "lift_red_block_drawer",
+          "instruction": "pick up the red block from the drawer",
+          "original_instruction": "grasp the red block lying in the drawer",
+          "original_start": 405150,
+          "original_end": 405214,
+          "start": 405150,
+          "end": 405214,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000743",
+          "cluster_id": "lift_red_block_drawer-0152",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "lift_red_block_drawer",
+          "instruction": "pick up the red block from the drawer",
+          "original_instruction": "grasp the red block from the drawer",
+          "original_start": 411582,
+          "original_end": 411646,
+          "start": 411582,
+          "end": 411646,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000080",
+          "cluster_id": "lift_red_block_drawer-0153",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "lift_red_block_drawer",
+          "instruction": "pick up the red block from the drawer",
+          "original_instruction": "pick up the red block in the drawer",
+          "original_start": 412466,
+          "original_end": 412530,
+          "start": 412466,
+          "end": 412530,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000016",
+          "cluster_id": "lift_red_block_drawer-0154",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "lift_red_block_drawer",
+          "instruction": "pick up the red block from the drawer",
+          "original_instruction": "go towards the red block in the drawer and grasp it",
+          "original_start": 415235,
+          "original_end": 415299,
+          "start": 415235,
+          "end": 415299,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000682",
+          "cluster_id": "lift_red_block_drawer-0156",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "lift_red_block_drawer",
+          "instruction": "pick up the red block from the drawer",
+          "original_instruction": "grasp the red block from the drawer",
+          "original_start": 420299,
+          "original_end": 420363,
+          "start": 420299,
+          "end": 420363,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000079",
+          "cluster_id": "lift_red_block_slider-0157",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "lift_red_block_slider",
+          "instruction": "pick up the red block from the sliding cabinet",
+          "original_instruction": "grasp the red block lying in the cabinet",
+          "original_start": 10281,
+          "original_end": 10345,
+          "start": 10281,
+          "end": 10345,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000883",
+          "cluster_id": "lift_red_block_slider-0158",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "lift_red_block_slider",
+          "instruction": "pick up the red block from the sliding cabinet",
+          "original_instruction": "lift the red block on the shelf",
+          "original_start": 11625,
+          "original_end": 11689,
+          "start": 11625,
+          "end": 11689,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000271",
+          "cluster_id": "lift_red_block_slider-0159",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "lift_red_block_slider",
+          "instruction": "pick up the red block from the sliding cabinet",
+          "original_instruction": "grasp the red block lying in the slider",
+          "original_start": 17781,
+          "original_end": 17845,
+          "start": 17781,
+          "end": 17845,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000457",
+          "cluster_id": "lift_red_block_slider-0160",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "lift_red_block_slider",
+          "instruction": "pick up the red block from the sliding cabinet",
+          "original_instruction": "in the slider grasp the red block",
+          "original_start": 28150,
+          "original_end": 28214,
+          "start": 28150,
+          "end": 28214,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000438",
+          "cluster_id": "lift_red_block_slider-0161",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "lift_red_block_slider",
+          "instruction": "pick up the red block from the sliding cabinet",
+          "original_instruction": "pick up the red block in the sliding cabinet",
+          "original_start": 30359,
+          "original_end": 30423,
+          "start": 30359,
+          "end": 30423,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000530",
+          "cluster_id": "lift_red_block_slider-0162",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "lift_red_block_slider",
+          "instruction": "pick up the red block from the sliding cabinet",
+          "original_instruction": "grasp the red block lying in the slider",
+          "original_start": 38392,
+          "original_end": 38456,
+          "start": 38392,
+          "end": 38456,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000305",
+          "cluster_id": "lift_red_block_slider-0163",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "lift_red_block_slider",
+          "instruction": "pick up the red block from the sliding cabinet",
+          "original_instruction": "pick up the red block in the sliding cabinet",
+          "original_start": 43402,
+          "original_end": 43466,
+          "start": 43402,
+          "end": 43466,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000537",
+          "cluster_id": "lift_red_block_slider-0164",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "lift_red_block_slider",
+          "instruction": "pick up the red block from the sliding cabinet",
+          "original_instruction": "grasp the red block lying in the slider",
+          "original_start": 50275,
+          "original_end": 50339,
+          "start": 50275,
+          "end": 50339,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000812",
+          "cluster_id": "lift_red_block_slider-0165",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "lift_red_block_slider",
+          "instruction": "pick up the red block from the sliding cabinet",
+          "original_instruction": "grasp the red block lying in the slider",
+          "original_start": 52469,
+          "original_end": 52533,
+          "start": 52469,
+          "end": 52533,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000714",
+          "cluster_id": "lift_red_block_slider-0166",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "lift_red_block_slider",
+          "instruction": "pick up the red block from the sliding cabinet",
+          "original_instruction": "pick up the red block in the sliding cabinet",
+          "original_start": 221467,
+          "original_end": 221531,
+          "start": 221467,
+          "end": 221531,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000440",
+          "cluster_id": "lift_red_block_slider-0167",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "lift_red_block_slider",
+          "instruction": "pick up the red block from the sliding cabinet",
+          "original_instruction": "lift the red block lying in the sliding cabinet",
+          "original_start": 222165,
+          "original_end": 222229,
+          "start": 222165,
+          "end": 222229,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000710",
+          "cluster_id": "lift_red_block_slider-0168",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "lift_red_block_slider",
+          "instruction": "pick up the red block from the sliding cabinet",
+          "original_instruction": "lift the red block on the shelf",
+          "original_start": 223174,
+          "original_end": 223238,
+          "start": 223174,
+          "end": 223238,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000014",
+          "cluster_id": "lift_red_block_slider-0169",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "lift_red_block_slider",
+          "instruction": "pick up the red block from the sliding cabinet",
+          "original_instruction": "in the slider pick up the red block",
+          "original_start": 223774,
+          "original_end": 223838,
+          "start": 223774,
+          "end": 223838,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000055",
+          "cluster_id": "lift_red_block_slider-0173",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "lift_red_block_slider",
+          "instruction": "pick up the red block from the sliding cabinet",
+          "original_instruction": "grasp the red block lying in the slider",
+          "original_start": 232458,
+          "original_end": 232522,
+          "start": 232458,
+          "end": 232522,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000834",
+          "cluster_id": "lift_red_block_slider-0174",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "lift_red_block_slider",
+          "instruction": "pick up the red block from the sliding cabinet",
+          "original_instruction": "in the slider pick up the red block",
+          "original_start": 233358,
+          "original_end": 233422,
+          "start": 233358,
+          "end": 233422,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000895",
+          "cluster_id": "lift_red_block_slider-0175",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "lift_red_block_slider",
+          "instruction": "pick up the red block from the sliding cabinet",
+          "original_instruction": "grasp the red block lying in the cabinet",
+          "original_start": 239387,
+          "original_end": 239451,
+          "start": 239387,
+          "end": 239451,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000824",
+          "cluster_id": "lift_red_block_slider-0176",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "lift_red_block_slider",
+          "instruction": "pick up the red block from the sliding cabinet",
+          "original_instruction": "pick up the red block from the sliding cabinet",
+          "original_start": 402620,
+          "original_end": 402684,
+          "start": 402620,
+          "end": 402684,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000716",
+          "cluster_id": "lift_red_block_slider-0177",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "lift_red_block_slider",
+          "instruction": "pick up the red block from the sliding cabinet",
+          "original_instruction": "grasp the red block lying in the slider",
+          "original_start": 412854,
+          "original_end": 412918,
+          "start": 412854,
+          "end": 412918,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000555",
+          "cluster_id": "lift_red_block_slider-0178",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "lift_red_block_slider",
+          "instruction": "pick up the red block from the sliding cabinet",
+          "original_instruction": "grasp the red block lying in the slider",
+          "original_start": 418128,
+          "original_end": 418192,
+          "start": 418128,
+          "end": 418192,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000283",
+          "cluster_id": "lift_red_block_table-0179",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "grasp the red block, then lift it up",
+          "original_start": 2787,
+          "original_end": 2851,
+          "start": 2787,
+          "end": 2851,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000164",
+          "cluster_id": "lift_red_block_table-0180",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "grasp the red block, then lift it up",
+          "original_start": 3196,
+          "original_end": 3231,
+          "start": 3196,
+          "end": 3231,
+          "num_frames": 36,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000184",
+          "cluster_id": "lift_red_block_table-0181",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "grasp the red block and lift it up",
+          "original_start": 6335,
+          "original_end": 6399,
+          "start": 6335,
+          "end": 6399,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000896",
+          "cluster_id": "lift_red_block_table-0182",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "grasp the red block on the table, then lift it up",
+          "original_start": 8294,
+          "original_end": 8358,
+          "start": 8294,
+          "end": 8358,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000713",
+          "cluster_id": "lift_red_block_table-0183",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "lift the red block up",
+          "original_start": 10766,
+          "original_end": 10830,
+          "start": 10766,
+          "end": 10830,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000395",
+          "cluster_id": "lift_red_block_table-0184",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "lift the red block from the table",
+          "original_start": 13723,
+          "original_end": 13765,
+          "start": 13723,
+          "end": 13765,
+          "num_frames": 43,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000587",
+          "cluster_id": "lift_red_block_table-0185",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "pick up the red block",
+          "original_start": 16367,
+          "original_end": 16431,
+          "start": 16367,
+          "end": 16431,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000115",
+          "cluster_id": "lift_red_block_table-0186",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "grasp the red block and lift it up",
+          "original_start": 19196,
+          "original_end": 19260,
+          "start": 19196,
+          "end": 19260,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000067",
+          "cluster_id": "lift_red_block_table-0187",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "grasp the red block on the table, then lift it up",
+          "original_start": 23621,
+          "original_end": 23685,
+          "start": 23621,
+          "end": 23685,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000513",
+          "cluster_id": "lift_red_block_table-0188",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "grasp the red block on the table, then lift it up",
+          "original_start": 27788,
+          "original_end": 27852,
+          "start": 27788,
+          "end": 27852,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000374",
+          "cluster_id": "lift_red_block_table-0189",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "pick up the red block",
+          "original_start": 28749,
+          "original_end": 28813,
+          "start": 28749,
+          "end": 28813,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000120",
+          "cluster_id": "lift_red_block_table-0190",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "grasp the red block on the table, then lift it up",
+          "original_start": 31639,
+          "original_end": 31703,
+          "start": 31639,
+          "end": 31703,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000924",
+          "cluster_id": "lift_red_block_table-0191",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "lift the red block from the table",
+          "original_start": 33319,
+          "original_end": 33383,
+          "start": 33319,
+          "end": 33383,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000117",
+          "cluster_id": "lift_red_block_table-0192",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "lift the red block",
+          "original_start": 35390,
+          "original_end": 35454,
+          "start": 35390,
+          "end": 35454,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000003",
+          "cluster_id": "lift_red_block_table-0193",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "pick up the red block from the table",
+          "original_start": 44225,
+          "original_end": 44289,
+          "start": 44225,
+          "end": 44289,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000813",
+          "cluster_id": "lift_red_block_table-0194",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "grasp the red block and lift it up",
+          "original_start": 48710,
+          "original_end": 48774,
+          "start": 48710,
+          "end": 48774,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000722",
+          "cluster_id": "lift_red_block_table-0195",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "pick up the red block from the table",
+          "original_start": 220613,
+          "original_end": 220677,
+          "start": 220613,
+          "end": 220677,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000773",
+          "cluster_id": "lift_red_block_table-0196",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "grasp the red block, then lift it up",
+          "original_start": 224195,
+          "original_end": 224259,
+          "start": 224195,
+          "end": 224259,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000053",
+          "cluster_id": "lift_red_block_table-0197",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "grasp the red block on the table, then lift it up",
+          "original_start": 230573,
+          "original_end": 230619,
+          "start": 230573,
+          "end": 230619,
+          "num_frames": 47,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000450",
+          "cluster_id": "lift_red_block_table-0198",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "lift the red block up",
+          "original_start": 407341,
+          "original_end": 407405,
+          "start": 407341,
+          "end": 407405,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000245",
+          "cluster_id": "lift_red_block_table-0199",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "pick up the red block from the table",
+          "original_start": 417838,
+          "original_end": 417871,
+          "start": 417838,
+          "end": 417871,
+          "num_frames": 34,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000156",
+          "cluster_id": "lift_red_block_table-0200",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "lift_red_block_table",
+          "instruction": "pick up the red block from the table",
+          "original_instruction": "pick up the red block on the table",
+          "original_start": 418732,
+          "original_end": 418796,
+          "start": 418732,
+          "end": 418796,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+version: 1
+name: calvin_abc_lift_9_clean_task_D_D
+manifest: datasets/calvin_abc_lift_9_clean/manifests/task_D_D_validation.json
+source_dataset: calvin/dataset/task_D_D
+split: validation
+oracle_config: calvin/calvin_models/conf/callbacks/rollout/tasks/new_playtable_tasks.yaml
+defaults: {max_steps: 150, settle_steps: 0}
+tasks:
+  - {task: lift_blue_block_drawer, oracle_task: lift_blue_block_drawer}
+  - {task: lift_blue_block_slider, oracle_task: lift_blue_block_slider}
+  - {task: lift_blue_block_table, oracle_task: lift_blue_block_table}
+  - {task: lift_pink_block_drawer, oracle_task: lift_pink_block_drawer}
+  - {task: lift_pink_block_slider, oracle_task: lift_pink_block_slider}
+  - {task: lift_pink_block_table, oracle_task: lift_pink_block_table}
+  - {task: lift_red_block_drawer, oracle_task: lift_red_block_drawer}
+  - {task: lift_red_block_slider, oracle_task: lift_red_block_slider}
+  - {task: lift_red_block_table, oracle_task: lift_red_block_table}

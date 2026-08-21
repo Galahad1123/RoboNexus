@@ -1,0 +1,14 @@
+version: 1
+name: calvin_abc_device_6_clean_task_D_D
+manifest: datasets/calvin_abc_device_6_clean/manifests/task_D_D_validation.json
+source_dataset: calvin/dataset/task_D_D
+split: validation
+oracle_config: calvin/calvin_models/conf/callbacks/rollout/tasks/new_playtable_tasks.yaml
+defaults: {max_steps: 150, settle_steps: 0}
+tasks:
+  - {task: move_slider_left, oracle_task: move_slider_left}
+  - {task: move_slider_right, oracle_task: move_slider_right}
+  - {task: turn_off_led, oracle_task: turn_off_led}
+  - {task: turn_off_lightbulb, oracle_task: turn_off_lightbulb}
+  - {task: turn_on_led, oracle_task: turn_on_led}
+  - {task: turn_on_lightbulb, oracle_task: turn_on_lightbulb}

@@ -1,0 +1,2982 @@
+{
+  "version": 1,
+  "name": "calvin_abc_manipulation_13_clean_task_D_D_validation",
+  "source_dataset": "calvin/dataset/task_D_D",
+  "frequency_hz": 30,
+  "image_mode": "clean_rgb",
+  "evaluation_only": true,
+  "derived_from": [
+    "datasets/calvin_push_6/manifests/segments.json",
+    "datasets/calvin_rotate_6_release/manifests/segments.json",
+    "datasets/calvin_stack_pick_place_persistent/manifests/segments.json"
+  ],
+  "instruction_source": "datasets/calvin_abc_manipulation_13_clean/manifests/segments.json",
+  "tasks": [
+    {
+      "task_id": 0,
+      "calvin_task": "push_blue_block_left",
+      "instruction": "push the blue block to the left"
+    },
+    {
+      "task_id": 1,
+      "calvin_task": "push_blue_block_right",
+      "instruction": "push the blue block to the right"
+    },
+    {
+      "task_id": 2,
+      "calvin_task": "push_pink_block_left",
+      "instruction": "push the pink block to the left"
+    },
+    {
+      "task_id": 3,
+      "calvin_task": "push_pink_block_right",
+      "instruction": "push the pink block to the right"
+    },
+    {
+      "task_id": 4,
+      "calvin_task": "push_red_block_left",
+      "instruction": "push the red block to the left"
+    },
+    {
+      "task_id": 5,
+      "calvin_task": "push_red_block_right",
+      "instruction": "push the red block to the right"
+    },
+    {
+      "task_id": 6,
+      "calvin_task": "rotate_blue_block_left",
+      "instruction": "rotate the blue block counterclockwise"
+    },
+    {
+      "task_id": 7,
+      "calvin_task": "rotate_blue_block_right",
+      "instruction": "rotate the blue block clockwise"
+    },
+    {
+      "task_id": 8,
+      "calvin_task": "rotate_pink_block_left",
+      "instruction": "rotate the pink block counterclockwise"
+    },
+    {
+      "task_id": 9,
+      "calvin_task": "rotate_pink_block_right",
+      "instruction": "rotate the pink block clockwise"
+    },
+    {
+      "task_id": 10,
+      "calvin_task": "rotate_red_block_left",
+      "instruction": "rotate the red block counterclockwise"
+    },
+    {
+      "task_id": 11,
+      "calvin_task": "rotate_red_block_right",
+      "instruction": "rotate the red block clockwise"
+    },
+    {
+      "task_id": 12,
+      "calvin_task": "stack_block",
+      "instruction": "stack one block on top of another block"
+    }
+  ],
+  "splits": {
+    "validation": {
+      "source_split": "validation",
+      "summary": {
+        "dataset": "calvin_abc_manipulation_13_clean",
+        "source_dataset": "calvin/dataset/task_D_D",
+        "split": "validation",
+        "episodes": 105,
+        "frames": 7496,
+        "by_task": {
+          "push_blue_block_left": 7,
+          "push_blue_block_right": 6,
+          "push_pink_block_left": 6,
+          "push_pink_block_right": 6,
+          "push_red_block_left": 9,
+          "push_red_block_right": 5,
+          "rotate_blue_block_left": 6,
+          "rotate_blue_block_right": 5,
+          "rotate_pink_block_left": 7,
+          "rotate_pink_block_right": 12,
+          "rotate_red_block_left": 9,
+          "rotate_red_block_right": 6,
+          "stack_block": 21
+        },
+        "oracle_consistent": true,
+        "unique_segment_ids": true,
+        "source_boundary_frames_exist": true,
+        "instruction_mode": "clean_canonical"
+      },
+      "segments": [
+        {
+          "segment_id": "validation-000233",
+          "cluster_id": "push_blue_block_left-0000",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "go slide the blue block to the left",
+          "original_start": 32318,
+          "original_end": 32364,
+          "start": 32318,
+          "end": 32364,
+          "num_frames": 47,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000613",
+          "cluster_id": "push_blue_block_left-0002",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "go push the blue block to the left",
+          "original_start": 48812,
+          "original_end": 48858,
+          "start": 48812,
+          "end": 48858,
+          "num_frames": 47,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000063",
+          "cluster_id": "push_blue_block_left-0003",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "push left the blue block",
+          "original_start": 222101,
+          "original_end": 222165,
+          "start": 222101,
+          "end": 222165,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000931",
+          "cluster_id": "push_blue_block_left-0004",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "push the blue block to the left",
+          "original_start": 230137,
+          "original_end": 230179,
+          "start": 230133,
+          "end": 230179,
+          "num_frames": 47,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000275",
+          "cluster_id": "push_blue_block_left-0006",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "slide left the blue block",
+          "original_start": 238953,
+          "original_end": 238991,
+          "start": 238952,
+          "end": 238991,
+          "num_frames": 40,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000747",
+          "cluster_id": "push_blue_block_left-0007",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "slide left the blue block",
+          "original_start": 401158,
+          "original_end": 401206,
+          "start": 401158,
+          "end": 401206,
+          "num_frames": 49,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000483",
+          "cluster_id": "push_blue_block_left-0008",
+          "split": "validation",
+          "task_id": 0,
+          "calvin_task": "push_blue_block_left",
+          "instruction": "push the blue block to the left",
+          "original_instruction": "slide the blue block towards the left",
+          "original_start": 402814,
+          "original_end": 402878,
+          "start": 402814,
+          "end": 402878,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000217",
+          "cluster_id": "push_blue_block_right-0011",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "slide right the blue block",
+          "original_start": 21580,
+          "original_end": 21644,
+          "start": 21580,
+          "end": 21644,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000108",
+          "cluster_id": "push_blue_block_right-0012",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "push right the blue block",
+          "original_start": 21674,
+          "original_end": 21721,
+          "start": 21674,
+          "end": 21721,
+          "num_frames": 48,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000346",
+          "cluster_id": "push_blue_block_right-0013",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "push the blue block towards the right",
+          "original_start": 21728,
+          "original_end": 21761,
+          "start": 21728,
+          "end": 21761,
+          "num_frames": 34,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000358",
+          "cluster_id": "push_blue_block_right-0014",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "go slide the blue block to the right",
+          "original_start": 37764,
+          "original_end": 37828,
+          "start": 37764,
+          "end": 37828,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000492",
+          "cluster_id": "push_blue_block_right-0016",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "push the blue block to the right",
+          "original_start": 400942,
+          "original_end": 400989,
+          "start": 400938,
+          "end": 400989,
+          "num_frames": 52,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000111",
+          "cluster_id": "push_blue_block_right-0018",
+          "split": "validation",
+          "task_id": 1,
+          "calvin_task": "push_blue_block_right",
+          "instruction": "push the blue block to the right",
+          "original_instruction": "slide right the blue block",
+          "original_start": 417599,
+          "original_end": 417646,
+          "start": 417597,
+          "end": 417646,
+          "num_frames": 50,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000102",
+          "cluster_id": "push_pink_block_left-0019",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "slide the pink block towards the left",
+          "original_start": 19975,
+          "original_end": 20039,
+          "start": 19975,
+          "end": 20039,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000234",
+          "cluster_id": "push_pink_block_left-0020",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push left the pink block",
+          "original_start": 34240,
+          "original_end": 34304,
+          "start": 34240,
+          "end": 34304,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000638",
+          "cluster_id": "push_pink_block_left-0021",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "go slide the pink block to the left",
+          "original_start": 34294,
+          "original_end": 34341,
+          "start": 34291,
+          "end": 34341,
+          "num_frames": 51,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000212",
+          "cluster_id": "push_pink_block_left-0022",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "go push the pink block to the left",
+          "original_start": 39525,
+          "original_end": 39563,
+          "start": 39525,
+          "end": 39563,
+          "num_frames": 39,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-001007",
+          "cluster_id": "push_pink_block_left-0024",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "push the pink block to the left",
+          "original_start": 241024,
+          "original_end": 241070,
+          "start": 241024,
+          "end": 241070,
+          "num_frames": 47,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000227",
+          "cluster_id": "push_pink_block_left-0025",
+          "split": "validation",
+          "task_id": 2,
+          "calvin_task": "push_pink_block_left",
+          "instruction": "push the pink block to the left",
+          "original_instruction": "slide left the pink block",
+          "original_start": 414600,
+          "original_end": 414664,
+          "start": 414600,
+          "end": 414664,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000643",
+          "cluster_id": "push_pink_block_right-0028",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push right the pink block",
+          "original_start": 34371,
+          "original_end": 34405,
+          "start": 34371,
+          "end": 34405,
+          "num_frames": 35,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000230",
+          "cluster_id": "push_pink_block_right-0029",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "slide the pink block towards the right",
+          "original_start": 39644,
+          "original_end": 39708,
+          "start": 39644,
+          "end": 39708,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000466",
+          "cluster_id": "push_pink_block_right-0030",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "sweep the pink block to the right",
+          "original_start": 240731,
+          "original_end": 240777,
+          "start": 240731,
+          "end": 240777,
+          "num_frames": 47,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000478",
+          "cluster_id": "push_pink_block_right-0031",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "go push the pink block to the right",
+          "original_start": 400527,
+          "original_end": 400562,
+          "start": 400527,
+          "end": 400562,
+          "num_frames": 36,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000106",
+          "cluster_id": "push_pink_block_right-0032",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push right the pink block",
+          "original_start": 404279,
+          "original_end": 404343,
+          "start": 404279,
+          "end": 404343,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000224",
+          "cluster_id": "push_pink_block_right-0033",
+          "split": "validation",
+          "task_id": 3,
+          "calvin_task": "push_pink_block_right",
+          "instruction": "push the pink block to the right",
+          "original_instruction": "push the pink block towards the right",
+          "original_start": 414530,
+          "original_end": 414573,
+          "start": 414530,
+          "end": 414573,
+          "num_frames": 44,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000413",
+          "cluster_id": "push_red_block_left-0035",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "push the red block towards the left",
+          "original_start": 2806,
+          "original_end": 2870,
+          "start": 2806,
+          "end": 2870,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000178",
+          "cluster_id": "push_red_block_left-0037",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide the red block towards the left",
+          "original_start": 36995,
+          "original_end": 37059,
+          "start": 36988,
+          "end": 37059,
+          "num_frames": 72,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000341",
+          "cluster_id": "push_red_block_left-0038",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "push left the red block",
+          "original_start": 44984,
+          "original_end": 45048,
+          "start": 44984,
+          "end": 45048,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-001000",
+          "cluster_id": "push_red_block_left-0039",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "go push the red block to the left",
+          "original_start": 45029,
+          "original_end": 45093,
+          "start": 45029,
+          "end": 45093,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000017",
+          "cluster_id": "push_red_block_left-0040",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "go slide the red block to the left",
+          "original_start": 45204,
+          "original_end": 45268,
+          "start": 45204,
+          "end": 45268,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000073",
+          "cluster_id": "push_red_block_left-0041",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide left the red block",
+          "original_start": 45267,
+          "original_end": 45306,
+          "start": 45258,
+          "end": 45306,
+          "num_frames": 49,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000218",
+          "cluster_id": "push_red_block_left-0043",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide left the red block",
+          "original_start": 410160,
+          "original_end": 410224,
+          "start": 410160,
+          "end": 410224,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000595",
+          "cluster_id": "push_red_block_left-0044",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide the red block towards the left",
+          "original_start": 415566,
+          "original_end": 415630,
+          "start": 415566,
+          "end": 415630,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000763",
+          "cluster_id": "push_red_block_left-0046",
+          "split": "validation",
+          "task_id": 4,
+          "calvin_task": "push_red_block_left",
+          "instruction": "push the red block to the left",
+          "original_instruction": "slide the red block to the left",
+          "original_start": 419315,
+          "original_end": 419379,
+          "start": 419315,
+          "end": 419379,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000084",
+          "cluster_id": "push_red_block_right-0048",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "slide the red block towards the right",
+          "original_start": 2354,
+          "original_end": 2418,
+          "start": 2354,
+          "end": 2418,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000848",
+          "cluster_id": "push_red_block_right-0051",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "push the red block to the right",
+          "original_start": 44758,
+          "original_end": 44822,
+          "start": 44758,
+          "end": 44822,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000541",
+          "cluster_id": "push_red_block_right-0052",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "push the red block towards the right",
+          "original_start": 45116,
+          "original_end": 45180,
+          "start": 45116,
+          "end": 45180,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000056",
+          "cluster_id": "push_red_block_right-0055",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "slide the red block to the right",
+          "original_start": 410080,
+          "original_end": 410144,
+          "start": 410080,
+          "end": 410144,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000334",
+          "cluster_id": "push_red_block_right-0058",
+          "split": "validation",
+          "task_id": 5,
+          "calvin_task": "push_red_block_right",
+          "instruction": "push the red block to the right",
+          "original_instruction": "slide right the red block",
+          "original_start": 419243,
+          "original_end": 419307,
+          "start": 419243,
+          "end": 419307,
+          "num_frames": 65,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000865",
+          "cluster_id": "rotate_blue_block_left-0000",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "rotate_blue_block_left",
+          "instruction": "rotate the blue block counterclockwise",
+          "original_instruction": "rotate the blue block to the left",
+          "original_start": 18709,
+          "original_end": 18773,
+          "start": 18709,
+          "end": 18803,
+          "num_frames": 95,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_blue",
+          "oracle_success_frame": 18773,
+          "release_frame": 18773,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000328",
+          "cluster_id": "rotate_blue_block_left-0004",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "rotate_blue_block_left",
+          "instruction": "rotate the blue block counterclockwise",
+          "original_instruction": "rotate the blue block 90 degrees to the left",
+          "original_start": 37940,
+          "original_end": 38004,
+          "start": 37940,
+          "end": 38029,
+          "num_frames": 90,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_blue",
+          "oracle_success_frame": 37999,
+          "release_frame": 37999,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000092",
+          "cluster_id": "rotate_blue_block_left-0005",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "rotate_blue_block_left",
+          "instruction": "rotate the blue block counterclockwise",
+          "original_instruction": "turn the blue block left",
+          "original_start": 403421,
+          "original_end": 403485,
+          "start": 403421,
+          "end": 403516,
+          "num_frames": 96,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_blue",
+          "oracle_success_frame": 403486,
+          "release_frame": 403486,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000482",
+          "cluster_id": "rotate_blue_block_left-0007",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "rotate_blue_block_left",
+          "instruction": "rotate the blue block counterclockwise",
+          "original_instruction": "grasp the blue block and turn it left",
+          "original_start": 407116,
+          "original_end": 407180,
+          "start": 407116,
+          "end": 407204,
+          "num_frames": 89,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_blue",
+          "oracle_success_frame": 407176,
+          "release_frame": 407176,
+          "stable_suffix_frames": 28,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000842",
+          "cluster_id": "rotate_blue_block_left-0008",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "rotate_blue_block_left",
+          "instruction": "rotate the blue block counterclockwise",
+          "original_instruction": "take the blue block and rotate it left",
+          "original_start": 407529,
+          "original_end": 407593,
+          "start": 407529,
+          "end": 407633,
+          "num_frames": 105,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_blue",
+          "oracle_success_frame": 407603,
+          "release_frame": 407603,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000610",
+          "cluster_id": "rotate_blue_block_left-0009",
+          "split": "validation",
+          "task_id": 6,
+          "calvin_task": "rotate_blue_block_left",
+          "instruction": "rotate the blue block counterclockwise",
+          "original_instruction": "grasp the blue block, then turn it left",
+          "original_start": 407647,
+          "original_end": 407711,
+          "start": 407647,
+          "end": 407740,
+          "num_frames": 94,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_blue",
+          "oracle_success_frame": 407710,
+          "release_frame": 407710,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000972",
+          "cluster_id": "rotate_blue_block_right-0010",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "rotate_blue_block_right",
+          "instruction": "rotate the blue block clockwise",
+          "original_instruction": "rotate the blue block towards the right",
+          "original_start": 8422,
+          "original_end": 8486,
+          "start": 8422,
+          "end": 8515,
+          "num_frames": 94,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_blue",
+          "oracle_success_frame": 8485,
+          "release_frame": 8485,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000222",
+          "cluster_id": "rotate_blue_block_right-0012",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "rotate_blue_block_right",
+          "instruction": "rotate the blue block clockwise",
+          "original_instruction": "rotate the blue block to the right",
+          "original_start": 18803,
+          "original_end": 18867,
+          "start": 18803,
+          "end": 18895,
+          "num_frames": 93,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_blue",
+          "oracle_success_frame": 18864,
+          "release_frame": 18865,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000867",
+          "cluster_id": "rotate_blue_block_right-0013",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "rotate_blue_block_right",
+          "instruction": "rotate the blue block clockwise",
+          "original_instruction": "grasp the blue block and rotate it right",
+          "original_start": 21385,
+          "original_end": 21449,
+          "start": 21379,
+          "end": 21475,
+          "num_frames": 97,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_blue",
+          "oracle_success_frame": 21445,
+          "release_frame": 21445,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000100",
+          "cluster_id": "rotate_blue_block_right-0015",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "rotate_blue_block_right",
+          "instruction": "rotate the blue block clockwise",
+          "original_instruction": "grasp the blue block and turn it right",
+          "original_start": 238761,
+          "original_end": 238825,
+          "start": 238761,
+          "end": 238861,
+          "num_frames": 101,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_blue",
+          "oracle_success_frame": 238831,
+          "release_frame": 238831,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000105",
+          "cluster_id": "rotate_blue_block_right-0016",
+          "split": "validation",
+          "task_id": 7,
+          "calvin_task": "rotate_blue_block_right",
+          "instruction": "rotate the blue block clockwise",
+          "original_instruction": "rotate the blue block to the right",
+          "original_start": 238842,
+          "original_end": 238906,
+          "start": 238842,
+          "end": 238927,
+          "num_frames": 86,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_blue",
+          "oracle_success_frame": 238905,
+          "release_frame": 238905,
+          "stable_suffix_frames": 22,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000937",
+          "cluster_id": "rotate_pink_block_left-0017",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "rotate_pink_block_left",
+          "instruction": "rotate the pink block counterclockwise",
+          "original_instruction": "grasp the pink block and rotate it left",
+          "original_start": 3062,
+          "original_end": 3126,
+          "start": 3062,
+          "end": 3153,
+          "num_frames": 92,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_pink",
+          "oracle_success_frame": 3123,
+          "release_frame": 3123,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000597",
+          "cluster_id": "rotate_pink_block_left-0019",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "rotate_pink_block_left",
+          "instruction": "rotate the pink block counterclockwise",
+          "original_instruction": "take the pink block and rotate it left",
+          "original_start": 34659,
+          "original_end": 34723,
+          "start": 34659,
+          "end": 34754,
+          "num_frames": 96,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_pink",
+          "oracle_success_frame": 34724,
+          "release_frame": 34724,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000953",
+          "cluster_id": "rotate_pink_block_left-0020",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "rotate_pink_block_left",
+          "instruction": "rotate the pink block counterclockwise",
+          "original_instruction": "grasp the pink block and rotate it left",
+          "original_start": 36260,
+          "original_end": 36324,
+          "start": 36260,
+          "end": 36367,
+          "num_frames": 108,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_pink",
+          "oracle_success_frame": 36337,
+          "release_frame": 36337,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000474",
+          "cluster_id": "rotate_pink_block_left-0022",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "rotate_pink_block_left",
+          "instruction": "rotate the pink block counterclockwise",
+          "original_instruction": "rotate the pink block towards the left",
+          "original_start": 39348,
+          "original_end": 39412,
+          "start": 39348,
+          "end": 39447,
+          "num_frames": 100,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_pink",
+          "oracle_success_frame": 39425,
+          "release_frame": 39425,
+          "stable_suffix_frames": 22,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000855",
+          "cluster_id": "rotate_pink_block_left-0025",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "rotate_pink_block_left",
+          "instruction": "rotate the pink block counterclockwise",
+          "original_instruction": "take the pink block and turn it left",
+          "original_start": 403791,
+          "original_end": 403855,
+          "start": 403788,
+          "end": 403879,
+          "num_frames": 92,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_pink",
+          "oracle_success_frame": 403849,
+          "release_frame": 403849,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000577",
+          "cluster_id": "rotate_pink_block_left-0027",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "rotate_pink_block_left",
+          "instruction": "rotate the pink block counterclockwise",
+          "original_instruction": "grasp the pink block and rotate it left",
+          "original_start": 414311,
+          "original_end": 414375,
+          "start": 414311,
+          "end": 414406,
+          "num_frames": 96,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_pink",
+          "oracle_success_frame": 414376,
+          "release_frame": 414376,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000986",
+          "cluster_id": "rotate_pink_block_left-0028",
+          "split": "validation",
+          "task_id": 8,
+          "calvin_task": "rotate_pink_block_left",
+          "instruction": "rotate the pink block counterclockwise",
+          "original_instruction": "grasp the pink block and rotate it left",
+          "original_start": 414441,
+          "original_end": 414505,
+          "start": 414441,
+          "end": 414526,
+          "num_frames": 86,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_pink",
+          "oracle_success_frame": 414510,
+          "release_frame": 414510,
+          "stable_suffix_frames": 16,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000202",
+          "cluster_id": "rotate_pink_block_right-0030",
+          "split": "validation",
+          "task_id": 9,
+          "calvin_task": "rotate_pink_block_right",
+          "instruction": "rotate the pink block clockwise",
+          "original_instruction": "rotate the pink block 90 degrees to the right",
+          "original_start": 8790,
+          "original_end": 8854,
+          "start": 8790,
+          "end": 8896,
+          "num_frames": 107,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_pink",
+          "oracle_success_frame": 8866,
+          "release_frame": 8866,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000591",
+          "cluster_id": "rotate_pink_block_right-0031",
+          "split": "validation",
+          "task_id": 9,
+          "calvin_task": "rotate_pink_block_right",
+          "instruction": "rotate the pink block clockwise",
+          "original_instruction": "grasp the pink block and turn it right",
+          "original_start": 19771,
+          "original_end": 19835,
+          "start": 19771,
+          "end": 19865,
+          "num_frames": 95,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_pink",
+          "oracle_success_frame": 19835,
+          "release_frame": 19835,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000603",
+          "cluster_id": "rotate_pink_block_right-0032",
+          "split": "validation",
+          "task_id": 9,
+          "calvin_task": "rotate_pink_block_right",
+          "instruction": "rotate the pink block clockwise",
+          "original_instruction": "grasp the pink block, then rotate it right",
+          "original_start": 19902,
+          "original_end": 19966,
+          "start": 19902,
+          "end": 19998,
+          "num_frames": 97,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_pink",
+          "oracle_success_frame": 19966,
+          "release_frame": 19968,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000949",
+          "cluster_id": "rotate_pink_block_right-0033",
+          "split": "validation",
+          "task_id": 9,
+          "calvin_task": "rotate_pink_block_right",
+          "instruction": "rotate the pink block clockwise",
+          "original_instruction": "rotate the pink block towards the right",
+          "original_start": 33233,
+          "original_end": 33297,
+          "start": 33233,
+          "end": 33333,
+          "num_frames": 101,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_pink",
+          "oracle_success_frame": 33303,
+          "release_frame": 33303,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000737",
+          "cluster_id": "rotate_pink_block_right-0034",
+          "split": "validation",
+          "task_id": 9,
+          "calvin_task": "rotate_pink_block_right",
+          "instruction": "rotate the pink block clockwise",
+          "original_instruction": "rotate the pink block towards the right",
+          "original_start": 42862,
+          "original_end": 42926,
+          "start": 42858,
+          "end": 42968,
+          "num_frames": 111,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_pink",
+          "oracle_success_frame": 42938,
+          "release_frame": 42938,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000573",
+          "cluster_id": "rotate_pink_block_right-0035",
+          "split": "validation",
+          "task_id": 9,
+          "calvin_task": "rotate_pink_block_right",
+          "instruction": "rotate the pink block clockwise",
+          "original_instruction": "grasp the pink block, then turn it right",
+          "original_start": 43771,
+          "original_end": 43835,
+          "start": 43759,
+          "end": 43869,
+          "num_frames": 111,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_pink",
+          "oracle_success_frame": 43839,
+          "release_frame": 43839,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000004",
+          "cluster_id": "rotate_pink_block_right-0037",
+          "split": "validation",
+          "task_id": 9,
+          "calvin_task": "rotate_pink_block_right",
+          "instruction": "rotate the pink block clockwise",
+          "original_instruction": "take the pink block and turn it right",
+          "original_start": 220190,
+          "original_end": 220254,
+          "start": 220190,
+          "end": 220291,
+          "num_frames": 102,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_pink",
+          "oracle_success_frame": 220263,
+          "release_frame": 220263,
+          "stable_suffix_frames": 28,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000326",
+          "cluster_id": "rotate_pink_block_right-0038",
+          "split": "validation",
+          "task_id": 9,
+          "calvin_task": "rotate_pink_block_right",
+          "instruction": "rotate the pink block clockwise",
+          "original_instruction": "grasp the pink block, then turn it right",
+          "original_start": 220781,
+          "original_end": 220845,
+          "start": 220781,
+          "end": 220875,
+          "num_frames": 95,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_pink",
+          "oracle_success_frame": 220845,
+          "release_frame": 220845,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000820",
+          "cluster_id": "rotate_pink_block_right-0039",
+          "split": "validation",
+          "task_id": 9,
+          "calvin_task": "rotate_pink_block_right",
+          "instruction": "rotate the pink block clockwise",
+          "original_instruction": "grasp the pink block and turn it right",
+          "original_start": 229620,
+          "original_end": 229660,
+          "start": 229608,
+          "end": 229693,
+          "num_frames": 86,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_pink",
+          "oracle_success_frame": 229663,
+          "release_frame": 229663,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000204",
+          "cluster_id": "rotate_pink_block_right-0040",
+          "split": "validation",
+          "task_id": 9,
+          "calvin_task": "rotate_pink_block_right",
+          "instruction": "rotate the pink block clockwise",
+          "original_instruction": "take the pink block and rotate it right",
+          "original_start": 236484,
+          "original_end": 236548,
+          "start": 236484,
+          "end": 236588,
+          "num_frames": 105,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_pink",
+          "oracle_success_frame": 236558,
+          "release_frame": 236558,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000677",
+          "cluster_id": "rotate_pink_block_right-0042",
+          "split": "validation",
+          "task_id": 9,
+          "calvin_task": "rotate_pink_block_right",
+          "instruction": "rotate the pink block clockwise",
+          "original_instruction": "take the pink block and rotate it right",
+          "original_start": 242606,
+          "original_end": 242641,
+          "start": 242594,
+          "end": 242671,
+          "num_frames": 78,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_pink",
+          "oracle_success_frame": 242641,
+          "release_frame": 242641,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000851",
+          "cluster_id": "rotate_pink_block_right-0044",
+          "split": "validation",
+          "task_id": 9,
+          "calvin_task": "rotate_pink_block_right",
+          "instruction": "rotate the pink block clockwise",
+          "original_instruction": "rotate right the pink block",
+          "original_start": 412741,
+          "original_end": 412805,
+          "start": 412741,
+          "end": 412831,
+          "num_frames": 91,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_pink",
+          "oracle_success_frame": 412801,
+          "release_frame": 412801,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000756",
+          "cluster_id": "rotate_red_block_left-0046",
+          "split": "validation",
+          "task_id": 10,
+          "calvin_task": "rotate_red_block_left",
+          "instruction": "rotate the red block counterclockwise",
+          "original_instruction": "take the red block and turn it left",
+          "original_start": 8126,
+          "original_end": 8190,
+          "start": 8126,
+          "end": 8222,
+          "num_frames": 97,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_red",
+          "oracle_success_frame": 8191,
+          "release_frame": 8192,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000835",
+          "cluster_id": "rotate_red_block_left-0047",
+          "split": "validation",
+          "task_id": 10,
+          "calvin_task": "rotate_red_block_left",
+          "instruction": "rotate the red block counterclockwise",
+          "original_instruction": "take the red block and rotate it left",
+          "original_start": 8211,
+          "original_end": 8275,
+          "start": 8211,
+          "end": 8314,
+          "num_frames": 104,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_red",
+          "oracle_success_frame": 8284,
+          "release_frame": 8284,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000616",
+          "cluster_id": "rotate_red_block_left-0048",
+          "split": "validation",
+          "task_id": 10,
+          "calvin_task": "rotate_red_block_left",
+          "instruction": "rotate the red block counterclockwise",
+          "original_instruction": "rotate the red block towards the left",
+          "original_start": 30766,
+          "original_end": 30830,
+          "start": 30766,
+          "end": 30856,
+          "num_frames": 91,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_red",
+          "oracle_success_frame": 30826,
+          "release_frame": 30826,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000020",
+          "cluster_id": "rotate_red_block_left-0049",
+          "split": "validation",
+          "task_id": 10,
+          "calvin_task": "rotate_red_block_left",
+          "instruction": "rotate the red block counterclockwise",
+          "original_instruction": "rotate the red block towards the left",
+          "original_start": 37067,
+          "original_end": 37131,
+          "start": 37067,
+          "end": 37156,
+          "num_frames": 90,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_red",
+          "oracle_success_frame": 37128,
+          "release_frame": 37128,
+          "stable_suffix_frames": 28,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000564",
+          "cluster_id": "rotate_red_block_left-0051",
+          "split": "validation",
+          "task_id": 10,
+          "calvin_task": "rotate_red_block_left",
+          "instruction": "rotate the red block counterclockwise",
+          "original_instruction": "take the red block and turn it left",
+          "original_start": 46753,
+          "original_end": 46817,
+          "start": 46753,
+          "end": 46839,
+          "num_frames": 87,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_red",
+          "oracle_success_frame": 46812,
+          "release_frame": 46812,
+          "stable_suffix_frames": 27,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000333",
+          "cluster_id": "rotate_red_block_left-0052",
+          "split": "validation",
+          "task_id": 10,
+          "calvin_task": "rotate_red_block_left",
+          "instruction": "rotate the red block counterclockwise",
+          "original_instruction": "rotate the red block to the left",
+          "original_start": 231898,
+          "original_end": 231962,
+          "start": 231898,
+          "end": 231989,
+          "num_frames": 92,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_red",
+          "oracle_success_frame": 231959,
+          "release_frame": 231959,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000954",
+          "cluster_id": "rotate_red_block_left-0054",
+          "split": "validation",
+          "task_id": 10,
+          "calvin_task": "rotate_red_block_left",
+          "instruction": "rotate the red block counterclockwise",
+          "original_instruction": "grasp the red block, then turn it left",
+          "original_start": 419169,
+          "original_end": 419233,
+          "start": 419169,
+          "end": 419259,
+          "num_frames": 91,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_red",
+          "oracle_success_frame": 419230,
+          "release_frame": 419230,
+          "stable_suffix_frames": 29,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000996",
+          "cluster_id": "rotate_red_block_left-0055",
+          "split": "validation",
+          "task_id": 10,
+          "calvin_task": "rotate_red_block_left",
+          "instruction": "rotate the red block counterclockwise",
+          "original_instruction": "rotate the red block towards the left",
+          "original_start": 419445,
+          "original_end": 419509,
+          "start": 419445,
+          "end": 419534,
+          "num_frames": 90,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_red",
+          "oracle_success_frame": 419504,
+          "release_frame": 419504,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000088",
+          "cluster_id": "rotate_red_block_left-0056",
+          "split": "validation",
+          "task_id": 10,
+          "calvin_task": "rotate_red_block_left",
+          "instruction": "rotate the red block counterclockwise",
+          "original_instruction": "grasp the red block, then turn it left",
+          "original_start": 419517,
+          "original_end": 419581,
+          "start": 419517,
+          "end": 419614,
+          "num_frames": 98,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_red",
+          "oracle_success_frame": 419584,
+          "release_frame": 419584,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000205",
+          "cluster_id": "rotate_red_block_right-0057",
+          "split": "validation",
+          "task_id": 11,
+          "calvin_task": "rotate_red_block_right",
+          "instruction": "rotate the red block clockwise",
+          "original_instruction": "rotate the red block towards the right",
+          "original_start": 8310,
+          "original_end": 8374,
+          "start": 8310,
+          "end": 8412,
+          "num_frames": 103,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_red",
+          "oracle_success_frame": 8382,
+          "release_frame": 8382,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000231",
+          "cluster_id": "rotate_red_block_right-0058",
+          "split": "validation",
+          "task_id": 11,
+          "calvin_task": "rotate_red_block_right",
+          "instruction": "rotate the red block clockwise",
+          "original_instruction": "take the red block and rotate it right",
+          "original_start": 12983,
+          "original_end": 13047,
+          "start": 12983,
+          "end": 13082,
+          "num_frames": 100,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_red",
+          "oracle_success_frame": 13052,
+          "release_frame": 13052,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000868",
+          "cluster_id": "rotate_red_block_right-0059",
+          "split": "validation",
+          "task_id": 11,
+          "calvin_task": "rotate_red_block_right",
+          "instruction": "rotate the red block clockwise",
+          "original_instruction": "rotate the red block towards the right",
+          "original_start": 16417,
+          "original_end": 16450,
+          "start": 16405,
+          "end": 16479,
+          "num_frames": 75,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_red",
+          "oracle_success_frame": 16449,
+          "release_frame": 16449,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000173",
+          "cluster_id": "rotate_red_block_right-0060",
+          "split": "validation",
+          "task_id": 11,
+          "calvin_task": "rotate_red_block_right",
+          "instruction": "rotate the red block clockwise",
+          "original_instruction": "grasp the red block and turn it right",
+          "original_start": 16795,
+          "original_end": 16859,
+          "start": 16795,
+          "end": 16899,
+          "num_frames": 105,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_red",
+          "oracle_success_frame": 16869,
+          "release_frame": 16869,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000998",
+          "cluster_id": "rotate_red_block_right-0061",
+          "split": "validation",
+          "task_id": 11,
+          "calvin_task": "rotate_red_block_right",
+          "instruction": "rotate the red block clockwise",
+          "original_instruction": "rotate the red block to the right",
+          "original_start": 36350,
+          "original_end": 36414,
+          "start": 36350,
+          "end": 36453,
+          "num_frames": 104,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_red",
+          "oracle_success_frame": 36423,
+          "release_frame": 36423,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "segment_id": "validation-000168",
+          "cluster_id": "rotate_red_block_right-0063",
+          "split": "validation",
+          "task_id": 11,
+          "calvin_task": "rotate_red_block_right",
+          "instruction": "rotate the red block clockwise",
+          "original_instruction": "take the red block and turn it right",
+          "original_start": 403896,
+          "original_end": 403960,
+          "start": 403896,
+          "end": 403987,
+          "num_frames": 92,
+          "oracle_consistent": true,
+          "episode_variant": "rotate_release_complete",
+          "source_object": "block_red",
+          "oracle_success_frame": 403957,
+          "release_frame": 403957,
+          "stable_suffix_frames": 30,
+          "mask_roles": {
+            "target": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0114",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "put the block on top of another block",
+          "original_start": 3230,
+          "original_end": 3273,
+          "end": 3273,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "demonstrated_destination": "block_pink",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "segment_id": "validation-000829-held",
+          "episode_variant": "held_start_stack",
+          "start": 3230,
+          "num_frames": 44,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0115",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "stack blocks on top of each other",
+          "original_start": 3359,
+          "original_end": 3404,
+          "end": 3404,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "demonstrated_destination": "block_pink",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "segment_id": "validation-000172-held",
+          "episode_variant": "held_start_stack",
+          "start": 3359,
+          "num_frames": 46,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0116",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "put the block on top of another block",
+          "original_start": 8635,
+          "original_end": 8671,
+          "end": 8671,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "demonstrated_destination": "block_red",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "segment_id": "validation-000313-held",
+          "episode_variant": "held_start_stack",
+          "start": 8635,
+          "num_frames": 37,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0117",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "stack the block on top of another block",
+          "original_start": 13313,
+          "original_end": 13354,
+          "end": 13354,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "demonstrated_destination": "block_red",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "segment_id": "validation-000445-held",
+          "episode_variant": "held_start_stack",
+          "start": 13313,
+          "num_frames": 42,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0118",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "put the block on top of another block",
+          "original_start": 13725,
+          "original_end": 13789,
+          "end": 13789,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "demonstrated_destination": "block_blue",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "segment_id": "validation-000663-full",
+          "episode_variant": "full_pick_and_stack",
+          "start": 13725,
+          "num_frames": 65,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0118",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "put the block on top of another block",
+          "original_start": 13725,
+          "original_end": 13789,
+          "end": 13789,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "demonstrated_destination": "block_blue",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "segment_id": "validation-000663-held",
+          "episode_variant": "held_start_stack",
+          "start": 13750,
+          "num_frames": 40,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0119",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "put the grasped block on top of a block",
+          "original_start": 23439,
+          "original_end": 23473,
+          "end": 23473,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "demonstrated_destination": "block_blue",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "segment_id": "validation-000832-held",
+          "episode_variant": "held_start_stack",
+          "start": 23439,
+          "num_frames": 35,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0120",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "stack the blocks",
+          "original_start": 33332,
+          "original_end": 33396,
+          "end": 33396,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "demonstrated_destination": "block_pink",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "segment_id": "validation-000718-full",
+          "episode_variant": "full_pick_and_stack",
+          "start": 33332,
+          "num_frames": 65,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0120",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "stack the blocks",
+          "original_start": 33332,
+          "original_end": 33396,
+          "end": 33396,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "demonstrated_destination": "block_pink",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "segment_id": "validation-000718-held",
+          "episode_variant": "held_start_stack",
+          "start": 33358,
+          "num_frames": 39,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0122",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "put the block on top of another block",
+          "original_start": 36176,
+          "original_end": 36218,
+          "end": 36218,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "demonstrated_destination": "block_pink",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_pink"
+              }
+            ]
+          },
+          "segment_id": "validation-000066-held",
+          "episode_variant": "held_start_stack",
+          "start": 36176,
+          "num_frames": 43,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0123",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "stack blocks on top of each other",
+          "original_start": 44086,
+          "original_end": 44150,
+          "end": 44150,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "demonstrated_destination": "block_red",
+          "destination_contact_frames": 3,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "segment_id": "validation-000251-held",
+          "episode_variant": "held_start_stack",
+          "start": 44086,
+          "num_frames": 65,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0124",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "place the block on top of another block",
+          "original_start": 50613,
+          "original_end": 50677,
+          "end": 50677,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "demonstrated_destination": "block_red",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "segment_id": "validation-000596-full",
+          "episode_variant": "full_pick_and_stack",
+          "start": 50613,
+          "num_frames": 65,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0124",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "place the block on top of another block",
+          "original_start": 50613,
+          "original_end": 50677,
+          "end": 50677,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "demonstrated_destination": "block_red",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "segment_id": "validation-000596-held",
+          "episode_variant": "held_start_stack",
+          "start": 50639,
+          "num_frames": 39,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0125",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "stack the block on top of another block",
+          "original_start": 225076,
+          "original_end": 225124,
+          "end": 225124,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "demonstrated_destination": "block_blue",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "segment_id": "validation-000061-held",
+          "episode_variant": "held_start_stack",
+          "start": 225076,
+          "num_frames": 49,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0126",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "place the block on top of another block",
+          "original_start": 228359,
+          "original_end": 228423,
+          "end": 228423,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "demonstrated_destination": "block_red",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "segment_id": "validation-000243-full",
+          "episode_variant": "full_pick_and_stack",
+          "start": 228359,
+          "num_frames": 65,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0126",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "place the block on top of another block",
+          "original_start": 228359,
+          "original_end": 228423,
+          "end": 228423,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "demonstrated_destination": "block_red",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "segment_id": "validation-000243-held",
+          "episode_variant": "held_start_stack",
+          "start": 228388,
+          "num_frames": 36,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0127",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "stack the object on top of another object",
+          "original_start": 230348,
+          "original_end": 230396,
+          "end": 230396,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "demonstrated_destination": "block_blue",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "segment_id": "validation-000804-held",
+          "episode_variant": "held_start_stack",
+          "start": 230348,
+          "num_frames": 49,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0128",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "stack blocks on top of each other",
+          "original_start": 239623,
+          "original_end": 239665,
+          "end": 239665,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "demonstrated_destination": "block_red",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "segment_id": "validation-000021-held",
+          "episode_variant": "held_start_stack",
+          "start": 239623,
+          "num_frames": 43,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0129",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "stack blocks on top of each other",
+          "original_start": 408403,
+          "original_end": 408440,
+          "end": 408440,
+          "oracle_consistent": true,
+          "source_object": "block_pink",
+          "demonstrated_destination": "block_blue",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_pink"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "segment_id": "validation-000947-held",
+          "episode_variant": "held_start_stack",
+          "start": 408403,
+          "num_frames": 38,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0130",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "put the grasped block on top of a block",
+          "original_start": 416516,
+          "original_end": 416560,
+          "end": 416560,
+          "oracle_consistent": true,
+          "source_object": "block_red",
+          "demonstrated_destination": "block_blue",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_red"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_blue"
+              }
+            ]
+          },
+          "segment_id": "validation-000958-held",
+          "episode_variant": "held_start_stack",
+          "start": 416516,
+          "num_frames": 45,
+          "image_mode": "clean_rgb"
+        },
+        {
+          "cluster_id": "stack_block-0131",
+          "split": "validation",
+          "task_id": 12,
+          "calvin_task": "stack_block",
+          "instruction": "stack one block on top of another block",
+          "original_instruction": "put the grasped block on top of a block",
+          "original_start": 418894,
+          "original_end": 418932,
+          "end": 418932,
+          "oracle_consistent": true,
+          "source_object": "block_blue",
+          "demonstrated_destination": "block_red",
+          "destination_contact_frames": 5,
+          "mask_roles": {
+            "source": [
+              {
+                "movable": "block_blue"
+              }
+            ],
+            "destination": [
+              {
+                "movable": "block_red"
+              }
+            ]
+          },
+          "segment_id": "validation-000914-held",
+          "episode_variant": "held_start_stack",
+          "start": 418894,
+          "num_frames": 39,
+          "image_mode": "clean_rgb"
+        }
+      ]
+    }
+  }
+}
