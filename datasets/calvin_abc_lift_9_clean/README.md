@@ -28,3 +28,17 @@ done
 
 Do not pass `--mask-cache`. Add `--overwrite` only when intentionally replacing
 an existing conversion.
+
+Closed-loop evaluation entry points:
+
+```bash
+# task_ABC_D/validation (D domain)
+conda run -n robonexus-calvin python \
+  datasets/calvin_abc_lift_9_clean/scripts/evaluate_d.py \
+  --episodes-per-task 100 --replan-interval 16
+
+# Independent task_D_D/validation benchmark
+conda run -n robonexus-calvin python \
+  datasets/calvin_abc_lift_9_clean/scripts/evaluate_task_dd.py \
+  --episodes-per-task 100 --replan-interval 16
+```
