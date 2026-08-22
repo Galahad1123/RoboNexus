@@ -1,0 +1,19 @@
+version: 1
+name: calvin_dd_residual_6_clean_validation
+manifest: datasets/calvin_dd_residual_6_clean/manifests/segments.json
+source_dataset: calvin/dataset/task_D_D
+split: validation
+oracle_config: calvin/calvin_models/conf/callbacks/rollout/tasks/new_playtable_tasks.yaml
+
+defaults: {max_steps: 150, settle_steps: 0}
+
+tasks:
+  - {task: close_drawer, oracle_task: close_drawer, instruction: "close the drawer"}
+  - {task: open_drawer, oracle_task: open_drawer, instruction: "open the drawer"}
+  - task: place_in_drawer
+    oracle_task: place_in_drawer
+    instruction: "place the held block in the drawer"
+    success_guard: &released {gripper: open, min_width_m: 0.04, consecutive_steps: 3}
+  - {task: place_in_slider, oracle_task: place_in_slider, instruction: "place the held block in the sliding cabinet", success_guard: *released}
+  - {task: push_into_drawer, oracle_task: push_into_drawer, instruction: "push the block into the drawer"}
+  - {task: unstack_block, oracle_task: unstack_block, instruction: "remove the top block from the stack"}

@@ -1,0 +1,20 @@
+version: 1
+name: calvin_dd_lift_9_clean_validation
+manifest: datasets/calvin_dd_lift_9_clean/manifests/segments.json
+source_dataset: calvin/dataset/task_D_D
+split: validation
+oracle_config: calvin/calvin_models/conf/callbacks/rollout/tasks/new_playtable_tasks.yaml
+
+# Clean-RGB policy: no mask or outline is applied by default.
+defaults: {max_steps: 150, settle_steps: 0}
+
+tasks:
+  - {task: lift_blue_block_drawer, oracle_task: lift_blue_block_drawer, instruction: "pick up the blue block from the drawer"}
+  - {task: lift_blue_block_slider, oracle_task: lift_blue_block_slider, instruction: "pick up the blue block from the sliding cabinet"}
+  - {task: lift_blue_block_table, oracle_task: lift_blue_block_table, instruction: "pick up the blue block from the table"}
+  - {task: lift_pink_block_drawer, oracle_task: lift_pink_block_drawer, instruction: "pick up the pink block from the drawer"}
+  - {task: lift_pink_block_slider, oracle_task: lift_pink_block_slider, instruction: "pick up the pink block from the sliding cabinet"}
+  - {task: lift_pink_block_table, oracle_task: lift_pink_block_table, instruction: "pick up the pink block from the table"}
+  - {task: lift_red_block_drawer, oracle_task: lift_red_block_drawer, instruction: "pick up the red block from the drawer"}
+  - {task: lift_red_block_slider, oracle_task: lift_red_block_slider, instruction: "pick up the red block from the sliding cabinet"}
+  - {task: lift_red_block_table, oracle_task: lift_red_block_table, instruction: "pick up the red block from the table"}
