@@ -21,6 +21,7 @@ Supports both diffusion and flow matching objectives for action generation.
 """
 
 from collections import deque
+import json
 from pathlib import Path
 
 import draccus
@@ -126,6 +127,20 @@ class MultiTaskDiTPolicy(nn.Module):
             },
         ]
 
+    @property
+    def task_conditioning_type(self) -> str:
+        return self.observation_encoder.task_conditioning_type
+
+    def task_conditioning_summary(self) -> str:
+        if self.task_conditioning_type == "task_id":
+            encoder = self.observation_encoder.text_encoder
+            return (
+                "TASK_ID (CLIP disabled; "
+                f"num_tasks={encoder.num_tasks}, id_feature_key={encoder.id_feature_key!r}, "
+                f"aliases={len(encoder.task_to_id)})"
+            )
+        return "CLIP"
+
     def _generate_actions(self, batch: dict[str, Tensor]) -> Tensor:
         batch_size, n_obs_steps = batch["observation.state"].shape[:2]
         assert n_obs_steps == self.config.n_obs_steps
@@ -214,6 +229,22 @@ class MultiTaskDiTPolicy(nn.Module):
         with open(save_directory / "config.json", "w") as f, draccus.config_type("json"):
             draccus.dump(self.config, f, indent=4)
 
+        if self.task_conditioning_type == "task_id":
+            text_config = self.config.observation_encoder.text
+            with open(save_directory / "task_id_map.json", "w") as f:
+                json.dump(
+                    {
+                        "conditioning_type": "task_id",
+                        "num_tasks": text_config.num_tasks,
+                        "id_feature_key": text_config.id_feature_key,
+                        "task_to_id": text_config.task_to_id,
+                    },
+                    f,
+                    indent=2,
+                    sort_keys=True,
+                )
+                f.write("\n")
+
         # Save model weights as safetensors (matching lerobot convention)
         save_model_as_safetensor(self, str(save_directory / "model.safetensors"))
 
@@ -242,9 +273,16 @@ class MultiTaskDiTPolicy(nn.Module):
             config.observation_encoder.vision.pretrained_path = str(
                 Path(vision_pretrained_path).expanduser()
             )
-        if text_pretrained_path is not None:
+        if text_pretrained_path is not None and hasattr(
+            config.observation_encoder.text, "pretrained_path"
+        ):
             config.observation_encoder.text.pretrained_path = str(
                 Path(text_pretrained_path).expanduser()
+            )
+        elif text_pretrained_path is not None:
+            raise ValueError(
+                "--text-pretrained-path is only valid for CLIP conditioning; "
+                "this checkpoint uses Task ID conditioning"
             )
 
         model = MultiTaskDiTPolicy(config)

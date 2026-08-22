@@ -308,6 +308,17 @@ def train(cfg: TrainConfig):
         policy_config = cfg.policy
         policy = MultiTaskDiTPolicy(policy_config, dataset_metadata=ds_metadata)
 
+    # Use warning level for this one-line safety banner because the historical
+    # training entry point does not configure INFO logging by default.
+    logging.warning("Task conditioning: %s", policy.task_conditioning_summary())
+    if policy.task_conditioning_type == "task_id":
+        id_key = policy.config.observation_encoder.text.id_feature_key
+        if id_key not in ds_metadata.features:
+            raise ValueError(
+                f"Task-ID conditioning requires dataset feature {id_key!r}; "
+                f"available features: {sorted(ds_metadata.features)}"
+            )
+
     policy_config.device = cfg.device
     policy.to(cfg.device)
     policy.train()
@@ -340,6 +351,12 @@ def train(cfg: TrainConfig):
             )
         val_repo_id = val_dataset_path.name
         val_metadata = LeRobotDatasetMetadata(repo_id=val_repo_id, root=val_dataset_path)
+        if policy.task_conditioning_type == "task_id":
+            id_key = policy.config.observation_encoder.text.id_feature_key
+            if id_key not in val_metadata.features:
+                raise ValueError(
+                    f"Task-ID conditioning requires validation feature {id_key!r}"
+                )
         feature_keys = set(policy_config.input_features) | set(policy_config.output_features)
         _validate_dataset_compatibility(ds_metadata, val_metadata, feature_keys)
         external_val_dataset = LeRobotDataset(

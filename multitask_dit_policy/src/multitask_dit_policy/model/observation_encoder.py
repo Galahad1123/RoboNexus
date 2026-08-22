@@ -20,6 +20,7 @@ Handles vision encoding, text encoding, robot state, and environment state.
 """
 
 from abc import ABC, abstractmethod
+import json
 from pathlib import Path
 
 import einops
@@ -292,6 +293,89 @@ class CLIPTextEncoder(nn.Module):
         return projected_features
 
 
+def _normalize_task_label(value: str) -> str:
+    """Normalize closed-set labels without pretending to parse language."""
+    return " ".join(str(value).strip().lower().split())
+
+
+class TaskIDEncoder(nn.Module):
+    """Learned closed-set task embedding with string aliases for deployment."""
+
+    def __init__(self, config, projection_dim: int):
+        super().__init__()
+        task_to_id = dict(config.task_to_id)
+        if config.task_map_path and not task_to_id:
+            map_path = Path(config.task_map_path).expanduser()
+            if not map_path.is_file():
+                raise FileNotFoundError(f"Task-ID map not found: {map_path}")
+            document = json.loads(map_path.read_text())
+            file_mapping = document.get("task_to_id", document)
+            if not isinstance(file_mapping, dict):
+                raise ValueError(f"Task-ID map must be a JSON object: {map_path}")
+            task_to_id = file_mapping
+
+        normalized_mapping = {}
+        for label, task_id in task_to_id.items():
+            normalized = _normalize_task_label(label)
+            task_id = int(task_id)
+            previous = normalized_mapping.get(normalized)
+            if previous is not None and previous != task_id:
+                raise ValueError(f"Conflicting Task IDs for normalized label {normalized!r}")
+            normalized_mapping[normalized] = task_id
+        observed_ids = set(normalized_mapping.values())
+        expected_ids = set(range(int(config.num_tasks)))
+        if observed_ids != expected_ids:
+            raise ValueError(
+                "Task-ID mapping must cover every ID in [0, num_tasks): "
+                f"expected={sorted(expected_ids)}, observed={sorted(observed_ids)}"
+            )
+
+        # Store the normalized, fully resolved mapping in the policy config so
+        # config.json and task_id_map.json make checkpoints self-contained.
+        config.task_to_id = dict(sorted(normalized_mapping.items()))
+        self.num_tasks = int(config.num_tasks)
+        self.id_feature_key = config.id_feature_key
+        self.task_to_id = config.task_to_id
+        self.embedding = nn.Embedding(self.num_tasks, projection_dim)
+        self.norm = nn.LayerNorm(projection_dim)
+        with torch.no_grad():
+            nn.init.orthogonal_(self.embedding.weight)
+
+    def labels_to_ids(self, labels: str | list[str]) -> Tensor:
+        if isinstance(labels, str):
+            labels = [labels]
+        ids = []
+        for label in labels:
+            normalized = _normalize_task_label(label)
+            if normalized not in self.task_to_id:
+                raise KeyError(
+                    f"Unknown closed-set task label {label!r}. Available labels: "
+                    f"{sorted(self.task_to_id)}"
+                )
+            ids.append(self.task_to_id[normalized])
+        return torch.tensor(ids, dtype=torch.long, device=self.embedding.weight.device)
+
+    def _coerce_ids(self, values: Tensor | str | list[str]) -> Tensor:
+        if isinstance(values, (str, list, tuple)):
+            return self.labels_to_ids(values)
+        task_ids = torch.as_tensor(values, device=self.embedding.weight.device).long()
+        if task_ids.ndim == 0:
+            task_ids = task_ids.unsqueeze(0)
+        elif task_ids.ndim > 1:
+            flattened = task_ids.reshape(task_ids.shape[0], -1)
+            if not torch.all(flattened == flattened[:, -1:]):
+                raise ValueError("Task ID must remain constant across observation steps")
+            task_ids = flattened[:, -1]
+        if task_ids.numel() and (task_ids.min() < 0 or task_ids.max() >= self.num_tasks):
+            raise ValueError(
+                f"Task IDs must be in [0, {self.num_tasks}), got {task_ids.tolist()}"
+            )
+        return task_ids
+
+    def forward(self, values: Tensor | str | list[str]) -> Tensor:
+        return self.norm(self.embedding(self._coerce_ids(values)))
+
+
 class ObservationEncoder(nn.Module):
     """Handles all observation processing for the conditioning vector."""
 
@@ -330,11 +414,17 @@ class ObservationEncoder(nn.Module):
 
         text_config = config.observation_encoder.text
         self.text_dim = config.transformer.hidden_dim
-        self.text_encoder = CLIPTextEncoder(
-            model_name=text_config.model,
-            projection_dim=self.text_dim,
-            pretrained_path=text_config.pretrained_path,
-        )
+        self.task_conditioning_type = getattr(text_config, "conditioning_type", "clip")
+        if self.task_conditioning_type == "clip":
+            self.text_encoder = CLIPTextEncoder(
+                model_name=text_config.model,
+                projection_dim=self.text_dim,
+                pretrained_path=text_config.pretrained_path,
+            )
+        elif self.task_conditioning_type == "task_id":
+            self.text_encoder = TaskIDEncoder(text_config, projection_dim=self.text_dim)
+        else:
+            raise ValueError(f"Unsupported task conditioning type: {self.task_conditioning_type}")
 
         self._setup_vector_output()
 
@@ -459,8 +549,22 @@ class ObservationEncoder(nn.Module):
         if self.env_state_dim > 0 and OBS_ENV_STATE in batch:
             conditioning_feats.append(batch[OBS_ENV_STATE])
 
-        if self.text_encoder is not None and "task" in batch:
-            text_features = self.text_encoder(batch["task"])  # (B, text_dim)
+        if self.text_encoder is not None:
+            if self.task_conditioning_type == "task_id":
+                id_key = self.text_encoder.id_feature_key
+                if id_key in batch:
+                    task_condition = batch[id_key]
+                elif "task" in batch:
+                    task_condition = batch["task"]
+                else:
+                    raise KeyError(
+                        f"Task-ID conditioning requires {id_key!r} or 'task' in the batch"
+                    )
+            elif "task" in batch:
+                task_condition = batch["task"]
+            else:
+                raise KeyError("CLIP conditioning requires 'task' in the batch")
+            text_features = self.text_encoder(task_condition)  # (B, text_dim)
             # Expand across temporal dimension to match other features
             text_features = text_features.unsqueeze(1).expand(-1, n_obs_steps, -1)  # (B, T, text_dim)
             # print("Text features shape after unsqueeze and expand:", text_features.shape)

@@ -333,6 +333,7 @@ class CLIPTextEncoderConfig(TextEncoderConfig):
     """
 
     model: str = "openai/clip-vit-base-patch16"
+    conditioning_type: str = field(default="clip", init=False)
     pretrained_path: str | None = (
         "/home/hello/.cache/huggingface/hub/clip-vit-base-patch16"
     )
@@ -342,6 +343,31 @@ class CLIPTextEncoderConfig(TextEncoderConfig):
         # Validate that model name contains "clip" to ensure correct encoder type
         if "clip" not in self.model.lower():
             raise ValueError(f"CLIP text encoder requires a CLIP model (contain 'clip'). Got '{self.model}'")
+
+
+@TextEncoderConfig.register_subclass("task_id")
+@dataclass
+class TaskIDTextEncoderConfig(TextEncoderConfig):
+    """Closed-set task conditioning that does not construct or load CLIP.
+
+    ``task_to_id`` is populated from ``task_map_path`` when the policy is
+    constructed and is then serialized into every checkpoint's ``config.json``.
+    Keeping both fields allows training from a readable dataset-side map while
+    making deployed checkpoints self-contained.
+    """
+
+    conditioning_type: str = field(default="task_id", init=False)
+    num_tasks: int = 1
+    id_feature_key: str = "calvin.task_id"
+    task_map_path: str | None = None
+    task_to_id: dict[str, int] = field(default_factory=dict)
+
+    def __post_init__(self):
+        super().__post_init__()
+        if self.num_tasks <= 0:
+            raise ValueError(f"num_tasks must be positive, got {self.num_tasks}")
+        if not self.id_feature_key:
+            raise ValueError("id_feature_key must be non-empty")
 
 
 @dataclass

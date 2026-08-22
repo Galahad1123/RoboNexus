@@ -53,7 +53,16 @@ class PolicyServerWrapper:
             "horizon": int(self.config.horizon),
             "default_replan_interval": self.session.default_replan_interval,
             "pid": os.getpid(),
+            "task_conditioning": self.policy.task_conditioning_type,
         }
+        if self.policy.task_conditioning_type == "task_id":
+            task_encoder = self.policy.observation_encoder.text_encoder
+            self.metadata.update(
+                {
+                    "num_tasks": task_encoder.num_tasks,
+                    "task_id_map": task_encoder.task_to_id,
+                }
+            )
 
     @classmethod
     def from_checkpoint(
@@ -101,19 +110,27 @@ class PolicyServerWrapper:
         episode_seed: int | None,
         replan_interval: int | None,
     ) -> dict[str, Any]:
+        resolved_task_id = None
+        if self.policy.task_conditioning_type == "task_id":
+            resolved_task_id = int(
+                self.policy.observation_encoder.text_encoder.labels_to_ids([task])[0].item()
+            )
         self.session.reset(
             task=task,
             episode_id=episode_id,
             episode_seed=episode_seed,
             replan_interval=replan_interval,
         )
-        return {
+        response = {
             "type": "reset_ack",
             "ok": True,
             "task": self.session.task,
             "episode_seed": self.session.episode_seed,
             "replan_interval": self.session.replan_interval,
         }
+        if resolved_task_id is not None:
+            response["task_id"] = resolved_task_id
+        return response
 
     def step(self, observation: dict[str, Any], step: int | None = None) -> dict[str, Any]:
         action, inference_metadata = self.session.step(observation, step)
@@ -223,6 +240,11 @@ def main() -> None:
         "--text-pretrained-path",
         help="override a stale machine-local text pretrained_path stored in config.json",
     )
+    parser.add_argument(
+        "--expect-task-conditioning",
+        choices=("clip", "task_id"),
+        help="fail fast unless the checkpoint uses this conditioning mode",
+    )
     parser.add_argument("--pid-file", type=Path)
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, force=True)
@@ -238,6 +260,16 @@ def main() -> None:
             vision_pretrained_path=args.vision_pretrained_path,
             text_pretrained_path=args.text_pretrained_path,
         )
+        if (
+            args.expect_task_conditioning is not None
+            and wrapper.policy.task_conditioning_type != args.expect_task_conditioning
+        ):
+            raise ValueError(
+                "Checkpoint task conditioning mismatch: expected "
+                f"{args.expect_task_conditioning!r}, got "
+                f"{wrapper.policy.task_conditioning_type!r}"
+            )
+        logging.info("Task conditioning: %s", wrapper.policy.task_conditioning_summary())
         asyncio.run(run_server(wrapper, args.host, args.port))
     finally:
         if args.pid_file is not None:

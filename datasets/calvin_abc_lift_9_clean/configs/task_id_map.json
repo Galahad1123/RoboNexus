@@ -1,0 +1,23 @@
+{
+  "num_tasks": 9,
+  "task_to_id": {
+    "lift_blue_block_drawer": 0,
+    "pick up the blue block from the drawer": 0,
+    "lift_blue_block_slider": 1,
+    "pick up the blue block from the sliding cabinet": 1,
+    "lift_blue_block_table": 2,
+    "pick up the blue block from the table": 2,
+    "lift_pink_block_drawer": 3,
+    "pick up the pink block from the drawer": 3,
+    "lift_pink_block_slider": 4,
+    "pick up the pink block from the sliding cabinet": 4,
+    "lift_pink_block_table": 5,
+    "pick up the pink block from the table": 5,
+    "lift_red_block_drawer": 6,
+    "pick up the red block from the drawer": 6,
+    "lift_red_block_slider": 7,
+    "pick up the red block from the sliding cabinet": 7,
+    "lift_red_block_table": 8,
+    "pick up the red block from the table": 8
+  }
+}
